@@ -8,7 +8,7 @@
 public class Test {
     public Test() {
     }
-    //test    f
+    //test
     public static void main(String[] args) {
         System.out.println("blabla");
     }
