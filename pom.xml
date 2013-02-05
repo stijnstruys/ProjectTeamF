@@ -5,13 +5,6 @@
     <artifactId>ProjectTeamF</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
-    <repositories>
-        <repository>
-            <id>jboss-maven2-release-repository</id>
-            <name>JBoss</name>
-            <url>http://repository.jboss.org/maven2/</url>
-        </repository>
-    </repositories>
     <name>ProjectTeamF</name>
     <url>http://maven.apache.org</url>
 
