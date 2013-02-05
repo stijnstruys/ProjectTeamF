@@ -27,6 +27,9 @@
         <module name="ProjectTeamF" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ProjectTeamF" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
