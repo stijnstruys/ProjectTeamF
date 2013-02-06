@@ -19,7 +19,7 @@ public class Test {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.beginTransaction();
 
-        User u = new User("test","test","test","test","test","test","test","test","test","test","test");
+        User u = new User("test","test","test","test","test","test","test","test","test","test","testtest");
         session.saveOrUpdate(u);
         tx.commit();
 
