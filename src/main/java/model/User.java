@@ -1,6 +1,6 @@
 package model;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -10,9 +10,10 @@ import java.io.Serializable;
  * Time: 14:57
  * To change this template use File | Settings | File Templates.
  */
-
+@Entity
+@Table(name="T_USER")
 public class User implements Serializable {
-
+    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int userID;
     private String username;
     private String password;
