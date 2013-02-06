@@ -3,19 +3,41 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+	background: green;
+}
+#container {
+	width: 1000px;
+	margin: 0 auto 0 auto;
+	
+}
 
 
+/* header */
+
+header {
+	width: 1000px;
+}
+
+#header_login_form {
+	padding: 5px 10px 0px 10px;
+}
 
 
+#header_banner {
+	width: 1000px;
+	height: 100px;
+}
 
 
+/* content */
 
-
-
-
-
-
-
+#content {
+	margin: 0 auto 0 auto;
+	/*border-radius: 5px;*/
+	background: red;
+	padding: 25px;
+}
 
 
 

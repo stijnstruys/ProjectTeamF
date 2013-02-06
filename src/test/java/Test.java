@@ -16,14 +16,5 @@ public class Test {
     //test
     public static void main(String[] args) {
 
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        Transaction tx = session.beginTransaction();
-
-        User u = new User("test","test","test","test","test","test","test","test","test","test","testtest");
-        session.saveOrUpdate(u);
-        tx.commit();
-
-
-        System.out.println("blabla");
     }
 }
