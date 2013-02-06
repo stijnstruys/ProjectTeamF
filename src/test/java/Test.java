@@ -1,3 +1,4 @@
+/*
 import Persistence.HibernateUtil;
 import model.User;
 import org.hibernate.Session;
@@ -10,6 +11,7 @@ import org.hibernate.Transaction;
  * Time: 10:38
  * To change this template use File | Settings | File Templates.
  */
+/*
 public class Test {
     public Test() {
     }
@@ -18,3 +20,4 @@ public class Test {
 
     }
 }
+                */
