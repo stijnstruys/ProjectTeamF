@@ -19,7 +19,7 @@ public class Main {
 
     static {
         try {
-            ourSessionFactory = new Configuration().addResource("hibernate.cfg.xml").buildSessionFactory();
+            ourSessionFactory = new Configuration().addResource("src/hibernate.cfg.xml").buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }

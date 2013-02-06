@@ -1,5 +1,6 @@
 package model;
 
+//import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -9,6 +10,7 @@ import java.io.Serializable;
  * Time: 14:57
  * To change this template use File | Settings | File Templates.
  */
+
 public class User implements Serializable {
 
     private int userID;
@@ -21,10 +23,24 @@ public class User implements Serializable {
     private String dateOfBirth;
     private String street;
     private String number;
-    private int zipcode;
+    private String zipcode;
     private String city;
 
     public User(){}
+
+    public User(String city, String zipcode, String number, String street, String dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username) {
+        this.city = city;
+        this.zipcode = zipcode;
+        this.number = number;
+        this.street = street;
+        this.dateOfBirth = dateOfBirth;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.telephone = telephone;
+        this.email = email;
+        this.password = password;
+        this.username = username;
+    }
 
     public int getUserID() {
         return userID;
@@ -66,7 +82,7 @@ public class User implements Serializable {
         return number;
     }
 
-    public int getZipcode() {
+    public String getZipcode() {
         return zipcode;
     }
 
@@ -114,7 +130,7 @@ public class User implements Serializable {
         this.number = number;
     }
 
-    public void setZipcode(int zipcode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 

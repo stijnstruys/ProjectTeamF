@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="model.User" table="T_USER">
+        <id name="userID" >
+            <generator class="identity"/>
+        </id>
+        <property name="city" not-null="true"/>
+        <property name="dateOfBirth" not-null="true"/>
+        <property name="email" not-null="true"/>
+        <property name="firstName" not-null="true"/>
+        <property name="lastName" not-null="true"/>
+        <property name="number" not-null="true"/>
+        <property name="password" not-null="true"/>
+        <property name="street" not-null="true"/>
+        <property name="telephone" not-null="true"/>
+        <property name="username" not-null="true"/>
+        <property name="zipcode" not-null="true"/>
+
+    </class>
+
+</hibernate-mapping>

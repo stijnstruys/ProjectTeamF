@@ -1,3 +1,8 @@
+import Persistence.HibernateUtil;
+import model.User;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Stijn
@@ -10,6 +15,15 @@ public class Test {
     }
     //test
     public static void main(String[] args) {
+
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+
+        User u = new User("test","test","test","test","test","test","test","test","test","test","test");
+        session.saveOrUpdate(u);
+        tx.commit();
+
+
         System.out.println("blabla");
     }
 }
