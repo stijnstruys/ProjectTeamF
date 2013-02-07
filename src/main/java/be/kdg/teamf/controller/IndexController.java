@@ -13,7 +13,7 @@ public class IndexController extends AbstractController {
                                                  HttpServletResponse response) throws Exception {
 
         ModelAndView model = new ModelAndView("index");
-        //model.addObject("msg", "hello world");
+        //be.kdg.teamf.model.addObject("msg", "hello world");
 
         return model;
     }
