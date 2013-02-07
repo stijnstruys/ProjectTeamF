@@ -1,6 +1,8 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <html>
 <head>
     <title>Project Team F</title>
@@ -66,6 +68,8 @@
 
 
 <h3>Users</h3>
+
+<%--@elvariable id="userList" type="be.kdg.teamf.controller.UserController.getUserList()"--%>
 <c:if  test="${!empty userList}">
 <table class="data">
 <tr>

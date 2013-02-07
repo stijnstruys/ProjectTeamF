@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -50,4 +51,8 @@ public class UserController {
 
 		return "redirect:/";
 	}
+    public ArrayList<User> getUserList(){
+
+        return (ArrayList<User>) userService.listUsers();
+    }
 }
