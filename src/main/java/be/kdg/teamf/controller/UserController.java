@@ -31,6 +31,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+        request.setAttribute("contact","");
         ModelAndView model = new ModelAndView("user");
         return model;
     }
@@ -44,14 +45,15 @@ public class UserController {
 	}  */
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String addContact(@ModelAttribute("user")
-	User user, BindingResult result) {
+	public String addContact(@ModelAttribute("user") User user, BindingResult result) {
 
 		userService.addUser(user);
 
 		return "redirect:/";
 	}
     public ArrayList<User> getUserList(){
+
+
 
         return (ArrayList<User>) userService.listUsers();
     }
