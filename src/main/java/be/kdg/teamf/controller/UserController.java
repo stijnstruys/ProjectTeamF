@@ -2,15 +2,12 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.UserService;
-import be.kdg.teamf.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import be.kdg.teamf.service.UserService;
 
 import java.util.Map;
 
@@ -27,7 +24,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping("/")
+	@RequestMapping("/user")
 	public String listContacts(Map<String, Object> map) {
 
 		map.put("user", new User());
