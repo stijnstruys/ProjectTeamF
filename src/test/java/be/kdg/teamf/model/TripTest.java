@@ -20,6 +20,16 @@ public class TripTest {
 
         Trip trip = new Trip("Trip1", startDatum, eindDatum, "Jeroen", "Groenplaats");
         assertEquals("Trip1", trip.getTrip());
+        assertEquals(startDatum, trip.getStartDatum());
+        assertEquals(eindDatum, trip.getEindDatum());
+        assertEquals("Jeroen", trip.getOrganisator());
+        assertEquals("Groenplaats", trip.getStartLocatie());
+    }
+
+    @Test
+    public void testUpdateTrip(){
 
     }
+
+
 }
