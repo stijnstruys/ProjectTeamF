@@ -11,7 +11,7 @@
 
 <h2>User registration</h2>
 
-<form:form method="post" action="add.html" commandName="contact">
+<form:form method="post" action="add.html" commandName="user" id="user">
 
     <table>
         <tr>
@@ -23,12 +23,12 @@
             <td><form:input path="password" /></td>
         </tr>
         <tr>
-            <td><form:label path="firstname"><spring:message code="label.firstname"/></form:label></td>
-            <td><form:input path="firstname" /></td>
+            <td><form:label path="firstName"><spring:message code="label.firstname"/></form:label></td>
+            <td><form:input path="firstName" /></td>
         </tr>
         <tr>
-            <td><form:label path="lastname"><spring:message code="label.lastname"/></form:label></td>
-            <td><form:input path="lastname" /></td>
+            <td><form:label path="lastName"><spring:message code="label.lastname"/></form:label></td>
+            <td><form:input path="lastName" /></td>
         </tr>
         <tr>
             <td><form:label path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label></td>

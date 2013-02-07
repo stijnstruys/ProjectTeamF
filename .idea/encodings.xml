@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/src/main/resources/messages_en.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/messages_nl.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/META-INF" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jdbc.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" charset="UTF-8" />

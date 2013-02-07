@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,16 +21,17 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-@RequestMapping("/user")
+//@RequestMapping("/user/user.html")
 public class UserController {
 
 	@Autowired
 	private UserService userService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/user/user.html",method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        request.setAttribute("contact","");
+        User u  = new User();
+        request.setAttribute("user",u);
         ModelAndView model = new ModelAndView("user");
         return model;
     }
@@ -44,17 +44,13 @@ public class UserController {
 		return "user";
 	}  */
 
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String addContact(@ModelAttribute("user") User user, BindingResult result) {
+	@RequestMapping(value = "/user/add", method = RequestMethod.POST)
+	public String addContact(@ModelAttribute("user")
+	User user, BindingResult result) {
 
 		userService.addUser(user);
 
 		return "redirect:/";
 	}
-    public ArrayList<User> getUserList(){
 
-
-
-        return (ArrayList<User>) userService.listUsers();
-    }
 }
