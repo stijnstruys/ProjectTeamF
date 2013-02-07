@@ -4,14 +4,14 @@
    Author's custom styles
    ========================================================================== */
 body {
-	background: green;
+	background: url("../img/bg-main.jpg") fixed bottom;
+    color: #D4D4D4;
 }
 #container {
 	width: 1000px;
 	margin: 0 auto 0 auto;
 	
 }
-
 
 /* header */
 
@@ -31,12 +31,17 @@ header {
 
 
 /* content */
+h2 {
+    color: #9CFF00;
+}
 
 #content {
 	margin: 0 auto 0 auto;
 	/*border-radius: 5px;*/
-	background: red;
+	background: #1C263C;
 	padding: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 
