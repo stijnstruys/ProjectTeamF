@@ -66,7 +66,5 @@
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-    <bean name="/index.html"
-          class="be.kdg.teamf.controller.IndexController" />
 
 </beans>
