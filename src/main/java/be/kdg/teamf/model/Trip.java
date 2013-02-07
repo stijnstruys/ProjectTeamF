@@ -10,23 +10,26 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class Trip {
-    private String trip;
+    private String tripNaam;
     private Date startDatum;
     private Date eindDatum;
     private String organisator;
     private String startLocatie;
 
-    public Trip(String trip, Date startDatum, Date eindDatum, String jeroen, String groenplaats) {
-        //To change body of created methods use File | Settings | File Templates.
-
+    public Trip( String tripNaam, Date startDatum, Date eindDatum, String organisator, String startLocatie) {
+        this.tripNaam=tripNaam;
+        this.startDatum=startDatum;
+        this.eindDatum=eindDatum;
+        this.organisator=organisator;
+        this.startLocatie=startLocatie;
     }
 
     public String getTrip() {
-        return trip;
+        return tripNaam;
     }
 
     public void setTrip(String trip) {
-        this.trip = trip;
+        this.tripNaam = trip;
     }
 
     public Date getStartDatum() {
