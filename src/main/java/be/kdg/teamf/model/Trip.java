@@ -34,14 +34,6 @@ public class Trip {
     @Column(name="STARTLOCATION")
     private String startLocation;
 
-    /*public Trip( String tripNaam, Date startDatum, Date eindDatum, String organisator, String startLocatie) {
-        this.tripNaam=tripNaam;
-        this.startDatum=startDatum;
-        this.eindDatum=eindDatum;
-        this.organisator=organisator;
-        this.startLocatie=startLocatie;
-    } */
-
     public Integer getTripId() {
         return tripId;
     }
