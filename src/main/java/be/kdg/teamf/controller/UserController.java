@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-//@RequestMapping("/user/user.html")
+
 public class UserController {
 
     @Autowired
