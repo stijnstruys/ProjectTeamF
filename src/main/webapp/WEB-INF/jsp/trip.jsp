@@ -33,8 +33,7 @@
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-    <section id="container">
-        <jsp:include page="header.jsp"/>
+        <jsp:include page="General/header.jsp"/>
 
         <section id="content">
             <h2>Trip</h2>
@@ -79,15 +78,8 @@
             </table>
             </form:form>
         </section>
-    </section>
-            <footer>
-                <div id="footer_info">
-                    &copy; 2013 - Team F - All rights reserved  <span id="footer_extrapadding">||</span>   <a href="#">info@teamf.com</a>  </br>
-                    Bart Leemans - Jeroen Dierckx - Jorne Raeymaekers - Stijn Struys - Jeroen Verheyen -  Jeroen Verbunt
-                </div>
+            <jsp:include page="General/footer.jsp"/>
 
-
-            </footer>
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
