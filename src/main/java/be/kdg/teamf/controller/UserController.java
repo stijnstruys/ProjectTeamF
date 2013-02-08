@@ -22,8 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 //@RequestMapping("/user/user.html")
 public class UserController {
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/user/user.html",method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -31,7 +31,7 @@ public class UserController {
         User u  = new User();
         request.setAttribute("user",u);
         request.setAttribute("userList",userService.listUsers());
-        ModelAndView model = new ModelAndView("user");
+        ModelAndView model = new ModelAndView("User/user");
 
         return model;
     }
@@ -46,14 +46,14 @@ public class UserController {
 
 
 
-	@RequestMapping(value = "/user/add", method = RequestMethod.POST)
-	public String addUser(@ModelAttribute("user")
-	User user, BindingResult result) {
+    @RequestMapping(value = "/user/add", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute("user")
+                          User user, BindingResult result) {
 
-		userService.addUser(user);
+        userService.addUser(user);
 
-		return "redirect:/user/user.html";
-	}
+        return "redirect:/user/user.html";
+    }
 
     @RequestMapping("/user/delete/{userID}")
     public String deleteUser(@PathVariable("userID") int userID) {
@@ -62,5 +62,22 @@ public class UserController {
         return "redirect:/user/user.html";
 
     }
+    @RequestMapping("/user/update/{userID}")
+    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
 
+        User u  = userService.findUser(userID);
+        request.setAttribute("user",u);
+        ModelAndView model = new ModelAndView("User/updateUser");
+        return model;
+
+    }
+    @RequestMapping(value = "/user/update/updateUser", method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("user")
+                                 User user, BindingResult result) {
+
+        userService.updateUser(user);
+
+        return "redirect:/user/user.html";
+
+    }
 }
