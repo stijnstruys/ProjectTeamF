@@ -29,4 +29,9 @@ public class UserServiceImpl implements UserService {
     public List<User> listUsers() {
         return userDAO.listUsers();  //To change body of implemented methods use File | Settings | File Templates.
     }
+
+    @Override
+    public void deleteUser(User user) {
+        userDAO.deleteUser(user);
+    }
 }

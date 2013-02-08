@@ -3,7 +3,9 @@
         "-//Hibernate/Hibernate Configuration DTD//EN"
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
+
     <session-factory>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- Reference to all the mapping files used -->
         <mapping class="be.kdg.teamf.model.User"/>
         <mapping class="be.kdg.teamf.model.Trip"/>
