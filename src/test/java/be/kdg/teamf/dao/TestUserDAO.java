@@ -1,5 +1,6 @@
 package be.kdg.teamf.dao;
 
+import be.kdg.teamf.util.OpenSessionInTestBase;
 import org.junit.Test;
 import be.kdg.teamf.model.User;
 
@@ -14,13 +15,19 @@ import static org.junit.Assert.assertSame;
  * Time: 10:24
  * To change this template use File | Settings | File Templates.
  */
-public class TestUserDAO {
+public class TestUserDAO extends OpenSessionInTestBase {
     private UserDAO userDao;
     Date datum = new Date(30/12/1988);
+
+    @Override
+    protected String[] getConfigLocations() {
+        return new String[]{"classpath:dao/userDaoContext.xml"};
+    }
 
     public void setUserDao(UserDAO userDao) {
         this.userDao = userDao;
     }
+
     @Test
     public void testGetUser() throws Exception {
         User u = new User();
