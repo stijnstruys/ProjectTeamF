@@ -24,7 +24,7 @@
 </head>
 <body>
 <section id="container">
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../General/header.jsp"/>
 
     <section id="content">
 <h2>User registration</h2>
