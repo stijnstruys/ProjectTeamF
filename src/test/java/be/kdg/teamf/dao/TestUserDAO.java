@@ -1,7 +1,10 @@
 package be.kdg.teamf.dao;
 
+import org.hibernate.SessionFactory;
 import org.junit.Test;
 import be.kdg.teamf.model.User;
+import be.kdg.teamf.util.OpenSessionInTestBase;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
 import java.util.List;
@@ -16,9 +19,23 @@ import static org.junit.Assert.assertSame;
  * To change this template use File | Settings | File Templates.
  */
 public class TestUserDAO {
-    private UserDAO userDao = new UserDAOImpl();
-    Date datum = new Date(30/12/1988);
+    private UserDAO userDao;
 
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    public void setUserDao(UserDAO userDao) {
+        this.userDao = userDao;
+    }
+
+   /* @Override
+    protected String[] getConfigLocations() {
+        return new String[]{"classpath:dao/userDaoContext.xml"};
+    } */
+
+    //private UserDAO userDao = new UserDAO();
+    Date datum = new Date(30/12/1988);
+      /*
     @Test
     public void testGetUser() throws Exception {
         User u = new User();
@@ -34,5 +51,12 @@ public class TestUserDAO {
         u.setTelephone("0332554846");
         userDao.addUser(u);
         assertSame("you are not getting the expected user from the db","Jeroen",userDao.getUser("tester").getFirstName());
+    }      */
+
+    @Test
+    public void testAddUser() throws Exception {
+        User u = new User("Hoogstraten", "2320", "5", "straat", datum, "verbunt", "jeroen", "55", "@hotm", "pasw", "usern");
+
+        userDao.addUser(u);
     }
 }

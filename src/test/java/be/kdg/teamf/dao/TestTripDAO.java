@@ -15,9 +15,9 @@ import static org.junit.Assert.assertSame;
  * To change this template use File | Settings | File Templates.
  */
 public class TestTripDAO {
-    private UserDAO userDao = new UserDAOImpl();
+    private UserDAO userDao;
         Date datum = new Date(30/12/1988);
-
+       /*
         @Test
         public void testGetUser() throws Exception {
             User u = new User();
@@ -31,7 +31,11 @@ public class TestTripDAO {
             u.setStreet("Hoogstraatsesteenweg");
             u.setNumber("15");
             u.setTelephone("0332554846");
+
             userDao.addUser(u);
+
             assertSame("you are not getting the expected user from the db","Jeroen",userDao.getUser("tester").getFirstName());
-        }
+        }            */
+
+
 }
