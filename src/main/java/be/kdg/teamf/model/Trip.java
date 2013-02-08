@@ -19,20 +19,20 @@ public class Trip {
     @GeneratedValue
     private Integer tripId;
 
-    @Column(name="TRIPNAAM")
-    private String tripNaam;
+    @Column(name="TRIPNAME")
+    private String tripName;
 
-    @Column(name="STARTDATUM")
-    private Date startDatum;
+    @Column(name="STARTDATE")
+    private Date startDate;
 
-    @Column(name="EINDDATUM")
-    private Date eindDatum;
+    @Column(name="ENDDATE")
+    private Date endDate;
 
-    @Column(name="ORGANISATOR")
-    private String organisator;
+    @Column(name="ORGANISER")
+    private String organiser;
 
-    @Column(name="STARTLOCATIE")
-    private String startLocatie;
+    @Column(name="STARTLOCATION")
+    private String startLocation;
 
     /*public Trip( String tripNaam, Date startDatum, Date eindDatum, String organisator, String startLocatie) {
         this.tripNaam=tripNaam;
@@ -50,43 +50,43 @@ public class Trip {
         this.tripId = tripId;
     }
 
-    public String getTripNaam() {
-        return tripNaam;
+    public String getTripName() {
+        return tripName;
     }
 
-    public void setTripNaam(String tripNaam) {
-        this.tripNaam = tripNaam;
+    public void setTripName(String tripName) {
+        this.tripName = tripName;
     }
 
-    public Date getStartDatum() {
-        return startDatum;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStartDatum(Date startDatum) {
-        this.startDatum = startDatum;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getEindDatum() {
-        return eindDatum;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEindDatum(Date eindDatum) {
-        this.eindDatum = eindDatum;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
-    public String getOrganisator() {
-        return organisator;
+    public String getOrganiser() {
+        return organiser;
     }
 
-    public void setOrganisator(String organisator) {
-        this.organisator = organisator;
+    public void setOrganiser(String organiser) {
+        this.organiser = organiser;
     }
 
-    public String getStartLocatie() {
-        return startLocatie;
+    public String getStartLocation() {
+        return startLocation;
     }
 
-    public void setStartLocatie(String startLocatie) {
-        this.startLocatie = startLocatie;
+    public void setStartLocation(String startLocation) {
+        this.startLocation = startLocation;
     }
 }
