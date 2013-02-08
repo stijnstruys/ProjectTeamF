@@ -6,5 +6,6 @@
     <session-factory>
         <!-- Reference to all the mapping files used -->
         <mapping class="be.kdg.teamf.model.User"/>
+        <mapping class="be.kdg.teamf.model.Trip"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,6 +1,7 @@
 package be.kdg.teamf.model;
 
 import java.util.Date;
+import javax.persistence.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,27 +10,52 @@ import java.util.Date;
  * Time: 14:58
  * To change this template use File | Settings | File Templates.
  */
+
+@Entity
+@Table(name="T_TRIP")
 public class Trip {
+    @Id
+    @Column(name="TripID")
+    @GeneratedValue
+    private Integer tripId;
+
+    @Column(name="TRIPNAAM")
     private String tripNaam;
+
+    @Column(name="STARTDATUM")
     private Date startDatum;
+
+    @Column(name="EINDDATUM")
     private Date eindDatum;
+
+    @Column(name="ORGANISATOR")
     private String organisator;
+
+    @Column(name="STARTLOCATIE")
     private String startLocatie;
 
-    public Trip( String tripNaam, Date startDatum, Date eindDatum, String organisator, String startLocatie) {
+    /*public Trip( String tripNaam, Date startDatum, Date eindDatum, String organisator, String startLocatie) {
         this.tripNaam=tripNaam;
         this.startDatum=startDatum;
         this.eindDatum=eindDatum;
         this.organisator=organisator;
         this.startLocatie=startLocatie;
+    } */
+
+    public Integer getTripId() {
+        return tripId;
     }
 
-    public String getTrip() {
+    public void setTripId(Integer tripId) {
+        this.tripId = tripId;
+    }
+
+    public String getTripNaam() {
         return tripNaam;
     }
 
-    public void setTrip(String trip) {
-        this.tripNaam = trip;
+    public void setTripNaam(String tripNaam) {
+        this.tripNaam = tripNaam;
     }
 
     public Date getStartDatum() {

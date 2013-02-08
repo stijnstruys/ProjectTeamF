@@ -28,6 +28,5 @@
         <param-value>/WEB-INF/spring-servlet.xml</param-value>
     </context-param>
 
-
 </web-app>
 
