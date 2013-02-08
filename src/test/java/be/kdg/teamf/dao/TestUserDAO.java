@@ -57,6 +57,6 @@ public class TestUserDAO {
     public void testAddUser() throws Exception {
       //  User u = new User("Hoogstraten", "2320", "5", "straat", datum, "verbunt", "jeroen", "55", "@hotm", "pasw", "usern");
 
-       // userDao.addUser(u);
+       //// userDao.addUser(u);
     }
 }
