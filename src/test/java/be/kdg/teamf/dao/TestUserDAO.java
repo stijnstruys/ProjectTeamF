@@ -3,7 +3,7 @@ package be.kdg.teamf.dao;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import be.kdg.teamf.model.User;
-import be.kdg.teamf.util.OpenSessionInTestBase;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
@@ -55,8 +55,8 @@ public class TestUserDAO {
 
     @Test
     public void testAddUser() throws Exception {
-        User u = new User("Hoogstraten", "2320", "5", "straat", datum, "verbunt", "jeroen", "55", "@hotm", "pasw", "usern");
+      //  User u = new User("Hoogstraten", "2320", "5", "straat", datum, "verbunt", "jeroen", "55", "@hotm", "pasw", "usern");
 
-        userDao.addUser(u);
+       // userDao.addUser(u);
     }
 }
