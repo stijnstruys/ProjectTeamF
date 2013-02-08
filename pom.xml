@@ -102,7 +102,16 @@
     </dependencies>
 
     <build>
+        <testResources>
+            <testResource>
+                <directory>src/main/webapp/WEB-INF</directory>
+                <includes>
+                    <include>*.xml</include>
+                    <include>*.properties</include>
+                </includes>
+            </testResource> </testResources>
         <plugins>
+
             <!-- Nodig om met versie 1.7 te kunnen compileren -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
