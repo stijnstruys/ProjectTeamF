@@ -37,7 +37,7 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO{
     }
 
     public User getUser(String userName) {
-        User user = (User) getSession().createQuery("from t_user where username = :username").setString("username",userName) .uniqueResult();
+        User user = (User)getSession().createQuery("from t_user where username = :username").setString("username",userName) .uniqueResult();
         return user;
     }
 }
