@@ -69,20 +69,27 @@
 
 <h3>Users</h3>
 
-<%--@elvariable id="userList" type="be.kdg.teamf.controller.UserController.getUserList()"--%>
+
 <c:if  test="${!empty userList}">
     <table class="data">
         <tr>
             <th>Name</th>
-            <th>Email</th>
-            <th>Telephone</th>
+            <th><spring:message code="label.email"/></th>
+            <th><spring:message code="label.telephone"/></th>
+            <th><spring:message code="label.dateOfBirth"/></th>
+            <th><spring:message code="label.street"/></th>
+            <th><spring:message code="label.city"/></th>
             <th>&nbsp;</th>
         </tr>
         <c:forEach items="${userList}" var="user">
             <tr>
-                <td>${user.lastName}, ${user.firstName} </td>
+                <td>${user.firstName}, ${user.lastName} </td>
                 <td>${user.email}</td>
                 <td>${user.telephone}</td>
+                <td>${user.dateOfBirth}</td>
+                <td>${user.street}  ${user.number}</td>
+                <td>${user.zipcode}, ${user.city}</td>
+                <td></td>
             </tr>
         </c:forEach>
     </table>

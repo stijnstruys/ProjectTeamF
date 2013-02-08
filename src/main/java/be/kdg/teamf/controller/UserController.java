@@ -32,6 +32,7 @@ public class UserController {
 
         User u  = new User();
         request.setAttribute("user",u);
+        request.setAttribute("userList",userService.listUsers());
         ModelAndView model = new ModelAndView("user");
         return model;
     }
@@ -42,7 +43,9 @@ public class UserController {
 		map.put("userList", userService.listUsers());
 
 		return "user";
-	}  */
+    }  */
+
+
 
 	@RequestMapping(value = "/user/add", method = RequestMethod.POST)
 	public String addContact(@ModelAttribute("user")
@@ -50,7 +53,7 @@ public class UserController {
 
 		userService.addUser(user);
 
-		return "redirect:/";
+		return "redirect:/user/user.html";
 	}
 
 }

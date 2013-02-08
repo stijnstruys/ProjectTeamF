@@ -42,24 +42,24 @@
 
                 <table>
                 <tr>
-                    <td><form:label path="tripnaam"><spring:message code="label.tripName"/></form:label></td>
-                    <td><form:input path="tripnaam" /></td>
+                    <td><form:label path="tripNaam"><spring:message code="label.tripName"/></form:label></td>
+                    <td><form:input path="tripNaam" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="startdatum"><spring:message code="label.startDate"/></form:label></td>
-                    <td><form:input path="startdatum" /></td>
+                    <td><form:label path="startDatum"><spring:message code="label.startDate"/></form:label></td>
+                    <td><form:input path="startDatum" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="einddatum"><spring:message code="label.endDate"/></form:label></td>
-                    <td><form:input path="einddatum" /></td>
+                    <td><form:label path="eindDatum"><spring:message code="label.endDate"/></form:label></td>
+                    <td><form:input path="eindDatum" /></td>
                 </tr>
                 <tr>
                     <td><form:label path="organisator"><spring:message code="label.organisor"/></form:label></td>
                     <td><form:input path="organisator" /></td>
                 </tr>
                 <tr>
-                   <td><form:label path="startlocatie"><spring:message code="label.startLocation"/></form:label></td>
-                   <td><form:input path="startlocatie" /></td>
+                   <td><form:label path="startLocatie"><spring:message code="label.startLocation"/></form:label></td>
+                   <td><form:input path="startLocatie" /></td>
                </tr>
                 <tr>
                     <td colspan="2">
