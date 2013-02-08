@@ -60,7 +60,9 @@
 		</property>
 	</bean>
 
-	<tx:annotation-driven />
+
+
+<tx:annotation-driven />
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
