@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 
 
 @ContextConfiguration(locations = {"classpath:spring-servlet.xml"})
-public class UserTests extends AbstractTransactionalJUnit4SpringContextTests {
+public class TestUsers extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     protected UserDAO user;
     @Autowired
