@@ -118,21 +118,8 @@
         </c:forEach>
     </table>
 </c:if>
-        </section>
-</section>
-<footer>
-    <div id="footer_info">
-        &copy; 2013 - Team F - All rights reserved  <span id="footer_extrapadding">||</span>   <a href="#">info@teamf.com</a>  </br>
-        Bart Leemans - Jeroen Dierckx - Jorne Raeymaekers - Stijn Struys - Jeroen Verheyen -  Jeroen Verbunt
-    </div>
 
-
-</footer>
-
-                </c:forEach>
-            </table>
-        </c:if>
-    <jsp:include page="General/footer.jsp"/>
+    <jsp:include page="../General/footer.jsp"/>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
