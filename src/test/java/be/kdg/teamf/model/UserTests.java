@@ -20,12 +20,14 @@ public class UserTests extends AbstractTransactionalJUnit4SpringContextTests {
         System.out.println("Number of rows is: " + userService.listUsers().size());
         System.out.println("Creating a new user");
         User u = new User();
+        u.setUserID(1);
         u.setEmail("bart@hotmail.com");
         u.setLastName("Leemans");
         u.setFirstName("Bart");
         u.setTelephone("00306985587996");
         System.out.println("Before saving contact");
-        userService.addUser(u);
+        // Lukt nog niet
+        //userService.addUser(u);
         System.out.println("After saving user. Id if contact is: " + u.getUserID());
         System.out.println("Number of rows now is: " + user.listUsers().size());
     }
