@@ -19,13 +19,13 @@
                             </ul>
 
                            <ul class="nav pull-right">
-                            <li class="pull-right"><a href="#">Registreer</a></li>
+                            <li class="pull-right"><a href="user/user.html">Registreer</a></li>
                               <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aanmelden<b class="caret"></b></a>
 
                                 <ul class="dropdown-menu">
 
-                                  <form id="header_login_form">
+                                  <form id="header_login_form" method="POST" action="user/login.html">
                                       <input type="text" class="input" placeholder="Email">
                                       <input type="password" class="input" placeholder="Password">
                                       <label class="checkbox">
