@@ -1,9 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-<html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,7 +24,7 @@
 </head>
 <body>
 <section id="container">
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../General/header.jsp"/>
 
     <section id="content">
 <h2>User registration</h2>
@@ -95,8 +100,8 @@
             <th>&nbsp;</th>
         </tr>
         <c:forEach items="${userList}" var="user">
-            <form:form method="post" action="delete.html" commandName="user" id="user">
-                <input id="userId" name="userId" type="hidden" value="${user.userID}"/>
+
+
                 <tr>
                     <td>${user.firstName}, ${user.lastName} </td>
                     <td>${user.email}</td>
@@ -104,12 +109,12 @@
                     <td>${user.dateOfBirth}</td>
                     <td>${user.street}  ${user.number}</td>
                     <td>${user.zipcode}, ${user.city}</td>
-                    <td >
-                        <input type="submit" value="<spring:message code="button.deleteUser"/>"/>
+                    <td>
+                        <a href="delete/${user.userID}.html">Delete</a>
                     </td>
 
                 </tr>
-            </form:form>
+
         </c:forEach>
     </table>
 </c:if>
@@ -124,10 +129,15 @@
 
 </footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+                </c:forEach>
+            </table>
+        </c:if>
+    <jsp:include page="General/footer.jsp"/>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+    <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

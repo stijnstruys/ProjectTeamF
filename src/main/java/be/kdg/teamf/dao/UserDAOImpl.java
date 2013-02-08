@@ -1,14 +1,14 @@
 package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.User;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-import java.sql.PreparedStatement;
-import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
-import static org.springframework.orm.hibernate3.SessionFactoryUtils.getSession;
+import java.util.List;
 
 /**
  * created with intellij idea.
@@ -18,7 +18,8 @@ import static org.springframework.orm.hibernate3.SessionFactoryUtils.getSession;
  * to change this template use file | settings | file templates.
  */
 @Repository
-public class UserDAOImpl extends HibernateDaoSupport implements UserDAO{
+@Transactional
+public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -27,17 +28,28 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO{
     }
 
     public List<User> listUsers() {
-       return sessionFactory.getCurrentSession().createQuery("from User").list();
+        return sessionFactory.getCurrentSession().createQuery("from User").list();
 
     }
 
+    @Override
     public void deleteUser(User user) {
 
         sessionFactory.getCurrentSession().delete(user);
     }
 
-    public User getUser(String userName) {
-        User user = (User)getSession().createQuery("from t_user where username = :username").setString("username",userName) .uniqueResult();
-        return user;
+    @Override
+    public User findUser(int id) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from User where userID = :id");
+        q.setInteger("id",id);
+        return (User) q.list().get(0);
+    }
+
+    @Override
+    public void updateUser(User user) {
+
+        Session s = sessionFactory.getCurrentSession();
+        s.update(user);
+
     }
 }

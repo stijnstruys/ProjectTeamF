@@ -5,13 +5,12 @@ import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created with IntelliJ IDEA.
@@ -56,13 +55,28 @@ public class UserController {
 
 		return "redirect:/user/user.html";
 	}
-    @RequestMapping(value = "/user/delete", method = RequestMethod.POST)
-    public String deleteUser(@ModelAttribute("user")
-                             User user, BindingResult result) {
 
-        userService.deleteUser(user);
+    @RequestMapping("/user/delete/{userID}")
+    public String deleteUser(@PathVariable("userID") int userID) {
 
+        userService.deleteUser(userService.findUser(userID));
         return "redirect:/user/user.html";
+
+    }
+
+
+    //login
+    @RequestMapping(value = "/user/login", method = RequestMethod.POST)
+    public String login(@ModelAttribute("user") User user) {
+        return "redirect:/";
+           /*
+        int userID = userService.login(user);
+
+        if(userID == -1) {
+            return "failed";
+        } else {
+            return "redirect:/";
+        }   */
     }
 
 }

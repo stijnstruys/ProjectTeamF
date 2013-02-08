@@ -2,7 +2,6 @@ package be.kdg.teamf.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,36 +13,34 @@ import java.util.Date;
 @Entity
 @Table(name="T_USER")
 public class User implements Serializable {
-    @Id
-    @Column(name="UserID")
-    @GeneratedValue
+    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int userID;
-    @Column(name="USERNAME")
+    @Column(name="username")
     private String username;
-    @Column(name="PASSWORD")
+    @Column(name="password")
     private String password;
-    @Column(name="EMAIL")
+    @Column(name="email")
     private String email;
-    @Column(name="TELEPHONE")
+    @Column(name="telephone")
     private String telephone;
-    @Column(name="FIRSTNAME")
+    @Column(name="firstname")
     private String firstName;
-    @Column(name="LASTNAME")
+    @Column(name="lastname")
     private String lastName;
-    @Column(name="DATEOFBIRTH")
-    private Date dateOfBirth;
-    @Column(name="STREET")
+    @Column(name="dateOfBirth")
+    private String dateOfBirth;
+    @Column(name="street")
     private String street;
-    @Column(name="NUMBER")
+    @Column(name="number")
     private String number;
-    @Column(name="ZIPCODE")
+    @Column(name="zipcode")
     private String zipcode;
-    @Column(name="CITY")
+    @Column(name="city")
     private String city;
 
     public User(){}
 
-    public User(String city, String zipcode, String number, String street, Date dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username) {
+    public User(String city, String zipcode, String number, String street, String dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username) {
         this.city = city;
         this.zipcode = zipcode;
         this.number = number;
@@ -85,7 +82,7 @@ public class User implements Serializable {
         return lastName;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -133,7 +130,7 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
