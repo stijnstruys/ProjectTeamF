@@ -14,29 +14,31 @@ import java.util.Date;
 @Entity
 @Table(name="T_USER")
 public class User implements Serializable {
-    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Id
+    @Column(name="UserID")
+    @GeneratedValue
     private int userID;
-    @Column(name="username")
+    @Column(name="USERNAME")
     private String username;
-    @Column(name="password")
+    @Column(name="PASSWORD")
     private String password;
-    @Column(name="email")
+    @Column(name="EMAIL")
     private String email;
-    @Column(name="telephone")
+    @Column(name="TELEPHONE")
     private String telephone;
-    @Column(name="firstname")
+    @Column(name="FIRSTNAME")
     private String firstName;
-    @Column(name="lastname")
+    @Column(name="LASTNAME")
     private String lastName;
-    @Column(name="dateOfBirth")
+    @Column(name="DATEOFBIRTH")
     private Date dateOfBirth;
-    @Column(name="street")
+    @Column(name="STREET")
     private String street;
-    @Column(name="number")
+    @Column(name="NUMBER")
     private String number;
-    @Column(name="zipcode")
+    @Column(name="ZIPCODE")
     private String zipcode;
-    @Column(name="city")
+    @Column(name="CITY")
     private String city;
 
     public User(){}
