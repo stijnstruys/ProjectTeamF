@@ -2,7 +2,6 @@ package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.User;
 import org.hibernate.Query;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -48,8 +47,8 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public void updateUser(User user) {
 
-        Session s = sessionFactory.getCurrentSession();
-        s.update(user);
+        sessionFactory.getCurrentSession().update(user);
+
 
     }
 }

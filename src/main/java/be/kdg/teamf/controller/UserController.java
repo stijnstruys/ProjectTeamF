@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,8 +22,8 @@ import javax.servlet.http.HttpSession;
 //@RequestMapping("/user/user.html")
 public class UserController {
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/user/user.html",method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -32,7 +31,7 @@ public class UserController {
         User u  = new User();
         request.setAttribute("user",u);
         request.setAttribute("userList",userService.listUsers());
-        ModelAndView model = new ModelAndView("user");
+        ModelAndView model = new ModelAndView("User/user");
 
         return model;
     }
@@ -47,14 +46,14 @@ public class UserController {
 
 
 
-	@RequestMapping(value = "/user/add", method = RequestMethod.POST)
-	public String addUser(@ModelAttribute("user")
-	User user, BindingResult result) {
+    @RequestMapping(value = "/user/add", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute("user")
+                          User user, BindingResult result) {
 
-		userService.addUser(user);
+        userService.addUser(user);
 
-		return "redirect:/user/user.html";
-	}
+        return "redirect:/user/user.html";
+    }
 
     @RequestMapping("/user/delete/{userID}")
     public String deleteUser(@PathVariable("userID") int userID) {
@@ -63,20 +62,22 @@ public class UserController {
         return "redirect:/user/user.html";
 
     }
+    @RequestMapping("/user/update/{userID}")
+    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
 
+        User u  = userService.findUser(userID);
+        request.setAttribute("user",u);
+        ModelAndView model = new ModelAndView("User/updateUser");
+        return model;
 
-    //login
-    @RequestMapping(value = "/user/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute("user") User user) {
-        return "redirect:/";
-           /*
-        int userID = userService.login(user);
-
-        if(userID == -1) {
-            return "failed";
-        } else {
-            return "redirect:/";
-        }   */
     }
+    @RequestMapping(value = "/user/update/updateUser", method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("user")
+                                 User user, BindingResult result) {
 
+        userService.updateUser(user);
+
+        return "redirect:/user/user.html";
+
+    }
 }
