@@ -1,7 +1,7 @@
 package be.kdg.teamf.service;
 
 import be.kdg.teamf.model.User;
-import be.kdg.teamf.model.User;
+
 import java.util.List;
 
 /**
@@ -15,4 +15,5 @@ public interface UserService {
     public void addUser(User u);
     public List<User> listUsers();
 
+    void deleteUser(User user);
 }

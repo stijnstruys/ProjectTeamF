@@ -4,6 +4,7 @@ import be.kdg.teamf.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * to change this template use file | settings | file templates.
  */
 @Repository
+@Transactional
 public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
@@ -24,6 +26,15 @@ public class UserDAOImpl implements UserDAO{
     }
 
     public List<User> listUsers() {
-        return sessionFactory.getCurrentSession().createQuery("from User").list();
+
+        List<User> users;
+        users  =  sessionFactory.getCurrentSession().createQuery("from User").list();
+        return   users;
+    }
+
+    @Override
+    public void deleteUser(User user) {
+
+        sessionFactory.getCurrentSession().delete(user);
     }
 }

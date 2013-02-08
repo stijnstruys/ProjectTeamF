@@ -34,6 +34,7 @@ public class UserController {
         request.setAttribute("user",u);
         request.setAttribute("userList",userService.listUsers());
         ModelAndView model = new ModelAndView("user");
+
         return model;
     }
 	/*@RequestMapping("/")
@@ -48,12 +49,20 @@ public class UserController {
 
 
 	@RequestMapping(value = "/user/add", method = RequestMethod.POST)
-	public String addContact(@ModelAttribute("user")
+	public String addUser(@ModelAttribute("user")
 	User user, BindingResult result) {
 
 		userService.addUser(user);
 
 		return "redirect:/user/user.html";
 	}
+    @RequestMapping(value = "/user/delete", method = RequestMethod.POST)
+    public String deleteUser(@ModelAttribute("user")
+                             User user, BindingResult result) {
+
+        userService.deleteUser(user);
+
+        return "redirect:/user/user.html";
+    }
 
 }
