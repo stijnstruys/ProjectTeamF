@@ -4,6 +4,7 @@ import org.junit.Test;
 import be.kdg.teamf.model.User;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertSame;
 
@@ -15,12 +16,9 @@ import static org.junit.Assert.assertSame;
  * To change this template use File | Settings | File Templates.
  */
 public class TestUserDAO {
-    private UserDAO userDao;
+    private UserDAO userDao = new UserDAOImpl();
     Date datum = new Date(30/12/1988);
 
-    public void setUserDao(UserDAO userDao) {
-        this.userDao = userDao;
-    }
     @Test
     public void testGetUser() throws Exception {
         User u = new User();

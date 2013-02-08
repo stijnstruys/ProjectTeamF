@@ -18,7 +18,7 @@ import static org.springframework.orm.hibernate3.SessionFactoryUtils.getSession;
  * to change this template use file | settings | file templates.
  */
 @Repository
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl extends HibernateDaoSupport implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
 
