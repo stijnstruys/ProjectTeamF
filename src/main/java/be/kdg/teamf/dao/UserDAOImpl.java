@@ -4,9 +4,11 @@ import be.kdg.teamf.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import java.sql.PreparedStatement;
 import java.util.List;
+
+import static org.springframework.orm.hibernate3.SessionFactoryUtils.getSession;
 
 /**
  * created with intellij idea.
@@ -16,7 +18,6 @@ import java.util.List;
  * to change this template use file | settings | file templates.
  */
 @Repository
-@Transactional
 public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
@@ -30,9 +31,13 @@ public class UserDAOImpl implements UserDAO{
 
     }
 
-    @Override
     public void deleteUser(User user) {
 
         sessionFactory.getCurrentSession().delete(user);
+    }
+
+    public User getUser(String userName) {
+        User user = (User) getSession().createQuery("from t_user where username = :username").setString("username",userName) .uniqueResult();
+        return user;
     }
 }
