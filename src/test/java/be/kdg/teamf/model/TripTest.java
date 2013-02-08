@@ -12,7 +12,7 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class TripTest {
-
+     //test
     @Test
     public void testCreateTrip() throws Exception {
         Date startDatum = new Date(7/10/2013);

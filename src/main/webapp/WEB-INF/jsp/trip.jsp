@@ -23,10 +23,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
 </head>
 <body>
@@ -42,24 +42,24 @@
 
                 <table>
                 <tr>
-                    <td><form:label path="tripNaam"><spring:message code="label.tripName"/></form:label></td>
-                    <td><form:input path="tripNaam" /></td>
+                    <td><form:label path="tripName"><spring:message code="label.tripName"/></form:label></td>
+                    <td><form:input path="tripName" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="startDatum"><spring:message code="label.startDate"/></form:label></td>
-                    <td><form:input path="startDatum" /></td>
+                    <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
+                    <td><form:input path="startDate" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="eindDatum"><spring:message code="label.endDate"/></form:label></td>
-                    <td><form:input path="eindDatum" /></td>
+                    <td><form:label path="endDate"><spring:message code="label.endDate"/></form:label></td>
+                    <td><form:input path="endDate" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="organisator"><spring:message code="label.organisor"/></form:label></td>
-                    <td><form:input path="organisator" /></td>
+                    <td><form:label path="organiser"><spring:message code="label.organiser"/></form:label></td>
+                    <td><form:input path="organiser" /></td>
                 </tr>
                 <tr>
-                   <td><form:label path="startLocatie"><spring:message code="label.startLocation"/></form:label></td>
-                   <td><form:input path="startLocatie" /></td>
+                   <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
+                   <td><form:input path="startLocation" /></td>
                </tr>
                 <tr>
                     <td colspan="2">
@@ -79,12 +79,20 @@
             </table>
             </form:form>
         </section>
-        <footer>(c) Jeroen</footer>
     </section>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+            <footer>
+                <div id="footer_info">
+                    &copy; 2013 - Team F - All rights reserved  <span id="footer_extrapadding">||</span>   <a href="#">info@teamf.com</a>  </br>
+                    Bart Leemans - Jeroen Dierckx - Jorne Raeymaekers - Stijn Struys - Jeroen Verheyen -  Jeroen Verbunt
+                </div>
+
+
+            </footer>
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+            <script src="js/vendor/bootstrap.min.js"></script>
+            <script src="js/plugins.js"></script>
+            <script src="js/main.js"></script>
 </body>
 </html>

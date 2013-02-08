@@ -5,9 +5,7 @@ import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -56,13 +54,13 @@ public class UserController {
 
 		return "redirect:/user/user.html";
 	}
-    @RequestMapping(value = "/user/delete", method = RequestMethod.POST)
-    public String deleteUser(@ModelAttribute("user")
-                             User user, BindingResult result) {
 
-        userService.deleteUser(user);
+    @RequestMapping("/user/delete/{userID}")
+    public String deleteUser(@PathVariable("userID") int userID) {
 
+        userService.deleteUser(userService.findUser(userID));
         return "redirect:/user/user.html";
+
     }
 
 }
