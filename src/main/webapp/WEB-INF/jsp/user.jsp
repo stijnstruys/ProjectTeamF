@@ -95,8 +95,8 @@
             <th>&nbsp;</th>
         </tr>
         <c:forEach items="${userList}" var="user">
-            <form:form method="post" action="delete.html" commandName="user" id="user">
-                <input id="userId" name="userId" type="hidden" value="${user.userID}"/>
+
+
                 <tr>
                     <td>${user.firstName}, ${user.lastName} </td>
                     <td>${user.email}</td>
@@ -104,12 +104,12 @@
                     <td>${user.dateOfBirth}</td>
                     <td>${user.street}  ${user.number}</td>
                     <td>${user.zipcode}, ${user.city}</td>
-                    <td >
-                        <input type="submit" value="<spring:message code="button.deleteUser"/>"/>
+                    <td>
+                        <a href="delete/${user.userID}.html">Delete</a>
                     </td>
 
                 </tr>
-            </form:form>
+
         </c:forEach>
     </table>
 </c:if>
