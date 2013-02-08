@@ -42,24 +42,24 @@
 
                 <table>
                 <tr>
-                    <td><form:label path="tripNaam"><spring:message code="label.tripName"/></form:label></td>
-                    <td><form:input path="tripNaam" /></td>
+                    <td><form:label path="tripName"><spring:message code="label.tripName"/></form:label></td>
+                    <td><form:input path="tripName" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="startDatum"><spring:message code="label.startDate"/></form:label></td>
-                    <td><form:input path="startDatum" /></td>
+                    <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
+                    <td><form:input path="startDate" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="eindDatum"><spring:message code="label.endDate"/></form:label></td>
-                    <td><form:input path="eindDatum" /></td>
+                    <td><form:label path="endDate"><spring:message code="label.endDate"/></form:label></td>
+                    <td><form:input path="endDate" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="organisator"><spring:message code="label.organisor"/></form:label></td>
-                    <td><form:input path="organisator" /></td>
+                    <td><form:label path="organiser"><spring:message code="label.organiser"/></form:label></td>
+                    <td><form:input path="organiser" /></td>
                 </tr>
                 <tr>
-                   <td><form:label path="startLocatie"><spring:message code="label.startLocation"/></form:label></td>
-                   <td><form:input path="startLocatie" /></td>
+                   <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
+                   <td><form:input path="startLocation" /></td>
                </tr>
                 <tr>
                     <td colspan="2">
