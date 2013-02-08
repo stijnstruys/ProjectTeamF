@@ -5,10 +5,23 @@
 
 <html>
 <head>
-    <title>Project Team F</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>User</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
 </head>
 <body>
+<section id="container">
+    <jsp:include page="header.jsp"/>
 
+    <section id="content">
 <h2>User registration</h2>
 
 <form:form method="post" action="add.html" commandName="user" id="user">
@@ -100,6 +113,21 @@
         </c:forEach>
     </table>
 </c:if>
+        </section>
+</section>
+<footer>
+    <div id="footer_info">
+        &copy; 2013 - Team F - All rights reserved  <span id="footer_extrapadding">||</span>   <a href="#">info@teamf.com</a>  </br>
+        Bart Leemans - Jeroen Dierckx - Jorne Raeymaekers - Stijn Struys - Jeroen Verheyen -  Jeroen Verbunt
+    </div>
 
+
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
