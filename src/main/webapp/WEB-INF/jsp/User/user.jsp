@@ -19,7 +19,7 @@
 </head>
 <body>
 <section id="container">
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../header.jsp"/>
 
     <section id="content">
 <h2>User registration</h2>
@@ -104,6 +104,9 @@
                     <td>${user.dateOfBirth}</td>
                     <td>${user.street}  ${user.number}</td>
                     <td>${user.zipcode}, ${user.city}</td>
+                    <td>
+                        <a href="update/${user.userID}.html">Update</a>
+                    </td>
                     <td>
                         <a href="delete/${user.userID}.html">Delete</a>
                     </td>
