@@ -19,7 +19,7 @@
 </head>
 <body>
 <section id="container">
-    <jsp:include page="../General/header.jsp"/>
+    <jsp:include page="../header.jsp"/>
 
     <section id="content">
         <h2>Update User</h2>
