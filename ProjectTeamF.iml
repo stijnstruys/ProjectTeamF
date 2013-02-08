@@ -90,6 +90,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:3.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:3.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:3.1.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-test:3.2.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:3.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.1.2.RELEASE" level="project" />
@@ -99,6 +100,7 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.21" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jstl:1.1.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
     <orderEntry type="library" name="Maven: taglibs:standard:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-jpa:1.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons-core:1.1.0.RELEASE" level="project" />
