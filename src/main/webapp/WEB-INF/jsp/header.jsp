@@ -19,7 +19,7 @@
                             </ul>
 
                            <ul class="nav pull-right">
-                            <li class="pull-right"><a href="#">Registreer</a></li>
+                            <li class="pull-right"><a href="/user/user.html">Registreer</a></li>
                               <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aanmelden<b class="caret"></b></a>
 
