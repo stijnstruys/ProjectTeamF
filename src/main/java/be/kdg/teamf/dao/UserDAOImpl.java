@@ -45,6 +45,13 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
+    public User findUser(String userName) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from User where username = :username");
+        q.setString("username",userName);
+        return (User) q.list().get(0);
+    }
+
+    @Override
     public void updateUser(User user) {
 
         sessionFactory.getCurrentSession().update(user);

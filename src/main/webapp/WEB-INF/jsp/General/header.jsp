@@ -25,7 +25,7 @@
 
                                 <ul class="dropdown-menu">
 
-                                  <form id="header_login_form">
+                                  <form id="header_login_form" method="POST" action="/ProjectTeamF-1.0/user/login.html">
                                       <input type="text" class="input" placeholder="Email">
                                       <input type="password" class="input" placeholder="Password">
                                       <label class="checkbox">
