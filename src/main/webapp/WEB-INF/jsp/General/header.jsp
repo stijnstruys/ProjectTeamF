@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <section id="container">
 
     <header>
@@ -25,14 +26,14 @@
 
                                 <ul class="dropdown-menu">
 
-                                  <form id="header_login_form" method="POST" action="/ProjectTeamF-1.0/user/login.html">
-                                      <input type="text" class="input" placeholder="Email">
-                                      <input type="password" class="input" placeholder="Password">
+                                  <form:form id="header_login_form" method="POST" modelAttribute ="user"  action="/ProjectTeamF-1.0/user/login.html">
+                                      <form:input path="username"/>
+                                      <form:input path="password" />
                                       <label class="checkbox">
                                         <input type="checkbox"> Aangemeld blijven
                                       </label>
                                       <button type="submit" class="btn">Aanmelden</button>
-                                  </form>
+                                  </form:form>
                                 </ul>
                               </li>
                             </ul>
