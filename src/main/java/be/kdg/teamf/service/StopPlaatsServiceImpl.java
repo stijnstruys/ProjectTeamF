@@ -37,6 +37,6 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
 
     @Override
     public StopPlaats findStopPlaats(int stopPlaatsID) {
-        return stopPlaatsDAO.findStopPlaats(stopPlaatsID);  //To change body of implemented methods use File | Settings | File Templates.
+        return stopPlaatsDAO.findStopPlaats(stopPlaatsID);
     }
 }

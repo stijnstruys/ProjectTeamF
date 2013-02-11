@@ -1,7 +1,9 @@
 package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.StopPlaats;
+import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.service.StopPlaatsService;
+import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -26,13 +28,17 @@ public class StopPlaatsController
 {
     @Autowired
     private StopPlaatsService stopPlaatsService;
+    @Autowired
+    private TripService tripService;
 
-    @RequestMapping(value = "/StopPlaats/stopPlaats.html",method = RequestMethod.GET)
-    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    @RequestMapping(value = "/StopPlaats/stopPlaats/{tripID}",method = RequestMethod.GET)
+    public ModelAndView stopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
         StopPlaats s  = new StopPlaats();
+        Trip t = tripService.findTrip(tripID);
+
         request.setAttribute("stopPlaats",s);
-        //request.setAttribute("userList",userService.listUsers());
+        request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("StopPlaats/stopPlaats");
 
         return model;
@@ -40,24 +46,25 @@ public class StopPlaatsController
 
 
 
-    @RequestMapping(value = "/StopPlaats/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("stopplaats")
-                          StopPlaats stopPlaats, BindingResult result) {
+    @RequestMapping(value = "/StopPlaats/stopPlaats/add/{tripID}", method = RequestMethod.POST)
+    public String addStopPlaats(@ModelAttribute("stopplaats") StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {
 
-        stopPlaatsService.addStopPlaats(stopPlaats);
-
-        return "redirect:/StopPlaats/stopPlaats.html";
+        //stopPlaatsService.addStopPlaats(stopPlaats);
+        Trip t = tripService.findTrip(tripID);
+        t.getStopPlaatsen().add(stopPlaats);
+        tripService.updateTrip(t);
+        return "redirect:/StopPlaats/stopPlaats/"+ t.getTripId()+".html";
     }
 
     @RequestMapping("/StopPlaats/delete/{stopPlaatsID}")
     public String deleteUser(@PathVariable("stopPlaatsID") int stopPlaatsID) {
 
         stopPlaatsService.deleteStopPlaats(stopPlaatsService.findStopPlaats(stopPlaatsID));
-        return "redirect:/user/user.html";
+        return "redirect:/StopPlaats/stopplaats.html";
 
     }
     @RequestMapping("/StopPlaats/update/{stopPlaatsID}")
-    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID) throws Exception {
+    public ModelAndView updateStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID) throws Exception {
 
         StopPlaats s  = stopPlaatsService.findStopPlaats(stopPlaatsID);
         request.setAttribute("stopPlaats",s);
@@ -66,8 +73,8 @@ public class StopPlaatsController
 
     }
     @RequestMapping(value = "/StopPlaats/update/updateStopPlaats", method = RequestMethod.POST)
-    public String updateUser(@ModelAttribute("stopPlaats")
-                             StopPlaats stopPlaats, BindingResult result) {
+    public String updateStopPlaats(@ModelAttribute("stopPlaats")
+                                   StopPlaats stopPlaats, BindingResult result) {
 
         stopPlaatsService.updateStopPlaats(stopPlaats);
 

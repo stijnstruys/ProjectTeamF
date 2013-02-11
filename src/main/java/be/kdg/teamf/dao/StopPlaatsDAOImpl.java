@@ -22,6 +22,7 @@ public class StopPlaatsDAOImpl implements StopPlaatsDAO {
     private SessionFactory sessionFactory;
 
     @Override
+    @Transactional
     public void addStopPlaats(StopPlaats stopPlaats) {
         sessionFactory.getCurrentSession().save(stopPlaats);
     }

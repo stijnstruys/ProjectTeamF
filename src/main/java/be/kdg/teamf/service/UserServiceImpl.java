@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     public List<User> listUsers() {
-        return userDAO.listUsers();  //To change body of implemented methods use File | Settings | File Templates.
+        return userDAO.listUsers();
     }
 
     @Override

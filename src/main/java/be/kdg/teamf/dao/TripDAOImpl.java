@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Jeroen Verbunt
+ * User: Jeroen
  * Date: 7/02/13
  * Time: 21:30
  * To change this template use File | Settings | File Templates.
@@ -48,4 +48,7 @@ public class TripDAOImpl implements TripDAO{
         q.setInteger("id",id);
         return (Trip) q.list().get(0);
     }
+
+
+
 }

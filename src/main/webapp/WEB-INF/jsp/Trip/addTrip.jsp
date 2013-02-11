@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Jeroen Verbunt
+  User: Jeroen
   Date: 7/02/13
   Time: 21:55
   To change this template use File | Settings | File Templates.
@@ -69,8 +69,50 @@
                         <input type="submit" value="<spring:message code="button.addTrip"/>"/>
                     </td>
                 </tr>
+                <tr>
+                   <td colspan="2">
+                       <input type="submit" value="<spring:message code="button.updateTrip"/>"/>
+                   </td>
+               </tr>
+               <tr>
+                   <td colspan="2">
+                       <input type="submit" value="<spring:message code="button.deleteTrip"/>"/>
+                   </td>
+               </tr>
             </table>
             </form:form>
+<c:if  test="${!empty tripList}">
+                <table class="data">
+                    <tr>
+                        <th>Name</th>
+                        <th>Organiser</th>
+                        <th>Begin</th>
+                        <th>Einde</th>
+                        <th>Start Locatie</th>
+
+                        <th>&nbsp;</th>
+                    </tr>
+                    <c:forEach items="${tripList}" var="trip">
+
+
+                        <tr>
+                            <td>${trip.tripName}</td>
+                            <td>${trip.organiser}</td>
+                            <td>${trip.startDate}</td>
+                            <td>${trip.endDate}</td>
+                            <td>${trip.startLocation}</td>
+
+                            <td>
+                                <a href="tripDetails/${trip.tripId}.html">Details</a>
+                            </td>
+
+
+                        </tr>
+
+                    </c:forEach>
+                </table>
+            </c:if>
+
         </section>
     <jsp:include page="../General/footer.jsp"/>
 

@@ -2,6 +2,9 @@ package be.kdg.teamf.model;
 
 import java.util.Date;
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,6 +41,9 @@ public class Trip {
 
     @Column(name="STARTLOCATION")
     private String startLocation;
+
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    private Collection<StopPlaats> stopPlaatsen;
 
     public int getTripId() {
         return tripId;
@@ -93,5 +99,13 @@ public class Trip {
 
     public void setTripDescription(String tripDescription) {
         this.tripDescription = tripDescription;
+    }
+
+    public Collection<StopPlaats> getStopPlaatsen() {
+        return stopPlaatsen;
+    }
+
+    public void setStopPlaatsen(Collection<StopPlaats> stopPlaatsen) {
+        this.stopPlaatsen = stopPlaatsen;
     }
 }

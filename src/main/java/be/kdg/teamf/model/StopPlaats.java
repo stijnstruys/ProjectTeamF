@@ -1,5 +1,8 @@
 package be.kdg.teamf.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 
 /**
@@ -10,7 +13,7 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name="T_STOPPLATS")
+@Table(name="T_STOPPLAATS")
 public class StopPlaats {
     @Id
     @Column(name="StopPlaatsID")
@@ -20,8 +23,6 @@ public class StopPlaats {
     private String adres;
     @Column(name="Vrijgegeven")
     private boolean vrijgegeven;
-    @ManyToOne
-    private Trip trip;
 
 
     public int getStopPlaatsID() {
@@ -48,11 +49,4 @@ public class StopPlaats {
         this.adres = adres;
     }
 
-    public Trip getTrip() {
-        return trip;
-    }
-
-    public void setTrip(Trip trip) {
-        this.trip = trip;
-    }
 }
