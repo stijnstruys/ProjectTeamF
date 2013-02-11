@@ -26,14 +26,14 @@
 
                                 <ul class="dropdown-menu">
 
-                                  <form:form id="header_login_form" method="POST" modelAttribute ="user"  action="/ProjectTeamF-1.0/user/login.html">
+                                 <%-- <form:form id="header_login_form" method="POST" modelAttribute ="user"  action="/ProjectTeamF-1.0/user/login.html">
                                       <form:input path="username"/>
                                       <form:input path="password" />
                                       <label class="checkbox">
                                         <input type="checkbox"> Aangemeld blijven
                                       </label>
                                       <button type="submit" class="btn">Aanmelden</button>
-                                  </form:form>
+                                  </form:form>--%>
                                 </ul>
                               </li>
                             </ul>
