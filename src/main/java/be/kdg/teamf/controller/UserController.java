@@ -80,4 +80,17 @@ public class UserController {
         return "redirect:/user/user.html";
 
     }
+
+    @RequestMapping(value = "/user/login",method = RequestMethod.GET)
+    public String logIn(@PathVariable("username") String userName,@PathVariable("passWord") String passWord, BindingResult result) {
+
+        User u = userService.findUser(userName);
+        if (u.getPassword() == passWord){
+
+        } else{
+
+        }
+        return "redirect:/General/index.html";
+
+    }
 }

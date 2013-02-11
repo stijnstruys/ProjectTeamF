@@ -33,7 +33,7 @@ public class TripController {
 
             Trip t  = new Trip();
             request.setAttribute("trip",t);
-            ModelAndView model = new ModelAndView("trip");
+            ModelAndView model = new ModelAndView("Trip/trip");
             return model;
         }
 

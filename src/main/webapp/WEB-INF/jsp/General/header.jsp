@@ -1,7 +1,7 @@
 <section id="container">
 
     <header>
-            <img id="header_banner" src="http://static3.depositphotos.com/1000134/108/v/950/depositphotos_1086200-Compass-Rose.jpg" alt="header"/>
+            <img id="header_banner" src="../img/header.png" alt="header"/>
             <div class="navbar navbar-inverse">
                 <div class="navbar-inner">
                     <div class="container">
@@ -10,10 +10,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="#">Team F</a>
+                        <a class="brand" href="/ProjectTeamF-1.0/General/index.html">Team F</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav">
-                                <li class="active"><a href="#">Home</a></li>
+                                <li class="active"><a href="/ProjectTeamF-1.0/General/index.html">Home</a></li>
                                 <li><a href="#about">About</a></li>
                                 <li><a href="/ProjectTeamF-1.0/trip/trip.html">Trip</a></li>
                             </ul>
@@ -25,7 +25,7 @@
 
                                 <ul class="dropdown-menu">
 
-                                  <form id="header_login_form">
+                                  <form id="header_login_form" method="POST" action="/ProjectTeamF-1.0/user/login.html">
                                       <input type="text" class="input" placeholder="Email">
                                       <input type="password" class="input" placeholder="Password">
                                       <label class="checkbox">
