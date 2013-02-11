@@ -18,8 +18,9 @@ public class IndexController  {
     public ModelAndView handleRequestInternal(HttpServletRequest request,
                                                  HttpServletResponse response) throws Exception {
 
-        User u  = new User();
-        request.setAttribute("loginuser",u);
+        User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin);
+
 
         ModelAndView model = new ModelAndView("General/index");
         //be.kdg.teamf.model.addObject("msg", "hello world");

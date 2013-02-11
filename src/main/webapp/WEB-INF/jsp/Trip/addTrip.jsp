@@ -45,6 +45,10 @@
                     <td><form:input path="tripName" /></td>
                 </tr>
                 <tr>
+                    <td><form:label path="tripDescription"><spring:message code="label.tripDescription"/></form:label></td>
+                    <td><form:input path="tripDescription" /></td>
+                </tr>
+                <tr>
                     <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
                     <td><form:input path="startDate" /></td>
                 </tr>

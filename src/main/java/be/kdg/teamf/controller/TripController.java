@@ -1,6 +1,7 @@
 package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,9 @@ public class TripController {
     @RequestMapping(value = "/trip/tripOverzicht.html",method = RequestMethod.GET)
             public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+                User userlogin  = new User();
+                request.setAttribute("loginuser",userlogin);
+
                 Trip t  = new Trip();
                 request.setAttribute("trip",t);
                 request.setAttribute("tripList",tripService.listTrips());
@@ -41,6 +45,8 @@ public class TripController {
         @RequestMapping(value = "/trip/addTrip.html",method = RequestMethod.GET)
                public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+            User userlogin  = new User();
+            request.setAttribute("loginuser",userlogin);
                    Trip t  = new Trip();
                    request.setAttribute("trip",t);
                    ModelAndView model = new ModelAndView("Trip/addTrip");
@@ -50,6 +56,8 @@ public class TripController {
         @RequestMapping("/trip/{tripID}")
             public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
+            User userlogin  = new User();
+            request.setAttribute("loginuser",userlogin);
                 Trip t  = tripService.findTrip(tripID);
                 request.setAttribute("trip",t);
                 ModelAndView model = new ModelAndView("Trip/viewTrip");

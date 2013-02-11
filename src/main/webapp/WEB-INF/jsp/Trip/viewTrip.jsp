@@ -9,7 +9,6 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -48,6 +47,10 @@
                     <td><form:input path="tripName" /></td>
                 </tr>
                 <tr>
+                    <td><form:label path="tripDescription"><spring:message code="label.tripDescription"/></form:label></td>
+                    <td><form:input path="tripDescription" /></td>
+                </tr>
+                <tr>
                     <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
                     <td><form:input path="startDate" /></td>
                 </tr>
@@ -68,7 +71,7 @@
                         <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
                     </td>
                     <td>
-                        <button></button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a></button>
+                        <button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a></button>
                     </td>
                </tr>
 
