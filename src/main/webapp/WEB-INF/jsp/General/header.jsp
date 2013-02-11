@@ -12,7 +12,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="/ProjectTeamF-1.0/General/index.html">Team F</a>
+                        <a class="brand" href="/ProjectTeamF-1.0/general/index.html">Team F</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav">
                                 <li><a href="/ProjectTeamF-1.0/general/index.html">Home</a></li>
