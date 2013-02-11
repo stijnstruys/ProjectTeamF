@@ -8,8 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
-
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -39,17 +37,18 @@ public class TripServiceImpl implements TripService {
         tripDAO.removeTrip(id);
     }
 
-    @Override
     @Transactional
     public List<Trip> listTrips() {
         return tripDAO.listTrips();
-
     }
 
-    @Override
     @Transactional
     public Trip findTrip(int tripID) {
         return tripDAO.findTrip(tripID);
     }
 
+    @Transactional
+    public List<Trip> searchTrips(String searchInput) {
+        return tripDAO.searchTrips(searchInput);
+    }
 }

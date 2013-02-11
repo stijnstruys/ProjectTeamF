@@ -43,6 +43,14 @@ public class TripDAOImpl implements TripDAO{
         return sessionFactory.getCurrentSession().createQuery("from Trip").list();
     }
 
+    @Override
+    public List<Trip> searchTrips(String searchInput) {
+        String si = "%"+searchInput+"%";
+        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripName like :si");
+        q.setString("si", si);
+        return q.list();
+    }
+
     public Trip findTrip(int id) {
         Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripId = :id");
         q.setInteger("id",id);

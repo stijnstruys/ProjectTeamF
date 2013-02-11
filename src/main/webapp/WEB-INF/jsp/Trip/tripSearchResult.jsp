@@ -19,7 +19,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Trip overzicht</title>
+    <title>Trip</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -36,11 +36,9 @@
     <jsp:include page="../General/header.jsp"/>
 
         <section id="content">
-            <h2>Trips overzicht</h2>
+            <h2>Trips search result</h2>
 
-            <button><a href="/ProjectTeamF-1.0/trip/addTrip.html"><spring:message code="label.addTrip"/></a></button>
-
-            <c:if  test="${!empty tripList}">
+            <c:if  test="${!empty tripSearchList}">
                 <table class="data">
                     <tr>
                         <th><spring:message code="label.tripName"/></th>
@@ -51,7 +49,7 @@
                         <th><spring:message code="label.organiser"/></th>
                         <th>&nbsp;</th>
                     </tr>
-                    <c:forEach items="${tripList}" var="trip">
+                    <c:forEach items="${tripSearchList}" var="trip">
                         <tr>
                             <td><a href="${trip.tripId}.html">${trip.tripName}</a></td>
                             <td>${trip.tripDescription}</td>
@@ -65,7 +63,6 @@
             </c:if>
         </section>
     <jsp:include page="../General/footer.jsp"/>
-
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>

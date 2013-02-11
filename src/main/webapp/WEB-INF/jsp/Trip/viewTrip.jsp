@@ -19,7 +19,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Trip</title>
+    <title>View trip</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -36,7 +36,7 @@
     <jsp:include page="../General/header.jsp"/>
 
         <section id="content">
-            <h2>Trip</h2>
+            <h2>View trip</h2>
             <form:form method="post" action="update.html" commandName="trip">
                 <table>
                 <tr>
@@ -69,8 +69,6 @@
                 <tr>
                     <td colspan="2">
                         <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
-                    </td>
-                    <td>
                         <button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a></button>
                     </td>
                </tr>

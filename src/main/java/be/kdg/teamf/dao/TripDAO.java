@@ -17,7 +17,8 @@ public interface TripDAO {
     public void updateTrip(Trip trip);
     public void removeTrip(int id);
     public List<Trip> listTrips();
-    Trip findTrip(int id);
+    public List<Trip> searchTrips(String searchInput);
+    public Trip findTrip(int id);
 
 
 

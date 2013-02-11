@@ -40,8 +40,9 @@
                                 </ul>
                               </li>
                             </ul>
-                            <form class="navbar-search pull-right" action="">
-                            <input type="text" class="search-query span2" placeholder="Search trip">
+                            <form class="navbar-search pull-right" action="../search/${searchInput}.html" method="GET">
+                            <input type="text" class="search-query span2" placeholder="Search trip" name="searchInput">
+
                           </form>
                         </div><!--/.nav-collapse -->
                     </div>
