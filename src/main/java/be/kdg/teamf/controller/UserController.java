@@ -69,6 +69,9 @@ public class UserController {
     @RequestMapping("/user/update/{userID}")
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
 
+        User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin);
+
         User u  = userService.findUser(userID);
         request.setAttribute("user",u);
         ModelAndView model = new ModelAndView("User/updateUser");

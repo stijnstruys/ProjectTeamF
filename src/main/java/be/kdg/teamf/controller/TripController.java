@@ -45,6 +45,8 @@ public class TripController {
         @RequestMapping(value = "/trip/addTrip.html",method = RequestMethod.GET)
                public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+            User userlogin  = new User();
+            request.setAttribute("loginuser",userlogin);
                    Trip t  = new Trip();
                    request.setAttribute("trip",t);
                    ModelAndView model = new ModelAndView("Trip/addTrip");
@@ -54,6 +56,8 @@ public class TripController {
         @RequestMapping("/trip/{tripID}")
             public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
+            User userlogin  = new User();
+            request.setAttribute("loginuser",userlogin);
                 Trip t  = tripService.findTrip(tripID);
                 request.setAttribute("trip",t);
                 ModelAndView model = new ModelAndView("Trip/viewTrip");
