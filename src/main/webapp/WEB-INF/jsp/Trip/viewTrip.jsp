@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Jeroen
+  User: Jeroen Verbunt
   Date: 7/02/13
   Time: 21:55
   To change this template use File | Settings | File Templates.
@@ -33,12 +33,11 @@
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-        <jsp:include page="../General/header.jsp"/>
+        <jsp:include page="../../../../../../../../ProjectTeamF/src/main/webapp/WEB-INF/jsp/General/header.jsp"/>
 
         <section id="content">
             <h2>Trip</h2>
-            <form:form method="post" action="add.html" commandName="trip">
-
+            <form:form method="post" action="tripOverzicht.html" commandName="trip" id="trip">
                 <table>
                 <tr>
                     <td><form:label path="tripName"><spring:message code="label.tripName"/></form:label></td>
@@ -62,23 +61,20 @@
                </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="<spring:message code="button.addTrip"/>"/>
+                        <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
                     </td>
-                </tr>
-                <tr>
-                   <td colspan="2">
-                       <input type="submit" value="<spring:message code="button.updateTrip"/>"/>
-                   </td>
+                    <td>
+                        <a href="update/${trip.tripId}.html">Update</a>
+                    </td>
+                    <td>
+                        <a href="delete/${trip.tripId}.html">Delete</a>
+                    </td>
                </tr>
-               <tr>
-                   <td colspan="2">
-                       <input type="submit" value="<spring:message code="button.deleteTrip"/>"/>
-                   </td>
-               </tr>
+
             </table>
             </form:form>
         </section>
-            <jsp:include page="../General/footer.jsp"/>
+            <jsp:include page="../../../../../../../../ProjectTeamF/src/main/webapp/WEB-INF/jsp/General/footer.jsp"/>
 
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>

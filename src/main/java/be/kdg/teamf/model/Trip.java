@@ -22,10 +22,15 @@ public class Trip {
     @Column(name="TRIPNAME")
     private String tripName;
 
+    @Column(name="TRIPDESCRIPTION")
+    private String tripDescription;
+
     @Column(name="STARTDATE")
+    @Temporal(TemporalType.DATE)
     private Date startDate;
 
     @Column(name="ENDDATE")
+    @Temporal(TemporalType.DATE)
     private Date endDate;
 
     @Column(name="ORGANISER")
@@ -80,5 +85,13 @@ public class Trip {
 
     public void setStartLocation(String startLocation) {
         this.startLocation = startLocation;
+    }
+
+    public String getTripDescription() {
+        return tripDescription;
+    }
+
+    public void setTripDescription(String tripDescription) {
+        this.tripDescription = tripDescription;
     }
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -33,5 +35,15 @@ public class TripServiceImpl implements TripService {
     @Transactional
     public void deleteTrip(int id) {
         tripDAO.removeTrip(id);
+    }
+
+    @Transactional
+    public List<Trip> listTrips() {
+        return tripDAO.listTrips();
+    }
+
+    @Transactional
+    public Trip findTrip(int tripID) {
+        return tripDAO.findTrip(tripID);
     }
 }

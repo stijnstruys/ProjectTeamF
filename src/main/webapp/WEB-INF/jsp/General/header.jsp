@@ -16,7 +16,7 @@
                             <ul class="nav">
                                 <li class="active"><a href="/ProjectTeamF-1.0/General/index.html">Home</a></li>
                                 <li><a href="#about">About</a></li>
-                                <li><a href="/ProjectTeamF-1.0/trip/trip.html">Trip</a></li>
+                                <li><a href="/ProjectTeamF-1.0/trip/tripOverzicht.html">Trip</a></li>
                             </ul>
 
                            <ul class="nav pull-right">
