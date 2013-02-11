@@ -1,3 +1,3 @@
-<% String redirctedURL = "General/index.html";
+<% String redirctedURL = "general/index.html";
     response.sendRedirect(redirctedURL);
 %>

@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <section id="container">
 
     <header>
@@ -13,9 +15,9 @@
                         <a class="brand" href="/ProjectTeamF-1.0/General/index.html">Team F</a>
                         <div class="nav-collapse collapse">
                             <ul class="nav">
-                                <li class="active"><a href="/ProjectTeamF-1.0/General/index.html">Home</a></li>
+                                <li><a href="/ProjectTeamF-1.0/General/index.html">Home</a></li>
                                 <li><a href="#about">About</a></li>
-                                <li><a href="/ProjectTeamF-1.0/trip/trip.html">Trip</a></li>
+                                <li><a href="/ProjectTeamF-1.0/trip/tripOverzicht.html">Trip</a></li>
                             </ul>
 
                            <ul class="nav pull-right">
@@ -25,14 +27,16 @@
 
                                 <ul class="dropdown-menu">
 
-                                  <form id="header_login_form" method="POST" action="/ProjectTeamF-1.0/user/login.html">
-                                      <input type="text" class="input" placeholder="Email">
-                                      <input type="password" class="input" placeholder="Password">
+
+                                  <form:form method="get" action="/ProjectTeamF-1.0/user/login.html" commandName="loginuser" id="header_login_form">
+
+                                      <form:input type="text" path="username" class="input" placeholder="Username" />
+                                      <form:input type="password" path="password" class="input" placeholder="Password" />
                                       <label class="checkbox">
                                         <input type="checkbox"> Aangemeld blijven
                                       </label>
-                                      <button type="submit" class="btn">Aanmelden</button>
-                                  </form>
+                                      <form:button type="submit" class="btn">Aanmelden</form:button>
+                                  </form:form>
                                 </ul>
                               </li>
                             </ul>

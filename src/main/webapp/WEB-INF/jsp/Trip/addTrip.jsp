@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Jeroen
+  User: Jeroen Verbunt
   Date: 7/02/13
   Time: 21:55
   To change this template use File | Settings | File Templates.
@@ -33,7 +33,7 @@
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-        <jsp:include page="../General/header.jsp"/>
+    <jsp:include page="../General/header.jsp"/>
 
         <section id="content">
             <h2>Trip</h2>
@@ -65,20 +65,10 @@
                         <input type="submit" value="<spring:message code="button.addTrip"/>"/>
                     </td>
                 </tr>
-                <tr>
-                   <td colspan="2">
-                       <input type="submit" value="<spring:message code="button.updateTrip"/>"/>
-                   </td>
-               </tr>
-               <tr>
-                   <td colspan="2">
-                       <input type="submit" value="<spring:message code="button.deleteTrip"/>"/>
-                   </td>
-               </tr>
             </table>
             </form:form>
         </section>
-            <jsp:include page="../General/footer.jsp"/>
+    <jsp:include page="../General/footer.jsp"/>
 
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
