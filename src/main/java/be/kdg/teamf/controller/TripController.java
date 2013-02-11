@@ -62,7 +62,7 @@ public class TripController {
 
                         tripService.addTrip(trip);
 
-                        return "redirect:/";
+                        return "redirect:/trip/tripOverzicht.html";
                     }
 
         @RequestMapping(value = "trip/update", method = RequestMethod.POST)
@@ -71,7 +71,7 @@ public class TripController {
 
                     tripService.updateTrip(trip);
 
-                    return "redirect:/";
+                    return "redirect:/trip/tripOverzicht.html";
                 }
 
          //f

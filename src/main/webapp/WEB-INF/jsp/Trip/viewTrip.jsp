@@ -9,6 +9,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -33,12 +34,15 @@
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-        <jsp:include page="../../../../../../../../ProjectTeamF/src/main/webapp/WEB-INF/jsp/General/header.jsp"/>
+    <jsp:include page="../General/header.jsp"/>
 
         <section id="content">
             <h2>Trip</h2>
-            <form:form method="post" action="tripOverzicht.html" commandName="trip" id="trip">
+            <form:form method="post" action="update.html" commandName="trip">
                 <table>
+                <tr>
+                    <td><form:hidden path="tripId" /></td>
+                </tr>
                 <tr>
                     <td><form:label path="tripName"><spring:message code="label.tripName"/></form:label></td>
                     <td><form:input path="tripName" /></td>
@@ -64,17 +68,14 @@
                         <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
                     </td>
                     <td>
-                        <a href="update/${trip.tripId}.html">Update</a>
-                    </td>
-                    <td>
-                        <a href="delete/${trip.tripId}.html">Delete</a>
+                        <button></button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a></button>
                     </td>
                </tr>
 
             </table>
             </form:form>
         </section>
-            <jsp:include page="../../../../../../../../ProjectTeamF/src/main/webapp/WEB-INF/jsp/General/footer.jsp"/>
+    <jsp:include page="../General/footer.jsp"/>
 
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
