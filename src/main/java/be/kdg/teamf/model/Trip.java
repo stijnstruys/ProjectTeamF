@@ -17,7 +17,7 @@ public class Trip {
     @Id
     @Column(name="TripID")
     @GeneratedValue
-    private Integer tripId;
+    private int tripId;
 
     @Column(name="TRIPNAME")
     private String tripName;
@@ -34,11 +34,11 @@ public class Trip {
     @Column(name="STARTLOCATION")
     private String startLocation;
 
-    public Integer getTripId() {
+    public int getTripId() {
         return tripId;
     }
 
-    public void setTripId(Integer tripId) {
+    public void setTripId(int tripId) {
         this.tripId = tripId;
     }
 

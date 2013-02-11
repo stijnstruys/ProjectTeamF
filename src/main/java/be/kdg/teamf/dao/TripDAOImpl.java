@@ -19,6 +19,7 @@ public class TripDAOImpl implements TripDAO{
     @Autowired
     private SessionFactory sessionFactory;
 
+
     public void addTrip(Trip trip) {
         sessionFactory.getCurrentSession().save(trip);
     }
