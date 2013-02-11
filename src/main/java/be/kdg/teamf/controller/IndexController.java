@@ -11,12 +11,13 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 @Controller
-@RequestMapping("General/index.html")
+@RequestMapping("general/index.html")
 public class IndexController  {
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView handleRequestInternal(HttpServletRequest request,
                                                  HttpServletResponse response) throws Exception {
+
 
         ModelAndView model = new ModelAndView("General/index");
         //be.kdg.teamf.model.addObject("msg", "hello world");
