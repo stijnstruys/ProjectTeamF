@@ -84,7 +84,12 @@ public class UserController {
     @RequestMapping(value = "/user/login",method = RequestMethod.GET)
     public String logIn(@ModelAttribute("loginuser") User user, BindingResult result) {
 
-        System.out.println("test");
-        return "redirect:/general/index.html";
+       User loginUser = userService.findUser(user.getUsername()) ;
+         if (loginUser.getPassword().equals( user.getPassword())) {
+                 return "redirect:/bla/bla.html";
+         }   else {
+             return "redirect:/general/index.html";
+         }
+
     }
 }
