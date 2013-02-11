@@ -1,12 +1,10 @@
 package be.kdg.teamf.service;
 
+import be.kdg.teamf.dao.TripDAO;
 import be.kdg.teamf.model.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import be.kdg.teamf.dao.TripDAO;
-import be.kdg.teamf.model.Trip;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,7 +31,7 @@ public class TripServiceImpl implements TripService {
     }
 
     @Transactional
-    public void removeTrip(int id) {
+    public void deleteTrip(int id) {
         tripDAO.removeTrip(id);
     }
 }

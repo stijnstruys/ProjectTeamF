@@ -59,7 +59,7 @@ public class TripController {
         public String deleteTrip(@PathVariable("tripId")
         Integer tripId) {
 
-            tripService.removeTrip(tripId);
+            tripService.deleteTrip(tripId);
 
             return "redirect:/";
         }

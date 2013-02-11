@@ -1,5 +1,7 @@
 package be.kdg.teamf.model;
 
+import javax.persistence.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jorne
@@ -7,11 +9,26 @@ package be.kdg.teamf.model;
  * Time: 11:59
  * To change this template use File | Settings | File Templates.
  */
+@Entity
+@Table(name="T_STOPPLATS")
 public class StopPlaats {
-
+    @Id
+    @Column(name="StopPlaatsID")
+    @GeneratedValue
+    private  int stopPlaatsID;
+    @Column(name="Adres")
     private String adres;
+    @Column(name="Vrijgegeven")
     private boolean vrijgegeven;
 
+
+    public int getStopPlaatsID() {
+        return stopPlaatsID;
+    }
+
+    public void setStopPlaatsID(int stopPlaatsID) {
+        this.stopPlaatsID = stopPlaatsID;
+    }
 
     public boolean isVrijgegeven() {
         return vrijgegeven;

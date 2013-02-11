@@ -13,5 +13,5 @@ public interface TripService {
 
    public void addTrip(Trip trip);
    public void updateTrip(Trip trip);
-   public void removeTrip(int id);
+   public void deleteTrip(int id);
 }

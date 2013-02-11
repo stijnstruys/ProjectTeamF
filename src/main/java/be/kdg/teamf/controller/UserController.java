@@ -25,6 +25,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+	/*@RequestMapping("/")
+	public String listContacts(Map<String, Object> map) {
+
+		map.put("user", new User());
+		map.put("userList", userService.listUsers());
+
+		return "user";
+    }  */
     @RequestMapping(value = "/user/user.html",method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -35,14 +43,6 @@ public class UserController {
 
         return model;
     }
-	/*@RequestMapping("/")
-	public String listContacts(Map<String, Object> map) {
-
-		map.put("user", new User());
-		map.put("userList", userService.listUsers());
-
-		return "user";
-    }  */
 
 
 
