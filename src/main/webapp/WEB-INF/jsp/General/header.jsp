@@ -1,7 +1,7 @@
 <section id="container">
 
     <header>
-            <img id="header_banner" src="http://static3.depositphotos.com/1000134/108/v/950/depositphotos_1086200-Compass-Rose.jpg" alt="header"/>
+            <img id="header_banner" src="../img/header.png" alt="header"/>
             <div class="navbar navbar-inverse">
                 <div class="navbar-inner">
                     <div class="container">
