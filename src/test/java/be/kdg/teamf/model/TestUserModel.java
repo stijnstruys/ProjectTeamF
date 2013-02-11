@@ -12,32 +12,10 @@ import static junit.framework.Assert.assertTrue;
 
 
 @ContextConfiguration(locations = {"classpath:spring-servlet.xml"})
-public class TestUsers extends AbstractTransactionalJUnit4SpringContextTests {
-    @Autowired
-    protected UserDAO user;
-    @Autowired
-    protected UserService userService;
-   /*
-    @Test
-    public void sampleTest() {
-        System.out.println("Number of rows is: " + userService.listUsers().size());
-        System.out.println("Creating a new user");
-        User u = new User();
-        u.setUserID(1);
-        u.setEmail("bart@hotmail.com");
-        u.setLastName("Leemans");
-        u.setFirstName("Bart");
-        u.setTelephone("00306985587996");
-        System.out.println("Before saving contact");
-        // Lukt nog niet
-        userService.addUser(u);
-        System.out.println("After saving user. Id if contact is: " + u.getUserID());
-        System.out.println("Number of rows now is: " + user.listUsers().size());
-    }
-     */
+public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Test
-    public void createUser1() {
+    public void createUser() {
         User u = new User();
 
         u.setUserID(1);
@@ -68,22 +46,6 @@ public class TestUsers extends AbstractTransactionalJUnit4SpringContextTests {
         assertEquals("Expected city: city", "city", u.getCity());
     }
 
-    @Test
-    public void createUser2() {
-        User u = new User("city", "zip", "number", "street", "dob", "lastname", "firstname", "tel", "email", "pwd", "username");
-
-        assertEquals("Expected username: username", "username", u.getUsername());
-        assertEquals("Expected password: pwd", "pwd", u.getPassword());
-        assertEquals("Expected email: email", "email", u.getEmail());
-        assertEquals("Expected firstname: firstname", "firstname", u.getFirstName());
-        assertEquals("Expected firstname: tel", "tel", u.getTelephone());
-        assertEquals("Expected lastname: lastname", "lastname", u.getLastName());
-        assertEquals("Expected dateofbirth: dob", "dob", u.getDateOfBirth());
-        assertEquals("Expected street: street", "street", u.getStreet());
-        assertEquals("Expected number: number", "number", u.getNumber());
-        assertEquals("Expected zipcode: zip", "zip", u.getZipcode());
-        assertEquals("Expected city: city", "city", u.getCity());
-    }
 
     @Test
     public void checkEqualsNotSameUser() {

@@ -19,7 +19,7 @@ import static junit.framework.Assert.assertEquals;
  */
 
 @ContextConfiguration(locations = {"classpath:spring-servlet.xml"})
-public class TestTrip {
+public class TestTripModel {
      @Autowired
      protected TripDAO tripDAO;
 
