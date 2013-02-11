@@ -21,6 +21,7 @@ public class IndexController  {
         User userlogin  = new User();
         request.setAttribute("loginuser",userlogin);
 
+
         ModelAndView model = new ModelAndView("General/index");
         //be.kdg.teamf.model.addObject("msg", "hello world");
 

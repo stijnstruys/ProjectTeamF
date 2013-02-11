@@ -39,6 +39,7 @@ public class UserController {
         User userlogin  = new User();
         request.setAttribute("loginuser",userlogin);
 
+
         User u  = new User();
         request.setAttribute("user",u);
         request.setAttribute("userList",userService.listUsers());
