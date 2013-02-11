@@ -44,6 +44,7 @@
                 <table class="data">
                     <tr>
                         <th><spring:message code="label.tripName"/></th>
+                        <th><spring:message code="label.tripDescription"/></th>
                         <th><spring:message code="label.startDate"/></th>
                         <th><spring:message code="label.endDate"/></th>
                         <th><spring:message code="label.startLocation"/></th>
@@ -53,7 +54,7 @@
                     <c:forEach items="${tripList}" var="trip">
                         <tr>
                             <td><a href="${trip.tripId}.html">${trip.tripName}</a></td>
-                            <td>${trip.tripName}, ${trip.tripDescription}</td>
+                            <td>${trip.tripDescription}</td>
                             <td>${trip.startDate}</td>
                             <td>${trip.endDate}</td>
                             <td>${trip.startLocation}</td>
