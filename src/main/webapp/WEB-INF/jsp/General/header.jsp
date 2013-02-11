@@ -16,7 +16,7 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav">
                                 <li><a href="/ProjectTeamF-1.0/general/index.html">Home</a></li>
-                                <li><a href="#about">About</a></li>
+                                <li><a href="/ProjectTeamF-1.0/general/about.html">About</a></li>
                                 <li><a href="/ProjectTeamF-1.0/trip/tripOverzicht.html">Trip</a></li>
                             </ul>
 
