@@ -1,6 +1,7 @@
 package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,9 @@ public class TripController {
 
     @RequestMapping(value = "/trip/tripOverzicht.html",method = RequestMethod.GET)
             public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+                User userlogin  = new User();
+                request.setAttribute("loginuser",userlogin);
 
                 Trip t  = new Trip();
                 request.setAttribute("trip",t);
