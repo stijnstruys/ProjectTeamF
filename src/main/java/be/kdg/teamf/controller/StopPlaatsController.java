@@ -27,7 +27,7 @@ public class StopPlaatsController
     @Autowired
     private StopPlaatsService stopPlaatsService;
 
-    @RequestMapping(value = "/user/user.html",method = RequestMethod.GET)
+    @RequestMapping(value = "/StopPlaats/stopPlaats.html",method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         StopPlaats s  = new StopPlaats();
@@ -49,7 +49,7 @@ public class StopPlaatsController
         return "redirect:/StopPlaats/stopPlaats.html";
     }
 
-    @RequestMapping("/user/delete/{stopPlaatsID}")
+    @RequestMapping("/StopPlaats/delete/{stopPlaatsID}")
     public String deleteUser(@PathVariable("stopPlaatsID") int stopPlaatsID) {
 
         stopPlaatsService.deleteStopPlaats(stopPlaatsService.findStopPlaats(stopPlaatsID));

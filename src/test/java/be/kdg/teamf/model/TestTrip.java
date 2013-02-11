@@ -10,19 +10,11 @@ import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Jerre
- * Date: 8/02/13
- * Time: 20:20
- * To change this template use File | Settings | File Templates.
- */
 
 @ContextConfiguration(locations = {"classpath:spring-servlet.xml"})
-public class TestTrip {
-     @Autowired
-     protected TripDAO tripDAO;
-
+public class TestTrip  {
+    @Autowired
+    protected TripDAO tripDAO;
     @Autowired
     protected TripService tripService;
 

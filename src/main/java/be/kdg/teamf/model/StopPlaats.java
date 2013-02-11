@@ -20,6 +20,8 @@ public class StopPlaats {
     private String adres;
     @Column(name="Vrijgegeven")
     private boolean vrijgegeven;
+    @ManyToOne
+    private Trip trip;
 
 
     public int getStopPlaatsID() {
@@ -44,5 +46,13 @@ public class StopPlaats {
 
     public void setAdres(String adres) {
         this.adres = adres;
+    }
+
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
     }
 }

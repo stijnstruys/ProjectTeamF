@@ -121,7 +121,8 @@
                     <include>*.xml</include>
                     <include>*.properties</include>
                 </includes>
-            </testResource> </testResources>
+            </testResource>
+         </testResources>
         <plugins>
 
             <!-- Nodig om met versie 1.7 te kunnen compileren -->

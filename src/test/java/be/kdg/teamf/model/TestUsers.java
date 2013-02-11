@@ -10,14 +10,14 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
-
+//@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-servlet.xml"})
 public class TestUsers extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     protected UserDAO user;
     @Autowired
     protected UserService userService;
-   /*
+
     @Test
     public void sampleTest() {
         System.out.println("Number of rows is: " + userService.listUsers().size());
@@ -34,7 +34,7 @@ public class TestUsers extends AbstractTransactionalJUnit4SpringContextTests {
         System.out.println("After saving user. Id if contact is: " + u.getUserID());
         System.out.println("Number of rows now is: " + user.listUsers().size());
     }
-     */
+
 
     @Test
     public void createUser1() {
@@ -98,7 +98,7 @@ public class TestUsers extends AbstractTransactionalJUnit4SpringContextTests {
    @Test
     public void checkEqualsSameUser() {
        User u1 = new User();
-       User u2 = new User();
+       User u2;
 
        u1.setUsername("jef");
        u2 = u1;
