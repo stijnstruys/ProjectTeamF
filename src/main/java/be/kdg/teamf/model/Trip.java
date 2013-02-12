@@ -45,7 +45,8 @@ public class Trip {
     @Column(name="STARTLOCATION")
     private String startLocation;
 
-    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+
+    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
     private Collection<StopPlaats> stopPlaatsen;
 
     public int getTripId() {

@@ -71,10 +71,35 @@
                         <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
                         <button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a></button>
                     </td>
-               </tr>
+                </tr>
 
             </table>
             </form:form>
+            <c:if  test="${!empty trip.stopPlaatsen}">
+                <table class="data">
+                    <tr>
+                        <th>Adres</th>
+                        <th>Vrijgegeven</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
+                        <tr>
+                            <td>${stopPlaats.adres} </td>
+                            <td>${stopPlaats.vrijgegeven} </td>
+                            <td>
+                                <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html">Update</a>
+                            </td>
+                            <td>
+                                <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html">Delete</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </c:if>
+            <form action ="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
+
+                <input type="submit" value="Add new Stop Place"/>
+            </form>
         </section>
     <jsp:include page="../General/footer.jsp"/>
 

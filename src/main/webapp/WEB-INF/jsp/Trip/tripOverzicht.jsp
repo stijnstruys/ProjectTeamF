@@ -59,6 +59,7 @@
                             <td>${trip.endDate}</td>
                             <td>${trip.startLocation}</td>
                             <td>${trip.organiser}</td>
+
                         </tr>
                     </c:forEach>
                 </table>

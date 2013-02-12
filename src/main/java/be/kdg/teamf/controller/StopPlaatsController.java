@@ -31,7 +31,7 @@ public class StopPlaatsController
     @Autowired
     private TripService tripService;
 
-    @RequestMapping(value = "/StopPlaats/stopPlaats/{tripID}",method = RequestMethod.GET)
+    @RequestMapping(value = "/StopPlaats/{tripID}",method = RequestMethod.GET)
     public ModelAndView stopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
         StopPlaats s  = new StopPlaats();
@@ -46,7 +46,7 @@ public class StopPlaatsController
 
 
 
-    @RequestMapping(value = "/StopPlaats/stopPlaats/add/{tripID}", method = RequestMethod.POST)
+    @RequestMapping(value = "/StopPlaats/add/{tripID}", method = RequestMethod.POST)
     public String addStopPlaats(@ModelAttribute("stopplaats") StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {
 
         //stopPlaatsService.addStopPlaats(stopPlaats);

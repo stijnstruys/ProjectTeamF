@@ -25,6 +25,7 @@ public class StopPlaats {
     private boolean vrijgegeven;
 
 
+
     public int getStopPlaatsID() {
         return stopPlaatsID;
     }
