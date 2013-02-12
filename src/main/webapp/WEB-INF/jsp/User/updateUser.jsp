@@ -82,6 +82,7 @@
             </tr>
         </table>
         </form:form>
+        </section>
         <jsp:include page="../General/footer.jsp"/>
 
 

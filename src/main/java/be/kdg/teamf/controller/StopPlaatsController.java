@@ -42,6 +42,7 @@ public class StopPlaatsController
         Trip t = tripService.findTrip(tripID);
 
         request.setAttribute("stopPlaats",s);
+
         request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("StopPlaats/stopPlaats");
 
@@ -76,17 +77,19 @@ public class StopPlaatsController
 
         StopPlaats s  = stopPlaatsService.findStopPlaats(stopPlaatsID);
         request.setAttribute("stopPlaats",s);
+        request.setAttribute("tripID",s.getTrip().getTripId());
         ModelAndView model = new ModelAndView("StopPlaats/updateStopPlaats");
         return model;
 
     }
-    @RequestMapping(value = "/StopPlaats/update/updateStopPlaats", method = RequestMethod.POST)
+    @RequestMapping(value = "/StopPlaats/update/updateStopPlaats/{tripID}", method = RequestMethod.POST)
     public String updateStopPlaats(@ModelAttribute("stopPlaats")
-                                   StopPlaats stopPlaats, BindingResult result) {
+                                       StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {
 
+        stopPlaats.setTrip(tripService.findTrip(tripID));
         stopPlaatsService.updateStopPlaats(stopPlaats);
 
-        return "redirect:/StopPlaats/stopPlaats.html";
+        return "redirect:/trip/"+stopPlaats.getTrip().getTripId()+".html";
 
     }
 

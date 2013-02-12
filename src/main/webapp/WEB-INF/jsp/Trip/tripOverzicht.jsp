@@ -38,7 +38,7 @@
         <section id="content">
             <h2>Trips overzicht</h2>
 
-            <button><a href="/ProjectTeamF-1.0/trip/addTrip.html"><spring:message code="label.addTrip"/></a></button>
+            <a href="/ProjectTeamF-1.0/trip/addTrip.html"><spring:message code="label.addTrip"/></a>
 
             <c:if  test="${!empty tripList}">
                 <table class="data">
