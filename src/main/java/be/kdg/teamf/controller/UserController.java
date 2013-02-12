@@ -93,8 +93,9 @@ public class UserController {
 
        User loginUser = userService.findUser(user.getUsername()) ;
          if (loginUser.getPassword().equals( user.getPassword())) {
-                 return "redirect:/bla/bla.html";
+                 return "redirect:/general/index.html";
          }   else {
+             //wrong pasword page maken
              return "redirect:/general/index.html";
          }
 

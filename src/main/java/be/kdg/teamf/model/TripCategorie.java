@@ -14,12 +14,15 @@ import javax.persistence.*;
 @Table(name="T_TRIPCATEGORIE")
 public class TripCategorie {
     @Id
-    @Column(name="TripCategorieID")
+    @Column(name="TRIPCATEGORIEID")
     @GeneratedValue
     private int tripCategorieId;
 
-    @Column(name="TRIPNAME")
+    @Column(name="TRIPCATEGORIENAME")
     private String tripCategorieName;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Trip trip;
 
     public int getTripCategorieId() {
         return tripCategorieId;
@@ -35,5 +38,13 @@ public class TripCategorie {
 
     public void setTripCategorieName(String tripCategorieName) {
         this.tripCategorieName = tripCategorieName;
+    }
+
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
     }
 }
