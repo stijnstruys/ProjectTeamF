@@ -39,7 +39,6 @@ public class UserController {
         User userlogin  = new User();
         request.setAttribute("loginuser",userlogin);
 
-
         User u  = new User();
         request.setAttribute("user",u);
         request.setAttribute("userList",userService.listUsers());
@@ -47,8 +46,6 @@ public class UserController {
 
         return model;
     }
-
-
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user")
@@ -85,7 +82,6 @@ public class UserController {
         userService.updateUser(user);
 
         return "redirect:/user/user.html";
-
     }
 
     @RequestMapping(value = "/user/login",method = RequestMethod.GET)

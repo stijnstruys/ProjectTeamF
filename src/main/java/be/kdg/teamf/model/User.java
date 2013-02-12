@@ -2,6 +2,7 @@ package be.kdg.teamf.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,7 +29,8 @@ public class User implements Serializable {
     @Column(name="lastname")
     private String lastName;
     @Column(name="dateOfBirth")
-    private String dateOfBirth;
+    @Temporal(TemporalType.DATE)
+    private Date dateOfBirth;
     @Column(name="street")
     private String street;
     @Column(name="number")
@@ -40,7 +42,7 @@ public class User implements Serializable {
 
     public User(){}
 
-    public User(String city, String zipcode, String number, String street, String dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username) {
+    public User(String city, String zipcode, String number, String street, Date dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username) {
         this.city = city;
         this.zipcode = zipcode;
         this.number = number;
@@ -82,7 +84,7 @@ public class User implements Serializable {
         return lastName;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -130,7 +132,7 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

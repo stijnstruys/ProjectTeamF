@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
+    <link href="../css/dot-luv/jquery-ui-1.10.0.custom.css" rel="stylesheet">
 </head>
 <body>
     <jsp:include page="../General/header.jsp"/>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td><form:label path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label></td>
-            <td><form:input path="dateOfBirth" /></td>
+            <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth" /></td>
         </tr>
         <tr>
             <td><form:label path="email"><spring:message code="label.email"/></form:label></td>
@@ -135,8 +135,9 @@
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../../js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
 <script src="../js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/main.js"></script>

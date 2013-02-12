@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
+import java.util.Date;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
@@ -17,7 +19,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
     @Test
     public void createUser() {
         User u = new User();
-
+        Date geboorteDatum = new Date();
         u.setUserID(1);
         u.setUsername("username");
         u.setPassword("password");
@@ -26,7 +28,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         u.setTelephone("telephone");
         u.setFirstName("firstname");
         u.setLastName("lastname");
-        u.setDateOfBirth("dateofbirth");
+        u.setDateOfBirth(geboorteDatum);
         u.setStreet("street");
         u.setNumber("number");
         u.setZipcode("zipcode");
@@ -39,7 +41,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         assertEquals("Expected firstname: firstname", "firstname", u.getFirstName());
         assertEquals("Expected firstname: telephone", "telephone", u.getTelephone());
         assertEquals("Expected lastname: lastname", "lastname", u.getLastName());
-        assertEquals("Expected dateofbirth: dateofbirth", "dateofbirth", u.getDateOfBirth());
+        assertEquals("Expected dateofbirth: dateofbirth", geboorteDatum, u.getDateOfBirth());
         assertEquals("Expected street: street", "street", u.getStreet());
         assertEquals("Expected number: number", "number", u.getNumber());
         assertEquals("Expected zipcode: zipcode", "zipcode", u.getZipcode());
