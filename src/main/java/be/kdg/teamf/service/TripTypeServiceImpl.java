@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -33,6 +35,11 @@ public class TripTypeServiceImpl implements TripTypeService {
     @Override
     public void removeTripType(int id) {
         tripTypeDAO.removeTripType(id);
+    }
+
+    @Override
+    public List<TripType> listTripTypes() {
+        return tripTypeDAO.listTripTypes();
     }
 
 }

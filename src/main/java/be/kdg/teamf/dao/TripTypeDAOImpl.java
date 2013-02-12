@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -36,5 +38,10 @@ public class TripTypeDAOImpl implements TripTypeDAO {
         {
             sessionFactory.getCurrentSession().delete(tripType);
         }
+    }
+
+    @Override
+    public List<TripType> listTripTypes() {
+        return sessionFactory.getCurrentSession().createQuery("from TripType").list();
     }
 }
