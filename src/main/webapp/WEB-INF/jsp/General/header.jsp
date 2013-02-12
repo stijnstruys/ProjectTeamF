@@ -40,7 +40,7 @@
                                 </ul>
                               </li>
                             </ul>
-                            <form class="navbar-search pull-right" action="../search/${searchInput}.html" method="GET">
+                            <form class="navbar-search pull-right" action="../search/tripSearchResult.html" method="GET">
                             <input type="text" class="search-query span2" placeholder="Search trip" name="searchInput">
 
                           </form>

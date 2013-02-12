@@ -6,10 +6,7 @@ import be.kdg.teamf.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -42,8 +39,8 @@ public class TripController {
                 return model;
             }
 
-    @RequestMapping(value = "/search/{searchInput}",method = RequestMethod.GET)
-            public ModelAndView tripSearchResult(HttpServletRequest request, HttpServletResponse response, @PathVariable("searchInput") String searchInput) throws Exception {
+    @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"},method = RequestMethod.GET)
+            public ModelAndView tripSearchResult(HttpServletRequest request, HttpServletResponse response, @RequestParam("searchInput") String searchInput) throws Exception {
 
             User userlogin  = new User();
             request.setAttribute("loginuser",userlogin);
