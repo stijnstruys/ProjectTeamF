@@ -19,4 +19,5 @@ public interface TripService {
    public List<Trip> listTrips();
    public Trip findTrip(int tripID);
    public List<Trip> searchTrips(String searchInput);
+   public List<String> getTripNames();
 }

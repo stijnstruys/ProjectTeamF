@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,6 +39,16 @@ public class TripController {
                 ModelAndView model = new ModelAndView("Trip/tripOverzicht");
                 return model;
             }
+
+
+   /* @RequestMapping(value = "/trip/tripNames", method = RequestMethod.GET)
+                    public List<String> tripNames(@ModelAttribute("trip")
+                      Trip trip, BindingResult result) {
+
+                        List<String> tripN = tripService.getTripNames();
+
+                        return tripN;
+                    }      */
 
     @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"},method = RequestMethod.GET)
             public ModelAndView tripSearchResult(HttpServletRequest request, HttpServletResponse response, @RequestParam("searchInput") String searchInput) throws Exception {

@@ -51,4 +51,9 @@ public class TripServiceImpl implements TripService {
     public List<Trip> searchTrips(String searchInput) {
         return tripDAO.searchTrips(searchInput);
     }
+
+    @Override
+    public List<String> getTripNames() {
+        return tripDAO.getTripNames();
+    }
 }

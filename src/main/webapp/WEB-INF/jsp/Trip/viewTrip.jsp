@@ -103,12 +103,12 @@
         </section>
     <jsp:include page="../General/footer.jsp"/>
 
-
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-            <script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.js"></script>
-            <script src="../js/vendor/bootstrap.min.js"></script>
-            <script src="../js/plugins.js"></script>
-            <script src="../js/main.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script type="text/javascript" src="../js/jquery-ui-1.10.0.custom.js"></script>
+    <script src="../js/jquery-ui-1.10.0.custom.js"></script>
+    <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
