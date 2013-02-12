@@ -69,6 +69,7 @@
                    <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
                    <td><form:input path="startLocation" /></td>
                </tr>
+
                 <tr>
                     <td colspan="2">
                         <input type="submit" value="<spring:message code="button.addTrip"/>"/>
