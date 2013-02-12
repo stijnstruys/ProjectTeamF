@@ -22,14 +22,17 @@ public class Trip {
     @GeneratedValue
     private int tripId;
 
+    @Column(name="TRIPTYPE")
+    private String tripType;
+
     @Column(name="TRIPNAME")
     private String tripName;
 
     @Column(name="TRIPDESCRIPTION")
     private String tripDescription;
 
-    @Column(name="STARTDATE")
     @Temporal(TemporalType.DATE)
+    @Column(name="STARTDATE")
     private Date startDate;
 
     @Column(name="ENDDATE")
@@ -107,5 +110,13 @@ public class Trip {
 
     public void setStopPlaatsen(Collection<StopPlaats> stopPlaatsen) {
         this.stopPlaatsen = stopPlaatsen;
+    }
+
+    public String getTripType() {
+        return tripType;
+    }
+
+    public void setTripType(String tripType) {
+        this.tripType = tripType;
     }
 }

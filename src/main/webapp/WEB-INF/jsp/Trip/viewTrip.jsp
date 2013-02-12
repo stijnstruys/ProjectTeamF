@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
+    <link href="../css/dot-luv/jquery-ui-1.10.0.custom.css" rel="stylesheet">
 </head>
 <body>
     <!--[if lt IE 7]>
@@ -52,11 +52,11 @@
                 </tr>
                 <tr>
                     <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
-                    <td><form:input path="startDate" /></td>
+                    <td><form:input  class="datepicker" readonly="true" style="cursor: text;" path="startDate" /></td>
                 </tr>
                 <tr>
                     <td><form:label path="endDate"><spring:message code="label.endDate"/></form:label></td>
-                    <td><form:input path="endDate" /></td>
+                    <td><form:input  class="datepicker" readonly="true" style="cursor: text;" path="endDate" /></td>
                 </tr>
                 <tr>
                     <td><form:label path="organiser"><spring:message code="label.organiser"/></form:label></td>
@@ -81,6 +81,7 @@
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+            <script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.js"></script>
             <script src="../js/vendor/bootstrap.min.js"></script>
             <script src="../js/plugins.js"></script>
             <script src="../js/main.js"></script>
