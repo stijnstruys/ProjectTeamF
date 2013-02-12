@@ -2,6 +2,7 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.StopPlaats;
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.StopPlaatsService;
 import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,9 @@ public class StopPlaatsController
     @RequestMapping(value = "/StopPlaats/{tripID}",method = RequestMethod.GET)
     public ModelAndView stopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
+        User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin);
+
         StopPlaats s  = new StopPlaats();
         Trip t = tripService.findTrip(tripID);
 
@@ -51,20 +55,24 @@ public class StopPlaatsController
 
         //stopPlaatsService.addStopPlaats(stopPlaats);
         Trip t = tripService.findTrip(tripID);
+        stopPlaats.setTrip(t);
         t.getStopPlaatsen().add(stopPlaats);
         tripService.updateTrip(t);
-        return "redirect:/StopPlaats/stopPlaats/"+ t.getTripId()+".html";
+        return "redirect:/trip/"+ t.getTripId()+".html";
     }
 
     @RequestMapping("/StopPlaats/delete/{stopPlaatsID}")
     public String deleteUser(@PathVariable("stopPlaatsID") int stopPlaatsID) {
-
-        stopPlaatsService.deleteStopPlaats(stopPlaatsService.findStopPlaats(stopPlaatsID));
-        return "redirect:/StopPlaats/stopplaats.html";
+        StopPlaats s =  stopPlaatsService.findStopPlaats(stopPlaatsID);
+        stopPlaatsService.deleteStopPlaats(s);
+        return "redirect:/trip/"+s.getTrip().getTripId()+".html";
 
     }
     @RequestMapping("/StopPlaats/update/{stopPlaatsID}")
     public ModelAndView updateStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID) throws Exception {
+
+        User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin);
 
         StopPlaats s  = stopPlaatsService.findStopPlaats(stopPlaatsID);
         request.setAttribute("stopPlaats",s);

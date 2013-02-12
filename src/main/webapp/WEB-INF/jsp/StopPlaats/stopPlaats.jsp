@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <link href="../css/dot-luv/jquery-ui-1.10.0.custom.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,18 +34,26 @@
     <h2>Stopplaats Toevoegen</h2>
     <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="stopPlaats">
 
-    <table>
-        <tr>
-            <td><form:label path="adres"><spring:message code="label.adres"/></form:label></td>
-            <td><form:input path="adres"/></td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" value="<spring:message code="label.addStopPlaats"/>"/>
-            </td>
-        </tr>
-    </table>
-</form:form>
+        <table>
+            <tr>
+                <td><form:label path="adres"><spring:message code="label.adres"/></form:label></td>
+                <td><form:input path="adres"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="<spring:message code="label.addStopPlaats"/>"/>
+                </td>
+            </tr>
+        </table>
+    </form:form>
+</section>
+<jsp:include page="../General/footer.jsp"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+<script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.js"></script>
+<script src="../js/vendor/bootstrap.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
 
 </body>
 </html>

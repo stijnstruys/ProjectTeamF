@@ -46,7 +46,7 @@ public class Trip {
     private String startLocation;
 
 
-    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = ("trip"))
     private Collection<StopPlaats> stopPlaatsen;
 
     public int getTripId() {
