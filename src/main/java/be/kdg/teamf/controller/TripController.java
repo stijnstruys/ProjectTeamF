@@ -93,8 +93,7 @@ public class TripController {
 
 
     @RequestMapping("trip/delete/{tripId}")
-        public String deleteTrip(@PathVariable("tripId")
-        Integer tripId) {
+        public String deleteTrip(@PathVariable("tripId") Integer tripId) {
 
             tripService.deleteTrip(tripId);
 

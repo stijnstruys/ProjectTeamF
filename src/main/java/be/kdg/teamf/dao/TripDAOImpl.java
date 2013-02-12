@@ -32,7 +32,7 @@ public class TripDAOImpl implements TripDAO{
     }
 
     public void removeTrip(int id) {
-        Trip trip = (Trip) sessionFactory.getCurrentSession().load(Trip.class, id);
+        Trip trip = findTrip(id);
         if(trip != null)
         {
             sessionFactory.getCurrentSession().delete(trip);

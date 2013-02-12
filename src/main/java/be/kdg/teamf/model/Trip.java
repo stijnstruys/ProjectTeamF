@@ -1,10 +1,12 @@
 package be.kdg.teamf.model;
 
-import java.util.Date;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -47,6 +49,8 @@ public class Trip {
 
 
     @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = ("trip"))
+    //@OnDelete(action = OnDeleteAction.CASCADE)
+
     private Collection<StopPlaats> stopPlaatsen;
 
     public int getTripId() {

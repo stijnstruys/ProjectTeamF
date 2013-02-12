@@ -69,7 +69,7 @@
                 <tr>
                     <td colspan="2">
                         <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
-                        <button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a></button>
+                       <a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
                     </td>
                 </tr>
 

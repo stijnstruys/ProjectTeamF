@@ -1,7 +1,7 @@
 package be.kdg.teamf.model;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -24,6 +24,8 @@ public class StopPlaats {
     @Column(name="Vrijgegeven")
     private boolean vrijgegeven;
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+
     private Trip trip;
 
 
