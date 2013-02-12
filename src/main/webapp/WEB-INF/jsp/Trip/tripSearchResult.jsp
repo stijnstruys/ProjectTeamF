@@ -51,7 +51,7 @@
                     </tr>
                     <c:forEach items="${tripSearchList}" var="trip">
                         <tr>
-                            <td><a href="${trip.tripId}.html">${trip.tripName}</a></td>
+                            <td><a href="../trip/${trip.tripId}.html">${trip.tripName}</a></td>
                             <td>${trip.tripDescription}</td>
                             <td>${trip.startDate}</td>
                             <td>${trip.endDate}</td>
