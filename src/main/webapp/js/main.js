@@ -33,22 +33,6 @@ $(document).ready(function(){
       //alert("test");
     });
 
-    $("#sendMail").click(function(){
-            $("#viewTripForm" ).submit();
-          //alert("test");
-        });
-    $("#dialog").hide()(function(){
-              //  $("#viewTripForm" ).submit();
-              alert("test");
-            });
-    $("#dialog").dialog("hide")(function(){
-          //  $("#viewTripForm" ).submit();
-          alert("test");
-        });
-    $( "#dialog").close(function(){
-        $("#viewTripForm" ).submit();
-      //alert("test");
-    });
    /* $.get("/ProjectTeamF-1.0/trip/tripNames", function(data) {
         test = data;
     }); */
