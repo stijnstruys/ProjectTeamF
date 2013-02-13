@@ -78,7 +78,6 @@ public class TripServiceImpl implements TripService {
         message.setTo(receiver);
         message.setSubject(subject);
         message.setText(String.format(content));
-
         mailSender.send(message);
 
     }
