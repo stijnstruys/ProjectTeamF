@@ -37,7 +37,7 @@
 
         <section id="content">
             <h2>View trip</h2>
-            <form:form method="post" action="update.html" commandName="trip">
+            <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
                 <table>
                 <tr>
                     <td><form:hidden path="tripId" /></td>
@@ -52,11 +52,11 @@
                 </tr>
                 <tr>
                     <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
-                    <td><form:input  class="datepicker" readonly="true" style="cursor: text;" path="startDate" /></td>
+                    <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="startDate" /></td>
                 </tr>
                 <tr>
                     <td><form:label path="endDate"><spring:message code="label.endDate"/></form:label></td>
-                    <td><form:input  class="datepicker" readonly="true" style="cursor: text;" path="endDate" /></td>
+                    <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="endDate" /></td>
                 </tr>
                 <tr>
                     <td><form:label path="organiser"><spring:message code="label.organiser"/></form:label></td>
@@ -66,49 +66,31 @@
                    <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
                    <td><form:input path="startLocation" /></td>
                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
-                       <a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
-                    </td>
-                </tr>
-
             </table>
             </form:form>
-            <c:if  test="${!empty trip.stopPlaatsen}">
-                <table class="data">
-                    <tr>
-                        <th>Adres</th>
-                        <th>Vrijgegeven</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
-                        <tr>
-                            <td>${stopPlaats.adres} </td>
-                            <td>${stopPlaats.vrijgegeven} </td>
-                            <td>
-                                <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html">Update</a>
-                            </td>
-                            <td>
-                                <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html">Delete</a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </table>
-            </c:if>
-            <form action ="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
-
-                <input type="submit" value="Add new Stop Place"/>
-            </form>
+            <button id="updateTrip"><spring:message code="label.updateTrip"/></button>
+            <a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
+            <div id="dialog-message" title="Send notification mail">
+                <form>
+                  <fieldset>
+                    <label>Send following email to all participants?</label>
+                    <label for="dialog-message">Organiser message</label>
+                    <input type="text" name="message" id="Message" value="" class="text ui-widget-content ui-corner-all" />
+                    <label for="changes">The following changes occured</label>
+                    <div id="changes"></div>
+                  </fieldset>
+                </form>
+            </div>
         </section>
     <jsp:include page="../General/footer.jsp"/>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    <script type="text/javascript" src="../js/jquery-ui-1.10.0.custom.js"></script>
-    <script src="../js/jquery-ui-1.10.0.custom.js"></script>
-    <script src="../js/vendor/bootstrap.min.js"></script>
-    <script src="../js/plugins.js"></script>
-    <script src="../js/main.js"></script>
+
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+       <script type="text/javascript" src="../js/jquery-ui-1.10.0.custom.js"></script>
+       <script src="../js/jquery-ui-1.10.0.custom.js"></script>
+       <script src="../js/vendor/bootstrap.min.js"></script>
+       <script src="../js/plugins.js"></script>
+       <script src="../js/main.js"></script>
 </body>
 </html>
