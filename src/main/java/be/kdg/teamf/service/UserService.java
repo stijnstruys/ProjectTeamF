@@ -11,6 +11,7 @@ import java.util.List;
  * Time: 12:58
  * To change this template use File | Settings | File Templates.
  */
+
 public interface UserService {
     public void addUser(User u);
     public List<User> listUsers();

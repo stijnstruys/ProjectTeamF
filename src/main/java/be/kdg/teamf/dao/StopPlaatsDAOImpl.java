@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Time: 12:01
  * To change this template use File | Settings | File Templates.
  */
+
 @Repository
 @Transactional
 public class StopPlaatsDAOImpl implements StopPlaatsDAO {

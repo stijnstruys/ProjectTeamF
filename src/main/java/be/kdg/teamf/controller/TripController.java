@@ -99,7 +99,7 @@ public class TripController {
     public String updateTrip(@ModelAttribute("trip")
                              Trip trip, BindingResult result) {
 
-        tripService.sendMail("verbuntjeroen@hotmail.com", "test", "jeroen", "This is text content");
+        tripService.sendMail("kdgteamf@gmail.com", "test", "jeroen", "This is text content");
 
         tripService.updateTrip(trip);
 

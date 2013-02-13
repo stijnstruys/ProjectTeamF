@@ -9,6 +9,7 @@ import be.kdg.teamf.model.StopPlaats;
  * Time: 12:01
  * To change this template use File | Settings | File Templates.
  */
+
 public interface StopPlaatsDAO {
 
     public void addStopPlaats(StopPlaats stopPlaats);

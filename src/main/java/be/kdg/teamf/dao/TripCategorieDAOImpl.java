@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
  * Time: 14:13
  * To change this template use File | Settings | File Templates.
  */
-
 @Repository
 public class TripCategorieDAOImpl implements TripCategorieDAO {
 

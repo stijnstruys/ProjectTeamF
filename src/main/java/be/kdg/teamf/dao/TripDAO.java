@@ -11,6 +11,7 @@ import java.util.List;
  * Time: 21:30
  * To change this template use File | Settings | File Templates.
  */
+
 public interface TripDAO {
 
     public void addTrip(Trip trip);

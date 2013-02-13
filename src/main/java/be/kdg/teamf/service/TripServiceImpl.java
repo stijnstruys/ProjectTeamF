@@ -17,7 +17,6 @@ import java.util.List;
  * Time: 21:38
  * To change this template use File | Settings | File Templates.
  */
-
 @Service
 public class TripServiceImpl implements TripService {
 

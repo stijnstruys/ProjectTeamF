@@ -14,7 +14,6 @@ import java.util.List;
  * Time: 15:38
  * To change this template use File | Settings | File Templates.
  */
-
 @Repository
 public class TripTypeDAOImpl implements TripTypeDAO {
 

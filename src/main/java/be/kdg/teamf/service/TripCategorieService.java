@@ -9,6 +9,7 @@ import be.kdg.teamf.model.TripCategorie;
  * Time: 14:27
  * To change this template use File | Settings | File Templates.
  */
+
 public interface TripCategorieService {
     public void addTripCategorie(TripCategorie tripCategorie);
     public void updateTripCategorie(TripCategorie tripCategorie);

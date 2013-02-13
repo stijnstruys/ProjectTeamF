@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Time: 12:02
  * To change this template use File | Settings | File Templates.
  */
+
 @Service
 public class StopPlaatsServiceImpl implements StopPlaatsService {
 
