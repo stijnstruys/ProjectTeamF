@@ -3,6 +3,8 @@ package be.kdg.teamf.service;
 import be.kdg.teamf.dao.TripDAO;
 import be.kdg.teamf.model.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +23,8 @@ public class TripServiceImpl implements TripService {
 
     @Autowired
     private TripDAO tripDAO;
+    private MailSender mailSender;
+    private SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
     @Transactional
     public void addTrip(Trip trip) {
@@ -52,8 +56,30 @@ public class TripServiceImpl implements TripService {
         return tripDAO.searchTrips(searchInput);
     }
 
-    @Override
+    @Transactional
     public List<String> getTripNames() {
         return tripDAO.getTripNames();
+    }
+
+    @Transactional
+    public void setSimpleMailMessage(SimpleMailMessage simpleMailMessage) {
+        this.simpleMailMessage = simpleMailMessage;
+    }
+
+    @Transactional
+    public void setMailSender(MailSender mailSender) {
+        this.mailSender = mailSender;
+    }
+
+    @Transactional
+    public void sendMail(String receiver, String subject, String dear, String content) {
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(receiver);
+        message.setSubject(subject);
+        message.setText(String.format(content));
+
+        mailSender.send(message);
+
     }
 }

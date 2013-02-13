@@ -28,6 +28,7 @@
       <configuration>
         <fileset id="fileset1" name="XML Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/spring-config.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/Spring-Mail.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -68,6 +69,19 @@
     <orderEntry type="library" name="spring-mvc-3.1.2.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Glassfish 3.1.2.2" level="application_server_libraries" />
     <orderEntry type="library" name="JPA 2.0-2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:2.28.0" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:2.28.0" level="project" />
+    <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.1_3" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20080701" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-api:2.28.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:13.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-exec:1.1" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.jna:jna:3.4.0" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.jna:platform:3.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-support:2.28.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.geronimo.specs:geronimo-jpa_2.0_spec:1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
