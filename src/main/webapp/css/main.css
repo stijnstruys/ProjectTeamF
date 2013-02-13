@@ -65,6 +65,26 @@ h2 {
     border-bottom-right-radius: 15px;
 }
 
+/*notification mail*/
+#Message {
+    width: 97.5%;
+    height: 25%;
+    min-height: 75px;
+}
 
+.messageRow {
+    opacity: 0.3;
+    width: 350px;
+}
+
+.messageLabel {
+    padding: 0.1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+label {
+    cursor: text;
+}
 
 
