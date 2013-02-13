@@ -23,7 +23,9 @@ public class TripServiceImpl implements TripService {
 
     @Autowired
     private TripDAO tripDAO;
+    @Autowired
     private MailSender mailSender;
+    @Autowired
     private SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
     @Transactional
@@ -61,17 +63,17 @@ public class TripServiceImpl implements TripService {
         return tripDAO.getTripNames();
     }
 
-    @Transactional
+
     public void setSimpleMailMessage(SimpleMailMessage simpleMailMessage) {
         this.simpleMailMessage = simpleMailMessage;
     }
 
-    @Transactional
+
     public void setMailSender(MailSender mailSender) {
         this.mailSender = mailSender;
     }
 
-    @Transactional
+
     public void sendMail(String receiver, String subject, String dear, String content) {
 
         SimpleMailMessage message = new SimpleMailMessage();
