@@ -142,6 +142,29 @@ function checkChanges() {
 }
 
 function sendMail() {
+    /* $.get("/ProjectTeamF-1.0/trip/tripNames", function(data) {
+         test = data;
+         }); */
 
+    /*<a href="delete/${trip.tripId}.html">
+    trip/mail/{formulier}    */
+    $.get("/ProjectTeamF-1.0/trip/mail/testje.html", function(data) {
+             var test = data;
+             });
+   /* alert('hier');
+    $.post("/ProjectTeamF-1.0/trip/mail"), {formulier: "t"}, function(data) {
+          alert('h');
+    }
+   /* $.post({
+            url: "/ProjectTeamF-1.0/trip/mail.html",
+            formulier: "hallo ik ben jeroen",
+            success: function(response){
+            // we have the response
+            alert('ier');
+            },
+            error: function(e){
+            alert('Error: ' + e);
+            }
+            });*/
 
 }

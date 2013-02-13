@@ -98,13 +98,27 @@ public class TripController {
     public String updateTrip(@ModelAttribute("trip")
                              Trip trip, BindingResult result) {
 
-        tripService.sendMail("kdgteamf@gmail.com", "test", "jeroen", "This is text content");
+        //tripService.sendMail("kdgteamf@gmail.com", "Trip update", "This is text content");
 
         tripService.updateTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";
     }
 
+    @RequestMapping("trip/mail/{formulier}")
+        public void mailTripUpdate(@PathVariable("formulier") String formulier) {
+
+            tripService.sendMail("kdgteamf@gmail.com", "Trip update", formulier);
+
+        }
+
+    @RequestMapping(value = "trip/mail", method = RequestMethod.POST)
+        public String mailTripUpdate2(@ModelAttribute("formulier")
+                                 String formulier, BindingResult result) {
+
+            tripService.sendMail("kdgteamf@gmail.com", "Trip update", formulier);
+             return "oke";
+        }
 
     @RequestMapping("trip/delete/{tripId}")
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {

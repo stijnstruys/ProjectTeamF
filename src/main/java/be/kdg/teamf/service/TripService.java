@@ -33,6 +33,6 @@ public interface TripService {
 
     public void setMailSender(MailSender mailSender);
 
-    public void sendMail(String receiver, String subject, String dear, String content);
+    public void sendMail(String receiver, String subject, String content);
 
 }

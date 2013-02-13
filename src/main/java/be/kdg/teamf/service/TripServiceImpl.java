@@ -73,12 +73,12 @@ public class TripServiceImpl implements TripService {
     }
 
 
-    public void sendMail(String receiver, String subject, String dear, String content) {
+    public void sendMail(String receiver, String subject, String content) {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(receiver);
         message.setSubject(subject);
-        message.setText(String.format(content));
+        message.setText(content);
         mailSender.send(message);
 
     }
