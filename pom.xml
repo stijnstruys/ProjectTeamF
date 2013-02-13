@@ -109,8 +109,16 @@
             <artifactId>spring-data-jpa</artifactId>
             <version>1.0.1.RELEASE</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>2.28.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>2.28.0</version>
+        </dependency>
     </dependencies>
 
     <build>
