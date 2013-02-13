@@ -2,10 +2,9 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
-import be.kdg.teamf.service.*;
+import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -99,7 +98,7 @@ public class TripController {
     public String updateTrip(@ModelAttribute("trip")
                              Trip trip, BindingResult result) {
 
-        tripService.sendMail("verbuntjeroen@hotmail.com", "test", "jeroen", "This is text content");
+        tripService.sendMail("jorne.raeymaekers@gmail.com", "test", "jeroen", "This is text content");
 
         tripService.updateTrip(trip);
 
