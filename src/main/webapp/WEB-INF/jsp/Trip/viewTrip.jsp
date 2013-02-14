@@ -6,16 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -30,106 +31,148 @@
     <link href="../css/dot-luv/jquery-ui-1.10.0.custom.css" rel="stylesheet">
 </head>
 <body>
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-    <jsp:include page="../General/header.jsp"/>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+    improve your experience.</p>
+<![endif]-->
+<jsp:include page="../General/header.jsp"/>
 
-        <section id="content">
-            <h2>View trip</h2>
-            <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
+<section id="content">
+    <h2>View trip</h2>
+    <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
+        <table>
+            <tr>
+                <td><form:hidden path="tripId"/></td>
+            </tr>
+            <tr>
+                <td><form:label id="labelTripN" path="tripName"><spring:message
+                        code="label.tripName"/></form:label></td>
+                <td><form:input id="TripN" path="tripName"/></td>
+            </tr>
+            <tr>
+                <td><form:label id="labelTripDescr" path="tripDescription"><spring:message
+                        code="label.tripDescription"/></form:label></td>
+                <td><form:input id="TripDescr" path="tripDescription"/></td>
+            </tr>
+            <tr>
+                <td><form:label id="labelTripStartD" path="startDate"><spring:message
+                        code="label.startDate"/></form:label></td>
+                <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
+                                path="startDate"/></td>
+            </tr>
+            <tr>
+                <td><form:label id="labelTripEndD" path="endDate"><spring:message
+                        code="label.endDate"/></form:label></td>
+                <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
+                                path="endDate"/></td>
+            </tr>
+            <tr>
+                <td><form:label id="labelTripOrg" path="organiser"><spring:message
+                        code="label.organiser"/></form:label></td>
+                <td><form:input id="TripOrg" path="organiser"/></td>
+            </tr>
+            <tr>
+                <td><form:label id="labelTripLoc" path="startLocation"><spring:message
+                        code="label.startLocation"/></form:label></td>
+                <td><form:input id="TripLoc" path="startLocation"/></td>
+            </tr>
+        </table>
+    </form:form>
+
+    <c:if test="${!empty trip.stopPlaatsen}">
+        <table class="data">
+            <tr>
+                <th>Adres</th>
+                <th>Vrijgegeven</th>
+                <th>&nbsp;</th>
+            </tr>
+            <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
+                <tr>
+                    <td>${stopPlaats.adres} </td>
+                    <td>${stopPlaats.vrijgegeven} </td>
+                    <td>
+                        <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html">Update</a>
+                    </td>
+                    <td>
+                        <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html">Delete</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
+    <form action="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
+
+        <input type="submit" value="Add new Stop Place"/>
+    </form>
+
+    <button id="updateTrip"><spring:message code="label.updateTrip"/></button>
+    <a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
+
+    <div id="dialog-message" title="Send notification mail">
+        <form>
+            <fieldset>
+                <label>Send following email to all participants?</label>
+                <label for="dialog-message">Organiser message</label>
+                <textarea type="text" name="message" id="Message" value=""
+                          class="text ui-widget-content ui-corner-all"></textarea>
+                <label for="changes">The following changes occured</label>
+
+                <div id="changes"></div>
                 <table>
-                <tr>
-                    <td><form:hidden path="tripId" /></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripN" path="tripName"><spring:message code="label.tripName"/></form:label></td>
-                    <td><form:input id="TripN" path="tripName" /></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripDescr" path="tripDescription"><spring:message code="label.tripDescription"/></form:label></td>
-                    <td><form:input id="TripDescr" path="tripDescription" /></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripStartD" path="startDate"><spring:message code="label.startDate"/></form:label></td>
-                    <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;" path="startDate" /></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripEndD" path="endDate"><spring:message code="label.endDate"/></form:label></td>
-                    <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="endDate" /></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripOrg" path="organiser"><spring:message code="label.organiser"/></form:label></td>
-                    <td><form:input id="TripOrg" path="organiser" /></td>
-                </tr>
-                <tr>
-                   <td><form:label id="labelTripLoc" path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
-                   <td><form:input id="TripLoc" path="startLocation" /></td>
-               </tr>
-            </table>
-            </form:form>
-            <button id="updateTrip"><spring:message code="label.updateTrip"/></button>
-            <a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
-            <div id="dialog-message" title="Send notification mail">
-                <form>
-                  <fieldset>
-                    <label>Send following email to all participants?</label>
-                    <label for="dialog-message">Organiser message</label>
-                    <textarea type="text" name="message" id="Message" value="" class="text ui-widget-content ui-corner-all"></textarea>
-                    <label for="changes">The following changes occured</label>
-                    <div id="changes"></div>
-                      <table>
-                          <tr class="messageRow" id="messageRowN">
-                              <td><label id="tripNmessage" class="messageLabel"></label></td>
-                              <td><input id="tripNold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                              <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                              <td><input id="tripNnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                          </tr>
-                          <tr class="messageRow" id="messageRowD">
-                                <td><label id="tripDmessage" class="messageLabel"></label></td>
-                                <td><input id="tripDold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                                <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                                <td><input id="tripDnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            </tr>
-                          <tr class="messageRow" id="messageRowStartD">
-                              <td><label id="tripStartDmessage" class="messageLabel"></label></td>
-                              <td><input id="tripStartDold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                              <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                              <td><input id="tripStartDnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                          </tr>
-                          <tr class="messageRow" id="messageRowEndD">
-                                <td><label id="tripEndDmessage" class="messageLabel"></label></td>
-                                <td><input id="tripEndDold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                                <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                                <td><input id="tripEndDnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            </tr>
-                          <tr class="messageRow" id="messageRowOrg">
-                                <td><label id="tripOrgmessage"></label></td>
-                                <td><input id="tripOrgold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                                <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                                <td><input id="tripOrgnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            </tr>
-                          <tr class="messageRow" id="messageRowLoc">
-                                <td><label id="tripLocmessage"></label></td>
-                                <td><input id="tripLocold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                                <td><label><spring:message code="label.ChangedTo"/></label></td>
-                                <td><input id="tripLocnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            </tr>
+                    <tr class="messageRow" id="messageRowN">
+                        <td><label id="tripNmessage" class="messageLabel"></label></td>
+                        <td><input id="tripNold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                        <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
+                        <td><input id="tripNnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowD">
+                        <td><label id="tripDmessage" class="messageLabel"></label></td>
+                        <td><input id="tripDold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                        <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
+                        <td><input id="tripDnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowStartD">
+                        <td><label id="tripStartDmessage" class="messageLabel"></label></td>
+                        <td><input id="tripStartDold" class="text ui-widget-content ui-corner-all" readonly="true"/>
+                        </td>
+                        <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
+                        <td><input id="tripStartDnew" class="text ui-widget-content ui-corner-all" readonly="true"/>
+                        </td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowEndD">
+                        <td><label id="tripEndDmessage" class="messageLabel"></label></td>
+                        <td><input id="tripEndDold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                        <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
+                        <td><input id="tripEndDnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowOrg">
+                        <td><label id="tripOrgmessage"></label></td>
+                        <td><input id="tripOrgold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                        <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
+                        <td><input id="tripOrgnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowLoc">
+                        <td><label id="tripLocmessage"></label></td>
+                        <td><input id="tripLocold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                        <td><label><spring:message code="label.ChangedTo"/></label></td>
+                        <td><input id="tripLocnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                    </tr>
 
-                      </table>
-                  </fieldset>
-                </form>
-            </div>
-        </section>
-    <jsp:include page="../General/footer.jsp"/>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</section>
+<jsp:include page="../General/footer.jsp"/>
 
 
-       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-       <script type="text/javascript" src="../js/jquery-ui-1.10.0.custom.js"></script>
-       <script src="../js/jquery-ui-1.10.0.custom.js"></script>
-       <script src="../js/vendor/bootstrap.min.js"></script>
-       <script src="../js/plugins.js"></script>
-       <script src="../js/main.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.0.custom.js"></script>
+<script src="../js/jquery-ui-1.10.0.custom.js"></script>
+<script src="../js/vendor/bootstrap.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
