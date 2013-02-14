@@ -7,7 +7,7 @@
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360856786204" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360857575321" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360746165839" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360795839578" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360696087198" ignored="false" />
@@ -51,7 +51,7 @@
     <file path="/DeelnameDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360855212657" ignored="false" />
     <file path="/DeelnameService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360855399488" ignored="false" />
     <file path="/DeelnameServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360856182734" ignored="false" />
-    <file path="/TestTripController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360857387433" ignored="false" />
+    <file path="/TestTripController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360857909818" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +133,7 @@
       <file leaf-file-name="TestTripController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="8" selection-start="786" selection-end="786" vertical-scroll-proportion="0.15">
+            <state line="53" column="8" selection-start="1781" selection-end="1781" vertical-scroll-proportion="-0.46857142">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -869,7 +869,11 @@
       <created>1360856808192</created>
       <updated>1360856808192</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="TestTrip">
+      <created>1360857581210</created>
+      <updated>1360857581210</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -943,7 +947,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="OneToMany" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestTrip" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -967,6 +971,7 @@
     <MESSAGE value="categorie" />
     <MESSAGE value="stoppl" />
     <MESSAGE value="OneToMany" />
+    <MESSAGE value="TestTrip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1079,7 +1084,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="8" selection-start="786" selection-end="786" vertical-scroll-proportion="0.15">
+        <state line="53" column="8" selection-start="1781" selection-end="1781" vertical-scroll-proportion="-0.46857142">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

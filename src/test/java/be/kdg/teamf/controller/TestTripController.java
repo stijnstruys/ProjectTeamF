@@ -51,6 +51,12 @@ public class TestTripController {
         tripStartLocation.sendKeys("Antwerpen");
         tripOrganiser.sendKeys("Stijn Struys");
         tripAddButton.get(11).click();
+        waitAndClose();
+    }
+
+    private void waitAndClose() {
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.close();
     }
 
 
@@ -65,6 +71,7 @@ public class TestTripController {
 
         List<WebElement> buttons = driver.findElementsByTagName("button");
         buttons.get(4).click();
+        waitAndClose();
 
     }
 
@@ -74,6 +81,7 @@ public class TestTripController {
         goToTripDetail();
         List<WebElement> links = driver.findElementsByTagName("a");
         links.get(7).click();
+        waitAndClose();
     }
 
     private void goToTripDetail() {
