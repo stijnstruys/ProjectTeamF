@@ -3,6 +3,7 @@ package be.kdg.teamf.controller;
 import be.kdg.teamf.model.TripCategorie;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripCategorieService;
+import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -28,6 +29,8 @@ public class TripCategorieController {
 
     @Autowired
     private TripCategorieService tripCategorieService;
+    @Autowired
+    private TripService tripService;
 
   /*  @RequestMapping(value = "tripCategorie/add", method = RequestMethod.POST)
                public String addTripCategorie(@ModelAttribute("tripCategorie")

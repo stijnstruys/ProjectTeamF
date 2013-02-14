@@ -1,5 +1,8 @@
 package be.kdg.teamf.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 /**
@@ -21,7 +24,8 @@ public class TripCategorie {
     @Column(name="TRIPCATEGORIENAME")
     private String tripCategorieName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
 
     public int getTripCategorieId() {
