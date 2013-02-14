@@ -49,9 +49,10 @@ public class Trip {
 
 
     @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = ("trip"))
-    //@OnDelete(action = OnDeleteAction.CASCADE)
-
     private Collection<StopPlaats> stopPlaatsen;
+
+    @OneToMany
+    private Collection<User> deelnemers;
 
     public int getTripId() {
         return tripId;
@@ -123,5 +124,13 @@ public class Trip {
 
     public void setTripType(String tripType) {
         this.tripType = tripType;
+    }
+
+    public Collection<User> getDeelnemers() {
+        return deelnemers;
+    }
+
+    public void setDeelnemers(Collection<User> deelnemers) {
+        this.deelnemers = deelnemers;
     }
 }
