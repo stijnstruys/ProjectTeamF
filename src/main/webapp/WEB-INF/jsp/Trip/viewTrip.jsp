@@ -79,33 +79,65 @@
             </tr>
         </table>
     </form:form>
+    <table>
+        <tr>
+            <td>
+                <h3>Stopplaatsen</h3>
+                <c:if test="${!empty trip.stopPlaatsen}">
+                    <table class="data">
+                        <tr>
+                            <th>Adres</th>
+                            <th>Vrijgegeven</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
+                            <tr>
+                                <td>${stopPlaats.adres} </td>
+                                <td>${stopPlaats.vrijgegeven} </td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html">Update</a>
+                                </td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html">Delete</a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </c:if>
+                <form action="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
 
-    <c:if test="${!empty trip.stopPlaatsen}">
-        <table class="data">
-            <tr>
-                <th>Adres</th>
-                <th>Vrijgegeven</th>
-                <th>&nbsp;</th>
-            </tr>
-            <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
-                <tr>
-                    <td>${stopPlaats.adres} </td>
-                    <td>${stopPlaats.vrijgegeven} </td>
-                    <td>
-                        <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html">Update</a>
-                    </td>
-                    <td>
-                        <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html">Delete</a>
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
-    </c:if>
-    <form action="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
+                    <input type="submit" value="Add new Stop Place"/>
+                </form>
+            </td>
+            <td></td>
+            <td>
+                <h3>Categorieën</h3>
+                <c:if test="${!empty trip.tripCategorieen}">
+                    <table class="data">
+                        <tr>
+                            <th>Naam</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <c:forEach items="${trip.tripCategorieen}" var="tripCategorie">
+                            <tr>
+                                <td>${tripCategorie.tripCategorieName} </td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/TripCategorie/update/${tripCategorie.tripCategorieId}.html">Update</a>
+                                </td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html">Delete</a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </c:if>
+                <form action="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html">
 
-        <input type="submit" value="Add new Stop Place"/>
-    </form>
-
+                    <input type="submit" value="Add new Trip category"/>
+                </form>
+            </td>
+        </tr>
+    </table>
     <button id="updateTrip"><spring:message code="label.updateTrip"/></button>
     <a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
 

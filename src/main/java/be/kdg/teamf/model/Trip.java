@@ -4,6 +4,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
@@ -17,41 +18,46 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name="T_TRIP")
+@Table(name = "T_TRIP")
 public class Trip {
     @Id
-    @Column(name="TripID")
+    @Column(name = "TripID")
     @GeneratedValue
     private int tripId;
 
-    @Column(name="TRIPTYPE")
+    @Column(name = "TRIPTYPE")
     private String tripType;
 
-    @Column(name="TRIPNAME")
+    @Column(name = "TRIPNAME")
     private String tripName;
 
-    @Column(name="TRIPDESCRIPTION")
+    @Column(name = "TRIPDESCRIPTION")
     private String tripDescription;
 
     @Temporal(TemporalType.DATE)
-    @Column(name="STARTDATE")
+    @Column(name = "STARTDATE")
     private Date startDate;
 
-    @Column(name="ENDDATE")
+    @Column(name = "ENDDATE")
     @Temporal(TemporalType.DATE)
     private Date endDate;
 
-    @Column(name="ORGANISER")
+    @Column(name = "ORGANISER")
     private String organiser;
 
-    @Column(name="STARTLOCATION")
+    @Column(name = "STARTLOCATION")
     private String startLocation;
 
-
-    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = ("trip"))
     //@OnDelete(action = OnDeleteAction.CASCADE)
-
     private Collection<StopPlaats> stopPlaatsen;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = ("trip"))
+    //@OnDelete(action = OnDeleteAction.CASCADE)
+    private Collection<TripCategorie> tripCategorieen;
+
+    public Trip() {
+    }
 
     public int getTripId() {
         return tripId;
@@ -115,6 +121,14 @@ public class Trip {
 
     public void setStopPlaatsen(Collection<StopPlaats> stopPlaatsen) {
         this.stopPlaatsen = stopPlaatsen;
+    }
+
+    public Collection<TripCategorie> getTripCategorieen() {
+        return tripCategorieen;
+    }
+
+    public void setTripCategorieen(Collection<TripCategorie> tripCategorieen) {
+        this.tripCategorieen =tripCategorieen;
     }
 
     public String getTripType() {

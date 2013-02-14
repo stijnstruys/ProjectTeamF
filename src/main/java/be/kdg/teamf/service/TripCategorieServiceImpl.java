@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class TripCategorieServiceImpl implements TripCategorieService {
+
     @Autowired
     private TripCategorieDAO tripCategorieDAO;
 
@@ -24,13 +25,19 @@ public class TripCategorieServiceImpl implements TripCategorieService {
         tripCategorieDAO.addTripCategorie(tripCategorie);
     }
 
+    @Override
     @Transactional
     public void updateTripCategorie(TripCategorie tripCategorie) {
         tripCategorieDAO.updateTripCategorie(tripCategorie);
     }
 
     @Transactional
-    public void removeTripCategorie(int id) {
-        tripCategorieDAO.removeTripCategorie(id);
+    public void removeTripCategorie(TripCategorie tripCategorie) {
+        tripCategorieDAO.removeTripCategorie(tripCategorie);
+    }
+
+    @Override
+    public TripCategorie findTripCategorie(int tripCategorieId) {
+        return tripCategorieDAO.findTripCategorie(tripCategorieId);
     }
 }

@@ -12,7 +12,7 @@ import be.kdg.teamf.model.TripCategorie;
 public interface TripCategorieDAO {
     public void addTripCategorie(TripCategorie tripCategorie);
     public void updateTripCategorie(TripCategorie tripCategorie);
-    public void removeTripCategorie(int id);
+    public void removeTripCategorie(TripCategorie tripCategorie);
 
     TripCategorie findTripCategorie(int tripCategorieID);
 }
