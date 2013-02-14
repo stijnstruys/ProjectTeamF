@@ -28,6 +28,7 @@ public class TestTripController {
     public void trips() throws InterruptedException {
         testAddTrip();
         testUpdateTrip();
+        testDeleteTrip();
     }
     public void testAddTrip() throws InterruptedException {
         driver = getChromeDriver();
@@ -56,17 +57,28 @@ public class TestTripController {
     public void testUpdateTrip(){
         driver = getChromeDriver();
         goToTrip();
-        List<WebElement> links = driver.findElementsByTagName("a");
-        links.get(8).click();
+        goToTripDetail();
         findElements();
         tripName.sendKeys("updatetest");
-
         WebElement updateButton = driver.findElementById("updateTrip");
         updateButton.click();
+
+        List<WebElement> buttons = driver.findElementsByTagName("button");
+        buttons.get(4).click();
+
     }
 
     public void testDeleteTrip() {
+        driver = getChromeDriver();
+        goToTrip();
+        goToTripDetail();
+        List<WebElement> links = driver.findElementsByTagName("a");
+        links.get(7).click();
+    }
 
+    private void goToTripDetail() {
+        List<WebElement> links = driver.findElementsByTagName("a");
+        links.get(8).click();
     }
 
     private void findElements() {
