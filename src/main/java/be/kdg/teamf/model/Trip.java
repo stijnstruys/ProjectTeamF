@@ -1,9 +1,7 @@
 package be.kdg.teamf.model;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -48,14 +46,13 @@ public class Trip {
     @Column(name = "STARTLOCATION")
     private String startLocation;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = ("trip"))
-    //@OnDelete(action = OnDeleteAction.CASCADE)
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
     private Collection<StopPlaats> stopPlaatsen;
 
-    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = ("trip"))
-    private Collection<StopPlaats> stopPlaatsen;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = ("trip"))
-    //@OnDelete(action = OnDeleteAction.CASCADE)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
     private Collection<TripCategorie> tripCategorieen;
 
     public Trip() {
