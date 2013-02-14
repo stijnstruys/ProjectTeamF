@@ -5,7 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -17,13 +20,35 @@ import java.util.concurrent.TimeUnit;
  */
 public class IndexTest {
     @Test
-    public void logIn(){
+    public void logIn() throws InterruptedException{
+        ChromeDriver driver = getChromeDriver();
+
+        WebElement dropDown = driver.findElementByClassName("dropdown-toggle");
+        dropDown.click();
+        WebElement userNameText = driver.findElementByName("username");
+        userNameText.sendKeys("test");
+        WebElement passwordText = driver.findElementByName("password");
+        passwordText.sendKeys("test");
+        WebElement logInButton = driver.findElementByTagName("button");
+        logInButton.click();
+        driver.close();
+    }
+
+    @Test
+    public void search() {
+        ChromeDriver driver = getChromeDriver();
+        WebElement searchBar = driver.findElementByName("searchInput");
+        searchBar.sendKeys("Trip1");
+    }
+
+
+    private ChromeDriver getChromeDriver() {
+        System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
-        driver.manage().window().setSize(new Dimension(1820,1080));
+        driver.manage().window().setSize(new Dimension(1920,1080));
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        //driver.get("http://localhost.com");
-
-        //WebElement query = driver.findElement(By.name(""));
-
+        driver.get("http://localhost:8080/ProjectTeamF-1.0/general/index.html");
+        return driver;
     }
 }
+
