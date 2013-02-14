@@ -15,8 +15,6 @@ public interface StopPlaatsDAO {
     public void addStopPlaats(StopPlaats stopPlaats);
     public void updateStopPlaats(StopPlaats stopPlaats);
     public void deleteStopPlaats(StopPlaats stopPlaats);
-
-
     StopPlaats findStopPlaats(int stopPlaatsID);
 
 }

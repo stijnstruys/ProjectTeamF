@@ -1,7 +1,11 @@
 package be.kdg.teamf.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -12,35 +16,41 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name="T_USER")
+@Table(name = "T_USER")
 public class User implements Serializable {
-    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userID;
-    @Column(name="username")
+    @Column(name = "username")
     private String username;
-    @Column(name="password")
+    @Column(name = "password")
     private String password;
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
-    @Column(name="telephone")
+    @Column(name = "telephone")
     private String telephone;
-    @Column(name="firstname")
+    @Column(name = "firstname")
     private String firstName;
-    @Column(name="lastname")
+    @Column(name = "lastname")
     private String lastName;
-    @Column(name="dateOfBirth")
+    @Column(name = "dateOfBirth")
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
-    @Column(name="street")
+    @Column(name = "street")
     private String street;
-    @Column(name="number")
+    @Column(name = "number")
     private String number;
-    @Column(name="zipcode")
+    @Column(name = "zipcode")
     private String zipcode;
-    @Column(name="city")
+    @Column(name = "city")
     private String city;
 
-    public User(){}
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    private Collection<Deelname> deelnames;
+
+    public User() {
+    }
 
     public User(String city, String zipcode, String number, String street, Date dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username) {
         this.city = city;
@@ -150,6 +160,14 @@ public class User implements Serializable {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Collection<Deelname> getDeelnames() {
+        return deelnames;
+    }
+
+    public void setDeelnames(Collection<Deelname> deelnames) {
+        this.deelnames = deelnames;
     }
 
     @Override

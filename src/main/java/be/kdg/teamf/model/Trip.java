@@ -55,11 +55,12 @@ public class Trip {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
     private Collection<TripCategorie> tripCategorieen;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    private Collection<Deelname> deelnames;
+
     public Trip() {
     }
-
-    @OneToMany
-    private Collection<User> deelnemers;
 
     public int getTripId() {
         return tripId;
@@ -130,7 +131,7 @@ public class Trip {
     }
 
     public void setTripCategorieen(Collection<TripCategorie> tripCategorieen) {
-        this.tripCategorieen =tripCategorieen;
+        this.tripCategorieen = tripCategorieen;
     }
 
     public String getTripType() {
@@ -141,11 +142,11 @@ public class Trip {
         this.tripType = tripType;
     }
 
-    public Collection<User> getDeelnemers() {
-        return deelnemers;
+    public Collection<Deelname> getDeelnames() {
+        return deelnames;
     }
 
-    public void setDeelnemers(Collection<User> deelnemers) {
-        this.deelnemers = deelnemers;
+    public void setDeelnames(Collection<Deelname> deelnames) {
+        this.deelnames = deelnames;
     }
 }
