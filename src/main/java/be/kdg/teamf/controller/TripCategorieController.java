@@ -1,5 +1,6 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.TripCategorie;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripCategorieService;
@@ -7,10 +8,7 @@ import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,12 +30,65 @@ public class TripCategorieController {
     @Autowired
     private TripService tripService;
 
-  /*  @RequestMapping(value = "tripCategorie/add", method = RequestMethod.POST)
-               public String addTripCategorie(@ModelAttribute("tripCategorie")
-                         TripCategorie tripCategorie, BindingResult result) {
+    @RequestMapping(value = "/TripCategorie/{tripID}", method = RequestMethod.GET)
+    public ModelAndView tripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
-                   tripCategorieService.addTripCategorie(tripCategorie);
+        User userlogin = new User();
+        request.setAttribute("loginuser", userlogin);
 
-                   return "redirect:/trip/addTrip.html";
-               }      */
+        TripCategorie s = new TripCategorie();
+        Trip t = tripService.findTrip(tripID);
+
+        request.setAttribute("tripCategorie", s);
+
+        request.setAttribute("trip", t);
+        ModelAndView model = new ModelAndView("TripCategorie/tripCategorie");
+
+        return model;
+    }
+
+
+    @RequestMapping(value = "/TripCategorie/add/{tripID}", method = RequestMethod.POST)
+    public String addTripCategorie(@ModelAttribute("tripCategorie") TripCategorie tripCategorie, BindingResult result, @PathVariable("tripID") int tripID) {
+
+        Trip t = tripService.findTrip(tripID);
+        tripCategorie.setTrip(t);
+        t.getTripCategorieen().add(tripCategorie);
+        tripService.updateTrip(t);
+        return "redirect:/trip/" + t.getTripId() + ".html";
+    }
+
+    @RequestMapping("/TripCategorie/delete/{tripCategorieId}")
+    public String deleteTripCategorie(@PathVariable("tripCategorieId") int tripCategorieId) {
+        TripCategorie tc = tripCategorieService.findTripCategorie(tripCategorieId);
+        tripCategorieService.removeTripCategorie(tc);
+        return "redirect:/trip/" + tc.getTrip().getTripId() + ".html";
+
+    }
+
+    @RequestMapping("/TripCategorie/update/{tripCategorieId}")
+    public ModelAndView updateTripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripCategorieId") int tripCategorieId) throws Exception {
+
+        User userlogin = new User();
+        request.setAttribute("loginuser", userlogin);
+
+        TripCategorie tc = tripCategorieService.findTripCategorie(tripCategorieId);
+        request.setAttribute("tripCategorie", tc);
+        request.setAttribute("tripID", tc.getTrip().getTripId());
+        ModelAndView model = new ModelAndView("TripCategorie/updateTripCategorie");
+        return model;
+
+    }
+
+    @RequestMapping(value = "/TripCategorie/update/updateTripCategorie/{tripID}", method = RequestMethod.POST)
+    public String updateTripCategorie(@ModelAttribute("tripCategorie")
+                                   TripCategorie tripCategorie, BindingResult result, @PathVariable("tripID") int tripID) {
+
+        tripCategorie.setTrip(tripService.findTrip(tripID));
+        tripCategorieService.updateTripCategorie(tripCategorie);
+
+        return "redirect:/trip/" + tripCategorie.getTrip().getTripId() + ".html";
+
+    }
+
 }

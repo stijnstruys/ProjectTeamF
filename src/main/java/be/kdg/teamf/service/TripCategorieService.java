@@ -13,5 +13,6 @@ import be.kdg.teamf.model.TripCategorie;
 public interface TripCategorieService {
     public void addTripCategorie(TripCategorie tripCategorie);
     public void updateTripCategorie(TripCategorie tripCategorie);
-    public void removeTripCategorie(int id);
+    public void removeTripCategorie(TripCategorie tripCategorie);
+    public TripCategorie findTripCategorie(int tripCategorieId);
 }

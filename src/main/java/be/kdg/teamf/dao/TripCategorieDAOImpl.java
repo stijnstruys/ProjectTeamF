@@ -33,11 +33,8 @@ public class TripCategorieDAOImpl implements TripCategorieDAO {
     }
 
     @Override
-    public void removeTripCategorie(int id) {
-        TripCategorie tripCat = (TripCategorie) sessionFactory.getCurrentSession().load(TripCategorie.class, id);
-        if (tripCat != null) {
-            sessionFactory.getCurrentSession().delete(tripCat);
-        }
+    public void removeTripCategorie(TripCategorie tripCategorie) {
+            sessionFactory.getCurrentSession().delete(tripCategorie);
     }
 
     @Override
