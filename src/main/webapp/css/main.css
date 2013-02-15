@@ -137,3 +137,9 @@ a.trip_name:hover {
 .float_fix {
     clear: left;
 }
+
+/* trip detailview */
+
+#trip_detailview_adminbtn {
+    float: right;
+}

@@ -127,4 +127,13 @@ public class TripController {
         return "redirect:/trip/tripOverzicht.html";
     }
 
+    @RequestMapping("/trip/admincp-{tripID}")
+    public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+        Trip t = tripService.findTrip(tripID);
+        request.setAttribute("trip", t);
+
+        ModelAndView model = new ModelAndView("Trip/adminTrip");
+        return model;
+    }
+
 }

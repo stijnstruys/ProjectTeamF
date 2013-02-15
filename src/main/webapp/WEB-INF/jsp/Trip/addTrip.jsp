@@ -71,7 +71,7 @@
                </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="<spring:message code="button.addTrip"/>"/>
+                        <input type="submit" class="btn" value="<spring:message code="button.addTrip"/>"/>
                     </td>
                 </tr>
             </table>

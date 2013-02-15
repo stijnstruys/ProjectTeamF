@@ -39,7 +39,17 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>View trip</h2>
+    <a href="admincp-${trip.tripId}.html" class="btn btn-success" id="trip_detailview_adminbtn">Admin</a>
+    <h2>${trip.tripName}</h2>
+
+    <spring:message code="label.startLocation"/>: ${trip.startLocation} </br>
+    <spring:message code="label.organiser"/>: ${trip.organiser} </br>
+    <spring:message code="label.startDate"/>: ${trip.startDate} </br>
+    <spring:message code="label.endDate"/>: ${trip.endDate}   </br></br>
+    ${trip.tripDescription}
+
+
+    <%--
     <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
         <table>
             <tr>
@@ -195,6 +205,7 @@
             </fieldset>
         </form>
     </div>
+    --%>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 
