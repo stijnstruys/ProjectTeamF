@@ -36,7 +36,7 @@ public class TestStopPlaatsDAO extends AbstractTransactionalJUnit4SpringContextT
         StopPlaats sp = getStopPlaats();
         stopPlaatsDAO.addStopPlaats(sp);
         stopPlaatsDAO.deleteStopPlaats(sp);
-       //Todo
+
     }
 
     @Test
@@ -45,7 +45,7 @@ public class TestStopPlaatsDAO extends AbstractTransactionalJUnit4SpringContextT
         stopPlaatsDAO.addStopPlaats(sp);
         sp.setAdres("Test 111");
         stopPlaatsDAO.updateStopPlaats(sp);
-        //Todo
+
 
     }
 

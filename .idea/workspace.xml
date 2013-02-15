@@ -7,7 +7,7 @@
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360942375465" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360943718118" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360746165839" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360795839578" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360930899715" ignored="false" />
@@ -144,7 +144,7 @@
       <file leaf-file-name="TestStopPlaatsDAO.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestStopPlaatsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="923" selection-end="923" vertical-scroll-proportion="-0.13074204">
+            <state line="47" column="8" selection-start="1564" selection-end="1564" vertical-scroll-proportion="1.6713781">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1115,7 +1115,11 @@
       <created>1360942381425</created>
       <updated>1360942381425</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="TestStopPlaatsDAO">
+      <created>1360943726797</created>
+      <updated>1360943726797</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1143,7 +1147,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23106061" sideWeight="0.59284496" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21818182" sideWeight="0.5621806" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43781942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43781942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1335,7 +1339,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestStopPlaatsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="923" selection-end="923" vertical-scroll-proportion="-0.13074204">
+        <state line="47" column="8" selection-start="1564" selection-end="1564" vertical-scroll-proportion="1.6713781">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
