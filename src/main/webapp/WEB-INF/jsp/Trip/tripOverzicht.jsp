@@ -38,33 +38,29 @@
 
         <section id="content">
             <h2>Trips overzicht</h2>
-
             <a href="/ProjectTeamF-1.0/trip/addTrip.html"><spring:message code="label.addTrip"/></a>
 
             <c:if  test="${!empty tripList}">
-                <table class="data">
-                    <tr>
-                        <th><spring:message code="label.tripName"/></th>
-                        <th><spring:message code="label.tripDescription"/></th>
-                        <th><spring:message code="label.startDate"/></th>
-                        <th><spring:message code="label.endDate"/></th>
-                        <th><spring:message code="label.startLocation"/></th>
-                        <th><spring:message code="label.organiser"/></th>
-                        <th>&nbsp;</th>
-                    </tr>
+                <ul class="trip_list">
                     <c:forEach items="${tripList}" var="trip">
-                        <tr>
-                            <td><a href="${trip.tripId}.html">${trip.tripName}</a></td>
-                            <td>${trip.tripDescription}</td>
-                            <td>${trip.startDate}</td>
-                            <td>${trip.endDate}</td>
-                            <td>${trip.startLocation}</td>
-                            <td>${trip.organiser}</td>
+                     <li>
+                         <div class="trip_details">
+                             <div class="trip_name"><a class="trip_name" href="${trip.tripId}.html">${trip.tripName}</a></div>
+                             <div class="trip_description">${trip.tripDescription}</div>
 
-                        </tr>
+                             <div class="trip_extra">
+                                 <div class="trip_datums">${trip.startDate} ~ ${trip.endDate}</div>
+                                 <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span class="trip_detail_general">${trip.startLocation}</span></div>
+
+                             </div>
+
+                         </div>
+                     </li>
                     </c:forEach>
-                </table>
+                </ul>
             </c:if>
+
+            <div class="float_fix"></div>
         </section>
     <jsp:include page="../General/footer.jsp"/>
 

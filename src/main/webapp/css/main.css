@@ -31,6 +31,7 @@ header {
 
 /* footer */
 footer {
+    clear: both;
     margin-top: 25px;
     padding: 25px 0 50px 0;
     background: #1C263C;
@@ -88,3 +89,51 @@ label {
 }
 
 
+
+/* trips */
+
+
+.trip_list {
+     list-style: none;
+}
+.trip_details {
+   /* height: 100px;  */
+    background: #455268;
+    margin: 10px 15px 10px 15px;
+    padding: 15px;
+    width: 42%;
+    float: left;
+    color: #B6C0D2;
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.trip_name {
+    margin-bottom: 7px;
+}
+a.trip_name {
+    font-weight: bold;
+    font-size: 15pt;
+    color: #B4FF40;
+    text-decoration: none;
+}
+
+a.trip_name:hover {
+    color: #64A600;
+}
+.trip_extra {
+    margin-top: 15px;
+}
+
+.trip_datums {
+    float: right;
+}
+
+.trip_detail_general {
+    font-weight: bold;;
+}
+.float_fix {
+    clear: left;
+}
