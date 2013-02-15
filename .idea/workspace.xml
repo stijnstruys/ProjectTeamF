@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="TestTrip">
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__javax_activation_activation_1_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__javax_mail_mail_1_4_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__junit_junit_4_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_asm_3_1_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_beans_3_1_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_context_support_3_1_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_core_3_1_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_expression_3_1_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_web_3_1_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\User\Documents\KDG\2012 - 2013\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_webmvc_3_1_2_RELEASE.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectTeamF.iml" afterPath="$PROJECT_DIR$/ProjectTeamF.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+    <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360926801238" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360926842133" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360746165839" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360795839578" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360696087198" ignored="false" />
@@ -177,19 +164,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestTripDAO.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestTripDAO.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="13" selection-start="751" selection-end="751" vertical-scroll-proportion="0.2451923">
+            <state line="25" column="13" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="41" selection-start="4932" selection-end="4932" vertical-scroll-proportion="0.0">
+            <state line="140" column="41" selection-start="4932" selection-end="4932" vertical-scroll-proportion="0.73405534">
               <folding />
             </state>
           </provider>
@@ -947,7 +934,11 @@
       <created>1360926465160</created>
       <updated>1360926465160</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="#ophoopvanzegen">
+      <created>1360926845560</created>
+      <updated>1360926845560</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -967,6 +958,7 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.15296052" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -979,7 +971,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967105" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1021,7 +1012,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestTrip" />
+    <option name="LAST_COMMIT_MESSAGE" value="#ophoopvanzegen" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1046,6 +1037,7 @@
     <MESSAGE value="stoppl" />
     <MESSAGE value="OneToMany" />
     <MESSAGE value="TestTrip" />
+    <MESSAGE value="#ophoopvanzegen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1116,13 +1108,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="41" selection-start="4932" selection-end="4932" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/IndexTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="48" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0">
@@ -1160,7 +1145,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="751" selection-end="751" vertical-scroll-proportion="0.2451923">
+        <state line="25" column="13" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="41" selection-start="4932" selection-end="4932" vertical-scroll-proportion="0.73405534">
           <folding />
         </state>
       </provider>
