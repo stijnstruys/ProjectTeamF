@@ -26,12 +26,11 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
     }
 
     @Override
-    @Transactional
     public void updateStopPlaats(StopPlaats stopPlaats) {
         stopPlaatsDAO.updateStopPlaats(stopPlaats);
     }
 
-    @Transactional
+    @Override
     public void deleteStopPlaats(StopPlaats stopPlaats) {
         stopPlaatsDAO.deleteStopPlaats(stopPlaats);
     }

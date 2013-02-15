@@ -25,7 +25,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/spring-servlet.xml</param-value>
+        <param-value>spring-servlet.xml</param-value>
     </context-param>
 
 </web-app>

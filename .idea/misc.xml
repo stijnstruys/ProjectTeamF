@@ -5,6 +5,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
+    <type id="Osmorc" />
   </component>
   <component name="IdProvider" IDEtalkID="77A1794BBD85D90FB6B5A1647C22866E" />
   <component name="MavenProjectsManager">

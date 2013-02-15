@@ -28,6 +28,7 @@ public class StopPlaatsController
 {
     @Autowired
     private StopPlaatsService stopPlaatsService;
+
     @Autowired
     private TripService tripService;
 
