@@ -2,13 +2,15 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.TripCategorie;
-import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripCategorieService;
 import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,8 +35,8 @@ public class TripCategorieController {
     @RequestMapping(value = "/TripCategorie/{tripID}", method = RequestMethod.GET)
     public ModelAndView tripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
-        User userlogin = new User();
-        request.setAttribute("loginuser", userlogin);
+        /*User userlogin = new User();
+        request.setAttribute("loginuser", userlogin); */
 
         TripCategorie s = new TripCategorie();
         Trip t = tripService.findTrip(tripID);
@@ -69,8 +71,8 @@ public class TripCategorieController {
     @RequestMapping("/TripCategorie/update/{tripCategorieId}")
     public ModelAndView updateTripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripCategorieId") int tripCategorieId) throws Exception {
 
-        User userlogin = new User();
-        request.setAttribute("loginuser", userlogin);
+        /*User userlogin = new User();
+        request.setAttribute("loginuser", userlogin); */
 
         TripCategorie tc = tripCategorieService.findTripCategorie(tripCategorieId);
         request.setAttribute("tripCategorie", tc);

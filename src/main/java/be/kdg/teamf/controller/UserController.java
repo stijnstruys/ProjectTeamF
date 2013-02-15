@@ -36,8 +36,8 @@ public class UserController {
     @RequestMapping(value = "/user/user.html",method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin);
+        /*User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin); */
 
         User u  = new User();
         request.setAttribute("user",u);
@@ -66,8 +66,8 @@ public class UserController {
     @RequestMapping("/user/update/{userID}")
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
 
-        User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin);
+       /* User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin); */
 
         User u  = userService.findUser(userID);
         request.setAttribute("user",u);

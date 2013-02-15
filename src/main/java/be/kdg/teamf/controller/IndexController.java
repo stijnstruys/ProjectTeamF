@@ -1,6 +1,5 @@
 package be.kdg.teamf.controller;
 
-import be.kdg.teamf.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,8 +15,8 @@ public class IndexController  {
     public ModelAndView handleRequestInternal(HttpServletRequest request,
                                                  HttpServletResponse response) throws Exception {
 
-        User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin);
+       /* User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin);*/
 
 
         ModelAndView model = new ModelAndView("General/index");

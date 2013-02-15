@@ -31,8 +31,7 @@ public class TripController {
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        User userlogin = new User();
-        request.setAttribute("loginuser", userlogin);
+
 
         Trip t = new Trip();
         request.setAttribute("trip", t);
@@ -54,8 +53,8 @@ public class TripController {
     @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"}, method = RequestMethod.GET)
     public ModelAndView tripSearchResult(HttpServletRequest request, HttpServletResponse response, @RequestParam("searchInput") String searchInput) throws Exception {
 
-        User userlogin = new User();
-        request.setAttribute("loginuser", userlogin);
+        /*User userlogin = new User();
+        request.setAttribute("loginuser", userlogin); */
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripSearchList", tripService.searchTrips(searchInput));
@@ -77,8 +76,8 @@ public class TripController {
     @RequestMapping("/trip/{tripID}")
     public ModelAndView viewTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
-        User userlogin = new User();
-        request.setAttribute("loginuser", userlogin);
+       /* User userlogin = new User();
+        request.setAttribute("loginuser", userlogin);  */
         Trip t = tripService.findTrip(tripID);
         request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("Trip/viewTrip");
