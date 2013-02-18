@@ -6,7 +6,9 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -30,6 +32,9 @@ public class TestTripModel {
     public void addTrip() {
         Date d = new Date();
         Trip t = new Trip();
+        List<Deelname> deelnameList = new ArrayList();
+        List<StopPlaats> stopPlaatsList = new ArrayList();
+        List<TripCategorie> tripCategorieList = new ArrayList();
 
         t.setTripName("tripname");
         t.setEndDate(d);
@@ -37,6 +42,14 @@ public class TestTripModel {
         t.setStartDate(d);
         t.setStartLocation("startlocation");
         t.setTripId(1);
+        t.setTripDescription("beschrijving");
+        t.setBgcolor("blue");
+        t.setDeelnames(deelnameList);
+        t.setFontcolorContent("red");
+        t.setFontcolorTitle("green");
+        t.setTripType("publiek");
+        t.setStopPlaatsen(stopPlaatsList);
+        t.setTripCategorieen(tripCategorieList);
 
         assertEquals("Expected id: 1", 1, t.getTripId());
         assertEquals("Expected tripname: tripname", "tripname", t.getTripName());
@@ -44,8 +57,14 @@ public class TestTripModel {
         assertEquals("StartDate", d, t.getStartDate());
         assertEquals("Expected organizer: organizer", "organizer", t.getOrganiser());
         assertEquals("Expected startlocation: startlocation", "startlocation", t.getStartLocation());
-
-
+        assertEquals("Expected description:", "beschrijving", t.getTripDescription());
+        assertEquals("Expected bgcolor:", "blue", t.getBgcolor());
+        assertEquals("Expected deelnames:", deelnameList, t.getDeelnames());
+        assertEquals("Expected fontcolorcontent:", "red", t.getFontcolorContent());
+        assertEquals("Expected fontcolortitle:", "green", t.getFontcolorTitle());
+        assertEquals("Expected type:", "publiek", t.getTripType());
+        assertEquals("Expected stopplaatsen:", stopPlaatsList, t.getStopPlaatsen());
+        assertEquals("Expected tripcategorieen:", tripCategorieList, t.getTripCategorieen());
     }
 
 

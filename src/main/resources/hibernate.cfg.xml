@@ -12,5 +12,6 @@
         <mapping class="be.kdg.teamf.model.StopPlaats"/>
         <mapping class="be.kdg.teamf.model.TripCategorie"/>
         <mapping class="be.kdg.teamf.model.Deelname"/>
+        <mapping class="be.kdg.teamf.model.TripType"/>
     </session-factory>
 </hibernate-configuration>

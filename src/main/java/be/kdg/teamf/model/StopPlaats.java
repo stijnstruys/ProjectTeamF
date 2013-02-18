@@ -61,4 +61,6 @@ public class StopPlaats {
 
         this.trip = trip;
     }
+
+
 }

@@ -19,8 +19,6 @@ public class Deelname {
     @Column(name = "DEELNAMEID")
     @GeneratedValue
     private int deelnameID;
-    @Column(name = "BEVESTIGD")
-    private String bevestigd;
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
@@ -34,14 +32,6 @@ public class Deelname {
 
     public void setDeelnameID(int deelnameID) {
         this.deelnameID = deelnameID;
-    }
-
-    public String getBevestigd() {
-        return bevestigd;
-    }
-
-    public void setBevestigd(String bevestigd) {
-        this.bevestigd = bevestigd;
     }
 
     public Trip getTrip() {

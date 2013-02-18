@@ -16,8 +16,11 @@ import static junit.framework.Assert.assertTrue;
 @ContextConfiguration(locations = {"classpath:spring-servlet.xml"})
 public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests {
 
+    @Autowired
+    protected UserDAO userDAO;
+
     @Test
-    public void createUser() {
+    public void addUser() {
         User u = new User();
         Date geboorteDatum = new Date();
         u.setUserID(1);
