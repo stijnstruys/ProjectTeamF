@@ -39,6 +39,16 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
+    <style>
+        #content {
+            background: ${trip.bgcolor};
+            color:   ${trip.fontcolorContent};
+        }
+        h2 {
+            color:   ${trip.fontcolorTitle};
+        }
+    </style>
+
     <a href="admincp-${trip.tripId}.html" class="btn btn-success" id="trip_detailview_adminbtn">Admin</a>
     <h2>${trip.tripName}</h2>
 
@@ -217,5 +227,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+
+
 </body>
 </html>

@@ -46,6 +46,15 @@ public class Trip {
     @Column(name = "STARTLOCATION")
     private String startLocation;
 
+    @Column(name = "FONTCOLORTITLE")
+    private String fontcolorTitle;
+
+    @Column(name = "FONTCOLORCONTENT")
+    private String fontcolorContent;
+
+    @Column(name = "BGCOLOR")
+    private String bgcolor;
+
 
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
@@ -148,5 +157,29 @@ public class Trip {
 
     public void setDeelnames(Collection<Deelname> deelnames) {
         this.deelnames = deelnames;
+    }
+
+    public String getFontcolorTitle() {
+        return fontcolorTitle;
+    }
+
+    public String getFontcolorContent() {
+        return fontcolorContent;
+    }
+
+    public String getBgcolor() {
+        return bgcolor;
+    }
+
+    public void setFontcolorTitle(String fontcolorTitle) {
+        this.fontcolorTitle = fontcolorTitle;
+    }
+
+    public void setFontcolorContent(String fontcolorContent) {
+        this.fontcolorContent = fontcolorContent;
+    }
+
+    public void setBgcolor(String bgcolor) {
+        this.bgcolor = bgcolor;
     }
 }

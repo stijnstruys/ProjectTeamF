@@ -13,6 +13,8 @@ var beginTripLoc = "";
 
 $(document).ready(function () {
 
+    handleColorPickers();
+
     //begin gegevens nemen
     beginTripN = $("#TripN").val();
     beginTripDescr = $("#TripDescr").val();
@@ -78,6 +80,45 @@ $(document).ready(function () {
     });
 });
 
+function handleColorPickers() {
+
+     var f = $.farbtastic('#picker');
+     var p = $('#picker').css('opacity', 0.25);
+     var selected;
+
+     $('.colorpicker')
+         .each(function () {
+             f.linkTo(this);
+             $(this).css('opacity', 0.75); })
+         .focus(function() {
+             if (selected) {
+                 $(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+             }
+             f.linkTo(this);
+             p.css('opacity', 1);
+             $(selected = this).css('opacity', 1).addClass('colorwell-selected');
+         }
+     );
+
+    $("#color1").change(function() {
+       var color = $("#color1").val();
+       $("#content").css("background", color);
+    });
+
+    $("#color2").change(function() {
+        var color = $("#color2").val();
+        $("#content").css("color", color);
+    });
+
+    $("#color3").change(function() {
+        var color = $("#color3").val();
+        $("#content h2").css("color", color);
+    });
+
+
+
+
+}
 function checkChanges() {
     //eind gegevens nemen
     var eindTripN = $("#TripN").val();
