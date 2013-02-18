@@ -3,11 +3,20 @@ package be.kdg.teamf.service;
 import be.kdg.teamf.dao.TripDAO;
 import be.kdg.teamf.model.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.velocity.app.VelocityEngine;
+import org.springframework.ui.ModelMap;
+import org.springframework.ui.velocity.VelocityEngineUtils;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import java.util.List;
 
 /**
@@ -23,9 +32,10 @@ public class TripServiceImpl implements TripService {
     @Autowired
     private TripDAO tripDAO;
     @Autowired
-    private MailSender mailSender;
+    private VelocityEngine velocityEngine;
+
     @Autowired
-    private SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+    private JavaMailSender mailSender;
 
     @Transactional
     public void addTrip(Trip trip) {
@@ -62,24 +72,25 @@ public class TripServiceImpl implements TripService {
         return tripDAO.getTripNames();
     }
 
+    public void sendMail(final ModelMap model, final SimpleMailMessage msg) {
+        		mailSender.send(new MimeMessagePreparator() {
 
-    public void setSimpleMailMessage(SimpleMailMessage simpleMailMessage) {
-        this.simpleMailMessage = simpleMailMessage;
+        			@Override
+        			public void prepare(MimeMessage mimeMessage)
+        					throws MessagingException {
+        				MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+        				message.setTo(msg.getTo());
+        				message.setFrom(msg.getFrom());
+        				message.setSubject(msg.getSubject());
+
+        				String body = VelocityEngineUtils.mergeTemplateIntoString(
+        						velocityEngine, "/template.vm", model);
+        				message.setText(body, true);
+
+        				message.addInline("header", new ClassPathResource(
+                                "images/header.jpg"));
+        			}
+        		});
     }
 
-
-    public void setMailSender(MailSender mailSender) {
-        this.mailSender = mailSender;
-    }
-
-
-    public void sendMail(String receiver, String subject, String content) {
-
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(receiver);
-        message.setSubject(subject);
-        message.setText(content);
-        mailSender.send(message);
-
-    }
 }

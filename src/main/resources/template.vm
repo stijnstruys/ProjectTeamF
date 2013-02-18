@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>${title}</title>
+</head>
+<body>
+
+<div style="width: 100%;" align="center">
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td align="center" valign="top" style="background-color: #53636e;"
+                bgcolor="#53636e;"><br> <br>
+                <table width="583" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="left" valign="top" bgcolor="#FFFFFF"
+                            style="background-color: #FFFFFF;"><img
+                                src="cid:header" width="583" height="118"></td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top" bgcolor="#FFFFFF"
+                            style="background-color: #FFFFFF;">
+                            <table width="100%"
+                                   border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="35" align="left" valign="top">&nbsp;</td>
+                                    <td align="left" valign="top">
+                                        <table width="100%"
+                                               border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <div
+                                                            style="color: #245da5; font-family: Times New Roman, Times, serif; font-size: 48px;">${title}</div>
+                                                    <div
+                                                            style="font-family: Verdana, Geneva, sans-serif; color: #898989; font-size: 12px;">${date}</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" valign="top"
+                                                    style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #525252;">
+                                                    <p>
+
+                                                    <div style="color: #3482ad; font-size: 19px;">${subtitle1}</div>
+                                                    </p>
+                                                    <br/>${message}<br/><br/>
+
+                                                    <p>
+
+                                                    <div style="color: #3482ad; font-size: 19px;">${subtitle2}</div>
+                                                    </p>
+                                                    <br/>${text}<br/><br/>
+                                                    <table width="100%" border="0" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <tr>
+                                                            <td width="87%"
+                                                                style="font-size: 11px; color: #525252; font-family: Arial, Helvetica, sans-serif;">
+                                                                <b>Visit <a
+                                                                        href="http://localhost:8080/ProjectTeamF-1.0/">our
+                                                                    website</a> to check out a complete overview of the
+                                                                    trip! <br>
+                                                                </b></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" valign="top"
+                                                    style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #525252;">
+                                                    &nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="35" align="left" valign="top">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top" bgcolor="#3d90bd"
+                            style="background-color: #3d90bd;">
+                            <table width="100%"
+                                   border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="35">&nbsp;</td>
+                                    <td height="50" valign="middle"
+                                        style="color: #FFFFFF; font-size: 11px; font-family: Arial, Helvetica, sans-serif;">
+                                        <p>&copy; 2013 - Team F - All rights reserved <span
+                                                id="footer_extrapadding">||</span>
+                                            <a href="#" style="color: white">info@teamf.com</a></p>
+
+                                        <p> Bart Leemans - Jeroen Dierckx - Jorne Raeymaekers - Stijn Struys - Jeroen
+                                            Verheyen - Jeroen Verbunt</p></td>
+                                    <td width="35">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <br> <br></td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

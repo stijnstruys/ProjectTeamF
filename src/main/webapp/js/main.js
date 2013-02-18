@@ -37,7 +37,6 @@ $(document).ready(function () {
         buttons: {
             Send: function () {
                 sendMail();
-                $("#viewTripForm").submit();
             },
             Skip: function () {
                 $("#viewTripForm").submit();
@@ -50,9 +49,6 @@ $(document).ready(function () {
         $("#dialog-message").dialog("open");
     });
 
-    /* $.get("/ProjectTeamF-1.0/trip/tripNames", function(data) {
-     test = data;
-     }); */
     var availableTags = [
         "ActionScript",
         "AppleScript",
@@ -92,20 +88,20 @@ function checkChanges() {
     var eindTripLoc = $("#TripLoc").val();
 
     //zet oude gegevens
-    $("#tripNold").val(beginTripN);
-    $("#tripDold").val(beginTripDescr);
-    $("#tripStartDold").val(beginTripStartD);
-    $("#tripEndDold").val(beginTripEndD);
-    $("#tripOrgold").val(beginTripOrg);
-    $("#tripLocold").val(beginTripLoc);
+    $("#tripNold").text(beginTripN);
+    $("#tripDold").text(beginTripDescr);
+    $("#tripStartDold").text(beginTripStartD);
+    $("#tripEndDold").text(beginTripEndD);
+    $("#tripOrgold").text(beginTripOrg);
+    $("#tripLocold").text(beginTripLoc);
 
     //zet nieuwe gegevens
-    $("#tripNnew").val(eindTripN);
-    $("#tripDnew").val(eindTripDescr);
-    $("#tripStartDnew").val(eindTripStartD);
-    $("#tripEndDnew").val(eindTripEndD);
-    $("#tripOrgnew").val(eindTripOrg);
-    $("#tripLocnew").val(eindTripLoc);
+    $("#tripNnew").text(eindTripN);
+    $("#tripDnew").text(eindTripDescr);
+    $("#tripStartDnew").text(eindTripStartD);
+    $("#tripEndDnew").text(eindTripEndD);
+    $("#tripOrgnew").text(eindTripOrg);
+    $("#tripLocnew").text(eindTripLoc);
 
     //zet labels
     $("#tripNmessage").text($("#labelTripN").text());
@@ -117,54 +113,76 @@ function checkChanges() {
 
     if (beginTripN != eindTripN) {
         $("#messageRowN").css("opacity", "1");
+        $("#tripNmessage").css("font-weight", "bold");
+        $("#tripNold").css("font-weight", "bold");
+        $("#tripNchange").css("font-weight", "bold");
+        $("#tripNnew").css("font-weight", "bold");
     }
     if (beginTripDescr != eindTripDescr) {
         $("#messageRowD").css("opacity", "1");
+        $("#tripDmessage").css("font-weight", "bold");
+        $("#tripDold").css("font-weight", "bold");
+        $("#tripDchange").css("font-weight", "bold");
+        $("#tripDnew").css("font-weight", "bold");
     }
     if (beginTripStartD != eindTripStartD) {
         $("#messageRowStartD").css("opacity", "1");
+        $("#tripStartDmessage").css("font-weight", "bold");
+        $("#tripStartDold").css("font-weight", "bold");
+        $("#tripStartDchange").css("font-weight", "bold");
+        $("#tripStartDnew").css("font-weight", "bold");
     }
     if (beginTripEndD != eindTripEndD) {
         $("#messageRowEndD").css("opacity", "1");
+        $("#tripEndDmessage").css("font-weight", "bold");
+        $("#tripEndDold").css("font-weight", "bold");
+        $("#tripEndDchange").css("font-weight", "bold");
+        $("#tripEndDnew").css("font-weight", "bold");
     }
     if (beginTripOrg != eindTripOrg) {
         $("#messageRowOrg").css("opacity", "1");
+        $("#tripOrgmessage").css("font-weight", "bold");
+        $("#tripOrgold").css("font-weight", "bold");
+        $("#tripOrgchange").css("font-weight", "bold");
+        $("#tripOrgnew").css("font-weight", "bold");
     }
     if (beginTripLoc != eindTripLoc) {
         $("#messageRowLoc").css("opacity", "1");
+        $("#tripLocmessage").css("font-weight", "bold");
+        $("#tripLocold").css("font-weight", "bold");
+        $("#tripLocchange").css("font-weight", "bold");
+        $("#tripLocnew").css("font-weight", "bold");
     }
 
-
-    //changes += '</div>';
-    //$("#changes").html(changes);
-    //$("#changes").innerHTML(changes);
-    //$("#changes").text(changes);
 }
 
 function sendMail() {
-    /* $.get("/ProjectTeamF-1.0/trip/tripNames", function(data) {
-         test = data;
-         }); */
 
-    /*<a href="delete/${trip.tripId}.html">
-    trip/mail/{formulier}    */
-    $.get("/ProjectTeamF-1.0/trip/mail/testje.html", function(data) {
-             var test = data;
-             });
-   /* alert('hier');
-    $.post("/ProjectTeamF-1.0/trip/mail"), {formulier: "t"}, function(data) {
-          alert('h');
-    }
-   /* $.post({
+    var formInhoud = $("#changes").html();
+    var organiserMessage = $("#Message").val();
+    //alert(organiserMessage);
+    var tripID = $("#hiddenTripID").val();
+    $("#dialog-message").css("cursor", "wait");
+   $.post("/ProjectTeamF-1.0/trip/mail.html",
+        { formulier: formInhoud, orgMessage: organiserMessage, tripID: tripID},
+        function (data) {
+            $("#viewTripForm").submit();
+        }
+    );
+
+    /*$.ajax({
+            type: "POST",
             url: "/ProjectTeamF-1.0/trip/mail.html",
-            formulier: "hallo ik ben jeroen",
+            data: "formulier="+ formInhoud+ "&orgMessage="+ organiserMessage+ "&tripID="+ tripID,
             success: function(response){
             // we have the response
-            alert('ier');
+            alert('gelukt' + response);
             },
             error: function(e){
-            alert('Error: ' + e);
+            alert('mislukt');
             }
-            });*/
+            }); */
+
+
 
 }

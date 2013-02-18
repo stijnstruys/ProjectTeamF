@@ -5,13 +5,17 @@ import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,6 +31,9 @@ public class TripController {
     @Qualifier("tripServiceImpl")
     @Autowired
     private TripService tripService;
+
+    @Autowired
+    private SimpleMailMessage message;
 
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -97,27 +104,33 @@ public class TripController {
     public String updateTrip(@ModelAttribute("trip")
                              Trip trip, BindingResult result) {
 
-        //tripService.sendMail("kdgteamf@gmail.com", "Trip update", "This is text content");
-
         tripService.updateTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";
     }
 
-    @RequestMapping("trip/mail/{formulier}")
-        public void mailTripUpdate(@PathVariable("formulier") String formulier) {
+    @RequestMapping(value = "/trip/mail.html", method = RequestMethod.POST)
+        public @ResponseBody String mailForm(@ModelAttribute(value="formulier") String formulier, @ModelAttribute(value="orgMessage") String orgMessage, @ModelAttribute(value="tripID") String tripID, BindingResult result) {
+        System.out.println("test123qsdf");
+        System.out.println("formulier: " + formulier);
+        System.out.println("orgmessage: " + orgMessage);
+        System.out.println("tripid: "+tripID);
+        ModelMap mailModel = new ModelMap();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        mailModel.addAttribute("title", "Trip update");
+        mailModel.addAttribute("subtitle1", "Message from organiser");
+        mailModel.addAttribute("message", orgMessage);
+        mailModel.addAttribute("subtitle2", "The following trip changes occured");
+        mailModel.addAttribute("text", formulier);
+        mailModel.addAttribute("date", format.format(new Date()));
 
-            tripService.sendMail("kdgteamf@gmail.com", "Trip update", formulier);
+        SimpleMailMessage msg = new SimpleMailMessage(message);
+        msg.setTo("kdgteamf@gmail.com");
+        tripService.sendMail(mailModel, msg);
+        //model.addAttribute("receiver", "kdgteamf@gmail.com");
+        return "Gelukt!";
+    }
 
-        }
-
-    @RequestMapping(value = "trip/mail", method = RequestMethod.POST)
-        public String mailTripUpdate2(@ModelAttribute("formulier")
-                                 String formulier, BindingResult result) {
-
-            tripService.sendMail("kdgteamf@gmail.com", "Trip update", formulier);
-             return "oke";
-        }
 
     @RequestMapping("trip/delete/{tripId}")
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {

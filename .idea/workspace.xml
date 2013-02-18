@@ -2,33 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_acl_3_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_3_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_3_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_taglibs_3_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_3_1_2_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
-      <change type="MOVED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_aop_3_1_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_3_0_7_RELEASE.xml" />
-      <change type="MOVED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_jdbc_3_1_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_3_0_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_3_1_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_3_1_2_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_3_1_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_3_1_2_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_1_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_1_2_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_3_1_2_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_3_1_2_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/header.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_7_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_chain_commons_chain_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_digester_commons_digester_1_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_validator_commons_validator_1_3_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts_core_1_3_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts_taglib_1_3_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts_tiles_1_3_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_1_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_tools_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__oro_oro_2_0_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__sslext_sslext_1_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-velocity.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/template.vm" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\.idea\libraries\Maven__javax_mail_mail_1_4_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\antlr-2.7.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\aopalliance.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\commons-logging.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\hibernate-commons-annotations-4.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\hibernate-core-4.1.7.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\hibernate-jpa-2.0-api-1.0.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\javassist-3.15.0-GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\javax.persistence.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\jboss-logging-3.1.0.GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\jboss-transaction-api_1.1_spec-1.0.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\jsf-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\jsf-impl.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\jstl-1.1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\log4j-1.2.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\mysql-connector-java-5.1.22-bin.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\org.springframework.binding-2.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\org.springframework.faces-2.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\org.springframework.js-2.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\org.springframework.js.resources-2.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\org.springframework.webflow-2.3.2.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\primefaces-3.4.1-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\primefaces-3.4.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-aop.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-asm.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-aspects.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-batch-core-2.1.9.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-batch-infrastructure-2.1.9.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-beans.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-context-support.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-context.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-core.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-data-commons-core-1.1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-data-jpa-1.0.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-expression.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-instrument-tomcat.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-instrument.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-amqp-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-core-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-event-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-feed-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-file-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-ftp-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-gemfire-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-groovy-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-http-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-ip-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-jdbc-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-jms-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-jmx-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-jpa-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-mail-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-mongodb-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-redis-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-rmi-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-scripting-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-security-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-sftp-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-stream-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-test-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-twitter-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-ws-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-xml-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-integration-xmpp-2.2.1.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-jdbc.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-jms.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-orm.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-oxm.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-test.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-tx.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-web.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-webmvc.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\lib\spring-ws.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectTeamF.iml" afterPath="$PROJECT_DIR$/ProjectTeamF.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ProjectTeamF_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ProjectTeamF_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripService.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/adminTrip.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/adminTrip.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/footer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/footer.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360938534091" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361200562054" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360942246436" ignored="false" />
-    <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360795839578" ignored="false" />
+    <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361201749348" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360930899715" ignored="false" />
-    <file path="/TripController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360935842168" ignored="false" />
+    <file path="/TripController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361201415205" ignored="false" />
     <file path="/TripService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360700284557" ignored="false" />
     <file path="/TripDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360713881544" ignored="false" />
     <file path="/TripServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360781974623" ignored="false" />
@@ -39,7 +124,7 @@
     <file path="/messages_en.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360848276620" ignored="false" />
     <file path="/messages_nl.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360848292606" ignored="false" />
     <file path="/jquery-ui-1.10.0.custom.css" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360758715813" ignored="false" />
-    <file path="/main.css" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360935337795" ignored="false" />
+    <file path="/main.css" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361194564189" ignored="false" />
     <file path="/spring-servlet.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360783760375" ignored="false" />
     <file path="/SendEmailViaGMail.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360770678734" ignored="false" />
     <file path="$USER_HOME$/Desktop/mailen/SpringExample/.idea/workspace.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360785292668" ignored="false" />
@@ -69,16 +154,21 @@
     <file path="/DeelnameServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360856182734" ignored="false" />
     <file path="/TestTripController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360857909818" ignored="false" />
     <file path="/IndexTest.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360919714815" ignored="false" />
-    <file path="/adminTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360935708138" ignored="false" />
+    <file path="/adminTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361196765295" ignored="false" />
     <file path="/TestStopPlaatsDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360937650045" ignored="false" />
     <file path="/spring-security.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360944697314" ignored="false" />
     <file path="$PROJECT_DIR$/../../Testgevallen/Spring-Security-Form-Login-Example/Spring3MVC/src/main/webapp/WEB-INF/spring-security.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360941179454" ignored="false" />
-    <file path="/web.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360941008438" ignored="false" />
+    <file path="/web.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361191027831" ignored="false" />
     <file path="/pom.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360942062986" ignored="false" />
     <file path="/index.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360942935303" ignored="false" />
     <file path="/CustomAuthenticationProvider.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360944209371" ignored="false" />
     <file path="/UserDetailsServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360944496447" ignored="false" />
     <file path="/Assembler.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360944502682" ignored="false" />
+    <file path="$USER_HOME$/Desktop/velocity-example/src/main/resources/template.vm" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361189093218" ignored="false" />
+    <file path="/footer.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361188397926" ignored="false" />
+    <file path="/template.vm" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361195326928" ignored="false" />
+    <file path="$USER_HOME$/Desktop/velocity-example/src/main/java/be/g00glen00b/controller/MainController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361188819079" ignored="false" />
+    <file path="/spring-velocity.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361191751717" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,55 +227,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tripOverzicht.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="93" selection-start="2202" selection-end="2216" vertical-scroll-proportion="-0.65384614">
+            <state line="160" column="4" selection-start="4826" selection-end="5244" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestStopPlaatsDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestStopPlaatsDAO.java">
+      <file leaf-file-name="TripController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="8" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-security.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="73" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.73593074">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="16" selection-start="254" selection-end="263" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="1315" selection-end="1315" vertical-scroll-proportion="-7.8461537">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="0" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
+            <state line="132" column="0" selection-start="5207" selection-end="5207" vertical-scroll-proportion="0.31865284">
               <folding />
             </state>
           </provider>
@@ -209,28 +263,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/adminTrip.jsp" />
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestStopPlaatsDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/CustomAuthenticationProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/Assembler.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/footer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-velocity.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/template.vm" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/adminTrip.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/main.js" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" />
       </list>
     </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_WARNINGS" value="true" />
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
@@ -278,8 +332,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="886" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -335,7 +389,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -367,48 +420,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -485,40 +496,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="General" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -569,103 +546,10 @@
               <option name="myItemId" value="teamf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -682,12 +566,14 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\src\main\resources" />
+      <recent name="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\src\main\webapp\js" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
@@ -896,19 +782,6 @@
       </ConfigurationWrapper>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -935,6 +808,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1063,9 +949,9 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.MailServiceTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.testtest" />
-      <item index="2" class="java.lang.String" itemvalue="Glassfish Server.Glassfish 3.1.2.2" />
+      <item index="0" class="java.lang.String" itemvalue="Glassfish Server.Glassfish 3.1.2.2" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MailServiceTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.testtest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.TestTripController" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.TestTripDAO" />
     </list>
@@ -1191,7 +1077,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1207,19 +1093,19 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599726" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3256579" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.15296052" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23106061" sideWeight="0.59284496" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20227273" sideWeight="0.73355263" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21814671" sideWeight="0.6712517" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20151515" sideWeight="0.6990132" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30098686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967105" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1297,95 +1183,121 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/StopPlaats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="691" selection-end="691" vertical-scroll-proportion="-1.54329">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="673" selection-end="673" vertical-scroll-proportion="-3.2">
+        <state line="20" column="35" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
         <state />
       </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
+        <state line="23" column="49" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestStopPlaatsDAO.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/web-forms2.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="8" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
+        <state line="631" column="23" selection-start="14303" selection-end="14303" vertical-scroll-proportion="0.3319672">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="93" selection-start="2202" selection-end="2216" vertical-scroll-proportion="-0.65384614">
+        <state line="123" column="23" selection-start="3254" selection-end="3274" vertical-scroll-proportion="0.3319672">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="1315" selection-end="1315" vertical-scroll-proportion="-7.8461537">
+        <state line="80" column="39" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.4385246">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/template.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="73" selection-start="5446" selection-end="5446" vertical-scroll-proportion="0.2744015">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="123" selection-start="1545" selection-end="1545" vertical-scroll-proportion="0.6028369">
+        <state line="81" column="22" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.4625323">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-velocity.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="254" selection-end="263" vertical-scroll-proportion="0.0">
+        <state line="11" column="0" selection-start="696" selection-end="696" vertical-scroll-proportion="0.31782946">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_11/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="15" selection-start="2189" selection-end="10703" vertical-scroll-proportion="-0.65384614">
+        <state line="107" column="19" selection-start="3638" selection-end="3638" vertical-scroll-proportion="0.33184856">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestUserDAO.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.1.2.RELEASE/spring-context-3.1.2.RELEASE.jar!/org/springframework/validation/BindingResult.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
+        <state line="6" column="17" selection-start="160" selection-end="239" vertical-scroll-proportion="0.15260324" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.1.2.RELEASE/spring-web-3.1.2.RELEASE.jar!/org/springframework/web/bind/annotation/RequestParam.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="355" selection-end="388" vertical-scroll-proportion="0.3112128" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/adminTrip.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="34" selection-start="7317" selection-end="7317" vertical-scroll-proportion="0.04607046">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="73" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.73593074">
+        <state line="160" column="4" selection-start="4826" selection-end="5244" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.1.2.RELEASE/spring-web-3.1.2.RELEASE.jar!/org/springframework/web/bind/annotation/ModelAttribute.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="414" selection-end="414" vertical-scroll-proportion="0.2937365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="0" selection-start="3701" selection-end="3701" vertical-scroll-proportion="2.6295338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="0" selection-start="5207" selection-end="5207" vertical-scroll-proportion="0.31865284">
           <folding />
         </state>
       </provider>

@@ -70,37 +70,5 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-        <property name="host" value="smtp.gmail.com"/>
-        <property name="port" value="587"/>
-        <property name="username" value="kdgteamf@gmail.com"/>
-        <property name="password" value="jeroenverbunt"/>
-
-        <property name="javaMailProperties">
-            <props>
-                <prop key="mail.smtp.auth">true</prop>
-                <prop key="mail.smtp.starttls.enable">true</prop>
-            </props>
-        </property>
-
-    </bean>
-
-    <bean id="tripService" class="be.kdg.teamf.service.TripServiceImpl">
-        <property name="mailSender" ref="mailSender"/>
-        <property name="simpleMailMessage" ref="customeMailMessage"/>
-    </bean>
-
-    <bean id="customeMailMessage"
-    		class="org.springframework.mail.SimpleMailMessage">
-
-    		<property name="from" value="kdgteamf@gmail.com" />
-    		<property name="to"><value></value></property>
-    		<property name="subject"><value></value></property>
-    		<property name="text">
-    		<value>
-    			<![CDATA[%s]]>
-    		</value>
-    	</property>
-    	</bean>
-
+    <import resource="spring-velocity.xml" />
 </beans>

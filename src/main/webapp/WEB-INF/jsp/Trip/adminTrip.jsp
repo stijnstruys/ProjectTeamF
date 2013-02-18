@@ -19,7 +19,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Add Trip</title>
+    <title>Update Trip</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -41,7 +41,7 @@
         <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
             <table>
                 <tr>
-                    <td><form:hidden path="tripId"/></td>
+                    <td><form:hidden id="hiddenTripID" path="tripId"/></td>
                 </tr>
                 <tr>
                     <td><form:label id="labelTripN" path="tripName"><spring:message
@@ -145,51 +145,50 @@
                     <label>Send following email to all participants?</label>
                     <label for="dialog-message">Organiser message</label>
                     <textarea type="text" name="message" id="Message" value=""
-                              class="text ui-widget-content ui-corner-all"></textarea>
+                              class="text ui-widget-content ui-corner-all">No message.</textarea>
                     <label for="changes">The following changes occured</label>
 
-                    <div id="changes"></div>
-                    <table>
+                    <div id="changes">
+                    <table id="messageTable" style="min-width:500px">
                         <tr class="messageRow" id="messageRowN">
-                            <td><label id="tripNmessage" class="messageLabel"></label></td>
-                            <td><input id="tripNold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                            <td><input id="tripNnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                            <td><label id="tripNmessage"></label></td>
+                            <td><label id="tripNold" class="text ui-widget-content ui-corner-all" /></td>
+                            <td><label id="tripNchange" class="changedTo"><spring:message code="label.ChangedTo"/></label></td>
+                            <td><label id="tripNnew" class="text ui-widget-content ui-corner-all"/></td>
                         </tr>
                         <tr class="messageRow" id="messageRowD">
-                            <td><label id="tripDmessage" class="messageLabel"></label></td>
-                            <td><input id="tripDold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                            <td><input id="tripDnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                            <td><label id="tripDmessage"></label></td>
+                            <td><label id="tripDold" class="text ui-widget-content ui-corner-all"/></td>
+                            <td><label id="tripDchange" class="changedTo"><spring:message code="label.ChangedTo"/></label></td>
+                            <td><label id="tripDnew" class="text ui-widget-content ui-corner-all"/></td>
                         </tr>
                         <tr class="messageRow" id="messageRowStartD">
-                            <td><label id="tripStartDmessage" class="messageLabel"></label></td>
-                            <td><input id="tripStartDold" class="text ui-widget-content ui-corner-all" readonly="true"/>
-                            </td>
-                            <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                            <td><input id="tripStartDnew" class="text ui-widget-content ui-corner-all" readonly="true"/>
+                            <td><label id="tripStartDmessage"></label></td>
+                            <td><label id="tripStartDold" class="text ui-widget-content ui-corner-all"/></td>
+                            <td><label id="tripStartDchange" class="changedTo"><spring:message code="label.ChangedTo"/></label></td>
+                            <td><label id="tripStartDnew" class="text ui-widget-content ui-corner-all"/>
                             </td>
                         </tr>
                         <tr class="messageRow" id="messageRowEndD">
-                            <td><label id="tripEndDmessage" class="messageLabel"></label></td>
-                            <td><input id="tripEndDold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                            <td><input id="tripEndDnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                            <td><label id="tripEndDmessage"></label></td>
+                            <td><label id="tripEndDold" class="text ui-widget-content ui-corner-all"/></td>
+                            <td><label id="tripEndDchange" class="changedTo"><spring:message code="label.ChangedTo"/></label></td>
+                            <td><label id="tripEndDnew" class="text ui-widget-content ui-corner-all"/></td>
                         </tr>
                         <tr class="messageRow" id="messageRowOrg">
                             <td><label id="tripOrgmessage"></label></td>
-                            <td><input id="tripOrgold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            <td><label class="messageLabel"><spring:message code="label.ChangedTo"/></label></td>
-                            <td><input id="tripOrgnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                            <td><label id="tripOrgold" class="text ui-widget-content ui-corner-all"/></td>
+                            <td><label id="tripOrgchange" class="changedTo"><spring:message code="label.ChangedTo"/></label></td>
+                            <td><label id="tripOrgnew" class="text ui-widget-content ui-corner-all"/></td>
                         </tr>
                         <tr class="messageRow" id="messageRowLoc">
                             <td><label id="tripLocmessage"></label></td>
-                            <td><input id="tripLocold" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
-                            <td><label><spring:message code="label.ChangedTo"/></label></td>
-                            <td><input id="tripLocnew" class="text ui-widget-content ui-corner-all" readonly="true"/></td>
+                            <td><label id="tripLocold" class="text ui-widget-content ui-corner-all"/></td>
+                            <td><label id="tripLocchange" class="changedTo"><spring:message code="label.ChangedTo"/></label></td>
+                            <td><label id="tripLocnew" class="text ui-widget-content ui-corner-all"/></td>
                         </tr>
 
-                    </table>
+                    </table> </div>
                 </fieldset>
             </form>
         </div>

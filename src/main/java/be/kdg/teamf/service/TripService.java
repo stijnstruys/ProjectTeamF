@@ -3,6 +3,7 @@ package be.kdg.teamf.service;
 import be.kdg.teamf.model.Trip;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.ui.ModelMap;
 
 import java.util.List;
 
@@ -29,10 +30,6 @@ public interface TripService {
 
     public List<String> getTripNames();
 
-    public void setSimpleMailMessage(SimpleMailMessage simpleMailMessage);
-
-    public void setMailSender(MailSender mailSender);
-
-    public void sendMail(String receiver, String subject, String content);
+    public void sendMail(final ModelMap model, final SimpleMailMessage msg);
 
 }

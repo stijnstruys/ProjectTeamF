@@ -36,6 +36,7 @@
         <param-value>
             /WEB-INF/spring-servlet.xml
             /WEB-INF/spring-security.xml
+            /WEB-INF/spring-velocity.xml
         </param-value>
     </context-param>
 
