@@ -14,8 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,8 +40,6 @@ public class TripController {
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-
-
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripList", tripService.listTrips());
@@ -47,21 +47,18 @@ public class TripController {
         return model;
     }
 
+    @RequestMapping(value = "/trip/tripNames.html", method = RequestMethod.GET, headers = "Accept=application/json")
+    public
+    @ResponseBody
+    List<String> tripNames(HttpSession session) {
+        List<String> tripN = tripService.getTripNames();
+        return tripN;
+    }
 
-   /* @RequestMapping(value = "/trip/tripNames", method = RequestMethod.GET)
-                    public List<String> tripNames(@ModelAttribute("trip")
-                      Trip trip, BindingResult result) {
-
-                        List<String> tripN = tripService.getTripNames();
-
-                        return tripN;
-                    }      */
 
     @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"}, method = RequestMethod.GET)
-    public ModelAndView tripSearchResult(HttpServletRequest request, HttpServletResponse response, @RequestParam("searchInput") String searchInput) throws Exception {
+    public ModelAndView tripSearchResult(HttpServletRequest request, @RequestParam("searchInput") String searchInput) throws Exception {
 
-        /*User userlogin = new User();
-        request.setAttribute("loginuser", userlogin); */
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripSearchList", tripService.searchTrips(searchInput));
@@ -83,8 +80,6 @@ public class TripController {
     @RequestMapping("/trip/{tripID}")
     public ModelAndView viewTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
-       /* User userlogin = new User();
-        request.setAttribute("loginuser", userlogin);  */
         Trip t = tripService.findTrip(tripID);
         request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("Trip/viewTrip");
@@ -110,11 +105,13 @@ public class TripController {
     }
 
     @RequestMapping(value = "/trip/mail.html", method = RequestMethod.POST)
-        public @ResponseBody String mailForm(@ModelAttribute(value="formulier") String formulier, @ModelAttribute(value="orgMessage") String orgMessage, @ModelAttribute(value="tripID") String tripID, BindingResult result) {
+    public
+    @ResponseBody
+    String mailForm(@ModelAttribute(value = "formulier") String formulier, @ModelAttribute(value = "orgMessage") String orgMessage, @ModelAttribute(value = "tripID") String tripID, BindingResult result) {
         System.out.println("test123qsdf");
         System.out.println("formulier: " + formulier);
         System.out.println("orgmessage: " + orgMessage);
-        System.out.println("tripid: "+tripID);
+        System.out.println("tripid: " + tripID);
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         mailModel.addAttribute("title", "Trip update");

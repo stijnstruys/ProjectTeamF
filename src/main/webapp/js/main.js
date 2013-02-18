@@ -50,7 +50,13 @@ $(document).ready(function () {
         checkChanges();
         $("#dialog-message").dialog("open");
     });
-
+    var test = "leeg";
+    /*$.get("/ProjectTeamF-1.0/trip/tripNames.html",
+            function (data) {
+                test = data;
+            }
+        );
+    alert(test); */
     var availableTags = [
         "ActionScript",
         "AppleScript",
@@ -114,9 +120,6 @@ function handleColorPickers() {
         var color = $("#color3").val();
         $("#content h2").css("color", color);
     });
-
-
-
 
 }
 function checkChanges() {
