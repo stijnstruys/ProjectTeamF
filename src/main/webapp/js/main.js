@@ -51,7 +51,7 @@ $(document).ready(function () {
         $("#dialog-message").dialog("open");
     });
     var test = "leeg";
-    /*$.get("/ProjectTeamF-1.0/trip/tripNames.html",
+  /* $.post("/ProjectTeamF-1.0/trip/tripNames.html",
             function (data) {
                 test = data;
             }
@@ -208,7 +208,7 @@ function sendMail() {
     var tripID = $("#hiddenTripID").val();
     $("#dialog-message").css("cursor", "wait");
    $.post("/ProjectTeamF-1.0/trip/mail.html",
-        { formulier: formInhoud, orgMessage: organiserMessage, tripID: tripID},
+        { formulier: formInhoud, orgMessage: organiserMessage, orgMessage2: tripID },
         function (data) {
             $("#viewTripForm").submit();
         }

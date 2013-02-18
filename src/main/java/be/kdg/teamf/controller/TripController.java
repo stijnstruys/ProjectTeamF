@@ -47,14 +47,12 @@ public class TripController {
         return model;
     }
 
-    @RequestMapping(value = "/trip/tripNames.html", method = RequestMethod.GET, headers = "Accept=application/json")
-    public
-    @ResponseBody
-    List<String> tripNames(HttpSession session) {
+    @RequestMapping(value = "/trip/tripNames.html", method = RequestMethod.POST)
+    public List<String> tripNames(BindingResult result) {
+        System.out.println("test123qsdf");
         List<String> tripN = tripService.getTripNames();
         return tripN;
     }
-
 
     @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"}, method = RequestMethod.GET)
     public ModelAndView tripSearchResult(HttpServletRequest request, @RequestParam("searchInput") String searchInput) throws Exception {
@@ -105,13 +103,10 @@ public class TripController {
     }
 
     @RequestMapping(value = "/trip/mail.html", method = RequestMethod.POST)
-    public
     @ResponseBody
-    String mailForm(@ModelAttribute(value = "formulier") String formulier, @ModelAttribute(value = "orgMessage") String orgMessage, @ModelAttribute(value = "tripID") String tripID, BindingResult result) {
+    public void mailForm(@RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @ModelAttribute(value = "tripID") String trip, BindingResult result) {
         System.out.println("test123qsdf");
-        System.out.println("formulier: " + formulier);
-        System.out.println("orgmessage: " + orgMessage);
-        System.out.println("tripid: " + tripID);
+        System.out.println("tripid h: " + trip.length());
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         mailModel.addAttribute("title", "Trip update");
@@ -124,10 +119,7 @@ public class TripController {
         SimpleMailMessage msg = new SimpleMailMessage(message);
         msg.setTo("kdgteamf@gmail.com");
         tripService.sendMail(mailModel, msg);
-        //model.addAttribute("receiver", "kdgteamf@gmail.com");
-        return "Gelukt!";
     }
-
 
     @RequestMapping("trip/delete/{tripId}")
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {
