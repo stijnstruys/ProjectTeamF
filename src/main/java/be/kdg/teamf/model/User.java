@@ -1,10 +1,16 @@
 package be.kdg.teamf.model;
 
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collection;
 import java.util.Date;
 
@@ -52,7 +58,12 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String city, String zipcode, String number, String street, Date dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username) {
+    public User(String city, String zipcode, String number, String street, Date dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username)  {
+
+
+
+        this.password =  password;
+
         this.city = city;
         this.zipcode = zipcode;
         this.number = number;
@@ -62,8 +73,8 @@ public class User implements Serializable {
         this.firstName = firstName;
         this.telephone = telephone;
         this.email = email;
-        this.password = password;
         this.username = username;
+
     }
 
     public int getUserID() {
