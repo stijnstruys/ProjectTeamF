@@ -5,6 +5,7 @@ import be.kdg.teamf.model.Trip;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -16,7 +17,7 @@ import static junit.framework.Assert.assertEquals;
  * To change this template use File | Settings | File Templates.
  */
 @ContextConfiguration("classpath:spring-servlet.xml")
-public class TestTripCategorieDAO {
+public class TestTripCategorieDAO extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     protected TripCategorieDAO tripCategorieDAO;
 
