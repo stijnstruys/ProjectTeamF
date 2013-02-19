@@ -1,6 +1,8 @@
 package be.kdg.teamf.service;
 
 import be.kdg.teamf.model.Deelname;
+import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,4 +19,10 @@ public interface DeelnameService {
     public void deleteDeelname(Deelname deelname);
 
     Deelname findDeelname(int deelnameID);
+
+    boolean alreadyExists(Deelname d);
+
+    boolean userIsRegistered(Trip t, User u);
+
+    Deelname findDeelname(Trip t, User u);
 }

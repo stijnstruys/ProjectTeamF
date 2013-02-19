@@ -3,6 +3,8 @@ package be.kdg.teamf.service;
 import be.kdg.teamf.dao.UserDAO;
 import be.kdg.teamf.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     public void addUser(User u) {
-       userDAO.addUser(u);
+        userDAO.addUser(u);
     }
 
     @Transactional
@@ -49,5 +51,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUser(User user) {
         userDAO.updateUser(user);
+    }
+
+    @Override
+    public User getCurrentUser(){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        UserDetails userDetails = null;
+        if (principal instanceof UserDetails) {
+            userDetails = (UserDetails) principal;
+            String userName = userDetails.getUsername();
+            return findUser(userName);
+        }
+        else {
+            return null;
+        }
+
+
+
     }
 }
