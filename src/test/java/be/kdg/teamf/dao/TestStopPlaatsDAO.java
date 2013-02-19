@@ -8,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNull;
 import static junit.framework.Assert.assertTrue;
 
 /**
@@ -35,7 +36,9 @@ public class TestStopPlaatsDAO extends AbstractTransactionalJUnit4SpringContextT
     public void testDeleteStopPlaats(){
         StopPlaats sp = getStopPlaats();
         stopPlaatsDAO.addStopPlaats(sp);
+        int id = sp.getStopPlaatsID();
         stopPlaatsDAO.deleteStopPlaats(sp);
+
 
     }
 
@@ -45,6 +48,7 @@ public class TestStopPlaatsDAO extends AbstractTransactionalJUnit4SpringContextT
         stopPlaatsDAO.addStopPlaats(sp);
         sp.setAdres("Test 111");
         stopPlaatsDAO.updateStopPlaats(sp);
+        assertEquals("Expected adres: ", "Test 111", stopPlaatsDAO.findStopPlaats(sp.getStopPlaatsID()).getAdres());
 
 
     }
