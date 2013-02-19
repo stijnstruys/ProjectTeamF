@@ -26,6 +26,15 @@ public class Deelname {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
+    public Deelname() {
+    }
+
+    public Deelname(Trip t, User u) {
+        trip = t;
+        user=u;
+
+    }
+
     public int getDeelnameID() {
         return deelnameID;
     }

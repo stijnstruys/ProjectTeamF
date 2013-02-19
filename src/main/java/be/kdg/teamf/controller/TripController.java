@@ -1,11 +1,15 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripService;
+import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -14,7 +18,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -36,6 +39,8 @@ public class TripController {
 
     @Autowired
     private SimpleMailMessage message;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -137,5 +142,24 @@ public class TripController {
         ModelAndView model = new ModelAndView("Trip/adminTrip");
         return model;
     }
+    @RequestMapping("/trip/join/{tripID}")
+    public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        UserDetails userDetails = null;
+        if (principal instanceof UserDetails) {
+            userDetails = (UserDetails) principal;
+        }
+
+        String userName = userDetails.getUsername();
+        User u =userService.findUser(userName);
+
+        Trip t = tripService.findTrip(tripID);
+        t.getDeelnames().add(new Deelname(t,u));
+        tripService.updateTrip(t);
+
+
+        return "redirect:/trip/" + tripID + ".html";
+
+    }
 }

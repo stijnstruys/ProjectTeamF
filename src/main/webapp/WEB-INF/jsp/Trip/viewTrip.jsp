@@ -58,7 +58,9 @@
     <spring:message code="label.endDate"/>: ${trip.endDate}   </br></br>
     ${trip.tripDescription}
 
-
+     <form action="join/${trip.tripId}.html">
+         <input type="submit" value="<spring:message code="label.join"/>">
+     </form>
     <%--
     <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
         <table>

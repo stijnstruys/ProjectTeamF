@@ -7,9 +7,10 @@
 
     <http auto-config="true">
         <intercept-url pattern="/trip/admincp-*.html" access="ROLE_USER" />
+        <intercept-url pattern="/trip/join/*.html" access="ROLE_USER" />
         <form-login login-page="/general/index.html" default-target-url="/general/index.html"
                     authentication-failure-url="/user/loginfailed.html" />
-        <logout logout-success-url="/user/logout.html" />
+        <logout logout-success-url="/" />
     </http>
 
     <authentication-manager>

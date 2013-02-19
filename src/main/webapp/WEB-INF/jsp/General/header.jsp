@@ -14,6 +14,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
+
+
                     <a class="brand" href="/ProjectTeamF-1.0/general/index.html">Team F</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
@@ -24,6 +26,7 @@
 
 
                         <ul class="nav pull-right">
+                            <c:if  test="${empty currentUser}">
                             <li class="pull-right"><a href="/ProjectTeamF-1.0/user/user.html">Registreer</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aanmelden<b class="caret"></b></a>
@@ -59,7 +62,15 @@
                                     </form>
 
                                 </ul>
+
                             </li>
+                            </c:if>
+                            <c:if  test="${!empty currentUser}">
+                                <li class="navbar-text">
+                                    Welcome ${currentUser}
+                                </li>
+                               <li class="pull-right"> <a href="/ProjectTeamF-1.0/j_spring_security_logout">Log Out</a>  </li>
+                            </c:if>
                         </ul>
                         <form class="navbar-search pull-right" action="../search/tripSearchResult.html" method="GET">
                             <input id="autocomplete" type="text" class="search-query span2" placeholder="Search trip" name="searchInput">
