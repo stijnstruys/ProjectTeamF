@@ -49,6 +49,10 @@ public class User implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("organiser"))
+    private Collection<Trip> trips;
+
     public User() {
     }
 

@@ -32,13 +32,14 @@ public class TestTripModel {
     public void addTrip() {
         Date d = new Date();
         Trip t = new Trip();
+        User u = new User();
         List<Deelname> deelnameList = new ArrayList();
         List<StopPlaats> stopPlaatsList = new ArrayList();
         List<TripCategorie> tripCategorieList = new ArrayList();
 
         t.setTripName("tripname");
         t.setEndDate(d);
-        t.setOrganiser("organizer");
+        t.setOrganiser(u);
         t.setStartDate(d);
         t.setStartLocation("startlocation");
         t.setTripId(1);
@@ -55,7 +56,7 @@ public class TestTripModel {
         assertEquals("Expected tripname: tripname", "tripname", t.getTripName());
         assertEquals("Enddate", d, t.getEndDate());
         assertEquals("StartDate", d, t.getStartDate());
-        assertEquals("Expected organizer: organizer", "organizer", t.getOrganiser());
+        assertEquals("Expected organizer: organizer", u, t.getOrganiser());
         assertEquals("Expected startlocation: startlocation", "startlocation", t.getStartLocation());
         assertEquals("Expected description:", "beschrijving", t.getTripDescription());
         assertEquals("Expected bgcolor:", "blue", t.getBgcolor());

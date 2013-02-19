@@ -34,8 +34,6 @@ public class LoginInterceptor implements HandlerInterceptor {
             String userName = userDetails.getUsername();
             request.setAttribute("currentUser",userName);
         }
-
-
     }
 
     @Override

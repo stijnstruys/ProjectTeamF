@@ -89,11 +89,6 @@
                                 path="endDate"/></td>
             </tr>
             <tr>
-                <td><form:label id="labelTripOrg" path="organiser"><spring:message
-                        code="label.organiser"/></form:label></td>
-                <td><form:input id="TripOrg" path="organiser"/></td>
-            </tr>
-            <tr>
                 <td><form:label id="labelTripLoc" path="startLocation"><spring:message
                         code="label.startLocation"/></form:label></td>
                 <td><form:input id="TripLoc" path="startLocation"/></td>

@@ -104,7 +104,7 @@ public class TripController {
         trip.setFontcolorContent("#D4D4D4");
         trip.setBgcolor("#1C263C");
         trip.setFontcolorTitle( "#9CFF00" );
-
+        trip.setOrganiser(userService.getCurrentUser());
         tripService.addTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";
@@ -113,7 +113,7 @@ public class TripController {
     @RequestMapping(value = "trip/update", method = RequestMethod.POST)
     public String updateTrip(@ModelAttribute("trip")
                              Trip trip, BindingResult result) {
-
+        trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";
@@ -165,6 +165,7 @@ public class TripController {
 
         if(!deelnameService.alreadyExists(d)) {
             t.getDeelnames().add(d);
+            t.setOrganiser(userService.getCurrentUser());
             tripService.updateTrip(t);
         }
 

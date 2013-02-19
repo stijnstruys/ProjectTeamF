@@ -53,10 +53,10 @@
     <h2>${trip.tripName}</h2>
 
     <spring:message code="label.startLocation"/>: ${trip.startLocation} <br />
-    <spring:message code="label.organiser"/>: ${trip.organiser} <br />
+    <spring:message code="label.organiser"/>: ${trip.organiser.firstName} ${trip.organiser.lastName}<br />
     <spring:message code="label.startDate"/>: ${trip.startDate} <br />
     <spring:message code="label.endDate"/>: ${trip.endDate}   <br />
-    ${trip.tripDescription}
+    <spring:message code="label.tripDescription"/>: ${trip.tripDescription} <br />
     <c:if  test="${registered != true}">
      <form action="join/${trip.tripId}.html">
          <input type="submit" value="<spring:message code="label.join"/>">

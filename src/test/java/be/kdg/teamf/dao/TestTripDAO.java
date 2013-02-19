@@ -33,9 +33,11 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
     @Test
     public void testAddTrip() {
         int id = 1;
+        User u = new User();
+
         Trip t = getTrip();
         tripDAO.addTrip(t);
-        assertEquals("Expected organiser: ", "Bart", tripDAO.findTrip(t.getTripId()).getOrganiser());
+        assertEquals("Expected organiser: ", u, tripDAO.findTrip(t.getTripId()).getOrganiser());
         assertEquals("Expected name: ", "Dropping", tripDAO.findTrip(t.getTripId()).getTripName());
     }
 
@@ -93,7 +95,8 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
         u1.setUsername("JeroenD");
         User u2 = new User();
         u2.setUsername("JeroenV");
-
+        User u3 = new User();
+        u3.setUsername("JeroenVerb");
        /* d1.setDeelnameID(1);
         d1.setUser(u1);
         deelnames.add(d1);
@@ -105,7 +108,7 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
         t.setTripName("Dropping");
         t.setStartDate(new Date("02/05/2013"));
         t.setEndDate(new Date("02/05/2013"));
-        t.setOrganiser("Bart");
+        t.setOrganiser(u3);
 
         t.setDeelnames(deelnames);
         return t;
