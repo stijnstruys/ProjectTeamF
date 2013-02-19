@@ -32,44 +32,35 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aanmelden<b class="caret"></b></a>
 
                                 <ul class="dropdown-menu">
-
-
                                     <form name='f' action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />"
                                           method='POST'>
+                                        <div id="header_nav_login">
+                                            <input type='text' name='j_username' class="input" placeholder="Username">
+                                            <input type='password' name='j_password'class="input" placeholder="Password"/>
 
-                                        <table>
-                                            <tr>
-                                                <td>User:</td>
-                                                <td><input type='text' name='j_username' class="input" placeholder="Username">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Password:</td>
-                                                <td><input type='password' name='j_password'class="input" placeholder="Password"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan='2'><input name="submit" type="submit"
-                                                                       value="submit"class="btn" />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan='2'><input name="reset" type="reset"class="btn" />
-                                                </td>
-                                            </tr>
-                                        </table>
-
+                                            <div id="header_nav_login_btn">
+                                                <input name="submit" type="submit" value="Log in" class="btn" />
+                                                <input name="reset" type="reset" class="btn" value="Reset" />
+                                            </div>
+                                        </div>
                                     </form>
-
                                 </ul>
-
                             </li>
                             </c:if>
                             <c:if  test="${!empty currentUser}">
-                                <li class="navbar-text">
-                                    Welcome ${currentUser}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Welcome ${currentUser}<b class="caret"></b></a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/ProjectTeamF-1.0/j_spring_security_logout">Profile <i class="icon-tags pull-right"></i></a> </li>
+                                        <li class="divider"></li>
+                                       <li><a href="/ProjectTeamF-1.0/j_spring_security_logout">Log Out <i class="icon-off pull-right"></i></a> </li>
+                                    </ul>
                                 </li>
-                               <li class="pull-right"> <a href="/ProjectTeamF-1.0/j_spring_security_logout">Log Out</a>  </li>
+
+
+
+
                             </c:if>
                         </ul>
                         <form class="navbar-search pull-right" action="../search/tripSearchResult.html" method="GET">

@@ -28,6 +28,12 @@ header {
 	width: 1000px;
 	height: 150px;
 }
+#header_nav_login {
+    padding: 0 10px 0 10px;
+}
+#header_nav_login_btn {
+    text-align: center;
+}
 
 /* footer */
 footer {

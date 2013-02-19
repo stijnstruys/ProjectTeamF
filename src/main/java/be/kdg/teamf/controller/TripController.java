@@ -101,6 +101,10 @@ public class TripController {
     public String addTrip(@ModelAttribute("trip")
                           Trip trip, BindingResult result) {
 
+        trip.setFontcolorContent("#D4D4D4");
+        trip.setBgcolor("#1C263C");
+        trip.setFontcolorTitle( "#9CFF00" );
+
         tripService.addTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";
