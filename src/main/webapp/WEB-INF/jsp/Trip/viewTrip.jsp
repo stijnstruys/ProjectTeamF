@@ -52,15 +52,21 @@
     <a href="admincp-${trip.tripId}.html" class="btn btn-success" id="trip_detailview_adminbtn">Admin</a>
     <h2>${trip.tripName}</h2>
 
-    <spring:message code="label.startLocation"/>: ${trip.startLocation} </br>
-    <spring:message code="label.organiser"/>: ${trip.organiser} </br>
-    <spring:message code="label.startDate"/>: ${trip.startDate} </br>
-    <spring:message code="label.endDate"/>: ${trip.endDate}   </br></br>
+    <spring:message code="label.startLocation"/>: ${trip.startLocation} <br />
+    <spring:message code="label.organiser"/>: ${trip.organiser} <br />
+    <spring:message code="label.startDate"/>: ${trip.startDate} <br />
+    <spring:message code="label.endDate"/>: ${trip.endDate}   <br />
     ${trip.tripDescription}
-
+    <c:if  test="${registered != true}">
      <form action="join/${trip.tripId}.html">
          <input type="submit" value="<spring:message code="label.join"/>">
      </form>
+    </c:if>
+    <c:if  test="${registered == true}">
+        <form action="leave/${trip.tripId}.html">
+            <input type="submit" value="<spring:message code="label.leaveTrip"/>">
+        </form>
+    </c:if>
     <%--
     <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
         <table>
