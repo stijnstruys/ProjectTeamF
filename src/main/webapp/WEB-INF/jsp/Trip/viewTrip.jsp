@@ -49,7 +49,7 @@
         }
     </style>
 
-    <a href="admincp-${trip.tripId}.html" class="btn btn-success" id="trip_detailview_adminbtn">Admin</a>
+    <a href="admincp-${trip.tripId}.html" class="btn btn-success btn_green_right" >Admin</a>
     <h2>${trip.tripName}</h2>
 
     <spring:message code="label.startLocation"/>: ${trip.startLocation} <br />
