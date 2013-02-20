@@ -33,22 +33,22 @@ function importData() {
     FB.login(function(response) {
         if (response.authResponse) {
             // connected
-            testAPI();
+            userSettings();
         } else {
             // cancelled
         }
-    }, {scope: 'email,user_birthday,user_location'});
+    }, {scope: 'email,user_birthday,user_hometown'});
 }
 
-function testAPI() {
+function userSettings() {
     FB.getLoginStatus(function(response) {
         FB.api('/me', function(user) {
             var firstName = document.getElementById("firstName");
             var lastName = document.getElementById("lastName");
             var userName = document.getElementById("userName");
-            var telephone = document.getElementById("telephone");
             var email = document.getElementById("email");
             var city = document.getElementById("city");
+            var dateOfBirth = document.getElementById("dateOfBirth");
 
             if(user.first_name != null) {
                 firstName.value = user.first_name;
@@ -64,16 +64,16 @@ function testAPI() {
                 userName.value = user.name;
             }
 
-            if (user.telephone != null){
-                telephone.value = user.telephone;
-            }
-
             if (user.email !=null) {
                 email.value = user.email;
             }
-            alert(user.location);
-            if (user.location !=null){
-                city.value = user.location;
+
+            if(user.birthday !=null){
+                dateOfBirth.value= user.birthday;
+            }
+            alert(user.hometown);
+            if (user.hometown !=null){
+                city.value = user.hometown;
             }
         });
     });
