@@ -56,6 +56,14 @@
                     <form:input type="text" class="profile_input hidethis" path="lastName"/>
                 </div>
             </div>
+            <div class="row-fluid">
+                <div class="span2" ><label class="profile_right">Show position</label></div>
+                <div class="span3">
+                    <label class="checkbox profile_lbl" >${user.showPosition} </label>
+                    <form:input type="text" class="profile_input hidethis" path="showPosition"/>
+                </div>
+
+            </div>
 
             <div class="row-fluid">
                 <div class="span2" ><label class="profile_right">Date of birth</label></div>
