@@ -70,14 +70,14 @@ public class UserController {
         return "redirect:/user/user.html";
     }
 
-    @RequestMapping("/user/delete/{userID}")
+    @RequestMapping("/user/deleteUser/{userID}")
     public String deleteUser(@PathVariable("userID") int userID) {
 
         userService.deleteUser(userService.findUser(userID));
         return "redirect:/user/user.html";
 
     }
-    @RequestMapping("/user/update/{userID}")
+    @RequestMapping("/user/updateUser/{userID}")
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
 
        /* User userlogin  = new User();
@@ -142,7 +142,7 @@ public class UserController {
             return model;
         }
 
-    @RequestMapping(value = "user/update", method = RequestMethod.POST)
+    @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
        public String updateTrip(@ModelAttribute("trip")
                                 Trip trip, BindingResult result) {
            trip.setOrganiser(userService.getCurrentUser());
@@ -168,7 +168,7 @@ public class UserController {
            tripService.sendMail(mailModel, msg);
        }
 
-       @RequestMapping("user/delete/{tripId}")
+       @RequestMapping("user/deleteTrip/{tripId}")
        public String deleteTrip(@PathVariable("tripId") Integer tripId) {
 
            tripService.deleteTrip(tripId);

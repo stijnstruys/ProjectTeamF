@@ -155,7 +155,7 @@
         </tr>
     </table>
     <button id="updateTrip"><spring:message code="label.updateTrip"/></button>
-    <a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
+    <a href="deleteTrip/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
 
     <div id="dialog-message" title="Send notification mail">
         <form>
