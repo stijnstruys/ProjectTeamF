@@ -10,30 +10,41 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name="T_TRIPTYPE")
+@Table(name = "T_TRIPTYPE")
 public class TripType {
 
     @Id
-        @Column(name="TRIPTYPEID")
-        @GeneratedValue
-        private int tripTypeId;
+    @Column(name = "TRIPTYPEID")
+    @GeneratedValue
+    private int tripTypeId;
 
-        @Column(name="TRIPTYPENAME")
-        private String tripTypeName;
+    @Column(name = "TRIPTYPENAME")
+    private String tripTypeName;
 
-        public int getTripTypeId() {
-            return tripTypeId;
-        }
+    @Column(name = "TRIPTYPEDESCRIPTION")
+    private String tripTypeDescription;
 
-        public void setTripTypeId(int tripTypeId) {
-            this.tripTypeId = tripTypeId;
-        }
+    public int getTripTypeId() {
+        return tripTypeId;
+    }
 
-        public String getTripTypeName() {
-            return tripTypeName;
-        }
+    public void setTripTypeId(int tripTypeId) {
+        this.tripTypeId = tripTypeId;
+    }
 
-        public void setTripTypeName(String tripTypeName) {
-            this.tripTypeName = tripTypeName;
-        }
+    public String getTripTypeName() {
+        return tripTypeName;
+    }
+
+    public void setTripTypeName(String tripTypeName) {
+        this.tripTypeName = tripTypeName;
+    }
+
+    public String getTripTypeDescription() {
+        return tripTypeDescription;
+    }
+
+    public void setTripTypeDescription(String tripTypeDescription) {
+        this.tripTypeDescription = tripTypeDescription;
+    }
 }
