@@ -52,15 +52,13 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Welcome ${currentUser}<b class="caret"></b></a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a href="/ProjectTeamF-1.0/j_spring_security_logout">Profile <i class="icon-tags pull-right"></i></a> </li>
+                                        <li><a href="/ProjectTeamF-1.0/user/profile.html">Profile <i class="icon-tags pull-right"></i></a> </li>
+                                        <li class="divider"></li>
+                                        <li><a href="/ProjectTeamF-1.0/user/myTrips.html">Profile <i class="icon-tags pull-right"></i></a> </li>
                                         <li class="divider"></li>
                                        <li><a href="/ProjectTeamF-1.0/j_spring_security_logout">Log Out <i class="icon-off pull-right"></i></a> </li>
                                     </ul>
                                 </li>
-
-
-
-
                             </c:if>
                         </ul>
                         <form class="navbar-search pull-right" action="../search/tripSearchResult.html" method="GET">

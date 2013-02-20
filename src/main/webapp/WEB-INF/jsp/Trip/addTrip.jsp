@@ -62,10 +62,6 @@
                     <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="endDate" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="organiser"><spring:message code="label.organiser"/></form:label></td>
-                    <td><form:input path="organiser" /></td>
-                </tr>
-                <tr>
                    <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
                    <td><form:input path="startLocation" /></td>
                </tr>

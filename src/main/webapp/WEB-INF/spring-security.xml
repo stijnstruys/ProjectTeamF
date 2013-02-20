@@ -8,25 +8,22 @@
     <http auto-config="true">
         <intercept-url pattern="/trip/admincp-*.html" access="ROLE_USER" />
         <intercept-url pattern="/trip/join/*.html" access="ROLE_USER" />
+        <intercept-url pattern="/trip/addTrip.html" access="ROLE_USER" />
         <form-login login-page="/general/index.html" default-target-url="/general/index.html"
                     authentication-failure-url="/user/loginfailed.html" />
         <logout logout-success-url="/" />
     </http>
 
-    <authentication-manager>
-           <authentication-provider>
-               <!--<user-service>
-                   <user name="test" password="test" authorities="ROLE_USER" />
-               </user-service> -->
-
+    <authentication-manager >
+           <authentication-provider >
+               <password-encoder hash="plaintext"/>
             <jdbc-user-service data-source-ref="dataSource"
 
               users-by-username-query="
 		      select username,password ,true
 		      from t_user where username=?"
               authorities-by-username-query="
-		      select username, 'ROLE_USER' from t_user where username=? "
-                    />
+		      select username, 'ROLE_USER' from t_user where username=? "/>
         </authentication-provider>
     </authentication-manager>
 

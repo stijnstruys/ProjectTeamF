@@ -2,6 +2,8 @@ package be.kdg.teamf.model;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -40,9 +42,6 @@ public class Trip {
     @Temporal(TemporalType.DATE)
     private Date endDate;
 
-    @Column(name = "ORGANISER")
-    private String organiser;
-
     @Column(name = "STARTLOCATION")
     private String startLocation;
 
@@ -55,6 +54,9 @@ public class Trip {
     @Column(name = "BGCOLOR")
     private String bgcolor;
 
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User organiser;
 
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
@@ -103,11 +105,11 @@ public class Trip {
         this.endDate = endDate;
     }
 
-    public String getOrganiser() {
+    public User getOrganiser() {
         return organiser;
     }
 
-    public void setOrganiser(String organiser) {
+    public void setOrganiser(User organiser) {
         this.organiser = organiser;
     }
 

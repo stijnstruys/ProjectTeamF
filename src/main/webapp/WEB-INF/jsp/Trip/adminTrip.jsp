@@ -58,12 +58,9 @@
 
         <div id="picker" style="float: right;"></div>
 
-        <div class="form-item">Background:</label><form:input type="text" name="color1" path="bgcolor"
-                                                              class="colorpicker" id="color1"/></div>
-        <div class="form-item">Font title:</label><form:input type="text" name="color2" path="fontcolorContent"
-                                                              class="colorpicker" id="color2"/></div>
-        <div class="form-item">Font content:</label><form:input type="text" name="color3" path="fontcolorTitle"
-                                                                class="colorpicker" id="color3"/></div>
+        <label class="form-item">Background:</label><form:input type="text" name="color1" path="bgcolor" class="colorpicker" id="color1"/></div>
+        <label class="form-item">Font title:</label><form:input type="text" name="color2" path="fontcolorContent" class="colorpicker" id="color2"/></div>
+        <label class="form-item">Font content:</label><form:input type="text" name="color3" path="fontcolorTitle" class="colorpicker" id="color3"/></div>
 
         <table>
             <tr>
@@ -90,11 +87,6 @@
                         code="label.endDate"/></form:label></td>
                 <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
                                 path="endDate"/></td>
-            </tr>
-            <tr>
-                <td><form:label id="labelTripOrg" path="organiser"><spring:message
-                        code="label.organiser"/></form:label></td>
-                <td><form:input id="TripOrg" path="organiser"/></td>
             </tr>
             <tr>
                 <td><form:label id="labelTripLoc" path="startLocation"><spring:message
@@ -238,5 +230,6 @@
 <script src="../js/plugins/farbtastic.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/plugins/colorpicker.js"></script>
 </body>
 </html>

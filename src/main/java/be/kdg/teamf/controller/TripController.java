@@ -3,13 +3,12 @@ package be.kdg.teamf.controller;
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
+import be.kdg.teamf.service.DeelnameService;
 import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -41,6 +40,8 @@ public class TripController {
     private SimpleMailMessage message;
     @Autowired
     private UserService userService;
+    @Autowired
+    private DeelnameService deelnameService;
 
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -83,7 +84,14 @@ public class TripController {
     @RequestMapping("/trip/{tripID}")
     public ModelAndView viewTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
+        User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
+
+        if(u != null && deelnameService.userIsRegistered(t,u)){
+            request.setAttribute("registered", true);
+        }  else{
+            request.setAttribute("registered", false);
+        }
         request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("Trip/viewTrip");
         return model;
@@ -96,7 +104,7 @@ public class TripController {
         trip.setFontcolorContent("#D4D4D4");
         trip.setBgcolor("#1C263C");
         trip.setFontcolorTitle( "#9CFF00" );
-
+        trip.setOrganiser(userService.getCurrentUser());
         tripService.addTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";
@@ -105,7 +113,7 @@ public class TripController {
     @RequestMapping(value = "trip/update", method = RequestMethod.POST)
     public String updateTrip(@ModelAttribute("trip")
                              Trip trip, BindingResult result) {
-
+        trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";
@@ -134,7 +142,6 @@ public class TripController {
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {
 
         tripService.deleteTrip(tripId);
-
         return "redirect:/trip/tripOverzicht.html";
     }
 
@@ -149,21 +156,31 @@ public class TripController {
     @RequestMapping("/trip/join/{tripID}")
     public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        UserDetails userDetails = null;
-        if (principal instanceof UserDetails) {
-            userDetails = (UserDetails) principal;
-        }
-
-        String userName = userDetails.getUsername();
-        User u =userService.findUser(userName);
+        User u = userService.getCurrentUser();
 
         Trip t = tripService.findTrip(tripID);
-        t.getDeelnames().add(new Deelname(t,u));
-        tripService.updateTrip(t);
 
+        Deelname d = new Deelname(t,u) ;
+
+        if(!deelnameService.alreadyExists(d)) {
+            t.getDeelnames().add(d);
+            t.setOrganiser(userService.getCurrentUser());
+            tripService.updateTrip(t);
+        }
 
         return "redirect:/trip/" + tripID + ".html";
-
     }
+    @RequestMapping("/trip/leave/{tripID}")
+    public String leaveTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+
+        User u = userService.getCurrentUser();
+
+        Trip t = tripService.findTrip(tripID);
+
+        Deelname d = deelnameService.findDeelname(t,u);
+        deelnameService.deleteDeelname(d);
+
+        return "redirect:/trip/" + tripID + ".html";
+    }
+
 }

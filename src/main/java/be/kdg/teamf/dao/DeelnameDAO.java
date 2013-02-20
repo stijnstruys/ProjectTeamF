@@ -18,4 +18,7 @@ public interface DeelnameDAO {
     public void deleteDeelname(Deelname deelname);
 
     Deelname findDeelname(int deelnameID);
+
+    Deelname findDeelname(int tripId, int userID);
+
 }

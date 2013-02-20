@@ -21,4 +21,6 @@ public interface UserService {
     User findUser(int userID);
     User findUser(String userName);
     void updateUser(User user);
+
+    User getCurrentUser();
 }

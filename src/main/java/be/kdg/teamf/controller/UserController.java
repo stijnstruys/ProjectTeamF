@@ -3,6 +3,8 @@ package be.kdg.teamf.controller;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +42,7 @@ public class UserController {
         request.setAttribute("loginuser",userlogin); */
 
         User u  = new User();
-        request.setAttribute("user",u);
+        request.setAttribute("user", u);
         request.setAttribute("userList",userService.listUsers());
         ModelAndView model = new ModelAndView("User/user");
 
@@ -95,5 +97,17 @@ public class UserController {
              return "redirect:/general/index.html";
          }
 
+    }
+
+    @RequestMapping(value = "/user/profile")
+    public ModelAndView profile (HttpServletRequest request) throws Exception  {
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User u = userService.findUser(auth.getName()) ;
+
+        request.setAttribute("user", u);
+
+        ModelAndView model = new ModelAndView("User/profile");
+        return model;
     }
 }

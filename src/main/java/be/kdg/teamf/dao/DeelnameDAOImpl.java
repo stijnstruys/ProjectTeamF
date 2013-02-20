@@ -41,6 +41,24 @@ public class DeelnameDAOImpl implements DeelnameDAO {
     public Deelname findDeelname(int deelnameID) {
         Query q = sessionFactory.getCurrentSession().createQuery("from Deelname where deelnameID = :deelnameID");
         q.setInteger("deelnameID", deelnameID);
-        return (Deelname) q.list().get(0);
+        if(q.list().size() > 0){
+            return (Deelname) q.list().get(0);
+        }
+        else{
+            return null;
+        }
+    }
+
+    @Override
+    public Deelname findDeelname(int tripId, int userID) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from Deelname where trip.tripId = :tripId and user.userID = :userId");
+        q.setInteger("tripId", tripId);
+        q.setInteger("userId", userID);
+        if(q.list().size() > 0){
+            return (Deelname) q.list().get(0);
+        }
+        else{
+            return null;
+        }
     }
 }

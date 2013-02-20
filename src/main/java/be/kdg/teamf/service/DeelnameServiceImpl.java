@@ -2,6 +2,8 @@ package be.kdg.teamf.service;
 
 import be.kdg.teamf.dao.DeelnameDAO;
 import be.kdg.teamf.model.Deelname;
+import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,5 +40,36 @@ public class DeelnameServiceImpl implements DeelnameService {
     @Override
     public Deelname findDeelname(int deelnameID) {
         return deelnameDAO.findDeelname(deelnameID);
+    }
+
+    @Override
+    public boolean alreadyExists(Deelname dNew) {
+
+
+        Deelname origineel = deelnameDAO.findDeelname(dNew.getTrip().getTripId(), dNew.getUser().getUserID());
+
+        if(origineel != null){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    @Override
+    public boolean userIsRegistered(Trip t, User u) {
+
+        if(deelnameDAO.findDeelname(t.getTripId(),u.getUserID()) != null)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    @Override
+    public Deelname findDeelname(Trip t, User u) {
+        return deelnameDAO.findDeelname(t.getTripId(),u.getUserID());
     }
 }
