@@ -25,9 +25,6 @@ public class Trip {
     @GeneratedValue
     private int tripId;
 
-    @Column(name = "TRIPTYPE")
-    private String tripType;
-
     @Column(name = "TRIPNAME")
     private String tripName;
 
@@ -60,6 +57,10 @@ public class Trip {
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User organiser;
+
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private TripType tripType;
 
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
@@ -148,11 +149,11 @@ public class Trip {
         this.tripCategorieen = tripCategorieen;
     }
 
-    public String getTripType() {
+    public TripType getTripType() {
         return tripType;
     }
 
-    public void setTripType(String tripType) {
+    public void setTripType(TripType tripType) {
         this.tripType = tripType;
     }
 

@@ -1,6 +1,10 @@
 package be.kdg.teamf.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,6 +27,10 @@ public class TripType {
 
     @Column(name = "TRIPTYPEDESCRIPTION")
     private String tripTypeDescription;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("tripType"))
+    private Collection<Trip> trips;
 
     public int getTripTypeId() {
         return tripTypeId;
