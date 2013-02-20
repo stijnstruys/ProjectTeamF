@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="../js/FBLogin.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.10.0.custom.css" rel="stylesheet">
 </head>
 <body>
@@ -36,7 +37,7 @@
     <table>
         <tr>
             <td><form:label path="username"><spring:message code="label.username"/></form:label></td>
-            <td><form:input path="username" /></td>
+            <td><form:input path="username" id="userName" /></td>
         </tr>
         <tr>
             <td><form:label path="password"><spring:message code="label.password"/></form:label></td>
@@ -44,11 +45,11 @@
         </tr>
         <tr>
             <td><form:label path="firstName"><spring:message code="label.firstname"/></form:label></td>
-            <td><form:input path="firstName" /></td>
+            <td><form:input path="firstName" id="firstName"/></td>
         </tr>
         <tr>
             <td><form:label path="lastName"><spring:message code="label.lastname"/></form:label></td>
-            <td><form:input path="lastName" /></td>
+            <td><form:input path="lastName" id="lastName"/></td>
         </tr>
         <tr>
             <td><form:label path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label></td>
@@ -56,11 +57,11 @@
         </tr>
         <tr>
             <td><form:label path="email"><spring:message code="label.email"/></form:label></td>
-            <td><form:input path="email" /></td>
+            <td><form:input path="email" id="email" /></td>
         </tr>
         <tr>
             <td><form:label path="telephone"><spring:message code="label.telephone"/></form:label></td>
-            <td><form:input path="telephone" /></td>
+            <td><form:input path="telephone" id="telephone" /></td>
         </tr>
         <tr>
             <td><form:label path="street"><spring:message code="label.street"/></form:label></td>
@@ -76,16 +77,17 @@
         </tr>
         <tr>
             <td><form:label path="city"><spring:message code="label.city"/></form:label></td>
-            <td><form:input path="city" /></td>
+            <td><form:input path="city" id="city" /></td>
         </tr>
         <tr>
             <td colspan="2">
                 <input type="submit" value="<spring:message code="label.addUser"/>"/>
             </td>
+
         </tr>
     </table>
 </form:form>
-
+<button onclick="importData()">Import data from Facebook</button>
 
 <h3>Users</h3>
 

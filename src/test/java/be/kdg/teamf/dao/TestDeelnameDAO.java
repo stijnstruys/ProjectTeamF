@@ -42,9 +42,9 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
         dn.getUser().setFirstName("Jeroen");
-        dn.getTrip().setTripName("Reis naar Spangje");
+        dn.getTrip().setTripName("Reis naar Spanje");
         assertEquals("Expected: ", "Jeroen", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
-        assertEquals("Expecxted: ", "Reis naar Spangje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
+        assertEquals("Expecxted: ", "Reis naar Spanje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
 
     }
 
