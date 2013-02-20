@@ -1,6 +1,8 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
+import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -26,6 +28,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private TripService tripService;
 
 	/*@RequestMapping("/")
 	public String listContacts(Map<String, Object> map) {
@@ -110,4 +115,14 @@ public class UserController {
         ModelAndView model = new ModelAndView("User/profile");
         return model;
     }
+
+    @RequestMapping(value = "/user/myTrips.html", method = RequestMethod.GET)
+        public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+            Trip t = new Trip();
+            request.setAttribute("trip", t);
+            request.setAttribute("tripList", tripService.listUserTrips(userService.getCurrentUser().getUserID()));
+            ModelAndView model = new ModelAndView("User/myTrips");
+            return model;
+        }
 }

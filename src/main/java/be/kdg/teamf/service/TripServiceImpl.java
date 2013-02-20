@@ -72,6 +72,11 @@ public class TripServiceImpl implements TripService {
         return tripDAO.getTripNames();
     }
 
+    @Transactional
+    public List<Trip> listUserTrips(int userID) {
+        return tripDAO.listUserTrips(userID);
+    }
+
     public void sendMail(final ModelMap model, final SimpleMailMessage msg) {
         		mailSender.send(new MimeMessagePreparator() {
 

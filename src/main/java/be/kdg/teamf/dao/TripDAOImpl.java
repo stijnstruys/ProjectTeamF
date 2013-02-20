@@ -1,6 +1,7 @@
 package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Repository
-public class TripDAOImpl implements TripDAO{
+public class TripDAOImpl implements TripDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -32,8 +33,7 @@ public class TripDAOImpl implements TripDAO{
 
     public void removeTrip(int id) {
         Trip trip = findTrip(id);
-        if(trip != null)
-        {
+        if (trip != null) {
             sessionFactory.getCurrentSession().delete(trip);
         }
     }
@@ -44,7 +44,7 @@ public class TripDAOImpl implements TripDAO{
 
     @Override
     public List<Trip> searchTrips(String searchInput) {
-        String si = "%"+searchInput+"%";
+        String si = "%" + searchInput + "%";
         Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripName like :si");
         q.setString("si", si);
         return q.list();
@@ -52,8 +52,15 @@ public class TripDAOImpl implements TripDAO{
 
     public Trip findTrip(int id) {
         Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripId = :id");
-        q.setInteger("id",id);
+        q.setInteger("id", id);
         return (Trip) q.list().get(0);
+    }
+
+    @Override
+    public List<Trip> listUserTrips(int userID) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where organiser like :id");
+        q.setInteger("id", userID);
+        return q.list();
     }
 
     @Override

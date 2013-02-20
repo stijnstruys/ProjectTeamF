@@ -30,6 +30,8 @@ public interface TripService {
 
     public List<String> getTripNames();
 
+    public List<Trip> listUserTrips(int userID);
+
     public void sendMail(final ModelMap model, final SimpleMailMessage msg);
 
 }
