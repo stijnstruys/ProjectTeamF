@@ -17,6 +17,10 @@ body {
 
 .btn_green_right {
     float: right;
+    margin-left: 15px;
+}
+.fieldsnothere {
+    float: left;
 }
 
 /* header */
@@ -67,6 +71,11 @@ footer {
 /* content */
 h2 {
     color: #9CFF00;
+}
+
+h4 {
+    color: #B4FF40;
+    margin-left: 30px;
 }
 
 #content {
@@ -153,3 +162,20 @@ a.trip_name:hover {
 #trip_detailview_adminbtn {
     float: right;
 }
+
+
+/* profile */
+
+.hidethis {
+    visibility: hidden;
+}
+
+.profile_right {
+    text-align: right;
+}
+
+.profile_btns {
+    margin-top: 15px;
+}
+
+/* change pw */

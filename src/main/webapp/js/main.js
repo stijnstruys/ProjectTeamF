@@ -90,9 +90,22 @@ $(document).ready(function () {
 
 
 function userprofile() {
+    $(".profile_input").hide();
+    $(".profile_btns").hide();
+    $(".hidethis").removeClass("hidethis");
 
 $("#user_modify_profile").click( function() {
-   alert("test");
+    $(".profile_lbl").hide();
+    $(".profile_input").show();
+    $(".profile_btns").show();
+    $("#user_modify_profile").hide();
+});
+
+$("#profile_cancel").click( function() {
+    $(".profile_lbl").show();
+    $(".profile_input").hide();
+    $(".profile_btns").hide();
+    $("#user_modify_profile").show();
 });
 
 }
