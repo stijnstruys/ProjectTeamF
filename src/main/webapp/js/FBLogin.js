@@ -37,7 +37,7 @@ function importData() {
         } else {
             // cancelled
         }
-    });
+    }, {scope: 'email,user_birthday,user_location'});
 }
 
 function testAPI() {
@@ -71,7 +71,7 @@ function testAPI() {
             if (user.email !=null) {
                 email.value = user.email;
             }
-
+            alert(user.location);
             if (user.location !=null){
                 city.value = user.location;
             }
