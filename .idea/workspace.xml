@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361357702216" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361358455600" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361278030394" ignored="false" />
-    <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361216614437" ignored="false" />
+    <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361362347709" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360930899715" ignored="false" />
     <file path="/TripController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361276443946" ignored="false" />
     <file path="/TripService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360700284557" ignored="false" />
@@ -70,7 +70,7 @@
     <file path="/TestUserModel.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361221295024" ignored="false" />
     <file path="/User.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361357948563" ignored="false" />
     <file path="/LoginInterceptor.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361272299362" ignored="false" />
-    <file path="/profile.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361358327895" ignored="false" />
+    <file path="/profile.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361362403211" ignored="false" />
     <file path="/UserController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361357453437" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,11 +157,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="profile.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="108" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.7394636">
+            <state line="73" column="95" selection-start="3470" selection-end="3470" vertical-scroll-proportion="-10.923077">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="48" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.8577154">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,7 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestTripTypeModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestUserModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestTripModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestDeelnameModel.java" />
@@ -209,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/main.js" />
       </list>
     </option>
   </component>
@@ -235,10 +246,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1932" />
-    <option name="height" value="1050" />
+    <option name="width" value="1920" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -502,6 +511,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="General" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1213,7 +1248,11 @@
       <created>1361357707393</created>
       <updated>1361357707393</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="showposition added for users, still needs some work">
+      <created>1361358461929</created>
+      <updated>1361358461929</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1237,7 +1276,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1932" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1032" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1246,7 +1285,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3469388" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35416666" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1260,7 +1299,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17310168" sideWeight="0.6409904" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21007502" sideWeight="0.6530612" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21143474" sideWeight="0.6458333" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34178612" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1307,7 +1346,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="small header change" />
+    <option name="LAST_COMMIT_MESSAGE" value="showposition added for users, still needs some work" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1339,6 +1378,7 @@
     <MESSAGE value="Colorpicker." />
     <MESSAGE value="profile" />
     <MESSAGE value="small header change" />
+    <MESSAGE value="showposition added for users, still needs some work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1348,11 +1388,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestDeelnameModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="29" selection-start="244" selection-end="244" vertical-scroll-proportion="0.13111112" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="89" column="22" selection-start="2490" selection-end="2490" vertical-scroll-proportion="-0.32222223" />
@@ -1453,8 +1488,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="108" selection-start="2708" selection-end="2708" vertical-scroll-proportion="0.7394636">
+        <state line="73" column="95" selection-start="3470" selection-end="3470" vertical-scroll-proportion="-10.923077">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="48" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.8577154">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

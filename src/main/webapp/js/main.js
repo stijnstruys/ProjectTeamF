@@ -99,6 +99,7 @@ $("#user_modify_profile").click( function() {
     $(".profile_input").show();
     $(".profile_btns").show();
     $("#user_modify_profile").hide();
+    $("#profile_show_pos").removeAttr("disabled");
 });
 
 $("#profile_cancel").click( function() {
@@ -106,6 +107,7 @@ $("#profile_cancel").click( function() {
     $(".profile_input").hide();
     $(".profile_btns").hide();
     $("#user_modify_profile").show();
+    ("#profile_show_pos").attr('disabled', 'true');;
 });
 
 }
