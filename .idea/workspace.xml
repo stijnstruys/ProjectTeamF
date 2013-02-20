@@ -7,7 +7,7 @@
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361357478281" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361357608736" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361278030394" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361216614437" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360930899715" ignored="false" />
@@ -141,7 +141,7 @@
       <file leaf-file-name="header.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="144" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.38181818">
+            <state line="55" column="122" selection-start="3415" selection-end="3415" vertical-scroll-proportion="0.40757576">
               <folding />
             </state>
           </provider>
@@ -1165,7 +1165,11 @@
       <created>1361357487082</created>
       <updated>1361357487082</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="small header change">
+      <created>1361357613457</created>
+      <updated>1361357613457</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1259,7 +1263,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="small header change" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1290,6 +1294,7 @@
     <MESSAGE value="notificiation + search" />
     <MESSAGE value="Colorpicker." />
     <MESSAGE value="profile" />
+    <MESSAGE value="small header change" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1404,7 +1409,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="144" selection-start="3292" selection-end="3292" vertical-scroll-proportion="0.38181818">
+        <state line="55" column="122" selection-start="3415" selection-end="3415" vertical-scroll-proportion="0.40757576">
           <folding />
         </state>
       </provider>
