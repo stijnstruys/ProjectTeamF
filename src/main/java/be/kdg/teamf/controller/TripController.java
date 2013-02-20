@@ -36,8 +36,7 @@ public class TripController {
     @Autowired
     private TripService tripService;
 
-    @Autowired
-    private SimpleMailMessage message;
+
     @Autowired
     private UserService userService;
     @Autowired
@@ -110,49 +109,6 @@ public class TripController {
         return "redirect:/trip/tripOverzicht.html";
     }
 
-    @RequestMapping(value = "trip/update", method = RequestMethod.POST)
-    public String updateTrip(@ModelAttribute("trip")
-                             Trip trip, BindingResult result) {
-        trip.setOrganiser(userService.getCurrentUser());
-        tripService.updateTrip(trip);
-
-        return "redirect:/trip/tripOverzicht.html";
-    }
-
-    @RequestMapping(value = "/trip/mail.html", method = RequestMethod.POST)
-    @ResponseBody
-    public void mailForm(@RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @ModelAttribute(value = "tripID") String trip, BindingResult result) {
-        System.out.println("test123qsdf");
-        System.out.println("tripid h: " + trip.length());
-        ModelMap mailModel = new ModelMap();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        mailModel.addAttribute("title", "Trip update");
-        mailModel.addAttribute("subtitle1", "Message from organiser");
-        mailModel.addAttribute("message", orgMessage);
-        mailModel.addAttribute("subtitle2", "The following trip changes occured");
-        mailModel.addAttribute("text", formulier);
-        mailModel.addAttribute("date", format.format(new Date()));
-
-        SimpleMailMessage msg = new SimpleMailMessage(message);
-        msg.setTo("kdgteamf@gmail.com");
-        tripService.sendMail(mailModel, msg);
-    }
-
-    @RequestMapping("trip/delete/{tripId}")
-    public String deleteTrip(@PathVariable("tripId") Integer tripId) {
-
-        tripService.deleteTrip(tripId);
-        return "redirect:/trip/tripOverzicht.html";
-    }
-
-    @RequestMapping("/trip/admincp-{tripID}")
-    public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
-        Trip t = tripService.findTrip(tripID);
-        request.setAttribute("trip", t);
-
-        ModelAndView model = new ModelAndView("Trip/adminTrip");
-        return model;
-    }
     @RequestMapping("/trip/join/{tripID}")
     public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 

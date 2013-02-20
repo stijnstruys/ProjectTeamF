@@ -183,7 +183,7 @@ function sendMail() {
     //alert(organiserMessage);
     var tripID = $("#hiddenTripID").val();
     $("#dialog-message").css("cursor", "wait");
-   $.post("/ProjectTeamF-1.0/trip/mail.html",
+   $.post("/ProjectTeamF-1.0/user/mail.html",
         { formulier: formInhoud, orgMessage: organiserMessage, orgMessage2: tripID },
         function (data) {
             $("#viewTripForm").submit();

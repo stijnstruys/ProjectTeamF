@@ -72,8 +72,8 @@ function testAPI() {
                 email.value = user.email;
             }
 
-            if (user.hometown !=null){
-                city.value = user.hometown;
+            if (user.location !=null){
+                city.value = user.location;
             }
         });
     });

@@ -5,15 +5,19 @@ import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,6 +29,9 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 //@RequestMapping("/user/user.html")
 public class UserController {
+
+    @Autowired
+    private SimpleMailMessage message;
 
     @Autowired
     private UserService userService;
@@ -125,4 +132,46 @@ public class UserController {
             ModelAndView model = new ModelAndView("User/myTrips");
             return model;
         }
+
+    @RequestMapping("/user/admincp-{tripID}")
+        public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+            Trip t = tripService.findTrip(tripID);
+            request.setAttribute("trip", t);
+
+            ModelAndView model = new ModelAndView("User/adminTrip");
+            return model;
+        }
+
+    @RequestMapping(value = "user/update", method = RequestMethod.POST)
+       public String updateTrip(@ModelAttribute("trip")
+                                Trip trip, BindingResult result) {
+           trip.setOrganiser(userService.getCurrentUser());
+           tripService.updateTrip(trip);
+
+           return "redirect:/user/myTrips.html";
+       }
+
+       @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)
+       @ResponseBody
+       public void mailForm(@RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @ModelAttribute(value = "tripID") String trip, BindingResult result) {
+           ModelMap mailModel = new ModelMap();
+           SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+           mailModel.addAttribute("title", "Trip update");
+           mailModel.addAttribute("subtitle1", "Message from organiser");
+           mailModel.addAttribute("message", orgMessage);
+           mailModel.addAttribute("subtitle2", "The following trip changes occured");
+           mailModel.addAttribute("text", formulier);
+           mailModel.addAttribute("date", format.format(new Date()));
+
+           SimpleMailMessage msg = new SimpleMailMessage(message);
+           msg.setTo("kdgteamf@gmail.com");
+           tripService.sendMail(mailModel, msg);
+       }
+
+       @RequestMapping("user/delete/{tripId}")
+       public String deleteTrip(@PathVariable("tripId") Integer tripId) {
+
+           tripService.deleteTrip(tripId);
+           return "redirect:/user/myTrips.html";
+       }
 }

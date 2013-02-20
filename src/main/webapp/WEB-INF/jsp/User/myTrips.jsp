@@ -44,7 +44,7 @@
                     <c:forEach items="${tripList}" var="trip">
                      <li>
                          <div class="trip_details">
-                             <div class="trip_name"><a class="trip_name" href="${trip.tripId}.html">${trip.tripName}</a></div>
+                             <div class="trip_name"><a class="trip_name" href="admincp-${trip.tripId}.html">${trip.tripName}</a></div>
                              <div class="trip_description">${trip.tripDescription}</div>
 
                              <div class="trip_extra">
