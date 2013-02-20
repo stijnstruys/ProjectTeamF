@@ -179,3 +179,7 @@ a.trip_name:hover {
 }
 
 /* change pw */
+
+#changepw_form {
+    text-align: center;
+}

@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>User</title>
+    <title>Change password</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -29,35 +29,15 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Change password</h2>
+    <h2>Change password</h2>  </br>
+    <form  id="changepw_form" action="/ProjectTeamF-1.0/user/changepw.html" method="POST">
+      <input type="text" id="currentpw" placeholder="Current password" name="currentpw" />  </br>
+      <input type="password" id="newpw" placeholder="New password" name="newpw"/>   </br>
+      <input type="password" id="confirmpw" placeholder="Confirm password" name="confirmpw" />   </br>  </br>
+      <button type="submit" class="btn">Change password</button>
+    </form>
 
 
-        <form class="form-horizontal" action="/ProjectTeamF-1.0/user/changepw.html" method="POST">
-            <div class="control-group">
-                <label class="control-label" for="currentpw">Current password</label>
-                <div class="controls">
-                    <input type="text" id="currentpw" placeholder="Current password" name="currentpw" />
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="newpw">New password</label>
-                <div class="controls">
-                    <input type="password" id="newpw" placeholder="New password" name="newpw"/>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="confirmpw">Confirm password</label>
-                <div class="controls">
-                    <input type="password" id="confirmpw" placeholder="Confirm password" name="confirmpw" />
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-
-                    <button type="submit" class="btn">Change password</button>
-                </div>
-            </div>
-        </form>
 
 
 
