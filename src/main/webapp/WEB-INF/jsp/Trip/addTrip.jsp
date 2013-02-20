@@ -45,9 +45,14 @@
 
         <table>
             <tr>
-                <td><form:select multiple="true" path="tripTypes.html">
-                    <form:options items="skillOptionList" itemValue="tripTypeList" itemLabel="tripType"/>
-                </form:select></td>
+               <%-- <td>
+                   <form:select multiple="true" path="tripTypes.html">
+                        <c:if test="${!empty tripType.tripTypes}">
+                            <c:forEach items="${tripType.tripTypes}" var="tripTypes">
+                                <form:options itemValue="${tripTypes.tripTypeName}" itemLabel="tripType"/>
+                            </c:forEach>
+                        </c:if>
+                    </form:select></td> --%>
                 <td><form:label path="tripType"><spring:message code="label.tripType"/></form:label></td>
                 <td><form:select path="tripType"/></td>
                 <td><form:input path="tripType"/></td>
