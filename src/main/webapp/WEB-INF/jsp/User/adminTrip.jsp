@@ -54,7 +54,7 @@
 
     <h2><spring:message code="label.updateTrip"/></h2>
 
-    <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
+    <form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip">
 
         <div id="picker" style="float: right;"></div>
 

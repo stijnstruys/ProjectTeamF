@@ -2,6 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <section id="container">
 
     <header>
@@ -76,6 +77,8 @@
                             <input id="autocomplete" type="text" class="search-query span2" placeholder="<spring:message code="label.SearchTrip"/>"
                                    name="searchInput">
                         </form>
+
+
                     </div>
                     <!--/.nav-collapse -->
                 </div>

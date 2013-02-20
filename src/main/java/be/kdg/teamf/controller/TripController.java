@@ -56,13 +56,6 @@ public class TripController {
         return model;
     }
 
-    @RequestMapping(value = "/trip/tripNames.html", method = RequestMethod.POST)
-    public List<String> tripNames(BindingResult result) {
-        System.out.println("test123qsdf");
-        List<String> tripN = tripService.getTripNames();
-        return tripN;
-    }
-
     @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"}, method = RequestMethod.GET)
     public ModelAndView tripSearchResult(HttpServletRequest request, @RequestParam("searchInput") String searchInput) throws Exception {
 
@@ -80,6 +73,7 @@ public class TripController {
         request.setAttribute("loginuser", userlogin);
         Trip t = new Trip();
         request.setAttribute("trip", t);
+        request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
         ModelAndView model = new ModelAndView("Trip/addTrip");
         return model;
     }
@@ -144,13 +138,4 @@ public class TripController {
         return "redirect:/trip/" + tripID + ".html";
     }
 
-    @RequestMapping(value = "/trip/tripType.html", method = RequestMethod.GET)
-    public ModelAndView tripTypePage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-        TripType tt = new TripType();
-        request.setAttribute("trip", tt);
-        request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
-        ModelAndView model = new ModelAndView("Trip/tripOverzicht");
-        return model;
-    }
 }

@@ -61,13 +61,7 @@ $(document).ready(function () {
         checkChanges();
         $("#dialog-message").dialog("open");
     });
-    var test = "leeg";
-    /* $.post("/ProjectTeamF-1.0/trip/tripNames.html",
-     function (data) {
-     test = data;
-     }
-     );
-     alert(test); */
+
     var availableTags = [
         "ActionScript",
         "AppleScript",
@@ -92,15 +86,19 @@ $(document).ready(function () {
         "Scala",
         "Scheme"
     ];
-    $("#autocomplete").autocomplete({
-        source: availableTags
-    });
+    /*$("#autocomplete").autocomplete({
+        source: 'search/tripNames.html'
+        //source: availableTags
+    });  */
 
     /*languages*/
     $("#languageFlag").click(function () {
         checkChanges();
         $("#dialog-message-languages").dialog("open");
     });
+
+    var test = $("hiddenNameList").val();
+   // alert(test);
 });
 
 

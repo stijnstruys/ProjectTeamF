@@ -21,6 +21,7 @@
     <mvc:interceptors>
         <bean class="be.kdg.teamf.controller.LoginInterceptor" />
     </mvc:interceptors>
+
     <bean id="internalResourceViewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--<property name="viewClass"
