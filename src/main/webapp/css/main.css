@@ -183,3 +183,40 @@ a.trip_name:hover {
 #changepw_form {
     text-align: center;
 }
+
+/* languages */
+
+#languageFlag {
+    margin-top: 0.8em;
+    height: 1.2em;
+    width: 1.75em;
+    float: left;
+    cursor: pointer;
+}
+
+#languageFlag:hover {
+    margin-top: 0.7em;
+    height: 1.5em;
+}
+
+.flagsImg {
+    height: 2.5em;
+    width: 4em;
+}
+
+.flagRow {
+    text-align: center;
+    height: 5em;
+}
+
+.flagOptions {
+    width: 10em;
+}
+
+.flagLink {
+    cursor: pointer;
+}
+
+#languageTable {
+    margin-top: 1.25em;
+}
