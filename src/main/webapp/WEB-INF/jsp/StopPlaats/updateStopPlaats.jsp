@@ -5,10 +5,10 @@
   Time: 8:14
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -28,7 +28,7 @@
     <jsp:include page="../General/header.jsp"/>
 
     <section id="content">
-        <h2>Update User</h2>
+        <h2><spring:message code="label.UpdateStoppingPoint"/></h2>
 
         <form:form method="post" action="updateStopPlaats/${tripID}.html" commandName="stopPlaats" id="stopPlaats">
 
@@ -39,15 +39,15 @@
                     <td><form:hidden path="stopPlaatsID" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="adres"><spring:message code="label.adres"/></form:label></td>
+                    <td><form:label path="adres"><spring:message code="label.address"/></form:label></td>
                     <td><form:input path="adres" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="vrijgegeven"><spring:message code="label.vrijgegeven"/></form:label></td>
+                    <td><form:label path="vrijgegeven"><spring:message code="label.Released"/></form:label></td>
                     <td><form:input path="vrijgegeven" /></td>
                 </tr>
                     <td>
-                        <input type="submit" value="<spring:message code="label.updateStopPlaats"/>"/>
+                        <input type="submit" value="<spring:message code="label.UpdateStoppingPoint"/>"/>
                     </td>
                 </tr>
             </table>

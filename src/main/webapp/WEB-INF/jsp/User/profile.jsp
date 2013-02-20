@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>User</title>
+    <title><spring:message code="label.UserProfile"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -32,11 +32,11 @@
         <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password" class="btn_green_left">Change password</a>
         <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" class="btn_green_left">Modify</a>
 
-        <h2>Profile</h2>
-        <h4>General</h4>
+        <h2><spring:message code="label.UserProfile"/></h2>
+        <h4><spring:message code="label.General"/></h4>
         <form:form class="form-horizontal" commandName="user" action="/ProjectTeamF-1.0/user/update.html" method="POST">
             <div class="row-fluid">
-                <div class="span2" ><label class="profile_right">Username</label></div>
+                <div class="span2" ><label class="profile_right"><spring:message code="label.username"/></label></div>
                 <div class="span3">
                     <label class="checkbox" >${user.username} </label>
 
@@ -45,12 +45,12 @@
             </div>
 
             <div class="row-fluid">
-                <div class="span2" ><label class="profile_right">Firstname</label></div>
+                <div class="span2" ><label class="profile_right"><spring:message code="label.firstname"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.firstName} </label>
                     <form:input type="text" class="profile_input hidethis" path="firstName"/>
                 </div>
-                <div class="span2"><label class="profile_right">Lastname</label></div>
+                <div class="span2"><label class="profile_right"><spring:message code="label.lastname"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.lastName} </label>
                     <form:input type="text" class="profile_input hidethis" path="lastName"/>
@@ -59,7 +59,7 @@
 
 
             <div class="row-fluid">
-                <div class="span2" ><label class="profile_right">Date of birth</label></div>
+                <div class="span2" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl">${user.dateOfBirth} </label>
                     <form:input class="datepicker profile_input hidethis" readonly="true" style="cursor: text;" path="dateOfBirth" />
@@ -71,21 +71,21 @@
                         <%--<label class="checkbox profile_lbl" >${user.showPosition} </label>--%>
                         <%--<form:input type="text" class="profile_input hidethis" path="showPosition"/>--%>
                     <label class="checkbox">
-                        <form:checkbox id="profile_show_pos" path="showPosition" disabled="true" /> Show position
+                        <form:checkbox id="profile_show_pos" path="showPosition" disabled="true" /> <spring:message code="label.ShowPosition"/>
                     </label>
                 </div>
             </div>
 
             <h4>Contact</h4>
             <div class="row-fluid">
-                <div class="span2" ><label class="profile_right">Email</label></div>
+                <div class="span2" ><label class="profile_right"><spring:message code="label.email"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.email} </label>
                     <form:input type="text" class="profile_input hidethis" path="email"/>
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="span2" ><label class="profile_right">Telephone</label></div>
+                <div class="span2" ><label class="profile_right"><spring:message code="label.telephone"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.telephone} </label>
                     <form:input type="text" class="profile_input hidethis" path="telephone"/>
@@ -93,24 +93,24 @@
             </div>
 
             <div class="row-fluid">
-                <div class="span2" ><label class="profile_right">City</label></div>
+                <div class="span2" ><label class="profile_right"><spring:message code="label.city"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.city} </label>
                     <form:input type="text" class="profile_input hidethis" path="city"/>
                 </div>
-                <div class="span2"><label class="profile_right">Zipcode</label></div>
+                <div class="span2"><label class="profile_right"><spring:message code="label.zipcode"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.zipcode} </label>
                     <form:input type="text" class="profile_input hidethis" path="zipcode"/>
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="span2" ><label class="profile_right">Street</label></div>
+                <div class="span2" ><label class="profile_right"><spring:message code="label.street"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.street} </label>
                     <form:input type="text" class="profile_input hidethis" path="street"/>
                 </div>
-                <div class="span2"><label class="profile_right">Number</label></div>
+                <div class="span2"><label class="profile_right"><spring:message code="label.number"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl" >${user.number} </label>
                     <form:input type="text" class="profile_input hidethis" path="number"/>
@@ -119,8 +119,8 @@
 
             <div class="control-group profile_btns">
                 <div class="controls">
-                    <button type="submit" class="btn btn-primary hidethis profile_btns">Update changes</button>
-                    <button type="button" class="btn hidethis profile_btns" id="profile_cancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary hidethis profile_btns"><spring:message code="label.UpdateProfile"/></button>
+                    <button type="button" class="btn hidethis profile_btns" id="profile_cancel"><spring:message code="label.Cancel"/></button>
                 </div>
             </div>
             <form:input type="text"  class="hidden fieldsnothere" path="userID" />

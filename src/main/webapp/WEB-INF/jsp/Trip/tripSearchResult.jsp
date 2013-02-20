@@ -19,7 +19,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Trip</title>
+    <title><spring:message code="label.TripSearchResult"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -36,7 +36,7 @@
     <jsp:include page="../General/header.jsp"/>
 
         <section id="content">
-            <h2>Trips search result</h2>
+            <h2><spring:message code="label.TripSearchResult"/></h2>
 
             <c:if  test="${!empty tripSearchList}">
                 <table class="data">

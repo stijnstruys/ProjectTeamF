@@ -20,7 +20,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Add Trip</title>
+    <title><spring:message code="label.addTrip"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -74,7 +74,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" class="btn" value="<spring:message code="button.addTrip"/>"/>
+                    <input type="submit" class="btn" value="<spring:message code="label.addTrip"/>"/>
                 </td>
             </tr>
         </table>

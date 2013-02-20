@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>StopPlaats</title>
+    <title><spring:message code="label.StoppingPoint"/></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
@@ -31,17 +31,17 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Stopplaats Toevoegen</h2>
+    <h2><spring:message code="label.AddStoppingPoint"/></h2>
     <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="stopPlaats">
 
         <table>
             <tr>
-                <td><form:label path="adres"><spring:message code="label.adres"/></form:label></td>
+                <td><form:label path="adres"><spring:message code="label.address"/></form:label></td>
                 <td><form:input path="adres"/></td>
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="<spring:message code="label.addStopPlaats"/>"/>
+                    <input type="submit" value="<spring:message code="label.AddStoppingPoint"/>"/>
                 </td>
             </tr>
         </table>

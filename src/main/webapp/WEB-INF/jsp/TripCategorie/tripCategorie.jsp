@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trip categorie</title>
+    <title><spring:message code="label.tripCategory"/></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
@@ -31,17 +31,17 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Trip categorie Toevoegen</h2>
+    <h2><spring:message code="label.addTripCategory"/></h2>
     <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie">
 
         <table>
             <tr>
-                <td><form:label path="tripCategorieName"><spring:message code="label.tripCategorieName"/></form:label></td>
+                <td><form:label path="tripCategorieName"><spring:message code="label.tripCategoryName"/></form:label></td>
                 <td><form:input path="tripCategorieName"/></td>
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="<spring:message code="label.addTripCategorie"/>"/>
+                    <input type="submit" value="<spring:message code="label.addTripCategory"/>"/>
                 </td>
             </tr>
         </table>

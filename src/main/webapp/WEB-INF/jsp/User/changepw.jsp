@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Change password</title>
+    <title><spring:message code="label.ChangePassword"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -29,17 +29,13 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Change password</h2>  </br>
+    <h2><spring:message code="label.ChangePassword"/></h2>  </br>
     <form  id="changepw_form" action="/ProjectTeamF-1.0/user/changepw.html" method="POST">
-      <input type="text" id="currentpw" placeholder="Current password" name="currentpw" />  </br>
-      <input type="password" id="newpw" placeholder="New password" name="newpw"/>   </br>
-      <input type="password" id="confirmpw" placeholder="Confirm password" name="confirmpw" />   </br>  </br>
-      <button type="submit" class="btn">Change password</button>
+      <input type="text" id="currentpw" placeholder="<spring:message code="label.CurrentPassword"/>" name="currentpw" />  </br>
+      <input type="password" id="newpw" placeholder="<spring:message code="label.NewPassword"/>" name="newpw"/>   </br>
+      <input type="password" id="confirmpw" placeholder="<spring:message code="label.ConfirmNewPassword"/>" name="confirmpw" />   </br>  </br>
+      <button type="submit" class="btn"><spring:message code="label.ChangePassword"/></button>
     </form>
-
-
-
-
 
 </section>
 

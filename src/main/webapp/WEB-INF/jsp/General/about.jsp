@@ -1,12 +1,14 @@
-
-
-<!--
+<%--
   Created by IntelliJ IDEA.
   User: Jeroen Verbunt
-  Date: 11/02/13
-  Time: 15:25
--->
+  Date: 7/02/13
+  Time: 21:55
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -15,7 +17,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>About</title>
+    <title><spring:message code="label.About"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -33,7 +35,7 @@
         <jsp:include page="header.jsp"/>
 
         <section id="content">
-            <h2>About</h2>
+            <h2><spring:message code="label.About"/></h2>
             Hier komt info over ons + het project!
         </section>
     <jsp:include page="footer.jsp"/>

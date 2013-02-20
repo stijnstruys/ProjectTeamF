@@ -31,9 +31,9 @@
 
                         <ul class="nav pull-right">
                             <c:if test="${empty currentUser}">
-                                <li class="pull-right"><a href="/ProjectTeamF-1.0/user/user.html">Registreer</a></li>
+                                <li class="pull-right"><a href="/ProjectTeamF-1.0/user/user.html"><spring:message code="label.Register"/></a></li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aanmelden<b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.SignIn"/><b
                                             class="caret"></b></a>
 
                                     <ul class="dropdown-menu">
@@ -57,23 +57,23 @@
                             </c:if>
                             <c:if test="${!empty currentUser}">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Welcome ${currentUser}<b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <spring:message code="label.Welcome"/> ${currentUser}<b
                                             class="caret"></b></a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a href="/ProjectTeamF-1.0/user/profile.html">Profile <i
+                                        <li><a href="/ProjectTeamF-1.0/user/profile.html"><spring:message code="label.Profile"/> <i
                                                 class="icon-tags pull-right"></i></a></li>
-                                        <li><a href="/ProjectTeamF-1.0/user/myTrips.html">My trips <i
+                                        <li><a href="/ProjectTeamF-1.0/user/myTrips.html"><spring:message code="label.MyTrips"/> <i
                                                 class="icon-calendar pull-right"></i></a></li>
                                         <li class="divider"></li>
-                                        <li><a href="/ProjectTeamF-1.0/j_spring_security_logout">Log Out <i
+                                        <li><a href="/ProjectTeamF-1.0/j_spring_security_logout"><spring:message code="label.LogOut"/> <i
                                                 class="icon-off pull-right"></i></a></li>
                                     </ul>
                                 </li>
                             </c:if>
                         </ul>
                         <form class="navbar-search pull-right" action="../search/tripSearchResult.html" method="GET">
-                            <input id="autocomplete" type="text" class="search-query span2" placeholder="Search trip"
+                            <input id="autocomplete" type="text" class="search-query span2" placeholder="<spring:message code="label.SearchTrip"/>"
                                    name="searchInput">
                         </form>
                     </div>
