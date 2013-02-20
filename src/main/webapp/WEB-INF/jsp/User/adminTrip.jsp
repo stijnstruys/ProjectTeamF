@@ -93,6 +93,11 @@
                         code="label.startLocation"/></form:label></td>
                 <td><form:input id="TripLoc" path="startLocation"/></td>
             </tr>
+            <tr>
+                <td><form:label id="labelTripNotificatie" path="notification"><spring:message
+                        code="label.TripNotificatie"/></form:label></td>
+                <td><form:input id="TripNotificatie" path="notification"/></td>
+            </tr>
         </table>
     </form:form>
     <table>
@@ -115,6 +120,9 @@
                                 </td>
                                 <td>
                                     <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html">Delete</a>
+                                </td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/release/${stopPlaats.stopPlaatsID}.html">Release</a>
                                 </td>
                             </tr>
                         </c:forEach>

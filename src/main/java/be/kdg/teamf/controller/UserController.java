@@ -170,7 +170,9 @@ public class UserController {
 
        @RequestMapping("user/deleteTrip/{tripId}")
        public String deleteTrip(@PathVariable("tripId") Integer tripId) {
-
+           Trip t = tripService.findTrip(tripId);
+           t.getOrganiser().getTrips().remove(t);
+           userService.updateUser(t.getOrganiser());
            tripService.deleteTrip(tripId);
            return "redirect:/user/myTrips.html";
        }

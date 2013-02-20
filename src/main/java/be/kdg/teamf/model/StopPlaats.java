@@ -25,7 +25,6 @@ public class StopPlaats {
     private boolean vrijgegeven;
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-
     private Trip trip;
 
 

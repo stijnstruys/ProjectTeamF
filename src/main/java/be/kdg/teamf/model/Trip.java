@@ -34,6 +34,9 @@ public class Trip {
     @Column(name = "TRIPDESCRIPTION")
     private String tripDescription;
 
+    @Column(name = "NOTIFICATION")
+    private String notification;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "STARTDATE")
     private Date startDate;
@@ -59,7 +62,7 @@ public class Trip {
     private User organiser;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<StopPlaats> stopPlaatsen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -67,7 +70,7 @@ public class Trip {
     private Collection<TripCategorie> tripCategorieen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
     public Trip() {
@@ -183,5 +186,13 @@ public class Trip {
 
     public void setBgcolor(String bgcolor) {
         this.bgcolor = bgcolor;
+    }
+
+    public String getNotification() {
+        return notification;
+    }
+
+    public void setNotification(String notification) {
+        this.notification = notification;
     }
 }

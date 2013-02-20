@@ -8,17 +8,13 @@ import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -86,6 +82,8 @@ public class TripController {
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
 
+        request.setAttribute("deelnemers", deelnameService.getDeelnames(t));
+
         if(u != null && deelnameService.userIsRegistered(t,u)){
             request.setAttribute("registered", true);
         }  else{
@@ -113,7 +111,6 @@ public class TripController {
     public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
         User u = userService.getCurrentUser();
-
         Trip t = tripService.findTrip(tripID);
 
         Deelname d = new Deelname(t,u) ;

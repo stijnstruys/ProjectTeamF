@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -71,5 +73,15 @@ public class DeelnameServiceImpl implements DeelnameService {
     @Override
     public Deelname findDeelname(Trip t, User u) {
         return deelnameDAO.findDeelname(t.getTripId(),u.getUserID());
+    }
+
+    @Override
+    public ArrayList<User> getDeelnames(Trip t) {
+        ArrayList<User> deelnemers = new ArrayList<>();
+
+        for(Deelname d : deelnameDAO.findDeelnames(t)){
+            deelnemers.add(d.getUser());
+        }
+        return deelnemers;
     }
 }

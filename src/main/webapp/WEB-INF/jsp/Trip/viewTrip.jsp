@@ -47,9 +47,15 @@
         h2 {
             color:   ${trip.fontcolorTitle};
         }
+        h3{
+            color:   ${trip.fontcolorTitle};
+            text-align: center;
+        }
+
     </style>
 
     <h2>${trip.tripName}</h2>
+    <h3>${trip.notification}</h3>
 
     <spring:message code="label.startLocation"/>: ${trip.startLocation} <br />
     <spring:message code="label.organiser"/>: ${trip.organiser.firstName} ${trip.organiser.lastName}<br />
@@ -65,6 +71,21 @@
         <form action="leave/${trip.tripId}.html">
             <input type="submit" value="<spring:message code="label.leaveTrip"/>">
         </form>
+    </c:if>
+
+     <h2>Deelnemers</h2>
+
+    <c:if  test="${!empty deelnemers}">
+        <table class="data">
+            <tr>
+                  <th><spring:message code="label.name"/></th>
+            </tr>
+            <c:forEach items="${deelnemers}" var="user">
+                <tr>
+                    <td>${user.firstName} ${user.lastName} </a></td>
+                </tr>
+            </c:forEach>
+        </table>
     </c:if>
     <%--
     <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">

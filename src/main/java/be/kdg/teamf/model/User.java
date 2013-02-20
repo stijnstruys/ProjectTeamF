@@ -4,6 +4,7 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.annotations.OnDeleteAction;
 
 
 import javax.persistence.*;
@@ -52,11 +53,11 @@ public class User implements Serializable {
     private String city;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("organiser"))
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("organiser"))
     private Collection<Trip> trips;
 
     public User() {
@@ -183,6 +184,14 @@ public class User implements Serializable {
 
     public void setDeelnames(Collection<Deelname> deelnames) {
         this.deelnames = deelnames;
+    }
+
+    public Collection<Trip> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(Collection<Trip> trips) {
+        this.trips = trips;
     }
 
     @Override
