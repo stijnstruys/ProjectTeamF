@@ -4,6 +4,8 @@ import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -25,4 +27,7 @@ public interface DeelnameService {
     boolean userIsRegistered(Trip t, User u);
 
     Deelname findDeelname(Trip t, User u);
+
+    ArrayList<User> getDeelnames(Trip t);
+
 }

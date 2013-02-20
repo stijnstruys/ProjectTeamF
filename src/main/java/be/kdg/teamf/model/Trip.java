@@ -25,14 +25,14 @@ public class Trip {
     @GeneratedValue
     private int tripId;
 
-    @Column(name = "TRIPTYPE")
-    private String tripType;
-
     @Column(name = "TRIPNAME")
     private String tripName;
 
     @Column(name = "TRIPDESCRIPTION")
     private String tripDescription;
+
+    @Column(name = "NOTIFICATION")
+    private String notification;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "STARTDATE")
@@ -58,8 +58,12 @@ public class Trip {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User organiser;
 
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private TripType tripType;
+
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<StopPlaats> stopPlaatsen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -67,7 +71,7 @@ public class Trip {
     private Collection<TripCategorie> tripCategorieen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
     public Trip() {
@@ -145,11 +149,11 @@ public class Trip {
         this.tripCategorieen = tripCategorieen;
     }
 
-    public String getTripType() {
+    public TripType getTripType() {
         return tripType;
     }
 
-    public void setTripType(String tripType) {
+    public void setTripType(TripType tripType) {
         this.tripType = tripType;
     }
 
@@ -183,5 +187,13 @@ public class Trip {
 
     public void setBgcolor(String bgcolor) {
         this.bgcolor = bgcolor;
+    }
+
+    public String getNotification() {
+        return notification;
+    }
+
+    public void setNotification(String notification) {
+        this.notification = notification;
     }
 }

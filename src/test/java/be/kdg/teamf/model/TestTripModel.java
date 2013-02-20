@@ -33,6 +33,7 @@ public class TestTripModel {
         Date d = new Date();
         Trip t = new Trip();
         User u = new User();
+        TripType tt = new TripType();
         List<Deelname> deelnameList = new ArrayList();
         List<StopPlaats> stopPlaatsList = new ArrayList();
         List<TripCategorie> tripCategorieList = new ArrayList();
@@ -48,7 +49,7 @@ public class TestTripModel {
         t.setDeelnames(deelnameList);
         t.setFontcolorContent("red");
         t.setFontcolorTitle("green");
-        t.setTripType("publiek");
+        t.setTripType(tt);
         t.setStopPlaatsen(stopPlaatsList);
         t.setTripCategorieen(tripCategorieList);
 

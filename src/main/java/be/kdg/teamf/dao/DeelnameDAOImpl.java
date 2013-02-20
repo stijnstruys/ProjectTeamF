@@ -1,11 +1,14 @@
 package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.Deelname;
+import be.kdg.teamf.model.Trip;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -60,5 +63,14 @@ public class DeelnameDAOImpl implements DeelnameDAO {
         else{
             return null;
         }
+    }
+
+    @Override
+    public ArrayList<Deelname> findDeelnames(Trip t) {
+
+        Query q = sessionFactory.getCurrentSession().createQuery("from Deelname where trip.tripId = :tripId");
+        q.setInteger("tripId", t.getTripId());
+
+        return (ArrayList<Deelname>) q.list();
     }
 }

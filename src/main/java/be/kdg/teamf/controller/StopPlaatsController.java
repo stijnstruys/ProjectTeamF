@@ -92,5 +92,15 @@ public class StopPlaatsController
         return "redirect:/trip/"+stopPlaats.getTrip().getTripId()+".html";
 
     }
+    @RequestMapping(value = "/StopPlaats/release/{stopplaatsId}", method = RequestMethod.GET)
+    public String releaseStopPlaats(@ModelAttribute("stopPlaats")
+                                   StopPlaats stopPlaats,  BindingResult result, @PathVariable("stopplaatsId") int stopplaatsId) {
 
+
+        StopPlaats s = stopPlaatsService.findStopPlaats(stopplaatsId);
+        s.setVrijgegeven(true);
+        stopPlaatsService.updateStopPlaats(s);
+        return "redirect:/trip/"+s.getTrip().getTripId()+".html";
+
+    }
 }

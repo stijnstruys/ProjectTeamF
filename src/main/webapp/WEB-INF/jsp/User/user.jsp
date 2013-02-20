@@ -114,10 +114,10 @@
                     <td>${user.street}  ${user.number}</td>
                     <td>${user.zipcode}, ${user.city}</td>
                     <td>
-                        <a href="update/${user.userID}.html">Update</a>
+                        <a href="updateUser/${user.userID}.html">Update</a>
                     </td>
                     <td>
-                        <a href="delete/${user.userID}.html">Delete</a>
+                        <a href="deleteUser/${user.userID}.html">Delete</a>
                     </td>
 
                 </tr>

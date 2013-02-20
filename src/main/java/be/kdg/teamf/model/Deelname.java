@@ -19,9 +19,11 @@ public class Deelname {
     @Column(name = "DEELNAMEID")
     @GeneratedValue
     private int deelnameID;
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
@@ -31,8 +33,7 @@ public class Deelname {
 
     public Deelname(Trip t, User u) {
         trip = t;
-        user=u;
-
+        user = u;
     }
 
     public int getDeelnameID() {
