@@ -56,7 +56,7 @@
             </tr>
             <tr>
                 <td><form:label path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label></td>
-                <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth" /></td>
+                <td><form:input id="dateOfBirth" class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth" /></td>
             </tr>
             <tr>
                 <td><form:label path="email"><spring:message code="label.email"/></form:label></td>

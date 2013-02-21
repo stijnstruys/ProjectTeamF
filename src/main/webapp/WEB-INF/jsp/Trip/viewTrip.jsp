@@ -9,6 +9,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -42,30 +43,33 @@
     <style>
         #content {
             background: ${trip.bgcolor};
-            color:   ${trip.fontcolorContent};
+            color: ${trip.fontcolorContent};
         }
+
         h2 {
-            color:   ${trip.fontcolorTitle};
+            color: ${trip.fontcolorTitle};
         }
-        h3{
-            color:   ${trip.fontcolorTitle};
+
+        h3 {
+            color: ${trip.fontcolorTitle};
             text-align: center;
         }
 
     </style>
 
     <h2>${trip.tripName}</h2>
+
     <h3>${trip.notification}</h3>
 
-    <spring:message code="label.startLocation"/>: ${trip.startLocation} <br />
-    <spring:message code="label.organiser"/>: ${trip.organiser.firstName} ${trip.organiser.lastName}<br />
-    <spring:message code="label.startDate"/>: ${trip.startDate} <br />
-    <spring:message code="label.endDate"/>: ${trip.endDate}   <br />
-    <spring:message code="label.tripDescription"/>: ${trip.tripDescription} <br />
-    <c:if  test="${registered != true}">
-     <form action="join/${trip.tripId}.html">
-         <input type="submit" value="<spring:message code="label.join"/>">
-     </form>
+    <spring:message code="label.startLocation"/>: ${trip.startLocation} <br/>
+    <spring:message code="label.organiser"/>: ${trip.organiser.firstName} ${trip.organiser.lastName}<br/>
+    <spring:message code="label.startDate"/>: <fmt:formatDate value="${trip.startDate}" pattern="dd-MM-yyyy" /> <br/>
+    <spring:message code="label.endDate"/>: <fmt:formatDate value="${trip.endDate}" pattern="dd-MM-yyyy" /> <br/>
+    <spring:message code="label.tripDescription"/>: ${trip.tripDescription} <br/>
+    <c:if test="${registered != true}">
+        <form action="join/${trip.tripId}.html">
+            <input type="submit" value="<spring:message code="label.join"/>">
+        </form>
     </c:if>
     <c:if test="${registered == true}">
         <form action="leave/${trip.tripId}.html">
@@ -73,12 +77,12 @@
         </form>
     </c:if>
 
-     <h2>Deelnemers</h2>
+    <h2>Deelnemers</h2>
 
-    <c:if  test="${!empty deelnemers}">
+    <c:if test="${!empty deelnemers}">
         <table class="data">
             <tr>
-                  <th><spring:message code="label.name"/></th>
+                <th><spring:message code="label.name"/></th>
             </tr>
             <c:forEach items="${deelnemers}" var="user">
                 <tr>

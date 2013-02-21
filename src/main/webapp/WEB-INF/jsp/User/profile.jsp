@@ -62,7 +62,7 @@
                 <div class="span2" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl">${user.dateOfBirth} </label>
-                    <form:input class="datepicker profile_input hidethis" readonly="true" style="cursor: text;" path="dateOfBirth" />
+                    <form:input id="dateOfBirth" class="datepicker profile_input hidethis" readonly="true" style="cursor: text;" path="dateOfBirth" />
                 </div>
             </div>
             <div class="row-fluid">

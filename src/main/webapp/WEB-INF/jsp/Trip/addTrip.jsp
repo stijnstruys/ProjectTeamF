@@ -60,11 +60,11 @@
             </tr>
             <tr>
                 <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
-                <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="startDate"/></td>
+                <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;" path="startDate"/></td>
             </tr>
             <tr>
                 <td><form:label path="endDate"><spring:message code="label.endDate"/></form:label></td>
-                <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="endDate"/></td>
+                <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="endDate"/></td>
             </tr>
             <tr>
                 <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>

@@ -27,8 +27,47 @@ $(document).ready(function () {
     beginTripLoc = $("#TripLoc").val();
 
     //datepicker
-    $(".datepicker").datepicker();
-    var test;
+    Date.format = 'yy-mm-dd';
+    //$(".datepicker").datepicker();
+    $("#dateOfBirth").datepicker({
+        dateFormat: 'yy-mm-dd',
+        defaultDate: '-21Y',
+        minDate: '-150Y',
+        maxDate: '-16Y',
+        changeMonth: true,
+        changeYear: true
+    });
+    $("#TripStartD").datepicker({
+        dateFormat: 'yy/mm/dd',
+        minDate: '0D',
+        changeMonth: true,
+        changeYear: true,
+        onClose: function (selectedDate) {
+            if ($("#TripStartD").val() != "") {
+                $("#TripEndD").datepicker("option", "minDate", selectedDate);
+            }
+        }
+    });
+    $("#TripEndD").datepicker({
+        dateFormat: 'yy/mm/dd',
+        minDate: '0D',
+        changeMonth: true,
+        changeYear: true,
+        onClose: function (selectedDate) {
+            if ($("#TripEndD").val() != "") {
+                $("#TripStartD").datepicker("option", "maxDate", selectedDate);
+            }
+        }
+    });
+    /* $(".datepicker").datepicker(
+     {
+     dateFormat: 'yy-mm-dd',
+     minDate: 0,
+     maxDate: '+20Y',
+     changeMonth: true,
+     changeYear: true
+     }
+     );  */
 
     //notification
     $("#dialog-message-languages").dialog({
@@ -89,9 +128,9 @@ $(document).ready(function () {
         "Scheme"
     ];
     /*$("#autocomplete").autocomplete({
-        source: 'search/tripNames.html'
-        //source: availableTags
-    });  */
+     source: 'search/tripNames.html'
+     //source: availableTags
+     });  */
 
     /*languages*/
     $("#languageFlag").click(function () {
@@ -100,17 +139,17 @@ $(document).ready(function () {
     });
 
     var test = $("hiddenNameList").val();
-   // alert(test);
+    // alert(test);
 });
 
 function trips() {
-    var currentpage =  $(".trip_pagina_0_content");
+    var currentpage = $(".trip_pagina_0_content");
 
 
     $(".trip_details").hide();
     currentpage.show();
 
-    $(".trip_pagina").click( function() {
+    $(".trip_pagina").click(function () {
 
 
         currentpage.hide();
@@ -118,18 +157,17 @@ function trips() {
         currentpage = $("." + this.id + "_content");
 
 
-
         currentpage.show();
     });
 
     /*
-    $("#trips_prev").click( function() {
+     $("#trips_prev").click( function() {
 
-    });
+     });
 
-    $("#trips_next").click( function() {
+     $("#trips_next").click( function() {
 
-    });
+     });
 
      */
 }

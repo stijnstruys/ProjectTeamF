@@ -9,6 +9,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -80,7 +81,10 @@
                 <td><form:label id="labelTripStartD" path="startDate"><spring:message
                         code="label.startDate"/></form:label></td>
                 <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
-                                path="startDate"/></td>
+                                path="startDate"></form:input></td>
+
+                <td></td>
+
             </tr>
             <tr>
                 <td><form:label id="labelTripEndD" path="endDate"><spring:message
