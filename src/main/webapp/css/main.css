@@ -10,7 +10,6 @@ body {
 #container {
 	width: 1000px;
 	margin: 0 auto 0 auto;
-	
 }
 
 /* general */
@@ -199,8 +198,8 @@ a.trip_name:hover {
 }
 
 #languageFlag:hover {
-    height: 1.1em;
-    width: 1.65em;
+    height: 1em;
+    width: 1.6em;
     border: #ffffff;
     border-width: 0.1em;
     border-style: solid;
