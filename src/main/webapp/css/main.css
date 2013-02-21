@@ -195,8 +195,11 @@ a.trip_name:hover {
 }
 
 #languageFlag:hover {
-    margin-top: 0.7em;
-    height: 1.5em;
+    height: 1.1em;
+    width: 1.65em;
+    border: #ffffff;
+    border-width: 0.1em;
+    border-style: solid;
 }
 
 .flagsImg {
