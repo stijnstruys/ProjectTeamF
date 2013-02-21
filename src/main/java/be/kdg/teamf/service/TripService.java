@@ -1,7 +1,7 @@
 package be.kdg.teamf.service;
 
 import be.kdg.teamf.model.Trip;
-import org.springframework.mail.MailSender;
+import be.kdg.teamf.model.User;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.ui.ModelMap;
 
@@ -33,5 +33,8 @@ public interface TripService {
     public List<Trip> listUserTrips(int userID);
 
     public void sendMail(final ModelMap model, final SimpleMailMessage msg);
+
+    boolean checkOwnership(Trip t, User u);
+
 
 }

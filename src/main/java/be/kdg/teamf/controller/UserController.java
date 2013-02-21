@@ -161,11 +161,15 @@ public class UserController {
     @RequestMapping("/user/admincp-{tripID}")
     public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
         Trip t = tripService.findTrip(tripID);
-
+        ModelAndView model;
+        if(tripService.checkOwnership(t, userService.getCurrentUser())){
             request.setAttribute("trip", t);
-            ModelAndView model = new ModelAndView("User/adminTrip");
-            return model;
-
+            model = new ModelAndView("User/adminTrip");
+        }
+        else   {
+            model = new ModelAndView("User/myTrips");
+        }
+        return model;
     }
 
     @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
@@ -196,10 +200,13 @@ public class UserController {
 
     @RequestMapping("user/deleteTrip/{tripId}")
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {
+
         Trip t = tripService.findTrip(tripId);
-        t.getOrganiser().getTrips().remove(t);
-        userService.updateUser(t.getOrganiser());
-        tripService.deleteTrip(tripId);
+        if(tripService.checkOwnership(t, userService.getCurrentUser())){
+            t.getOrganiser().getTrips().remove(t);
+            userService.updateUser(t.getOrganiser());
+            tripService.deleteTrip(tripId);
+        }
         return "redirect:/user/myTrips.html";
     }
 }

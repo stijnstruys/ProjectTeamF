@@ -2,16 +2,16 @@ package be.kdg.teamf.service;
 
 import be.kdg.teamf.dao.TripDAO;
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
+import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.apache.velocity.app.VelocityEngine;
 import org.springframework.ui.ModelMap;
 import org.springframework.ui.velocity.VelocityEngineUtils;
 
@@ -96,6 +96,16 @@ public class TripServiceImpl implements TripService {
                                 "images/header.jpg"));
         			}
         		});
+    }
+
+    @Override
+    public boolean checkOwnership(Trip t, User u) {
+
+        if( t.getOrganiser().getUserID() == u.getUserID() )
+        return true;
+        else
+        return false;
+
     }
 
 }
