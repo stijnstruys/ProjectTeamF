@@ -103,24 +103,22 @@ $(document).ready(function () {
    // alert(test);
 });
 
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-
-
 function trips() {
-    var currentpage;
-     currentpage =  $(".trip_pagina_0_content");
+    var currentpage =  $(".trip_pagina_0_content");
+
+
     $(".trip_details").hide();
     currentpage.show();
 
     $(".trip_pagina").click( function() {
+
+
         currentpage.hide();
+
         currentpage = $("." + this.id + "_content");
+
+
+
         currentpage.show();
     });
 
