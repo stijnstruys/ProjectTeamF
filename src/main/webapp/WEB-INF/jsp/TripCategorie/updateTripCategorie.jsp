@@ -1,10 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: Jeroen Verbunt
-  Date: 11/02/13
-  Time: 8:14
+  Date: 7/02/13
+  Time: 21:55
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -13,7 +14,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Update trip categorie</title>
+    <title><spring:message code="label.updateTripCategory"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -28,7 +29,7 @@
     <jsp:include page="../General/header.jsp"/>
 
     <section id="content">
-        <h2>Update trip categorie</h2>
+        <h2><spring:message code="label.updateTripCategory"/></h2>
 
         <form:form method="post" action="updateTripCategorie/${tripID}.html" commandName="tripCategorie" id="tripCategorie">
 
@@ -39,11 +40,11 @@
                     <td><form:hidden path="tripCategorieId" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="tripCategorieName"><spring:message code="label.tripCategorieName"/></form:label></td>
+                    <td><form:label path="tripCategorieName"><spring:message code="label.tripCategoryName"/></form:label></td>
                     <td><form:input path="tripCategorieName" /></td>
                 </tr>
                     <td>
-                        <input type="submit" value="<spring:message code="label.updateTripCategorie"/>"/>
+                        <input type="submit" value="<spring:message code="label.updateTripCategory"/>"/>
                     </td>
                 </tr>
             </table>

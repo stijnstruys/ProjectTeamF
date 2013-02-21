@@ -2,9 +2,11 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.TripType;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.DeelnameService;
 import be.kdg.teamf.service.TripService;
+import be.kdg.teamf.service.TripTypeService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -36,6 +38,8 @@ public class TripController {
     @Autowired
     private TripService tripService;
 
+    @Autowired
+    private TripTypeService tripTypeService;
 
     @Autowired
     private UserService userService;
@@ -50,13 +54,6 @@ public class TripController {
         request.setAttribute("tripList", tripService.listTrips());
         ModelAndView model = new ModelAndView("Trip/tripOverzicht");
         return model;
-    }
-
-    @RequestMapping(value = "/trip/tripNames.html", method = RequestMethod.POST)
-    public List<String> tripNames(BindingResult result) {
-        System.out.println("test123qsdf");
-        List<String> tripN = tripService.getTripNames();
-        return tripN;
     }
 
     @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"}, method = RequestMethod.GET)
@@ -76,6 +73,7 @@ public class TripController {
         request.setAttribute("loginuser", userlogin);
         Trip t = new Trip();
         request.setAttribute("trip", t);
+        request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
         ModelAndView model = new ModelAndView("Trip/addTrip");
         return model;
     }
@@ -86,9 +84,9 @@ public class TripController {
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
 
-        if(u != null && deelnameService.userIsRegistered(t,u)){
+        if (u != null && deelnameService.userIsRegistered(t, u)) {
             request.setAttribute("registered", true);
-        }  else{
+        } else {
             request.setAttribute("registered", false);
         }
         request.setAttribute("trip", t);
@@ -102,7 +100,7 @@ public class TripController {
 
         trip.setFontcolorContent("#D4D4D4");
         trip.setBgcolor("#1C263C");
-        trip.setFontcolorTitle( "#9CFF00" );
+        trip.setFontcolorTitle("#9CFF00");
         trip.setOrganiser(userService.getCurrentUser());
         tripService.addTrip(trip);
 
@@ -116,9 +114,9 @@ public class TripController {
 
         Trip t = tripService.findTrip(tripID);
 
-        Deelname d = new Deelname(t,u) ;
+        Deelname d = new Deelname(t, u);
 
-        if(!deelnameService.alreadyExists(d)) {
+        if (!deelnameService.alreadyExists(d)) {
             t.getDeelnames().add(d);
             t.setOrganiser(userService.getCurrentUser());
             tripService.updateTrip(t);
@@ -126,6 +124,7 @@ public class TripController {
 
         return "redirect:/trip/" + tripID + ".html";
     }
+
     @RequestMapping("/trip/leave/{tripID}")
     public String leaveTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
@@ -133,7 +132,7 @@ public class TripController {
 
         Trip t = tripService.findTrip(tripID);
 
-        Deelname d = deelnameService.findDeelname(t,u);
+        Deelname d = deelnameService.findDeelname(t, u);
         deelnameService.deleteDeelname(d);
 
         return "redirect:/trip/" + tripID + ".html";

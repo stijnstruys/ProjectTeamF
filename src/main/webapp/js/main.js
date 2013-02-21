@@ -29,6 +29,16 @@ $(document).ready(function () {
     var test;
 
     //notification
+    $("#dialog-message-languages").dialog({
+        autoOpen: false,
+        width: 'auto',
+        modal: true,
+        show: {
+            effect: "blind",
+            duration: 1000
+        }
+    });
+
     $("#dialog-message").dialog({
         autoOpen: false,
         width: 'auto',
@@ -51,13 +61,7 @@ $(document).ready(function () {
         checkChanges();
         $("#dialog-message").dialog("open");
     });
-    var test = "leeg";
-  /* $.post("/ProjectTeamF-1.0/trip/tripNames.html",
-            function (data) {
-                test = data;
-            }
-        );
-    alert(test); */
+
     var availableTags = [
         "ActionScript",
         "AppleScript",
@@ -82,18 +86,43 @@ $(document).ready(function () {
         "Scala",
         "Scheme"
     ];
-    $("#autocomplete").autocomplete({
-        source: availableTags
-    });
-});
+    /*$("#autocomplete").autocomplete({
+        source: 'search/tripNames.html'
+        //source: availableTags
+    });  */
 
+    /*languages*/
+    $("#languageFlag").click(function () {
+        checkChanges();
+        $("#dialog-message-languages").dialog("open");
+    });
+
+    var test = $("hiddenNameList").val();
+   // alert(test);
+});
 
 
 function userprofile() {
+    $(".profile_input").hide();
+    $(".profile_btns").hide();
+    $(".hidethis").removeClass("hidethis");
 
-$("#user_modify_profile").click( function() {
-   alert("test");
-});
+    $("#user_modify_profile").click(function () {
+        $(".profile_lbl").hide();
+        $(".profile_input").show();
+        $(".profile_btns").show();
+        $("#user_modify_profile").hide();
+        $("#profile_show_pos").removeAttr("disabled");
+    });
+
+    $("#profile_cancel").click(function () {
+        $(".profile_lbl").show();
+        $(".profile_input").hide();
+        $(".profile_btns").hide();
+        $("#user_modify_profile").show();
+        ("#profile_show_pos").attr('disabled', 'true');
+        ;
+    });
 
 }
 
@@ -183,7 +212,7 @@ function sendMail() {
     //alert(organiserMessage);
     var tripID = $("#hiddenTripID").val();
     $("#dialog-message").css("cursor", "wait");
-   $.post("/ProjectTeamF-1.0/user/mail.html",
+    $.post("/ProjectTeamF-1.0/user/mail.html",
         { formulier: formInhoud, orgMessage: organiserMessage, orgMessage2: tripID },
         function (data) {
             $("#viewTripForm").submit();
@@ -191,18 +220,17 @@ function sendMail() {
     );
 
     /*$.ajax({
-            type: "POST",
-            url: "/ProjectTeamF-1.0/trip/mail.html",
-            data: "formulier="+ formInhoud+ "&orgMessage="+ organiserMessage+ "&tripID="+ tripID,
-            success: function(response){
-            // we have the response
-            alert('gelukt' + response);
-            },
-            error: function(e){
-            alert('mislukt');
-            }
-            }); */
-
+     type: "POST",
+     url: "/ProjectTeamF-1.0/trip/mail.html",
+     data: "formulier="+ formInhoud+ "&orgMessage="+ organiserMessage+ "&tripID="+ tripID,
+     success: function(response){
+     // we have the response
+     alert('gelukt' + response);
+     },
+     error: function(e){
+     alert('mislukt');
+     }
+     }); */
 
 
 }

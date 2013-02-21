@@ -51,6 +51,9 @@ public class User implements Serializable {
     private String zipcode;
     @Column(name = "city")
     private String city;
+    @Column(name = "showposition")
+    private boolean showPosition = true;
+
 
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("trip"))
@@ -193,6 +196,16 @@ public class User implements Serializable {
     public void setTrips(Collection<Trip> trips) {
         this.trips = trips;
     }
+
+    public void setShowPosition(boolean showPosition) {
+        this.showPosition = showPosition;
+    }
+
+    public boolean isShowPosition() {
+
+        return showPosition;
+    }
+
 
     @Override
     public boolean equals(Object o) {

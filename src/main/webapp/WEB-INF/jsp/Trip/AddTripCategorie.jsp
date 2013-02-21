@@ -19,7 +19,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>View trip</title>
+    <title><spring:message code="label.addTripCategory"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -36,20 +36,20 @@
     <jsp:include page="../General/header.jsp"/>
 
         <section id="content">
-            <h2>Add Trip Categorie</h2>
+            <h2><spring:message code="label.addTripCategory"/></h2>
             <form:form method="post" action="add.html" commandName="tripCategorie">
                 <table>
                 <tr>
                     <td><form:hidden path="tripId" /></td>
                 </tr>
                 <tr>
-                    <td><form:label path="tripCategorieName"><spring:message code="label.tripCategorie"/></form:label></td>
+                    <td><form:label path="tripCategorieName"><spring:message code="label.tripCategory"/></form:label></td>
                     <td><form:input path="tripCategorieName" /></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="<spring:message code="label.updateTrip"/>"/>
-                        <button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a></button>
+                        <input type="submit" value="<spring:message code="label.updateTripCategory"/>"/>
+                        <button><a href="delete/${trip.tripId}.html"><spring:message code="label.deleteTripCategory"/></a></button>
                     </td>
                </tr>
 

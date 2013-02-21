@@ -20,7 +20,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Update Trip</title>
+    <title><spring:message code="label.updateTrip"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -52,9 +52,9 @@
         }
     </style>
 
-    <h2>Admin Control Panel</h2>
+    <h2><spring:message code="label.updateTrip"/></h2>
 
-    <form:form id="viewTripForm" method="post" action="update.html" commandName="trip">
+    <form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip">
 
         <div id="picker" style="float: right;"></div>
 
@@ -103,12 +103,12 @@
     <table>
         <tr>
             <td>
-                <h3>Stopplaatsen</h3>
+                <h3><spring:message code="label.StoppingPoints"/></h3>
                 <c:if test="${!empty trip.stopPlaatsen}">
                     <table class="data">
                         <tr>
-                            <th>Adres</th>
-                            <th>Vrijgegeven</th>
+                            <th><spring:message code="label.address"/></th>
+                            <th><spring:message code="label.Released"/></th>
                             <th>&nbsp;</th>
                         </tr>
                         <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
@@ -116,13 +116,13 @@
                                 <td>${stopPlaats.adres} </td>
                                 <td>${stopPlaats.vrijgegeven} </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html">Update</a>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html"><spring:message code="label.UpdateStoppingPoint"/></a>
                                 </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html">Delete</a>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html"><spring:message code="label.DeleteStoppingPoint"/></a>
                                 </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/StopPlaats/release/${stopPlaats.stopPlaatsID}.html">Release</a>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/release/${stopPlaats.stopPlaatsID}.html"><spring:message code="label.ReleaseStoppingPoint"/></a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -130,26 +130,26 @@
                 </c:if>
                 <form action="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
 
-                    <input type="submit" value="Add new Stop Place"/>
+                    <input type="submit" value="<spring:message code="label.AddNewStoppingPoint"/>"/>
                 </form>
             </td>
             <td></td>
             <td>
-                <h3>Categorieën</h3>
+                <h3><spring:message code="label.Categories"/></h3>
                 <c:if test="${!empty trip.tripCategorieen}">
                     <table class="data">
                         <tr>
-                            <th>Naam</th>
+                            <th><spring:message code="label.tripCategoryName"/></th>
                             <th>&nbsp;</th>
                         </tr>
                         <c:forEach items="${trip.tripCategorieen}" var="tripCategorie">
                             <tr>
                                 <td>${tripCategorie.tripCategorieName} </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/TripCategorie/update/${tripCategorie.tripCategorieId}.html">Update</a>
+                                    <a href="/ProjectTeamF-1.0/TripCategorie/update/${tripCategorie.tripCategorieId}.html"><spring:message code="label.updateTripCategory"/></a>
                                 </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html">Delete</a>
+                                    <a href="/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html"><spring:message code="label.deleteTripCategory"/></a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -157,7 +157,7 @@
                 </c:if>
                 <form action="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html">
 
-                    <input type="submit" value="Add new Trip category"/>
+                    <input type="submit" value="<spring:message code="label.AddNewCategory"/>"/>
                 </form>
             </td>
         </tr>
@@ -165,14 +165,14 @@
     <button id="updateTrip"><spring:message code="label.updateTrip"/></button>
     <a href="deleteTrip/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
 
-    <div id="dialog-message" title="Send notification mail">
+    <div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">
         <form>
             <fieldset>
-                <label>Send following email to all participants?</label>
-                <label for="dialog-message">Organiser message</label>
+                <label><spring:message code="label.NotificationMailQuestion"/></label>
+                <label for="dialog-message"><spring:message code="label.NotificationMailOrganiserMessage"/></label>
                 <textarea type="text" name="message" id="Message" value=""
-                          class="text ui-widget-content ui-corner-all">No message.</textarea>
-                <label for="changes">The following changes occured</label>
+                          class="text ui-widget-content ui-corner-all"><spring:message code="label.NotificationMailNoMessage"/></textarea>
+                <label for="changes"><spring:message code="label.NotificationMailChangesOccured"/></label>
 
                 <div id="changes">
                     <table id="messageTable" style="min-width:500px">

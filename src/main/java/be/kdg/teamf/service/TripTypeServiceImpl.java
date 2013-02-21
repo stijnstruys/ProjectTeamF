@@ -28,17 +28,17 @@ public class TripTypeServiceImpl implements TripTypeService {
         tripTypeDAO.addTripType(tripType);
     }
 
-    @Override
+    @Transactional
     public void updateTripType(TripType tripType) {
         tripTypeDAO.updateTripType(tripType);
     }
 
-    @Override
+    @Transactional
     public void removeTripType(int id) {
         tripTypeDAO.removeTripType(id);
     }
 
-    @Override
+    @Transactional
     public List<TripType> listTripTypes() {
         return tripTypeDAO.listTripTypes();
     }

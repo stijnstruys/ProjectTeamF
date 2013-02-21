@@ -17,6 +17,10 @@ body {
 
 .btn_green_right {
     float: right;
+    margin-left: 15px;
+}
+.fieldsnothere {
+    float: left;
 }
 
 /* header */
@@ -67,6 +71,11 @@ footer {
 /* content */
 h2 {
     color: #9CFF00;
+}
+
+h4 {
+    color: #B4FF40;
+    margin-left: 30px;
 }
 
 #content {
@@ -152,4 +161,62 @@ a.trip_name:hover {
 
 #trip_detailview_adminbtn {
     float: right;
+}
+
+
+/* profile */
+
+.hidethis {
+    visibility: hidden;
+}
+
+.profile_right {
+    text-align: right;
+}
+
+.profile_btns {
+    margin-top: 15px;
+}
+
+/* change pw */
+
+#changepw_form {
+    text-align: center;
+}
+
+/* languages */
+
+#languageFlag {
+    margin-top: 0.8em;
+    height: 1.2em;
+    width: 1.75em;
+    float: left;
+    cursor: pointer;
+}
+
+#languageFlag:hover {
+    margin-top: 0.7em;
+    height: 1.5em;
+}
+
+.flagsImg {
+    height: 2.5em;
+    width: 4em;
+}
+
+.flagRow {
+    text-align: center;
+    height: 5em;
+}
+
+.flagOptions {
+    width: 10em;
+}
+
+.flagLink {
+    cursor: pointer;
+}
+
+#languageTable {
+    margin-top: 1.25em;
 }
