@@ -18,12 +18,13 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
             // connected
+            importData();
         } else if (response.status === 'not_authorized') {
             // not_authorized
-            importData();
+
         } else {
             // not_logged_in
-            importData();
+            //importData();
         }
     });
 
