@@ -67,8 +67,6 @@
                 </ul>
             </c:if>
 
-
-
             <div class="float_fix"></div>
             <div class="pagination">
                 <ul>
