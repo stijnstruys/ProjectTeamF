@@ -157,6 +157,10 @@ a.trip_name:hover {
     clear: left;
 }
 
+.pagination {
+     text-align: center;
+}
+
 /* trip detailview */
 
 #trip_detailview_adminbtn {

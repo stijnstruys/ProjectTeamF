@@ -16,6 +16,8 @@ $(document).ready(function () {
     //User profile
     userprofile();
 
+    //trips
+    trips();
     //begin gegevens nemen
     beginTripN = $("#TripN").val();
     beginTripDescr = $("#TripDescr").val();
@@ -100,6 +102,39 @@ $(document).ready(function () {
     var test = $("hiddenNameList").val();
    // alert(test);
 });
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+
+function trips() {
+    var currentpage;
+     currentpage =  $(".trip_pagina_0_content");
+    $(".trip_details").hide();
+    currentpage.show();
+
+    $(".trip_pagina").click( function() {
+        currentpage.hide();
+        currentpage = $("." + this.id + "_content");
+        currentpage.show();
+    });
+
+    /*
+    $("#trips_prev").click( function() {
+
+    });
+
+    $("#trips_next").click( function() {
+
+    });
+
+     */
+}
 
 
 function userprofile() {
