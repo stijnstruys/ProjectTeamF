@@ -67,7 +67,7 @@
          <input type="submit" value="<spring:message code="label.join"/>">
      </form>
     </c:if>
-    <c:if  test="${registered == true}">
+    <c:if test="${registered == true}">
         <form action="leave/${trip.tripId}.html">
             <input type="submit" value="<spring:message code="label.leaveTrip"/>">
         </form>

@@ -2,7 +2,6 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
-import be.kdg.teamf.model.TripType;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.DeelnameService;
 import be.kdg.teamf.service.TripService;
@@ -10,18 +9,13 @@ import be.kdg.teamf.service.TripTypeService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -129,7 +123,6 @@ public class TripController {
     public String leaveTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
         User u = userService.getCurrentUser();
-
         Trip t = tripService.findTrip(tripID);
 
         Deelname d = deelnameService.findDeelname(t, u);
