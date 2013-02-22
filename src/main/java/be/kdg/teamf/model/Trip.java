@@ -45,6 +45,9 @@ public class Trip {
     @Column(name = "STARTLOCATION")
     private String startLocation;
 
+    @Column(name = "EQUIPMENT")
+    private String equipment;
+
     @Column(name = "FONTCOLORTITLE")
     private String fontcolorTitle;
 
@@ -195,5 +198,13 @@ public class Trip {
 
     public void setNotification(String notification) {
         this.notification = notification;
+    }
+
+    public String getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
     }
 }
