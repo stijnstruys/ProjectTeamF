@@ -221,7 +221,6 @@ public class UserController {
 
         Deelname deelname = new Deelname();
         Trip t = tripService.findTrip(tripID);
-
         request.setAttribute("deelnemers", deelnameService.getDeelnames(tripService.findTrip(tripID)));
         request.setAttribute("deelname", deelname);
 
@@ -251,15 +250,16 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "user/checkusername/{username}", method = RequestMethod.GET)
-    public @ResponseBody boolean getUserInJson(@PathVariable("username") String name) {
+    @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
+    public @ResponseBody String getUserInJson(@RequestParam("name") String name) {
 
         User u = userService.findUser(name);
         if(u == null) {
-            return false;
+            return "false";
         } else {
-            return true;
+            return "true";
         }
+
 
     }
 }
