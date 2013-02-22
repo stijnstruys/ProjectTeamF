@@ -28,6 +28,17 @@ public class Deelname {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
+    public String getUserEquipment() {
+        return userEquipment;
+    }
+
+    public void setUserEquipment(String userEquipment) {
+        this.userEquipment = userEquipment;
+    }
+
+    @Column(name = "USEREQUIPMENT")
+    private String userEquipment;
+
     public Deelname() {
     }
 

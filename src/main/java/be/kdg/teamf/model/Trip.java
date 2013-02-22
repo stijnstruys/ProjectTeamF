@@ -45,14 +45,17 @@ public class Trip {
     @Column(name = "STARTLOCATION")
     private String startLocation;
 
+    @Column(name = "EQUIPMENT")
+    private String equipment;
+
     @Column(name = "FONTCOLORTITLE")
-    private String fontcolorTitle;
+    private String fontcolorTitle = "#9CFF00";
 
     @Column(name = "FONTCOLORCONTENT")
-    private String fontcolorContent;
+    private String fontcolorContent = "#D4D4D4";
 
     @Column(name = "BGCOLOR")
-    private String bgcolor;
+    private String bgcolor = "#1C263C";
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -195,5 +198,13 @@ public class Trip {
 
     public void setNotification(String notification) {
         this.notification = notification;
+    }
+
+    public String getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(String equipment) {
+        this.equipment = equipment;
     }
 }

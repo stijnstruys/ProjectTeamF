@@ -59,9 +59,12 @@
 
         <div id="picker" style="float: right;"></div>
 
-        <label class="form-item">Background:</label><form:input type="text" name="color1" path="bgcolor" class="colorpicker" id="color1"/></div>
-        <label class="form-item">Font title:</label><form:input type="text" name="color2" path="fontcolorContent" class="colorpicker" id="color2"/></div>
-        <label class="form-item">Font content:</label><form:input type="text" name="color3" path="fontcolorTitle" class="colorpicker" id="color3"/></div>
+        <label class="form-item">Background:</label><form:input type="text" name="color1" path="bgcolor"
+                                                                class="colorpicker" id="color1"/></div>
+        <label class="form-item">Font title:</label><form:input type="text" name="color2" path="fontcolorContent"
+                                                                class="colorpicker" id="color2"/></div>
+        <label class="form-item">Font content:</label><form:input type="text" name="color3" path="fontcolorTitle"
+                                                                  class="colorpicker" id="color3"/></div>
 
         <table>
             <tr>
@@ -80,7 +83,7 @@
             <tr>
                 <td><form:label id="labelTripStartD" path="startDate"><spring:message
                         code="label.startDate"/></form:label></td>
-                <td><form:input  id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
+                <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
                                 path="startDate"></form:input></td>
             </tr>
             <tr>
@@ -98,6 +101,10 @@
                 <td><form:label id="labelTripNotificatie" path="notification"><spring:message
                         code="label.TripNotificatie"/></form:label></td>
                 <td><form:input id="TripNotificatie" path="notification"/></td>
+            </tr>
+            <tr>
+                <td><form:label id="labelTripEquipment" path="equipment"><spring:message code="label.equipment"/></form:label></td>
+                <td><form:input id="TripEquipment" path="equipment"/></td>
             </tr>
         </table>
     </form:form>
@@ -117,13 +124,16 @@
                                 <td>${stopPlaats.adres} </td>
                                 <td>${stopPlaats.vrijgegeven} </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html"><spring:message code="label.UpdateStoppingPoint"/></a>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html"><spring:message
+                                            code="label.UpdateStoppingPoint"/></a>
                                 </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html"><spring:message code="label.DeleteStoppingPoint"/></a>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html"><spring:message
+                                            code="label.DeleteStoppingPoint"/></a>
                                 </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/StopPlaats/release/${stopPlaats.stopPlaatsID}.html"><spring:message code="label.ReleaseStoppingPoint"/></a>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/release/${stopPlaats.stopPlaatsID}.html"><spring:message
+                                            code="label.ReleaseStoppingPoint"/></a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -147,10 +157,12 @@
                             <tr>
                                 <td>${tripCategorie.tripCategorieName} </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/TripCategorie/update/${tripCategorie.tripCategorieId}.html"><spring:message code="label.updateTripCategory"/></a>
+                                    <a href="/ProjectTeamF-1.0/TripCategorie/update/${tripCategorie.tripCategorieId}.html"><spring:message
+                                            code="label.updateTripCategory"/></a>
                                 </td>
                                 <td>
-                                    <a href="/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html"><spring:message code="label.deleteTripCategory"/></a>
+                                    <a href="/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html"><spring:message
+                                            code="label.deleteTripCategory"/></a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -172,7 +184,8 @@
                 <label><spring:message code="label.NotificationMailQuestion"/></label>
                 <label for="dialog-message"><spring:message code="label.NotificationMailOrganiserMessage"/></label>
                 <textarea type="text" name="message" id="Message" value=""
-                          class="text ui-widget-content ui-corner-all"><spring:message code="label.NotificationMailNoMessage"/></textarea>
+                          class="text ui-widget-content ui-corner-all"><spring:message
+                        code="label.NotificationMailNoMessage"/></textarea>
                 <label for="changes"><spring:message code="label.NotificationMailChangesOccured"/></label>
 
                 <div id="changes">

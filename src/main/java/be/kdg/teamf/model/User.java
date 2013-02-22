@@ -2,6 +2,7 @@ package be.kdg.teamf.model;
 
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.OnDeleteAction;
@@ -58,7 +59,7 @@ public class User implements Serializable {
 
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
 
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -72,10 +73,7 @@ public class User implements Serializable {
 
     public User(String city, String zipcode, String number, String street, Date dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username)  {
 
-
-
         this.password =  password;
-
         this.city = city;
         this.zipcode = zipcode;
         this.number = number;

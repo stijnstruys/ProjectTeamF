@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -79,7 +78,7 @@ public class UserController {
 
     }
 
-    @RequestMapping("/user/update/{userID}")
+    @RequestMapping("/user/updateUser/{userID}")
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
 
         User u = userService.findUser(userID);
@@ -88,14 +87,13 @@ public class UserController {
         return model;
 
     }
-    @RequestMapping(value = "/user/update", method = RequestMethod.POST)
-    public String updateUserData(@ModelAttribute("user")
-                                 User user, BindingResult result) {
 
-        User u = userService.findUser(user.getUserID());
-        user.setPassword(u.getPassword());
+    @RequestMapping(value = "/user/update/updateUser", method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("user") User user, BindingResult result) {
+
         userService.updateUser(user);
-        return "redirect:/user/profile.html";
+
+        return "redirect:/user/user.html";
     }
 
     @RequestMapping("/user/changepw")
@@ -148,21 +146,13 @@ public class UserController {
         ModelAndView model = new ModelAndView("User/profile");
         return model;
     }
-    @RequestMapping(value = "/user/profile-{userID}")
-    public ModelAndView profile(HttpServletRequest request, @PathVariable("userID") int userID) throws Exception {
-
-        User u = userService.findUser(userID);
-        request.setAttribute("user", u);
-
-        ModelAndView model = new ModelAndView("User/viewProfile");
-        return model;
-    }
 
     @RequestMapping(value = "/user/myTrips.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-         int cur =   userService.getCurrentUser().getUserID();
-        request.setAttribute("tripList", tripService.listUserTrips(cur));
+        Trip t = new Trip();
+        request.setAttribute("trip", t);
+        request.setAttribute("tripList", tripService.listUserTrips(userService.getCurrentUser().getUserID()));
         ModelAndView model = new ModelAndView("User/myTrips");
         return model;
     }

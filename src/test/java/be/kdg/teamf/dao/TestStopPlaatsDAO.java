@@ -8,8 +8,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNull;
-import static junit.framework.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +18,8 @@ import static junit.framework.Assert.assertTrue;
  */
 @ContextConfiguration("classpath:spring-servlet.xml")
 public class TestStopPlaatsDAO extends AbstractTransactionalJUnit4SpringContextTests {
-
+    @Autowired
+    protected TripDAO tripDAO;
     @Autowired
     protected StopPlaatsDAO stopPlaatsDAO;
 
@@ -68,7 +67,8 @@ public class TestStopPlaatsDAO extends AbstractTransactionalJUnit4SpringContextT
         sp.setVrijgegeven(false);
         Trip t = new Trip();
         t.setTripName("lol");
-        //sp.setTrip(t);
+        tripDAO.addTrip(t);
+        sp.setTrip(t);
         return sp;
     }
 }

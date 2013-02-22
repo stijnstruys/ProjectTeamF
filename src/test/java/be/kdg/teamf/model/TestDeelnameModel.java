@@ -19,11 +19,13 @@ public class TestDeelnameModel {
     @Autowired
     protected DeelnameDAO deelnameDAO;
 
+
     @Test
     public void addDeelname() throws Exception {
         Deelname d = new Deelname();
-        Trip t = new Trip();
+
         User u = new User();
+        Trip t = new Trip();
 
         d.setDeelnameID(1);
         d.setTrip(t);

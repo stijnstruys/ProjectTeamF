@@ -23,6 +23,9 @@ public class StopPlaats {
     private String adres;
     @Column(name="Vrijgegeven")
     private boolean vrijgegeven;
+    @Column(name="Informatie")
+    private String informatie;
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
