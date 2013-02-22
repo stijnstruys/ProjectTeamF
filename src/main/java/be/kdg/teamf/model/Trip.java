@@ -49,13 +49,13 @@ public class Trip {
     private String equipment;
 
     @Column(name = "FONTCOLORTITLE")
-    private String fontcolorTitle;
+    private String fontcolorTitle = "#9CFF00";
 
     @Column(name = "FONTCOLORCONTENT")
-    private String fontcolorContent;
+    private String fontcolorContent = "#D4D4D4";
 
     @Column(name = "BGCOLOR")
-    private String bgcolor;
+    private String bgcolor = "#1C263C";
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
