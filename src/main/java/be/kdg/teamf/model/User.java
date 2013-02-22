@@ -57,7 +57,7 @@ public class User implements Serializable {
 
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
 
     @LazyCollection(LazyCollectionOption.FALSE)
