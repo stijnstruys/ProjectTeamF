@@ -74,6 +74,8 @@
           <element id="library" level="project" name="Maven: org.apache.struts:struts-core:1.3.8" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts-taglib:1.3.8" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts-tiles:1.3.8" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.7.1" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.7.1" />
         </element>
       </element>
     </root>

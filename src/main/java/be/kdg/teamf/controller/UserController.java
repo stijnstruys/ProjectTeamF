@@ -135,7 +135,6 @@ public class UserController {
             //wrong pasword page maken
             return "redirect:/general/index.html";
         }
-
     }
 
     @RequestMapping(value = "/user/profile")
@@ -218,5 +217,17 @@ public class UserController {
             tripService.deleteTrip(tripId);
         }
         return "redirect:/user/myTrips.html";
+    }
+
+    @RequestMapping(value = "user/checkusername/{username}", method = RequestMethod.GET)
+    public @ResponseBody boolean getUserInJson(@PathVariable("username") String name) {
+
+        User u = userService.findUser(name);
+        if(u == null) {
+            return false;
+        } else {
+            return true;
+        }
+
     }
 }
