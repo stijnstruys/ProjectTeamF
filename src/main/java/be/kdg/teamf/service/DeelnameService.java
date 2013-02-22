@@ -28,6 +28,6 @@ public interface DeelnameService {
 
     Deelname findDeelname(Trip t, User u);
 
-    ArrayList<User> getDeelnames(Trip t);
+    ArrayList<Deelname> getDeelnames(Trip t);
 
 }

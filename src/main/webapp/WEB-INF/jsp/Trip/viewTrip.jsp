@@ -85,10 +85,12 @@
         <table class="data">
             <tr>
                 <th><spring:message code="label.name"/></th>
+                <th><spring:message code="label.IndividualEquipment"/></th>
             </tr>
-            <c:forEach items="${deelnemers}" var="user">
+            <c:forEach items="${deelnemers}" var="deelname">
                 <tr>
-                    <td>${user.firstName} ${user.lastName} </a></td>
+                    <td><a>${deelname.user.firstName} ${deelname.user.lastName} </a></td>
+                    <td><a>${deelname.userEquipment} </a></td>
                 </tr>
             </c:forEach>
         </table>

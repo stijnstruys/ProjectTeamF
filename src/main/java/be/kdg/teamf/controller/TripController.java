@@ -110,7 +110,7 @@ public class TripController {
 
         if (!deelnameService.alreadyExists(d)) {
             t.getDeelnames().add(d);
-            t.setOrganiser(userService.getCurrentUser());
+            //t.setOrganiser(userService.getCurrentUser());
             tripService.updateTrip(t);
         }
 

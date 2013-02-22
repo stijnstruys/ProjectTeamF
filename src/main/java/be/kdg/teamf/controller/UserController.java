@@ -1,7 +1,9 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
+import be.kdg.teamf.service.DeelnameService;
 import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,9 @@ public class UserController {
 
     @Autowired
     private TripService tripService;
+
+    @Autowired
+    private DeelnameService deelnameService;
 
     /*@RequestMapping("/")
     public String listContacts(Map<String, Object> map) {
@@ -162,11 +167,10 @@ public class UserController {
     public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
         Trip t = tripService.findTrip(tripID);
         ModelAndView model;
-        if(tripService.checkOwnership(t, userService.getCurrentUser())){
+        if (tripService.checkOwnership(t, userService.getCurrentUser())) {
             request.setAttribute("trip", t);
             model = new ModelAndView("User/adminTrip");
-        }
-        else   {
+        } else {
             model = new ModelAndView("User/myTrips");
         }
         return model;
@@ -202,11 +206,34 @@ public class UserController {
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {
 
         Trip t = tripService.findTrip(tripId);
-        if(tripService.checkOwnership(t, userService.getCurrentUser())){
+        if (tripService.checkOwnership(t, userService.getCurrentUser())) {
             t.getOrganiser().getTrips().remove(t);
             userService.updateUser(t.getOrganiser());
             tripService.deleteTrip(tripId);
         }
         return "redirect:/user/myTrips.html";
+    }
+
+    @RequestMapping(value = "/TripParticipants/{tripID}", method = RequestMethod.GET)
+    public ModelAndView tripParticipantsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+
+        Deelname deelname = new Deelname();
+        deelnameService.getDeelnames(tripService.findTrip(tripID));
+        Trip t = tripService.findTrip(tripID);
+        request.setAttribute("deelnemers", deelname);
+
+        request.setAttribute("trip", t);
+        ModelAndView model = new ModelAndView("User/tripParticipants");
+
+        return model;
+    }
+
+    @RequestMapping(value = "/TripParticipants/update/updateTripParticipants/{tripID}", method = RequestMethod.POST)
+    public String updateTripParticipants(@ModelAttribute("tripParticipant")
+                                      Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
+        deelnameService.updateDeelname(deelname);
+
+        return "redirect:/user/admincp-" + deelname.getTrip().getTripId() + ".html";
+
     }
 }
