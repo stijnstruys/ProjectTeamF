@@ -220,9 +220,10 @@ public class UserController {
     public ModelAndView tripParticipantsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
         Deelname deelname = new Deelname();
-        deelnameService.getDeelnames(tripService.findTrip(tripID));
         Trip t = tripService.findTrip(tripID);
-        request.setAttribute("deelnemers", deelname);
+
+        request.setAttribute("deelnemers", deelnameService.getDeelnames(tripService.findTrip(tripID)));
+        request.setAttribute("deelname", deelname);
 
         request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("User/tripParticipants");
@@ -230,12 +231,23 @@ public class UserController {
         return model;
     }
 
-    @RequestMapping(value = "/TripParticipants/update/updateTripParticipants/{tripID}", method = RequestMethod.POST)
+    @RequestMapping(value = "/TripParticipants/updateTripParticipants/{tripID}", method = RequestMethod.POST)
     public String updateTripParticipants(@ModelAttribute("tripParticipant")
                                       Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
-        deelnameService.updateDeelname(deelname);
 
+
+        deelnameService.updateDeelname(deelname);
         return "redirect:/user/admincp-" + deelname.getTrip().getTripId() + ".html";
+
+    }
+
+    @RequestMapping(value = "/TripParticipants/updateDeelname/{deelnameID}", method = RequestMethod.POST)
+    public String updateDeelnemer(@ModelAttribute("tripParticipant")
+                                         Deelname deelname, BindingResult result, @PathVariable("deelnameID") int deelnameID) {
+
+
+        deelnameService.updateDeelname(deelname);
+        return "redirect:/TripParticipants/" + deelname.getTrip().getTripId() + ".html";
 
     }
 

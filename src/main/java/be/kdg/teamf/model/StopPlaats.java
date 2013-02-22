@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="T_STOPPLAATS")
 public class StopPlaats {
+
     @Id
     @Column(name="StopPlaatsID")
     @GeneratedValue

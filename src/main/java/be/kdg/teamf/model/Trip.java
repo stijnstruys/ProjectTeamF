@@ -45,8 +45,11 @@ public class Trip {
     @Column(name = "STARTLOCATION")
     private String startLocation;
 
-    @Column(name = "EQUIPMENT")
-    private String equipment;
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ElementCollection
+    @Column(name="Equipment")
+
+    private Collection<String> equipment;
 
     @Column(name = "FONTCOLORTITLE")
     private String fontcolorTitle = "#9CFF00";
@@ -200,11 +203,11 @@ public class Trip {
         this.notification = notification;
     }
 
-    public String getEquipment() {
+    public Collection<String> getEquipment() {
         return equipment;
     }
 
-    public void setEquipment(String equipment) {
+    public void setEquipment(Collection<String> equipment) {
         this.equipment = equipment;
     }
 }

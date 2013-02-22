@@ -37,20 +37,32 @@
                 <th><spring:message code="label.name"/></th>
                 <th><spring:message code="label.IndividualEquipment"/></th>
             </tr>
-            <c:forEach items="${trip.deelnames}" var="deelname">
+            <c:forEach items="${trip.deelnames}" var="deelnamevar">
                 <tr>
+                    <form method="post" action="updateDeelname/${deelnamevar.deelnameID}.html">
 
-                    <form:form method="post" action="updateTripParticipants/${tripID}.html" commandName="deelname" id="tripParticipant">
                         <table>
                             <tr>
-
-                                <td><form:input path="deelname.userEquipment"</td>
-                                <td><input type="submit" value="<spring:message code="label.updateTripCategory"/>"/></td>
+                                <td><a>${deelnamevar.user.firstName} ${deelnamevar.user.lastName} </a></td>
+                            </tr>
+                            <tr>
+                                <c:if test="${!empty deelnamevar.userEquipment}">
+                                <c:forEach items="${deelnamevar.userEquipment}" var="equipmentPiece">
+                            <tr>
+                                <td>
+                                    <input id="equipment" type="text" value="${equipmentPiece}" name="equipment"/>
+                                </td>
+                            </tr>
+                            </c:forEach>
+                            </c:if>
+                            <tr>
+                            <input id="equipmentnew" type="text" value="${equipmentPiece}" name="equipment"/>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="<spring:message code="label.updateParticipant"/>"/></td>
                             </tr>
                         </table>
-                    </form:form>
-                    <td><a>${deelname.user.firstName} ${deelname.user.lastName} </a></td>
-                    <td><a>${deelname.userEquipment} </a></td>
+                    </form>
                 </tr>
             </c:forEach>
         </table>

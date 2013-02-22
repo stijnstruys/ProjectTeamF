@@ -66,8 +66,14 @@
     <spring:message code="label.startDate"/>: <fmt:formatDate value="${trip.startDate}" pattern="dd-MM-yyyy" /> <br/>
     <spring:message code="label.endDate"/>: <fmt:formatDate value="${trip.endDate}" pattern="dd-MM-yyyy" /> <br/>
     <spring:message code="label.tripDescription"/>: ${trip.tripDescription} <br/>
-    <spring:message code="label.equipment"/>: ${trip.equipment} <br/>
-    <spring:message code="label.notification"/>: ${trip.notification} <br/>
+    <spring:message code="label.equipment"/><br/>
+    <c:if test="${!empty trip.equipment}">
+        <c:forEach items="${trip.equipment}" var="value">
+            <tr>
+                <td>${value}</td>
+            </tr>
+        </c:forEach>
+    </c:if>
     <c:if test="${registered != true}">
         <form action="join/${trip.tripId}.html">
             <input type="submit" value="<spring:message code="label.join"/>">

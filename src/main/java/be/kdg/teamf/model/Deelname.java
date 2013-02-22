@@ -1,9 +1,12 @@
 package be.kdg.teamf.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,9 +31,10 @@ public class Deelname {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-
-    @Column(name = "USEREQUIPMENT")
-    private String userEquipment;
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ElementCollection
+    @Column(name="Equipment")
+    private Collection<String> userEquipment;
 
     public Deelname() {
     }
@@ -64,11 +68,11 @@ public class Deelname {
         this.user = user;
     }
 
-    public String getUserEquipment() {
+    public Collection<String> getUserEquipment() {
         return userEquipment;
     }
 
-    public void setUserEquipment(String userEquipment) {
+    public void setUserEquipment(Collection<String> userEquipment) {
         this.userEquipment = userEquipment;
     }
 }

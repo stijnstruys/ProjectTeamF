@@ -1,6 +1,5 @@
 package be.kdg.teamf.dao;
 
-import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import org.junit.Test;
@@ -35,6 +34,7 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
 
 
         Trip t = getTrip();
+
         tripDAO.addTrip(t);
         assertEquals("Expected organiser: ", t.getOrganiser().getUserID(), tripDAO.findTrip(t.getTripId()).getOrganiser().getUserID());
         assertEquals("Expected name: ", "Dropping", tripDAO.findTrip(t.getTripId()).getTripName());
@@ -88,8 +88,6 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
     private Trip getTrip() {
         Trip t = new Trip();
         List deelnames = new ArrayList();
-        Deelname d1 = new Deelname();
-        Deelname d2 = new Deelname();
         User u1 = new User();
         u1.setUsername("JeroenD");
         User u2 = new User();
@@ -105,7 +103,8 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
 
         //t.setTripId(1);
         userDAO.addUser(u3);
-
+        t.setNotification("Kijk daar");
+        t.setEquipment(new ArrayList<String>());
         t.setTripName("Dropping");
         t.setStartDate(new Date("02/05/2013"));
         t.setEndDate(new Date("02/05/2013"));

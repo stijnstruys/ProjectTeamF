@@ -54,6 +54,8 @@ public class TestTripModel {
         t.setTripType(tt);
         t.setStopPlaatsen(stopPlaatsList);
         t.setTripCategorieen(tripCategorieList);
+        t.setNotification("notification");
+        t.setEquipment(new ArrayList<String>());
 
         assertEquals("Expected id: 1", 1, t.getTripId());
         assertEquals("Expected tripname: tripname", "tripname", t.getTripName());
@@ -69,6 +71,8 @@ public class TestTripModel {
         assertEquals("Expected type:", "publiek", t.getTripType().getTripTypeName());
         assertEquals("Expected stopplaatsen:", stopPlaatsList, t.getStopPlaatsen());
         assertEquals("Expected tripcategorieen:", tripCategorieList, t.getTripCategorieen());
+        assertEquals("Expected notification:", "notification", t.getNotification());
+        assertEquals("Expected equipment:", "equipment", t.getEquipment());
     }
 
 

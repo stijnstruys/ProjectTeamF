@@ -75,6 +75,7 @@
             <tr>
                 <td><form:label path="equipment"><spring:message code="label.equipment"/></form:label></td>
                 <td><form:input path="equipment"/></td>
+                <td><form:input path="equipment"/></td>
             </tr>
             <tr>
                 <td><form:label path="notification"><spring:message code="label.notification"/></form:label></td>

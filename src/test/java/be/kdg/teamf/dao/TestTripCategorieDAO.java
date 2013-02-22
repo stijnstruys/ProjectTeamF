@@ -38,6 +38,9 @@ public class TestTripCategorieDAO extends AbstractTransactionalJUnit4SpringConte
     public void testUpdateTripCategorie() {
         TripCategorie tc = getTripCategorie();
         tripCategorieDAO.addTripCategorie(tc);
+
+        tc.setTripCategorieName("Iets anders");
+        tripCategorieDAO.updateTripCategorie(tc);
         tc.setTripCategorieName("Reis");
         assertEquals("Excepeted name: ", "Reis", tripCategorieDAO.findTripCategorie(tc.getTripCategorieId()).getTripCategorieName());
     }

@@ -105,7 +105,15 @@
         <tr>
             <td><form:label id="labelTripEquipment" path="equipment"><spring:message
                     code="label.equipment"/></form:label></td>
-            <td><form:input id="TripEquipment" path="equipment"/></td>
+           <c:if test="${!empty trip.equipment}">
+               <c:forEach items="${trip.equipment}" var="equipmentPiece">
+                    <tr>
+                        <td>
+                            <input id="equipment" type="text" value="${equipmentPiece}" name="equipment"/>
+                       </td>
+                    </tr>
+               </c:forEach>
+           </c:if>
         </tr>
     </table>
 </form:form>

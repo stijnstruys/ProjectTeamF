@@ -1,17 +1,12 @@
 package be.kdg.teamf.service;
 
-import be.kdg.teamf.dao.UserDAO;
 import be.kdg.teamf.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
-import java.util.List;
-
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertSame;
-import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -91,4 +86,13 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
 
         assertEquals("De user is niet gewijzigd", "updated", userService.findUser("updated").getUsername());
     }
+    /*@Test
+    public void currentUser() {
+
+
+        User u = userService.getCurrentUser();
+
+
+        assertEquals("De user is niet gewijzigd", 1, u.getUserID());
+    }*/
 }

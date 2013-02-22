@@ -46,6 +46,7 @@ public class TripController {
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripList", tripService.listTrips());
+
         ModelAndView model = new ModelAndView("Trip/tripOverzicht");
         return model;
     }
@@ -79,6 +80,7 @@ public class TripController {
         Trip t = tripService.findTrip(tripID);
 
         request.setAttribute("deelnemers", deelnameService.getDeelnames(t));
+        request.setAttribute("equipment", t.getEquipment());
 
         if (u != null && deelnameService.userIsRegistered(t, u)) {
             request.setAttribute("registered", true);
@@ -93,6 +95,7 @@ public class TripController {
     @RequestMapping(value = "trip/add", method = RequestMethod.POST)
     public String addTrip(@ModelAttribute("trip")
                           Trip trip, BindingResult result) {
+
 
         trip.setOrganiser(userService.getCurrentUser());
         tripService.addTrip(trip);

@@ -1,21 +1,14 @@
 package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.User;
-import be.kdg.teamf.service.UserService;
 import org.junit.Test;
-import org.junit.internal.runners.JUnit4ClassRunner;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.List;
+import java.util.Date;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertSame;
-import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,8 +30,11 @@ public class TestUserDAO extends AbstractTransactionalJUnit4SpringContextTests {
         u.setFirstName("Bart");
         u.setUsername("Bart Leemans");
         u.setTelephone("00306985587996");
+        u.setShowPosition(false);
+        User u2 = new User( "city",  "zipcode",  "number",  "street",  new Date("10/10/10"),  "lastName",  "firstName",  "telephone",  "email",  "password",  "username") ;
+        userDAO.addUser(u2);
         userDAO.addUser(u);
-
+        assertEquals("Expected firstname: ", "username", userDAO.findUser(u2.getUserID()).getUsername());
         assertEquals("Expected firstname: ", "Bart Leemans", userDAO.findUser(u.getUserID()).getUsername());
     }
 
