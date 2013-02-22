@@ -149,21 +149,24 @@ $(document).ready(function () {
 function registrationvalidation() {
     var username = $("#userName");
 
-    username.keyup( function() {
+   /* username.keyup( function() {
+        checkUsername();
+    }); */
+
+    $("#test").click( function() {
         checkUsername();
     });
 
     function checkUsername() {
         $.ajax({
-            type: "GET",
-            url: "/ProjectTeamF-1.0/user/checkusername/" + name,
-            success: function(msg){
-                if(msg) {
-                    alert("truee");
+            url: '/ProjectTeamF-1.0/user/checkusername.html',
+            data: ({name : "jerre"}),
+            success: function(data) {
+                if( data == "true" ) {
+                    alert("true");
                 } else {
-                    alert("faalse");
+                    alert("false");
                 }
-
             }
         });
 
@@ -174,18 +177,12 @@ function registrationvalidation() {
 function trips() {
     var currentpage = $(".trip_pagina_0_content");
 
-
     $(".trip_details").hide();
     currentpage.show();
 
     $(".trip_pagina").click(function () {
-
-
         currentpage.hide();
-
         currentpage = $("." + this.id + "_content");
-
-
         currentpage.show();
     });
 

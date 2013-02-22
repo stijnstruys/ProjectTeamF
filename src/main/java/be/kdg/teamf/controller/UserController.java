@@ -68,6 +68,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user, BindingResult result) {
+
         user.setNotificationEmail(true);
         user.setShowPosition(true);
         userService.addUser(user);
@@ -239,15 +240,16 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "user/checkusername/{username}", method = RequestMethod.GET)
-    public @ResponseBody boolean getUserInJson(@PathVariable("username") String name) {
+    @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
+    public @ResponseBody String getUserInJson(@RequestParam("name") String name) {
 
         User u = userService.findUser(name);
         if(u == null) {
-            return false;
+            return "false";
         } else {
-            return true;
+            return "true";
         }
+
 
     }
 }

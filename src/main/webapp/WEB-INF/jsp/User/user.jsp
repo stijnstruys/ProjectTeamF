@@ -30,7 +30,7 @@
 
 <section id="content">
     <h2><spring:message code="label.UserRegistration"/></h2>
-
+    <button id="test">test</button>
     <form:form method="post" action="add.html" commandName="user" id="user">
 
         <table>
