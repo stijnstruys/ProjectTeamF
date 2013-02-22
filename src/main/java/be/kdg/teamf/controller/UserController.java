@@ -94,9 +94,7 @@ public class UserController {
 
         User u = userService.findUser(user.getUserID());
         user.setPassword(u.getPassword());
-
         userService.updateUser(user);
-
         return "redirect:/user/profile.html";
     }
 
@@ -151,13 +149,21 @@ public class UserController {
         ModelAndView model = new ModelAndView("User/profile");
         return model;
     }
+    @RequestMapping(value = "/user/profile-{userID}")
+    public ModelAndView profile(HttpServletRequest request, @PathVariable("userID") int userID) throws Exception {
+
+        User u = userService.findUser(userID);
+        request.setAttribute("user", u);
+
+        ModelAndView model = new ModelAndView("User/viewProfile");
+        return model;
+    }
 
     @RequestMapping(value = "/user/myTrips.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        Trip t = new Trip();
-        request.setAttribute("trip", t);
-        request.setAttribute("tripList", tripService.listUserTrips(userService.getCurrentUser().getUserID()));
+         int cur =   userService.getCurrentUser().getUserID();
+        request.setAttribute("tripList", tripService.listUserTrips(cur));
         ModelAndView model = new ModelAndView("User/myTrips");
         return model;
     }
