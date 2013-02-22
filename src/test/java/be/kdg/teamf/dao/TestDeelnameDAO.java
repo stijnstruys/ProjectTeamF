@@ -1,6 +1,8 @@
 package be.kdg.teamf.dao;
 
-import be.kdg.teamf.model.*;
+import be.kdg.teamf.model.Deelname;
+import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -50,7 +52,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         dn.getUser().setFirstName("Jeroen");
         dn.getTrip().setTripName("Reis naar Spanje");
         assertEquals("Expected: ", "Jeroen", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
-        assertEquals("Expected: ", "Reis naar Spanje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
+        assertEquals("Expecxted: ", "Reis naar Spanje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
 
     }
 
@@ -59,7 +61,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
         assertEquals("Expected: ", "Stijn", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
-        assertEquals("Expected: ", "Dropping", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
+        assertEquals("Expecxted: ", "Dropping", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
     }
 
     private Deelname  getDeelname() {
@@ -85,7 +87,6 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
 
         dn.setTrip(t1);
         dn.setUser(u1);
-
         return dn;
     }
 }
