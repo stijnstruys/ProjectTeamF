@@ -3,14 +3,12 @@ package be.kdg.teamf.dao;
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
-import be.kdg.teamf.service.TripService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +28,8 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
     @Autowired
     protected TripDAO tripDAO;
 
+    @Autowired
+    protected UserDAO userDAO;
     @Test
     public void testAddTrip() {
         int id = 1;
@@ -105,6 +105,8 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
         deelnames.add(d2);*/
 
         //t.setTripId(1);
+        userDAO.addUser(u3);
+
         t.setTripName("Dropping");
         t.setStartDate(new Date("02/05/2013"));
         t.setEndDate(new Date("02/05/2013"));

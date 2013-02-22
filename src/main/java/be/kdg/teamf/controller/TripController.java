@@ -16,8 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 
 /**
  * Created with IntelliJ IDEA.
@@ -80,6 +78,8 @@ public class TripController {
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
 
+        request.setAttribute("deelnemers", deelnameService.getDeelnames(t));
+
         if (u != null && deelnameService.userIsRegistered(t, u)) {
             request.setAttribute("registered", true);
         } else {
@@ -107,7 +107,6 @@ public class TripController {
     public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
         User u = userService.getCurrentUser();
-
         Trip t = tripService.findTrip(tripID);
 
         Deelname d = new Deelname(t, u);
