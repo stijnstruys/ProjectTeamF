@@ -32,12 +32,11 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
     protected UserDAO userDAO;
     @Test
     public void testAddTrip() {
-        int id = 1;
-        User u = new User();
+
 
         Trip t = getTrip();
         tripDAO.addTrip(t);
-        assertEquals("Expected organiser: ", u, tripDAO.findTrip(t.getTripId()).getOrganiser());
+        assertEquals("Expected organiser: ", t.getOrganiser().getUserID(), tripDAO.findTrip(t.getTripId()).getOrganiser().getUserID());
         assertEquals("Expected name: ", "Dropping", tripDAO.findTrip(t.getTripId()).getTripName());
     }
 

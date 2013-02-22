@@ -1,7 +1,6 @@
 package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.TripCategorie;
-import be.kdg.teamf.model.Trip;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -25,7 +24,7 @@ public class TestTripCategorieDAO extends AbstractTransactionalJUnit4SpringConte
     public void testAddTripCategorie() {
       TripCategorie tc = getTripCategorie();
       tripCategorieDAO.addTripCategorie(tc);
-      assertEquals("Excepeted name: ", "Dropping", tripCategorieDAO.findTripCategorie(tc.getTripCategorieId()));
+      assertEquals("Excepeted name: ", "Dropping", tripCategorieDAO.findTripCategorie(tc.getTripCategorieId()).getTripCategorieName());
     }
 
     @Test
@@ -40,7 +39,7 @@ public class TestTripCategorieDAO extends AbstractTransactionalJUnit4SpringConte
         TripCategorie tc = getTripCategorie();
         tripCategorieDAO.addTripCategorie(tc);
         tc.setTripCategorieName("Reis");
-        assertEquals("Excepeted name: ", "Reis", tripCategorieDAO.findTripCategorie(tc.getTripCategorieId()));
+        assertEquals("Excepeted name: ", "Reis", tripCategorieDAO.findTripCategorie(tc.getTripCategorieId()).getTripCategorieName());
     }
 
     @Test

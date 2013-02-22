@@ -30,6 +30,7 @@ public class TestTripController {
         testUpdateTrip();
         testDeleteTrip();*/
     }
+
     public void testAddTrip() throws InterruptedException {
         driver = getChromeDriver();
         goToTrip();

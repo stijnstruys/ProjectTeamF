@@ -26,7 +26,9 @@ public class TestDeelnameModel {
 
         User u = new User();
         Trip t = new Trip();
+        Deelname d2 = new Deelname(t,u);
 
+        d2.setDeelnameID(2);
         d.setDeelnameID(1);
         d.setTrip(t);
         d.setUser(u);
@@ -34,5 +36,8 @@ public class TestDeelnameModel {
         assertEquals("Expected deelnameID", 1, d.getDeelnameID());
         assertEquals("Expected trip:", t, d.getTrip());
         assertEquals("Expected user:", u, d.getUser());
+        assertEquals("Expected deelnameID", 2, d2.getDeelnameID());
+        assertEquals("Expected trip:", t, d2.getTrip());
+        assertEquals("Expected user:", u, d2.getUser());
     }
 }
