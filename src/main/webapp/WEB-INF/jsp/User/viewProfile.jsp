@@ -50,14 +50,12 @@
             </div>
         </div>
 
-
         <div class="row-fluid">
             <div class="span2" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
             <div class="span3">
                 <label class="checkbox profile_lbl">${user.dateOfBirth} </label>
             </div>
         </div>
-
 
         <h4>Contact</h4>
         <div class="row-fluid">
@@ -93,9 +91,6 @@
                 <label class="checkbox profile_lbl" >${user.number} </label>
             </div>
         </div>
-
-
-
 </section>
 
 <jsp:include page="../General/footer.jsp"/>

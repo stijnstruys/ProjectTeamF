@@ -67,9 +67,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user")
-                          User user, BindingResult result) {
-
+    public String addUser(@ModelAttribute("user") User user, BindingResult result) {
+        user.setNotificationEmail(true);
+        user.setShowPosition(true);
         userService.addUser(user);
 
         return "redirect:/user/user.html";
@@ -83,7 +83,7 @@ public class UserController {
 
     }
 
-    @RequestMapping("/user/updateUser/{userID}")
+    @RequestMapping("/user/update/{userID}")
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
 
         User u = userService.findUser(userID);
@@ -92,13 +92,15 @@ public class UserController {
         return model;
 
     }
+    @RequestMapping(value = "/user/update", method = RequestMethod.POST)
+    public String updateUserData(@ModelAttribute("user")
+                                 User user, BindingResult result) {
 
-    @RequestMapping(value = "/user/update/updateUser", method = RequestMethod.POST)
-    public String updateUser(@ModelAttribute("user") User user, BindingResult result) {
+        User u = userService.findUser(user.getUserID());
+        user.setPassword(u.getPassword());
 
         userService.updateUser(user);
-
-        return "redirect:/user/user.html";
+        return "redirect:/user/profile.html";
     }
 
     @RequestMapping("/user/changepw")
@@ -234,6 +236,18 @@ public class UserController {
         deelnameService.updateDeelname(deelname);
 
         return "redirect:/user/admincp-" + deelname.getTrip().getTripId() + ".html";
+
+    }
+
+    @RequestMapping(value = "user/checkusername/{username}", method = RequestMethod.GET)
+    public @ResponseBody boolean getUserInJson(@PathVariable("username") String name) {
+
+        User u = userService.findUser(name);
+        if(u == null) {
+            return false;
+        } else {
+            return true;
+        }
 
     }
 }

@@ -38,6 +38,8 @@ public class TestTripModel {
         List<StopPlaats> stopPlaatsList = new ArrayList();
         List<TripCategorie> tripCategorieList = new ArrayList();
 
+        tt.setTripTypeName("publiek");
+
         t.setTripName("tripname");
         t.setEndDate(d);
         t.setOrganiser(u);
@@ -64,7 +66,7 @@ public class TestTripModel {
         assertEquals("Expected deelnames:", deelnameList, t.getDeelnames());
         assertEquals("Expected fontcolorcontent:", "red", t.getFontcolorContent());
         assertEquals("Expected fontcolortitle:", "green", t.getFontcolorTitle());
-        assertEquals("Expected type:", "publiek", t.getTripType());
+        assertEquals("Expected type:", "publiek", t.getTripType().getTripTypeName());
         assertEquals("Expected stopplaatsen:", stopPlaatsList, t.getStopPlaatsen());
         assertEquals("Expected tripcategorieen:", tripCategorieList, t.getTripCategorieen());
     }

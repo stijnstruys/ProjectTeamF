@@ -18,6 +18,10 @@ $(document).ready(function () {
 
     //trips
     trips();
+
+    //user registration validation
+    registrationvalidation();
+
     //begin gegevens nemen
     beginTripN = $("#TripN").val();
     beginTripDescr = $("#TripDescr").val();
@@ -142,6 +146,31 @@ $(document).ready(function () {
     // alert(test);
 });
 
+function registrationvalidation() {
+    var username = $("#userName");
+
+    username.keyup( function() {
+        checkUsername();
+    });
+
+    function checkUsername() {
+        $.ajax({
+            type: "GET",
+            url: "/ProjectTeamF-1.0/user/checkusername/" + name,
+            success: function(msg){
+                if(msg) {
+                    alert("truee");
+                } else {
+                    alert("faalse");
+                }
+
+            }
+        });
+
+    }
+
+}
+
 function trips() {
     var currentpage = $(".trip_pagina_0_content");
 
@@ -184,6 +213,7 @@ function userprofile() {
         $(".profile_btns").show();
         $("#user_modify_profile").hide();
         $("#profile_show_pos").removeAttr("disabled");
+        $("#profile_show_not").removeAttr("disabled");
     });
 
     $("#profile_cancel").click(function () {
@@ -191,7 +221,8 @@ function userprofile() {
         $(".profile_input").hide();
         $(".profile_btns").hide();
         $("#user_modify_profile").show();
-        ("#profile_show_pos").attr('disabled', 'true');
+        $("#profile_show_pos").attr('disabled', 'true');
+        $("#profile_show_not").attr('disabled', 'true');
         ;
     });
 

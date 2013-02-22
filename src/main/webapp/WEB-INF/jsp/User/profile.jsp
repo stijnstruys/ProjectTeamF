@@ -68,10 +68,18 @@
             <div class="row-fluid">
                 <div class="span2"></div>
                 <div class="span3">
+                    <label class="checkbox">
+                        <form:checkbox id="profile_show_pos" path="showPosition" disabled="true" /> <spring:message code="label.ShowPosition"/>
+                    </label>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span2"></div>
+                <div class="span3">
                         <%--<label class="checkbox profile_lbl" >${user.showPosition} </label>--%>
                         <%--<form:input type="text" class="profile_input hidethis" path="showPosition"/>--%>
                     <label class="checkbox">
-                        <form:checkbox id="profile_show_pos" path="showPosition" disabled="true" /> <spring:message code="label.ShowPosition"/>
+                        <form:checkbox id="profile_show_not" path="notificationEmail" disabled="true" /> <spring:message code="label.ReceiveNotification"/>
                     </label>
                 </div>
             </div>

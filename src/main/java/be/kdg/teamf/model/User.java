@@ -53,11 +53,12 @@ public class User implements Serializable {
     @Column(name = "city")
     private String city;
     @Column(name = "showposition")
-    private boolean showPosition = true;
-
+    private boolean showPosition;
+    @Column(name = "notificationemail")
+    private boolean notificationEmail;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
 
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -65,10 +66,10 @@ public class User implements Serializable {
     private Collection<Trip> trips;
 
     public User() {
+
     }
 
     public User(String city, String zipcode, String number, String street, Date dateOfBirth, String lastName, String firstName, String telephone, String email, String password, String username)  {
-
         this.password =  password;
         this.city = city;
         this.zipcode = zipcode;
@@ -80,6 +81,8 @@ public class User implements Serializable {
         this.telephone = telephone;
         this.email = email;
         this.username = username;
+
+
     }
 
     public int getUserID() {
@@ -202,6 +205,16 @@ public class User implements Serializable {
 
         return showPosition;
     }
+
+    public void setNotificationEmail(boolean notificationEmail) {
+        this.notificationEmail = notificationEmail;
+    }
+
+    public boolean isNotificationEmail() {
+
+        return notificationEmail;
+    }
+
 
 
     @Override
