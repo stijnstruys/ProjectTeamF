@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -25,24 +26,24 @@ public class TestDeelnameModel {
     @Test
     public void addDeelname() throws Exception {
         Deelname d = new Deelname();
-
+        List<String> equipment = new ArrayList();
         User u = new User();
         Trip t = new Trip();
         Deelname d2 = new Deelname(t,u);
 
-        d2.setDeelnameID(2);
-        d.setDeelnameID(1);
+  //      d2.setDeelnameID(2);
+        d2.setUserEquipment(equipment);
+   //     d.setDeelnameID(1);
         d.setTrip(t);
         d.setUser(u);
-        d.setUserEquipment(new ArrayList<String>());
+        d.setUserEquipment(equipment);
 
+//        deelnameDAO.addDeelname(d);
         assertEquals("Expected deelnameID", 1, d.getDeelnameID());
         assertEquals("Expected trip:", t, d.getTrip());
         assertEquals("Expected user:", u, d.getUser());
-        assertEquals("Expected userequipment:", "auto", d.getUserEquipment());
         assertEquals("Expected deelnameID", 2, d2.getDeelnameID());
         assertEquals("Expected trip:", t, d2.getTrip());
         assertEquals("Expected user:", u, d2.getUser());
     }
-
 }

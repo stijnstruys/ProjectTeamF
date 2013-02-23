@@ -64,7 +64,6 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
         assertNotNull("Trip", tripDAO.listTrips());
     }
 
-
     @Test
     public void searchTrips() {
         addTrip();

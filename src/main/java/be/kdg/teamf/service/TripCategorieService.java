@@ -14,5 +14,6 @@ public interface TripCategorieService {
     public void addTripCategorie(TripCategorie tripCategorie);
     public void updateTripCategorie(TripCategorie tripCategorie);
     public void removeTripCategorie(TripCategorie tripCategorie);
+    public TripCategorie getTripCategories(int tripID);
     public TripCategorie findTripCategorie(int tripCategorieId);
 }

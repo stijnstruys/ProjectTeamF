@@ -43,4 +43,9 @@ public class TripTypeServiceImpl implements TripTypeService {
         return tripTypeDAO.listTripTypes();
     }
 
+    @Override
+    public TripType findDeelname(int TripTypeID) {
+        return tripTypeDAO.findTripType(TripTypeID);
+    }
+
 }

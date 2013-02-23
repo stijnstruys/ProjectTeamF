@@ -3,10 +3,7 @@ package be.kdg.teamf.controller;
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
-import be.kdg.teamf.service.DeelnameService;
-import be.kdg.teamf.service.TripService;
-import be.kdg.teamf.service.TripTypeService;
-import be.kdg.teamf.service.UserService;
+import be.kdg.teamf.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -39,6 +36,8 @@ public class TripController {
     private UserService userService;
     @Autowired
     private DeelnameService deelnameService;
+    @Autowired
+    private TripCategorieService tripCategorieService;
 
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -81,7 +80,7 @@ public class TripController {
 
         request.setAttribute("deelnemers", deelnameService.getDeelnames(t));
         request.setAttribute("equipment", t.getEquipment());
-
+        request.setAttribute("categories", tripCategorieService.getTripCategories(t.getTripId()));
         if (u != null && deelnameService.userIsRegistered(t, u)) {
             request.setAttribute("registered", true);
         } else {

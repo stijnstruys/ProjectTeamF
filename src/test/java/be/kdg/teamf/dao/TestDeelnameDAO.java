@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -47,13 +48,15 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
 
     @Test
     public void testUpdateDeelname() {
+        List<String> equipment = new ArrayList<>();
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
         dn.getUser().setFirstName("Jeroen");
         dn.getTrip().setTripName("Reis naar Spanje");
+        dn.setUserEquipment(equipment);
         assertEquals("Expected: ", "Jeroen", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
-        assertEquals("Expecxted: ", "Reis naar Spanje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
-
+        assertEquals("Expected: ", "Reis naar Spanje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
+        assertEquals("Expected: ", equipment, deelnameDAO.findDeelname(dn.getDeelnameID()).getUserEquipment());
     }
 
     @Test

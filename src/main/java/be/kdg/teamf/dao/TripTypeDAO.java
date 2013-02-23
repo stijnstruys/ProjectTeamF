@@ -16,4 +16,5 @@ public interface TripTypeDAO {
     public void updateTripType(TripType tripType);
     public void removeTripType(int id);
     public List<TripType> listTripTypes();
+    TripType findTripType(int tripTypeID);
 }

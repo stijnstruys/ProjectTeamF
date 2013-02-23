@@ -38,6 +38,14 @@ public class TripCategorieDAOImpl implements TripCategorieDAO {
     }
 
     @Override
+    public TripCategorie getTripCategories(int tripID) {
+
+        Query q = sessionFactory.getCurrentSession().createQuery("from TripCategorie where trip = :tripId");
+        q.setInteger("tripId", tripID);
+        return (TripCategorie) q.list().get(0);
+    }
+
+    @Override
     public TripCategorie findTripCategorie(int tripCategorieId) {
         Query q = sessionFactory.getCurrentSession().createQuery("from TripCategorie where tripCategorieId = :tripCategorieId");
         q.setInteger("tripCategorieId", tripCategorieId);

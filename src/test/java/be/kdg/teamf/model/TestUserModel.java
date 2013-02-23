@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 
@@ -36,6 +37,8 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         u.setNumber("number");
         u.setZipcode("zipcode");
         u.setCity("city");
+        u.setShowPosition(true);
+        u.setNotificationEmail(true);
 
         assertEquals("Expected id: 1", 1, u.getUserID());
         assertEquals("Expected username: username", "username", u.getUsername());
@@ -49,6 +52,8 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         assertEquals("Expected number: number", "number", u.getNumber());
         assertEquals("Expected zipcode: zipcode", "zipcode", u.getZipcode());
         assertEquals("Expected city: city", "city", u.getCity());
+        assertEquals("Expected city: city", true, u.isShowPosition());
+        assertEquals("Expected city: city", true, u.isNotificationEmail());
     }
 
 
@@ -62,14 +67,15 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         assertEquals(true, u1.equals(u2));
     }
 
-   @Test
+    @Test
     public void checkEqualsSameUser() {
-       User u1 = new User();
-       User u2 = new User();
+        User u1 = new User();
+        User u2 = new User();
 
-       u1.setUsername("jef");
-       u2 = u1;
-       assertTrue(u1.equals(u2));
-   }
+        u1.setUsername("jef");
+        u2 = u1;
+        assertTrue(u1.equals(u2));
+    }
+
 
 }

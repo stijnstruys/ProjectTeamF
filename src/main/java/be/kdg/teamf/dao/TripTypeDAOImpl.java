@@ -1,6 +1,7 @@
 package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.TripType;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -33,8 +34,7 @@ public class TripTypeDAOImpl implements TripTypeDAO {
     @Override
     public void removeTripType(int id) {
         TripType tripType = (TripType) sessionFactory.getCurrentSession().load(TripType.class, id);
-        if(tripType != null)
-        {
+        if (tripType != null) {
             sessionFactory.getCurrentSession().delete(tripType);
         }
     }
@@ -42,5 +42,16 @@ public class TripTypeDAOImpl implements TripTypeDAO {
     @Override
     public List<TripType> listTripTypes() {
         return sessionFactory.getCurrentSession().createQuery("from TripType").list();
+    }
+
+    @Override
+    public TripType findTripType(int tripTypeID) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from TripType where tripTypeId = :tripTypeID");
+        q.setInteger("tripTypeID", tripTypeID);
+        if (q.list().size() > 0) {
+            return (TripType) q.list().get(0);
+        } else {
+            return null;
+        }
     }
 }

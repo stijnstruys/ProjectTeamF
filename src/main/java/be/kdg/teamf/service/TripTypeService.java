@@ -16,4 +16,5 @@ public interface TripTypeService {
     public void updateTripType(TripType tripType);
     public void removeTripType(int id);
     public List<TripType> listTripTypes();
+    TripType findDeelname(int TripTypeID);
 }

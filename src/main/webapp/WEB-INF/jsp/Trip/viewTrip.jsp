@@ -56,51 +56,109 @@
         }
 
     </style>
+    <section class="formView">
 
-    <h2>${trip.tripName}</h2>
 
-    <h3>${trip.notification}</h3>
-
-    <spring:message code="label.startLocation"/>: ${trip.startLocation} <br/>
-    <spring:message code="label.organiser"/>: ${trip.organiser.firstName} ${trip.organiser.lastName}<br/>
-    <spring:message code="label.startDate"/>: <fmt:formatDate value="${trip.startDate}" pattern="dd-MM-yyyy" /> <br/>
-    <spring:message code="label.endDate"/>: <fmt:formatDate value="${trip.endDate}" pattern="dd-MM-yyyy" /> <br/>
-    <spring:message code="label.tripDescription"/>: ${trip.tripDescription} <br/>
-    <spring:message code="label.equipment"/><br/>
-    <c:if test="${!empty trip.equipment}">
-        <c:forEach items="${trip.equipment}" var="value">
+        <table class="formTable">
             <tr>
-                <td>${value}</td>
+                <td colspan="3">
+                    <p class="formTrip">${trip.tripName}</p>
+                </td>
+                <td><c:if test="${registered != true}">
+                    <form action="join/${trip.tripId}.html">
+                        <input class="formButton" type="submit" value="<spring:message code="label.join"/>">
+                    </form>
+                </c:if>
+                    <c:if test="${registered == true}">
+                        <form action="leave/${trip.tripId}.html">
+                            <input class="formButton" type="submit" value="<spring:message code="label.leaveTrip"/>">
+                        </form>
+                    </c:if></td>
             </tr>
-        </c:forEach>
-    </c:if>
-    <c:if test="${registered != true}">
-        <form action="join/${trip.tripId}.html">
-            <input type="submit" value="<spring:message code="label.join"/>">
-        </form>
-    </c:if>
-    <c:if test="${registered == true}">
-        <form action="leave/${trip.tripId}.html">
-            <input type="submit" value="<spring:message code="label.leaveTrip"/>">
-        </form>
-    </c:if>
-
-    <h2>Deelnemers</h2>
-
-    <c:if test="${!empty deelnemers}">
-        <table class="data">
             <tr>
-                <th><spring:message code="label.name"/></th>
-                <th><spring:message code="label.IndividualEquipment"/></th>
+                <td colspan="4">
+                    <p class="formLabels">${trip.tripDescription}</p>
+                </td>
             </tr>
-            <c:forEach items="${deelnemers}" var="deelname">
+            <tr>
+                <td colspan="4">
+                    <p class="formLabels">${trip.notification}</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="formColumns">
+                    <p class="formLabels1"><spring:message code="label.startLocation"/></p>
+                </td>
+                <td>
+                    <p class="formLabels1"><spring:message
+                            code="label.organiser"/></p>
+                </td>
+                <td>
+                    <p class="formLabels1"><spring:message code="label.startDate"/></p>
+                </td>
+                <td>
+                    <p class="formLabels1"><spring:message
+                            code="label.endDate"/></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="formLabels2">${trip.startLocation}</p>
+                </td>
+                <td>
+                    <p class="formLabels2">${trip.organiser.firstName} ${trip.organiser.lastName}</p>
+                </td>
+                <td>
+                    <p class="formLabels2"><fmt:formatDate value="${trip.startDate}"
+                                                           pattern="dd-MM-yyyy"/></p>
+                </td>
+                <td>
+                    <p class="formLabels2"><fmt:formatDate value="${trip.endDate}"
+                                                           pattern="dd-MM-yyyy"/></p>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="formLabels1"><spring:message code="label.equipment"/></p></td>
+            </tr>
+            <c:if test="${!empty trip.equipment}">
+                <c:forEach items="${trip.equipment}" var="value">
+                    <tr>
+                        <td>${value}</td>
+                    </tr>
+                </c:forEach>
+            </c:if>
+            <tr>
+                <td><p class="formLabels1"><spring:message code="label.Categories"/></p></td>
+            </tr>
+            <c:if test="${!empty trip.tripCategorieen}">
+                <c:forEach items="${trip.tripCategorieen}" var="value">
+                    <tr>
+                        <td>${value.tripCategorieName}</td>
+                    </tr>
+                </c:forEach>
+            </c:if>
+            <tr>
+            <tr>
+                <td><p class="formTrip"><spring:message code="label.Participants"/></p></td>
+            </tr>
+            <c:if test="${!empty deelnemers}">
+
                 <tr>
-                    <td><a>${deelname.user.firstName} ${deelname.user.lastName} </a></td>
-                    <td><a>${deelname.userEquipment} </a></td>
+                    <td><p class="formLabels"><spring:message code="label.name"/></p></td>
+                    <td><p class="formLabels"><spring:message code="label.IndividualEquipment"/></p></td>
                 </tr>
-            </c:forEach>
+                <c:forEach items="${deelnemers}" var="deelname">
+                    <tr>
+                        <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
+                        <td><a class="formLabels2">${deelname.userEquipment} </a></td>
+                    </tr>
+                </c:forEach>
+
+            </c:if>
         </table>
-    </c:if>
+    </section>
+
+
 </section>
 <jsp:include page="../General/footer.jsp"/>
 

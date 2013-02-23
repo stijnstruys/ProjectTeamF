@@ -57,14 +57,14 @@ public class TripCategorieController {
         tripCategorie.setTrip(t);
         t.getTripCategorieen().add(tripCategorie);
         tripService.updateTrip(t);
-        return "redirect:/trip/" + t.getTripId() + ".html";
+        return "redirect:/user/admincp-" + t.getTripId() + ".html";
     }
 
     @RequestMapping("/TripCategorie/delete/{tripCategorieId}")
     public String deleteTripCategorie(@PathVariable("tripCategorieId") int tripCategorieId) {
         TripCategorie tc = tripCategorieService.findTripCategorie(tripCategorieId);
         tripCategorieService.removeTripCategorie(tc);
-        return "redirect:/trip/" + tc.getTrip().getTripId() + ".html";
+        return "redirect:/user/admincp-" + tc.getTrip().getTripId() + ".html";
 
     }
 
@@ -89,7 +89,7 @@ public class TripCategorieController {
         tripCategorie.setTrip(tripService.findTrip(tripID));
         tripCategorieService.updateTripCategorie(tripCategorie);
 
-        return "redirect:/trip/" + tripCategorie.getTrip().getTripId() + ".html";
+        return "redirect:/user/admincp-" + tripCategorie.getTrip().getTripId() + ".html";
 
     }
 
