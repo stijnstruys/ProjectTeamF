@@ -1,11 +1,11 @@
 package be.kdg.teamf.model;
 
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.*;
 
+import javax.persistence.CascadeType;
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Collection;
 import java.util.Date;
 
@@ -47,6 +47,7 @@ public class Trip {
 
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
+    @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
     @Column(name="Equipment")
 
     private Collection<String> equipment;

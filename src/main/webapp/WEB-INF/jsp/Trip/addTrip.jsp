@@ -29,7 +29,20 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+      <script>
+          var counter = 1;
+          function addEquipment() {
 
+              $("#newEquip").append('<td id=equipment'+counter+' ><input type="text" value="" name="equipment"/><button class="btn"  type="button" onclick="removeEquipment(\'equipment'+counter+'\')">X</button></td>');
+              counter++;
+          }
+          function removeEquipment(s) {
+
+              $("#"+s).remove();
+              //$("#"+s).remove();
+          }
+
+      </script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -72,11 +85,12 @@
                 <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
                 <td><form:input path="startLocation"/></td>
             </tr>
-            <tr>
+            <tr id="newEquip">
                 <td><form:label path="equipment"><spring:message code="label.equipment"/></form:label></td>
-                <td><form:input path="equipment"/></td>
-                <td><form:input path="equipment"/></td>
+                <td id="equipment"><form:input path="equipment"/><button  class="btn" type="button" onclick="removeEquipment('equipment')">X</button></td>
             </tr>
+
+            <tr><td><button class="btn" type="button" onclick="addEquipment()">New</button></td></tr>
             <tr>
                 <td><form:label path="notification"><spring:message code="label.notification"/></form:label></td>
                 <td><form:input path="notification"/></td>

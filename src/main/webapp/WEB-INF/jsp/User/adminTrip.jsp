@@ -31,7 +31,20 @@
     <link rel="stylesheet" href="../css/plugins/farbtastic.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+    <script>
+        var counter = 1;
+        function addEquipment() {
 
+            $("#newEquip").append('<td id=equipmentnew'+counter+' ><input type="text" value="" name="equipment"/><button class="btn"  type="button" onclick="removeEquipment(\'equipmentnew'+counter+'\')">X</button></td>');
+            counter++;
+        }
+        function removeEquipment(s) {
+
+            $("#"+s).remove();
+            //$("#"+s).remove();
+        }
+
+    </script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -40,7 +53,9 @@
     improve your experience.</p>
 <![endif]-->
 <jsp:include page="../General/header.jsp"/>
-
+<%
+    int count = 0;
+%>
 <section id="content">
 <style>
     #content {
@@ -102,19 +117,25 @@
                     code="label.TripNotificatie"/></form:label></td>
             <td><form:input id="TripNotificatie" path="notification"/></td>
         </tr>
-        <tr>
+        <tr id="newEquip">
             <td><form:label id="labelTripEquipment" path="equipment"><spring:message
                     code="label.equipment"/></form:label></td>
            <c:if test="${!empty trip.equipment}">
+
                <c:forEach items="${trip.equipment}" var="equipmentPiece">
-                    <tr>
+                    <%
+                        count++;
+                    %>
+                    <tr id="equipment<%=count%>">
                         <td>
-                            <input id="equipment" type="text" value="${equipmentPiece}" name="equipment"/>
+                            <input  type="text" value="${equipmentPiece}" name="equipment"/>
+                            <button  class="btn" type="button" onclick="removeEquipment('equipment<%=count%>')">X</button>
                        </td>
                     </tr>
                </c:forEach>
            </c:if>
         </tr>
+        <tr><td><button class="btn" type="button" onclick="addEquipment()">New</button></td></tr>
     </table>
 </form:form>
 <table>
@@ -129,6 +150,7 @@
                         <th>&nbsp;</th>
                     </tr>
                     <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
+
                         <tr>
                             <td>${stopPlaats.adres} </td>
                             <td>${stopPlaats.vrijgegeven} </td>
