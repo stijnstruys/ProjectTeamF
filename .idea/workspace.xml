@@ -1,35 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="deelnemers">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripTypeDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestDeelnameDAO.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestDeelnameDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestDeelnameModel.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestDeelnameModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripCategorieDAO.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripCategorieDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestTripModel.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestTripModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestUserModel.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestUserModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripCategorieController.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripCategorieController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAO.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripCategorieService.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripCategorieService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripCategorieServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripCategorieServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripTypeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripTypeDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripTypeDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripTypeDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripTypeService.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripTypeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripTypeServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripTypeServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" />
+    <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361634551955" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361707815617" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361216614437" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -38,7 +16,7 @@
     <file path="/TripDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360713881544" ignored="false" />
     <file path="/TripServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361449100343" ignored="false" />
     <file path="/UserDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360703914696" ignored="false" />
-    <file path="/viewTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361643734957" ignored="false" />
+    <file path="/viewTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361710522764" ignored="false" />
     <file path="/Trip.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361545375150" ignored="false" />
     <file path="/TestTripModel.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361634734448" ignored="false" />
     <file path="/messages_en.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361639846024" ignored="false" />
@@ -122,22 +100,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" line="248" class="be.kdg.teamf.controller.UserController" package="be.kdg.teamf.controller">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -173,6 +135,22 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" line="248" class="be.kdg.teamf.controller.UserController" package="be.kdg.teamf.controller">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -185,7 +163,7 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="233" column="22" selection-start="3139" selection-end="3139" vertical-scroll-proportion="-6.28">
+            <state line="233" column="22" selection-start="3139" selection-end="3139" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -194,10 +172,10 @@
       <file leaf-file-name="viewTrip.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="50" selection-start="4771" selection-end="4771" vertical-scroll-proportion="0.26506025">
+            <state line="154" column="36" selection-start="6066" selection-end="6066" vertical-scroll-proportion="1.2920353">
               <folding>
-                <marker date="1361643335634" expanded="true" signature="1478:1730" placeholder="..." />
-                <marker date="1361643335634" expanded="true" signature="1571:1599" placeholder="..." />
+                <marker date="1361710659559" expanded="true" signature="1478:1730" placeholder="..." />
+                <marker date="1361710659559" expanded="true" signature="1571:1599" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -512,8 +490,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -530,9 +508,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -787,19 +765,6 @@
       </ConfigurationWrapper>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -826,6 +791,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1132,7 +1110,11 @@
       <created>1361528641921</created>
       <updated>1361528641921</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="opmaak viewtrip">
+      <created>1361643800202</created>
+      <updated>1361643800202</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1179,8 +1161,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17310168" sideWeight="0.6712517" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25475842" sideWeight="0.68404424" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31595576" sideWeight="0.49227798" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25475842" sideWeight="0.79620856" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20379147" sideWeight="0.49227798" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1226,7 +1208,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="deelnemers" />
+    <option name="LAST_COMMIT_MESSAGE" value="opmaak viewtrip" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1261,6 +1243,7 @@
     <MESSAGE value="errors" />
     <MESSAGE value="maven" />
     <MESSAGE value="deelnemers" />
+    <MESSAGE value="opmaak viewtrip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1272,9 +1255,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/messages_de.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="29" selection-start="2855" selection-end="2855" vertical-scroll-proportion="0.78969073">
-          <folding />
-        </state>
+        <state line="82" column="29" selection-start="2855" selection-end="2855" vertical-scroll-proportion="0.78969073" />
       </provider>
       <provider editor-type-id="ResourceBundle">
         <state />
@@ -1289,30 +1270,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/DeelnameService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="17" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="264" selection-end="264" vertical-scroll-proportion="0.37423313">
-          <folding />
-        </state>
+        <state line="14" column="17" selection-start="264" selection-end="264" vertical-scroll-proportion="0.37423313" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/DeelnameDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="25" column="0" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="4" selection-start="457" selection-end="501" vertical-scroll-proportion="0.5">
-          <folding />
-        </state>
+        <state line="15" column="4" selection-start="457" selection-end="501" vertical-scroll-proportion="0.5" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripCategorieServiceImpl.java">
@@ -1324,9 +1297,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripCategorieService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="11" selection-start="473" selection-end="473" vertical-scroll-proportion="0.53333336">
-          <folding />
-        </state>
+        <state line="16" column="11" selection-start="473" selection-end="473" vertical-scroll-proportion="0.53333336" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAOImpl.java">
@@ -1373,17 +1344,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="22" selection-start="3139" selection-end="3139" vertical-scroll-proportion="-6.28">
+        <state line="233" column="22" selection-start="3139" selection-end="3139" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="50" selection-start="4771" selection-end="4771" vertical-scroll-proportion="0.26506025">
+        <state line="154" column="36" selection-start="6066" selection-end="6066" vertical-scroll-proportion="1.2920353">
           <folding>
-            <marker date="1361643335634" expanded="true" signature="1478:1730" placeholder="..." />
-            <marker date="1361643335634" expanded="true" signature="1571:1599" placeholder="..." />
+            <marker date="1361710659559" expanded="true" signature="1478:1730" placeholder="..." />
+            <marker date="1361710659559" expanded="true" signature="1571:1599" placeholder="..." />
           </folding>
         </state>
       </provider>

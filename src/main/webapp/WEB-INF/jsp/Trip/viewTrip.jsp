@@ -61,7 +61,7 @@
 
         <table class="formTable">
             <tr>
-                <td colspan="3">
+                <td colspan="2">
                     <p class="formTrip">${trip.tripName}</p>
                 </td>
                 <td><c:if test="${registered != true}">
@@ -121,20 +121,38 @@
                 <td><p class="formLabels1"><spring:message code="label.equipment"/></p></td>
             </tr>
             <c:if test="${!empty trip.equipment}">
+                <%
+                    int counter = 1;
+                    int counter2 = 4;
+                %>
                 <c:forEach items="${trip.equipment}" var="value">
-                    <tr>
+                    <% if (counter == 1 || counter == (counter2 + 1)) {%>
+                    <tr><% }%>
                         <td>${value}</td>
+                        <% if (counter == counter2) {%>
                     </tr>
+                    <% counter2 = counter2 + 4;
+                    } %>
+                    <% counter++; %>
                 </c:forEach>
             </c:if>
             <tr>
                 <td><p class="formLabels1"><spring:message code="label.Categories"/></p></td>
             </tr>
             <c:if test="${!empty trip.tripCategorieen}">
+                <%
+                    int counter = 1;
+                    int counter2 = 4;
+                %>
                 <c:forEach items="${trip.tripCategorieen}" var="value">
-                    <tr>
+                    <% if (counter == 1 || counter == (counter2 + 1)) {%>
+                    <tr><% }%>
                         <td>${value.tripCategorieName}</td>
+                        <% if (counter == counter2) {%>
                     </tr>
+                    <% counter2 = counter2 + 4;
+                    } %>
+                    <% counter++; %>
                 </c:forEach>
             </c:if>
             <tr>
