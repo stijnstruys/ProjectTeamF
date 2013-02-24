@@ -164,20 +164,25 @@ function registrationvalidation() {
 
     function checkUsername() {
         $("#addon_username").html(loader);
-
-        $.ajax({
-            url: '/ProjectTeamF-1.0/user/checkusername.html',
-            data: ({name : username.val()}),
-            success: function(data) {
-                if( data == "true" ) {
-                    $("#addon_username").html(failed);
-                    usernameok = false;
-                } else {
-                    $("#addon_username").html(success);
-                    usernameok = true;
+        if(username.val().length > 3) {
+            $.ajax({
+                url: '/ProjectTeamF-1.0/user/checkusername.html',
+                data: ({name : username.val()}),
+                success: function(data) {
+                    if( data == "true" ) {
+                        $("#addon_username").html(failed);
+                        usernameok = false;
+                    } else {
+                        $("#addon_username").html(success);
+                        usernameok = true;
+                    }
                 }
-            }
-        });
+            });
+        }  else {
+            $("#addon_username").html(failed);
+            usernameok = false;
+        }
+
     }
 
     //password
@@ -202,12 +207,20 @@ function registrationvalidation() {
     });
 
     function checkEmail() {
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if (!filter.test(email.val())) {
+        if(email.val().length > 3 ) {
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(email.val())) {
+                $("#addon_email").html(failed);
+                emailok = false;
+            } else{
+                $("#addon_email").html(success);
+                emailok = true;
+            }
+        } else {
             $("#addon_email").html(failed);
-        } else{
-            $("#addon_email").html(success);
+            emailok = false;
         }
+
     }
 
     //submit

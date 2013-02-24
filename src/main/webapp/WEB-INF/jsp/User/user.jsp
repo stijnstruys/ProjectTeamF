@@ -53,6 +53,16 @@
                 </td>
             </tr>
             <tr>
+                <td><form:label path="email"><spring:message code="label.email"/></form:label></td>
+                <td>
+                    <div class="input-append">
+                        <form:input path="email" id="email"/>
+                        <span class="add-on" id="addon_email"></span>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
                 <td><form:label path="firstName"><spring:message code="label.firstname"/></form:label></td>
                 <td><form:input path="firstName" id="firstName"/></td>
             </tr>
@@ -65,16 +75,7 @@
                 <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth"
                                 id="dateOfBirth"/></td>
             </tr>
-            <tr>
-                <td><form:label path="email"><spring:message code="label.email"/></form:label></td>
-                <td>
-                    <div class="input-append">
-                        <form:input path="email" id="email"/>
-                        <span class="add-on" id="addon_email"></span>
-                    </div>
-                </td>
 
-            </tr>
             <tr>
                 <td><form:label path="telephone"><spring:message code="label.telephone"/></form:label></td>
                 <td><form:input path="telephone" id="telephone"/></td>
