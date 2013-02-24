@@ -38,7 +38,7 @@
 <jsp:include page="header.jsp"/>
 
 <section id="content">
-    <section id="aboutPage">
+    <section class="tripPages">
         <h2><spring:message code="label.About"/></h2>
         Als derdejaars studenten op de Karel de Grote hogeschool hebben wij voor het vak Software development de
         opdracht gekregen om zowel een webclient als een mobileclient op te bouwen. Voor deze opdracht waren er enkele

@@ -36,6 +36,7 @@
     <jsp:include page="../General/header.jsp"/>
 
         <section id="content">
+            <section class="tripPages">
             <h2><spring:message code="label.TripSearchResult"/></h2>
 
             <c:if  test="${!empty tripSearchList}">
@@ -56,11 +57,12 @@
                             <td>${trip.startDate}</td>
                             <td>${trip.endDate}</td>
                             <td>${trip.startLocation}</td>
-                            <td>${trip.organiser}</td>
+                            <td>${trip.organiser.firstName} ${trip.organiser.lastName}</td>
                         </tr>
                     </c:forEach>
                 </table>
             </c:if>
+            </section>
         </section>
     <jsp:include page="../General/footer.jsp"/>
 

@@ -22,6 +22,11 @@ body {
     float: left;
 }
 
+.tripPages {
+    width: 85%;
+    margin-left: 7.5%;
+}
+
 /* header */
 
 header {
@@ -285,12 +290,6 @@ a.trip_name:hover {
 
 /* home page */
 
-#homePage {
-    width: 85%;
-    margin-left: 7.5%;
-}
-
-
 #homePictures1 {
     float: left;
     height: 17em;
@@ -317,16 +316,11 @@ a.trip_name:hover {
     width: 50%;
 }
 
-.homeSection{
+.homeSection {
     margin-bottom: 5em;
 }
 
 /* about page */
-
-#aboutPage {
-    width: 85%;
-    margin-left: 7.5%;
-}
 
 #aboutTable {
     width: 100%;
@@ -345,3 +339,25 @@ a.trip_name:hover {
 .aboutColumn {
     width: 33.33%;
 }
+
+/* trip overzicht */
+
+#addTripButton {
+    background-color: #D4D4D4;
+    color: #1C263C;
+
+    border-radius: 0.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.4em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+#addTripButton:hover {
+    background-color: #BDBBBB;
+
+    color: #D4D4D4;
+
+}
+

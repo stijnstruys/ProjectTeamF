@@ -40,6 +40,7 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
+    <section>
     <style>
         #content {
             background: ${trip.bgcolor};
@@ -61,7 +62,7 @@
 
         <table class="formTable">
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <p class="formTrip">${trip.tripName}</p>
                 </td>
                 <td><c:if test="${registered != true}">
@@ -175,7 +176,7 @@
             </c:if>
         </table>
     </section>
-
+    </section>
 
 </section>
 <jsp:include page="../General/footer.jsp"/>

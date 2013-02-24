@@ -6,16 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -31,57 +32,74 @@
 
 </head>
 <body>
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-    <jsp:include page="../General/header.jsp"/>
-    <%
-        int count = 0;
-        int pagina = 0;
-    %>
-        <section id="content">
-            <h2><spring:message code="label.TripOverview"/></h2>
-            <a href="/ProjectTeamF-1.0/trip/addTrip.html"><spring:message code="label.addTrip"/></a>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+    improve your experience.</p>
+<![endif]-->
+<jsp:include page="../General/header.jsp"/>
+<%
+    int count = 0;
+    int pagina = 0;
+%>
+<section id="content">
+    <section class="tripPages">
+        <table style="width: 100%">
+            <tr>
+                <td>
+                    <h2><spring:message code="label.TripOverview"/></h2>
+                </td>
+                <td style="text-align: right">
+                    <button id="addTripButton" onClick="location.href='/ProjectTeamF-1.0/trip/addTrip.html'">
+                        <spring:message code="label.addTrip"/></button>
+                </td>
+            </tr>
+        </table>
 
-            <c:if  test="${!empty tripList}">
-                <ul class="trip_list">
-                    <c:forEach items="${tripList}" var="trip">
-                         <div class="trip_details trip_pagina_<%=pagina%>_content">
-                             <div class="trip_name"><a class="trip_name" href="${trip.tripId}.html">${trip.tripName}</a></div>
-                             <div class="trip_description">${trip.tripDescription}</div>
 
-                             <div class="trip_extra">
-                                 <div class="trip_datums">${trip.startDate} ~ ${trip.endDate}</div>
-                                 <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span class="trip_detail_general">${trip.startLocation}</span></div>
-                             </div>
+        <c:if test="${!empty tripList}">
+            <ul class="trip_list">
+                <c:forEach items="${tripList}" var="trip">
+                    <div class="trip_details trip_pagina_<%=pagina%>_content">
+                        <div class="trip_name"><a class="trip_name" href="${trip.tripId}.html">${trip.tripName}</a>
+                        </div>
+                        <div class="trip_description">${trip.tripDescription}</div>
 
-                         </div>
-                        <%
-                            count++;
-                            if(count == 10) {
-                                count = 0;
-                                pagina++;
-                            }
-                        %>
-                    </c:forEach>
-                </ul>
-            </c:if>
+                        <div class="trip_extra">
+                            <div class="trip_datums">${trip.startDate} ~ ${trip.endDate}</div>
+                            <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span
+                                    class="trip_detail_general">${trip.startLocation}</span></div>
+                        </div>
 
-            <div class="float_fix"></div>
-            <div class="pagination">
-                <ul>
-                   <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
+                    </div>
                     <%
-                        for( int i = 0; i <= pagina; i++){
-                    %>
-                        <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i+1)%></a></li>
-                    <%
+                        count++;
+                        if (count == 10) {
+                            count = 0;
+                            pagina++;
                         }
                     %>
-                    <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
-                </ul>
-            </div>
+                </c:forEach>
+            </ul>
+        </c:if>
+
+        <div class="float_fix"></div>
+        <div class="pagination">
+            <ul>
+                <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
+                <%
+                    for (int i = 0; i <= pagina; i++) {
+                %>
+                <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                </a></li>
+                <%
+                    }
+                %>
+                <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
+            </ul>
+        </div>
     </section>
+</section>
 <jsp:include page="../General/footer.jsp"/>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
