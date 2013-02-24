@@ -147,30 +147,78 @@ $(document).ready(function () {
 });
 
 function registrationvalidation() {
+    var loader = "<img src='../img/validation/loader.gif' />";
+    var success ="<img src='../img/validation/accepted.png' />";
+    var failed ="<img src='../img/validation/error_button.png' />";
+
     var username = $("#userName");
+    var pw = $("#password");
+    var email = $("#email");
 
-   /* username.keyup( function() {
-        checkUsername();
-    }); */
+    var usernameok, pwok, emailok = false;
 
-    $("#test").click( function() {
+    //Username
+    username.keyup( function() {
         checkUsername();
     });
 
     function checkUsername() {
+        $("#addon_username").html(loader);
+
         $.ajax({
             url: '/ProjectTeamF-1.0/user/checkusername.html',
-            data: ({name : "jerre"}),
+            data: ({name : username.val()}),
             success: function(data) {
                 if( data == "true" ) {
-                    alert("true");
+                    $("#addon_username").html(failed);
+                    usernameok = false;
                 } else {
-                    alert("false");
+                    $("#addon_username").html(success);
+                    usernameok = true;
                 }
             }
         });
-
     }
+
+    //password
+    pw.keyup(function() {
+       checkpw();
+    });
+
+    function checkpw(  ) {
+
+       if(pw.val().length < 3){
+            $("#addon_password").html(failed);
+            pwok = false;
+        } else {
+            $("#addon_password").html(success);
+            pwok = true;
+        }
+    }
+
+    //email
+    email.keyup(function() {
+       checkEmail();
+    });
+
+    function checkEmail() {
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!filter.test(email.val())) {
+            $("#addon_email").html(failed);
+        } else{
+            $("#addon_email").html(success);
+        }
+    }
+
+    //submit
+    $("#user").submit( function() {
+        checkUsername();
+        checkpw();
+        checkEmail();
+        if(!usernameok || !pwok || !emailok)  {
+            return false;
+        }
+    });
 
 }
 

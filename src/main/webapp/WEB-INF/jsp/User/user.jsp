@@ -30,17 +30,27 @@
 
 <section id="content">
     <h2><spring:message code="label.UserRegistration"/></h2>
-    <button id="test">test</button>
+
     <form:form method="post" action="add.html" commandName="user" id="user">
 
         <table>
             <tr>
                 <td><form:label path="username"><spring:message code="label.username"/></form:label></td>
-                <td><form:input path="username" id="userName"/></td>
+                <td>
+                <div class="input-append">
+                    <form:input path="username" id="userName"/>
+                    <span class="add-on" id="addon_username"></span>
+                </div>
+                </td>
             </tr>
             <tr>
                 <td><form:label path="password"><spring:message code="label.password"/></form:label></td>
-                <td><form:input path="password"/></td>
+                <td>
+                    <div class="input-append">
+                        <form:input id="password" path="password"/>
+                        <span class="add-on" id="addon_password"></span>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td><form:label path="firstName"><spring:message code="label.firstname"/></form:label></td>
@@ -57,7 +67,13 @@
             </tr>
             <tr>
                 <td><form:label path="email"><spring:message code="label.email"/></form:label></td>
-                <td><form:input path="email" id="email"/></td>
+                <td>
+                    <div class="input-append">
+                        <form:input path="email" id="email"/>
+                        <span class="add-on" id="addon_email"></span>
+                    </div>
+                </td>
+
             </tr>
             <tr>
                 <td><form:label path="telephone"><spring:message code="label.telephone"/></form:label></td>
@@ -81,7 +97,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="<spring:message code="label.Register"/>"/>
+                    <input type="submit" id="register_submit" class="btn" value="<spring:message code="label.Register"/>"/>
                 </td>
 
             </tr>

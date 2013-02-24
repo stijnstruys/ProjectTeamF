@@ -48,7 +48,11 @@ public class UserDAOImpl implements UserDAO{
     public User findUser(String userName) {
         Query q = sessionFactory.getCurrentSession().createQuery("from User where username = :username");
         q.setString("username",userName);
-        return (User) q.list().get(0);
+        try {
+             return (User) q.list().get(0);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
