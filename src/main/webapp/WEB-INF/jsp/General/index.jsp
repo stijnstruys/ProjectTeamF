@@ -76,9 +76,10 @@ Time: 13:31
                 onmiddellijk geregeld kan worden! </p>
         </section>
 
+        </section>
     </section>
 </section>
-<jsp:include page="footer.jsp"/>
+    <jsp:include page="footer.jsp"/>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
