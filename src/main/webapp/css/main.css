@@ -282,3 +282,66 @@ a.trip_name:hover {
     color: #D4D4D4;
 
 }
+
+/* home page */
+
+#homePage {
+    width: 85%;
+    margin-left: 7.5%;
+}
+
+
+#homePictures1 {
+    float: left;
+    height: 17em;
+    width: 90%;
+    margin-left: 10%;
+    border-radius: 5em;
+}
+
+#homePictures2 {
+    float: left;
+    height: 17em;
+    width: 90%;
+    margin-right: 10%;
+    border-radius: 5em;
+}
+
+.homeSectionLeft {
+    float: left;
+    width: 50%;
+}
+
+.homeSectionRight {
+    float: left;
+    width: 50%;
+}
+
+.homeSection{
+    margin-bottom: 5em;
+}
+
+/* about page */
+
+#aboutPage {
+    width: 85%;
+    margin-left: 7.5%;
+}
+
+#aboutTable {
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+
+}
+
+.profilePictures {
+    width: 80%;
+    height: 17em;
+    border-radius: 5em;
+    margin-bottom: 1em;
+}
+
+.aboutColumn {
+    width: 33.33%;
+}
