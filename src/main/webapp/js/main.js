@@ -151,12 +151,14 @@ function registrationvalidation() {
     var success ="<img src='../img/validation/accepted.png' />";
     var failed ="<img src='../img/validation/error_button.png' />";
 
+    var errormsg = "";
     var username = $("#userName");
     var pw = $("#password");
     var email = $("#email");
 
     var usernameok, pwok, emailok = false;
-
+    $("#registration_failed").css("visibility", "visible");
+    $("#registration_failed").hide();
     //Username
     username.keyup( function() {
         checkUsername();
@@ -172,6 +174,7 @@ function registrationvalidation() {
                     if( data == "true" ) {
                         $("#addon_username").html(failed);
                         usernameok = false;
+                        errormsg += "<li>Username already in use!</li>"
                     } else {
                         $("#addon_username").html(success);
                         usernameok = true;
@@ -181,6 +184,7 @@ function registrationvalidation() {
         }  else {
             $("#addon_username").html(failed);
             usernameok = false;
+            errormsg += "<li>Username needs to be at least 3 characters long!</li>"
         }
 
     }
@@ -195,6 +199,7 @@ function registrationvalidation() {
        if(pw.val().length < 3){
             $("#addon_password").html(failed);
             pwok = false;
+           errormsg += "<li>Password needs to be at least 3 characters long!</li>"
         } else {
             $("#addon_password").html(success);
             pwok = true;
@@ -207,28 +212,31 @@ function registrationvalidation() {
     });
 
     function checkEmail() {
-        if(email.val().length > 3 ) {
-            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            if (!filter.test(email.val())) {
-                $("#addon_email").html(failed);
-                emailok = false;
-            } else{
-                $("#addon_email").html(success);
-                emailok = true;
-            }
-        } else {
+
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!filter.test(email.val())) {
             $("#addon_email").html(failed);
             emailok = false;
+            errormsg += "<li>This is not a valid email address!</li>"
+        } else{
+            $("#addon_email").html(success);
+            emailok = true;
         }
 
     }
 
     //submit
     $("#user").submit( function() {
+        $("#registration_failed").hide()
+        errormsg = "";
         checkUsername();
         checkpw();
         checkEmail();
         if(!usernameok || !pwok || !emailok)  {
+            $("#registration_failed")
+                .show()
+                .html('<ul>' + errormsg + '</ul>');
+
             return false;
         }
     });
