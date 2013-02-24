@@ -366,7 +366,7 @@ a.trip_name:hover {
 
 #registration_failed {
     visibility: hidden;
-    border: 1px solid red;
+    border: 2px solid red;
     background: #F57676;
     color: black;
     padding: 20px 15px 10px 15px;
