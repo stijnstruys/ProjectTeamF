@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361747813746" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361748606861" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361747389058" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -197,10 +196,10 @@
       <file leaf-file-name="about.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="130" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.625">
+            <state line="61" column="91" selection-start="2838" selection-end="2838" vertical-scroll-proportion="0.625">
               <folding>
-                <marker date="1361748594590" expanded="true" signature="1342:1594" placeholder="..." />
-                <marker date="1361748594590" expanded="true" signature="1435:1463" placeholder="..." />
+                <marker date="1361748686272" expanded="true" signature="1342:1594" placeholder="..." />
+                <marker date="1361748686272" expanded="true" signature="1435:1463" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1466,7 +1465,11 @@
       <created>1361747816155</created>
       <updated>1361747816155</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="some more  validation&#10;">
+      <created>1361748614199</created>
+      <updated>1361748614199</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1717,10 +1720,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="130" selection-start="2877" selection-end="2877" vertical-scroll-proportion="0.625">
+        <state line="61" column="91" selection-start="2838" selection-end="2838" vertical-scroll-proportion="0.625">
           <folding>
-            <marker date="1361748594590" expanded="true" signature="1342:1594" placeholder="..." />
-            <marker date="1361748594590" expanded="true" signature="1435:1463" placeholder="..." />
+            <marker date="1361748686272" expanded="true" signature="1342:1594" placeholder="..." />
+            <marker date="1361748686272" expanded="true" signature="1435:1463" placeholder="..." />
           </folding>
         </state>
       </provider>

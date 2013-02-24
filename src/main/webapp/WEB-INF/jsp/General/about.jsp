@@ -59,7 +59,7 @@
                     <p>Software Management</p>
                 </td>
                 <td class="aboutColumn">
-                    <img src="http://images5.fanpop.com/image/photos/26700000/weird-people-fat-guy-eating-lol-26723102-317-281.jpg" alt="Smiley face"
+                    <img src="http://www.fugly.com/media/IMAGES/WTF/fat-guy-in-a-diaper.jpg" alt="Smiley face"
                          class="profilePictures"/>
 
                     <p>Bart Leemans</p>
