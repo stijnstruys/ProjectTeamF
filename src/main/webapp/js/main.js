@@ -170,6 +170,7 @@ function registrationvalidation() {
             $.ajax({
                 url: '/ProjectTeamF-1.0/user/checkusername.html',
                 data: ({name : username.val()}),
+                async: false,
                 success: function(data) {
                     if( data == "true" ) {
                         $("#addon_username").html(failed);
