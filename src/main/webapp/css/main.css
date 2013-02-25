@@ -20,6 +20,7 @@ body {
 
 .fieldsnothere {
     float: left;
+    visibility: hidden;
 }
 
 .tripPages {
@@ -186,6 +187,10 @@ a.trip_name:hover {
 
 .profile_btns {
     margin-top: 15px;
+}
+
+.profile-fields {
+    margin-bottom: 5px;;
 }
 
 /* change pw */
