@@ -26,6 +26,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
@@ -120,7 +121,7 @@
             <tr>
                 <td><p class="formLabels1"><spring:message code="label.equipment"/></p></td>
             </tr>
-            <c:if test="${!empty trip.equipment}">
+                  <c:if test="${!empty trip.equipment}">
                 <%
                     int counter = 1;
                     int counter2 = 4;
@@ -136,7 +137,7 @@
                     <% counter++; %>
                 </c:forEach>
             </c:if>
-            <tr>
+           <tr>
                 <td><p class="formLabels1"><spring:message code="label.Categories"/></p></td>
             </tr>
             <c:if test="${!empty trip.tripCategorieen}">
@@ -156,19 +157,22 @@
                 </c:forEach>
             </c:if>
             <tr>
-            <tr>
+             <tr>
                 <td><p class="formTrip"><spring:message code="label.Participants"/></p></td>
             </tr>
             <c:if test="${!empty deelnemers}">
 
                 <tr>
-                    <td><p class="formLabels"><spring:message code="label.name"/></p></td>
-                    <td><p class="formLabels"><spring:message code="label.IndividualEquipment"/></p></td>
+                    <td><p class="formLabels1"><spring:message code="label.name"/></p></td>
+                    <td><p class="formLabels1"><spring:message code="label.IndividualEquipment"/></p></td>
                 </tr>
                 <c:forEach items="${deelnemers}" var="deelname">
                     <tr>
-                        <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
-                        <td><a class="formLabels2">${deelname.userEquipment} </a></td>
+                       <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
+                        <td>
+                        <c:forEach items="${deelname.equipment}" var="equip">
+                        <span class="formLabels2">${equip} </span>
+                </c:forEach>          </td>
                     </tr>
                 </c:forEach>
 
