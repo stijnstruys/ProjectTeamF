@@ -160,13 +160,13 @@
              <tr>
                 <td><p class="formTrip"><spring:message code="label.Participants"/></p></td>
             </tr>
-            <c:if test="${!empty deelnemers}">
+            <c:if test="${!empty trip.deelnames}">
 
                 <tr>
                     <td><p class="formLabels1"><spring:message code="label.name"/></p></td>
                     <td><p class="formLabels1"><spring:message code="label.IndividualEquipment"/></p></td>
                 </tr>
-                <c:forEach items="${deelnemers}" var="deelname">
+                <c:forEach items="${trip.deelnames}" var="deelname">
                     <tr>
                        <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
                         <td>

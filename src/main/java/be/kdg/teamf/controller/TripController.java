@@ -78,9 +78,6 @@ public class TripController {
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
 
-        request.setAttribute("deelnemers", deelnameService.getDeelnames(t));
-        request.setAttribute("equipment", t.getEquipment());
-        request.setAttribute("categories", tripCategorieService.getTripCategories(t.getTripId()));
         if (u != null && deelnameService.userIsRegistered(t, u)) {
             request.setAttribute("registered", true);
         } else {

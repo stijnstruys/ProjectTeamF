@@ -74,7 +74,7 @@ public class Trip {
     private Collection<StopPlaats> stopPlaatsen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<TripCategorie> tripCategorieen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
