@@ -32,11 +32,11 @@ public class TestDeelnameModel {
         Deelname d2 = new Deelname(t,u);
 
   //      d2.setDeelnameID(2);
-        d2.setUserEquipment(equipment);
+        d2.setEquipment(equipment);
    //     d.setDeelnameID(1);
         d.setTrip(t);
         d.setUser(u);
-        d.setUserEquipment(equipment);
+        d.setEquipment(equipment);
 
 //        deelnameDAO.addDeelname(d);
         assertEquals("Expected deelnameID", 1, d.getDeelnameID());

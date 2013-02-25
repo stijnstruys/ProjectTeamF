@@ -30,20 +30,7 @@
     <link rel="stylesheet" href="../css/plugins/farbtastic.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
-    <script>
-        var counter = 1;
-        function addEquipment() {
-
-            $("#newEquip").append('<td id=equipmentnew'+counter+' ><input type="text" value="" name="equipment"/><button class="btn"  type="button" onclick="removeEquipment(\'equipmentnew'+counter+'\')">X</button></td>');
-            counter++;
-        }
-        function removeEquipment(s) {
-
-            $("#"+s).remove();
-            //$("#"+s).remove();
-        }
-
-    </script>
+    <script src="../js/equipment.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -116,7 +103,7 @@
                     code="label.TripNotificatie"/></form:label></td>
             <td><form:input id="TripNotificatie" path="notification"/></td>
         </tr>
-        <tr id="newEquip">
+        <tr>
             <td><form:label id="labelTripEquipment" path="equipment"><spring:message
                     code="label.equipment"/></form:label></td>
            <c:if test="${!empty trip.equipment}">
@@ -134,7 +121,7 @@
                </c:forEach>
            </c:if>
         </tr>
-        <tr><td><button class="btn" type="button" onclick="addEquipment()">New</button></td></tr>
+        <tr><td><button id="newEquip" class="btn" type="button" onclick="addEquipment()">New</button></td></tr>
     </table>
 </form:form>
 <table>
@@ -171,7 +158,7 @@
             </c:if>
             <form action="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
 
-                <input type="submit" value="<spring:message code="label.AddNewStoppingPoint"/>"/>
+                <input   class="btn"  type="submit" value="<spring:message code="label.AddNewStoppingPoint"/>"/>
             </form>
         </td>
         <td></td>
@@ -199,20 +186,20 @@
                 </table>
             </c:if>
             <form action="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html">
-                <input type="submit" value="<spring:message code="label.AddNewCategory"/>"/>
+                <input   class="btn"  type="submit" value="<spring:message code="label.AddNewCategory"/>"/>
             </form>
         </td>
     </tr>
     <tr>
         <td>
             <form action="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html">
-                <input type="submit" value="<spring:message code="label.ManageParticipants"/>"/>
+                <input   class="btn"  type="submit" value="<spring:message code="label.ManageParticipants"/>"/>
             </form>
         </td>
     </tr>
 </table>
 
-<button id="updateTrip"><spring:message code="label.updateTrip"/></button>
+<button   class="btn"  id="updateTrip"><spring:message code="label.updateTrip"/></button>
 <a href="deleteTrip/${trip.tripId}.html"><spring:message code="label.deleteTrip"/></a>
 
 <div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">

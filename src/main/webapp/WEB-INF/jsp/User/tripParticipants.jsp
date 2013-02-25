@@ -29,7 +29,7 @@
 
 <section id="content">
     <h2><spring:message code="label.ManageParticipants"/></h2>
-
+    <a href="../user/admincp-${tripID}.html">Back</a>
     <c:if test="${!empty deelnemers}">
         <table class="data">
             <tr>
@@ -38,30 +38,22 @@
             </tr>
             <c:forEach items="${trip.deelnames}" var="deelnamevar">
                 <tr>
-                    <form method="post" action="updateDeelname/${deelnamevar.deelnameID}.html">
 
-                        <table>
-                            <tr>
-                                <td><a>${deelnamevar.user.firstName} ${deelnamevar.user.lastName} </a></td>
-                            </tr>
-                            <tr>
-                                <c:if test="${!empty deelnamevar.userEquipment}">
-                                <c:forEach items="${deelnamevar.userEquipment}" var="equipmentPiece">
-                            <tr>
-                                <td>
-                                    <input id="equipment" type="text" value="${equipmentPiece}" name="equipment"/>
-                                </td>
-                            </tr>
+
+
+
+                    <td><a href="../editUserequipment/${deelnamevar.deelnameID}.html">${deelnamevar.user.firstName} ${deelnamevar.user.lastName} </a></td>
+
+                    <c:if test="${!empty deelnamevar.equipment}">
+                        <td>
+                            <c:forEach items="${deelnamevar.equipment}" var="equipmentPiece">
+                                ${equipmentPiece} ,
                             </c:forEach>
-                            </c:if>
-                            <tr>
-                            <input id="equipmentnew" type="text" value="${equipmentPiece}" name="equipment"/>
-                            </tr>
-                            <tr>
-                                <td><input type="submit" value="<spring:message code="label.updateParticipant"/>"/></td>
-                            </tr>
-                        </table>
-                    </form>
+                        </td>
+                    </c:if>
+
+
+
                 </tr>
             </c:forEach>
         </table>

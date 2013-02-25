@@ -53,10 +53,10 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         deelnameDAO.addDeelname(dn);
         dn.getUser().setFirstName("Jeroen");
         dn.getTrip().setTripName("Reis naar Spanje");
-        dn.setUserEquipment(equipment);
+        dn.setEquipment(equipment);
         assertEquals("Expected: ", "Jeroen", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
         assertEquals("Expected: ", "Reis naar Spanje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
-        assertEquals("Expected: ", equipment, deelnameDAO.findDeelname(dn.getDeelnameID()).getUserEquipment());
+        assertEquals("Expected: ", equipment, deelnameDAO.findDeelname(dn.getDeelnameID()).getEquipment());
     }
 
     @Test
@@ -107,7 +107,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
 
         dn.setTrip(t1);
         dn.setUser(u1);
-        dn.setUserEquipment(new ArrayList<String>());
+        dn.setEquipment(new ArrayList<String>());
         return dn;
     }
 }

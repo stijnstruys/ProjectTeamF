@@ -184,7 +184,7 @@ public class UserController {
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
 
-        return "redirect:/user/myTrips.html";
+        return "redirect:/user/admincp-"+trip.getTripId()+".html";
     }
 
     @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)
@@ -222,7 +222,7 @@ public class UserController {
         Deelname deelname = new Deelname();
         Trip t = tripService.findTrip(tripID);
         request.setAttribute("deelnemers", deelnameService.getDeelnames(tripService.findTrip(tripID)));
-        request.setAttribute("deelname", deelname);
+        request.setAttribute("tripID", t.getTripId());
 
         request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("User/tripParticipants");
@@ -232,7 +232,7 @@ public class UserController {
 
     @RequestMapping(value = "/TripParticipants/updateTripParticipants/{tripID}", method = RequestMethod.POST)
     public String updateTripParticipants(@ModelAttribute("tripParticipant")
-                                      Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
+                                         Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
 
 
         deelnameService.updateDeelname(deelname);
@@ -240,16 +240,25 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/TripParticipants/updateDeelname/{deelnameID}", method = RequestMethod.POST)
+    @RequestMapping(value = "/TripParticipants/updateDeelname", method = RequestMethod.POST)
     public String updateDeelnemer(@ModelAttribute("tripParticipant")
-                                         Deelname deelname, BindingResult result, @PathVariable("deelnameID") int deelnameID) {
+                                  Deelname deelname, BindingResult result) {
 
-
-        deelnameService.updateDeelname(deelname);
-        return "redirect:/TripParticipants/" + deelname.getTrip().getTripId() + ".html";
+        Deelname d = deelnameService.findDeelname(deelname.getDeelnameID());
+        d.setEquipment(deelname.getEquipment());
+        deelnameService.updateDeelname(d);
+        return "redirect:/TripParticipants/" + d.getTrip().getTripId() + ".html";
 
     }
+    @RequestMapping(value = "/editUserequipment/{deelnameID}", method = RequestMethod.GET)
+    public ModelAndView editEquipment(HttpServletRequest request, HttpServletResponse response, @PathVariable("deelnameID") int deelnameID) throws Exception {
 
+        request.setAttribute("deelname",deelnameService.findDeelname(deelnameID));
+        ModelAndView model = new ModelAndView("User/editEquipment");
+
+
+         return model;
+    }
     @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
     public @ResponseBody String getUserInJson(@RequestParam("name") String name) {
 

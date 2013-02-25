@@ -34,7 +34,7 @@ public class Deelname {
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
     @Column(name="Equipment")
-    private Collection<String> userEquipment;
+    private Collection<String> equipment;
 
     public Deelname() {
     }
@@ -68,11 +68,11 @@ public class Deelname {
         this.user = user;
     }
 
-    public Collection<String> getUserEquipment() {
-        return userEquipment;
+    public Collection<String> getEquipment() {
+        return equipment;
     }
 
-    public void setUserEquipment(Collection<String> userEquipment) {
-        this.userEquipment = userEquipment;
+    public void setEquipment(Collection<String> userEquipment) {
+        this.equipment = userEquipment;
     }
 }

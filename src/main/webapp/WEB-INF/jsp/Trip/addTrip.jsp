@@ -28,20 +28,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
-      <script>
-          var counter = 1;
-          function addEquipment() {
-
-              $("#newEquip").append('<td id=equipment'+counter+' ><input type="text" value="" name="equipment"/><button class="btn"  type="button" onclick="removeEquipment(\'equipment'+counter+'\')">X</button></td>');
-              counter++;
-          }
-          function removeEquipment(s) {
-
-              $("#"+s).remove();
-              //$("#"+s).remove();
-          }
-
-      </script>
+    <script src="../js/equipment.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]>
