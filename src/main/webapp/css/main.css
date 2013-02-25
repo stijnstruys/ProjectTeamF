@@ -56,6 +56,7 @@ footer {
     margin-top: 25px;
     padding: 25px 0 50px 0;
     background: #1C263C;
+    min-width: 1000px;
     width: 100%;
     opacity: 0.7;
     filter: alpha(opacity = 70); /* For IE8 and earlier */

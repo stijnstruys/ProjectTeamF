@@ -22,7 +22,6 @@ Time: 13:31
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
