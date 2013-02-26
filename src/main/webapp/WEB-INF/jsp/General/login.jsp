@@ -37,7 +37,7 @@ Time: 13:31
 
 <section id="content">
     <section class="tripPages">
-        <h2><spring:message code="label.loginError"/></h2>
+        <h2><spring:message code="label.login"/></h2>
 
         <section class="homeSection">
 

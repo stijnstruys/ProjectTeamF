@@ -31,9 +31,9 @@ public class TestDeelnameModel {
         Trip t = new Trip();
         Deelname d2 = new Deelname(t,u);
 
-  //      d2.setDeelnameID(2);
+        d2.setDeelnameID(2);
         d2.setEquipment(equipment);
-   //     d.setDeelnameID(1);
+        d.setDeelnameID(1);
         d.setTrip(t);
         d.setUser(u);
         d.setEquipment(equipment);

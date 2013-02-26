@@ -37,4 +37,5 @@ public interface TripService {
     boolean checkOwnership(Trip t, User u);
 
 
+    void sendInvite(ModelMap mailModel, SimpleMailMessage msg);
 }

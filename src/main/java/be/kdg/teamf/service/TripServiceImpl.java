@@ -108,4 +108,27 @@ public class TripServiceImpl implements TripService {
 
     }
 
+    @Override
+    public void sendInvite(final ModelMap model, final SimpleMailMessage msg) {
+
+        mailSender.send(new MimeMessagePreparator() {
+
+            @Override
+            public void prepare(MimeMessage mimeMessage)
+                    throws MessagingException {
+                MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+                message.setTo(msg.getTo());
+                message.setFrom(msg.getFrom());
+                message.setSubject(msg.getSubject());
+
+                String body = VelocityEngineUtils.mergeTemplateIntoString(
+                        velocityEngine, "/invite.vm", model);
+                message.setText(body, true);
+
+                message.addInline("header", new ClassPathResource(
+                        "images/header.jpg"));
+            }
+        });
+    }
+
 }

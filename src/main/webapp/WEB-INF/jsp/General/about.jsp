@@ -71,7 +71,7 @@
                     <img src="../img/groupMembers/profilePic.jpg" alt="Smiley face"
                          class="profilePictures"/>
 
-                    <p>Jorne Raeymaeckers</p>
+                    <p>Jorne Raeymaekers</p>
 
                     <p>20, Ranst</p>
 
@@ -80,7 +80,7 @@
             </tr>
             <tr>
                 <td>
-                    <img src="../img/groupMembers/profilePic.jpg" alt="Smiley face"
+                    <img src="../img/groupMembers/StijnStruys.jpg" alt="Smiley face"
                          class="profilePictures"/>
 
                     <p>Stijn Struys</p>

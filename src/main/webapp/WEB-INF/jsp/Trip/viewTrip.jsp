@@ -33,13 +33,7 @@
 </head>
 <body>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script></script>
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
@@ -208,7 +202,9 @@
     </section>
 
 </section>
+<div id="fb-root"></div>
 <div class="fb-like" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl">Tweeten</a>
 <jsp:include page="../General/footer.jsp"/>
 
 
@@ -218,7 +214,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
-
-
+<script src="../js/FBPlugin.js"></script>
+<script src="../js/Twitter.js"></script>
 </body>
 </html>
