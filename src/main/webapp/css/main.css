@@ -385,17 +385,38 @@ a.trip_name:hover {
 #links {
     float: left;
     width: 40%;
-    background-color: green;
+    /*background-color: green; */
 }
 
 #rechts {
     float: left;
     width: 60%;
-    background-color: blue;
+   /* background-color: blue; */
 }
 
 #onder {
     clear: both;
 }
 
+#searchKnop {
+    background-color: #D4D4D4;
+    color: #1C263C;
+
+    border-radius: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 0.8em;
+    margin-left: 0.25em;
+}
+
+#mapTopTable {
+    width: 70%;
+}
+
+.mapTopTableCol1 {
+    width: 15%;
+}
 ¨

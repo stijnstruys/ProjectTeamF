@@ -2,6 +2,8 @@ package be.kdg.teamf.service;
 
 import be.kdg.teamf.model.StopPlaats;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jorne
@@ -14,6 +16,6 @@ public interface StopPlaatsService {
     public  void addStopPlaats(StopPlaats stopPlaats);
     public void updateStopPlaats (StopPlaats stopPlaats);
     public void deleteStopPlaats (StopPlaats stopPlaats);
-
     StopPlaats findStopPlaats(int stopPlaatsID);
+    public List<StopPlaats> getStopplaatsenByTrip(int tripID);
 }

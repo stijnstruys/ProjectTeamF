@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -54,9 +55,9 @@ public class StopPlaatsController
 
             StopPlaats s  = new StopPlaats();
             Trip t = tripService.findTrip(tripID);
-
+            List<StopPlaats> stopPlaatsList = stopPlaatsService.getStopplaatsenByTrip(tripID);
             request.setAttribute("stopPlaats",s);
-
+            //request.setAttribute("stopPlaatsList",stopPlaatsList);
             request.setAttribute("trip", t);
             ModelAndView model = new ModelAndView("StopPlaats/ManageStopPlaatsen");
 
@@ -71,14 +72,14 @@ public class StopPlaatsController
         stopPlaats.setTrip(t);
         t.getStopPlaatsen().add(stopPlaats);
         tripService.updateTrip(t);
-        return "redirect:/user/admincp-" + t.getTripId() + ".html";
+        return "redirect:/StopPlaats/" + t.getTripId() + ".html";
     }
 
     @RequestMapping("/StopPlaats/delete/{stopPlaatsID}")
     public String deleteUser(@PathVariable("stopPlaatsID") int stopPlaatsID) {
         StopPlaats s =  stopPlaatsService.findStopPlaats(stopPlaatsID);
         stopPlaatsService.deleteStopPlaats(s);
-        return "redirect:/user/admincp-" + s.getTrip().getTripId() + ".html";
+        return "redirect:/StopPlaats/" + s.getTrip().getTripId() + ".html";
 
     }
     @RequestMapping("/StopPlaats/update/{stopPlaatsID}")

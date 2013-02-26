@@ -2,6 +2,8 @@ package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.StopPlaats;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jorne
@@ -16,5 +18,6 @@ public interface StopPlaatsDAO {
     public void updateStopPlaats(StopPlaats stopPlaats);
     public void deleteStopPlaats(StopPlaats stopPlaats);
     StopPlaats findStopPlaats(int stopPlaatsID);
+    public List<StopPlaats> getStopplaatsenByTrip(int tripID);
 
 }

@@ -31,23 +31,56 @@
 
 <section id="content">
     <h2><spring:message code="label.ManageStoppingPoints"/></h2>
+    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="stopPlaats">
+        <table id="mapTopTable">
+            <tr>
+                <td class="mapTopTableCol1"><form:label path="adres"><spring:message code="label.address"/></form:label></td>
+                <td class="mapTopTableCol1"><form:input id="address" path="adres"/></td>
+                <td class="mapTopTableCol1">
+                    <input id="searchKnop" type="submit" value="<spring:message code="label.AddStoppingPoint"/>"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Mode of Travel: </strong></td>
+                <td><select id="mode">
+                    <option value="DRIVING">Driving</option>
+                    <option value="WALKING">Walking</option>
+                    <option value="BICYCLING">Bicycling</option>
+                    <option value="TRANSIT">Transit</option>
+                </select>
+                </td>
+            </tr>
+        </table>
+    </form:form>
     <section id="links">
-        <input id="address" type="textbox" value="Groenplaats, Antwerpen">
-        <input class="addressButton" type="button" value="Add stopping point">
+        <%--  <input id="address" type="textbox" value="Groenplaats, Antwerpen">
+          <input class="addressButton" type="button" value="Add stopping point">     --%>
 
-        <div>
-            <strong>Mode of Travel: </strong>
-            <select id="mode">
-                <option value="DRIVING">Driving</option>
-                <option value="WALKING">Walking</option>
-                <option value="BICYCLING">Bicycling</option>
-                <option value="TRANSIT">Transit</option>
-            </select>
-        </div>
+
         <table>
             <tr id="mapsRow0">
                 <td>Location name</td>
             </tr>
+            <c:if test="${!empty trip.stopPlaatsen}">
+                    <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
+                            <tr>
+                                <td><input id="adres" class="addresses" value="${stopPlaatsen.adres}"/></td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
+                                        <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"
+                                             class="mapIcons"/></a>
+                                </td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
+                                        <img src="../img/icons/Actions-edit-delete-icon.png" alt="Smiley face"
+                                             class="mapIcons"/></a>
+                                </td>
+                            </tr>
+                    </c:forEach>
+            </c:if>
+
+
         </table>
 
     </section>

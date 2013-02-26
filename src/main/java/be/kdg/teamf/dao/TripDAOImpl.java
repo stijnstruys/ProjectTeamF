@@ -58,7 +58,7 @@ public class TripDAOImpl implements TripDAO {
 
     @Override
     public List<Trip> listUserTrips(int userID) {
-        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where organiser like :id");
+        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where organiser = :id");
         q.setInteger("id", userID);
         return q.list();
     }

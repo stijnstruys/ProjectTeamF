@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jorne
@@ -41,6 +43,14 @@ public class StopPlaatsDAOImpl implements StopPlaatsDAO {
     @Override
     public StopPlaats findStopPlaats(int id) {
         Query q = sessionFactory.getCurrentSession().createQuery("from StopPlaats where stopPlaatsID = :id");
-        q.setInteger("id",id);
-        return (StopPlaats) q.list().get(0);    }
+        q.setInteger("id", id);
+        return (StopPlaats) q.list().get(0);
+    }
+
+    @Override
+    public List<StopPlaats> getStopplaatsenByTrip(int tripID) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripId = :id");
+        q.setInteger("id", tripID);
+        return q.list();
+    }
 }
