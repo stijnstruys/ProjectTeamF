@@ -23,7 +23,7 @@ public class StopPlaats {
     @Column(name="Adres")
     private String adres;
     @Column(name="Vrijgegeven")
-    private boolean vrijgegeven;
+    private boolean vrijgegeven = true;
     @Column(name="Informatie")
     private String informatie;
 

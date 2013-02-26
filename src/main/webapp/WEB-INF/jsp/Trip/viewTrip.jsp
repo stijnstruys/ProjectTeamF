@@ -43,162 +43,164 @@
 
 <section id="content">
     <section>
-    <style>
-        #content {
-            background: ${trip.bgcolor};
-            color: ${trip.fontcolorContent};
-        }
+        <style>
+            #content {
+                background: ${trip.bgcolor};
+                color: ${trip.fontcolorContent};
+            }
 
-        h2 {
-            color: ${trip.fontcolorTitle};
-        }
+            h2 {
+                color: ${trip.fontcolorTitle};
+            }
 
-        h3 {
-            color: ${trip.fontcolorTitle};
-            text-align: center;
-        }
+            h3 {
+                color: ${trip.fontcolorTitle};
+                text-align: center;
+            }
 
-    </style>
-    <section class="formView">
+        </style>
+        <section class="formView">
 
 
-        <table class="formTable">
-            <tr>
-                <td colspan="3">
-                    <p class="formTrip">${trip.tripName}</p>
-                </td>
-                <td><c:if test="${registered != true}">
-                    <form action="join/${trip.tripId}.html">
-                        <input class="formButton" type="submit" value="<spring:message code="label.join"/>">
-                    </form>
-                </c:if>
-                    <c:if test="${registered == true}">
-                        <form action="leave/${trip.tripId}.html">
-                            <input class="formButton" type="submit" value="<spring:message code="label.leaveTrip"/>">
-                        </form>
-                    </c:if></td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <p class="formLabels">${trip.tripDescription}</p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <p class="formLabels">${trip.notification}</p>
-                </td>
-            </tr>
-            <tr>
-                <td class="formColumns">
-                    <p class="formLabels1"><spring:message code="label.startLocation"/></p>
-                </td>
-                <td>
-                    <p class="formLabels1"><spring:message code="label.organiser"/></p>
-                </td>
-                <td>
-                    <p class="formLabels1"><spring:message code="label.startDate"/></p>
-                </td>
-                <td>
-                    <p class="formLabels1"><spring:message
-                            code="label.endDate"/></p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p class="formLabels2">${trip.startLocation}</p>
-                </td>
-                <td>
-                    <p class="formLabels2">${trip.organiser.firstName} ${trip.organiser.lastName}</p>
-                </td>
-                <td>
-                    <p class="formLabels2"><fmt:formatDate value="${trip.startDate}"
-                                                           pattern="dd/MM/yyyy"/></p>
-                </td>
-                <td>
-                    <p class="formLabels2"><fmt:formatDate value="${trip.endDate}"
-                                                           pattern="dd/MM/yyyy"/></p>
-                </td>
-            </tr>
-            <tr>
-                <td><p class="formLabels1"><spring:message code="label.equipment"/></p></td>
-            </tr>
-                  <c:if test="${!empty trip.equipment}">
-                <%
-                    int counter = 1;
-                    int counter2 = 4;
-                %>
-                <c:forEach items="${trip.equipment}" var="value">
-                    <% if (counter == 1 || counter == (counter2 + 1)) {%>
-                    <tr><% }%>
-                        <td>${value}</td>
-                        <% if (counter == counter2) {%>
-                    </tr>
-                    <% counter2 = counter2 + 4;
-                    } %>
-                    <% counter++; %>
-                </c:forEach>
-            </c:if>
-           <tr>
-                <td><p class="formLabels1"><spring:message code="label.Categories"/></p></td>
-            </tr>
-            <c:if test="${!empty trip.tripCategorieen}">
-                <%
-                    int counter = 1;
-                    int counter2 = 4;
-                %>
-                <c:forEach items="${trip.tripCategorieen}" var="value">
-                    <% if (counter == 1 || counter == (counter2 + 1)) {%>
-                    <tr><% }%>
-                        <td>${value.tripCategorieName}</td>
-                        <% if (counter == counter2) {%>
-                    </tr>
-                    <% counter2 = counter2 + 4;
-                    } %>
-                    <% counter++; %>
-                </c:forEach>
-            </c:if>
-            <tr>
-                <td><p class="formLabels1"><spring:message code="label.StoppingPoints"/></p></td>
-            </tr>
-            <c:if test="${!empty trip.stopPlaatsen}">
-                <%
-                    int counter = 1;
-                    int counter2 = 4;
-                %>
-                <c:forEach items="${trip.stopPlaatsen}" var="value">
-                    <% if (counter == 1 || counter == (counter2 + 1)) {%>
-                    <tr><% }%>
-                        <td>${value.adres}</td>
-                        <% if (counter == counter2) {%>
-                    </tr>
-                    <% counter2 = counter2 + 4;
-                    } %>
-                    <% counter++; %>
-                </c:forEach>
-            </c:if>
-            <tr>
-             <tr>
-                <td><p class="formTrip"><spring:message code="label.Participants"/></p></td>
-            </tr>
-            <c:if test="${!empty trip.deelnames}">
-
+            <table class="formTable">
                 <tr>
-                    <td><p class="formLabels1"><spring:message code="label.name"/></p></td>
-                    <td><p class="formLabels1"><spring:message code="label.IndividualEquipment"/></p></td>
+                    <td colspan="3">
+                        <p class="formTrip">${trip.tripName}</p>
+                    </td>
+                    <td><c:if test="${registered != true}">
+                        <form action="join/${trip.tripId}.html">
+                            <input class="formButton" type="submit" value="<spring:message code="label.join"/>">
+                        </form>
+                    </c:if>
+                        <c:if test="${registered == true}">
+                            <form action="leave/${trip.tripId}.html">
+                                <input class="formButton" type="submit"
+                                       value="<spring:message code="label.leaveTrip"/>">
+                            </form>
+                        </c:if></td>
                 </tr>
-                <c:forEach items="${trip.deelnames}" var="deelname">
-                    <tr>
-                       <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
-                        <td>
-                        <c:forEach items="${deelname.equipment}" var="equip">
-                        <span class="formLabels2">${equip} </span>
-                </c:forEach>          </td>
-                    </tr>
-                </c:forEach>
+                <tr>
+                    <td colspan="4">
+                        <p class="formLabels">${trip.tripDescription}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <p class="formLabels">${trip.notification}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="formColumns">
+                        <p class="formLabels1"><spring:message code="label.startLocation"/></p>
+                    </td>
+                    <td>
+                        <p class="formLabels1"><spring:message code="label.organiser"/></p>
+                    </td>
+                    <td>
+                        <p class="formLabels1"><spring:message code="label.startDate"/></p>
+                    </td>
+                    <td>
+                        <p class="formLabels1"><spring:message
+                                code="label.endDate"/></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="formLabels2">${trip.startLocation}</p>
+                    </td>
+                    <td>
+                        <p class="formLabels2">${trip.organiser.firstName} ${trip.organiser.lastName}</p>
+                    </td>
+                    <td>
+                        <p class="formLabels2"><fmt:formatDate value="${trip.startDate}"
+                                                               pattern="dd/MM/yyyy"/></p>
+                    </td>
+                    <td>
+                        <p class="formLabels2"><fmt:formatDate value="${trip.endDate}"
+                                                               pattern="dd/MM/yyyy"/></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p class="formLabels1"><spring:message code="label.equipment"/></p></td>
+                </tr>
+                <c:if test="${!empty trip.equipment}">
+                    <%
+                        int counter = 1;
+                        int counter2 = 4;
+                    %>
+                    <c:forEach items="${trip.equipment}" var="value">
+                        <% if (counter == 1 || counter == (counter2 + 1)) {%>
+                        <tr><% }%>
+                            <td>${value}</td>
+                            <% if (counter == counter2) {%>
+                        </tr>
+                        <% counter2 = counter2 + 4;
+                        } %>
+                        <% counter++; %>
+                    </c:forEach>
+                </c:if>
+                <tr>
+                    <td><p class="formLabels1"><spring:message code="label.Categories"/></p></td>
+                </tr>
+                <c:if test="${!empty trip.tripCategorieen}">
+                    <%
+                        int counter = 1;
+                        int counter2 = 4;
+                    %>
+                    <c:forEach items="${trip.tripCategorieen}" var="value">
+                        <% if (counter == 1 || counter == (counter2 + 1)) {%>
+                        <tr><% }%>
+                            <td>${value.tripCategorieName}</td>
+                            <% if (counter == counter2) {%>
+                        </tr>
+                        <% counter2 = counter2 + 4;
+                        } %>
+                        <% counter++; %>
+                    </c:forEach>
+                </c:if>
+                <tr>
+                    <td><p class="formLabels1"><spring:message code="label.StoppingPoints"/></p></td>
+                </tr>
+            </table>
+            <section id="links2">
+                <c:if test="${!empty trip.stopPlaatsen}">
+                    <table class="data">
+                        <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
+                            <table>
+                                <tr>
+                                    <td><label id="adres" class="addresses">${stopPlaatsen.adres}</label></td>
+                                </tr>
+                            </table>
+                        </c:forEach>
+                    </table>
+                </c:if>
+            </section>
+            <section id="rechts2">
+                <div id="map_canvas2"></div>
+            </section>
+            <table>
+                <tr>
+                    <td><p class="formTrip"><spring:message code="label.Participants"/></p></td>
+                </tr>
+                <c:if test="${!empty trip.deelnames}">
 
-            </c:if>
-        </table>
-    </section>
+                    <tr>
+                        <td><p class="formLabels1"><spring:message code="label.name"/></p></td>
+                        <td><p class="formLabels1"><spring:message code="label.IndividualEquipment"/></p></td>
+                    </tr>
+                    <c:forEach items="${trip.deelnames}" var="deelname">
+                        <tr>
+                            <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
+                            <td>
+                                <c:forEach items="${deelname.equipment}" var="equip">
+                                    <span class="formLabels2">${equip} </span>
+                                </c:forEach></td>
+                        </tr>
+                    </c:forEach>
+
+                </c:if>
+            </table>
+        </section>
     </section>
 
 </section>
@@ -207,13 +209,15 @@
 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl">Tweeten</a>
 <jsp:include page="../General/footer.jsp"/>
 
-
+<!--google maps api-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="../js/jquery-ui-1.9.2.custom.js"></script>
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/mapsView.js"></script>
 <script src="../js/FBPlugin.js"></script>
 <script src="../js/Twitter.js"></script>
 </body>

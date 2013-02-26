@@ -68,6 +68,8 @@
                         <table>
                             <tr>
                                 <td><input id="adres" class="addresses" value="${stopPlaatsen.adres}"/></td>
+                                <%--<td><form:checkbox path="${stopPlaatsen.vrijgegeven}"/></td> --%>
+                                <td><input type="checkbox" value="${stopPlaatsen.vrijgegeven}"/></td>
                                 <td>
                                     <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
                                         <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"

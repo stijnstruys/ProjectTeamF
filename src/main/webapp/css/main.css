@@ -382,6 +382,11 @@ a.trip_name:hover {
     height: 450px;
 }
 
+#map_canvas2 {
+    width: 550px;
+    height: 400px;
+}
+
 #links {
     float: left;
     width: 40%;
@@ -391,6 +396,18 @@ a.trip_name:hover {
 #rechts {
     float: left;
     width: 60%;
+   /* background-color: blue; */
+}
+
+#links2 {
+    float: left;
+    width: 30%;
+    /*background-color: green; */
+}
+
+#rechts2 {
+    float: left;
+    width: 70%;
    /* background-color: blue; */
 }
 
