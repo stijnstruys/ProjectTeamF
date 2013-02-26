@@ -31,10 +31,10 @@ $(document).ready(function () {
     beginTripLoc = $("#TripLoc").val();
 
     //datepicker
-    Date.format = 'yyyy-mm-dd';
+    Date.format = 'yy-mm-dd';
     //$(".datepicker").datepicker();
     $("#dateOfBirth").datepicker({
-        dateFormat: 'yyyy-mm-dd',
+        dateFormat: 'yy-mm-dd',
         defaultDate: '-21Y',
         minDate: '-150Y',
         maxDate: '-16Y',
@@ -42,7 +42,7 @@ $(document).ready(function () {
         changeYear: true
     });
     $("#TripStartD").datepicker({
-        dateFormat: 'yyyy-mm-dd',
+        dateFormat: 'yy-mm-dd',
         minDate: '0D',
         changeMonth: true,
         changeYear: true,
@@ -53,7 +53,7 @@ $(document).ready(function () {
         }
     });
     $("#TripEndD").datepicker({
-        dateFormat: 'yyyy-mm-dd',
+        dateFormat: 'yy-mm-dd',
         minDate: '0D',
         changeMonth: true,
         changeYear: true,

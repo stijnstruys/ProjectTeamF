@@ -91,8 +91,7 @@
                     <p class="formLabels1"><spring:message code="label.startLocation"/></p>
                 </td>
                 <td>
-                    <p class="formLabels1"><spring:message
-                            code="label.organiser"/></p>
+                    <p class="formLabels1"><spring:message code="label.organiser"/></p>
                 </td>
                 <td>
                     <p class="formLabels1"><spring:message code="label.startDate"/></p>
@@ -111,11 +110,11 @@
                 </td>
                 <td>
                     <p class="formLabels2"><fmt:formatDate value="${trip.startDate}"
-                                                           pattern="dd-MM-yyyy"/></p>
+                                                           pattern="dd/MM/yyyy"/></p>
                 </td>
                 <td>
                     <p class="formLabels2"><fmt:formatDate value="${trip.endDate}"
-                                                           pattern="dd-MM-yyyy"/></p>
+                                                           pattern="dd/MM/yyyy"/></p>
                 </td>
             </tr>
             <tr>
