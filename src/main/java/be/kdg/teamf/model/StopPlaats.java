@@ -65,5 +65,11 @@ public class StopPlaats {
         this.trip = trip;
     }
 
+    public String getInformatie() {
+        return informatie;
+    }
 
+    public void setInformatie(String informatie) {
+        this.informatie = informatie;
+    }
 }

@@ -6,10 +6,14 @@
 	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/trip/admincp-*.html" access="ROLE_USER" />
+        <intercept-url pattern="/user/admincp-*.html" access="ROLE_USER" />
+        <intercept-url pattern="/TripParticipants/*.html" access="ROLE_USER" />
+        <intercept-url pattern="/editUserequipment/*.html" access="ROLE_USER" />
+        <intercept-url pattern="/TripCategorie/*.html" access="ROLE_USER" />
+        <intercept-url pattern="/StopPlaats/*.html" access="ROLE_USER" />
         <intercept-url pattern="/trip/join/*.html" access="ROLE_USER" />
         <intercept-url pattern="/trip/addTrip.html" access="ROLE_USER" />
-        <form-login login-page="/general/index.html" default-target-url="/general/index.html"
+        <form-login login-page="/general/login.html" default-target-url="/general/index.html"
                     authentication-failure-url="/user/loginfailed.html" />
         <logout logout-success-url="/" />
     </http>

@@ -66,7 +66,7 @@
                         <div class="trip_description">${trip.tripDescription}</div>
 
                         <div class="trip_extra">
-                            <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~ <fmt:formatDate value="${trip.endDate}" pattern="dd/mm/yyyy"/></div>
+                            <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~ <fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></div>
                             <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span
                                     class="trip_detail_general">${trip.startLocation}</span></div>
                         </div>
