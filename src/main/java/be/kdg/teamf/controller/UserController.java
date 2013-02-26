@@ -201,7 +201,7 @@ public class UserController {
 
         SimpleMailMessage msg = new SimpleMailMessage(message);
         msg.setTo("kdgteamf@gmail.com");
-        tripService.sendMail(mailModel, msg);
+        tripService.sendInvite(mailModel, msg);
     }
 
     @RequestMapping("user/deleteTrip/{tripId}")
@@ -278,5 +278,26 @@ public class UserController {
 
         return model;
     }
+    @RequestMapping(value = "/TripParticipants/{tripID}/invite", method = RequestMethod.POST)
+    public String inviteDeelnemer(@RequestParam("email") String email, @PathVariable("tripID") int tripID) {
 
+
+        Trip t = tripService.findTrip(tripID);
+
+
+        ModelMap mailModel = new ModelMap();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        mailModel.addAttribute("title", "Trip Invite");
+        mailModel.addAttribute("subtitle1", "Message from organiser");
+        mailModel.addAttribute("message", "U bent uitgenodigd voor trip: " + t.getTripName());
+        mailModel.addAttribute("link", "http://localhost:8080/ProjectTeamF-1.0/trip/"+ t.getTripId() +".html");
+
+        mailModel.addAttribute("date", format.format(new Date()));
+
+        SimpleMailMessage msg = new SimpleMailMessage(message);
+        msg.setTo(email);
+        tripService.sendInvite(mailModel, msg);
+        return "redirect:/TripParticipants/" + tripID + ".html";
+
+    }
 }

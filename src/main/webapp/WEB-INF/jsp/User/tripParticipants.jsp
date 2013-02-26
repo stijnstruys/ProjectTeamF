@@ -38,12 +38,7 @@
             </tr>
             <c:forEach items="${trip.deelnames}" var="deelnamevar">
                 <tr>
-
-
-
-
                     <td><a href="../editUserequipment/${deelnamevar.deelnameID}.html">${deelnamevar.user.firstName} ${deelnamevar.user.lastName} </a></td>
-
                     <c:if test="${!empty deelnamevar.equipment}">
                         <td>
                             <c:forEach items="${deelnamevar.equipment}" var="equipmentPiece">
@@ -51,14 +46,15 @@
                             </c:forEach>
                         </td>
                     </c:if>
-
-
-
                 </tr>
             </c:forEach>
         </table>
     </c:if>
+        <form method="post" action="${tripID}/invite.html">
 
+            E-mail: <input type="text" id="email" name="email">
+            <input class="btn" type="submit" value="<spring:message code="label.invite"/>">
+        </form>
 </section>
 
 <jsp:include page="../General/footer.jsp"/>
