@@ -1,11 +1,14 @@
 package be.kdg.teamf.model;
 
 import org.hibernate.annotations.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.CascadeType;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 
@@ -108,7 +111,8 @@ public class Trip {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public Date getEndDate()  {
+
         return endDate;
     }
 

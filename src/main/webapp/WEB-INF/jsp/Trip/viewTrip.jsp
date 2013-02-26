@@ -157,6 +157,25 @@
                 </c:forEach>
             </c:if>
             <tr>
+                <td><p class="formLabels1"><spring:message code="label.StoppingPoints"/></p></td>
+            </tr>
+            <c:if test="${!empty trip.stopPlaatsen}">
+                <%
+                    int counter = 1;
+                    int counter2 = 4;
+                %>
+                <c:forEach items="${trip.stopPlaatsen}" var="value">
+                    <% if (counter == 1 || counter == (counter2 + 1)) {%>
+                    <tr><% }%>
+                        <td>${value.adres}</td>
+                        <% if (counter == counter2) {%>
+                    </tr>
+                    <% counter2 = counter2 + 4;
+                    } %>
+                    <% counter++; %>
+                </c:forEach>
+            </c:if>
+            <tr>
              <tr>
                 <td><p class="formTrip"><spring:message code="label.Participants"/></p></td>
             </tr>

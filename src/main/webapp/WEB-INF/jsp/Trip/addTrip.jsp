@@ -29,6 +29,7 @@
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
     <script src="../js/equipment.js"></script>
+
 </head>
 <body>
 <!--[if lt IE 7]>

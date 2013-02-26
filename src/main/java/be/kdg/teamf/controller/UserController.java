@@ -268,7 +268,15 @@ public class UserController {
         } else {
             return "true";
         }
-
-
     }
+    @RequestMapping(value = "/user/loginfailed", method = RequestMethod.GET)
+    public ModelAndView loginFailed(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+        ModelAndView model = new ModelAndView("General/loginFailed");
+
+
+        return model;
+    }
+
 }

@@ -55,4 +55,12 @@ public class TripType {
     public void setTripTypeDescription(String tripTypeDescription) {
         this.tripTypeDescription = tripTypeDescription;
     }
+
+    public Collection<Trip> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(Collection<Trip> trips) {
+        this.trips = trips;
+    }
 }

@@ -29,24 +29,24 @@
 
 <section id="content">
     <h2><spring:message code="label.UserRegistration"/></h2>
-     <div id="registration_failed"></div>
+    <div id="registration_failed"></div>
     <form:form method="post" action="add.html" commandName="user" id="user">
 
         <table>
             <tr>
                 <td><form:label path="username"><spring:message code="label.username"/></form:label></td>
                 <td>
-                <div class="input-append">
-                    <form:input path="username" id="userName"/>
-                    <span class="add-on" id="addon_username"></span>
-                </div>
+                    <div class="input-append">
+                        <form:input path="username" id="userName"/>
+                        <span class="add-on" id="addon_username"></span>
+                    </div>
                 </td>
             </tr>
             <tr>
                 <td><form:label path="password"><spring:message code="label.password"/></form:label></td>
                 <td>
                     <div class="input-append">
-                        <form:input id="password" path="password"/>
+                        <form:password id="password" path="password"/>
                         <span class="add-on" id="addon_password"></span>
                     </div>
                 </td>
@@ -104,10 +104,9 @@
         </table>
     </form:form>
 
-    <button onclick="importData()">Import data from Facebook</button>
+    <button class="btn" type="button" onclick="importData()">Import data from Facebook</button>
 
     <h3><spring:message code="label.Users"/></h3>
-
 
     <c:if test="${!empty userList}">
         <table class="data">

@@ -59,14 +59,14 @@ public class StopPlaatsController
         stopPlaats.setTrip(t);
         t.getStopPlaatsen().add(stopPlaats);
         tripService.updateTrip(t);
-        return "redirect:/trip/"+ t.getTripId()+".html";
+        return "redirect:/user/admincp-" + t.getTripId() + ".html";
     }
 
     @RequestMapping("/StopPlaats/delete/{stopPlaatsID}")
     public String deleteUser(@PathVariable("stopPlaatsID") int stopPlaatsID) {
         StopPlaats s =  stopPlaatsService.findStopPlaats(stopPlaatsID);
         stopPlaatsService.deleteStopPlaats(s);
-        return "redirect:/trip/"+s.getTrip().getTripId()+".html";
+        return "redirect:/user/admincp-" + s.getTrip().getTripId() + ".html";
 
     }
     @RequestMapping("/StopPlaats/update/{stopPlaatsID}")
@@ -86,10 +86,11 @@ public class StopPlaatsController
     public String updateStopPlaats(@ModelAttribute("stopPlaats")
                                        StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {
 
-        stopPlaats.setTrip(tripService.findTrip(tripID));
+        Trip t = tripService.findTrip(tripID);
+        stopPlaats.setTrip(t);
         stopPlaatsService.updateStopPlaats(stopPlaats);
 
-        return "redirect:/trip/"+stopPlaats.getTrip().getTripId()+".html";
+        return "redirect:/user/admincp-" + t.getTripId() + ".html";
 
     }
     @RequestMapping(value = "/StopPlaats/release/{stopplaatsId}", method = RequestMethod.GET)
@@ -100,7 +101,7 @@ public class StopPlaatsController
         StopPlaats s = stopPlaatsService.findStopPlaats(stopplaatsId);
         s.setVrijgegeven(true);
         stopPlaatsService.updateStopPlaats(s);
-        return "redirect:/trip/"+s.getTrip().getTripId()+".html";
+        return "redirect:/user/admincp-" + s.getTrip().getTripId() + ".html";
 
     }
 }

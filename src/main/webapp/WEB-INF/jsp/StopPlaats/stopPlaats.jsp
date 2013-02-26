@@ -40,7 +40,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="<spring:message code="label.AddStoppingPoint"/>"/>
+                    <input  class="btn" type="submit" value="<spring:message code="label.AddStoppingPoint"/>"/>
                 </td>
             </tr>
         </table>

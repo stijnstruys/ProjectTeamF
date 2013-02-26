@@ -1,6 +1,7 @@
 package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Deelname;
+import be.kdg.teamf.model.StopPlaats;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.*;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -77,7 +79,13 @@ public class TripController {
 
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
-
+        ArrayList<StopPlaats> stopplaatsen =  new ArrayList<>();
+        for(StopPlaats s : t.getStopPlaatsen()){
+            if (s.isVrijgegeven()){
+                stopplaatsen.add(s);
+            }
+        }
+        t.setStopPlaatsen(stopplaatsen);
         if (u != null && deelnameService.userIsRegistered(t, u)) {
             request.setAttribute("registered", true);
         } else {
