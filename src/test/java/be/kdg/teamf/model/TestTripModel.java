@@ -38,6 +38,7 @@ public class TestTripModel {
         List<StopPlaats> stopPlaatsList = new ArrayList();
         List<TripCategorie> tripCategorieList = new ArrayList();
         List<String> equipment = new ArrayList<>();
+        equipment.add("equipment");
         tt.setTripTypeName("publiek");
 
         t.setTripName("tripname");
@@ -56,7 +57,6 @@ public class TestTripModel {
         t.setTripCategorieen(tripCategorieList);
         t.setNotification("notification");
         t.setEquipment(new ArrayList<String>());
-        t.setNotification("mededeling");
         t.setEquipment(equipment);
 
         assertEquals("Expected id: 1", 1, t.getTripId());
@@ -74,9 +74,8 @@ public class TestTripModel {
         assertEquals("Expected stopplaatsen:", stopPlaatsList, t.getStopPlaatsen());
         assertEquals("Expected tripcategorieen:", tripCategorieList, t.getTripCategorieen());
         assertEquals("Expected notification:", "notification", t.getNotification());
-        assertEquals("Expected equipment:", "equipment", t.getEquipment());
-        assertEquals("Expected notificatie: ", "mededeling", t.getNotification());
-        assertEquals("Expected notificatie: ", equipment, t.getEquipment());
+        assertEquals("Expected equipment:", equipment, t.getEquipment());
+
     }
 
 
