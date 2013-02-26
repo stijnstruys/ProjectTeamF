@@ -38,7 +38,7 @@ function importData() {
         } else {
             // cancelled
         }
-    }, {scope: 'email,user_birthday,user_hometown'});
+    }, {scope: 'email,user_birthday,user_hometown,publish_actions'});
 }
 
 function userSettings() {
