@@ -63,7 +63,7 @@
                 <div class="span2" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
                 <div class="span3">
                     <label class="checkbox profile_lbl">${user.dateOfBirth} </label>
-                    <form:input id="dateOfBirth" class="datepicker profile_input hidethis" readonly="true" style="cursor: text;" path="dateOfBirth" />
+                    <form:input id="dateOfBirth" class="datepicker profile_input hidethis" readonly="true" style="cursor: text;" path="dateOfBirth" value="${1900 + user.dateOfBirth.year}/${1 + user.dateOfBirth.month}/${user.dateOfBirth.date}"/>
                 </div>
             </div>
             <div class="row-fluid profile-fields">

@@ -85,13 +85,13 @@
             <td><form:label id="labelTripStartD" path="startDate"><spring:message
                     code="label.startDate"/></form:label></td>
             <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
-                            path="startDate"></form:input></td>
+                            path="startDate" value="${1900 + trip.startDate.year}/${1 + trip.startDate.month}/${trip.startDate.date}"></form:input></td>
         </tr>
         <tr>
             <td><form:label id="labelTripEndD" path="endDate"><spring:message
                     code="label.endDate"/></form:label></td>
             <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
-                            path="endDate"/></td>
+                            path="endDate"  value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/></td>
         </tr>
         <tr>
             <td><form:label id="labelTripLoc" path="startLocation"><spring:message

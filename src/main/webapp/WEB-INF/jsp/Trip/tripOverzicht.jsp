@@ -9,6 +9,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -65,7 +66,7 @@
                         <div class="trip_description">${trip.tripDescription}</div>
 
                         <div class="trip_extra">
-                            <div class="trip_datums">${trip.startDate} ~ ${trip.endDate}</div>
+                            <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~ <fmt:formatDate value="${trip.endDate}" pattern="dd/mm/yyyy"/></div>
                             <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span
                                     class="trip_detail_general">${trip.startLocation}</span></div>
                         </div>

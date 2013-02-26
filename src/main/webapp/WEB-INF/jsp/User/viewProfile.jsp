@@ -9,6 +9,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -52,7 +53,7 @@
         <div class="row-fluid">
             <div class="span2" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
             <div class="span3">
-                <label class="checkbox profile_lbl">${user.dateOfBirth} </label>
+                <label class="checkbox profile_lbl"><fmt:formatDate value="${user.dateOfBirth}" pattern="dd/MM/yyyy"/></label>
             </div>
         </div>
 

@@ -257,7 +257,7 @@ public class UserController {
         ModelAndView model = new ModelAndView("User/editEquipment");
 
 
-         return model;
+        return model;
     }
     @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
     public @ResponseBody String getUserInJson(@RequestParam("name") String name) {
