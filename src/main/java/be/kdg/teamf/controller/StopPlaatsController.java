@@ -49,7 +49,7 @@ public class StopPlaatsController
         return model;
     }        */
 
-    @RequestMapping(value = "/StopPlaats/{tripID}",method = RequestMethod.GET)
+    @RequestMapping(value = "/StopPlaats/{tripID}.html",method = RequestMethod.GET)
         public ModelAndView manageStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
             StopPlaats s  = new StopPlaats();

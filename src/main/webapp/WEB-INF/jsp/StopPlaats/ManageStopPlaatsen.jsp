@@ -54,7 +54,8 @@
     <section id="rechts">
         <div id="map_canvas"></div>
     </section>
-    <div id="onder"></div>
+
+    <section id="onder"></section>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 <!--google maps api-->
