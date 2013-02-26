@@ -49,7 +49,7 @@ $(document).ready(function () {
             origin: locations[0],
             destination: locations[locations.length-1],
             waypoints: waypts,
-            optimizeWaypoints: true,
+            //optimizeWaypoints: true,
             // Note that Javascript allows us to access the constant
             // using square brackets and a string value as its
             // "property."

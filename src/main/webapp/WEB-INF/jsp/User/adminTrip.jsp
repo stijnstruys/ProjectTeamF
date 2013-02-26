@@ -91,7 +91,7 @@
             <td><form:label id="labelTripEndD" path="endDate"><spring:message
                     code="label.endDate"/></form:label></td>
             <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
-                            path="endDate"  value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/></td>
+                            path="endDate"/></td>
         </tr>
         <tr>
             <td><form:label id="labelTripLoc" path="startLocation"><spring:message
@@ -125,6 +125,7 @@
     </table>
 </form:form>
     <button id="ManageStoppingPoints" onClick="location.href='/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html'"><spring:message code="label.ManageStoppingPoints"/></button>
+
 <table>
     <tr>
         <td>

@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Jeroen
+  User: Jeroen Verbunt
   Date: 26/02/13
   Time: 13:47
   To change this template use File | Settings | File Templates.
@@ -32,11 +32,11 @@
 <section id="content">
     <h2><spring:message code="label.ManageStoppingPoints"/></h2>
     <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="stopPlaats">
-        <table id="mapTopTable">
+        <table>
             <tr>
-                <td class="mapTopTableCol1"><form:label path="adres"><spring:message code="label.address"/></form:label></td>
-                <td class="mapTopTableCol1"><form:input id="address" path="adres"/></td>
-                <td class="mapTopTableCol1">
+                <td><form:label path="adres"><spring:message code="label.address"/></form:label></td>
+                <td><form:input id="address" path="adres"/></td>
+                <td>
                     <input id="searchKnop" type="submit" value="<spring:message code="label.AddStoppingPoint"/>"/>
                 </td>
             </tr>
@@ -63,7 +63,9 @@
                 <td>Location name</td>
             </tr>
             <c:if test="${!empty trip.stopPlaatsen}">
+                <table class="data">
                     <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
+                        <table>
                             <tr>
                                 <td><input id="adres" class="addresses" value="${stopPlaatsen.adres}"/></td>
                                 <td>
@@ -77,7 +79,15 @@
                                              class="mapIcons"/></a>
                                 </td>
                             </tr>
+                        </table>
+                        <%-- <tr id="mapsRow">
+                             <td><input id="location" type="textbox" value="${stopPlaats.adres}"></td>
+                             <td><input id="changeButton" type="button" value="Change"></td>
+
+                                 <td><form:checkbox path="${stopPlaats.vrijgegeven}" id="releaseBox"></form:checkbox></td>
+                         </tr>   --%>
                     </c:forEach>
+                </table>
             </c:if>
 
 

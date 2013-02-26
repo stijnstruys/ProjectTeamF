@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -55,9 +54,9 @@ public class StopPlaatsController
 
             StopPlaats s  = new StopPlaats();
             Trip t = tripService.findTrip(tripID);
-            List<StopPlaats> stopPlaatsList = stopPlaatsService.getStopplaatsenByTrip(tripID);
+
             request.setAttribute("stopPlaats",s);
-            //request.setAttribute("stopPlaatsList",stopPlaatsList);
+
             request.setAttribute("trip", t);
             ModelAndView model = new ModelAndView("StopPlaats/ManageStopPlaatsen");
 
