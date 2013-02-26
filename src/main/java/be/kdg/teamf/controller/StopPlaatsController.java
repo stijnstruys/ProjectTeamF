@@ -32,11 +32,11 @@ public class StopPlaatsController
     @Autowired
     private TripService tripService;
 
-    @RequestMapping(value = "/StopPlaats/{tripID}",method = RequestMethod.GET)
+   /* @RequestMapping(value = "/StopPlaats/{tripID}",method = RequestMethod.GET)
     public ModelAndView stopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
-        /*User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin);  */
+        User userlogin  = new User();
+        request.setAttribute("loginuser",userlogin);
 
         StopPlaats s  = new StopPlaats();
         Trip t = tripService.findTrip(tripID);
@@ -47,9 +47,21 @@ public class StopPlaatsController
         ModelAndView model = new ModelAndView("StopPlaats/stopPlaats");
 
         return model;
-    }
+    }        */
 
+    @RequestMapping(value = "/StopPlaats/{tripID}.html",method = RequestMethod.GET)
+        public ModelAndView manageStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
+            StopPlaats s  = new StopPlaats();
+            Trip t = tripService.findTrip(tripID);
+
+            request.setAttribute("stopPlaats",s);
+
+            request.setAttribute("trip", t);
+            ModelAndView model = new ModelAndView("StopPlaats/ManageStopPlaatsen");
+
+            return model;
+        }
 
     @RequestMapping(value = "/StopPlaats/add/{tripID}", method = RequestMethod.POST)
     public String addStopPlaats(@ModelAttribute("stopplaats") StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {

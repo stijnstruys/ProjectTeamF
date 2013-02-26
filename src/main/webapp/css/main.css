@@ -365,7 +365,6 @@ a.trip_name:hover {
     color: #D4D4D4;
 }
 
-
 /* registration */
 
 #registration_failed {
@@ -375,3 +374,28 @@ a.trip_name:hover {
     color: black;
     padding: 20px 15px 10px 15px;
 }
+
+/* maps */
+
+#map_canvas {
+    width: 570px;
+    height: 450px;
+}
+
+#links {
+    float: left;
+    width: 40%;
+    background-color: green;
+}
+
+#rechts {
+    float: left;
+    width: 60%;
+    background-color: blue;
+}
+
+#onder {
+    clear: both;
+}
+
+¨

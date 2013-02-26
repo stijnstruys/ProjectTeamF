@@ -124,44 +124,9 @@
         <tr><td><button id="newEquip" class="btn" type="button" onclick="addEquipment()">New</button></td></tr>
     </table>
 </form:form>
+    <button id="ManageStoppingPoints" onClick="location.href='/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html'"><spring:message code="label.ManageStoppingPoints"/></button>
 <table>
     <tr>
-        <td>
-            <h3><spring:message code="label.StoppingPoints"/></h3>
-            <c:if test="${!empty trip.stopPlaatsen}">
-                <table class="data">
-                    <tr>
-                        <th><spring:message code="label.address"/></th>
-                        <th><spring:message code="label.Released"/></th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
-
-                        <tr>
-                            <td>${stopPlaats.adres} </td>
-                            <td>${stopPlaats.vrijgegeven} </td>
-                            <td>
-                                <a href="/ProjectTeamF-1.0/StopPlaats/update/${stopPlaats.stopPlaatsID}.html"><spring:message
-                                        code="label.UpdateStoppingPoint"/></a>
-                            </td>
-                            <td>
-                                <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaats.stopPlaatsID}.html"><spring:message
-                                        code="label.DeleteStoppingPoint"/></a>
-                            </td>
-                            <td>
-                                <a href="/ProjectTeamF-1.0/StopPlaats/release/${stopPlaats.stopPlaatsID}.html"><spring:message
-                                        code="label.ReleaseStoppingPoint"/></a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </table>
-            </c:if>
-            <form action="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
-
-                <input   class="btn"  type="submit" value="<spring:message code="label.AddNewStoppingPoint"/>"/>
-            </form>
-        </td>
-        <td></td>
         <td>
             <h3><spring:message code="label.Categories"/></h3>
             <c:if test="${!empty trip.tripCategorieen}">

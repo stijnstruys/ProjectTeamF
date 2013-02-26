@@ -52,6 +52,9 @@ $(document).ready(function () {
             }
         }
     });
+
+    //$("").
+
     $("#TripEndD").datepicker({
         dateFormat: 'yy/mm/dd',
         minDate: '0D',
