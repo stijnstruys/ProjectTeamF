@@ -32,6 +32,14 @@
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
@@ -201,6 +209,7 @@
     </section>
 
 </section>
+<div class="fb-like" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true"></div>
 <jsp:include page="../General/footer.jsp"/>
 
 
