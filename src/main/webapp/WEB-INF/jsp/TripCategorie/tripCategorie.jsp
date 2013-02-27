@@ -6,9 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -35,24 +35,47 @@
 
         <table>
             <tr>
-                <td><form:label path="tripCategorieName"><spring:message code="label.tripCategoryName"/></form:label></td>
+                <td><form:label path="tripCategorieName"><spring:message
+                        code="label.tripCategoryName"/></form:label></td>
                 <td><form:input path="tripCategorieName"/></td>
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="<spring:message code="label.addTripCategory"/>"/>
+                    <input type="submit" class="btn" value="<spring:message code="label.addTripCategory"/>"/>
                 </td>
             </tr>
         </table>
     </form:form>
+        <c:if test="${!empty trip.tripCategorieen}">
+            <table class="data">
+                <tr>
+                    <th><spring:message code="label.tripCategoryName"/></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <c:forEach items="${trip.tripCategorieen}" var="tripCategorie">
+                    <tr>
+                        <td>${tripCategorie.tripCategorieName} </td>
+                        <td>
+                            <button class="btn" onClick="location.href='/ProjectTeamF-1.0/TripCategorie/update-${tripCategorie.tripCategorieId}.html'"><spring:message
+                                    code="label.updateTripCategory"/></button>
+                        </td>
+                        <td>
+                            <button class="btn" onClick="location.href='/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html'"><spring:message
+                                    code="label.deleteTripCategory"/></button>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+
 </section>
 <jsp:include page="../General/footer.jsp"/>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    <script src="../js/jquery-ui-1.9.2.custom.js"></script>
-    <script src="../js/vendor/bootstrap.min.js"></script>
-    <script src="../js/plugins.js"></script>
-    <script src="../js/main.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="../js/jquery-ui-1.9.2.custom.js"></script>
+<script src="../js/vendor/bootstrap.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
 
 </body>
 </html>

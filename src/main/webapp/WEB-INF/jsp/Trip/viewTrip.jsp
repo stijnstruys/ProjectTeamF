@@ -67,7 +67,7 @@
     </td>
     <td><c:if test="${registered != true}">
         <form action="join/${trip.tripId}.html">
-            <input class="formButton" type="submit" value="<spring:message code="label.join"/>">
+            <input class="btn btn-success btn_green_right" type="submit" value="<spring:message code="label.join"/>">
         </form>
     </c:if>
         <c:if test="${registered == true}">

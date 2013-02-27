@@ -487,3 +487,10 @@ a.trip_name:hover {
     min-width: 17.5em;
     min-height: 7.5em;
 }
+
+/* admin trip */
+
+#adminTripTable {
+    width: 100%;
+}
+

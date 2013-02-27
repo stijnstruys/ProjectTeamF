@@ -204,6 +204,7 @@ public class UserController {
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripList", tripService.listUserTrips(userService.getCurrentUser().getUserID()));
+        request.setAttribute("tripListParticipate", tripService.listUserParticipateTrips(userService.getCurrentUser().getUserID()));
         ModelAndView model = new ModelAndView("User/myTrips");
         return model;
     }

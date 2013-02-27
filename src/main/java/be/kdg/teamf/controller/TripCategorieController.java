@@ -57,18 +57,18 @@ public class TripCategorieController {
         tripCategorie.setTrip(t);
         t.getTripCategorieen().add(tripCategorie);
         tripService.updateTrip(t);
-        return "redirect:/user/admincp-" + t.getTripId() + ".html";
+        return "redirect:/TripCategorie/" + t.getTripId() + ".html";
     }
 
     @RequestMapping("/TripCategorie/delete/{tripCategorieId}")
     public String deleteTripCategorie(@PathVariable("tripCategorieId") int tripCategorieId) {
         TripCategorie tc = tripCategorieService.findTripCategorie(tripCategorieId);
         tripCategorieService.removeTripCategorie(tc);
-        return "redirect:/user/admincp-" + tc.getTrip().getTripId() + ".html";
+        return "redirect:/TripCategorie/" + tc.getTrip().getTripId() + ".html";
 
     }
 
-    @RequestMapping("/TripCategorie/update/{tripCategorieId}")
+    @RequestMapping("/TripCategorie/update-{tripCategorieId}")
     public ModelAndView updateTripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripCategorieId") int tripCategorieId) throws Exception {
 
         /*User userlogin = new User();
@@ -82,14 +82,14 @@ public class TripCategorieController {
 
     }
 
-    @RequestMapping(value = "/TripCategorie/update/updateTripCategorie/{tripID}", method = RequestMethod.POST)
+    @RequestMapping(value = "/TripCategorie/update/{tripID}", method = RequestMethod.POST)
     public String updateTripCategorie(@ModelAttribute("tripCategorie")
-                                   TripCategorie tripCategorie, BindingResult result, @PathVariable("tripID") int tripID) {
+                                      TripCategorie tripCategorie, BindingResult result, @PathVariable("tripID") int tripID) {
 
         tripCategorie.setTrip(tripService.findTrip(tripID));
         tripCategorieService.updateTripCategorie(tripCategorie);
 
-        return "redirect:/user/admincp-" + tripCategorie.getTrip().getTripId() + ".html";
+        return "redirect:/TripCategorie/" + tripID + ".html";
 
     }
 

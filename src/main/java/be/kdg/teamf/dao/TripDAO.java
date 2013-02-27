@@ -21,6 +21,7 @@ public interface TripDAO {
     public List<Trip> searchTrips(String searchInput);
     public Trip findTrip(int id);
     public List<Trip> listUserTrips(int UserID);
+    public List<Trip> listUserParticipateTrips(int UserID);
     public List<String> getTripNames();
 
 

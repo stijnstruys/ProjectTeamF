@@ -43,49 +43,83 @@
     int pagina = 0;
 %>
 <section id="content">
-    <h2><spring:message code="label.TripOverview"/></h2>
+    <section class="tripPages">
+        <h2><spring:message code="label.TripOverview"/></h2>
 
-    <c:if test="${!empty tripList}">
-        <ul class="trip_list">
-            <c:forEach items="${tripList}" var="trip">
-                <div class="trip_details trip_pagina_<%=pagina%>_content">
-                    <div class="trip_name"><a class="trip_name" href="admincp-${trip.tripId}.html">${trip.tripName}</a></div>
-                    <div class="trip_description">${trip.tripDescription}</div>
+        <h3><spring:message code="label.MyOrganisedTrips"/></h3>
+        <c:if test="${!empty tripList}">
+            <ul class="trip_list">
+                <c:forEach items="${tripList}" var="trip">
+                    <div class="trip_details trip_pagina_<%=pagina%>_content">
+                        <div class="trip_name"><a class="trip_name"
+                                                  href="admincp-${trip.tripId}.html">${trip.tripName}</a>
+                        </div>
+                        <div class="trip_description">${trip.tripDescription}</div>
 
-                    <div class="trip_extra">
-                        <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~ <fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></div>
-                        <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span
-                                class="trip_detail_general">${trip.startLocation}</span></div>
+                        <div class="trip_extra">
+                            <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~
+                                <fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></div>
+                            <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span
+                                    class="trip_detail_general">${trip.startLocation}</span></div>
+                        </div>
+
                     </div>
+                    <%
+                        count++;
+                        if (count == 6) {
+                            count = 0;
+                            pagina++;
+                        }
+                    %>
+                </c:forEach>
+            </ul>
+        </c:if>
+        <h3><spring:message code="label.MyJoinedTrips"/></h3>
+        <c:if test="${!empty tripListParticipate}">
+            <ul class="trip_list">
+                <c:forEach items="${tripListParticipate}" var="trip">
+                    <div class="trip_details trip_pagina_<%=pagina%>_content">
+                        <div class="trip_name"><a class="trip_name"
+                                                  href="../trip/${trip.tripId}.html">${trip.tripName}</a>
+                        </div>
+                        <div class="trip_description">${trip.tripDescription}</div>
 
-                </div>
+                        <div class="trip_extra">
+                            <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~
+                                <fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></div>
+                            <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span
+                                    class="trip_detail_general">${trip.startLocation}</span></div>
+                        </div>
+
+                    </div>
+                    <%
+                        count++;
+                        if (count == 6) {
+                            count = 0;
+                            pagina++;
+                        }
+                    %>
+                </c:forEach>
+            </ul>
+        </c:if>
+
+        <div class="float_fix"></div>
+        <div class="pagination">
+            <ul>
+                <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
                 <%
-                    count++;
-                    if (count == 10) {
-                        count = 0;
-                        pagina++;
+                    for (int i = 0; i <= pagina; i++) {
+                %>
+                <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                </a></li>
+                <%
                     }
                 %>
-            </c:forEach>
-        </ul>
-    </c:if>
-
-    <div class="float_fix"></div>
-    <div class="pagination">
-        <ul>
-            <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
-            <%
-                for (int i = 0; i <= pagina; i++) {
-            %>
-            <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
-            </a></li>
-            <%
-                }
-            %>
-            <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
-        </ul>
-    </div>
-    <div class="float_fix"></div>
+                <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
+            </ul>
+        </div>
+        <div class="float_fix"></div>
+    </section>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 

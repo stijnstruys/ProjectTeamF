@@ -103,6 +103,12 @@ public class TripServiceImpl implements TripService {
 
         return t.getOrganiser().getUserID() == u.getUserID();
     }
+
+    @Override
+    public List<Trip> listUserParticipateTrips(int UserID) {
+        return tripDAO.listUserParticipateTrips(UserID);
+    }
+
     @Override
     public void sendInvite(final ModelMap model, final SimpleMailMessage msg) {
 

@@ -36,6 +36,7 @@ public interface TripService {
 
     boolean checkOwnership(Trip t, User u);
 
+    public List<Trip> listUserParticipateTrips(int UserID);
 
     void sendInvite(ModelMap mailModel, SimpleMailMessage msg);
 
