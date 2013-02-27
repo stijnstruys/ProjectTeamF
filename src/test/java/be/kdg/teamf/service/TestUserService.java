@@ -52,7 +52,7 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
         u.setUsername("Bart Leemans");
         userService.addUser(u);
         userService.deleteUser(u);
-        assertTrue("User not found", !userService.listUsers().contains(u));
+        assertFalse("User not found", userService.listUsers().contains(u));
     }
 
     @Test
@@ -86,13 +86,4 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
 
         assertEquals("De user is niet gewijzigd", "updated", userService.findUser("updated").getUsername());
     }
-    /*@Test
-    public void currentUser() {
-
-
-        User u = userService.getCurrentUser();
-
-
-        assertEquals("De user is niet gewijzigd", 1, u.getUserID());
-    }*/
 }

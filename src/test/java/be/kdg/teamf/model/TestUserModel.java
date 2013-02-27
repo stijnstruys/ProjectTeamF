@@ -1,7 +1,6 @@
 package be.kdg.teamf.model;
 
 import be.kdg.teamf.dao.UserDAO;
-import be.kdg.teamf.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -10,8 +9,6 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
 
 
 @ContextConfiguration(locations = {"classpath:spring-servlet.xml"})
@@ -57,7 +54,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
     }
 
 
-    @Test
+    /*@Test
     public void checkEqualsNotSameUser() {
         User u1 = new User();
         User u2 = new User();
@@ -75,7 +72,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         u1.setUsername("jef");
         u2 = u1;
         assertTrue(u1.equals(u2));
-    }
+    }   */
 
 
 }

@@ -43,7 +43,15 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
     }
 
     @Override
-    public List<StopPlaats> getStopplaatsenByTrip(int tripID) {
-        return stopPlaatsDAO.getStopplaatsenByTrip(tripID);
+    public List<StopPlaats> listStopPlaatsen() {
+
+     return stopPlaatsDAO.listStopPlaatsen();
     }
+
+    @Override
+    public List<StopPlaats> getStopPlaatsenByTripId(int tripId) {
+        return stopPlaatsDAO.getStopplaatsenByTrip(tripId);
+    }
+
+
 }

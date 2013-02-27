@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNull;
 
 /**
  * Created with IntelliJ IDEA.
@@ -41,9 +42,9 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
 
     @Test
     public void testDeleteDeelname(){
-       Deelname dn = getDeelname();
-       deelnameDAO.addDeelname(dn);
-       deelnameDAO.deleteDeelname(dn);
+        Deelname dn = getDeelname();
+        deelnameDAO.addDeelname(dn);
+        deelnameDAO.deleteDeelname(dn);
     }
 
     @Test
@@ -54,6 +55,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         dn.getUser().setFirstName("Jeroen");
         dn.getTrip().setTripName("Reis naar Spanje");
         dn.setEquipment(equipment);
+        deelnameDAO.updateDeelname(dn);
         assertEquals("Expected: ", "Jeroen", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
         assertEquals("Expected: ", "Reis naar Spanje", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
         assertEquals("Expected: ", equipment, deelnameDAO.findDeelname(dn.getDeelnameID()).getEquipment());
@@ -68,11 +70,8 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
     }
     @Test
     public void listDeelnames() {
-
         Deelname d1 = getDeelname();
         deelnameDAO.addDeelname(d1);
-
-
         assertEquals("Niet alle deelnames worden opgehaald", 1, deelnameDAO.findDeelnames(d1.getTrip()).size());
     }
 
@@ -96,11 +95,9 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         t1.setDeelnames(new ArrayList<Deelname>());
         t1.setTripName("Dropping");
 
-
         t1.getDeelnames().add(dn);
         u1.getTrips().add(t1);
         u1.getDeelnames().add(dn);
-
 
         userDAO.addUser(u1);
         tripDAO.addTrip(t1);
@@ -109,5 +106,9 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         dn.setUser(u1);
         dn.setEquipment(new ArrayList<String>());
         return dn;
+    }
+    @Test
+    public void geenDeelname(){
+        assertNull(deelnameDAO.findDeelname(616161656,64161616));
     }
 }

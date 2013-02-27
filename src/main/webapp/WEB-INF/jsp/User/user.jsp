@@ -104,7 +104,7 @@
         </table>
     </form:form>
 
-    <button class="btn" type="button" onclick="importData()">Import data from Facebook</button>
+    <button class="btn" type="button" id="user_importfb">Import data from Facebook</button>
 
     <h3><spring:message code="label.Users"/></h3>
 

@@ -1,6 +1,5 @@
 package be.kdg.teamf.service;
 
-import be.kdg.teamf.dao.TripCategorieDAO;
 import be.kdg.teamf.dao.TripTypeDAO;
 import be.kdg.teamf.model.TripType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +33,8 @@ public class TripTypeServiceImpl implements TripTypeService {
     }
 
     @Transactional
-    public void removeTripType(int id) {
-        tripTypeDAO.removeTripType(id);
+    public void removeTripType(TripType tripType) {
+        tripTypeDAO.removeTripType(tripType);
     }
 
     @Transactional
@@ -43,9 +42,15 @@ public class TripTypeServiceImpl implements TripTypeService {
         return tripTypeDAO.listTripTypes();
     }
 
+
     @Override
-    public TripType findDeelname(int TripTypeID) {
+    public TripType findTripType(int TripTypeID) {
         return tripTypeDAO.findTripType(TripTypeID);
+    }
+
+    @Transactional
+    public TripType findTripType(int tripTypeId) {
+        return tripTypeDAO.findTripType(tripTypeId);
     }
 
 }

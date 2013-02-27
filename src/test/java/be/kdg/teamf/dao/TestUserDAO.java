@@ -90,4 +90,10 @@ public class TestUserDAO extends AbstractTransactionalJUnit4SpringContextTests {
         int id = u.getUserID();
         assertSame("you are not getting the expected user from the db","Bart Leemans",userDAO.findUser(id).getUsername());
     }
+    @Test
+    public void userNotFound() {
+
+        assertNull(userDAO.findUser("dezeuserbestaannietenkandusnietgevondenworden"));
+
+    }
 }

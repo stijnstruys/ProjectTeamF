@@ -1,13 +1,22 @@
 package be.kdg.teamf.service;
 
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.TripCategorie;
+import be.kdg.teamf.model.User;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
+import org.springframework.ui.ModelMap;
 
-import static junit.framework.Assert.assertTrue;
-import static org.junit.Assert.assertSame;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
+import static junit.framework.Assert.*;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,17 +28,139 @@ import static org.junit.Assert.assertSame;
 
 @ContextConfiguration("classpath:spring-servlet.xml")
 public class TestTripService extends AbstractTransactionalJUnit4SpringContextTests {
-
+    @Autowired
+    private SimpleMailMessage message;
     @Autowired
     protected TripService tripService;
 
     @Test
-    public void testSearchTrips() throws Exception {
+    public void testSearchTrip() {
 
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
         tripService.addTrip(trip);
-        assertTrue("User not found", tripService.searchTrips("Jeroen").contains(trip));
+        assertTrue("Trip not found", tripService.searchTrips("Jeroen").contains(trip));
+
+    }
+    @Test
+    public void testUpdateTrip()  {
+
+        Trip trip = new Trip();
+        trip.setTripName("tripJeroen123");
+        tripService.addTrip(trip);
+        trip.setTripName("trip321");
+        tripService.updateTrip(trip);
+        assertTrue("Trip not found", tripService.searchTrips("trip").contains(trip));
+
+    }
+    @Test
+    public void testDeleteTrip()  {
+
+        Trip trip = new Trip();
+        trip.setTripName("tripJeroen123");
+        tripService.addTrip(trip);
+        tripService.deleteTrip(trip.getTripId());
+        assertFalse("Trip not found", tripService.searchTrips("tripJeroen123").contains(trip));
+
+    }
+
+    @Test
+    public void testSendMail(){
+
+        ModelMap mailModel = new ModelMap();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        mailModel.addAttribute("title", "Trip update");
+        mailModel.addAttribute("subtitle1", "Message from organiser");
+        mailModel.addAttribute("message", "testmessage");
+        mailModel.addAttribute("subtitle2", "The following trip changes occured");
+        mailModel.addAttribute("text", "testtext");
+        mailModel.addAttribute("date", format.format(new Date()));
+        SimpleMailMessage msg = new SimpleMailMessage(message);
+        msg.setTo("kdgteamf@gmail.com");
+        try{
+            tripService.sendInvite(mailModel, msg);
+            tripService.sendMail(mailModel, msg);
+        }
+        catch (Exception e){
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void testSearchTripsCategorie(){
+        Trip trip = new Trip();
+        ArrayList<TripCategorie> tcs = new ArrayList<>();
+        TripCategorie tc = new TripCategorie();
+        tc.setTrip(trip);
+        tc.setTripCategorieName("test");
+
+        tcs.add(tc);
+        trip.setTripCategorieen(tcs);
+        trip.setTripName("tripJeroen123");
+
+        tripService.addTrip(trip);
+        assertTrue("Trip not found", tripService.searchTripsCategories("test").contains(trip));
+
+    }
+    @Test
+    public void testListTrip(){
+        Trip trip = new Trip();
+        trip.setTripName("tripJeroen123");
+        ArrayList<Trip> trips = new ArrayList<>();
+        trips.add(trip);
+        tripService.addTrip(trip);
+        assertEquals("Trips not found",trips.size() , tripService.listTrips().size());
+
+    }
+    @Test
+    public void testOwnership(){
+        User u1 = new User();
+        User u2 = new User();
+
+        u1.setUserID(1);
+        u2.setUserID(2);
+        Trip trip = new Trip();
+        trip.setTripName("tripJeroen123");
+        trip.setOrganiser(u1);
+
+        tripService.addTrip(trip);
+        assertTrue("Not owner", tripService.checkOwnership(trip,u1));
+        assertFalse("owner", tripService.checkOwnership(trip, u2));
+
+    }
+    @Test
+    public void testFindTrip(){
+
+        Trip trip = new Trip();
+        trip.setTripName("tripJeroen123");
+        ArrayList<String>tripnames = new ArrayList<>();
+        tripnames.add("tripJeroen123");
+        tripService.addTrip(trip);
+        assertEquals("Not owner", tripnames, tripService.getTripNames());
+
+    }
+    @Test
+    public void testListUserTrip(){
+        User u = new User();
+        u.setUserID(1);
+        Trip trip = new Trip();
+        trip.setOrganiser(u);
+        trip.setTripName("tripJeroen123");
+        ArrayList<Trip>trips = new ArrayList<>();
+        trips.add(trip);
+        tripService.addTrip(trip);
+        assertEquals("Not owner",trips ,tripService.listUserTrips(u.getUserID()));
+
+    }
+    @Test
+    public void testFindTripID()  {
+
+        Trip trip = new Trip();
+        trip.setTripName("tripJeroen123");
+        trip.setTripId(1);
+        tripService.addTrip(trip);
+
+        assertEquals("Trip not found",trip, tripService.findTrip(trip.getTripId()));
 
     }
 }

@@ -13,7 +13,7 @@ Time: 13:31
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html class="no-js" xmlns:fb="http://ogp.me/ns/fb#"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -38,7 +38,6 @@ Time: 13:31
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.Home"/></h2>
-
         <section class="homeSection">
             <section class="homeSectionLeft"><section class="homeSectionText"><p></br>Wil je een trip snel en makkelijk organiseren?</br>
                 Of ben je
@@ -86,6 +85,8 @@ Time: 13:31
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/FBLogin.js"></script>
+<script src="http://connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393" type="text/javascript"></script>
 
 </body>
 </html>

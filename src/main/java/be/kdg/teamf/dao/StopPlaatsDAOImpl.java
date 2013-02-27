@@ -53,4 +53,9 @@ public class StopPlaatsDAOImpl implements StopPlaatsDAO {
         q.setInteger("id", tripID);
         return q.list();
     }
+
+    @Override
+    public List<StopPlaats> listStopPlaatsen() {
+        return sessionFactory.getCurrentSession().createQuery("from StopPlaats ").list();
+    }
 }
