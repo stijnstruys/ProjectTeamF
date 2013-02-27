@@ -51,7 +51,8 @@ public class Trip {
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
-    @Column(name="Equipment")
+    @Column(name = "Equipment")
+
     private Collection<String> equipment;
 
     @Column(name="visible")
@@ -65,6 +66,12 @@ public class Trip {
 
     @Column(name = "BGCOLOR")
     private String bgcolor = "#1C263C";
+
+    @Column(name = "SHOWMAP")
+    private Boolean showMap = true;
+
+    @Column(name = "TRAVELTYPE")
+    private String travelType;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -113,7 +120,7 @@ public class Trip {
         this.startDate = startDate;
     }
 
-    public Date getEndDate()  {
+    public Date getEndDate() {
 
         return endDate;
     }
@@ -225,4 +232,20 @@ public class Trip {
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
+
+    public Boolean getShowMap() {
+          return showMap;
+      }
+
+      public void setShowMap(Boolean showMap) {
+          this.showMap = showMap;
+      }
+
+      public String getTravelType() {
+          return travelType;
+      }
+
+      public void setTravelType(String travelType) {
+          this.travelType = travelType;
+      }
 }

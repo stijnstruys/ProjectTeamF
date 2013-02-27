@@ -28,16 +28,6 @@ body {
     margin-left: 7.5%;
 }
 
-.url {
-    color: #0088cc;
-    text-decoration: none;
-    cursor: pointer;
-}
-.url:hover {
-    color: #005580;
-    text-decoration: underline;
-}
-
 /* validation */
 #validation_failed {
     visibility: hidden;
@@ -140,9 +130,6 @@ label {
 }
 
 /* trips */
-
-
-
 .trip_list {
     list-style: none;
 }
@@ -202,6 +189,11 @@ a.trip_name:hover {
     float: right;
 }
 
+/* trip add */
+
+.add_trip_div {
+    visibility: hidden;
+}
 /* profile */
 
 .hidethis {
@@ -398,8 +390,9 @@ a.trip_name:hover {
 /* maps */
 
 #map_canvas {
-    width: 570px;
-    height: 450px;
+    margin-left: 20px;
+    width: 510px;
+    height: 400px;
 }
 
 #map_canvas2 {
@@ -409,13 +402,13 @@ a.trip_name:hover {
 
 #links {
     float: left;
-    width: 40%;
+    width: 35%;
     /*background-color: green; */
 }
 
 #rechts {
     float: left;
-    width: 60%;
+    width: 65%;
    /* background-color: blue; */
 }
 
@@ -434,7 +427,7 @@ a.trip_name:hover {
 #onder {
     clear: both;
 }
-
+/*
 #searchKnop {
     background-color: #D4D4D4;
     color: #1C263C;
@@ -447,7 +440,7 @@ a.trip_name:hover {
     padding-right: 2em;
     margin-bottom: 0.8em;
     margin-left: 0.25em;
-}
+}  */
 
 #mapTopTable {
     width: 70%;
@@ -456,4 +449,25 @@ a.trip_name:hover {
 .mapTopTableCol1 {
     width: 15%;
 }
-�
+
+#mapRelease {
+    margin-left: 5em;
+    border-style: solid;
+    border-color: #D4D4D4;
+    border-width: 0.1em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.mapManageTable {
+    width: 100%;
+}
+
+.mapManageTableRight {
+    width:30%;
+}
+
+.mapIcons {
+    margin-bottom: 1em;
+}
+

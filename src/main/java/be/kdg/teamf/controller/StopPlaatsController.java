@@ -32,23 +32,6 @@ public class StopPlaatsController
     @Autowired
     private TripService tripService;
 
-   /* @RequestMapping(value = "/StopPlaats/{tripID}",method = RequestMethod.GET)
-    public ModelAndView stopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
-
-        User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin);
-
-        StopPlaats s  = new StopPlaats();
-        Trip t = tripService.findTrip(tripID);
-
-        request.setAttribute("stopPlaats",s);
-
-        request.setAttribute("trip", t);
-        ModelAndView model = new ModelAndView("StopPlaats/stopPlaats");
-
-        return model;
-    }        */
-
     @RequestMapping(value = "/StopPlaats/{tripID}.html",method = RequestMethod.GET)
         public ModelAndView manageStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
 
@@ -56,7 +39,6 @@ public class StopPlaatsController
             Trip t = tripService.findTrip(tripID);
 
             request.setAttribute("stopPlaats",s);
-
             request.setAttribute("trip", t);
             ModelAndView model = new ModelAndView("StopPlaats/ManageStopPlaatsen");
 
@@ -114,6 +96,15 @@ public class StopPlaatsController
         s.setVrijgegeven(true);
         stopPlaatsService.updateStopPlaats(s);
         return "redirect:/user/admincp-" + s.getTrip().getTripId() + ".html";
-
     }
+
+    @RequestMapping(value = "StopPlaats/updateTrip", method = RequestMethod.POST)
+        public String updateTrip(@ModelAttribute("trip") Trip trip, BindingResult result) {
+            Trip t = tripService.findTrip(trip.getTripId());
+            t.setShowMap(trip.getShowMap());
+            t.setTravelType(trip.getTravelType());
+            tripService.updateTrip(t);
+
+            return "redirect:/StopPlaats/" + t.getTripId() + ".html";
+        }
 }

@@ -50,8 +50,10 @@
                                                 <div id="header_nav_login_btn">
                                                     <input name="submit" type="submit" value="Log in" class="btn"/>
                                                     <input name="reset" type="reset" class="btn" value="Reset"/>
+                                                    <fb:login-button autologoutlink='true'perms='email,user_birthday,status_update,publish_stream' id="fblogin"></fb:login-button>
                                                 </div>
                                             </div>
+
                                         </form>
                                     </ul>
                                 </li>
@@ -108,7 +110,7 @@
                             <td class="flagOptions">
                                 <a href="?lang=fr">
                                     <img src="../img/Languages/French.GIF" alt="Smiley face" class="flagsImg"/>
-                                    <label class="flagLink">Français</label>
+                                    <label class="flagLink">Franï¿½ais</label>
                                 </a>
                             </td>
                             <td class="flagOptions">

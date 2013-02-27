@@ -1,48 +1,65 @@
-/**
- * Created with IntelliJ IDEA.
- * User: Stijn
- * Date: 21-2-13
- * Time: 13:56
- * To change this template use File | Settings | File Templates.
- */
-window.fbAsyncInit = function() {
-    FB.init({
-        appId      : 'YOUR_APP_ID', // App ID
-        channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
-        status     : true, // check login status
-        cookie     : true, // enable cookies to allow the server to access the session
-        xfbml      : true  // parse XFBML
+$(document).ready(function () {
+    function postFunction(type, username, typeUsername, firstname, lastname, id){
+        $.post(location.protocol + '//' + location.host + '/ProjectTeamF-1.0/user/addSocial.html', {
+            type:type,
+            userName:username,
+            typeUserName:typeUsername,
+            firstName:firstname,
+            lastName:lastname,
+            id:id
+        }, function (data) {
+
+            window.location = "http://localhost:8080/ProjectTeamF-1.0/" + data;
+        });
+    }
+
+  /*  window.fbAsyncInit = function () {
+        FB.init({appId:'534896926530393', status:true, cookie:true, xfbml:true});
+    };*/
+
+    FB.Event.subscribe('auth.login', function (response) {
+        login();
     });
 
-    // Additional init code here
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-            // connected
-        } else if (response.status === 'not_authorized') {
-            // not_authorized
-            login();
-        } else {
-            // not_logged_in
-            login();
-        }
+    FB.Event.subscribe('auth.logout', function (response) {
+        logout();
     });
-};
 
-function login() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-            // connected
-        } else {
-            // cancelled
-        }
-    });
-}
+    function login() {
+        var fbFirstName;
+        var fbLastName;
+        var fbId;
+        var fbUserName;
+        var fbScreenName;
+        alert("test");
 
-// Load the SDK Asynchronously
-(function(d){
-    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement('script'); js.id = id; js.async = true;
-    js.src = "//connect.facebook.net/en_US/all.js";
-    ref.parentNode.insertBefore(js, ref);
-}(document));
+        FB.api('/me', function (response) {
+            if (response.username == null) {
+                fbScreenName = response.first_name + response.last_name;
+                fbUserName = response.first_name + response.last_name;
+            } else {
+                fbScreenName = response.username;
+                fbUserName = response.username;
+            }
+            fbFirstName = response.first_name;
+            fbLastName = response.last_name;
+            fbId = response.id;
+            document.getElementsByName("j_username").value = fbUserName;
+            postFunction('Facebook',fbUserName, fbScreenName, fbFirstName, fbLastName, fbId);
+        });
+
+
+    }
+
+    function logout() {
+
+    }
+})
+
+/*(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));*/
