@@ -6,7 +6,13 @@
  * To change this template use File | Settings | File Templates.
  */
 // Additional JS functions here
-window.fbAsyncInit = function() {
+$(document).ready(function () {
+    $("#user_importfb").click(function() {
+          importD();
+    });
+});
+
+function importD() {
     FB.init({
         appId      : '534896926530393', // App ID
         channelUrl : '//http://localhost:8080/channel.html', // Channel File
