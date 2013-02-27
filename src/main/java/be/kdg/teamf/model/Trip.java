@@ -70,6 +70,9 @@ public class Trip {
     @Column(name = "SHOWMAP")
     private Boolean showMap = true;
 
+    @Column(name = "SHOWROUTE")
+    private Boolean showRoute = true;
+
     @Column(name = "TRAVELTYPE")
     private String travelType;
 
@@ -248,4 +251,12 @@ public class Trip {
       public void setTravelType(String travelType) {
           this.travelType = travelType;
       }
+
+    public Boolean getShowRoute() {
+        return showRoute;
+    }
+
+    public void setShowRoute(Boolean showRoute) {
+        this.showRoute = showRoute;
+    }
 }

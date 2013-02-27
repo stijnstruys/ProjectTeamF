@@ -36,6 +36,9 @@ $(document).ready(function () {
             locations.push(this.value);
             //alert( this.value );
         });
+
+        var input = $("#address");
+
     }
 
     //bij klik op knop of enter eerst kijken of plaats bestaat

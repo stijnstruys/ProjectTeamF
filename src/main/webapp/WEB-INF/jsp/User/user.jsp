@@ -105,7 +105,7 @@
     </form:form>
 
     <button class="btn" type="button" id="user_importfb">Import data from Facebook</button>
-
+    <%--
     <h3><spring:message code="label.Users"/></h3>
 
     <c:if test="${!empty userList}">
@@ -140,7 +140,7 @@
 
             </c:forEach>
         </table>
-    </c:if>
+    </c:if>   --%>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 

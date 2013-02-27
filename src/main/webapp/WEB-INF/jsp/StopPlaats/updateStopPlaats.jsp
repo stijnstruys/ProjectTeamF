@@ -51,6 +51,20 @@
                         </td>
                     </tr>
                     <tr>
+                        <td><form:label class="lbl" path="naam"><spring:message
+                                code="label.StoppingPointName"/></form:label></td>
+                    </tr>
+                    <tr>
+                        <td><form:input path="naam" id="spNaam"/></td>
+                    </tr>
+                    <tr>
+                        <td><form:label class="lbl" path="type"><spring:message
+                                code="label.StoppingPointType"/></form:label></td>
+                    </tr>
+                    <tr>
+                        <td><form:input path="type" id="sptype"/></td>
+                    </tr>
+                    <tr>
                         <td><form:label class="lbl" path="informatie"><spring:message
                                 code="label.information"/></form:label></td>
                     </tr>
@@ -60,9 +74,9 @@
                     <tr>
                         <td><form:label class="lbl" path="vrijgegeven"><spring:message
                                 code="label.Released"/></form:label>
-                        <label class="checkbox">
-                            <form:checkbox path="vrijgegeven"/>
-                        </label></td>
+                            <label class="checkbox">
+                                <form:checkbox path="vrijgegeven"/>
+                            </label></td>
                     </tr>
                     <td colspan="2">
                         <input type="button" class="btn" id="updateStopplaatsBtn"
@@ -70,6 +84,7 @@
                     </td>
                     </tr>
                 </table>
+
             </form:form>
         </section>
     </section>

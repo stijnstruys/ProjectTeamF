@@ -81,7 +81,6 @@ $(document).ready(function () {
                 });
 
                 google.maps.event.addListener(marker, 'dragend', function () {
-                    alert(marker.getPosition());
                     geocodePosition(marker.getPosition());
                 });
 
@@ -105,7 +104,7 @@ $(document).ready(function () {
     }
 
     function updateMarkerAddress(str) {
-        $("#address").innerHTML = str;
+        $("#address").val(str);// = str;
     }
 
 });

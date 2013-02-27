@@ -103,6 +103,7 @@ public class StopPlaatsController
             Trip t = tripService.findTrip(trip.getTripId());
             t.setShowMap(trip.getShowMap());
             t.setTravelType(trip.getTravelType());
+            t.setShowRoute(trip.getShowRoute());
             tripService.updateTrip(t);
 
             return "redirect:/StopPlaats/" + t.getTripId() + ".html";

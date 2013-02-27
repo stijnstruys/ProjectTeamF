@@ -13,19 +13,24 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name="T_STOPPLAATS")
+@Table(name = "T_STOPPLAATS")
 public class StopPlaats {
 
     @Id
-    @Column(name="StopPlaatsID")
+    @Column(name = "StopPlaatsID")
     @GeneratedValue
-    private  int stopPlaatsID;
-    @Column(name="Adres")
+    private int stopPlaatsID;
+    @Column(name = "Adres")
     private String adres;
-    @Column(name="Vrijgegeven")
+    @Column(name = "Vrijgegeven")
     private boolean vrijgegeven = true;
-    @Column(name="Informatie")
+    @Column(name = "Informatie")
     private String informatie;
+    @Column(name = "Type")
+    private String type;
+
+    @Column(name = "Naam")
+    private String naam;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -71,5 +76,21 @@ public class StopPlaats {
 
     public void setInformatie(String informatie) {
         this.informatie = informatie;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public void setNaam(String naam) {
+        naam = naam;
     }
 }

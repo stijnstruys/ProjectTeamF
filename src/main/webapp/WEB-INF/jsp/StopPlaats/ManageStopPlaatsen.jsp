@@ -81,6 +81,11 @@
                                             code="label.showMap"/></form:label></td>
                                     <td><form:checkbox class="checkbox" path="showMap"/></td>
                                 </tr>
+                                <tr>
+                                    <td><form:label class="lbl" path="showRoute"><spring:message
+                                            code="label.showRoute"/></form:label></td>
+                                    <td><form:checkbox class="checkbox" path="showRoute"/></td>
+                                </tr>
                                 <td>
                                     <input type="submit" class="btn"
                                            value="<spring:message code="label.SaveSettings"/>"/>
