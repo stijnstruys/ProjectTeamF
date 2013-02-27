@@ -24,5 +24,6 @@ public interface TripDAO {
     public List<String> getTripNames();
 
 
+    List<Trip> searchTripsCategories(String searchInput);
 
 }

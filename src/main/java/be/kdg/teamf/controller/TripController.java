@@ -58,6 +58,7 @@ public class TripController {
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripSearchList", tripService.searchTrips(searchInput));
+        request.setAttribute("tripSearchCategories", tripService.searchTripsCategories(searchInput));
         ModelAndView model = new ModelAndView("Trip/tripSearchResult");
         return model;
     }

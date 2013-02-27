@@ -131,4 +131,12 @@ public class TripServiceImpl implements TripService {
         });
     }
 
+    @Override
+    @Transactional
+    public List<Trip> searchTripsCategories(String searchInput) {
+
+        return tripDAO.searchTripsCategories(searchInput);
+
+    }
+
 }

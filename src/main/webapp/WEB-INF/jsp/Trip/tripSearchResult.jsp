@@ -39,6 +39,7 @@
             <h2><spring:message code="label.TripSearchResult"/></h2>
 
             <c:if  test="${!empty tripSearchList}">
+                <h2>Gevonden op naam  <%= request.getParameter("searchInput")%></h2>
                 <table class="data">
                     <tr>
                         <th><spring:message code="label.tripName"/></th>
@@ -59,8 +60,34 @@
                             <td>${trip.organiser.firstName} ${trip.organiser.lastName}</td>
                         </tr>
                     </c:forEach>
+
                 </table>
             </c:if>
+                <c:if  test="${!empty tripSearchCategories}">
+                    <h2>Gevonden op categorie <%= request.getParameter("searchInput") %></h2>
+                    <table class="data">
+                        <tr>
+                            <th><spring:message code="label.tripName"/></th>
+                            <th><spring:message code="label.tripDescription"/></th>
+                            <th><spring:message code="label.startDate"/></th>
+                            <th><spring:message code="label.endDate"/></th>
+                            <th><spring:message code="label.startLocation"/></th>
+                            <th><spring:message code="label.organiser"/></th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <c:forEach items="${tripSearchCategories}" var="trip">
+                            <tr>
+                                <td><a href="../trip/${trip.tripId}.html">${trip.tripName}</a></td>
+                                <td>${trip.tripDescription}</td>
+                                <td>${trip.startDate}</td>
+                                <td>${trip.endDate}</td>
+                                <td>${trip.startLocation}</td>
+                                <td>${trip.organiser.firstName} ${trip.organiser.lastName}</td>
+                            </tr>
+                        </c:forEach>
+
+                    </table>
+                </c:if>
             </section>
         </section>
     <jsp:include page="../General/footer.jsp"/>

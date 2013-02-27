@@ -38,4 +38,7 @@ public interface TripService {
 
 
     void sendInvite(ModelMap mailModel, SimpleMailMessage msg);
+
+
+    List<Trip> searchTripsCategories(String searchInput);
 }
