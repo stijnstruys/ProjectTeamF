@@ -1,7 +1,6 @@
 package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.Trip;
-import be.kdg.teamf.model.User;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +65,15 @@ public class TripDAOImpl implements TripDAO {
     @Override
     public List<String> getTripNames() {
         return sessionFactory.getCurrentSession().createQuery("select tripName from Trip").list();
+    }
+
+    @Override
+    public List<Trip> searchTripsCategories(String searchInput) {
+
+        String si = "%" + searchInput + "%";
+        Query q = sessionFactory.getCurrentSession().createQuery("select t from Trip t , TripCategorie tc where tc.tripCategorieName like :si and tc.trip.tripId = t.tripId");
+        q.setString("si", si);
+        return q.list();
     }
 
 

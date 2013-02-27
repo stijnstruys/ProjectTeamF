@@ -28,6 +28,16 @@ body {
     margin-left: 7.5%;
 }
 
+.url {
+    color: #0088cc;
+    text-decoration: none;
+    cursor: pointer;
+}
+.url:hover {
+    color: #005580;
+    text-decoration: underline;
+}
+
 /* validation */
 #validation_failed {
     visibility: hidden;

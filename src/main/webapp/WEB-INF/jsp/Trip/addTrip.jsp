@@ -46,12 +46,9 @@
         <div class="control-group">
             <form:label class="control-label" path="tripType"><spring:message code="label.tripType"/></form:label>
             <div class="controls">
-
                 <form:select path="tripType">
-                    <form:options items="${tripTypeList}" itemValue="tripTypeName" itemLabel="tripTypeName"/>
+                    <form:options items="${tripTypeList}" itemValue="tripTypeId" itemLabel="tripTypeName"/>
                 </form:select>
-
-
             </div>
         </div>
 
@@ -101,7 +98,7 @@
             <form:label class="control-label" path="equipment"><spring:message code="label.equipment"/></form:label>
             <div class="controls">
                 <input type="text" id="equipment-input"/>
-                <span class="help-inline"><a href="#" id="add_equipment">Add</a></span>
+                <span class="help-inline url"id="add_equipment">Add</span>
             </div>
         </div>
 
@@ -109,7 +106,7 @@
             <div class="controls">
                 <form:select multiple="multiple" path="equipment" id="trip_equipment">
                 </form:select>
-                <span class="help-inline"><a href="#" id="remove_equipment">Remove selected</a></span>
+                <span class="help-inline url" id="remove_equipment">Remove selected</span>
             </div>
         </div>
 
