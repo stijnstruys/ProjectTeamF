@@ -1,5 +1,4 @@
-var button = document.getElementById("fblogin") ;
-button.onclick(function () {
+$(document).ready(function () {
     function postFunction(type, username, typeUsername, firstname, lastname, id){
         $.post(location.protocol + '//' + location.host + '/ProjectTeamF-1.0/user/addSocial.html', {
             type:type,
@@ -14,9 +13,9 @@ button.onclick(function () {
         });
     }
 
-    window.fbAsyncInit = function () {
+  /*  window.fbAsyncInit = function () {
         FB.init({appId:'534896926530393', status:true, cookie:true, xfbml:true});
-    };
+    };*/
 
     FB.Event.subscribe('auth.login', function (response) {
         login();
