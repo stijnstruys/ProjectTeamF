@@ -153,10 +153,13 @@ $(document).ready(function () {
 function addTrip() {
     $("#add_equipment").click(function() {
         var equipmentToAdd = $("#equipment-input").val();
-        if(equipmentToAdd.len)
-        var o = new Option(equipmentToAdd, equipmentToAdd);
-        $("#trip_equipment").append(o);
-        $("#equipment-input").val("");
+
+        if(equipmentToAdd.length > 0) {
+            var o = new Option(equipmentToAdd, equipmentToAdd);
+            $("#trip_equipment").append(o);
+            $("#equipment-input").val("");
+        }
+
     });
 
     $("#remove_equipment").click(function() {
