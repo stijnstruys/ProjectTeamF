@@ -63,7 +63,7 @@ public class StopPlaatsController
         return "redirect:/StopPlaats/" + s.getTrip().getTripId() + ".html";
 
     }
-    @RequestMapping("/StopPlaats/update/{stopPlaatsID}")
+    @RequestMapping("/StopPlaats/update-{stopPlaatsID}")
     public ModelAndView updateStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID) throws Exception {
 
        /* User userlogin  = new User();
@@ -76,7 +76,7 @@ public class StopPlaatsController
         return model;
 
     }
-    @RequestMapping(value = "/StopPlaats/update/updateStopPlaats/{tripID}", method = RequestMethod.POST)
+    @RequestMapping(value = "/StopPlaats/updateStopplaats/{tripID}", method = RequestMethod.POST)
     public String updateStopPlaats(@ModelAttribute("stopPlaats")
                                        StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {
 
@@ -84,7 +84,7 @@ public class StopPlaatsController
         stopPlaats.setTrip(t);
         stopPlaatsService.updateStopPlaats(stopPlaats);
 
-        return "redirect:/user/admincp-" + t.getTripId() + ".html";
+        return "redirect:/StopPlaats/" + t.getTripId() + ".html";
 
     }
     @RequestMapping(value = "/StopPlaats/release/{stopplaatsId}", method = RequestMethod.GET)

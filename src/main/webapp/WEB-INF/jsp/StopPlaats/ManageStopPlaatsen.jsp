@@ -32,10 +32,13 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.ManageStoppingPoints"/></h2>
+
+        <div id="validation_failed2"><spring:message code="label.badMapEntry"/></div>
         <table class="mapManageTable">
             <tr>
                 <td>
-                    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="addStopPlaats" onsubmit="false">
+                    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats"
+                               id="addStopPlaats" onsubmit="false">
                         <table>
                             <tr>
                                 <td><form:label class="lbl" path="adres"><spring:message
@@ -63,10 +66,14 @@
                                     <td><form:label class="lbl" path="travelType"><spring:message
                                             code="label.ModeOfTravel"/></form:label></td>
                                     <td><form:select path="travelType" id="mode">
-                                        <form:option value="DRIVING">Driving</form:option>
-                                        <form:option value="WALKING">Walking</form:option>
-                                        <form:option value="BICYCLING">Bicycling</form:option>
-                                        <form:option value="TRANSIT">Transit</form:option>
+                                        <form:option value="DRIVING"><spring:message
+                                                code="label.Driving"/></form:option>
+                                        <form:option value="WALKING"><spring:message
+                                                code="label.Walking"/></form:option>
+                                        <form:option value="BICYCLING"><spring:message
+                                                code="label.Bicycling"/></form:option>
+                                        <form:option value="TRANSIT"><spring:message
+                                                code="label.Transit"/></form:option>
                                     </form:select></td>
                                 </tr>
                                 <tr>
@@ -86,38 +93,39 @@
             </tr>
         </table>
         <section class="mapManageMiddle">
-        <section id="links">
-            <table>
-                <tr id="mapsRow0">
-                    <td><label><spring:message code="label.LocationName"/></label></td>
-                </tr>
-                <c:if test="${!empty trip.stopPlaatsen}">
-                    <table class="data">
-                        <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
-                            <table>
-                                <tr>
-                                    <td><input type="text" readonly="true" id="adres" class="addresses" value="${stopPlaatsen.adres}"/></td>
-                                    <td>
-                                        <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
-                                            <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"
-                                                 class="mapIcons"/></a>
-                                    </td>
-                                    <td>
-                                        <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
-                                            <img src="../img/icons/Actions-edit-delete-icon.png" alt="Smiley face"
-                                                 class="mapIcons"/></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </c:forEach>
-                    </table>
-                </c:if>
-            </table>
+            <section id="links">
+                <table>
+                    <tr id="mapsRow0">
+                        <td><label><spring:message code="label.LocationName"/></label></td>
+                    </tr>
+                    <c:if test="${!empty trip.stopPlaatsen}">
+                        <table class="data">
+                            <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
+                                <table>
+                                    <tr>
+                                        <td><input type="text" readonly="true" id="adres" class="addresses"
+                                                   value="${stopPlaatsen.adres}"/></td>
+                                        <td>
+                                            <a href="/ProjectTeamF-1.0/StopPlaats/update-${stopPlaatsen.stopPlaatsID}.html">
+                                                <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"
+                                                     class="mapIcons"/></a>
+                                        </td>
+                                        <td>
+                                            <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
+                                                <img src="../img/icons/Actions-edit-delete-icon.png" alt="Smiley face"
+                                                     class="mapIcons"/></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </c:forEach>
+                        </table>
+                    </c:if>
+                </table>
+            </section>
         </section>
-    </section>
-    <section id="rechts">
-        <div id="map_canvas"></div>
-    </section>
+        <section id="rechts">
+            <div id="map_canvas"></div>
+        </section>
     </section>
     <section id="onder"></section>
 </section>

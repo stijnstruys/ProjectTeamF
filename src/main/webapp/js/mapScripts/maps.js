@@ -1,8 +1,14 @@
+/**
+ * Created with IntelliJ IDEA.
+ * User: Jeroen Verbunt
+ * Date: 27/02/13
+ * Time: 16:38
+ * To change this template use File | Settings | File Templates.
+ */
 $(document).ready(function () {
 
     var map;
     var locations = new Array();
-    var markerArray = new Array();
 
     var directionsService = new google.maps.DirectionsService();
     initialize();
@@ -32,6 +38,7 @@ $(document).ready(function () {
         });
     }
 
+    //bij klik op knop of enter eerst kijken of plaats bestaat
     $("#addStopPlaats").bind("keypress", function (e) {
         if (e.keyCode == 13) {
            checkExistence();
@@ -44,40 +51,39 @@ $(document).ready(function () {
     });
 
     function checkExistence (){
+        $("#validation_failed2").hide();
         var geocoder = new google.maps.Geocoder();
         var addressInput = $("#address").val();
         geocoder.geocode({'address': addressInput}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                alert('goed adres');
+                //bestaande plaats
                 $("#addStopPlaats").submit();
             }
             else {
-                alert('slecht adres');
+                //onbestaande plaats
+                $("#validation_failed2").show();
             }
         });
     }
 
+    //bereken route
     function doCalc() {
-        //alert(locations[0]);
-        //alert(locations[locations.length-1]);
-
         var selectedMode = $("#mode").val();
         var waypts = [];
+        //alle punten tussen start en einde
         for (var i = 1; i < (locations.length - 1); i++) {
-            // alert();
             waypts.push({
-                location: locations[i]//,
-                // stopover:true
+                location: locations[i]
             });
-
         }
-        //alert(selectedMode);
+
         var request = {
             origin: locations[0],
             destination: locations[locations.length - 1],
             waypoints: waypts,
             travelMode: google.maps.TravelMode[selectedMode]
         };
+
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
