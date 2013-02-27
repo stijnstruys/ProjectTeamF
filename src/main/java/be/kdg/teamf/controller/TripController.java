@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -67,8 +68,22 @@ public class TripController {
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
+
+       /*Map triptypes = new HashMap();
+        for(TripType tt : tripTypeService.listTripTypes()) {
+            triptypes.put(tt.getTripTypeId(), tt.getTripTypeName());
+        }
+        request.setAttribute("tripTypeList", triptypes);*/
         ModelAndView model = new ModelAndView("Trip/addTrip");
         return model;
+    }
+    @RequestMapping(value = "trip/add", method = RequestMethod.POST)
+    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, @RequestParam("tripTypeSelect") String triptype) {
+        trip.setTripType( tripTypeService.findTripType( Integer.valueOf(triptype)) );
+        trip.setOrganiser( userService.getCurrentUser() );
+        tripService.addTrip(trip);
+
+        return "redirect:/trip/tripOverzicht.html";
     }
 
     @RequestMapping("/trip/{tripID}")
@@ -93,15 +108,7 @@ public class TripController {
         return model;
     }
 
-    @RequestMapping(value = "trip/add", method = RequestMethod.POST)
-    public String addTrip(@ModelAttribute("trip")
-                          Trip trip, BindingResult result) {
 
-        trip.setOrganiser( userService.getCurrentUser() );
-        tripService.addTrip(trip);
-
-        return "redirect:/trip/tripOverzicht.html";
-    }
 
     @RequestMapping("/trip/join/{tripID}")
     public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {

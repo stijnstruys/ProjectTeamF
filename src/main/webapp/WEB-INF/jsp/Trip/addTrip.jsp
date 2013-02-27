@@ -46,9 +46,17 @@
         <div class="control-group">
             <form:label class="control-label" path="tripType"><spring:message code="label.tripType"/></form:label>
             <div class="controls">
-                <form:select path="tripType">
-                    <form:options items="${tripTypeList}" itemValue="tripTypeId" itemLabel="tripTypeName"/>
-                </form:select>
+
+                <%--<form:select path="tripType">
+                    <form:options items="${tripTypeList}" itemLabel="tripTypeName"/>
+                </form:select>--%>
+                <select name="tripTypeSelect" id="tripTypeSelect">
+                    <c:forEach var="item" items="${tripTypeList}">
+
+                            <OPTION value="${item.tripTypeId}">${item.tripTypeName}</OPTION>
+
+                    </c:forEach>
+                </select>
             </div>
         </div>
 

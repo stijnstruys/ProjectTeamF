@@ -48,4 +48,9 @@ public class TripTypeServiceImpl implements TripTypeService {
         return tripTypeDAO.findTripType(TripTypeID);
     }
 
+    @Transactional
+    public TripType findTripType(int tripTypeId) {
+        return tripTypeDAO.findTripType(tripTypeId);
+    }
+
 }
