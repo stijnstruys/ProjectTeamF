@@ -2,6 +2,8 @@ package be.kdg.teamf.service;
 
 import be.kdg.teamf.model.TripCategorie;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -14,6 +16,6 @@ public interface TripCategorieService {
     public void addTripCategorie(TripCategorie tripCategorie);
     public void updateTripCategorie(TripCategorie tripCategorie);
     public void removeTripCategorie(TripCategorie tripCategorie);
-    public TripCategorie getTripCategories(int tripID);
+    public List<TripCategorie> getTripCategories(int tripID);
     public TripCategorie findTripCategorie(int tripCategorieId);
 }

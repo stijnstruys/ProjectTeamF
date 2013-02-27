@@ -13,9 +13,11 @@ import java.util.List;
  */
 
 public interface StopPlaatsService {
-    public  void addStopPlaats(StopPlaats stopPlaats);
+    public void addStopPlaats(StopPlaats stopPlaats);
     public void updateStopPlaats (StopPlaats stopPlaats);
     public void deleteStopPlaats (StopPlaats stopPlaats);
-    StopPlaats findStopPlaats(int stopPlaatsID);
-    public List<StopPlaats> getStopplaatsenByTrip(int tripID);
+    public StopPlaats findStopPlaats(int stopPlaatsID);
+    public List<StopPlaats> listStopPlaatsen();
+
+    List<StopPlaats> getStopPlaatsenByTripId(int tripId);
 }

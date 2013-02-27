@@ -20,4 +20,8 @@ public interface StopPlaatsDAO {
     StopPlaats findStopPlaats(int stopPlaatsID);
     public List<StopPlaats> getStopplaatsenByTrip(int tripID);
 
+
+    List<StopPlaats> listStopPlaatsen();
+
+
 }

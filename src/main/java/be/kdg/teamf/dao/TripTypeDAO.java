@@ -14,7 +14,7 @@ import java.util.List;
 public interface TripTypeDAO {
     public void addTripType(TripType tripType);
     public void updateTripType(TripType tripType);
-    public void removeTripType(int id);
     public List<TripType> listTripTypes();
     TripType findTripType(int tripTypeID);
+    void removeTripType(TripType tripType);
 }

@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
+import java.util.ArrayList;
+
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -27,9 +29,11 @@ public class TestTripTypeModel {
         tt.setTripTypeName("publiek");
         tt.setTripTypeId(1);
         tt.setTripTypeDescription("test");
-
+        tt.setTrips(new ArrayList<Trip>());
         assertEquals("Expected name: ", "publiek", tt.getTripTypeName());
         assertEquals("Expected id: ", 1, tt.getTripTypeId());
         assertEquals("Expected description: ", "test", tt.getTripTypeDescription());
+        assertEquals("Expected size: ", 0, tt.getTrips().size());
     }
+
 }

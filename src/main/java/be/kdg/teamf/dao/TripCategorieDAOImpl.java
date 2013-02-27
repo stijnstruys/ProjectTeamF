@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -38,17 +40,21 @@ public class TripCategorieDAOImpl implements TripCategorieDAO {
     }
 
     @Override
-    public TripCategorie getTripCategories(int tripID) {
+    public List<TripCategorie> getTripCategories(int tripID) {
 
         Query q = sessionFactory.getCurrentSession().createQuery("from TripCategorie where trip = :tripId");
         q.setInteger("tripId", tripID);
-        return (TripCategorie) q.list().get(0);
+        return  q.list();
     }
 
     @Override
     public TripCategorie findTripCategorie(int tripCategorieId) {
         Query q = sessionFactory.getCurrentSession().createQuery("from TripCategorie where tripCategorieId = :tripCategorieId");
         q.setInteger("tripCategorieId", tripCategorieId);
+        if(q.list().size()> 0){
         return (TripCategorie) q.list().get(0);
+        }else{
+            return null;
+        }
     }
 }

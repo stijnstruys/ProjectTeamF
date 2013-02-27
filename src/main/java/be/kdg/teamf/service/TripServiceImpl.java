@@ -78,36 +78,31 @@ public class TripServiceImpl implements TripService {
     }
 
     public void sendMail(final ModelMap model, final SimpleMailMessage msg) {
-        		mailSender.send(new MimeMessagePreparator() {
+        mailSender.send(new MimeMessagePreparator() {
 
-        			@Override
-        			public void prepare(MimeMessage mimeMessage)
-        					throws MessagingException {
-        				MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-        				message.setTo(msg.getTo());
-        				message.setFrom(msg.getFrom());
-        				message.setSubject(msg.getSubject());
+            @Override
+            public void prepare(MimeMessage mimeMessage)
+                    throws MessagingException {
+                MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+                message.setTo(msg.getTo());
+                message.setFrom(msg.getFrom());
+                message.setSubject(msg.getSubject());
 
-        				String body = VelocityEngineUtils.mergeTemplateIntoString(
-        						velocityEngine, "/template.vm", model);
-        				message.setText(body, true);
+                String body = VelocityEngineUtils.mergeTemplateIntoString(
+                        velocityEngine, "/template.vm", model);
+                message.setText(body, true);
 
-        				message.addInline("header", new ClassPathResource(
-                                "images/header.jpg"));
-        			}
-        		});
+                message.addInline("header", new ClassPathResource(
+                        "images/header.jpg"));
+            }
+        });
     }
 
     @Override
     public boolean checkOwnership(Trip t, User u) {
 
-        if( t.getOrganiser().getUserID() == u.getUserID() )
-        return true;
-        else
-        return false;
-
+        return t.getOrganiser().getUserID() == u.getUserID();
     }
-
     @Override
     public void sendInvite(final ModelMap model, final SimpleMailMessage msg) {
 

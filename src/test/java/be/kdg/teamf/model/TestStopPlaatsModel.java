@@ -29,11 +29,11 @@ public class TestStopPlaatsModel {
         s.setStopPlaatsID(1);
         s.setTrip(t);
         s.setVrijgegeven(true);
-
+         s.setInformatie("test");
         assertEquals("Expected adres: Straat 1", "Straat 1", s.getAdres());
         assertEquals("Expected stopplaats:", 1, s.getStopPlaatsID());
         assertEquals("Expected trip:", t, s.getTrip());
         assertEquals("Expected vrijgegeven:", true, s.isVrijgegeven());
-
+        assertEquals("Expected vrijgegeven:", "test", s.getInformatie());
     }
 }

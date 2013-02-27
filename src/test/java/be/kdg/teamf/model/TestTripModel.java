@@ -58,7 +58,7 @@ public class TestTripModel {
         t.setNotification("notification");
         t.setEquipment(new ArrayList<String>());
         t.setEquipment(equipment);
-
+        t.setVisible(true);
         assertEquals("Expected id: 1", 1, t.getTripId());
         assertEquals("Expected tripname: tripname", "tripname", t.getTripName());
         assertEquals("Enddate", d, t.getEndDate());
@@ -75,6 +75,7 @@ public class TestTripModel {
         assertEquals("Expected tripcategorieen:", tripCategorieList, t.getTripCategorieen());
         assertEquals("Expected notification:", "notification", t.getNotification());
         assertEquals("Expected equipment:", equipment, t.getEquipment());
+        assertEquals("Expected visible:", true, t.isVisible());
 
     }
 

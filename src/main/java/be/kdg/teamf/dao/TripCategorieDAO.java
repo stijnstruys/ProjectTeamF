@@ -2,6 +2,8 @@ package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.TripCategorie;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Jeroen
@@ -13,6 +15,6 @@ public interface TripCategorieDAO {
     public void addTripCategorie(TripCategorie tripCategorie);
     public void updateTripCategorie(TripCategorie tripCategorie);
     public void removeTripCategorie(TripCategorie tripCategorie);
-    TripCategorie getTripCategories(int tripID);
+    List<TripCategorie> getTripCategories(int tripID);
     TripCategorie findTripCategorie(int tripCategorieID);
 }

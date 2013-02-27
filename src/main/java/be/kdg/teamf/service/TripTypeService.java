@@ -14,7 +14,9 @@ import java.util.List;
 public interface TripTypeService {
     public void addTripType(TripType tripType);
     public void updateTripType(TripType tripType);
-    public void removeTripType(int id);
+    public void removeTripType(TripType tripType);
     public List<TripType> listTripTypes();
-    TripType findDeelname(int TripTypeID);
+    public TripType findTripType(int tripTypeId);
+
+
 }

@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertSame;
-import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -54,7 +52,7 @@ public class TestTripTypeDAO extends AbstractTransactionalJUnit4SpringContextTes
         tt.setTripTypeName("Citytrip");
         tt.setTripTypeDescription("leukleukleuk");
         tripTypeDAO.addTripType(tt);
-         tripTypeDAO.removeTripType(tt.getTripTypeId());
+        tripTypeDAO.removeTripType(tt);
         assertTrue("TripType not found", !tripTypeDAO.listTripTypes().contains(tt));
     }
 
@@ -73,11 +71,16 @@ public class TestTripTypeDAO extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-       public void testFindDeelname() {
-           TripType tt = new TripType();
-            tt.setTripTypeName("publiek");
-           tripTypeDAO.addTripType(tt);
+    public void testFindDeelname() {
+        TripType tt = new TripType();
+        tt.setTripTypeName("publiek");
+        tripTypeDAO.addTripType(tt);
         assertSame("you are not getting the expected triptype from the db","publiek",tripTypeDAO.findTripType(tt.getTripTypeId()).getTripTypeName());
 
-       }
+    }
+    @Test
+    public void testNietGevonden() {
+
+        assertNull(tripTypeDAO.findTripType(-1));
+    }
 }

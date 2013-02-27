@@ -32,11 +32,10 @@ public class TripTypeDAOImpl implements TripTypeDAO {
     }
 
     @Override
-    public void removeTripType(int id) {
-        TripType tripType = (TripType) sessionFactory.getCurrentSession().load(TripType.class, id);
-        if (tripType != null) {
+    public void removeTripType(TripType tripType) {
+
             sessionFactory.getCurrentSession().delete(tripType);
-        }
+
     }
 
     @Override
