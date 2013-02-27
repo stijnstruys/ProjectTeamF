@@ -28,14 +28,12 @@ public class StopPlaats {
     private String informatie;
     @Column(name = "Type")
     private String type;
-
     @Column(name = "Naam")
     private String naam;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
-
 
     public int getStopPlaatsID() {
         return stopPlaatsID;
