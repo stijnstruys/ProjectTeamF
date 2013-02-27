@@ -68,7 +68,7 @@ public class Trip {
     private String bgcolor = "#1C263C";
 
     @Column(name = "SHOWMAP")
-    private Boolean showMap = true;
+    private Boolean showMap = false;
 
     @Column(name = "SHOWROUTE")
     private Boolean showRoute = true;
