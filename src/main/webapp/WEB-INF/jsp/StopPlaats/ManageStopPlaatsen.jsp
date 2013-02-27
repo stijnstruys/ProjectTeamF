@@ -35,7 +35,7 @@
         <table class="mapManageTable">
             <tr>
                 <td>
-                    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="addStopPlaats">
+                    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="addStopPlaats" onsubmit="false">
                         <table>
                             <tr>
                                 <td><form:label class="lbl" path="adres"><spring:message

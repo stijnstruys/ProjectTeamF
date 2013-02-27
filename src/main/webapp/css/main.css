@@ -130,6 +130,9 @@ label {
 }
 
 /* trips */
+
+
+
 .trip_list {
     list-style: none;
 }
@@ -189,11 +192,6 @@ a.trip_name:hover {
     float: right;
 }
 
-/* trip add */
-
-.add_trip_div {
-    visibility: hidden;
-}
 /* profile */
 
 .hidethis {
@@ -470,3 +468,4 @@ a.trip_name:hover {
 .mapIcons {
     margin-bottom: 1em;
 }
+
