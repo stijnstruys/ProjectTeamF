@@ -35,7 +35,7 @@
         <table class="mapManageTable">
             <tr>
                 <td>
-                    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="stopPlaats">
+                    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="addStopPlaats">
                         <table>
                             <tr>
                                 <td><form:label class="lbl" path="adres"><spring:message
@@ -46,7 +46,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <input id="searchKnop" class="btn" type="submit"
+                                    <input id="searchKnop" class="btn" type="button"
                                            value="<spring:message code="label.AddStoppingPoint"/>"/>
                                 </td>
                             </tr>
@@ -62,7 +62,7 @@
                                     <form:hidden path="tripId"/>
                                     <td><form:label class="lbl" path="travelType"><spring:message
                                             code="label.ModeOfTravel"/></form:label></td>
-                                    <td><form:select path="travelType">
+                                    <td><form:select path="travelType" id="mode">
                                         <form:option value="DRIVING">Driving</form:option>
                                         <form:option value="WALKING">Walking</form:option>
                                         <form:option value="BICYCLING">Bicycling</form:option>

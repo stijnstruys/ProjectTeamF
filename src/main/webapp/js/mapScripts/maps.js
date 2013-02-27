@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     var map;
     var locations = new Array();
+    var markerArray = new Array();
 
     var directionsService = new google.maps.DirectionsService();
     initialize();
@@ -9,8 +10,9 @@ $(document).ready(function () {
     doCalc();
     function initialize() {
         var rendererOptions = {
-              draggable: true
-            };
+            //suppressMarkers : true
+            // draggable: true
+        };
         directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
         //geocoder = new google.maps.Geocoder();
 
@@ -30,29 +32,50 @@ $(document).ready(function () {
         });
     }
 
+    $("#addStopPlaats").bind("keypress", function (e) {
+        if (e.keyCode == 13) {
+           checkExistence();
+            return false;
+        }
+    });
+
+    $("#searchKnop").click(function(){
+          checkExistence();
+    });
+
+    function checkExistence (){
+        var geocoder = new google.maps.Geocoder();
+        var addressInput = $("#address").val();
+        geocoder.geocode({'address': addressInput}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                alert('goed adres');
+                $("#addStopPlaats").submit();
+            }
+            else {
+                alert('slecht adres');
+            }
+        });
+    }
+
     function doCalc() {
-          //alert(locations[0]);
-          //alert(locations[locations.length-1]);
+        //alert(locations[0]);
+        //alert(locations[locations.length-1]);
 
         var selectedMode = $("#mode").val();
         var waypts = [];
-        for (var i = 1; i < (locations.length-1); i++) {
-           // alert();
-             waypts.push({
-                  location:locations[i]//,
-                 // stopover:true
-              });
+        for (var i = 1; i < (locations.length - 1); i++) {
+            // alert();
+            waypts.push({
+                location: locations[i]//,
+                // stopover:true
+            });
 
-          }
+        }
         //alert(selectedMode);
         var request = {
             origin: locations[0],
-            destination: locations[locations.length-1],
+            destination: locations[locations.length - 1],
             waypoints: waypts,
-            //optimizeWaypoints: true,
-            // Note that Javascript allows us to access the constant
-            // using square brackets and a string value as its
-            // "property."
             travelMode: google.maps.TravelMode[selectedMode]
         };
         directionsService.route(request, function (response, status) {
