@@ -41,53 +41,84 @@
 
 <section id="content">
     <h2>Trip</h2>
-    <form:form method="post" action="add.html" commandName="trip">
+    <div id="validation_failed"></div>
+    <form:form method="post" action="add.html" commandName="trip" id="add_trip_form" class="form-horizontal">
+        <div class="control-group">
+            <form:label class="control-label" path="tripType"><spring:message code="label.tripType"/></form:label>
+            <div class="controls">
 
-        <table>
-            <tr>
-                <td><form:label path="tripType"><spring:message code="label.tripType"/></form:label></td>
-                <td><form:select path="tripType">
+                <form:select path="tripType">
                     <form:options items="${tripTypeList}" itemValue="tripTypeName" itemLabel="tripTypeName"/>
-                </form:select></td>
-            </tr>
-            <tr>
-                <td><form:label path="tripName"><spring:message code="label.tripName"/></form:label></td>
-                <td><form:input path="tripName"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="tripDescription"><spring:message code="label.tripDescription"/></form:label></td>
-                <td><form:input path="tripDescription"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="startDate"><spring:message code="label.startDate"/></form:label></td>
-                <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
-                                path="startDate"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="endDate"><spring:message code="label.endDate"/></form:label></td>
-                <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
-                                path="endDate"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="startLocation"><spring:message code="label.startLocation"/></form:label></td>
-                <td><form:input path="startLocation"/></td>
-            </tr>
-            <tr id="newEquip">
-                <td><form:label path="equipment"><spring:message code="label.equipment"/></form:label></td>
-                <td id="equipment"><form:input path="equipment"/><button  class="btn" type="button" onclick="removeEquipment('equipment')">X</button></td>
-            </tr>
+                </form:select>
 
-            <tr><td><button class="btn" type="button" onclick="addEquipment()">New</button></td></tr>
-            <tr>
-                <td><form:label path="notification"><spring:message code="label.notification"/></form:label></td>
-                <td><form:input path="notification"/></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" class="btn" value="<spring:message code="label.addTrip"/>"/>
-                </td>
-            </tr>
-        </table>
+
+            </div>
+        </div>
+
+        <div class="control-group" id="cg_tripname">
+            <form:label class="control-label" path="tripName"><spring:message code="label.tripName"/></form:label>
+            <div class="controls">
+                <form:input type="text" id="tripname" path="tripName"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <form:label class="control-label" path="tripDescription"><spring:message code="label.tripDescription"/></form:label>
+            <div class="controls">
+                <form:input type="text" id="tripDescription" path="tripDescription"/>
+            </div>
+        </div>
+
+        <div class="control-group" id="cg_startdate">
+            <form:label class="control-label" path="startDate"><spring:message code="label.startDate"/></form:label>
+            <div class="controls">
+                <form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;" path="startDate"></form:input>
+            </div>
+        </div>
+
+        <div class="control-group" id="cg_enddate">
+            <form:label class="control-label" path="endDate"><spring:message code="label.endDate"/></form:label>
+            <div class="controls">
+                <form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="endDate"></form:input>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <form:label class="control-label" path="startLocation"><spring:message code="label.startLocation"/></form:label>
+            <div class="controls">
+                <form:input type="text" id="startLocation" path="startLocation"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <form:label class="control-label" path="notification"><spring:message code="label.notification"/></form:label>
+            <div class="controls">
+                <form:input type="text" id="notification" path="notification"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <form:label class="control-label" path="equipment"><spring:message code="label.equipment"/></form:label>
+            <div class="controls">
+                <input type="text" id="equipment-input"/>
+                <span class="help-inline"><a href="#" id="add_equipment">Add</a></span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <form:select multiple="multiple" path="equipment" id="trip_equipment">
+                </form:select>
+                <span class="help-inline"><a href="#" id="remove_equipment">Remove selected</a></span>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" id="trip_add" class="btn"><spring:message code="label.addTrip"/></button>
+                <input name="reset" type="reset" class="btn" value="Reset" id="trip_reset"/>
+            </div>
+        </div>
     </form:form>
 
 </section>
@@ -100,5 +131,6 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/validation.js"></script>
 </body>
 </html>

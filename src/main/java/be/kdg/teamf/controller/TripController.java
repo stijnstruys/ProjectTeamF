@@ -1,9 +1,6 @@
 package be.kdg.teamf.controller;
 
-import be.kdg.teamf.model.Deelname;
-import be.kdg.teamf.model.StopPlaats;
-import be.kdg.teamf.model.Trip;
-import be.kdg.teamf.model.User;
+import be.kdg.teamf.model.*;
 import be.kdg.teamf.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -65,9 +64,6 @@ public class TripController {
 
     @RequestMapping(value = "/trip/addTrip.html", method = RequestMethod.GET)
     public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-        User userlogin = new User();
-        request.setAttribute("loginuser", userlogin);
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
@@ -101,8 +97,7 @@ public class TripController {
     public String addTrip(@ModelAttribute("trip")
                           Trip trip, BindingResult result) {
 
-
-        trip.setOrganiser(userService.getCurrentUser());
+        trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
 
         return "redirect:/trip/tripOverzicht.html";

@@ -39,9 +39,7 @@
                 <div class="span2" ><label class="profile_right"><spring:message code="label.username"/></label></div>
                 <div class="span3">
                     <label class="checkbox" >${user.username} </label>
-
                 </div>
-
             </div>
 
             <div class="row-fluid profile-fields">

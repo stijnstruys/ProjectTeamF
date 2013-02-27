@@ -28,6 +28,16 @@ body {
     margin-left: 7.5%;
 }
 
+/* validation */
+#validation_failed {
+    visibility: hidden;
+    border: 2px solid red;
+    background: #F57676;
+    color: black;
+    padding: 20px 15px 10px 15px;
+    margin-bottom: 25px;
+}
+
 /* header */
 
 header {
@@ -114,7 +124,14 @@ label {
     cursor: text;
 }
 
+.input_right {
+    text-align: right;
+    padding-right: 20px;
+}
+
 /* trips */
+
+
 
 .trip_list {
     list-style: none;
@@ -348,7 +365,8 @@ a.trip_name:hover {
 
 /* trip overzicht */
 
-#addTripButton {
+
+/*#addTripButton {
     background-color: #D4D4D4;
     color: #1C263C;
 
@@ -358,22 +376,14 @@ a.trip_name:hover {
     padding: 0.4em;
     padding-left: 3em;
     padding-right: 3em;
-}
+}*/
 
 #addTripButton:hover {
     background-color: #BDBBBB;
     color: #D4D4D4;
 }
 
-/* registration */
 
-#registration_failed {
-    visibility: hidden;
-    border: 2px solid red;
-    background: #F57676;
-    color: black;
-    padding: 20px 15px 10px 15px;
-}
 
 /* maps */
 
@@ -436,4 +446,4 @@ a.trip_name:hover {
 .mapTopTableCol1 {
     width: 15%;
 }
-¨
+ï¿½
