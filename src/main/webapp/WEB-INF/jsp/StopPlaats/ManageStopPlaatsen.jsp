@@ -30,95 +30,96 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <section class="tripPages">
-        <h2><spring:message code="label.ManageStoppingPoints"/></h2>
-        <table class="mapManageTable">
-            <tr>
-                <td>
-                    <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="stopPlaats">
+    <h2><spring:message code="label.ManageStoppingPoints"/></h2>
+    <table>
+        <tr>
+            <td>
+                <form:form method="post" action="add/${trip.tripId}.html" commandName="stopPlaats" id="stopPlaats">
+                    <table>
+                        <tr>
+                            <td><form:label path="adres"><spring:message code="label.address"/></form:label></td>
+                            <td><form:input id="address" path="adres"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="searchKnop" type="submit"
+                                       value="<spring:message code="label.AddStoppingPoint"/>"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form:form>
+            </td>
+            <td>
+                <table id="mapRelease">
+                    <tr>
+                        <td>
+                            <strong>Mode of Travel: </strong>
+                        </td>
+                        <td>
+                            <select id="mode">
+                                <option value="DRIVING">Driving</option>
+                                <option value="WALKING">Walking</option>
+                                <option value="BICYCLING">Bicycling</option>
+                                <option value="TRANSIT">Transit</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Release map: </strong>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <section id="links">
+
+        <table>
+            <tr id="mapsRow0">
+                <td>Location name</td>
+            </tr>
+            <c:if test="${!empty trip.stopPlaatsen}">
+                <table class="data">
+                    <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
                         <table>
                             <tr>
-                                <td><form:label class="lbl" path="adres"><spring:message
-                                        code="label.address"/></form:label></td>
-                            </tr>
-                            <tr>
-                                <td><form:input id="address" path="adres"/></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <input id="searchKnop" class="btn" type="submit"
-                                           value="<spring:message code="label.AddStoppingPoint"/>"/>
+                                <td><input id="adres" class="addresses" value="${stopPlaatsen.adres}"/></td>
+                                    <%--<td><form:checkbox path="${stopPlaatsen.vrijgegeven}"/></td> --%>
+                                <td><input type="checkbox" value="${stopPlaatsen.vrijgegeven}"/></td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
+                                        <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"
+                                             class="mapIcons"/></a>
+                                </td>
+                                <td>
+                                    <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
+                                        <img src="../img/icons/Actions-edit-delete-icon.png" alt="Smiley face"
+                                             class="mapIcons"/></a>
                                 </td>
                             </tr>
                         </table>
-                    </form:form>
-                </td>
-                <td class="mapManageTableRight">
-                    <form:form method="post" action="updateTrip.html" commandName="trip"
-                               id="stopPlaatsSettings" class="form-horizontal">
-                        <div id="mapRelease" class="control-group">
-                            <table>
-                                <tr>
-                                    <form:hidden path="tripId"/>
-                                    <td><form:label class="lbl" path="travelType"><spring:message
-                                            code="label.ModeOfTravel"/></form:label></td>
-                                    <td><form:select path="travelType">
-                                        <form:option value="DRIVING">Driving</form:option>
-                                        <form:option value="WALKING">Walking</form:option>
-                                        <form:option value="BICYCLING">Bicycling</form:option>
-                                        <form:option value="TRANSIT">Transit</form:option>
-                                    </form:select></td>
-                                </tr>
-                                <tr>
-                                    <td><form:label class="lbl" path="showMap"><spring:message
-                                            code="label.showMap"/></form:label></td>
-                                    <td><form:checkbox class="checkbox" path="showMap"/></td>
-                                </tr>
-                                <td>
-                                    <input type="submit" class="btn"
-                                           value="<spring:message code="label.SaveSettings"/>"/>
-                                </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </form:form>
-                </td>
-            </tr>
+                        <%-- <tr id="mapsRow">
+                             <td><input id="location" type="textbox" value="${stopPlaats.adres}"></td>
+                             <td><input id="changeButton" type="button" value="Change"></td>
+
+                                 <td><form:checkbox path="${stopPlaats.vrijgegeven}" id="releaseBox"></form:checkbox></td>
+                         </tr>   --%>
+                    </c:forEach>
+                </table>
+            </c:if>
+
+
         </table>
-        <section class="mapManageMap">
-        <section id="links">
-            <table>
-                <tr id="mapsRow0">
-                    <td><label><spring:message code="label.LocationName"/></label></td>
-                </tr>
-                <c:if test="${!empty trip.stopPlaatsen}">
-                    <table class="data">
-                        <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
-                            <table>
-                                <tr>
-                                    <td><input type="text" readonly="true" id="adres" class="addresses" value="${stopPlaatsen.adres}"/></td>
-                                    <td>
-                                        <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html">
-                                            <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"
-                                                 class="mapIcons"/></a>
-                                    </td>
-                                    <td>
-                                        <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
-                                            <img src="../img/icons/Actions-edit-delete-icon.png" alt="Smiley face"
-                                                 class="mapIcons"/></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </c:forEach>
-                    </table>
-                </c:if>
-            </table>
-        </section>
+
     </section>
     <section id="rechts">
         <div id="map_canvas"></div>
     </section>
-    </section>
+
     <section id="onder"></section>
 </section>
 <jsp:include page="../General/footer.jsp"/>
@@ -130,7 +131,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/mapScripts/maps.js"></script>
+<script src="../js/maps.js"></script>
 
 </body>
 </html>

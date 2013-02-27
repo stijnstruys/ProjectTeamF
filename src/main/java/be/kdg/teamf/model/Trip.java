@@ -120,7 +120,7 @@ public class Trip {
         this.startDate = startDate;
     }
 
-    public Date getEndDate()  {
+    public Date getEndDate() {
 
         return endDate;
     }
