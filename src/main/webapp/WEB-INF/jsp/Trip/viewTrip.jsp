@@ -217,7 +217,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/mapsView.js"></script>
+<script src="../js/mapScripts/mapsView.js"></script>
 <script src="../js/FBPlugin.js"></script>
 <script src="../js/Twitter.js"></script>
 </body>

@@ -388,8 +388,9 @@ a.trip_name:hover {
 /* maps */
 
 #map_canvas {
-    width: 570px;
-    height: 450px;
+    margin-left: 10px;
+    width: 515px;
+    height: 400px;
 }
 
 #map_canvas2 {
@@ -399,13 +400,13 @@ a.trip_name:hover {
 
 #links {
     float: left;
-    width: 40%;
+    width: 35%;
     /*background-color: green; */
 }
 
 #rechts {
     float: left;
-    width: 60%;
+    width: 65%;
    /* background-color: blue; */
 }
 
@@ -424,7 +425,7 @@ a.trip_name:hover {
 #onder {
     clear: both;
 }
-
+/*
 #searchKnop {
     background-color: #D4D4D4;
     color: #1C263C;
@@ -437,7 +438,7 @@ a.trip_name:hover {
     padding-right: 2em;
     margin-bottom: 0.8em;
     margin-left: 0.25em;
-}
+}  */
 
 #mapTopTable {
     width: 70%;
@@ -446,4 +447,25 @@ a.trip_name:hover {
 .mapTopTableCol1 {
     width: 15%;
 }
-�
+
+#mapRelease {
+    margin-left: 5em;
+    border-style: solid;
+    border-color: #D4D4D4;
+    border-width: 0.1em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.mapManageTable {
+    width: 100%;
+}
+
+.mapManageTableRight {
+    width:30%;
+}
+
+.mapIcons {
+    margin-bottom: 1em;
+}
+
