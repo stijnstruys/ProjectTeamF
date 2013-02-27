@@ -78,10 +78,6 @@ function userSettings() {
             if(user.birthday !=null){
                 dateOfBirth.value= user.birthday;
             }
-
-            if (user.hometown !=null){
-                city.value = user.hometown;
-            }
         });
     });
 }
