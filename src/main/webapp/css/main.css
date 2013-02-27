@@ -28,16 +28,6 @@ body {
     margin-left: 7.5%;
 }
 
-.url {
-    color: #0088cc;
-    text-decoration: none;
-    cursor: pointer;
-}
-.url:hover {
-    color: #005580;
-    text-decoration: underline;
-}
-
 /* validation */
 #validation_failed {
     visibility: hidden;
@@ -375,7 +365,8 @@ a.trip_name:hover {
 
 /* trip overzicht */
 
-#addTripButton {
+
+/*#addTripButton {
     background-color: #D4D4D4;
     color: #1C263C;
 
@@ -397,8 +388,8 @@ a.trip_name:hover {
 /* maps */
 
 #map_canvas {
-    margin-left: 10px;
-    width: 515px;
+    margin-left: 20px;
+    width: 510px;
     height: 400px;
 }
 
