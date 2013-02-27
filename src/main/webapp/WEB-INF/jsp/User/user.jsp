@@ -29,7 +29,7 @@
 
 <section id="content">
     <h2><spring:message code="label.UserRegistration"/></h2>
-    <div id="registration_failed"></div>
+    <div id="validation_failed"></div>
     <form:form method="post" action="add.html" commandName="user" id="user">
 
         <table>
@@ -150,6 +150,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/validation.js"></script>
 <script src="../js/FBImport.js"></script>
 </body>
 </html>

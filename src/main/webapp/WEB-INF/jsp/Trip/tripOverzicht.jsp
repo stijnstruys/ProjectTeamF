@@ -44,18 +44,8 @@
 %>
 <section id="content">
     <section class="tripPages">
-        <table style="width: 100%">
-            <tr>
-                <td>
-                    <h2><spring:message code="label.TripOverview"/></h2>
-                </td>
-                <td style="text-align: right">
-                    <button id="addTripButton" onClick="location.href='/ProjectTeamF-1.0/trip/addTrip.html'">
-                        <spring:message code="label.addTrip"/></button>
-                </td>
-            </tr>
-        </table>
-
+        <button id="addtripbtn" class="btn btn-success btn-large btn_green_right" onClick="location.href='/ProjectTeamF-1.0/trip/addTrip.html'"><spring:message code="label.addTrip"/></button>
+        <h2><spring:message code="label.TripOverview"/></h2>
 
         <c:if test="${!empty tripList}">
             <ul class="trip_list">

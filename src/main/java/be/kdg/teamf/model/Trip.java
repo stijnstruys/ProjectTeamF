@@ -52,8 +52,10 @@ public class Trip {
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
     @Column(name="Equipment")
-
     private Collection<String> equipment;
+
+    @Column(name="visible")
+    private boolean visible;
 
     @Column(name = "FONTCOLORTITLE")
     private String fontcolorTitle = "#9CFF00";
@@ -214,5 +216,13 @@ public class Trip {
 
     public void setEquipment(Collection<String> equipment) {
         this.equipment = equipment;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 }
