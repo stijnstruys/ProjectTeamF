@@ -102,9 +102,11 @@ public class UserController {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }*/
-        } /*else {
+        } else {
             user = userService.findUser(request.getParameter("userName"));
         }
+         logIn(user,null);
+        /*
         user.setPassword(request.getParameter("id"));
         int userID = userService.login(user);
         if (userID > -1) {

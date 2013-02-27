@@ -36,15 +36,15 @@ $(document).ready(function () {
         FB.api('/me', function (response) {
             if (response.username == null) {
                 fbScreenName = response.first_name + response.last_name;
-                fbUserName = response.first_name + response.last_name + response.id;
+                fbUserName = response.first_name + response.last_name;
             } else {
                 fbScreenName = response.username;
-                fbUserName = response.username + response.id;
+                fbUserName = response.username;
             }
             fbFirstName = response.first_name;
             fbLastName = response.last_name;
             fbId = response.id;
-
+            document.getElementsByName("j_username").value = fbUserName;
             postFunction('Facebook',fbUserName, fbScreenName, fbFirstName, fbLastName, fbId);
         });
 
