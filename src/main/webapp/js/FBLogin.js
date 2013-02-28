@@ -44,7 +44,7 @@ $(document).ready(function () {
             fbFirstName = response.first_name;
             fbLastName = response.last_name;
             fbId = response.id;
-            document.getElementsByName("j_username").value = fbUserName;
+            alert("test"+response.id);
             postFunction('Facebook',fbUserName, fbScreenName, fbFirstName, fbLastName, fbId);
         });
 
