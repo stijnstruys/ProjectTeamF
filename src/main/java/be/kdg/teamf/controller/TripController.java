@@ -11,10 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -78,12 +79,69 @@ public class TripController {
         return model;
     }
     @RequestMapping(value = "trip/add", method = RequestMethod.POST)
-    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, @RequestParam("tripTypeSelect") String triptype) {
-        trip.setTripType( tripTypeService.findTripType( Integer.valueOf(triptype)) );
+    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, @RequestParam("tripTypeSelect") String triptype, HttpServletRequest request) throws ParseException {
+        int tt = Integer.valueOf(triptype);
+        trip.setTripType( tripTypeService.findTripType( tt ) );
         trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
 
+
+
+        if(Integer.valueOf(tt) == 2) {
+            String t = request.getParameter("repetition");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date maxDate = dateFormat.parse( request.getParameter("dateUntill") );
+
+            switch (t) {
+                case "1d":
+                    addTrips(dateFormat, maxDate, trip, 1);
+                    break;
+                case "1w":
+                    addTrips(dateFormat, maxDate, trip, 7);
+                    break;
+                case "2w":
+                    addTrips(dateFormat, maxDate, trip, 14);
+                    break;
+                case "4m":
+                    addTrips(dateFormat, maxDate, trip, 28);
+                    break;
+            }
+        }
         return "redirect:/trip/tripOverzicht.html";
+    }
+
+    public void addTrips(SimpleDateFormat sdf, Date maxDate, Trip startTrip, int interval) {
+        Trip anotherTrip = startTrip;
+
+        Calendar cStart = Calendar.getInstance();
+        Calendar cEnd = Calendar.getInstance();
+
+        boolean keepGoing = true;
+
+        cStart.setTime(startTrip.getStartDate());
+        cEnd.setTime(startTrip.getEndDate());
+
+        cStart.add(Calendar.DATE, interval);
+        anotherTrip.setStartDate(cStart.getTime());
+        cEnd.add(Calendar.DATE, interval);
+        anotherTrip.setEndDate(cEnd.getTime());
+
+        if(anotherTrip.getStartDate().compareTo(maxDate) >= 0) {
+            keepGoing = false;
+        }
+
+        while(keepGoing) {
+            tripService.addTrip(anotherTrip);
+
+            cStart.add(Calendar.DATE, interval);
+            anotherTrip.setStartDate(cStart.getTime());
+            cEnd.add(Calendar.DATE, interval);
+            anotherTrip.setEndDate(cEnd.getTime());
+
+            if(anotherTrip.getStartDate().compareTo(maxDate) >= 0) {
+                keepGoing = false;
+            }
+        }
     }
 
     @RequestMapping("/trip/{tripID}")

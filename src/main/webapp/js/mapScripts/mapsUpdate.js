@@ -21,7 +21,7 @@ $(document).ready(function () {
             center: new google.maps.LatLng(50.875311, 4.526367),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-        map = new google.maps.Map($('#map_canvas3')[0], mapOptions);
+        map = new google.maps.Map($('#map_canvas')[0], mapOptions);
 
     }
 

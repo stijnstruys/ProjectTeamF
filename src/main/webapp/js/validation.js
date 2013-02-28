@@ -17,58 +17,8 @@ $(document).ready(function () {
     //user registration validation
     registration();
 
-    //add new trip
-    trip();
 });
 
-function trip() {
-    var errormsg;
-    var go;
-    removeErrors();
-
-    $('#add_trip_form').submit( function() {
-        go = true;
-        errormsg = "";
-         removeErrors();
-
-        if($("#tripname").val().length == 0) {
-            go = false;
-            errormsg += "<li>Enter a name for your trip!</li>";
-            $("#cg_tripname").addClass("error");
-        }
-
-        if( $("#TripStartD").val().length == 0 ) {
-            go = false;
-            errormsg += "<li>Please select a startdate!</li>";
-            $("#cg_startdate").addClass("error");
-        }
-
-        if( $("#TripEndD").val().length == 0 ) {
-            go = false;
-            errormsg += "<li>Please select an enddate!</li>";
-            $("#cg_enddate").addClass("error");
-        }
-
-        if(!go) {
-            $("#validation_failed")
-                .show()
-                .html('<ul>' + errormsg + '</ul>');
-            return false;
-        }
-    });
-
-    $("#trip_reset").click( function() {
-        removeErrors();
-        $("#validation_failed").hide();
-        $("#trip_equipment").html("");
-    });
-
-    function removeErrors() {
-        $("#cg_tripname").removeClass("error");
-        $("#cg_startdate").removeClass("error");
-        $("#cg_enddate").removeClass("error");
-    }
-}
 
 function registration() {
     var errormsg = "";
