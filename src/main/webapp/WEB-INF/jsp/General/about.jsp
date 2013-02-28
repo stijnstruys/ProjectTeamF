@@ -48,7 +48,7 @@
         <table id="aboutTable">
             <tr>
                 <td class="aboutColumn">
-                    <img src="../img/groupMembers/profilePic.jpg" alt="Smiley face"
+                    <img src="../img/groupMembers/JeroenDierckx.png" alt="Smiley face"
                          class="profilePictures"/>
 
                     <p>Jeroen Dierckx</p>
@@ -58,7 +58,7 @@
                     <p>Software Management</p>
                 </td>
                 <td class="aboutColumn">
-                    <img src="http://www.fugly.com/media/IMAGES/WTF/fat-guy-in-a-diaper.jpg" alt="Smiley face"
+                    <img src="../img/groupMembers/BartLeemans.jpg" alt="Smiley face"
                          class="profilePictures"/>
 
                     <p>Bart Leemans</p>
@@ -68,7 +68,7 @@
                     <p>Software Management</p>
                 </td>
                 <td class="aboutColumn">
-                    <img src="../img/groupMembers/profilePic.jpg" alt="Smiley face"
+                    <img src="../img/groupMembers/JorneRaeymaekers.jpg" alt="Smiley face"
                          class="profilePictures"/>
 
                     <p>Jorne Raeymaekers</p>
