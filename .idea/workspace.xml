@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/loginFailed.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/loginFailed.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp" />
+      <change type="DELETED" beforePath="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\src\main\webapp\WEB-INF\jsp\Trip\AddTripCategorie.jsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362077856326" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362077897252" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882804663" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -48,8 +43,8 @@
     <file path="/testtest.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360783261711" ignored="false" />
     <file path="/TripCategorieDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642522358" ignored="false" />
     <file path="/TripCategorieDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642735054" ignored="false" />
-    <file path="/tripCategorie.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362001443421" ignored="false" />
-    <file path="/updateTripCategorie.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362001069111" ignored="false" />
+    <file path="/tripCategorie.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362078666962" ignored="false" />
+    <file path="/updateTripCategorie.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362078688289" ignored="false" />
     <file path="/TripCategorieController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362001262159" ignored="false" />
     <file path="/TripCategorieService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642806113" ignored="false" />
     <file path="/TripCategorieServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642837483" ignored="false" />
@@ -94,12 +89,12 @@
     <file path="/TestTripCategorieDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361531553044" ignored="false" />
     <file path="/TestUserDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361529068675" ignored="false" />
     <file path="/TestUserService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361529590021" ignored="false" />
-    <file path="/tripParticipants.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362055215618" ignored="false" />
+    <file path="/tripParticipants.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362078770841" ignored="false" />
     <file path="/about.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361724793853" ignored="false" />
     <file path="/tripOverzicht.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362075957072" ignored="false" />
     <file path="/tripSearchResult.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362075793252" ignored="false" />
     <file path="/UserDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361744137279" ignored="false" />
-    <file path="/profile.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362062305299" ignored="false" />
+    <file path="/profile.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362078416105" ignored="false" />
     <file path="/messages_de.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362075895900" ignored="false" />
     <file path="/ManageStopPlaatsen.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361991022777" ignored="false" />
     <file path="/mapsView.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361911255237" ignored="false" />
@@ -111,6 +106,7 @@
     <file path="/ImageServlet.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362061475433" ignored="false" />
     <file path="/loginFailed.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362077209731" ignored="false" />
     <file path="/login.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362077448007" ignored="false" />
+    <file path="/AddTripCategorie.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362078564490" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,14 +175,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myTrips.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="myTrips.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="28" selection-start="4267" selection-end="4267" vertical-scroll-proportion="0.3325301">
+            <state line="98" column="28" selection-start="4267" selection-end="4267" vertical-scroll-proportion="-5.3076925">
               <folding>
                 <marker date="1362077023935" expanded="true" signature="1412:1664" placeholder="..." />
                 <marker date="1362077023935" expanded="true" signature="1505:1533" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminTrip.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="4" selection-start="1884" selection-end="1911" vertical-scroll-proportion="-15.192307">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="143" column="14" selection-start="7658" selection-end="7658" vertical-scroll-proportion="-27.73077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tripCategorie.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="3155" selection-end="3155" vertical-scroll-proportion="-11.384615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateTripCategorie.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="27" selection-start="1980" selection-end="1980" vertical-scroll-proportion="-11.884615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tripParticipants.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="28" selection-start="2433" selection-end="2433" vertical-scroll-proportion="0.55172414">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -211,11 +252,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/ImageServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/messages_de.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
@@ -227,6 +263,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/loginFailed.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/AddTripCategorie.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp" />
       </list>
     </option>
   </component>
@@ -551,6 +592,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -605,10 +702,9 @@
             <option name="mySupportsDeletion" value="false" />
             <option name="myCanBeAbsent" value="false" />
             <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/social/FBLogin.js</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Created" />
@@ -616,10 +712,6 @@
             <option name="mySupportsDeletion" value="false" />
             <option name="myCanBeAbsent" value="false" />
             <option name="myId" value="CREATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/social/FBImport.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/social/FBLogin.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/social/FBPlugin.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/social/Twitter.js</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Deleted" />
@@ -627,10 +719,6 @@
             <option name="mySupportsDeletion" value="false" />
             <option name="myCanBeAbsent" value="true" />
             <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/FBImport.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/FBLogin.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/FBPlugin.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/Twitter.js</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Restored" />
@@ -1404,7 +1492,11 @@
       <created>1362076229103</created>
       <updated>1362076229103</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="extra">
+      <created>1362077911008</created>
+      <updated>1362077911008</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1444,15 +1536,15 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270142" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2622433" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2622433" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.15296052" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17310168" sideWeight="0.6712517" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24011713" sideWeight="0.7377567" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2985782" sideWeight="0.48970398" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24011713" sideWeight="0.8815166" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11848341" sideWeight="0.48970398" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1547,63 +1639,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="11" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.028619528">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1362076649225" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1362076649225" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="4146" selection-end="4304" vertical-scroll-proportion="2.433735">
-          <folding>
-            <marker date="1362076649229" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1362076649229" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_de.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="3830" selection-end="3934" vertical-scroll-proportion="0.610687">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="56" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.610687">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_fr.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="56" selection-start="4247" selection-end="4247" vertical-scroll-proportion="0.86513996">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/messages_nl.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="56" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.740458">
@@ -1668,16 +1703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="4" selection-start="1884" selection-end="1911" vertical-scroll-proportion="0.6505102">
-          <folding>
-            <marker date="1362055306569" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1362055306569" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="147" column="22" selection-start="6230" selection-end="6230" vertical-scroll-proportion="-23.576923">
@@ -1687,11 +1712,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="28" selection-start="4267" selection-end="4267" vertical-scroll-proportion="0.3325301">
+        <state line="98" column="28" selection-start="4267" selection-end="4267" vertical-scroll-proportion="-5.3076925">
           <folding>
             <marker date="1362077023935" expanded="true" signature="1412:1664" placeholder="..." />
             <marker date="1362077023935" expanded="true" signature="1505:1533" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="4" selection-start="1884" selection-end="1911" vertical-scroll-proportion="-15.192307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="76" selection-start="2125" selection-end="2125" vertical-scroll-proportion="0.3728395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripCategorieController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="18" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.4148148">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="14" selection-start="7658" selection-end="7658" vertical-scroll-proportion="-27.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="3155" selection-end="3155" vertical-scroll-proportion="-11.384615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="27" selection-start="1980" selection-end="1980" vertical-scroll-proportion="-11.884615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="28" selection-start="2433" selection-end="2433" vertical-scroll-proportion="0.55172414">
+          <folding />
         </state>
       </provider>
     </entry>

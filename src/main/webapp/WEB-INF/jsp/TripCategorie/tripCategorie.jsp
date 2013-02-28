@@ -30,22 +30,23 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2><spring:message code="label.addTripCategory"/></h2>
-    <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie">
+    <section class="tripPages">
+        <h2><spring:message code="label.addTripCategory"/></h2>
+        <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie">
 
-        <table>
-            <tr>
-                <td><form:label path="tripCategorieName"><spring:message
-                        code="label.tripCategoryName"/></form:label></td>
-                <td><form:input path="tripCategorieName"/></td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" class="btn" value="<spring:message code="label.addTripCategory"/>"/>
-                </td>
-            </tr>
-        </table>
-    </form:form>
+            <table>
+                <tr>
+                    <td><form:label path="tripCategorieName"><spring:message
+                            code="label.tripCategoryName"/></form:label></td>
+                    <td><form:input path="tripCategorieName"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn" value="<spring:message code="label.addTripCategory"/>"/>
+                    </td>
+                </tr>
+            </table>
+        </form:form>
         <c:if test="${!empty trip.tripCategorieen}">
             <table class="data">
                 <tr>
@@ -56,18 +57,23 @@
                     <tr>
                         <td>${tripCategorie.tripCategorieName} </td>
                         <td>
-                            <button class="btn" onClick="location.href='/ProjectTeamF-1.0/TripCategorie/update-${tripCategorie.tripCategorieId}.html'"><spring:message
-                                    code="label.updateTripCategory"/></button>
+                            <button class="btn"
+                                    onClick="location.href='/ProjectTeamF-1.0/TripCategorie/update-${tripCategorie.tripCategorieId}.html'">
+                                <spring:message
+                                        code="label.updateTripCategory"/></button>
                         </td>
                         <td>
-                            <button class="btn" onClick="location.href='/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html'"><spring:message
-                                    code="label.deleteTripCategory"/></button>
+                            <button class="btn"
+                                    onClick="location.href='/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html'">
+                                <spring:message
+                                        code="label.deleteTripCategory"/></button>
                         </td>
                     </tr>
                 </c:forEach>
             </table>
         </c:if>
 
+    </section>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

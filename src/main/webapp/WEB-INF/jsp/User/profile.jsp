@@ -29,6 +29,7 @@
 <jsp:include page="../General/header.jsp"/>
 
     <section id="content">
+        <section class="tripPages">
         <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password" class="btn_green_left">Change password</a>
         <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" class="btn_green_left">Modify</a>
 
@@ -140,7 +141,7 @@
             <form:input type="text"  class="fieldsnothere" path="username" />
         </form:form>
     </section>
-
+    </section>
 <jsp:include page="../General/footer.jsp"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
