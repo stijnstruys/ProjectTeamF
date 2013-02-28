@@ -154,6 +154,6 @@
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/validation.js"></script>
-<script src="../js/FBImport.js"></script>
+<script src="../js/social/FBImport.js"></script>
 </body>
 </html>
