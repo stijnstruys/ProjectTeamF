@@ -18,9 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -75,48 +76,6 @@ public class UserController {
         userService.addUser(user);
 
         return "redirect:/user/user.html";
-    }
-
-    @RequestMapping(value = "/user/addSocial", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    String addSocialContact(HttpServletRequest request, HttpSession session) {
-        User user = new User();
-
-        if (userService.findUser(request.getParameter("userName")) == null) {
-            user.setUsername(request.getParameter("userName"));
-            user.setPassword(request.getParameter("id"));
-            user.setFirstName((request.getParameter("firstName")));
-            user.setLastName(request.getParameter("lastName"));
-
-            userService.addUser(user);
-
-            /*Social social = new Social();
-
-            social.setSocialType(request.getParameter("type"));
-            social.setAccountId(request.getParameter("id"));
-            social.setUserName(request.getParameter("typeUserName"));
-            social.setUser(user);*/
-
-          /*  try {
-                socialService.add(social);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }*/
-        } else {
-            user = userService.findUser(request.getParameter("userName"));
-        }
-         logIn(user,null);
-        /*
-        user.setPassword(request.getParameter("id"));
-        int userID = userService.login(user);
-        if (userID > -1) {
-            session.setAttribute("userID", userID);
-            return "user/dashboard";
-        } else {
-            return "login";
-        }*/
-        return "/general/index.html";
     }
 
     @RequestMapping("/user/deleteUser/{userID}")
@@ -229,7 +188,7 @@ public class UserController {
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
 
-        return "redirect:/user/admincp-"+trip.getTripId()+".html";
+        return "redirect:/user/myTrips.html";
     }
 
     @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)
@@ -246,7 +205,7 @@ public class UserController {
 
         SimpleMailMessage msg = new SimpleMailMessage(message);
         msg.setTo("kdgteamf@gmail.com");
-        tripService.sendInvite(mailModel, msg);
+        tripService.sendMail(mailModel, msg);
     }
 
     @RequestMapping("user/deleteTrip/{tripId}")
@@ -267,7 +226,7 @@ public class UserController {
         Deelname deelname = new Deelname();
         Trip t = tripService.findTrip(tripID);
         request.setAttribute("deelnemers", deelnameService.getDeelnames(tripService.findTrip(tripID)));
-        request.setAttribute("tripID", t.getTripId());
+        request.setAttribute("deelname", deelname);
 
         request.setAttribute("trip", t);
         ModelAndView model = new ModelAndView("User/tripParticipants");
@@ -277,7 +236,7 @@ public class UserController {
 
     @RequestMapping(value = "/TripParticipants/updateTripParticipants/{tripID}", method = RequestMethod.POST)
     public String updateTripParticipants(@ModelAttribute("tripParticipant")
-                                         Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
+                                      Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
 
 
         deelnameService.updateDeelname(deelname);
@@ -285,25 +244,16 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/TripParticipants/updateDeelname", method = RequestMethod.POST)
+    @RequestMapping(value = "/TripParticipants/updateDeelname/{deelnameID}", method = RequestMethod.POST)
     public String updateDeelnemer(@ModelAttribute("tripParticipant")
-                                  Deelname deelname, BindingResult result) {
+                                         Deelname deelname, BindingResult result, @PathVariable("deelnameID") int deelnameID) {
 
-        Deelname d = deelnameService.findDeelname(deelname.getDeelnameID());
-        d.setEquipment(deelname.getEquipment());
-        deelnameService.updateDeelname(d);
-        return "redirect:/TripParticipants/" + d.getTrip().getTripId() + ".html";
+
+        deelnameService.updateDeelname(deelname);
+        return "redirect:/TripParticipants/" + deelname.getTrip().getTripId() + ".html";
 
     }
-    @RequestMapping(value = "/editUserequipment/{deelnameID}", method = RequestMethod.GET)
-    public ModelAndView editEquipment(HttpServletRequest request, HttpServletResponse response, @PathVariable("deelnameID") int deelnameID) throws Exception {
 
-        request.setAttribute("deelname",deelnameService.findDeelname(deelnameID));
-        ModelAndView model = new ModelAndView("User/editEquipment");
-
-
-        return model;
-    }
     @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
     public @ResponseBody String getUserInJson(@RequestParam("name") String name) {
 
@@ -313,36 +263,18 @@ public class UserController {
         } else {
             return "true";
         }
-    }
-    @RequestMapping(value = "/user/loginfailed", method = RequestMethod.GET)
-    public ModelAndView loginFailed(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-
-        ModelAndView model = new ModelAndView("General/loginFailed");
-
-
-        return model;
-    }
-    @RequestMapping(value = "/TripParticipants/{tripID}/invite", method = RequestMethod.POST)
-    public String inviteDeelnemer(@RequestParam("email") String email, @PathVariable("tripID") int tripID) {
-
-
-        Trip t = tripService.findTrip(tripID);
-
-
-        ModelMap mailModel = new ModelMap();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        mailModel.addAttribute("title", "Trip Invite");
-        mailModel.addAttribute("subtitle1", "Message from organiser");
-        mailModel.addAttribute("message", "U bent uitgenodigd voor trip: " + t.getTripName());
-        mailModel.addAttribute("link", "http://localhost:8080/ProjectTeamF-1.0/trip/"+ t.getTripId() +".html");
-
-        mailModel.addAttribute("date", format.format(new Date()));
-
-        SimpleMailMessage msg = new SimpleMailMessage(message);
-        msg.setTo(email);
-        tripService.sendInvite(mailModel, msg);
-        return "redirect:/TripParticipants/" + tripID + ".html";
 
     }
+
+    @RequestMapping(value = "/service/getUsernames", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<User> getUsernames() {
+        List<User> test = new ArrayList<User>(userService.listUsers());
+
+        return test;
+    }
+
+
 }
