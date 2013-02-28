@@ -29,6 +29,7 @@ import java.util.Date;
  * Time: 13:19
  * To change this template use File | Settings | File Templates.
  */
+
 @Controller
 //@RequestMapping("/user/user.html")
 public class UserController {
