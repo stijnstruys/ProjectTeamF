@@ -44,9 +44,14 @@
 %>
 <section id="content">
     <section class="tripPages">
-        <button id="addtripbtn" class="btn btn-success btn-large btn_green_right" onClick="location.href='/ProjectTeamF-1.0/trip/addTrip.html'"><spring:message code="label.addTrip"/></button>
+        <button id="addtripbtn" class="btn btn-success btn-large btn_green_right"
+                onClick="location.href='/ProjectTeamF-1.0/trip/addTrip.html'"><spring:message
+                code="label.addTrip"/></button>
         <h2><spring:message code="label.TripOverview"/></h2>
-
+        <c:if test="${empty tripList}">
+            <h3><spring:message code="label.NoTripsAvailable"/>
+            </h3>
+        </c:if>
         <c:if test="${!empty tripList}">
             <ul class="trip_list">
                 <c:forEach items="${tripList}" var="trip">
@@ -56,7 +61,8 @@
                         <div class="trip_description">${trip.tripDescription}</div>
 
                         <div class="trip_extra">
-                            <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~ <fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></div>
+                            <div class="trip_datums"><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/> ~
+                                <fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></div>
                             <div class="trip_location"></b><spring:message code="label.startLocation"/>: <span
                                     class="trip_detail_general">${trip.startLocation}</span></div>
                         </div>

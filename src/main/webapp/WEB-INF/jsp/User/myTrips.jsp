@@ -49,6 +49,10 @@
         <h2><spring:message code="label.TripOverview"/></h2>
 
         <h3><spring:message code="label.MyOrganisedTrips"/></h3>
+        <c:if test="${empty tripList}">
+                    <h3><spring:message code="label.NoOrganisedTripsAvailable"/>
+                    </h3>
+                </c:if>
         <c:if test="${!empty tripList}">
             <ul class="trip_list">
                 <c:forEach items="${tripList}" var="trip">
@@ -92,6 +96,10 @@
                     </ul>
                 </div>
         <h3><spring:message code="label.MyJoinedTrips"/></h3>
+        <c:if test="${empty tripListParticipate}">
+                    <h3><spring:message code="label.NoParticipatedTripsAvailable"/>
+                    </h3>
+                </c:if>
         <c:if test="${!empty tripListParticipate}">
             <ul class="trip_list">
                 <c:forEach items="${tripListParticipate}" var="trip">

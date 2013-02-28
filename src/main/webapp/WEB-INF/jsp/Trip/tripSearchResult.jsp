@@ -46,7 +46,10 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.TripSearchResult"/></h2>
-
+        <c:if test="${empty tripSearchList}">
+            <h3><spring:message code="label.NoTripNamesFound"/> <%= request.getParameter("searchInput")%>
+                        </h3>
+        </c:if>
         <c:if test="${!empty tripSearchList}">
             <h3><spring:message code="label.FoundOnTripName"/> <%= request.getParameter("searchInput")%>
             </h3>
@@ -91,6 +94,10 @@
                         <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
                     </ul>
                 </div>
+        <c:if test="${empty tripSearchCategories}">
+                    <h3><spring:message code="label.NoTripCategoriesFound"/> <%= request.getParameter("searchInput")%>
+                                </h3>
+                </c:if>
         <c:if test="${!empty tripSearchCategories}">
             <h3><spring:message code="label.FoundOnTripCategory"/> <%= request.getParameter("searchInput") %>
             </h3>

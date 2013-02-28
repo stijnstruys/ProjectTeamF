@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="stopplaatsen+mytrips+tripssearch+categorieen">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_1_3_2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectTeamF.iml" afterPath="$PROJECT_DIR$/ProjectTeamF.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ProjectTeamF_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ProjectTeamF_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362054021543" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362063727442" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882804663" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -37,7 +30,7 @@
     <file path="/messages_en.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361639846024" ignored="false" />
     <file path="/messages_nl.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882506389" ignored="false" />
     <file path="/jquery-ui-1.10.0.custom.css" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360758715813" ignored="false" />
-    <file path="/main.css" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362000226640" ignored="false" />
+    <file path="/main.css" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362075093367" ignored="false" />
     <file path="/spring-servlet.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361285472143" ignored="false" />
     <file path="/SendEmailViaGMail.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360770678734" ignored="false" />
     <file path="$USER_HOME$/Desktop/mailen/SpringExample/.idea/workspace.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360785292668" ignored="false" />
@@ -102,18 +95,18 @@
     <file path="/TestUserService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361529590021" ignored="false" />
     <file path="/tripParticipants.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362055215618" ignored="false" />
     <file path="/about.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361724793853" ignored="false" />
-    <file path="/tripOverzicht.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361726968874" ignored="false" />
-    <file path="/tripSearchResult.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361997872846" ignored="false" />
+    <file path="/tripOverzicht.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362075957072" ignored="false" />
+    <file path="/tripSearchResult.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362075793252" ignored="false" />
     <file path="/UserDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361744137279" ignored="false" />
     <file path="/profile.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362062305299" ignored="false" />
-    <file path="/messages_de.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882187720" ignored="false" />
+    <file path="/messages_de.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362075895900" ignored="false" />
     <file path="/ManageStopPlaatsen.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361991022777" ignored="false" />
     <file path="/mapsView.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361911255237" ignored="false" />
     <file path="/maps.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361990099969" ignored="false" />
     <file path="/updateStopPlaats.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361991313092" ignored="false" />
     <file path="/mapsUpdate.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361989191284" ignored="false" />
     <file path="/TripDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361996224621" ignored="false" />
-    <file path="/myTrips.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361997801505" ignored="false" />
+    <file path="/myTrips.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362076140365" ignored="false" />
     <file path="/ImageServlet.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362061475433" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,8 +156,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -174,78 +167,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java">
+      <file leaf-file-name="myTrips.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="23" selection-start="2957" selection-end="2957" vertical-scroll-proportion="2.975855">
+            <state line="98" column="47" selection-start="4286" selection-end="4286" vertical-scroll-proportion="0.47704083">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4681#4699#0" expanded="true" />
-                <element signature="e#14076#14082#0" expanded="true" />
+                <marker date="1362076142307" expanded="true" signature="1412:1664" placeholder="..." />
+                <marker date="1362076142307" expanded="true" signature="1505:1533" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="810" selection-end="810" vertical-scroll-proportion="-6.12">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="44" selection-start="1813" selection-end="1813" vertical-scroll-proportion="-9.230769">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TripDAOImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="31" selection-start="991" selection-end="991" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="5" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="59" selection-start="4425" selection-end="4425" vertical-scroll-proportion="-7.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spring-servlet.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="11" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -270,14 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripCategorieController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml" />
@@ -286,6 +207,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages_de.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages_fr.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/messages_nl.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" />
       </list>
     </option>
   </component>
@@ -339,8 +268,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="886" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -396,7 +325,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -559,94 +487,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProjectTeamF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -663,9 +506,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -682,151 +525,6 @@
       <recent name="C:\Users\Jeroen\Documents\School\IAO301b\Software development\Project\ProjectTeamF\src\main\webapp\img\homepagePictures" />
       <recent name="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\src\main\webapp" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAO.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAOImpl.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Trip.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/TripType.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripService.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/messages_de.properties</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/messages_en.properties</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/messages_fr.properties</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/messages_nl.properties</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/StopPlaats/updateStopPlaats.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/addTrip.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/css/main.css</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/FBLogin.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/main.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/mapScripts/mapsUpdate.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/validation.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestStopPlaatsModel.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestTripModel.java</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/be/kdg/teamf/service/TestTripService.java</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/img/groupMembers/BartLeemans.jpg</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/img/groupMembers/JeroenDierckx.png</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/img/groupMembers/JorneRaeymaekers.jpg</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
   </component>
   <component name="RunManager" selected="Glassfish Server.Glassfish 3.1.2.2">
     <configuration default="false" name="TestDeelnameDAO.listDeelnames" type="JUnit" factoryName="JUnit" temporary="true">
@@ -1070,6 +768,19 @@
       </ConfigurationWrapper>
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1096,19 +807,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1539,7 +1237,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32730263" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1555,15 +1253,15 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32737276" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26272354" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2622433" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.15296052" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17310168" sideWeight="0.6712517" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24066924" sideWeight="0.7372765" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29986244" sideWeight="0.48970398" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24011713" sideWeight="0.7014218" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2985782" sideWeight="0.48970398" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1658,114 +1356,144 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="150" selection-end="191" vertical-scroll-proportion="0.12259615" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="16" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.45888594" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="46" selection-start="7873" selection-end="7891" vertical-scroll-proportion="0.56666666" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/tripParticipants.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="49" selection-start="2184" selection-end="2184" vertical-scroll-proportion="-14.384615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/invite.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="24" selection-start="1826" selection-end="1826" vertical-scroll-proportion="1.2647703">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="21" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/updateUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.289326">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="11" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="31" selection-start="991" selection-end="991" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="59" selection-start="4425" selection-end="4425" vertical-scroll-proportion="-7.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="487" selection-end="487" vertical-scroll-proportion="-0.08510638">
+        <state line="39" column="31" selection-start="991" selection-end="991" vertical-scroll-proportion="0.028619528">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="5" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0">
+        <state line="39" column="5" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.028619528">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/profile.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="44" selection-start="1813" selection-end="1813" vertical-scroll-proportion="-9.230769">
+        <state line="99" column="59" selection-start="4425" selection-end="4425" vertical-scroll-proportion="0.029259896">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="810" selection-end="810" vertical-scroll-proportion="-6.12">
+        <state line="29" column="11" selection-start="1978" selection-end="1978" vertical-scroll-proportion="0.028619528">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="23" selection-start="2957" selection-end="2957" vertical-scroll-proportion="2.975855">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4681#4699#0" expanded="true" />
-            <element signature="e#14076#14082#0" expanded="true" />
+            <marker date="1362053805484" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1362053805484" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1362055142978" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1362055142978" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="0" selection-start="4146" selection-end="4304" vertical-scroll-proportion="2.433735">
+          <folding>
+            <marker date="1362053806411" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1362053806411" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="19" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.7679426">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_de.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="0" selection-start="3830" selection-end="3934" vertical-scroll-proportion="0.610687">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="56" selection-start="3730" selection-end="3730" vertical-scroll-proportion="0.610687">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_fr.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="56" selection-start="4247" selection-end="4247" vertical-scroll-proportion="0.86513996">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_nl.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="56" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.740458">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="8" selection-start="4288" selection-end="4512" vertical-scroll-proportion="0.6938776">
+          <folding>
+            <marker date="1362075818063" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1362075818063" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="8" selection-start="2116" selection-end="2245" vertical-scroll-proportion="0.39030612">
+          <folding>
+            <marker date="1362076001267" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1362076001267" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="47" selection-start="4286" selection-end="4286" vertical-scroll-proportion="0.47704083">
+          <folding>
+            <marker date="1362076142307" expanded="true" signature="1412:1664" placeholder="..." />
+            <marker date="1362076142307" expanded="true" signature="1505:1533" placeholder="..." />
           </folding>
         </state>
       </provider>
