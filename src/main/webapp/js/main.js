@@ -151,21 +151,175 @@ $(document).ready(function () {
 });
 
 function addTrip() {
+    /* wizard */
+     //Variables
+    var current;
+    var numberOfSteps = 7;
+    var firstclick = false;
+    var prevhidden = true;
+    var nexthidden = false;
+    var triptype;
+    var errormsg = "";
+    $("#temdate").datepicker({
+        dateFormat: 'yy/mm/dd',
+        minDate: '0D',
+        changeMonth: true,
+        changeYear: true
+    });
+    //remove css (otherwise you see it for a few seconds while javascript is loading)
+    $(".add_trip_div").css("visibility", "visible");
+    $(".add_trip_div").hide();
+    $("#add_trip_prev").parent().addClass("disabled");
+    $("#validation_failed").css("visibility" , "visible");
+    $("#validation_failed").hide();
+    //show first window
+    $("#add_trip_1").show();
+    current = 1;
+
+    //next & prev
+    $("#add_trip_next").click(function() {
+        var validationOk = true;
+        if(current < numberOfSteps) {
+
+            /*validation calls*/
+            errormsg = "";
+            switch(current) {
+                case 2:
+                    validationOk = checkName();
+                    break;
+                case 3:
+                    validationOk = checkStartAndEnd();
+                    break;
+                case 4:
+                    validationOk = checkDateUntill();
+                    break;
+            }
+            /*end validation calls */
+            if(validationOk) {
+                $("#validation_failed").hide();
+                if(prevhidden) {
+                    prevhidden = false;
+                    $("#add_trip_prev").parent().removeClass("disabled");
+                    triptype = $("#tripTypeSelect").val();
+                }
+
+                $("#add_trip_" + current).hide();
+                current++;
+
+                if(current == 3) {
+                    if(triptype == 3) {
+                        current++;
+                    }
+                }
+                if(current == 4) {
+                    if(triptype != 2) {
+                        current++;
+                    }
+                }
+
+
+
+                $("#add_trip_" + current).show();
+                if(current >= numberOfSteps) {
+                    $("#add_trip_next").parent().addClass("disabled");
+                    nexthidden = true;
+                }
+            } else {
+                $("#validation_failed")
+                    .show()
+                    .html("<ul>" + errormsg + "</ul>");
+            }
+        }
+    });
+
+    $("#add_trip_prev").click(function() {
+       if(current > 1) {
+
+           if(nexthidden) {
+               nexthidden = false;
+               $("#add_trip_next").parent().removeClass("disabled");
+           }
+
+           $("#add_trip_" + current).hide();
+           current--;
+
+           if(current == 3) {
+               if(triptype == 3) {
+                   current--;
+               }
+           }
+           if(current == 4) {
+               if(triptype != 2) {
+                   current--;
+               }
+           }
+           $("#add_trip_" + current).show();
+           if(current <= 1) {
+               $("#add_trip_prev").parent().addClass("disabled");
+               prevhidden = true;
+           }
+       }
+    });
+
+    /* Equipment */
     $("#add_equipment").click(function() {
         var equipmentToAdd = $("#equipment-input").val();
-
         if(equipmentToAdd.length > 0) {
             var o = new Option(equipmentToAdd, equipmentToAdd);
             $("#trip_equipment").append(o);
             $("#equipment-input").val("");
         }
-
     });
 
     $("#remove_equipment").click(function() {
         $("#trip_equipment option:selected").remove();
     });
 
+
+    /* validation */
+
+    function checkName() {
+        if($("#tripname").val().length == 0) {
+            errormsg += "<li>Enter a name for your trip!</li>";
+            $("#cg_tripname").addClass("error");
+            return false;
+        }
+        $("#cg_tripname").removeClass("error");
+        return true;
+    }
+
+    function checkStartAndEnd() {
+        var inorde = true;
+
+        if( $("#TripStartD").val().length == 0 ) {
+            errormsg += "<li>Please select a startdate!</li>";
+            $("#cg_startdate").addClass("error");
+            inorde = false;
+        }
+
+        if( $("#TripEndD").val().length == 0 ) {
+            errormsg += "<li>Please select an enddate!</li>";
+            $("#cg_enddate").addClass("error");
+            inorde = false;
+        }
+
+        if(inorde) {
+            $("#cg_enddate").removeClass("error");
+            $("#cg_startdate").removeClass("error");
+            return true;
+        }
+        return false;
+    }
+
+    function checkDateUntill() {
+        if( $("#temdate").val().length == 0) {
+            errormsg += "<li>Please select a date!</li>"
+            $("#cg_repetition").addClass("error");
+            return false;
+        }
+        $("#cg_repetition").removeClass("error");
+        return true;
+    }
 
 }
 

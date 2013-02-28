@@ -28,6 +28,17 @@ body {
     margin-left: 7.5%;
 }
 
+.url {
+    color: #0088cc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.url:hover {
+    color: #005580;
+    text-decoration: underline;
+}
+
 /* validation */
 #validation_failed {
     visibility: hidden;
@@ -148,9 +159,6 @@ label {
 }
 
 /* trips */
-
-
-
 .trip_list {
     list-style: none;
 }
@@ -210,6 +218,26 @@ a.trip_name:hover {
     float: right;
 }
 
+/* trip add */
+
+.add_trip_div {
+    visibility: hidden;
+    width: 500px;
+    margin: 0 auto 35px auto;
+}
+#add_trip_btns {
+    width: 600px;
+    margin: 0 auto 0 auto;
+}
+
+.add_trip_error {
+    visibility: hidden;
+    border: 2px solid red;
+    background: #F57676;
+    color: black;
+    padding: 20px 15px 10px 15px;
+    margin-bottom: 25px;
+}
 /* profile */
 
 .hidethis {
@@ -449,6 +477,7 @@ a.trip_name:hover {
 #onder {
     clear: both;
 }
+
 
 #mapTopTable {
     width: 70%;
