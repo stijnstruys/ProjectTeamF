@@ -52,7 +52,6 @@ public class Trip {
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
     @Column(name = "Equipment")
-
     private Collection<String> equipment;
 
     @Column(name="visible")
@@ -85,15 +84,15 @@ public class Trip {
     private TripType tripType;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<StopPlaats> stopPlaatsen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<TripCategorie> tripCategorieen;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
 

@@ -29,7 +29,7 @@ public class TripType {
     private String tripTypeDescription;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = ("tripType"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("tripType"))
     private Collection<Trip> trips;
 
     public int getTripTypeId() {

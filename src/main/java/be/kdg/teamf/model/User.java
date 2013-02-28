@@ -58,11 +58,11 @@ public class User implements Serializable {
     private boolean notificationEmail;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("user"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = ("organiser"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("organiser"))
     private Collection<Trip> trips;
 
     public User() {
