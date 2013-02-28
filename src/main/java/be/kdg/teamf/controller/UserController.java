@@ -28,10 +28,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created with IntelliJ IDEA.
@@ -110,8 +113,14 @@ public class UserController {
             user.setFirstName((request.getParameter("firstName")));
             user.setLastName(request.getParameter("lastName"));
             user.setEmail(request.getParameter("email"));
-            Date date = new Date(request.getParameter("birthday"));
-            user.setDateOfBirth(date);
+            System.out.println(request.getParameter("birthday"));
+            DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT);
+            try {
+                user.setDateOfBirth(df.parse(request.getParameter("birthday")));
+                System.out.println(request.getParameter("birthday"));
+            } catch (ParseException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
             userService.addUser(user);
         } else {
             user = userService.findUser(request.getParameter("userName"));
