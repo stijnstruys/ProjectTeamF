@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -76,6 +77,48 @@ public class UserController {
         userService.addUser(user);
 
         return "redirect:/user/user.html";
+    }
+
+    @RequestMapping(value = "/user/addSocial", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String addSocialContact(HttpServletRequest request, HttpSession session) {
+        User user = new User();
+
+        if (userService.findUser(request.getParameter("userName")) == null) {
+            user.setUsername(request.getParameter("userName"));
+            user.setPassword(request.getParameter("id"));
+            user.setFirstName((request.getParameter("firstName")));
+            user.setLastName(request.getParameter("lastName"));
+
+            userService.addUser(user);
+
+            /*Social social = new Social();
+
+            social.setSocialType(request.getParameter("type"));
+            social.setAccountId(request.getParameter("id"));
+            social.setUserName(request.getParameter("typeUserName"));
+            social.setUser(user);*/
+
+          /*  try {
+                socialService.add(social);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }*/
+        } else {
+            user = userService.findUser(request.getParameter("userName"));
+        }
+         logIn(user, null);
+        /*
+        user.setPassword(request.getParameter("id"));
+        int userID = userService.login(user);
+        if (userID > -1) {
+            session.setAttribute("userID", userID);
+            return "user/dashboard";
+        } else {
+            return "login";
+        }*/
+        return "/general/index.html";
     }
 
     @RequestMapping("/user/deleteUser/{userID}")
@@ -188,7 +231,7 @@ public class UserController {
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
 
-        return "redirect:/user/myTrips.html";
+        return "redirect:/user/admincp-"+trip.getTripId()+".html";
     }
 
     @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)

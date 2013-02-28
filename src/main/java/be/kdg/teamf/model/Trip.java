@@ -96,6 +96,7 @@ public class Trip {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
+
     public Trip() {
     }
 
