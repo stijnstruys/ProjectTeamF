@@ -109,34 +109,13 @@ public class UserController {
             user.setPassword(request.getParameter("id"));
             user.setFirstName((request.getParameter("firstName")));
             user.setLastName(request.getParameter("lastName"));
-
+            user.setEmail(request.getParameter("email"));
+            Date date = new Date(request.getParameter("birthday"));
+            user.setDateOfBirth(date);
             userService.addUser(user);
-
-            /*Social social = new Social();
-
-            social.setSocialType(request.getParameter("type"));
-            social.setAccountId(request.getParameter("id"));
-            social.setUserName(request.getParameter("typeUserName"));
-            social.setUser(user);*/
-
-          /*  try {
-                socialService.add(social);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }*/
         } else {
             user = userService.findUser(request.getParameter("userName"));
         }
-         //logIn(user, null);
-        /*
-        user.setPassword(request.getParameter("id"));
-        int userID = userService.login(user);
-        if (userID > -1) {
-            session.setAttribute("userID", userID);
-            return "user/dashboard";
-        } else {
-            return "login";
-        }*/
         List<GrantedAuthority> gaList = new ArrayList<GrantedAuthority>();
         gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
         org.springframework.security.core.userdetails.User usersec = new  org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), true, true, true, true, gaList);

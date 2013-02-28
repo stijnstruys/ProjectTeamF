@@ -237,7 +237,7 @@
 
 
 <div id="fb-root"></div>
-<div class="fb-like" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true"></div>
+<div class="fb-like" data-href="https://www.facebook.com/pages/Tripplanner-teamf/146815778814080" data-send="true" data-width="450" data-show-faces="true"></div>
 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl">Tweeten</a>
 <jsp:include page="../General/footer.jsp"/>
 
@@ -250,7 +250,7 @@
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/mapScripts/mapsView.js"></script>
-<script src="../js/FBPlugin.js"></script>
-<script src="../js/Twitter.js"></script>
+<script src="../js/social/FBPlugin.js"></script>
+<script src="../js/social/Twitter.js"></script>
 </body>
 </html>

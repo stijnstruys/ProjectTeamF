@@ -1,21 +1,19 @@
 $(document).ready(function () {
-    function postFunction(type, username, typeUsername, firstname, lastname, id){
+    function postFunction(type, username, typeUsername, firstname, lastname, id,email,birthday){
         $.post(location.protocol + '//' + location.host + '/ProjectTeamF-1.0/user/addSocial.html', {
             type:type,
             userName:username,
             typeUserName:typeUsername,
             firstName:firstname,
             lastName:lastname,
-            id:id
+            id:id,
+            email:email,
+            birthday:birthday
         }, function (data) {
 
             window.location = "http://localhost:8080/ProjectTeamF-1.0/" + data;
         });
     }
-
-  /*  window.fbAsyncInit = function () {
-        FB.init({appId:'534896926530393', status:true, cookie:true, xfbml:true});
-    };*/
 
     FB.Event.subscribe('auth.login', function (response) {
         login();
@@ -31,8 +29,8 @@ $(document).ready(function () {
         var fbId;
         var fbUserName;
         var fbScreenName;
-        alert("test");
-
+        var fbEmail;
+        var fbBirthday;
         FB.api('/me', function (response) {
             if (response.username == null) {
                 fbScreenName = response.first_name + response.last_name;
@@ -44,22 +42,13 @@ $(document).ready(function () {
             fbFirstName = response.first_name;
             fbLastName = response.last_name;
             fbId = response.id;
-            alert("test"+response.id);
-            postFunction('Facebook',fbUserName, fbScreenName, fbFirstName, fbLastName, fbId);
+            fbEmail = response.email;;
+            fbBirthday = response.birthday;
+            postFunction('Facebook',fbUserName, fbScreenName, fbFirstName, fbLastName, fbId,fbEmail,fbBirthday);
         });
-
-
     }
 
     function logout() {
 
     }
 })
-
-/*(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));*/
