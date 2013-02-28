@@ -133,6 +133,11 @@ public class TripServiceImpl implements TripService {
     }
 
     @Override
+    public List<Trip> listPublicTrips() {
+        return tripDAO.listPublicTrips();
+    }
+
+    @Override
     @Transactional
     public List<Trip> searchTripsCategories(String searchInput) {
 

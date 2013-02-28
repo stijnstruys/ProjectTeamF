@@ -39,7 +39,7 @@ public interface TripService {
     public List<Trip> listUserParticipateTrips(int UserID);
 
     void sendInvite(ModelMap mailModel, SimpleMailMessage msg);
-
+    public List<Trip> listPublicTrips();
 
     List<Trip> searchTripsCategories(String searchInput);
 }
