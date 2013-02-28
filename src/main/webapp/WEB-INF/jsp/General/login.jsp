@@ -42,14 +42,15 @@ Time: 13:31
         <section class="homeSection">
 
                 <p>
+                    <spring:message code="label.YouMustBeLoggedIn"/>
                 U moet aangemeld zijn om op deze pagina te komen.
                 <form name='f'
                       action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />"
                       method='POST'>
                     <div >
-                       Username: <input type='text' name='j_username' class="input"
+                        <spring:message code="label.username"/> <input type='text' name='j_username' class="input"
                                placeholder="Username">   <br />
-                       Password: <input type='password' name='j_password' class="input"
+                        <spring:message code="label.password"/> <input type='password' name='j_password' class="input"
                                placeholder="Password"/>
 
                         <div>
@@ -58,6 +59,7 @@ Time: 13:31
                         </div>
                     </div>
                 </form>
+            <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message code="label.RegisterHere"/></a>
                 </p>
 
             </section>
