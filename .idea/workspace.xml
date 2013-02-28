@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362060366623" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362060973755" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882804663" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -160,13 +160,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="myTrips.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="myTrips.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="56" selection-start="5704" selection-end="5704" vertical-scroll-proportion="0.5730594">
+            <state line="126" column="56" selection-start="5704" selection-end="5704" vertical-scroll-proportion="-9.653846">
               <folding>
                 <marker date="1362060932798" expanded="true" signature="1412:1664" placeholder="..." />
                 <marker date="1362060932798" expanded="true" signature="1505:1533" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tripSearchResult.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="127" column="48" selection-start="5809" selection-end="5809" vertical-scroll-proportion="0.5045662">
+              <folding>
+                <marker date="1362061114952" expanded="true" signature="1415:1667" placeholder="..." />
+                <marker date="1362061114952" expanded="true" signature="1508:1536" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -192,8 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/tripCategorie.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/StopPlaats/updateStopPlaats.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/TripCategorie/updateTripCategorie.jsp" />
@@ -208,6 +218,8 @@
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp" />
       </list>
     </option>
   </component>
@@ -457,7 +469,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="User" />
+              <option name="myItemId" value="Trip" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1229,7 +1241,11 @@
       <created>1362060369563</created>
       <updated>1362060369563</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="mytrips">
+      <created>1362060977956</created>
+      <updated>1362060977956</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1323,7 +1339,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete trip" />
+    <option name="LAST_COMMIT_MESSAGE" value="mytrips" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1336,7 +1352,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="login + deelname" />
     <MESSAGE value="deelname" />
     <MESSAGE value="trip verwijderen" />
     <MESSAGE value="errors" />
@@ -1361,6 +1376,7 @@
     <MESSAGE value="francais" />
     <MESSAGE value="testen" />
     <MESSAGE value="delete trip" />
+    <MESSAGE value="mytrips" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1372,20 +1388,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="75" selection-start="6591" selection-end="6591" vertical-scroll-proportion="0.5227818">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/junit/framework/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="23" selection-start="1012" selection-end="1150" vertical-scroll-proportion="0.34797892">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestStopPlaatsModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="25" selection-start="1152" selection-end="1152" vertical-scroll-proportion="0.72487646">
@@ -1477,12 +1479,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripOverzicht.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="19" selection-start="1764" selection-end="1764" vertical-scroll-proportion="0.28">
+          <folding>
+            <marker date="1362061045595" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1362061045595" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/myTrips.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="56" selection-start="5704" selection-end="5704" vertical-scroll-proportion="0.5730594">
+        <state line="126" column="56" selection-start="5704" selection-end="5704" vertical-scroll-proportion="-9.653846">
           <folding>
             <marker date="1362060932798" expanded="true" signature="1412:1664" placeholder="..." />
             <marker date="1362060932798" expanded="true" signature="1505:1533" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/tripSearchResult.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="48" selection-start="5809" selection-end="5809" vertical-scroll-proportion="0.5045662">
+          <folding>
+            <marker date="1362061114952" expanded="true" signature="1415:1667" placeholder="..." />
+            <marker date="1362061114952" expanded="true" signature="1508:1536" placeholder="..." />
           </folding>
         </state>
       </provider>
