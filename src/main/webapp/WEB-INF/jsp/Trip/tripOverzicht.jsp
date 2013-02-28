@@ -49,8 +49,8 @@
                 code="label.addTrip"/></button>
         <h2><spring:message code="label.TripOverview"/></h2>
         <c:if test="${empty tripList}">
-            <h3><spring:message code="label.NoTripsAvailable"/>
-            </h3>
+            <h4><spring:message code="label.NoTripsAvailable"/>
+            </h4>
         </c:if>
         <c:if test="${!empty tripList}">
             <ul class="trip_list">

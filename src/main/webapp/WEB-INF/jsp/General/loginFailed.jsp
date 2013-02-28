@@ -42,7 +42,7 @@ Time: 13:31
         <section class="homeSection">
             <section class="homeSectionLeft"><section class="homeSectionText">
                 <p>
-                    De logingegevens die u hebt gegeven zijn niet correct
+                    <spring:message code="label.LoginDataIncorrect"/>
                 </p>
             </section>
         </section>
