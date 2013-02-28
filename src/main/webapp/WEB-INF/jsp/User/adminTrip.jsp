@@ -123,12 +123,15 @@
 
                 <tr>
                     <td>
-                        <label class="form-item">Background:</label><form:input type="text" name="color1" path="bgcolor"
+                        <label class="form-item"><spring:message
+                                                    code="label.Background"/></label><form:input type="text" name="color1" path="bgcolor"
                                                                                 class="colorpicker" id="color1"/>
-                        <label class="form-item">Font title:</label><form:input type="text" name="color2"
+                        <label class="form-item"><spring:message
+                                                    code="label.FontTitle"/></label><form:input type="text" name="color2"
                                                                                 path="fontcolorContent"
                                                                                 class="colorpicker" id="color2"/>
-                        <label class="form-item">Font content:</label><form:input type="text" name="color3"
+                        <label class="form-item"><spring:message
+                                                    code="label.FontContent"/></label><form:input type="text" name="color3"
                                                                                   path="fontcolorTitle"
                                                                                   class="colorpicker" id="color3"/>
                     </td>
