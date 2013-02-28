@@ -89,6 +89,7 @@
                 </div>
             </div>
 
+
             <div class="control-group" id="cg_enddate">
                 <form:label class="control-label" path="endDate"><spring:message code="label.endDate"/></form:label>
                 <div class="controls">
