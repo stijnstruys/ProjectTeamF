@@ -55,7 +55,7 @@ public class Trip {
     private Collection<String> equipment;
 
     @Column(name="visible")
-    private boolean visible;
+    private boolean visible = true;
 
     @Column(name = "FONTCOLORTITLE")
     private String fontcolorTitle = "#9CFF00";

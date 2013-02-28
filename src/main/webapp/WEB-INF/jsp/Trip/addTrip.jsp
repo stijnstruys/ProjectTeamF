@@ -72,6 +72,14 @@
                     <form:input type="text" id="tripDescription" path="tripDescription"/>
                 </div>
             </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <form:checkbox path="visible" /> Trip visible in Search
+                    </label>
+
+                </div>
+            </div>
         </div>
         <div id="add_trip_3" class="add_trip_div">
             <div class="control-group" id="cg_startdate">
