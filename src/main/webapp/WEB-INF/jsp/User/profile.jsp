@@ -34,6 +34,13 @@
 
         <h2><spring:message code="label.UserProfile"/></h2>
         <h4><spring:message code="label.General"/></h4>
+        <div class="row-fluid profile-fields">
+            <div class="span2" ><label class="profile_right"><spring:message code="label.photo"/></label></div>
+            <div class="span3">
+                <img src="/ProjectTeamF-1.0/image/${user.userID}.html" id="photo"/>
+            </div>
+        </div>
+
         <form:form class="form-horizontal" commandName="user" action="/ProjectTeamF-1.0/user/update.html" method="POST">
             <div class="row-fluid profile-fields">
                 <div class="span2" ><label class="profile_right"><spring:message code="label.username"/></label></div>

@@ -50,7 +50,7 @@
             </c:forEach>
         </table>
     </c:if>
-        <form method="post" action="${tripID}/invite.html">
+        <form method="post" action="${trip.tripId}/invite.html">
 
             E-mail: <input type="text" id="email" name="email">
             <input class="btn" type="submit" value="<spring:message code="label.invite"/>">

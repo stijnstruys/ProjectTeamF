@@ -1,18 +1,12 @@
 package be.kdg.teamf.model;
 
-import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
-import org.hibernate.annotations.OnDeleteAction;
-
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.sql.Blob;
 import java.util.Collection;
 import java.util.Date;
 
@@ -57,6 +51,10 @@ public class User implements Serializable {
     @Column(name = "notificationemail")
     private boolean notificationEmail;
 
+    @Lob
+    @Column(name = "profielFoto")
+    private Blob profielFoto;
+
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
@@ -64,6 +62,7 @@ public class User implements Serializable {
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("organiser"))
     private Collection<Trip> trips;
+
 
     public User() {
 
@@ -215,9 +214,14 @@ public class User implements Serializable {
         return notificationEmail;
     }
 
+    public Blob getProfielFoto() {
+        return profielFoto;
+    }
 
-
-  /*  @Override
+    public void setProfielFoto(Blob profielFoto) {
+        this.profielFoto = profielFoto;
+    }
+/*  @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

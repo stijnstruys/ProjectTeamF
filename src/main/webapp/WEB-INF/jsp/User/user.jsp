@@ -30,7 +30,7 @@
 <section id="content">
     <h2><spring:message code="label.UserRegistration"/></h2>
     <div id="validation_failed"></div>
-    <form:form method="post" action="add.html" commandName="user" id="user">
+    <form:form method="post" action="add.html" commandName="user" id="user" enctype="multipart/form-data">
 
         <table>
             <tr>
@@ -96,10 +96,13 @@
                 <td><form:input path="city" id="city"/></td>
             </tr>
             <tr>
+                <td><form:label path="profielFoto"><spring:message code="label.photo"/></form:label></td>
+                <td><input type="file" name="foto" id="foto"></td>
+            </tr>
+            <tr>
                 <td colspan="2">
                     <input type="submit" id="register_submit" class="btn" value="<spring:message code="label.Register"/>"/>
                 </td>
-
             </tr>
         </table>
     </form:form>

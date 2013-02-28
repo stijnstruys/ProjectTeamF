@@ -6,24 +6,28 @@ import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.DeelnameService;
 import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -53,6 +57,8 @@ public class UserController {
     @Autowired
     private DeelnameService deelnameService;
 
+
+
     /*@RequestMapping("/")
     public String listContacts(Map<String, Object> map) {
 
@@ -76,7 +82,15 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User user, BindingResult result) {
+    public String addUser(@ModelAttribute("user") User user, @RequestParam("foto") MultipartFile file) {
+
+        try {
+
+            Blob blob = Hibernate.createBlob(file.getInputStream());
+            user.setProfielFoto(blob);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         user.setNotificationEmail(true);
         user.setShowPosition(true);
         userService.addUser(user);
@@ -262,7 +276,23 @@ public class UserController {
         msg.setTo("kdgteamf@gmail.com");
         tripService.sendMail(mailModel, msg);
     }
+    @RequestMapping(value = "TripParticipants/{tripID}/invite", method = RequestMethod.POST)
+    public String sendInvite(@PathVariable(value = "tripID") int trip,@RequestParam(value = "email") String email) {
+        Trip t = tripService.findTrip(trip);
+        ModelMap mailModel = new ModelMap();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        mailModel.addAttribute("title", "Trip update");
+        mailModel.addAttribute("subtitle1", "Message from organiser");
+        mailModel.addAttribute("message", "U bent uitgenodigd voor trip " +t.getTripName() );
+        mailModel.addAttribute("link", "http://localhost:8080/ProjectTeamF-1.0/trip/" + trip + ".html");
 
+        mailModel.addAttribute("date", format.format(new Date()));
+
+        SimpleMailMessage msg = new SimpleMailMessage(message);
+        msg.setTo(email);
+        tripService.sendInvite(mailModel, msg);
+        return "redirect:/TripParticipants/" + trip + ".html";
+    }
     @RequestMapping("user/deleteTrip/{tripId}")
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {
 
@@ -331,5 +361,16 @@ public class UserController {
         return test;
     }
 
-
+    @RequestMapping("/image/{id}")
+    @ResponseBody
+    public byte[] getImage(@PathVariable int id) {
+        User u = userService.findUser(id);
+        Blob b = u.getProfielFoto();
+        try {
+            return  b.getBytes(1, (int) b.length());
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        return null;
+    }
 }
