@@ -47,7 +47,7 @@ public class TripController {
 
         Trip t = new Trip();
         request.setAttribute("trip", t);
-        request.setAttribute("tripList", tripService.listTrips());
+        request.setAttribute("tripList", tripService.listPublicTrips());
 
         ModelAndView model = new ModelAndView("Trip/tripOverzicht");
         return model;

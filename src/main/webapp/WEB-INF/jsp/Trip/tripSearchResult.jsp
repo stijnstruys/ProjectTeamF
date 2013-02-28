@@ -40,6 +40,8 @@
 <%
     int count = 0;
     int pagina = 0;
+    int count2 = 0;
+    int pagina2 = 0;
 %>
 <section id="content">
     <section class="tripPages">
@@ -74,12 +76,27 @@
                 </c:forEach>
             </ul>
         </c:if>
+        <div class="float_fix"></div>
+                <div class="pagination">
+                    <ul>
+                        <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
+                        <%
+                            for (int i = 0; i <= pagina; i++) {
+                        %>
+                        <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                        </a></li>
+                        <%
+                            }
+                        %>
+                        <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
+                    </ul>
+                </div>
         <c:if test="${!empty tripSearchCategories}">
             <h3><spring:message code="label.FoundOnTripCategory"/> <%= request.getParameter("searchInput") %>
             </h3>
             <ul class="trip_list">
                 <c:forEach items="${tripSearchCategories}" var="trip">
-                    <div class="trip_details trip_pagina_<%=pagina%>_content">
+                    <div class="trip_details trip_pagina_<%=pagina2%>_content">
                         <div class="trip_name"><a class="trip_name"
                                                   href="../trip/${trip.tripId}.html">${trip.tripName}</a>
                         </div>
@@ -94,10 +111,10 @@
 
                     </div>
                     <%
-                        count++;
-                        if (count == 6) {
-                            count = 0;
-                            pagina++;
+                        count2++;
+                        if (count2 == 6) {
+                            count2 = 0;
+                            pagina2++;
                         }
                     %>
                 </c:forEach>
@@ -108,7 +125,7 @@
             <ul>
                 <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
                 <%
-                    for (int i = 0; i <= pagina; i++) {
+                    for (int i = 0; i <= pagina2; i++) {
                 %>
                 <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
                 </a></li>

@@ -76,6 +76,12 @@ public class TripDAOImpl implements TripDAO {
     }
 
     @Override
+    public List<Trip> listPublicTrips() {
+        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where visible = true");
+        return q.list();
+    }
+
+    @Override
     public List<Trip> searchTripsCategories(String searchInput) {
 
         String si = "%" + searchInput + "%";

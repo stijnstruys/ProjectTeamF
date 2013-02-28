@@ -76,7 +76,7 @@ public class UserController {
         user.setShowPosition(true);
         userService.addUser(user);
 
-        return "redirect:/user/user.html";
+        return "redirect:/general/index.html";
     }
 
     @RequestMapping(value = "/user/addSocial", method = RequestMethod.POST)

@@ -23,6 +23,7 @@ public interface TripDAO {
     public List<Trip> listUserTrips(int UserID);
     public List<Trip> listUserParticipateTrips(int UserID);
     public List<String> getTripNames();
+    public List<Trip> listPublicTrips();
 
 
     List<Trip> searchTripsCategories(String searchInput);
