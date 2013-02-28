@@ -110,7 +110,7 @@
                             <td class="flagOptions">
                                 <a href="?lang=fr">
                                     <img src="../img/Languages/French.GIF" alt="Smiley face" class="flagsImg"/>
-                                    <label class="flagLink">Fran�ais</label>
+                                    <label class="flagLink">Fran&ccedil;ais</label>
                                 </a>
                             </td>
                             <td class="flagOptions">
