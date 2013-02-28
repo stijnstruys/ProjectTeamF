@@ -8,8 +8,13 @@ import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.GrantedAuthorityImpl;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -108,7 +113,7 @@ public class UserController {
         } else {
             user = userService.findUser(request.getParameter("userName"));
         }
-         logIn(user, null);
+         //logIn(user, null);
         /*
         user.setPassword(request.getParameter("id"));
         int userID = userService.login(user);
@@ -118,6 +123,13 @@ public class UserController {
         } else {
             return "login";
         }*/
+        List<GrantedAuthority> gaList = new ArrayList<GrantedAuthority>();
+        gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
+        org.springframework.security.core.userdetails.User usersec = new  org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), true, true, true, true, gaList);
+        Authentication auth = new UsernamePasswordAuthenticationToken(usersec, user.getPassword(), gaList);
+        org.springframework.security.core.context.SecurityContext sc = new SecurityContextImpl();
+        sc.setAuthentication(auth);
+        org.springframework.security.core.context.SecurityContextHolder.setContext(sc);
         return "/general/index.html";
     }
 
