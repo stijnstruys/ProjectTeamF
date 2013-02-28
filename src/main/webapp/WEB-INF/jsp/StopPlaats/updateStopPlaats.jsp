@@ -9,9 +9,11 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
-<html>
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -49,7 +51,7 @@
                         <td><img src="../img/icons/Google-Maps-icon.png" alt="Smiley face" class="mapIcons"
                                  id="mapCheckIcon"/></td>
                         <td rowspan="8">
-                            <div id="map_canvas3"></div>
+                            <div id="map_canvas"></div>
                         </td>
                     </tr>
                     <tr>
@@ -77,7 +79,7 @@
                         <td><form:label class="lbl" path="vrijgegeven"><spring:message
                                 code="label.Released"/></form:label>
                             <label class="checkbox">
-                                <form:checkbox path="vrijgegeven"/>
+                                <form:checkbox path="vrijgegeven" id="spvrijgegeven"/>
                             </label></td>
                     </tr>
                     <td colspan="2">
@@ -91,15 +93,14 @@
         </section>
     </section>
     <jsp:include page="../General/footer.jsp"/>
-
-    <!--google maps api-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    <script src="../js/jquery-ui-1.9.2.custom.js"></script>
-    <script src="../js/vendor/bootstrap.min.js"></script>
-    <script src="../js/plugins.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/mapScripts/mapsUpdate.js"></script>
+        <!--google maps api-->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="../js/jquery-ui-1.9.2.custom.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
+      <script src="../js/mapScripts/mapsUpdate.js"></script>
 </body>
 </html>

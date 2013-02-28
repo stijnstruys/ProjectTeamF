@@ -10,6 +10,8 @@ $(document).ready(function () {
 
     var map;
     var geocoder;
+    var marker;
+
     initialize();
     placeMarker();
 
@@ -27,6 +29,8 @@ $(document).ready(function () {
 
     $("#mapCheckIcon").click(function () {
         checkExistence2();
+        deleteMarker();
+        placeMarker();
     });
 
     $("#updateStopPlaats").bind("keypress", function (e) {
@@ -71,10 +75,11 @@ $(document).ready(function () {
     //zet marker
     function placeMarker() {
         var address = $("#address").val();
+
         geocoder.geocode({ 'address': address}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 map.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
+                marker = new google.maps.Marker({
                     map: map,
                     draggable: true,
                     position: results[0].geometry.location
@@ -89,6 +94,10 @@ $(document).ready(function () {
                 //alert("Geocode was not successful for the following reason: " + status);
             }
         });
+    }
+
+    function deleteMarker() {
+        marker.setMap(null);
     }
 
     function geocodePosition(pos) {

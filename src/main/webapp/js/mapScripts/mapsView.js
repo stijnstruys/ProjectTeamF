@@ -10,10 +10,19 @@ $(document).ready(function () {
     var map;
     var locations = new Array();
     var directionsService = new google.maps.DirectionsService();
-    initialize();
-    doCalc();
-    function initialize() {
+    var geocoder;
 
+    initialize();
+    if ($("#checkShowRouteSolution").attr('class') == "showRouteTrue") {
+        doCalc();
+    }
+    else {
+        placeMarkers();
+        map.setZoom(12);
+    }
+
+    function initialize() {
+        geocoder = new google.maps.Geocoder();
         directionsDisplay = new google.maps.DirectionsRenderer();
 
         //init map
@@ -49,6 +58,26 @@ $(document).ready(function () {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
             }
+        });
+    }
+
+    //plaats markers zonder route
+    function placeMarkers() {
+        $.each(locations, function (l, loc) {
+            geocoder.geocode({ 'address': loc}, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    checkExistence2();
+                    //alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+
+
         });
     }
 });

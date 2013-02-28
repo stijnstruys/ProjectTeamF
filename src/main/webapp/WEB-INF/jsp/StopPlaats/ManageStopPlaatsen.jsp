@@ -79,15 +79,15 @@
                                 <tr>
                                     <td><form:label class="lbl" path="showMap"><spring:message
                                             code="label.showMap"/></form:label></td>
-                                    <td><form:checkbox class="checkbox" path="showMap"/></td>
+                                    <td><form:checkbox class="checkbox" path="showMap" id="showMap"/></td>
                                 </tr>
                                 <tr>
                                     <td><form:label class="lbl" path="showRoute"><spring:message
                                             code="label.showRoute"/></form:label></td>
-                                    <td><form:checkbox class="checkbox" path="showRoute"/></td>
+                                    <td><form:checkbox class="checkbox" path="showRoute" id="showRoute"/></td>
                                 </tr>
                                 <td>
-                                    <input type="submit" class="btn"
+                                    <input type="submit" class="btn" id="SaveSettings"
                                            value="<spring:message code="label.SaveSettings"/>"/>
                                 </td>
                                 </tr>
@@ -104,19 +104,25 @@
                         <td><label><spring:message code="label.LocationName"/></label></td>
                     </tr>
                     <c:if test="${!empty trip.stopPlaatsen}">
+                        <%
+                            int count = 0;
+                        %>
                         <table class="data">
                             <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
+                                <%
+                                                        count++;
+                                                    %>
                                 <table>
                                     <tr>
-                                        <td><input type="text" readonly="true" id="adres" class="addresses"
+                                        <td><input type="text" readonly="true" id="adres<%=count%>" class="addresses"
                                                    value="${stopPlaatsen.adres}"/></td>
                                         <td>
-                                            <a href="/ProjectTeamF-1.0/StopPlaats/update-${stopPlaatsen.stopPlaatsID}.html">
+                                            <a id="updateAdres<%=count%>" href="/ProjectTeamF-1.0/StopPlaats/update-${stopPlaatsen.stopPlaatsID}.html">
                                                 <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"
                                                      class="mapIcons"/></a>
                                         </td>
                                         <td>
-                                            <a href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
+                                            <a id="deleteAdres<%=count%>" href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
                                                 <img src="../img/icons/Actions-edit-delete-icon.png" alt="Smiley face"
                                                      class="mapIcons"/></a>
                                         </td>
@@ -143,7 +149,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/mapScripts/maps.js"></script>
+<script src="../js/mapScripts/mapsManage.js"></script>
 
 </body>
 </html>

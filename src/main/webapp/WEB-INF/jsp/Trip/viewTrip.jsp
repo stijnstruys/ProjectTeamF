@@ -204,6 +204,9 @@
                             </c:forEach>
                         </table>
                     </c:if>
+                    <c:if test="${trip.showRoute}">
+                        <label id="checkShowRouteSolution" class="showRouteTrue"></label>
+                    </c:if>
                 </section>
                 <section id="rechts2">
                     <div id="map_canvas2"></div>
@@ -231,6 +234,7 @@
 
                 </c:if>
             </table>
+            <div id="onder"></div>
         </section>
     </section>
 </section>

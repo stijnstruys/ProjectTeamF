@@ -9,12 +9,22 @@ $(document).ready(function () {
 
     var map;
     var locations = new Array();
+    var geocoder;
 
     var directionsService = new google.maps.DirectionsService();
     initialize();
     //alert(locations.length);
-    doCalc();
+
+    if ($("#showRoute").is(':checked')) {
+        doCalc();
+    }
+    else {
+        placeMarkers();
+        map.setZoom(12);
+    }
+
     function initialize() {
+        geocoder = new google.maps.Geocoder();
         var rendererOptions = {
             //suppressMarkers : true
             // draggable: true
@@ -44,16 +54,16 @@ $(document).ready(function () {
     //bij klik op knop of enter eerst kijken of plaats bestaat
     $("#addStopPlaats").bind("keypress", function (e) {
         if (e.keyCode == 13) {
-           checkExistence();
+            checkExistence();
             return false;
         }
     });
 
-    $("#searchKnop").click(function(){
-          checkExistence();
+    $("#searchKnop").click(function () {
+        checkExistence();
     });
 
-    function checkExistence (){
+    function checkExistence() {
         $("#validation_failed2").hide();
         var geocoder = new google.maps.Geocoder();
         var addressInput = $("#address").val();
@@ -91,6 +101,26 @@ $(document).ready(function () {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
             }
+        });
+    }
+
+    //plaats markers zonder route
+    function placeMarkers() {
+        $.each(locations, function (l, loc) {
+            geocoder.geocode({ 'address': loc}, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    checkExistence2();
+                    //alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+
+
         });
     }
 
