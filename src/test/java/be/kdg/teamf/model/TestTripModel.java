@@ -59,6 +59,10 @@ public class TestTripModel {
         t.setEquipment(new ArrayList<String>());
         t.setEquipment(equipment);
         t.setVisible(true);
+        t.setShowMap(true);
+        t.setShowRoute(true);
+        t.setTravelType("Driving");
+
         assertEquals("Expected id: 1", 1, t.getTripId());
         assertEquals("Expected tripname: tripname", "tripname", t.getTripName());
         assertEquals("Enddate", d, t.getEndDate());
@@ -76,7 +80,9 @@ public class TestTripModel {
         assertEquals("Expected notification:", "notification", t.getNotification());
         assertEquals("Expected equipment:", equipment, t.getEquipment());
         assertEquals("Expected visible:", true, t.isVisible());
-
+        assertEquals("Expected show map:", true, t.getShowMap());
+        assertEquals("Expected show route:", true, t.getShowRoute());
+        assertEquals("Expected travel type:", "Driving", t.getTravelType());
     }
 
 

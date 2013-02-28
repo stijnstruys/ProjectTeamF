@@ -1,5 +1,6 @@
 package be.kdg.teamf.service;
 
+import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.TripCategorie;
 import be.kdg.teamf.model.User;
@@ -32,6 +33,10 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
     private SimpleMailMessage message;
     @Autowired
     protected TripService tripService;
+    @Autowired
+    protected UserService userService;
+    @Autowired
+    protected DeelnameService deelnameService;
 
     @Test
     public void testSearchTrip() {
@@ -42,8 +47,9 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         assertTrue("Trip not found", tripService.searchTrips("Jeroen").contains(trip));
 
     }
+
     @Test
-    public void testUpdateTrip()  {
+    public void testUpdateTrip() {
 
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
@@ -53,8 +59,9 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         assertTrue("Trip not found", tripService.searchTrips("trip").contains(trip));
 
     }
+
     @Test
-    public void testDeleteTrip()  {
+    public void testDeleteTrip() {
 
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
@@ -65,7 +72,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-    public void testSendMail(){
+    public void testSendMail() {
 
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -77,17 +84,16 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         mailModel.addAttribute("date", format.format(new Date()));
         SimpleMailMessage msg = new SimpleMailMessage(message);
         msg.setTo("kdgteamf@gmail.com");
-        try{
+        try {
             tripService.sendInvite(mailModel, msg);
             tripService.sendMail(mailModel, msg);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             Assert.fail();
         }
     }
 
     @Test
-    public void testSearchTripsCategorie(){
+    public void testSearchTripsCategorie() {
         Trip trip = new Trip();
         ArrayList<TripCategorie> tcs = new ArrayList<>();
         TripCategorie tc = new TripCategorie();
@@ -102,18 +108,20 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         assertTrue("Trip not found", tripService.searchTripsCategories("test").contains(trip));
 
     }
+
     @Test
-    public void testListTrip(){
+    public void testListTrip() {
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
         ArrayList<Trip> trips = new ArrayList<>();
         trips.add(trip);
         tripService.addTrip(trip);
-        assertEquals("Trips not found",trips.size() , tripService.listTrips().size());
+        assertEquals("Trips not found", trips.size(), tripService.listTrips().size());
 
     }
+
     @Test
-    public void testOwnership(){
+    public void testOwnership() {
         User u1 = new User();
         User u2 = new User();
 
@@ -124,43 +132,67 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         trip.setOrganiser(u1);
 
         tripService.addTrip(trip);
-        assertTrue("Not owner", tripService.checkOwnership(trip,u1));
+        assertTrue("Not owner", tripService.checkOwnership(trip, u1));
         assertFalse("owner", tripService.checkOwnership(trip, u2));
 
     }
+
     @Test
-    public void testFindTrip(){
+    public void testFindTrip() {
 
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
-        ArrayList<String>tripnames = new ArrayList<>();
+        ArrayList<String> tripnames = new ArrayList<>();
         tripnames.add("tripJeroen123");
         tripService.addTrip(trip);
         assertEquals("Not owner", tripnames, tripService.getTripNames());
 
     }
+
     @Test
-    public void testListUserTrip(){
+    public void testListUserParticipateTrips() {
+        User u = new User();
+        u.setUserID(1);
+        Trip trip = new Trip();
+        trip.setTripId(1);
+        Deelname d = new Deelname();
+        d.setDeelnameID(1);
+        d.setTrip(trip);
+        d.setUser(u);
+        ArrayList<Trip> trips = new ArrayList<>();
+        ArrayList<User> users = new ArrayList<>();
+        ArrayList<Deelname> deelnames = new ArrayList<>();
+        trips.add(trip);
+        users.add(u);
+        deelnames.add(d);
+        tripService.addTrip(trip);
+        userService.addUser(u);
+        deelnameService.addDeelname(d);
+        assertEquals("Participants", trips, tripService.listUserParticipateTrips(u.getUserID()));
+    }
+
+    @Test
+    public void testListUserTrip() {
         User u = new User();
         u.setUserID(1);
         Trip trip = new Trip();
         trip.setOrganiser(u);
         trip.setTripName("tripJeroen123");
-        ArrayList<Trip>trips = new ArrayList<>();
+        ArrayList<Trip> trips = new ArrayList<>();
         trips.add(trip);
         tripService.addTrip(trip);
-        assertEquals("Not owner",trips ,tripService.listUserTrips(u.getUserID()));
-
+        assertEquals("Not owner", trips, tripService.listUserTrips(u.getUserID()));
     }
+
     @Test
-    public void testFindTripID()  {
+    public void testFindTripID() {
 
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
         trip.setTripId(1);
         tripService.addTrip(trip);
 
-        assertEquals("Trip not found",trip, tripService.findTrip(trip.getTripId()));
+        assertEquals("Trip not found", trip, tripService.findTrip(trip.getTripId()));
 
     }
 }

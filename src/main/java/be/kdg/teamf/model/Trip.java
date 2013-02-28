@@ -68,10 +68,10 @@ public class Trip {
     private String bgcolor = "#1C263C";
 
     @Column(name = "SHOWMAP")
-    private Boolean showMap = false;
+    private boolean showMap = false;
 
     @Column(name = "SHOWROUTE")
-    private Boolean showRoute = true;
+    private boolean showRoute = true;
 
     @Column(name = "TRAVELTYPE")
     private String travelType;
@@ -237,11 +237,11 @@ public class Trip {
         this.visible = visible;
     }
 
-    public Boolean getShowMap() {
+    public boolean getShowMap() {
           return showMap;
       }
 
-      public void setShowMap(Boolean showMap) {
+      public void setShowMap(boolean showMap) {
           this.showMap = showMap;
       }
 
@@ -253,11 +253,11 @@ public class Trip {
           this.travelType = travelType;
       }
 
-    public Boolean getShowRoute() {
+    public boolean getShowRoute() {
         return showRoute;
     }
 
-    public void setShowRoute(Boolean showRoute) {
+    public void setShowRoute(boolean showRoute) {
         this.showRoute = showRoute;
     }
 }
