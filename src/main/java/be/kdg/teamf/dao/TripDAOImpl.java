@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -83,8 +84,10 @@ public class TripDAOImpl implements TripDAO {
 
     @Override
     public List<String> listUserEmailPerTrips(int tripID) {
-        Query q = sessionFactory.getCurrentSession().createQuery("select email from User u where u.notificationEmail = true and u.userID ");
-        return q.list();
+        List<String> test = new ArrayList();
+        //Query q = sessionFactory.getCurrentSession().createQuery("select email from User u where u.notificationEmail = true and u.userID ");
+        //return q.list();
+        return test;
     }
 
     @Override

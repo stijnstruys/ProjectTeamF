@@ -265,6 +265,8 @@ public class UserController {
 
        // tripService.li
 
+       // tripService.li
+
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         mailModel.addAttribute("title", "Trip update");
