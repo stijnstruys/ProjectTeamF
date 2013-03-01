@@ -131,7 +131,8 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
         trip.setOrganiser(u1);
-
+        userService.addUser(u1);
+        userService.addUser(u2);
         tripService.addTrip(trip);
         assertTrue("Not owner", tripService.checkOwnership(trip, u1));
         assertFalse("owner", tripService.checkOwnership(trip, u2));
@@ -181,6 +182,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         trip.setTripName("tripJeroen123");
         ArrayList<Trip> trips = new ArrayList<>();
         trips.add(trip);
+        userService.addUser(u);
         tripService.addTrip(trip);
         assertEquals("Not owner", trips, tripService.listUserTrips(u.getUserID()));
     }
@@ -204,7 +206,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         ArrayList<Trip> trips = new ArrayList<>();
         trips.add(trip);
         tripService.addTrip(trip);
-        assertEquals("public trips", trips, tripService.listPublicTrips().size());
+        assertEquals("public trips", trips, tripService.listPublicTrips());
     }
 
     @Test
@@ -212,15 +214,18 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         User u = new User();
         u.setUserID(1);
         u.setEmail("kdgteamf@gmail.com");
+        u.setNotificationEmail(true);
         Trip t = new Trip();
         t.setTripId(1);
         Deelname d = new Deelname();
         d.setTrip(t);
         d.setUser(u);
+        userService.addUser(u);
+        tripService.addTrip(t);
         deelnameService.addDeelname(d);
         List<String> emails = new ArrayList<>();
         emails.add("kdgteamf@gmail.com");
-        assertEquals("public trips", emails, tripService.listUserEmailPerTrips(1));
+        assertEquals("public trips", emails, tripService.listUserEmailPerTrips(t.getTripId()));
     }
 
 

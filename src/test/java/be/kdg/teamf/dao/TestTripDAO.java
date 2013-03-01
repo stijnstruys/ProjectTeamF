@@ -103,13 +103,16 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests {
         User u = new User();
         u.setUserID(1);
         u.setEmail("kdgteamf@gmail.com");
+        u.setNotificationEmail(true);
         Trip t = new Trip();
         t.setTripId(1);
         Deelname d = new Deelname();
         d.setTrip(t);
         d.setUser(u);
+        userDAO.addUser(u);
+        tripDAO.addTrip(t);
         deelnameDAO.addDeelname(d);
-        assertEquals("Expected size:", 1, tripDAO.listUserEmailPerTrips(1).size());
+        assertEquals("Expected size:", 1, tripDAO.listUserEmailPerTrips(t.getTripId()).size());
     }
 
     private Trip getTrip() {

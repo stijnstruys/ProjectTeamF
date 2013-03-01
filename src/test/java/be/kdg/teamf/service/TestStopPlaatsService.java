@@ -33,8 +33,6 @@ public class TestStopPlaatsService   extends AbstractTransactionalJUnit4SpringCo
 
     }
 
-
-
     @Test
     public void updateStopPlaats(){
         StopPlaats s = new StopPlaats();
@@ -72,4 +70,11 @@ public class TestStopPlaatsService   extends AbstractTransactionalJUnit4SpringCo
 
         assertEquals("tripsize not 1",trips.size() ,stopPlaatsService.getStopPlaatsenByTripId(t.getTripId()).size());
     }
+
+    @Test
+       public void controleerAntwoord(){
+        StopPlaats sp = new StopPlaats();
+        sp.setCorrectAntwoord("antw1");
+           stopPlaatsService.controleerAntwoord("antw1", sp);
+       }
 }
