@@ -82,6 +82,12 @@ public class TripDAOImpl implements TripDAO {
     }
 
     @Override
+    public List<String> listUserEmailPerTrips(int tripID) {
+        Query q = sessionFactory.getCurrentSession().createQuery("select email from User u where u.notificationEmail = true and u.userID ");
+        return q.list();
+    }
+
+    @Override
     public List<Trip> searchTripsCategories(String searchInput) {
 
         String si = "%" + searchInput + "%";

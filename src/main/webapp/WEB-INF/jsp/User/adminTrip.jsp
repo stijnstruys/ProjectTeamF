@@ -102,7 +102,7 @@
             <div class="control-group">
                 <div class="controls">
                     <label class="checkbox">
-                        <form:checkbox path="visible" /> Trip visible in Search
+                        <form:checkbox path="visible" /><spring:message code="label.tripVisible"/>
                     </label>
 
                 </div>
@@ -118,7 +118,7 @@
                 <form:label class="control-label" path="equipment"><spring:message code="label.equipment"/></form:label>
                 <div class="controls">
                     <input type="text" id="equipment-input"/>
-                    <span class="help-inline url"id="add_equipment">Add</span>
+                    <span class="help-inline url"id="add_equipment"><spring:message code="label.tripAdd"/></span>
                 </div>
             </div>
             <div class="control-group">
@@ -128,7 +128,7 @@
                             <form:option value="${equipmentPiece}"> ${equipmentPiece}</form:option>
                         </c:forEach>
                     </form:select>
-                    <span class="help-inline url" id="remove_equipment">Remove selected</span>
+                    <span class="help-inline url" id="remove_equipment"><spring:message code="label.removeSelected"/></span>
                 </div>
             </div>
 
@@ -158,11 +158,11 @@
 
              <div id="onder"></div>
 
-            <button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
+
 
         </form:form>
 
-
+        <button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
 
 
 <div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">
