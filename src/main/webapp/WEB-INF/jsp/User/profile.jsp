@@ -30,8 +30,8 @@
 
     <section id="content">
         <section class="tripPages">
-        <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password" class="btn_green_left">Change password</a>
-        <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" class="btn_green_left">Modify</a>
+        <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password">Change password</a>
+        <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" >Modify</a>
 
         <h2><spring:message code="label.UserProfile"/></h2>
         <h4><spring:message code="label.General"/></h4>

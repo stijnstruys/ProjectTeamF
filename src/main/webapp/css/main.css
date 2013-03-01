@@ -416,24 +416,23 @@ a.trip_name:hover {
 /* trip overzicht */
 
 
-/*#addTripButton {
-    background-color: #D4D4D4;
-    color: #1C263C;
-
-    border-radius: 0.5em;
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 0.4em;
-    padding-left: 3em;
-    padding-right: 3em;
-}*/
+#pickerdivs {
+    margin-top: 45px;
+    margin-bottom: 70px;;
+    float: left;
+}
+#picker {
+    margin-right: 100px;
+}
 
 #addTripButton:hover {
     background-color: #BDBBBB;
     color: #D4D4D4;
 }
 
-
+.float_right {
+    float: right;
+}
 
 /* maps */
 

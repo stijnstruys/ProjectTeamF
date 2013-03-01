@@ -95,9 +95,7 @@ function registration() {
 
     }
 
-    $("#trip_add").click(function() {
-        $('#trip_equipment').find('option').attr('selected','selected');
-    });
+
     //submit
     $("#user").submit( function() {
         $("#validation_failed").hide();

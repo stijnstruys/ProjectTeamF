@@ -43,143 +43,126 @@
     int count = 0;
 %>
 <section id="content">
-<section class="tripPages">
-<style>
-    #content {
-        background: ${trip.bgcolor};
-        color: ${trip.fontcolorContent};
-    }
+    <section class="tripPages">
+        <style>
+            #content {
+                background: ${trip.bgcolor};
+                color: ${trip.fontcolorContent};
+            }
 
-    h2 {
-        color: ${trip.fontcolorTitle};
-    }
-</style>
+            h2 {
+                color: ${trip.fontcolorTitle};
+            }
+        </style>
 
-<h2><spring:message code="label.updateTrip"/></h2>
+        <a href="deleteTrip/${trip.tripId}.html" class="btn btn-danger btn_green_right" ><spring:message code="label.deleteTrip"/></a>
+        <h2><spring:message code="label.updateTrip"/></h2>
 
-<form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip">
+        <form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip" class="form-horizontal">
+            <form:hidden id="hiddenTripID" path="tripId"/>
 
-    <table id="adminTripTable">
-        <tr>
-            <td><form:hidden id="hiddenTripID" path="tripId"/></td>
-        </tr>
-        <tr>
-            <td><form:label id="labelTripN" path="tripName"><spring:message
-                    code="label.tripName"/></form:label></td>
-            <td><form:input id="TripN" path="tripName"/></td>
-            <td><form:label id="labelTripLoc" path="startLocation"><spring:message
-                    code="label.startLocation"/></form:label></td>
-            <td><form:input id="TripLoc" path="startLocation"/></td>
-        </tr>
-        <tr>
-            <td><form:label id="labelTripStartD" path="startDate"><spring:message
-                    code="label.startDate"/></form:label></td>
-            <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
-                            path="startDate"
-                            value="${1900 + trip.startDate.year}/${1 + trip.startDate.month}/${trip.startDate.date}"/></td>
-            <td><form:label id="labelTripEndD" path="endDate"><spring:message
-                    code="label.endDate"/></form:label></td>
-            <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
-                            path="endDate"
-                            value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/></td>
-        </tr>
-        <tr>
-            <td><form:label id="labelTripDescr" path="tripDescription"><spring:message
-                    code="label.tripDescription"/></form:label></td>
-            <td rowspan="2"><form:textarea id="TripDescr" path="tripDescription"/></td>
-            <td><form:label id="labelTripNotificatie" path="notification"><spring:message
-                    code="label.TripNotificatie"/></form:label></td>
-            <td rowspan="2"><form:textarea id="TripNotificatie" path="notification"/></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><form:label id="labelTripEquipment" path="equipment"><spring:message
-                    code="label.equipment"/></form:label></td>
-            <c:if test="${!empty trip.equipment}">
+            <legend>General #yoloswag</legend>
 
-            <c:forEach items="${trip.equipment}" var="equipmentPiece">
-                    <%
-                        count++;
-                    %>
-        <tr id="equipment<%=count%>">
-            <td>
-                <input type="text" value="${equipmentPiece}" name="equipment"/>
-                <button class="btn" type="button" onclick="removeEquipment('equipment<%=count%>')">X</button>
-            </td>
-        </tr>
-        </c:forEach>
-        </c:if>
-        </tr>
-        <tr>
-            <td>
-                <button id="newEquip" class="btn" type="button" onclick="addEquipment()">New</button>
-            </td>
-        </tr>
+                <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
+                <a href="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html" class="btn btn-success float_right" id="ManageParticipants" ><spring:message code="label.ManageParticipants"/></a>
+                <a href="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html" class="btn btn-success float_right" id="ManageCategories" class="btn_green_left"><spring:message code="label.ManageCategories"/></a>
 
-        <tr>
-            <td>
-                <label class="form-item"><spring:message
-                        code="label.Background"/></label><form:input type="text" name="color1" path="bgcolor"
-                                                                     class="colorpicker" id="color1"/>
-                <label class="form-item"><spring:message
-                        code="label.FontTitle"/></label><form:input type="text" name="color2"
-                                                                    path="fontcolorContent"
-                                                                    class="colorpicker" id="color2"/>
-                <label class="form-item"><spring:message
-                        code="label.FontContent"/></label><form:input type="text" name="color3"
-                                                                      path="fontcolorTitle"
-                                                                      class="colorpicker" id="color3"/>
-            </td>
-            <td>
-                <div id="picker" style="float: right;"></div>
-            </td>
-            <td>
+                <div class="control-group">
+                    <form:label id="labelTripN" class="control-label"  path="tripName"><spring:message code="label.tripName"/></form:label>
+                    <div class="controls">
+                        <form:input type="text" id="TripN" path="tripName"/>
+                    </div>
+                </div>
 
-            </td>
-        </tr>
-    </table>
-</form:form>
+                <div class="control-group">
+                    <form:label id="labelTripLoc" class="control-label"  path="startLocation"><spring:message code="label.startLocation"/></form:label>
+                    <div class="controls">
+                        <form:input type="text" id="TripLoc" path="startLocation"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <form:label id="labelTripStartD" class="control-label"  path="startDate"><spring:message code="label.startDate"/></form:label>
+                    <div class="controls">
+                        <form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;" path="startDate" type="text" value="${1900 + trip.startDate.year}/${1 + trip.startDate.month}/${trip.startDate.date}"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <form:label id="labelTripEndD" class="control-label"  path="endDate"><spring:message code="label.endDate"/></form:label>
+                    <div class="controls">
+                        <form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="startDate" type="text" value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/>
+                    </div>
+                </div>
+            <div class="control-group">
+                <form:label id="labelTripDescr" class="control-label"  path="tripDescription"><spring:message code="label.tripDescription"/></form:label>
+                <div class="controls">
+                    <form:input type="text" id="TripDescr" path="tripDescription"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <form:checkbox path="visible" /> Trip visible in Search
+                    </label>
+
+                </div>
+            </div>
+            <div class="control-group">
+                <form:label id="labelTripNotificatie" class="control-label"  path="notification"><spring:message code="label.TripNotificatie"/></form:label>
+                <div class="controls">
+                    <form:input type="text" id="TripNotificatie" path="notification"/>
+                </div>
+            </div>
+            <legend><spring:message code="label.equipment"/></legend>
+            <div class="control-group">
+                <form:label class="control-label" path="equipment"><spring:message code="label.equipment"/></form:label>
+                <div class="controls">
+                    <input type="text" id="equipment-input"/>
+                    <span class="help-inline url"id="add_equipment">Add</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <form:select multiple="multiple" path="equipment" id="trip_equipment">
+                        <c:forEach items="${trip.equipment}" var="equipmentPiece">
+                            <form:option value="${equipmentPiece}"> ${equipmentPiece}</form:option>
+                        </c:forEach>
+                    </form:select>
+                    <span class="help-inline url" id="remove_equipment">Remove selected</span>
+                </div>
+            </div>
+
+            <legend>kleurekes</legend>
+
+            <div id="picker" style="float: right;"></div>
+            <div id="pickerdivs">
+                <div class="control-group">
+                    <label class="form-item control-label"><spring:message code="label.Background"/> </label>
+                    <div class="controls">
+                        <form:input type="text" name="color1" path="bgcolor" class="colorpicker" id="color1" readonly="true"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="form-item control-label"><spring:message code="label.FontTitle"/></label>
+                    <div class="controls">
+                        <form:input type="text" name="color2" path="fontcolorContent" class="colorpicker" id="color2" readonly="true"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="form-item control-label"><spring:message code="label.FontContent"/></label>
+                    <div class="controls">
+                        <form:input type="text" name="color3" path="fontcolorTitle" class="colorpicker" id="color3" readonly="true" />
+                    </div>
+                </div>
+            </div>
+
+             <div id="onder"></div>
+
+            <button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
+
+        </form:form>
 
 
-<table>
-    <tr>
-        <td>
-            <h3><spring:message code="label.Manage"/></h3>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button class="btn" id="ManageStoppingPoints"
-                    onClick="location.href='/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html'"><spring:message
-                    code="label.ManageStoppingPoints"/></button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button class="btn" id="ManageParticipants"
-                    onClick="location.href='/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html'">
-                <spring:message
-                        code="label.ManageParticipants"/></button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button class="btn" id="ManageCategories"
-                    onClick="location.href='/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html'">
-                <spring:message
-                        code="label.ManageCategories"/></button>
-        </td>
-    </tr>
-</table>
 
-<button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
-<button class="btn" onclick="location.href='deleteTrip/${trip.tripId}.html'"><spring:message
-        code="label.deleteTrip"/></button>
 
 <div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">
     <form>
