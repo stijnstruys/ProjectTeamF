@@ -34,7 +34,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 /**
  * Created with IntelliJ IDEA.
@@ -154,10 +153,22 @@ public class UserController {
     }
     @RequestMapping(value = "/user/update", method = RequestMethod.POST)
     public String updateUserData(@ModelAttribute("user")
-                                 User user, BindingResult result) {
-
+                                 User user, @RequestParam("foto") MultipartFile file) {
         User u = userService.findUser(user.getUserID());
+        if (file.getSize() == 0){
+            user.setProfielFoto(u.getProfielFoto());
+        } else {
+            try {
+                Blob blob = Hibernate.createBlob(file.getInputStream());
+                user.setProfielFoto(blob);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
         user.setPassword(u.getPassword());
+
 
         userService.updateUser(user);
         return "redirect:/user/profile.html";
@@ -309,7 +320,7 @@ public class UserController {
 
     @RequestMapping(value = "/TripParticipants/updateTripParticipants/{tripID}", method = RequestMethod.POST)
     public String updateTripParticipants(@ModelAttribute("tripParticipant")
-                                      Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
+                                         Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
 
 
         deelnameService.updateDeelname(deelname);
@@ -319,7 +330,7 @@ public class UserController {
 
     @RequestMapping(value = "/TripParticipants/updateDeelname/{deelnameID}", method = RequestMethod.POST)
     public String updateDeelnemer(@ModelAttribute("tripParticipant")
-                                         Deelname deelname, BindingResult result, @PathVariable("deelnameID") int deelnameID) {
+                                  Deelname deelname, BindingResult result, @PathVariable("deelnameID") int deelnameID) {
 
 
         deelnameService.updateDeelname(deelname);
