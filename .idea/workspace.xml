@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="cp trips">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362133297415" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362133737183" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362125275790" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362132037954" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -52,7 +53,7 @@
     <file path="/DeelnameServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361349048677" ignored="false" />
     <file path="/TestTripController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361530840036" ignored="false" />
     <file path="/IndexTest.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360919714815" ignored="false" />
-    <file path="/adminTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362131425899" ignored="false" />
+    <file path="/adminTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362133416450" ignored="false" />
     <file path="/TestStopPlaatsDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361522596531" ignored="false" />
     <file path="/spring-security.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361285679086" ignored="false" />
     <file path="$PROJECT_DIR$/../../Testgevallen/Spring-Security-Form-Login-Example/Spring3MVC/src/main/webapp/WEB-INF/spring-security.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360941179454" ignored="false" />
@@ -172,14 +173,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminTrip.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="adminTrip.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="206" selection-start="3901" selection-end="3901" vertical-scroll-proportion="0.7657658">
+            <state line="83" column="45" selection-start="3947" selection-end="3947" vertical-scroll-proportion="-4.0">
               <folding>
-                <marker date="1362133272581" expanded="true" signature="1521:1773" placeholder="..." />
-                <marker date="1362133272581" expanded="true" signature="1614:1642" placeholder="..." />
+                <marker date="1362133608286" expanded="true" signature="1521:1773" placeholder="..." />
+                <marker date="1362133608286" expanded="true" signature="1614:1642" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="534" column="18" selection-start="7189" selection-end="7189" vertical-scroll-proportion="0.6832298">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TripType.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/TripType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="26" selection-start="483" selection-end="493" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trip.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Trip.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="29" selection-start="2027" selection-end="2035" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -224,11 +252,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/messages_nl.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/resources/mailTripUpdate.vm" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
       </list>
     </option>
   </component>
@@ -389,6 +417,36 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -431,6 +489,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -807,7 +929,6 @@
     </configuration>
     <configuration default="false" name="Glassfish 3.1.2.2" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Glassfish 3.1.2.2">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/ProjectTeamF-1.0/" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="ProjectTeamF:war exploded">
           <settings />
@@ -1183,7 +1304,11 @@
       <created>1362133163856</created>
       <updated>1362133163856</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="cp trips">
+      <created>1362133306111</created>
+      <updated>1362133306111</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1326,16 +1451,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="41" selection-start="4122" selection-end="4122" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="4146" selection-end="4311" vertical-scroll-proportion="0.6021277" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="82" column="117" selection-start="3692" selection-end="3692" vertical-scroll-proportion="0.0" />
@@ -1392,13 +1507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="537" column="15" selection-start="7267" selection-end="7267" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="87" column="46" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
@@ -1425,13 +1533,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Trip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="29" selection-start="2027" selection-end="2035" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/TripType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="26" selection-start="483" selection-end="493" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="206" selection-start="3901" selection-end="3901" vertical-scroll-proportion="0.7657658">
+        <state line="83" column="45" selection-start="3947" selection-end="3947" vertical-scroll-proportion="-4.0">
           <folding>
-            <marker date="1362133272581" expanded="true" signature="1521:1773" placeholder="..." />
-            <marker date="1362133272581" expanded="true" signature="1614:1642" placeholder="..." />
+            <marker date="1362133608286" expanded="true" signature="1521:1773" placeholder="..." />
+            <marker date="1362133608286" expanded="true" signature="1614:1642" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="534" column="18" selection-start="7189" selection-end="7189" vertical-scroll-proportion="0.6832298">
+          <folding />
         </state>
       </provider>
     </entry>
