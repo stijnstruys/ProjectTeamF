@@ -32,7 +32,9 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.ManageStoppingPoints"/></h2>
-
+        <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
+            <input type="submit" value="Back" class="btn">
+        </form>
         <div id="validation_failed2"><spring:message code="label.badMapEntry"/></div>
         <table class="mapManageTable">
             <tr>

@@ -32,6 +32,9 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.addTripCategory"/></h2>
+        <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
+        <input type="submit" value="Back" class="btn">
+        </form>
         <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie">
 
             <table>

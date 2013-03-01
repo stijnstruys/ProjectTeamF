@@ -1,9 +1,11 @@
 package be.kdg.teamf.model;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.util.Collection;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,6 +32,16 @@ public class StopPlaats {
     private String type;
     @Column(name = "Naam")
     private String naam;
+    @Column(name = "Vraag")
+    private String vraag;
+    @Column(name = "CorrectAntwoord")
+    private String correctAntwoord;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ElementCollection
+    @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
+    @Column(name="Antwoorden")
+    private Collection<String> antwoorden;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -90,5 +102,29 @@ public class StopPlaats {
 
     public void setNaam(String naam) {
         this.naam = naam;
+    }
+
+    public String getVraag() {
+        return vraag;
+    }
+
+    public void setVraag(String vraag) {
+        this.vraag = vraag;
+    }
+
+    public String getCorrectAntwoord() {
+        return correctAntwoord;
+    }
+
+    public void setCorrectAntwoord(String antwoord) {
+        this.correctAntwoord = antwoord;
+    }
+
+    public Collection<String> getAntwoorden() {
+        return antwoorden;
+    }
+
+    public void setAntwoorden(Collection<String> antwoorden) {
+        this.antwoorden = antwoorden;
     }
 }

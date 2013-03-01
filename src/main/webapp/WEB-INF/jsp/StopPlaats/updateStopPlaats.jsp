@@ -25,12 +25,24 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+    <script>
+        var counter = 1;
+        function addAntwoord() {
 
+            $("#newAntwoord").before('<tr><td id=antwoordnew'+counter+' ><input type="text" value="" name="antwoorden"/><button class="btn"  type="button" onclick="removeAntwoord(\'antwoordnew'+counter+'\')">X</button></td></tr>');
+            counter++;
+        }
+        function removeAntwoord(s) {
+            $("#"+s).remove();
+        }
+    </script>
 </head>
 <body>
 <section id="container">
     <jsp:include page="../General/header.jsp"/>
-
+        <%
+        int count = 0;
+     %>
     <section id="content">
         <section class="tripPages">
             <h2><spring:message code="label.UpdateStoppingPoint"/></h2>
@@ -68,6 +80,40 @@
                     <tr>
                         <td><form:input path="type" id="sptype"/></td>
                     </tr>
+
+                    <tr>
+                        <td><form:label class="lbl" path="vraag"><spring:message
+                                code="label.Vraag"/></form:label></td>
+                    </tr>
+                    <tr>
+                        <td><form:input path="vraag" id="vraag"/></td>
+                    </tr>
+                    <tr>
+                        <td><form:label class="lbl" path="correctAntwoord"><spring:message
+                                code="label.CorrectAntwoord"/></form:label></td>
+                    </tr>
+                    <tr>
+                        <td><form:input path="correctAntwoord" id="correctAntwoord"/></td>
+                    </tr>
+                    <tr>
+                        <td><form:label class="lbl" path="antwoorden"><spring:message
+                                code="label.Antwoorden"/></form:label></td>
+                    </tr>
+                    <c:if test="${!empty stopPlaats.antwoorden}">
+
+                        <c:forEach items="${stopPlaats.antwoorden}" var="antwoord">
+                            <%
+                                count++;
+                            %>
+                            <tr id="antwoord<%=count%>">
+                                <td>
+                                    <input  type="text" value="${antwoord}" name="antwoorden"/>
+                                    <button  class="btn" type="button" onclick="removeAntwoord('antwoord<%=count%>')">X</button>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </c:if>
+                    <tr><td><button id="newAntwoord"  class="btn" type="button" onclick="addAntwoord()">New</button></td></tr>
                     <tr>
                         <td><form:label class="lbl" path="informatie"><spring:message
                                 code="label.information"/></form:label></td>
@@ -93,14 +139,14 @@
         </section>
     </section>
     <jsp:include page="../General/footer.jsp"/>
-        <!--google maps api-->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="../js/jquery-ui-1.9.2.custom.js"></script>
-        <script src="../js/vendor/bootstrap.min.js"></script>
-        <script src="../js/plugins.js"></script>
-        <script src="../js/main.js"></script>
-      <script src="../js/mapScripts/mapsUpdate.js"></script>
+    <!--google maps api-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="../js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/mapScripts/mapsUpdate.js"></script>
 </body>
 </html>

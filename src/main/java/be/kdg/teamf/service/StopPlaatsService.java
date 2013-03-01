@@ -18,6 +18,6 @@ public interface StopPlaatsService {
     public void deleteStopPlaats (StopPlaats stopPlaats);
     public StopPlaats findStopPlaats(int stopPlaatsID);
     public List<StopPlaats> listStopPlaatsen();
-
+    public boolean controleerAntwoord(String antwoord, StopPlaats sp);
     List<StopPlaats> getStopPlaatsenByTripId(int tripId);
 }

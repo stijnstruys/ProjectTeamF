@@ -30,7 +30,9 @@
 <section id="content">
     <section class="tripPages">
     <h2><spring:message code="label.ManageParticipants"/></h2>
-    <a href="../user/admincp-${tripID}.html">Back</a>
+        <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
+            <input type="submit" value="Back" class="btn">
+        </form>
     <c:if test="${!empty deelnemers}">
         <table class="data">
             <tr>
