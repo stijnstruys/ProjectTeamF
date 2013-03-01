@@ -8,7 +8,7 @@ var beginTripN = "";
 var beginTripDescr = "";
 var beginTripStartD = "";
 var beginTripEndD = "";
-var beginTripOrg = "";
+var beginTripNot = "";
 var beginTripLoc = "";
 
 $(document).ready(function () {
@@ -22,13 +22,12 @@ $(document).ready(function () {
     //add trip
     addTrip();
 
-
     //begin gegevens nemen
     beginTripN = $("#TripN").val();
     beginTripDescr = $("#TripDescr").val();
     beginTripStartD = $("#TripStartD").val();
     beginTripEndD = $("#TripEndD").val();
-    beginTripOrg = $("#TripOrg").val();
+    beginTripNot = $("#TripNotificatie").val();
     beginTripLoc = $("#TripLoc").val();
 
     //datepicker
@@ -88,6 +87,15 @@ $(document).ready(function () {
         }
     });
 
+    //mail
+    $("#skip").click(function () {
+        $("#viewTripForm").submit();
+    });
+
+    $("#sendMail").click(function () {
+        sendMail();
+    });
+
     $("#dialog-message").dialog({
         autoOpen: false,
         width: 'auto',
@@ -95,14 +103,6 @@ $(document).ready(function () {
         show: {
             effect: "blind",
             duration: 1000
-        },
-        buttons: {
-            Send: function () {
-                sendMail();
-            },
-            Skip: function () {
-                $("#viewTripForm").submit();
-            }
         }
     });
 
@@ -152,7 +152,7 @@ $(document).ready(function () {
 
 function addTrip() {
     /* wizard */
-     //Variables
+    //Variables
     var current;
     var numberOfSteps = 7;
     var firstclick = false;
@@ -170,20 +170,20 @@ function addTrip() {
     $(".add_trip_div").css("visibility", "visible");
     $(".add_trip_div").hide();
     $("#add_trip_prev").parent().addClass("disabled");
-    $("#validation_failed").css("visibility" , "visible");
+    $("#validation_failed").css("visibility", "visible");
     $("#validation_failed").hide();
     //show first window
     $("#add_trip_1").show();
     current = 1;
 
     //next & prev
-    $("#add_trip_next").click(function() {
+    $("#add_trip_next").click(function () {
         var validationOk = true;
-        if(current < numberOfSteps) {
+        if (current < numberOfSteps) {
 
             /*validation calls*/
             errormsg = "";
-            switch(current) {
+            switch (current) {
                 case 2:
                     validationOk = checkName();
                     break;
@@ -195,9 +195,9 @@ function addTrip() {
                     break;
             }
             /*end validation calls */
-            if(validationOk) {
+            if (validationOk) {
                 $("#validation_failed").hide();
-                if(prevhidden) {
+                if (prevhidden) {
                     prevhidden = false;
                     $("#add_trip_prev").parent().removeClass("disabled");
                     triptype = $("#tripTypeSelect").val();
@@ -206,21 +206,20 @@ function addTrip() {
                 $("#add_trip_" + current).hide();
                 current++;
 
-                if(current == 3) {
-                    if(triptype == 3) {
+                if (current == 3) {
+                    if (triptype == 3) {
                         current++;
                     }
                 }
-                if(current == 4) {
-                    if(triptype != 2) {
+                if (current == 4) {
+                    if (triptype != 2) {
                         current++;
                     }
                 }
-
 
 
                 $("#add_trip_" + current).show();
-                if(current >= numberOfSteps) {
+                if (current >= numberOfSteps) {
                     $("#add_trip_next").parent().addClass("disabled");
                     nexthidden = true;
                 }
@@ -232,46 +231,46 @@ function addTrip() {
         }
     });
 
-    $("#add_trip_prev").click(function() {
-       if(current > 1) {
+    $("#add_trip_prev").click(function () {
+        if (current > 1) {
 
-           if(nexthidden) {
-               nexthidden = false;
-               $("#add_trip_next").parent().removeClass("disabled");
-           }
+            if (nexthidden) {
+                nexthidden = false;
+                $("#add_trip_next").parent().removeClass("disabled");
+            }
 
-           $("#add_trip_" + current).hide();
-           current--;
+            $("#add_trip_" + current).hide();
+            current--;
 
-           if(current == 3) {
-               if(triptype == 3) {
-                   current--;
-               }
-           }
-           if(current == 4) {
-               if(triptype != 2) {
-                   current--;
-               }
-           }
-           $("#add_trip_" + current).show();
-           if(current <= 1) {
-               $("#add_trip_prev").parent().addClass("disabled");
-               prevhidden = true;
-           }
-       }
+            if (current == 3) {
+                if (triptype == 3) {
+                    current--;
+                }
+            }
+            if (current == 4) {
+                if (triptype != 2) {
+                    current--;
+                }
+            }
+            $("#add_trip_" + current).show();
+            if (current <= 1) {
+                $("#add_trip_prev").parent().addClass("disabled");
+                prevhidden = true;
+            }
+        }
     });
 
     /* Equipment */
-    $("#add_equipment").click(function() {
+    $("#add_equipment").click(function () {
         var equipmentToAdd = $("#equipment-input").val();
-        if(equipmentToAdd.length > 0) {
+        if (equipmentToAdd.length > 0) {
             var o = new Option(equipmentToAdd, equipmentToAdd);
             $("#trip_equipment").append(o);
             $("#equipment-input").val("");
         }
     });
 
-    $("#remove_equipment").click(function() {
+    $("#remove_equipment").click(function () {
         $("#trip_equipment option:selected").remove();
     });
 
@@ -279,7 +278,7 @@ function addTrip() {
     /* validation */
 
     function checkName() {
-        if($("#tripname").val().length == 0) {
+        if ($("#tripname").val().length == 0) {
             errormsg += "<li>Enter a name for your trip!</li>";
             $("#cg_tripname").addClass("error");
             return false;
@@ -291,19 +290,19 @@ function addTrip() {
     function checkStartAndEnd() {
         var inorde = true;
 
-        if( $("#TripStartD").val().length == 0 ) {
+        if ($("#TripStartD").val().length == 0) {
             errormsg += "<li>Please select a startdate!</li>";
             $("#cg_startdate").addClass("error");
             inorde = false;
         }
 
-        if( $("#TripEndD").val().length == 0 ) {
+        if ($("#TripEndD").val().length == 0) {
             errormsg += "<li>Please select an enddate!</li>";
             $("#cg_enddate").addClass("error");
             inorde = false;
         }
 
-        if(inorde) {
+        if (inorde) {
             $("#cg_enddate").removeClass("error");
             $("#cg_startdate").removeClass("error");
             return true;
@@ -312,7 +311,7 @@ function addTrip() {
     }
 
     function checkDateUntill() {
-        if( $("#temdate").val().length == 0) {
+        if ($("#temdate").val().length == 0) {
             errormsg += "<li>Please select a date!</li>"
             $("#cg_repetition").addClass("error");
             return false;
@@ -381,7 +380,7 @@ function checkChanges() {
     var eindTripDescr = $("#TripDescr").val();
     var eindTripStartD = $("#TripStartD").val();
     var eindTripEndD = $("#TripEndD").val();
-    var eindTripOrg = $("#TripOrg").val();
+    var eindTripNot = $("#TripNotificatie").val();
     var eindTripLoc = $("#TripLoc").val();
 
     //zet oude gegevens
@@ -389,7 +388,7 @@ function checkChanges() {
     $("#tripDold").text(beginTripDescr);
     $("#tripStartDold").text(beginTripStartD);
     $("#tripEndDold").text(beginTripEndD);
-    $("#tripOrgold").text(beginTripOrg);
+    $("#tripNotold").text(beginTripNot);
     $("#tripLocold").text(beginTripLoc);
 
     //zet nieuwe gegevens
@@ -397,7 +396,7 @@ function checkChanges() {
     $("#tripDnew").text(eindTripDescr);
     $("#tripStartDnew").text(eindTripStartD);
     $("#tripEndDnew").text(eindTripEndD);
-    $("#tripOrgnew").text(eindTripOrg);
+    $("#tripNotnew").text(eindTripNot);
     $("#tripLocnew").text(eindTripLoc);
 
     //zet labels
@@ -405,7 +404,7 @@ function checkChanges() {
     $("#tripDmessage").text($("#labelTripDescr").text());
     $("#tripStartDmessage").text($("#labelTripStartD").text());
     $("#tripEndDmessage").text($("#labelTripEndD").text());
-    $("#tripOrgmessage").text($("#labelTripOrg").text());
+    $("#tripNotmessage").text($("#labelTripNotificatie").text());
     $("#tripLocmessage").text($("#labelTripLoc").text());
 
     if (beginTripN != eindTripN) {
@@ -436,12 +435,12 @@ function checkChanges() {
         $("#tripEndDchange").css("font-weight", "bold");
         $("#tripEndDnew").css("font-weight", "bold");
     }
-    if (beginTripOrg != eindTripOrg) {
-        $("#messageRowOrg").css("opacity", "1");
-        $("#tripOrgmessage").css("font-weight", "bold");
-        $("#tripOrgold").css("font-weight", "bold");
-        $("#tripOrgchange").css("font-weight", "bold");
-        $("#tripOrgnew").css("font-weight", "bold");
+    if (beginTripNot != eindTripNot) {
+        $("#messageRowNot").css("opacity", "1");
+        $("#tripNotmessage").css("font-weight", "bold");
+        $("#tripNotold").css("font-weight", "bold");
+        $("#tripNotchange").css("font-weight", "bold");
+        $("#tripNotnew").css("font-weight", "bold");
     }
     if (beginTripLoc != eindTripLoc) {
         $("#messageRowLoc").css("opacity", "1");
@@ -455,30 +454,25 @@ function checkChanges() {
 
 function sendMail() {
 
+    var mesOrg = $("#messageOrg").text();
     var formInhoud = $("#changes").html();
     var organiserMessage = $("#Message").val();
-    //alert(organiserMessage);
+    var folChange = $("#followingChanges").text();
+    var viewTheTrip = $("#viewTheTrip").html();
     var tripID = $("#hiddenTripID").val();
-    $("#dialog-message").css("cursor", "wait");
-    $.post("/ProjectTeamF-1.0/user/mail.html",
-        { formulier: formInhoud, orgMessage: organiserMessage, orgMessage2: tripID },
-        function (data) {
-            $("#viewTripForm").submit();
+
+    $.ajax({
+        type: "GET",
+        url: '/ProjectTeamF-1.0/user/mail.html',
+        data: ({mesOrg: mesOrg, followingChanges: folChange, formulier: formInhoud, orgMessage: organiserMessage, orgMessage2: tripID, viewTheTrip: viewTheTrip}),
+        async: false,
+        success: function (data) {
+            if (data == "true") {
+                $("#viewTripForm").submit();
+            } else {
+               alert('Mail failed. Contact admin!');
+            }
         }
-    );
-
-    /*$.ajax({
-     type: "POST",
-     url: "/ProjectTeamF-1.0/trip/mail.html",
-     data: "formulier="+ formInhoud+ "&orgMessage="+ organiserMessage+ "&tripID="+ tripID,
-     success: function(response){
-     // we have the response
-     alert('gelukt' + response);
-     },
-     error: function(e){
-     alert('mislukt');
-     }
-     }); */
-
+    });
 
 }

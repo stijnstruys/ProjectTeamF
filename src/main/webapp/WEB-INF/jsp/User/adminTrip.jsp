@@ -43,206 +43,224 @@
     int count = 0;
 %>
 <section id="content">
-    <section class="tripPages">
-        <style>
-            #content {
-                background: ${trip.bgcolor};
-                color: ${trip.fontcolorContent};
-            }
+<section class="tripPages">
+<style>
+    #content {
+        background: ${trip.bgcolor};
+        color: ${trip.fontcolorContent};
+    }
 
-            h2 {
-                color: ${trip.fontcolorTitle};
-            }
-        </style>
+    h2 {
+        color: ${trip.fontcolorTitle};
+    }
+</style>
 
-        <h2><spring:message code="label.updateTrip"/></h2>
+<h2><spring:message code="label.updateTrip"/></h2>
 
-        <form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip">
+<form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip">
 
-            <table id="adminTripTable">
-                <tr>
-                    <td><form:hidden id="hiddenTripID" path="tripId"/></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripN" path="tripName"><spring:message
-                            code="label.tripName"/></form:label></td>
-                    <td><form:input id="TripN" path="tripName"/></td>
-                    <td><form:label id="labelTripLoc" path="startLocation"><spring:message
-                            code="label.startLocation"/></form:label></td>
-                    <td><form:input id="TripLoc" path="startLocation"/></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripStartD" path="startDate"><spring:message
-                            code="label.startDate"/></form:label></td>
-                    <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
-                                    path="startDate"
-                                    value="${1900 + trip.startDate.year}/${1 + trip.startDate.month}/${trip.startDate.date}"/></td>
-                    <td><form:label id="labelTripEndD" path="endDate"><spring:message
-                            code="label.endDate"/></form:label></td>
-                    <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
-                                    path="endDate"
-                                    value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripDescr" path="tripDescription"><spring:message
-                            code="label.tripDescription"/></form:label></td>
-                    <td rowspan="2"><form:textarea id="TripDescr" path="tripDescription"/></td>
-                    <td><form:label id="labelTripNotificatie" path="notification"><spring:message
-                            code="label.TripNotificatie"/></form:label></td>
-                    <td rowspan="2"><form:textarea id="TripNotificatie" path="notification"/></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><form:label id="labelTripEquipment" path="equipment"><spring:message
-                            code="label.equipment"/></form:label></td>
-                    <c:if test="${!empty trip.equipment}">
+    <table id="adminTripTable">
+        <tr>
+            <td><form:hidden id="hiddenTripID" path="tripId"/></td>
+        </tr>
+        <tr>
+            <td><form:label id="labelTripN" path="tripName"><spring:message
+                    code="label.tripName"/></form:label></td>
+            <td><form:input id="TripN" path="tripName"/></td>
+            <td><form:label id="labelTripLoc" path="startLocation"><spring:message
+                    code="label.startLocation"/></form:label></td>
+            <td><form:input id="TripLoc" path="startLocation"/></td>
+        </tr>
+        <tr>
+            <td><form:label id="labelTripStartD" path="startDate"><spring:message
+                    code="label.startDate"/></form:label></td>
+            <td><form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;"
+                            path="startDate"
+                            value="${1900 + trip.startDate.year}/${1 + trip.startDate.month}/${trip.startDate.date}"/></td>
+            <td><form:label id="labelTripEndD" path="endDate"><spring:message
+                    code="label.endDate"/></form:label></td>
+            <td><form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;"
+                            path="endDate"
+                            value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/></td>
+        </tr>
+        <tr>
+            <td><form:label id="labelTripDescr" path="tripDescription"><spring:message
+                    code="label.tripDescription"/></form:label></td>
+            <td rowspan="2"><form:textarea id="TripDescr" path="tripDescription"/></td>
+            <td><form:label id="labelTripNotificatie" path="notification"><spring:message
+                    code="label.TripNotificatie"/></form:label></td>
+            <td rowspan="2"><form:textarea id="TripNotificatie" path="notification"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><form:label id="labelTripEquipment" path="equipment"><spring:message
+                    code="label.equipment"/></form:label></td>
+            <c:if test="${!empty trip.equipment}">
 
-                    <c:forEach items="${trip.equipment}" var="equipmentPiece">
-                            <%
+            <c:forEach items="${trip.equipment}" var="equipmentPiece">
+                    <%
                         count++;
                     %>
-                <tr id="equipment<%=count%>">
-                    <td>
-                        <input type="text" value="${equipmentPiece}" name="equipment"/>
-                        <button class="btn" type="button" onclick="removeEquipment('equipment<%=count%>')">X</button>
-                    </td>
-                </tr>
-                </c:forEach>
-                </c:if>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="newEquip" class="btn" type="button" onclick="addEquipment()">New</button>
-                    </td>
-                </tr>
+        <tr id="equipment<%=count%>">
+            <td>
+                <input type="text" value="${equipmentPiece}" name="equipment"/>
+                <button class="btn" type="button" onclick="removeEquipment('equipment<%=count%>')">X</button>
+            </td>
+        </tr>
+        </c:forEach>
+        </c:if>
+        </tr>
+        <tr>
+            <td>
+                <button id="newEquip" class="btn" type="button" onclick="addEquipment()">New</button>
+            </td>
+        </tr>
 
-                <tr>
-                    <td>
-                        <label class="form-item"><spring:message
-                                                    code="label.Background"/></label><form:input type="text" name="color1" path="bgcolor"
-                                                                                class="colorpicker" id="color1"/>
-                        <label class="form-item"><spring:message
-                                                    code="label.FontTitle"/></label><form:input type="text" name="color2"
-                                                                                path="fontcolorContent"
-                                                                                class="colorpicker" id="color2"/>
-                        <label class="form-item"><spring:message
-                                                    code="label.FontContent"/></label><form:input type="text" name="color3"
-                                                                                  path="fontcolorTitle"
-                                                                                  class="colorpicker" id="color3"/>
-                    </td>
-                    <td>
-                        <div id="picker" style="float: right;"></div>
-                    </td>
-                    <td>
+        <tr>
+            <td>
+                <label class="form-item"><spring:message
+                        code="label.Background"/></label><form:input type="text" name="color1" path="bgcolor"
+                                                                     class="colorpicker" id="color1"/>
+                <label class="form-item"><spring:message
+                        code="label.FontTitle"/></label><form:input type="text" name="color2"
+                                                                    path="fontcolorContent"
+                                                                    class="colorpicker" id="color2"/>
+                <label class="form-item"><spring:message
+                        code="label.FontContent"/></label><form:input type="text" name="color3"
+                                                                      path="fontcolorTitle"
+                                                                      class="colorpicker" id="color3"/>
+            </td>
+            <td>
+                <div id="picker" style="float: right;"></div>
+            </td>
+            <td>
 
-                    </td>
-                </tr>
-            </table>
-        </form:form>
+            </td>
+        </tr>
+    </table>
+</form:form>
 
 
-        <table>
-            <tr>
-                <td>
-                    <h3><spring:message code="label.Manage"/></h3>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn" id="ManageStoppingPoints"
-                            onClick="location.href='/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html'"><spring:message
-                            code="label.ManageStoppingPoints"/></button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn" id="ManageParticipants"
-                            onClick="location.href='/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html'">
-                        <spring:message
-                                code="label.ManageParticipants"/></button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn" id="ManageCategories"
-                            onClick="location.href='/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html'">
-                        <spring:message
-                                code="label.ManageCategories"/></button>
-                </td>
-            </tr>
-        </table>
+<table>
+    <tr>
+        <td>
+            <h3><spring:message code="label.Manage"/></h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn" id="ManageStoppingPoints"
+                    onClick="location.href='/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html'"><spring:message
+                    code="label.ManageStoppingPoints"/></button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn" id="ManageParticipants"
+                    onClick="location.href='/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html'">
+                <spring:message
+                        code="label.ManageParticipants"/></button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn" id="ManageCategories"
+                    onClick="location.href='/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html'">
+                <spring:message
+                        code="label.ManageCategories"/></button>
+        </td>
+    </tr>
+</table>
 
-        <button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
-        <button class="btn" onclick="location.href='deleteTrip/${trip.tripId}.html'"><spring:message
-                code="label.deleteTrip"/></button>
+<button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
+<button class="btn" onclick="location.href='deleteTrip/${trip.tripId}.html'"><spring:message
+        code="label.deleteTrip"/></button>
 
-        <div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">
-            <form>
-                <fieldset>
-                    <label><spring:message code="label.NotificationMailQuestion"/></label>
-                    <label for="dialog-message"><spring:message code="label.NotificationMailOrganiserMessage"/></label>
-                    <textarea type="text" name="message" id="Message" value=""
-                              class="text ui-widget-content ui-corner-all"><spring:message
-                            code="label.NotificationMailNoMessage"/></textarea>
-                    <label for="changes"><spring:message code="label.NotificationMailChangesOccured"/></label>
+<div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">
+    <form>
+        <fieldset>
+            <label><spring:message code="label.NotificationMailQuestion"/></label>
+            <label for="dialog-message" id="messageOrg"><spring:message
+                    code="label.NotificationMailOrganiserMessage"/> ${trip.organiser.firstName} ${trip.organiser.lastName}</label>
+            <textarea type="text" name="message" id="Message" value=""
+                      class="text ui-widget-content ui-corner-all"><spring:message
+                    code="label.NotificationMailNoMessage"/></textarea>
+            <label for="changes" id="followingChanges"><spring:message
+                    code="label.NotificationMailChangesOccured"/></label>
 
-                    <div id="changes">
-                        <table id="messageTable" style="min-width:500px">
-                            <tr class="messageRow" id="messageRowN">
-                                <td><label id="tripNmessage"></label></td>
-                                <td><label id="tripNold" class="text ui-widget-content ui-corner-all"/></td>
-                                <td><label id="tripNchange" class="changedTo"><spring:message
-                                        code="label.ChangedTo"/></label></td>
-                                <td><label id="tripNnew" class="text ui-widget-content ui-corner-all"/></td>
-                            </tr>
-                            <tr class="messageRow" id="messageRowD">
-                                <td><label id="tripDmessage"></label></td>
-                                <td><label id="tripDold" class="text ui-widget-content ui-corner-all"/></td>
-                                <td><label id="tripDchange" class="changedTo"><spring:message
-                                        code="label.ChangedTo"/></label></td>
-                                <td><label id="tripDnew" class="text ui-widget-content ui-corner-all"/></td>
-                            </tr>
-                            <tr class="messageRow" id="messageRowStartD">
-                                <td><label id="tripStartDmessage"></label></td>
-                                <td><label id="tripStartDold" class="text ui-widget-content ui-corner-all"/></td>
-                                <td><label id="tripStartDchange" class="changedTo"><spring:message
-                                        code="label.ChangedTo"/></label></td>
-                                <td><label id="tripStartDnew" class="text ui-widget-content ui-corner-all"/>
-                                </td>
-                            </tr>
-                            <tr class="messageRow" id="messageRowEndD">
-                                <td><label id="tripEndDmessage"></label></td>
-                                <td><label id="tripEndDold" class="text ui-widget-content ui-corner-all"/></td>
-                                <td><label id="tripEndDchange" class="changedTo"><spring:message
-                                        code="label.ChangedTo"/></label></td>
-                                <td><label id="tripEndDnew" class="text ui-widget-content ui-corner-all"/></td>
-                            </tr>
-                            <tr class="messageRow" id="messageRowOrg">
-                                <td><label id="tripOrgmessage"></label></td>
-                                <td><label id="tripOrgold" class="text ui-widget-content ui-corner-all"/></td>
-                                <td><label id="tripOrgchange" class="changedTo"><spring:message
-                                        code="label.ChangedTo"/></label></td>
-                                <td><label id="tripOrgnew" class="text ui-widget-content ui-corner-all"/></td>
-                            </tr>
-                            <tr class="messageRow" id="messageRowLoc">
-                                <td><label id="tripLocmessage"></label></td>
-                                <td><label id="tripLocold" class="text ui-widget-content ui-corner-all"/></td>
-                                <td><label id="tripLocchange" class="changedTo"><spring:message
-                                        code="label.ChangedTo"/></label></td>
-                                <td><label id="tripLocnew" class="text ui-widget-content ui-corner-all"/></td>
-                            </tr>
+            <div id="changes">
+                <table id="messageTable" style="min-width:500px">
+                    <tr class="messageRow" id="messageRowN">
+                        <td><label id="tripNmessage"></label></td>
+                        <td><label id="tripNold" class="text ui-widget-content ui-corner-all"/></td>
+                        <td><label id="tripNchange" class="changedTo"><spring:message
+                                code="label.ChangedTo"/></label></td>
+                        <td><label id="tripNnew" class="text ui-widget-content ui-corner-all"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowD">
+                        <td><label id="tripDmessage"></label></td>
+                        <td><label id="tripDold" class="text ui-widget-content ui-corner-all"/></td>
+                        <td><label id="tripDchange" class="changedTo"><spring:message
+                                code="label.ChangedTo"/></label></td>
+                        <td><label id="tripDnew" class="text ui-widget-content ui-corner-all"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowStartD">
+                        <td><label id="tripStartDmessage"></label></td>
+                        <td><label id="tripStartDold" class="text ui-widget-content ui-corner-all"/></td>
+                        <td><label id="tripStartDchange" class="changedTo"><spring:message
+                                code="label.ChangedTo"/></label></td>
+                        <td><label id="tripStartDnew" class="text ui-widget-content ui-corner-all"/>
+                        </td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowEndD">
+                        <td><label id="tripEndDmessage"></label></td>
+                        <td><label id="tripEndDold" class="text ui-widget-content ui-corner-all"/></td>
+                        <td><label id="tripEndDchange" class="changedTo"><spring:message
+                                code="label.ChangedTo"/></label></td>
+                        <td><label id="tripEndDnew" class="text ui-widget-content ui-corner-all"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowNot">
+                        <td><label id="tripNotmessage"></label></td>
+                        <td><label id="tripNotold" class="text ui-widget-content ui-corner-all"/></td>
+                        <td><label id="tripNotchange" class="changedTo"><spring:message
+                                code="label.ChangedTo"/></label></td>
+                        <td><label id="tripNotnew" class="text ui-widget-content ui-corner-all"/></td>
+                    </tr>
+                    <tr class="messageRow" id="messageRowLoc">
+                        <td><label id="tripLocmessage"></label></td>
+                        <td><label id="tripLocold" class="text ui-widget-content ui-corner-all"/></td>
+                        <td><label id="tripLocchange" class="changedTo"><spring:message
+                                code="label.ChangedTo"/></label></td>
+                        <td><label id="tripLocnew" class="text ui-widget-content ui-corner-all"/></td>
+                    </tr>
+                </table>
+            </div>
+                <table>
+                    <tr>
+                        <td><p id="viewTheTrip"><spring:message
+                                code="label.viewTheTrip"/> <a id="viewTheTripLink"
+                                                              href="http://localhost:8080/ProjectTeamF-1.0/trip/${trip.tripId}.html">${trip.tripName}</a>!
+                        </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button class="btn" id="sendMail"><spring:message code="label.sendMail"/></button>
+                            <button class="btn" id="skip"><spring:message code="label.skipMail"/></button>
+                        </td>
 
-                        </table>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-    </section>
+                    </tr>
+                </table>
+
+        </fieldset>
+    </form>
+</div>
+</section>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 

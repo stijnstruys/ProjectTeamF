@@ -89,7 +89,7 @@ public class TripServiceImpl implements TripService {
                 message.setSubject(msg.getSubject());
 
                 String body = VelocityEngineUtils.mergeTemplateIntoString(
-                        velocityEngine, "/template.vm", model);
+                        velocityEngine, "/mailTripUpdate.vm", model);
                 message.setText(body, true);
 
                 message.addInline("header", new ClassPathResource(
