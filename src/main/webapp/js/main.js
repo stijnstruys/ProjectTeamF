@@ -31,6 +31,15 @@ $(document).ready(function () {
 
     });
 
+    //browse foto
+    $("#browse_foto").click(function() {
+        $("input[id=foto]").click();
+    });
+
+    $("input[id=foto]").change( function() {
+        var n = $(this).val().split('\\');
+        $("#browse_foto_input").val(n[n.length - 1])
+    });
 
     //begin gegevens nemen
     beginTripN = $("#TripN").val();

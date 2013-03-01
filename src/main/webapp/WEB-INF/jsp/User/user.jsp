@@ -29,90 +29,117 @@
 
 <section id="content">
     <section class="tripPages">
+
     <h2><spring:message code="label.UserRegistration"/></h2>
     <div id="validation_failed"></div>
-    <form:form method="post" action="add.html" commandName="user" id="user" enctype="multipart/form-data">
+    <form:form method="post" class="form-horizontal" action="add.html" commandName="user" id="user" enctype="multipart/form-data">
+        <legend>General</legend>
+        <div class="control-group">
+            <form:label id="labelUsername" class="control-label"  path="username"><spring:message code="label.username"/></form:label>
+            <div class="controls">
+                <div class="input-append">
+                    <form:input type="text" id="userName" path="username"/>
+                    <span class="add-on" id="addon_username"></span>
+                </div>
+            </div>
+        </div>
 
-        <table>
-            <tr>
-                <td><form:label path="username"><spring:message code="label.username"/></form:label></td>
-                <td>
-                    <div class="input-append">
-                        <form:input path="username" id="userName"/>
-                        <span class="add-on" id="addon_username"></span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><form:label path="password"><spring:message code="label.password"/></form:label></td>
-                <td>
-                    <div class="input-append">
-                        <form:password id="password" path="password"/>
-                        <span class="add-on" id="addon_password"></span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><form:label path="email"><spring:message code="label.email"/></form:label></td>
-                <td>
-                    <div class="input-append">
-                        <form:input path="email" id="email"/>
-                        <span class="add-on" id="addon_email"></span>
-                    </div>
-                </td>
+        <div class="control-group">
+            <form:label id="labelPassword" class="control-label"  path="password"><spring:message code="label.password"/></form:label>
+            <div class="controls">
+                <div class="input-append">
+                    <form:input type="text" id="password" path="password"/>
+                    <span class="add-on" id="addon_password"></span>
+                </div>
+            </div>
+        </div>
 
-            </tr>
-            <tr>
-                <td><form:label path="firstName"><spring:message code="label.firstname"/></form:label></td>
-                <td><form:input path="firstName" id="firstName"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="lastName"><spring:message code="label.lastname"/></form:label></td>
-                <td><form:input path="lastName" id="lastName"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label></td>
-                <td>
-                    <div class="input-append">
-                        <form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth" id="dateOfBirth"/>
-                        <span class="add-on" id="addon_dob"></span>
-                    </div>
-                </td>
-            </tr>
+        <div class="control-group">
+            <form:label class="control-label"  path="profielFoto"><spring:message code="label.photo"/></form:label>
+            <div class="controls">
+                <div class="input-append">
+                    <input type="text" disabled id="browse_foto_input"/>
+                    <a class="btn" id="browse_foto">Browse</a>
+ >            </div>
 
-            <tr>
-                <td><form:label path="telephone"><spring:message code="label.telephone"/></form:label></td>
-                <td><form:input path="telephone" id="telephone"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="street"><spring:message code="label.street"/></form:label></td>
-                <td><form:input path="street" id ="street"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="number"><spring:message code="label.number"/></form:label></td>
-                <td><form:input path="number" id="number"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="zipcode"><spring:message code="label.zipcode"/></form:label></td>
-                <td><form:input path="zipcode" id="zipcode"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="city"><spring:message code="label.city"/></form:label></td>
-                <td><form:input path="city" id="city"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="profielFoto"><spring:message code="label.photo"/></form:label></td>
-                <td><input type="file" name="foto" id="foto"></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" id="register_submit" class="btn" value="<spring:message code="label.Register"/>"/>
-                </td>
-            </tr>
-        </table>
+                <input type="file" name="foto" id="foto" style="display: none" />
+            </div>
+        </div>
+        <legend>Personal</legend>
+        <div class="control-group">
+            <form:label class="control-label"  path="firstName"><spring:message code="label.firstname"/></form:label>
+            <div class="controls">
+                <form:input type="text" path="firstName"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <form:label class="control-label"  path="lastName"><spring:message code="label.lastname"/></form:label>
+            <div class="controls">
+                <form:input type="text" path="lastName"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <form:label class="control-label"  path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label>
+            <div class="controls">
+                <div class="input-append">
+                    <form:input id="dateOfBirth" class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth"/>
+                    <span class="add-on" id="addon_dob"></span>
+                </div>
+            </div>
+        </div>
+        <legend>Contact</legend>
+        <div class="control-group">
+            <form:label id="labelEmail" class="control-label"  path="email"><spring:message code="label.email"/></form:label>
+            <div class="controls">
+                <div class="input-append">
+                    <form:input type="text" id="email" path="email"/>
+                    <span class="add-on" id="addon_email"></span>
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <form:label class="control-label"  path="telephone"><spring:message code="label.telephone"/></form:label>
+            <div class="controls">
+                <form:input type="text" path="telephone"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <form:label class="control-label"  path="street"><spring:message code="label.street"/></form:label>
+            <div class="controls">
+                <form:input type="text" path="street"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <form:label class="control-label"  path="number"><spring:message code="label.number"/></form:label>
+            <div class="controls">
+                <form:input type="text" path="number"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <form:label class="control-label"  path="zipcode"><spring:message code="label.zipcode"/></form:label>
+            <div class="controls">
+                <form:input type="text" path="zipcode"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <form:label class="control-label"  path="city"><spring:message code="label.city"/></form:label>
+            <div class="controls">
+                <form:input type="text" path="city"/>
+            </div>
+        </div>
+
+        </br>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" id="register_submit" class="btn" value="<spring:message code="label.Register"/>"/>
+                <a class="btn" type="button" id="user_importfb">Import data from Facebook</a>
+            </div>
+        </div>
+
+
     </form:form>
 
-    <button class="btn" type="button" id="user_importfb">Import data from Facebook</button>
+
 
 </section>  </section>
 <jsp:include page="../General/footer.jsp"/>
