@@ -270,6 +270,9 @@ public class UserController {
             emailAddressess[counter] = t;
             counter++;
         }*/
+        for(int i=0;i<emails.size();i++){
+            emailAddressess[i] = emails.get(i);
+        }
         System.out.println("hieremail" + emailAddressess);
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -282,7 +285,11 @@ public class UserController {
         mailModel.addAttribute("viewTheTrip", viewTheTrip);
         SimpleMailMessage msg = new SimpleMailMessage(message);
         //System.out.println("hieremail: "+emailAddressess);
-        msg.setCc("kdgteamf@gmail.com");//"kdgteamf@gmail.com");
+       // msg.setCc("kdgteamf@gmail.com");//"kdgteamf@gmail.com");
+       /* for(int j=0;j<emailAddressess.length;j++){
+            msg.set
+        }*/
+        msg.setCc(emailAddressess);
         tripService.sendMail(mailModel, msg);
 
         return "true";
