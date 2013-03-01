@@ -76,15 +76,6 @@ $(document).ready(function () {
             }
         }
     });
-    /* $(".datepicker").datepicker(
-     {
-     dateFormat: 'yy-mm-dd',
-     minDate: 0,
-     maxDate: '+20Y',
-     changeMonth: true,
-     changeYear: true
-     }
-     );  */
 
     //notification
     $("#dialog-message-languages").dialog({
@@ -115,35 +106,6 @@ $(document).ready(function () {
             duration: 1000
         }
     });
-
-    var availableTags = [
-        "ActionScript",
-        "AppleScript",
-        "Asp",
-        "BASIC",
-        "C",
-        "C++",
-        "Clojure",
-        "COBOL",
-        "ColdFusion",
-        "Erlang",
-        "Fortran",
-        "Groovy",
-        "Haskell",
-        "Java",
-        "JavaScript",
-        "Lisp",
-        "Perl",
-        "PHP",
-        "Python",
-        "Ruby",
-        "Scala",
-        "Scheme"
-    ];
-    /*$("#autocomplete").autocomplete({
-     source: 'search/tripNames.html'
-     //source: availableTags
-     });  */
 
     /*languages*/
     $("#languageFlag").click(function () {
@@ -475,7 +437,7 @@ function sendMail() {
     $.ajax({
         type: "GET",
         url: '/ProjectTeamF-1.0/user/mail.html',
-        data: ({mesOrg: mesOrg, followingChanges: folChange, formulier: formInhoud, orgMessage: organiserMessage, orgMessage2: tripID, viewTheTrip: viewTheTrip}),
+        data: ({mesOrg: mesOrg, followingChanges: folChange, formulier: formInhoud, orgMessage: organiserMessage, tripID: tripID, viewTheTrip: viewTheTrip}),
         async: false,
         success: function (data) {
             if (data == "true") {

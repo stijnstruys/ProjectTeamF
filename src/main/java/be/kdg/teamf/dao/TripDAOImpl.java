@@ -84,10 +84,9 @@ public class TripDAOImpl implements TripDAO {
 
     @Override
     public List<String> listUserEmailPerTrips(int tripID) {
-        List<String> test = new ArrayList();
-        //Query q = sessionFactory.getCurrentSession().createQuery("select email from User u where u.notificationEmail = true and u.userID ");
-        //return q.list();
-        return test;
+        Query q = sessionFactory.getCurrentSession().createQuery("select u.email from User u where u.notificationEmail = true and u.userID in(select d.user from Deelname d where d.trip = :tripID)");
+        q.setInteger("tripID", tripID);
+        return q.list();
     }
 
     @Override
