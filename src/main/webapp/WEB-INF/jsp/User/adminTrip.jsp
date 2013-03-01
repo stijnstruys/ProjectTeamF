@@ -62,16 +62,13 @@
             <form:hidden id="hiddenTripID" path="tripId"/>
 
             <legend>General</legend>
-
-                <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
-
-
-                <div class="control-group">
-                    <form:label id="labelTripN" class="control-label"  path="tripName"><spring:message code="label.tripName"/></form:label>
-                    <div class="controls">
-                        <form:input type="text" id="TripN" path="tripName"/>
-                    </div>
+            <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
+            <div class="control-group">
+                <form:label id="labelTripN" class="control-label"  path="tripName"><spring:message code="label.tripName"/></form:label>
+                <div class="controls">
+                    <form:input type="text" id="TripN" path="tripName"/>
                 </div>
+            </div>
             <a href="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html" class="btn btn-success float_right" id="ManageParticipants" ><spring:message code="label.ManageParticipants"/></a>
                 <div class="control-group">
                     <form:label id="labelTripLoc" class="control-label"  path="startLocation"><spring:message code="label.startLocation"/></form:label>
