@@ -2,7 +2,8 @@ package be.kdg.teamf.model;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
-import org.springframework.web.multipart.MultipartFile;
+import org.hibernate.annotations.TypeDef;
+import org.jasypt.hibernate.type.EncryptedStringType;
 
 import javax.persistence.*;
 import java.io.Serializable;

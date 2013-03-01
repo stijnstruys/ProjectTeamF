@@ -49,6 +49,11 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
     }
 
     @Override
+    public boolean controleerAntwoord(String antwoord, StopPlaats sp) {
+        return antwoord == sp.getCorrectAntwoord();
+    }
+
+    @Override
     public List<StopPlaats> getStopPlaatsenByTripId(int tripId) {
         return stopPlaatsDAO.getStopplaatsenByTrip(tripId);
     }
