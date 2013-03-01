@@ -59,7 +59,7 @@
     <form:form id="viewTripForm" method="post" action="../TripParticipants/updateDeelname.html" commandName="deelname">
 
 
-        <form:hidden path="deelnameID"></form:hidden>
+        <form:hidden path="deelnameID" ></form:hidden>
 
         <table>
             <tr>
