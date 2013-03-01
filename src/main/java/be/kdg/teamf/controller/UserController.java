@@ -226,6 +226,14 @@ public class UserController {
         return model;
     }
 
+    @RequestMapping(value = "/user/profile-{userid}")
+    public ModelAndView viewProfile(HttpServletRequest request, @PathVariable("userid") int userid) {
+        User u = userService.findUser(userid);
+        request.setAttribute("user", u);
+        ModelAndView model = new ModelAndView("User/viewProfile");
+        return model;
+    }
+
     @RequestMapping(value = "/user/myTrips.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 

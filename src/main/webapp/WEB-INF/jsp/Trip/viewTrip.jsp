@@ -224,7 +224,7 @@
                     </tr>
                     <c:forEach items="${trip.deelnames}" var="deelname">
                         <tr>
-                            <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
+                            <td><a href="/ProjectTeamF-1.0/user/profile-${deelname.user.userID}.html" class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
                             <td>
                                 <c:forEach items="${deelname.equipment}" var="equip">
                                     <span class="formLabels2">${equip} </span>
