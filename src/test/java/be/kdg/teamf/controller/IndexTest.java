@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Keys;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -23,17 +24,17 @@ public class IndexTest {
     public void test() {
 
     }
-    /*@Test
+   /* @Test
     public void logIn() throws InterruptedException{
         ChromeDriver driver = getChromeDriver();
 
         WebElement dropDown = driver.findElementByClassName("dropdown-toggle");
         dropDown.click();
-        WebElement userNameText = driver.findElementByName("username");
+        WebElement userNameText = driver.findElementByName("j_username");
         userNameText.sendKeys("test");
-        WebElement passwordText = driver.findElementByName("password");
+        WebElement passwordText = driver.findElementByName("j_password");
         passwordText.sendKeys("test");
-        WebElement logInButton = driver.findElementByTagName("button");
+        WebElement logInButton = driver.findElementByName("submit");
         logInButton.click();
         driver.close();
     }
@@ -43,6 +44,7 @@ public class IndexTest {
         ChromeDriver driver = getChromeDriver();
         WebElement searchBar = driver.findElementByName("searchInput");
         searchBar.sendKeys("Trip1");
+        searchBar.sendKeys(Keys.ENTER);
     }
 
 

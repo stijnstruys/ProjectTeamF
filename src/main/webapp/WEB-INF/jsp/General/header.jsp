@@ -32,7 +32,7 @@
 
                         <ul class="nav pull-right">
                             <c:if test="${empty currentUser}">
-                                <li class="pull-right"><a href="/ProjectTeamF-1.0/user/user.html"><spring:message code="label.Register"/></a></li>
+                                <li class="pull-right"><a id="registerLink" href="/ProjectTeamF-1.0/user/user.html"><spring:message code="label.Register"/></a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.SignIn"/><b
                                             class="caret"></b></a>

@@ -42,4 +42,6 @@ public interface TripService {
     public List<Trip> listPublicTrips();
 
     List<Trip> searchTripsCategories(String searchInput);
+
+    public List<String> listUserEmailPerTrips(int tripID);
 }

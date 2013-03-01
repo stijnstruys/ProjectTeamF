@@ -87,7 +87,7 @@ public class TripServiceImpl implements TripService {
             public void prepare(MimeMessage mimeMessage)
                     throws MessagingException {
                 MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-                message.setTo(msg.getTo());
+                message.setCc(msg.getCc());
                 message.setFrom(msg.getFrom());
                 message.setSubject(msg.getSubject());
 
@@ -147,6 +147,11 @@ public class TripServiceImpl implements TripService {
 
         return tripDAO.searchTripsCategories(searchInput);
 
+    }
+
+    @Override
+    public List<String> listUserEmailPerTrips(int tripID) {
+        return tripDAO.listUserEmailPerTrips(tripID);
     }
 
 }

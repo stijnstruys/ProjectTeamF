@@ -224,7 +224,7 @@
                     </tr>
                     <c:forEach items="${trip.deelnames}" var="deelname">
                         <tr>
-                            <td><a class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
+                            <td><a href="/ProjectTeamF-1.0/user/profile-${deelname.user.userID}.html" class="formLabels2">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
                             <td>
                                 <c:forEach items="${deelname.equipment}" var="equip">
                                     <span class="formLabels2">${equip} </span>
@@ -242,7 +242,7 @@
 
 <%--<div id="fb-root"></div>--%>
 <div class="fb-like" data-href="https://www.facebook.com/pages/Tripplanner-teamf/146815778814080" data-send="true" data-width="450" data-show-faces="true"></div>
-<a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl"><spring:message code="label.Tweet"/></a>
 <jsp:include page="../General/footer.jsp"/>
 
 <!--google maps api-->

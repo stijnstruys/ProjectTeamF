@@ -72,8 +72,12 @@
             </tr>
             <tr>
                 <td><form:label path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label></td>
-                <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth"
-                                id="dateOfBirth"/></td>
+                <td>
+                    <div class="input-append">
+                        <form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth" id="dateOfBirth"/>
+                        <span class="add-on" id="addon_dob"></span>
+                    </div>
+                </td>
             </tr>
 
             <tr>
@@ -82,15 +86,15 @@
             </tr>
             <tr>
                 <td><form:label path="street"><spring:message code="label.street"/></form:label></td>
-                <td><form:input path="street"/></td>
+                <td><form:input path="street" id ="street"/></td>
             </tr>
             <tr>
                 <td><form:label path="number"><spring:message code="label.number"/></form:label></td>
-                <td><form:input path="number"/></td>
+                <td><form:input path="number" id="number"/></td>
             </tr>
             <tr>
                 <td><form:label path="zipcode"><spring:message code="label.zipcode"/></form:label></td>
-                <td><form:input path="zipcode"/></td>
+                <td><form:input path="zipcode" id="zipcode"/></td>
             </tr>
             <tr>
                 <td><form:label path="city"><spring:message code="label.city"/></form:label></td>
@@ -109,42 +113,7 @@
     </form:form>
 
     <button class="btn" type="button" id="user_importfb">Import data from Facebook</button>
-    <%--
-    <h3><spring:message code="label.Users"/></h3>
 
-    <c:if test="${!empty userList}">
-        <table class="data">
-            <tr>
-                <th><spring:message code="label.name"/></th>
-                <th><spring:message code="label.email"/></th>
-                <th><spring:message code="label.telephone"/></th>
-                <th><spring:message code="label.dateOfBirth"/></th>
-                <th><spring:message code="label.street"/></th>
-                <th><spring:message code="label.city"/></th>
-                <th>&nbsp;</th>
-            </tr>
-            <c:forEach items="${userList}" var="user">
-
-
-                <tr>
-                    <td>${user.firstName}, ${user.lastName} </td>
-                    <td>${user.email}</td>
-                    <td>${user.telephone}</td>
-                    <td>${user.dateOfBirth}</td>
-                    <td>${user.street} ${user.number}</td>
-                    <td>${user.zipcode}, ${user.city}</td>
-                    <td>
-                        <a href="updateUser/${user.userID}.html"><spring:message code="label.updateUser"/></a>
-                    </td>
-                    <td>
-                        <a href="deleteUser/${user.userID}.html"><spring:message code="label.DeleteUser"/></a>
-                    </td>
-
-                </tr>
-
-            </c:forEach>
-        </table>
-    </c:if>   --%>
 </section>  </section>
 <jsp:include page="../General/footer.jsp"/>
 
