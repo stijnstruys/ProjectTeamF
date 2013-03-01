@@ -261,24 +261,24 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
-        public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("viewTheTrip") String viewTheTrip) {
+    public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("viewTheTrip") String viewTheTrip) {
 
         ModelMap mailModel = new ModelMap();
-                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                mailModel.addAttribute("title", "Trip update");
-                mailModel.addAttribute("subtitle1", mesOrg);
-                mailModel.addAttribute("message", orgMessage);
-                mailModel.addAttribute("subtitle2", followingChanges);
-                mailModel.addAttribute("text", formulier);
-                mailModel.addAttribute("date", format.format(new Date()));
-                mailModel.addAttribute("viewTheTrip", viewTheTrip);
-                SimpleMailMessage msg = new SimpleMailMessage(message);
-                msg.setTo("kdgteamf@gmail.com");
-                tripService.sendMail(mailModel, msg);
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        mailModel.addAttribute("title", "Trip update");
+        mailModel.addAttribute("subtitle1", mesOrg);
+        mailModel.addAttribute("message", orgMessage);
+        mailModel.addAttribute("subtitle2", followingChanges);
+        mailModel.addAttribute("text", formulier);
+        mailModel.addAttribute("date", format.format(new Date()));
+        mailModel.addAttribute("viewTheTrip", viewTheTrip);
+        SimpleMailMessage msg = new SimpleMailMessage(message);
+        msg.setTo("kdgteamf@gmail.com");
+        tripService.sendMail(mailModel, msg);
 
-                return "true";
+        return "true";
 
-        }
+    }
     /*
     @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)
     @ResponseBody
@@ -339,7 +339,17 @@ public class UserController {
 
         return model;
     }
+    @RequestMapping(value = "/editUserequipment/{deelnameID}", method = RequestMethod.GET)
+    public ModelAndView editUserequipment(HttpServletRequest request, HttpServletResponse response, @PathVariable("deelnameID") int deelnameID) throws Exception {
 
+        Deelname deelname = deelnameService.findDeelname(deelnameID);
+
+
+        request.setAttribute("deelname", deelname);
+        ModelAndView model = new ModelAndView("User/editEquipment");
+
+        return model;
+    }
     @RequestMapping(value = "/TripParticipants/updateTripParticipants/{tripID}", method = RequestMethod.POST)
     public String updateTripParticipants(@ModelAttribute("tripParticipant")
                                          Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
@@ -350,13 +360,14 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/TripParticipants/updateDeelname/{deelnameID}", method = RequestMethod.POST)
+    @RequestMapping(value = "/TripParticipants/updateDeelname", method = RequestMethod.POST)
     public String updateDeelnemer(@ModelAttribute("tripParticipant")
-                                  Deelname deelname, BindingResult result, @PathVariable("deelnameID") int deelnameID) {
+                                  Deelname deelname, BindingResult result) {
 
-
-        deelnameService.updateDeelname(deelname);
-        return "redirect:/TripParticipants/" + deelname.getTrip().getTripId() + ".html";
+        Deelname d  = deelnameService.findDeelname(deelname.getDeelnameID());
+        d.setEquipment(deelname.getEquipment());
+        deelnameService.updateDeelname(d);
+        return "redirect:/TripParticipants/" + d.getTrip().getTripId() + ".html";
 
     }
 
