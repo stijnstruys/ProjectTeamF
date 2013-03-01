@@ -26,6 +26,8 @@ $(document).ready(function () {
     $('#trip_equipment').find('option').removeAttr("selected");
     $("#updateTrip").click( function() {
         $('#trip_equipment').find('option').attr('selected','selected');
+        checkChanges();
+        $("#dialog-message").dialog("open");
     });
 
 
@@ -111,11 +113,6 @@ $(document).ready(function () {
             effect: "blind",
             duration: 1000
         }
-    });
-
-    $("#updateTrip").click(function () {
-        checkChanges();
-        $("#dialog-message").dialog("open");
     });
 
     var availableTags = [
@@ -393,7 +390,7 @@ function checkChanges() {
     var eindTripDescr = $("#TripDescr").val();
     var eindTripStartD = $("#TripStartD").val();
     var eindTripEndD = $("#TripEndD").val();
-    var eindTripOrg = $("#TripOrg").val();
+    var eindTripNot = $("#TripNotificatie").val();
     var eindTripLoc = $("#TripLoc").val();
 
     //zet oude gegevens
@@ -401,7 +398,7 @@ function checkChanges() {
     $("#tripDold").text(beginTripDescr);
     $("#tripStartDold").text(beginTripStartD);
     $("#tripEndDold").text(beginTripEndD);
-    $("#tripOrgold").text(beginTripOrg);
+    $("#tripNotold").text(beginTripNot);
     $("#tripLocold").text(beginTripLoc);
 
     //zet nieuwe gegevens
@@ -409,7 +406,7 @@ function checkChanges() {
     $("#tripDnew").text(eindTripDescr);
     $("#tripStartDnew").text(eindTripStartD);
     $("#tripEndDnew").text(eindTripEndD);
-    $("#tripOrgnew").text(eindTripOrg);
+    $("#tripNotnew").text(eindTripNot);
     $("#tripLocnew").text(eindTripLoc);
 
     //zet labels
