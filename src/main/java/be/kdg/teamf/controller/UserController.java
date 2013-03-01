@@ -306,7 +306,7 @@ public class UserController {
         SimpleMailMessage msg = new SimpleMailMessage(message);
         msg.setTo("kdgteamf@gmail.com");
         tripService.sendMail(mailModel, msg);
-    }     */
+    }*/
 
     @RequestMapping(value = "TripParticipants/{tripID}/invite", method = RequestMethod.POST)
     public String sendInvite(@PathVariable(value = "tripID") int trip,@RequestParam(value = "email") String email) {
