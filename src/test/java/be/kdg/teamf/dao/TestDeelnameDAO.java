@@ -35,15 +35,23 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
 
+        saveOtherStuff(dn.getTrip(),dn.getUser());
         Deelname dn2 = deelnameDAO.findDeelname(dn.getTrip().getTripId(), dn.getUser().getUserID());
         assertEquals("Expected: ", "Stijn", dn2.getUser().getFirstName());
         assertEquals("Expected: ", "Dropping", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
+    }
+
+    private void saveOtherStuff(Trip t, User u) {
+        tripDAO.addTrip(t);
+        userDAO.addUser(u);
+
     }
 
     @Test
     public void testDeleteDeelname(){
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
+        saveOtherStuff(dn.getTrip(),dn.getUser());
         deelnameDAO.deleteDeelname(dn);
     }
 
@@ -52,6 +60,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         List<String> equipment = new ArrayList<>();
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
+        saveOtherStuff(dn.getTrip(),dn.getUser());
         dn.getUser().setFirstName("Jeroen");
         dn.getTrip().setTripName("Reis naar Spanje");
         dn.setEquipment(equipment);
@@ -65,6 +74,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
     public void testFindDeelname() {
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
+        saveOtherStuff(dn.getTrip(),dn.getUser());
         assertEquals("Expected: ", "Stijn", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
         assertEquals("Expecxted: ", "Dropping", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
     }
@@ -72,6 +82,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
     public void listDeelnames() {
         Deelname d1 = getDeelname();
         deelnameDAO.addDeelname(d1);
+        saveOtherStuff(d1.getTrip(),d1.getUser());
         assertEquals("Niet alle deelnames worden opgehaald", 1, deelnameDAO.findDeelnames(d1.getTrip()).size());
     }
 
@@ -99,8 +110,8 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         u1.getTrips().add(t1);
         u1.getDeelnames().add(dn);
 
-        userDAO.addUser(u1);
-        tripDAO.addTrip(t1);
+
+
 
         dn.setTrip(t1);
         dn.setUser(u1);
