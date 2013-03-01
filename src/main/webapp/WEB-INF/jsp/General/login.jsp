@@ -43,17 +43,18 @@ Time: 13:31
 
             <p>
                 <spring:message code="label.YouMustBeLoggedIn"/>
-                U moet aangemeld zijn om op deze pagina te komen.
 
             <form name='f'
                   action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />"
                   method='POST'>
                 <div>
-                    <spring:message code="label.username"/> <input type='text' name='j_username' class="input"
-                                                                   placeholder="Username"> <br/>
-                    <spring:message code="label.password"/> <input type='password' name='j_password' class="input"
-                                                                   placeholder="Password"/>
-
+                    <table>
+                    <tr><td><spring:message code="label.username"/></td> <td><input type='text' name='j_username' class="input"
+                                                                   placeholder="Username"> </td>
+                    </tr>
+                        <tr>   <td> <spring:message code="label.password"/> </td><td><input type='password' name='j_password' class="input"
+                                                                   placeholder="Password"/>  </td>  </tr>
+                    </table>
                     <div>
                         <input name="submit" type="submit" value="Log in" class="btn"/>
                         <input name="reset" type="reset" class="btn" value="Reset"/>
@@ -62,7 +63,9 @@ Time: 13:31
                         <fb:login-button autologoutlink='true' perms='email,user_birthday,status_update,publish_stream'
                                          id="fblogin"></fb:login-button>
                     </div>
+
                 </div>
+
             </form>
             <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message
                 code="label.RegisterHere"/></a>
