@@ -89,7 +89,6 @@ public class StopPlaatsController
     public String releaseStopPlaats(@ModelAttribute("stopPlaats")
                                    StopPlaats stopPlaats,  BindingResult result, @PathVariable("stopplaatsId") int stopplaatsId) {
 
-
         StopPlaats s = stopPlaatsService.findStopPlaats(stopplaatsId);
         s.setVrijgegeven(true);
         stopPlaatsService.updateStopPlaats(s);
