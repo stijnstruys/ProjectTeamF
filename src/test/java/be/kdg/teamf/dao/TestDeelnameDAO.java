@@ -110,9 +110,6 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         u1.getTrips().add(t1);
         u1.getDeelnames().add(dn);
 
-
-
-
         dn.setTrip(t1);
         dn.setUser(u1);
         dn.setEquipment(new ArrayList<String>());
@@ -120,6 +117,6 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
     }
     @Test
     public void geenDeelname(){
-        assertNull(deelnameDAO.findDeelname(616161656,64161616));
+        assertNull(deelnameDAO.findDeelname(123456789,123456879));
     }
 }
