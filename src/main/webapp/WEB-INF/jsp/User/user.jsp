@@ -82,15 +82,15 @@
             </tr>
             <tr>
                 <td><form:label path="street"><spring:message code="label.street"/></form:label></td>
-                <td><form:input path="street"/></td>
+                <td><form:input path="street" id ="street"/></td>
             </tr>
             <tr>
                 <td><form:label path="number"><spring:message code="label.number"/></form:label></td>
-                <td><form:input path="number"/></td>
+                <td><form:input path="number" id="number"/></td>
             </tr>
             <tr>
                 <td><form:label path="zipcode"><spring:message code="label.zipcode"/></form:label></td>
-                <td><form:input path="zipcode"/></td>
+                <td><form:input path="zipcode" id="zipcode"/></td>
             </tr>
             <tr>
                 <td><form:label path="city"><spring:message code="label.city"/></form:label></td>
