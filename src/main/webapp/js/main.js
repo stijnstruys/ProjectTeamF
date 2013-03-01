@@ -28,6 +28,7 @@ $(document).ready(function () {
         $('#trip_equipment').find('option').attr('selected','selected');
         checkChanges();
         $("#dialog-message").dialog("open");
+
     });
 
 

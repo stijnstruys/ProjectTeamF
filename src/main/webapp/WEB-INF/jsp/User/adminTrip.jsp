@@ -163,12 +163,11 @@
 
 
         </form:form>
-
         <button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
 
 
 <div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">
-    <form>
+
         <fieldset>
             <label><spring:message code="label.NotificationMailQuestion"/></label>
             <label for="dialog-message" id="messageOrg"><spring:message
@@ -244,7 +243,7 @@
                 </table>
 
         </fieldset>
-    </form>
+
 </div>
 </section>
 </section>
