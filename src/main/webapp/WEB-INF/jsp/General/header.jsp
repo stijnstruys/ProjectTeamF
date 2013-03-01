@@ -50,6 +50,7 @@
                                                 <div id="header_nav_login_btn">
                                                     <input name="submit" type="submit" value="Log in" class="btn"/>
                                                     <input name="reset" type="reset" class="btn" value="Reset"/>
+                                                    <p class="divider"></p>
                                                     <fb:login-button autologoutlink='true'perms='email,user_birthday,status_update,publish_stream' id="fblogin"></fb:login-button>
                                                 </div>
                                             </div>

@@ -256,5 +256,7 @@
 <script src="../js/mapScripts/mapsView.js"></script>
 <script src="../js/social/FBPlugin.js"></script>
 <script src="../js/social/Twitter.js"></script>
+<script src="../js/social/FBLogin.js"></script>
+<script src="http://connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393" type="text/javascript"></script>
 </body>
 </html>
