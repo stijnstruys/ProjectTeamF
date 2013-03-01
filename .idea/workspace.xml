@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectTeamF.iml" afterPath="$PROJECT_DIR$/ProjectTeamF.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/RegisterTest.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/RegisterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestStopPlaatsModel.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestStopPlaatsModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestUserModel.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestUserModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/service/TestTripService.java" afterPath="$PROJECT_DIR$/src/test/java/be/kdg/teamf/service/TestTripService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362154910909" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362157667409" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362125275790" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362135508230" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -109,6 +106,7 @@
     <file path="/AddTripCategorie.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362078564490" ignored="false" />
     <file path="/mapsManage.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362088113188" ignored="false" />
     <file path="/RegisterTest.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362155471011" ignored="false" />
+    <file path="/TestTripService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362159993995" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,46 +166,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestTripDAO.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java">
+      <file leaf-file-name="TestTripService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/service/TestTripService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="73" selection-start="3054" selection-end="3054" vertical-scroll-proportion="1.2331606">
+            <state line="221" column="38" selection-start="6716" selection-end="6716" vertical-scroll-proportion="0.7969925">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/RegisterTest.java">
+      <file leaf-file-name="TripDAOImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="20" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="41" selection-start="5864" selection-end="5879" vertical-scroll-proportion="-7.923077">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestTripController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="20" selection-start="1621" selection-end="1624" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestUserDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestUserDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
+            <state line="78" column="76" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -233,7 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/viewTrip.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/messages_nl.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
@@ -249,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/model/TestUserModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/RegisterTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/service/TestTripService.java" />
       </list>
     </option>
   </component>
@@ -373,6 +344,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1209,7 +1210,11 @@
       <created>1362146073278</created>
       <updated>1362146073278</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="test">
+      <created>1362157676105</created>
+      <updated>1362157676105</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1352,47 +1357,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mailTripUpdate.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="81" selection-start="3485" selection-end="3485" vertical-scroll-proportion="-9.807693" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="53" selection-start="4428" selection-end="4428" vertical-scroll-proportion="0.7759473">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="58" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.83196044" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="37" selection-start="2577" selection-end="2577" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="51" selection-start="2350" selection-end="2350" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="39" selection-start="10128" selection-end="10128" vertical-scroll-proportion="0.05074627">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="76" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.05074627">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="4" selection-start="699" selection-end="753" vertical-scroll-proportion="0.46264368">
@@ -1417,37 +1381,86 @@
         <state line="51" column="47" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.7561779" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestUserDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/RegisterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
+        <state line="21" column="24" selection-start="622" selection-end="622" vertical-scroll-proportion="0.47611204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/IndexTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="13" selection-start="584" selection-end="584" vertical-scroll-proportion="0.30807248">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="41" selection-start="5864" selection-end="5879" vertical-scroll-proportion="-7.923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/RegisterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="20" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.0">
+        <state line="133" column="41" selection-start="5864" selection-end="5879" vertical-scroll-proportion="0.36267605">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="20" selection-start="1621" selection-end="1624" vertical-scroll-proportion="0.0">
+        <state line="50" column="20" selection-start="1621" selection-end="1624" vertical-scroll-proportion="1.2322899">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestUserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.028619528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/StopPlaatsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="482" selection-end="482" vertical-scroll-proportion="0.33278418">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/DeelnameServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="548" selection-end="548" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/DeelnameDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="13" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestDeelnameDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="13" selection-start="741" selection-end="741" vertical-scroll-proportion="0.25757575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="76" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/dao/TestTripDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="73" selection-start="3054" selection-end="3054" vertical-scroll-proportion="1.2331606">
+        <state line="100" column="3" selection-start="2663" selection-end="3070" vertical-scroll-proportion="0.22727273">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/service/TestTripService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="38" selection-start="6716" selection-end="6716" vertical-scroll-proportion="0.7969925">
           <folding />
         </state>
       </provider>

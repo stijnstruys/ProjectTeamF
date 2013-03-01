@@ -14,7 +14,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class RegisterTest {
-    @Test
+   /* @Test
     public void register() {
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
@@ -50,5 +50,5 @@ public class RegisterTest {
         datePickerDateOfBirth.get(25).click();
         submitButton.click();
 
-    }
+    }             */
 }
