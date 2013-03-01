@@ -270,7 +270,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
     public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
-        String[] emailAddressess = null;
+        //String[] emailAddressess new String[];
         List<String> emails = new ArrayList<String>();
         emails = tripService.listUserEmailPerTrips(tripID);
        /* int counter = 0;
@@ -278,10 +278,11 @@ public class UserController {
             emailAddressess[counter] = t;
             counter++;
         }*/
-        for(int i=0;i<emails.size();i++){
+        //System.out.println();
+        /*for(int i=0;i<emails.size();i++){
             emailAddressess[i] = emails.get(i);
-        }
-        System.out.println("hieremail" + emailAddressess);
+        } */
+       // System.out.println("hieremail" + emailAddressess);
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         mailModel.addAttribute("title", "Trip update");
@@ -297,7 +298,7 @@ public class UserController {
        /* for(int j=0;j<emailAddressess.length;j++){
             msg.set
         }*/
-        msg.setCc(emailAddressess);
+        msg.setCc((String[])emails.toArray());
         tripService.sendMail(mailModel, msg);
 
         return "true";
