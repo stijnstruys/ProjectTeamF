@@ -271,18 +271,8 @@ public class UserController {
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
     public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
         //String[] emailAddressess new String[];
-        List<String> emails = new ArrayList<String>();
-        emails = tripService.listUserEmailPerTrips(tripID);
-       /* int counter = 0;
-        for (String t  : emails) {
-            emailAddressess[counter] = t;
-            counter++;
-        }*/
-        //System.out.println();
-        /*for(int i=0;i<emails.size();i++){
-            emailAddressess[i] = emails.get(i);
-        } */
-       // System.out.println("hieremail" + emailAddressess);
+        ArrayList<String> emails = new ArrayList(tripService.listUserEmailPerTrips(tripID));
+
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         mailModel.addAttribute("title", "Trip update");
@@ -293,12 +283,8 @@ public class UserController {
         mailModel.addAttribute("date", format.format(new Date()));
         mailModel.addAttribute("viewTheTrip", viewTheTrip);
         SimpleMailMessage msg = new SimpleMailMessage(message);
-        //System.out.println("hieremail: "+emailAddressess);
-       // msg.setCc("kdgteamf@gmail.com");//"kdgteamf@gmail.com");
-       /* for(int j=0;j<emailAddressess.length;j++){
-            msg.set
-        }*/
-        msg.setCc((String[])emails.toArray());
+
+        msg.setCc(emails.toArray(new String[0]));
         tripService.sendMail(mailModel, msg);
 
         return "true";
