@@ -64,8 +64,7 @@
             <legend>General #yoloswag</legend>
 
                 <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
-                <a href="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html" class="btn btn-success float_right" id="ManageParticipants" ><spring:message code="label.ManageParticipants"/></a>
-                <a href="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html" class="btn btn-success float_right" id="ManageCategories" class="btn_green_left"><spring:message code="label.ManageCategories"/></a>
+
 
                 <div class="control-group">
                     <form:label id="labelTripN" class="control-label"  path="tripName"><spring:message code="label.tripName"/></form:label>
@@ -73,13 +72,15 @@
                         <form:input type="text" id="TripN" path="tripName"/>
                     </div>
                 </div>
-
+            <a href="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html" class="btn btn-success float_right" id="ManageParticipants" ><spring:message code="label.ManageParticipants"/></a>
                 <div class="control-group">
                     <form:label id="labelTripLoc" class="control-label"  path="startLocation"><spring:message code="label.startLocation"/></form:label>
                     <div class="controls">
                         <form:input type="text" id="TripLoc" path="startLocation"/>
                     </div>
                 </div>
+
+            <a href="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html" class="btn btn-success float_right" id="ManageCategories" class="btn_green_left"><spring:message code="label.ManageCategories"/></a>
                 <div class="control-group">
                     <form:label id="labelTripStartD" class="control-label"  path="startDate"><spring:message code="label.startDate"/></form:label>
                     <div class="controls">
