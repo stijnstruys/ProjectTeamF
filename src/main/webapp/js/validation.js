@@ -108,6 +108,9 @@ function registration() {
         }
     }
 
+    dob.change( function(){
+        checkDOB();
+    });
 
     //submit
     $("#user").submit( function() {
