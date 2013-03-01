@@ -256,6 +256,7 @@ public class UserController {
 
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
+        System.out.println("hier lukt het");
         return "redirect:/user/admincp-"+trip.getTripId()+".html";
     }
 
