@@ -54,10 +54,7 @@
                                                         <tr>
                                                             <td width="87%"
                                                                 style="font-size: 11px; color: #525252; font-family: Arial, Helvetica, sans-serif;">
-                                                                <b>Visit <a
-                                                                        href="http://localhost:8080/ProjectTeamF-1.0/">our
-                                                                    website</a> to check out a complete overview of the
-                                                                    trip! <br>
+                                                                <b>${viewTheTrip} <br>
                                                                 </b></td>
                                                         </tr>
                                                     </table>

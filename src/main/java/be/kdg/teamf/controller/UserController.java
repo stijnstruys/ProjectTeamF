@@ -253,15 +253,36 @@ public class UserController {
     @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
     public String updateTrip(@ModelAttribute("trip")
                              Trip trip, BindingResult result) {
+
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
-
+        System.out.println("hier lukt het");
         return "redirect:/user/admincp-"+trip.getTripId()+".html";
     }
 
+    @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
+        public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("viewTheTrip") String viewTheTrip) {
+
+        ModelMap mailModel = new ModelMap();
+                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                mailModel.addAttribute("title", "Trip update");
+                mailModel.addAttribute("subtitle1", mesOrg);
+                mailModel.addAttribute("message", orgMessage);
+                mailModel.addAttribute("subtitle2", followingChanges);
+                mailModel.addAttribute("text", formulier);
+                mailModel.addAttribute("date", format.format(new Date()));
+                mailModel.addAttribute("viewTheTrip", viewTheTrip);
+                SimpleMailMessage msg = new SimpleMailMessage(message);
+                msg.setTo("kdgteamf@gmail.com");
+                tripService.sendMail(mailModel, msg);
+
+                return "true";
+
+        }
+    /*
     @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)
     @ResponseBody
-    public void mailForm(@RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @ModelAttribute(value = "tripID") String trip, BindingResult result) {
+    public void mailForm(, @ModelAttribute(value = "tripID") String trip, BindingResult result) {
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         mailModel.addAttribute("title", "Trip update");
@@ -274,7 +295,8 @@ public class UserController {
         SimpleMailMessage msg = new SimpleMailMessage(message);
         msg.setTo("kdgteamf@gmail.com");
         tripService.sendMail(mailModel, msg);
-    }
+    }     */
+
     @RequestMapping(value = "TripParticipants/{tripID}/invite", method = RequestMethod.POST)
     public String sendInvite(@PathVariable(value = "tripID") int trip,@RequestParam(value = "email") String email) {
         Trip t = tripService.findTrip(trip);

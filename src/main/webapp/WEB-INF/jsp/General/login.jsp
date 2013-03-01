@@ -41,38 +41,46 @@ Time: 13:31
 
         <section class="homeSection">
 
-                <p>
-                    <spring:message code="label.YouMustBeLoggedIn"/>
+            <p>
+                <spring:message code="label.YouMustBeLoggedIn"/>
                 U moet aangemeld zijn om op deze pagina te komen.
-                <form name='f'
-                      action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />"
-                      method='POST'>
-                    <div >
-                        <spring:message code="label.username"/> <input type='text' name='j_username' class="input"
-                               placeholder="Username">   <br />
-                        <spring:message code="label.password"/> <input type='password' name='j_password' class="input"
-                               placeholder="Password"/>
 
-                        <div>
-                            <input name="submit" type="submit" value="Log in" class="btn"/>
-                            <input name="reset" type="reset" class="btn" value="Reset"/>
-                        </div>
+            <form name='f'
+                  action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />"
+                  method='POST'>
+                <div>
+                    <spring:message code="label.username"/> <input type='text' name='j_username' class="input"
+                                                                   placeholder="Username"> <br/>
+                    <spring:message code="label.password"/> <input type='password' name='j_password' class="input"
+                                                                   placeholder="Password"/>
+
+                    <div>
+                        <input name="submit" type="submit" value="Log in" class="btn"/>
+                        <input name="reset" type="reset" class="btn" value="Reset"/>
+
+                        <p class="divider"></p>
+                        <fb:login-button autologoutlink='true' perms='email,user_birthday,status_update,publish_stream'
+                                         id="fblogin"></fb:login-button>
                     </div>
-                </form>
-            <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message code="label.RegisterHere"/></a>
-                </p>
+                </div>
+            </form>
+            <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message
+                code="label.RegisterHere"/></a>
+            </p>
 
-            </section>
         </section>
     </section>
-    <jsp:include page="footer.jsp"/>
+</section>
+<jsp:include page="footer.jsp"/>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-    <script src="../js/jquery-ui-1.9.2.custom.js"></script>
-    <script src="../js/vendor/bootstrap.min.js"></script>
-    <script src="../js/plugins.js"></script>
-    <script src="../js/main.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="../js/jquery-ui-1.9.2.custom.js"></script>
+<script src="../js/vendor/bootstrap.min.js"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/social/FBLogin.js"></script>
+<script src="http://connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393" type="text/javascript"></script>
 
 </body>
 </html>
