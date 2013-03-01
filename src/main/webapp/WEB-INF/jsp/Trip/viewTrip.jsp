@@ -33,7 +33,7 @@
 </head>
 <body>
 <div id="fb-root"></div>
-<script></script>
+<%--<script></script>--%>
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
@@ -240,9 +240,9 @@
 </section>
 
 
-<div id="fb-root"></div>
+<%--<div id="fb-root"></div>--%>
 <div class="fb-like" data-href="https://www.facebook.com/pages/Tripplanner-teamf/146815778814080" data-send="true" data-width="450" data-show-faces="true"></div>
-<a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl">Tweeten</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl">Tweet</a>
 <jsp:include page="../General/footer.jsp"/>
 
 <!--google maps api-->
@@ -253,10 +253,11 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/mapScripts/mapsView.js"></script>
-<script src="../js/social/FBPlugin.js"></script>
+<%--<script src="../js/social/FBPlugin.js"></script>--%>
 <script src="../js/social/Twitter.js"></script>
 <script src="../js/social/FBLogin.js"></script>
 <script src="http://connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393" type="text/javascript"></script>
+<script src="../js/mapScripts/mapsView.js"></script>
+
 </body>
 </html>
