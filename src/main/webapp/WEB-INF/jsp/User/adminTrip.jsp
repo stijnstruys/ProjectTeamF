@@ -88,7 +88,7 @@
                 <div class="control-group">
                     <form:label id="labelTripEndD" class="control-label"  path="endDate"><spring:message code="label.endDate"/></form:label>
                     <div class="controls">
-                        <form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="startDate" type="text" value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/>
+                        <form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="endDate" type="text" value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/>
                     </div>
                 </div>
             </c:if>
