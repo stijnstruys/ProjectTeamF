@@ -36,8 +36,8 @@
         <h2><spring:message code="label.UserProfile"/></h2>
         <h4><spring:message code="label.General"/></h4>
 
-
-        <form:form class="form-horizontal" commandName="user" action="/ProjectTeamF-1.0/user/update.html" method="POST" enctype="multipart/form-data">
+            <div id="validation_failed"></div>
+        <form:form id="profile_edit" class="form-horizontal" commandName="user" action="/ProjectTeamF-1.0/user/update.html" method="POST" enctype="multipart/form-data">
             <div class="row-fluid profile-fields">
                 <div class="span2" ><label class="profile_right"><spring:message code="label.photo"/></label></div>
                 <div class="span3">
@@ -150,6 +150,7 @@
 <script src="../js/jquery-ui-1.9.2.custom.js"></script>
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
+<script src="../js/validation.js"></script>
 <script src="../js/main.js"></script>
 </body>
 </html>
