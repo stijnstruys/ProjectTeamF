@@ -66,8 +66,6 @@ public class StopPlaatsController
     @RequestMapping("/StopPlaats/update-{stopPlaatsID}")
     public ModelAndView updateStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID) throws Exception {
 
-       /* User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin); */
 
         StopPlaats s  = stopPlaatsService.findStopPlaats(stopPlaatsID);
         request.setAttribute("stopPlaats",s);

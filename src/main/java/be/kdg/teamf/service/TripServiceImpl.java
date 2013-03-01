@@ -10,6 +10,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -77,6 +78,8 @@ public class TripServiceImpl implements TripService {
         return tripDAO.listUserTrips(userID);
     }
 
+    @Override
+    @Async
     public void sendMail(final ModelMap model, final SimpleMailMessage msg) {
         mailSender.send(new MimeMessagePreparator() {
 
@@ -110,6 +113,7 @@ public class TripServiceImpl implements TripService {
     }
 
     @Override
+    @Async
     public void sendInvite(final ModelMap model, final SimpleMailMessage msg) {
 
         mailSender.send(new MimeMessagePreparator() {
