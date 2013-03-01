@@ -72,8 +72,12 @@
             </tr>
             <tr>
                 <td><form:label path="dateOfBirth"><spring:message code="label.dateOfBirth"/></form:label></td>
-                <td><form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth"
-                                id="dateOfBirth"/></td>
+                <td>
+                    <div class="input-append">
+                        <form:input class="datepicker" readonly="true" style="cursor: text;" path="dateOfBirth" id="dateOfBirth"/>
+                        <span class="add-on" id="addon_dob"></span>
+                    </div>
+                </td>
             </tr>
 
             <tr>

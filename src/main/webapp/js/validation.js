@@ -25,8 +25,8 @@ function registration() {
     var username = $("#userName");
     var pw = $("#password");
     var email = $("#email");
-
-    var usernameok, pwok, emailok = false;
+    var dob = $("#dateOfBirth");
+    var usernameok, pwok, emailok, dobok = false;
 
     //Username
     username.keyup( function() {
@@ -59,6 +59,8 @@ function registration() {
 
     }
 
+
+
     //password
     pw.keyup(function() {
         checkpw();
@@ -69,7 +71,7 @@ function registration() {
         if(pw.val().length < 3){
             $("#addon_password").html(failed);
             pwok = false;
-            errormsg += "<li>Password needs to be at least 3 characters long!</li>"
+            errormsg += "<li>Password needs to be at least 3 characters long!</li>";
         } else {
             $("#addon_password").html(success);
             pwok = true;
@@ -87,7 +89,7 @@ function registration() {
         if (!filter.test(email.val())) {
             $("#addon_email").html(failed);
             emailok = false;
-            errormsg += "<li>This is not a valid email address!</li>"
+            errormsg += "<li>This is not a valid email address!</li>" ;
         } else{
             $("#addon_email").html(success);
             emailok = true;
@@ -95,18 +97,28 @@ function registration() {
 
     }
 
+    //Date of birth
+    function checkDOB() {
+        if(dob.val().length == 0) {
+            $("#addon_dob").html(failed);
+            errormsg += "<li>Please enter a Date of Birth!</li>";
+            dobok = false;
+        } else {
+            $("#addon_dob").html(success);
+        }
+    }
+
 
     //submit
     $("#user").submit( function() {
         $("#validation_failed").hide();
-        $("#trip_equipment").
         errormsg = "";
         checkUsername();
         checkpw();
         checkEmail();
+        checkDOB();
 
-
-        if(!usernameok || !pwok || !emailok)  {
+        if(!usernameok || !pwok || !emailok || !dobok)  {
             $("#validation_failed")
                 .show()
                 .html('<ul>' + errormsg + '</ul>');
