@@ -5,6 +5,9 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -24,7 +27,8 @@ public class TestStopPlaatsModel {
     public void addDeelname() throws Exception {
          StopPlaats s = new StopPlaats();
         Trip t = new Trip();
-
+        List<String> antwrdn = new ArrayList();
+        antwrdn.add("goed");
         s.setAdres("Straat 1");
         s.setStopPlaatsID(1);
         s.setTrip(t);
@@ -32,6 +36,9 @@ public class TestStopPlaatsModel {
          s.setInformatie("test");
         s.setType("Start");
         s.setNaam("stopNaam");
+        s.setVraag("Goed of fout?");
+        s.setCorrectAntwoord("goed");
+        s.setAntwoorden(antwrdn);
         assertEquals("Expected adres: Straat 1", "Straat 1", s.getAdres());
         assertEquals("Expected stopplaats:", 1, s.getStopPlaatsID());
         assertEquals("Expected trip:", t, s.getTrip());
@@ -39,5 +46,8 @@ public class TestStopPlaatsModel {
         assertEquals("Expected vrijgegeven:", "test", s.getInformatie());
         assertEquals("Expected vrijgegeven:", "Start", s.getType());
         assertEquals("Expected naam", "stopNaam", s.getNaam());
+        assertEquals("Expected vraag", "Goed of fout?", s.getVraag());
+        assertEquals("Expected vraag", "goed", s.getCorrectAntwoord());
+        assertEquals("Expected antwoorden", antwrdn, s.getAntwoorden());
     }
 }

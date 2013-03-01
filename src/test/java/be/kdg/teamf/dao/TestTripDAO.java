@@ -1,5 +1,6 @@
 package be.kdg.teamf.dao;
 
+import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import org.junit.Test;
@@ -21,7 +22,7 @@ import static junit.framework.Assert.*;
  * To change this template use File | Settings | File Templates.
  */
 @ContextConfiguration("classpath:spring-servlet.xml")
-public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
+public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests {
     private Trip trip;
 
     @Autowired
@@ -29,6 +30,10 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
 
     @Autowired
     protected UserDAO userDAO;
+
+    @Autowired
+    protected DeelnameDAO deelnameDAO;
+
     @Test
     public void testAddTrip() {
 
@@ -82,6 +87,29 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests{
     public void getTripNames() {
         addTrip();
         assertNotNull("  ", tripDAO.getTripNames());
+    }
+
+    @Test
+    public void testListPublicTrips() {
+        Trip t = new Trip();
+        t.setTripId(1);
+        t.setVisible(true);
+        tripDAO.addTrip(t);
+        assertEquals("Expected size:", 1, tripDAO.listPublicTrips().size());
+    }
+
+    @Test
+    public void testListUserEmailPerTrips() {
+        User u = new User();
+        u.setUserID(1);
+        u.setEmail("kdgteamf@gmail.com");
+        Trip t = new Trip();
+        t.setTripId(1);
+        Deelname d = new Deelname();
+        d.setTrip(t);
+        d.setUser(u);
+        deelnameDAO.addDeelname(d);
+        assertEquals("Expected size:", 1, tripDAO.listUserEmailPerTrips(1).size());
     }
 
     private Trip getTrip() {

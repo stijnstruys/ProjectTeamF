@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
+import java.sql.Blob;
 import java.util.Date;
 
 import static junit.framework.Assert.assertEquals;
@@ -36,6 +37,8 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         u.setCity("city");
         u.setShowPosition(true);
         u.setNotificationEmail(true);
+        Blob test = null;
+        u.setProfielFoto(test);
 
         assertEquals("Expected id: 1", 1, u.getUserID());
         assertEquals("Expected username: username", "username", u.getUsername());
@@ -48,9 +51,10 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         assertEquals("Expected street: street", "street", u.getStreet());
         assertEquals("Expected number: number", "number", u.getNumber());
         assertEquals("Expected zipcode: zipcode", "zipcode", u.getZipcode());
-        assertEquals("Expected city: city", "city", u.getCity());
-        assertEquals("Expected city: city", true, u.isShowPosition());
-        assertEquals("Expected city: city", true, u.isNotificationEmail());
+        assertEquals("Expected city: ", "city", u.getCity());
+        assertEquals("Expected showposition: ", true, u.isShowPosition());
+        assertEquals("Expected mail: ", true, u.isNotificationEmail());
+        assertEquals("Expected profielfoto: city", test, u.getProfielFoto());
     }
 
 
