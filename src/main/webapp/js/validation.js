@@ -15,12 +15,12 @@ $(document).ready(function () {
     $("#validation_failed").hide();
 
     //user registration validation
-    registration();
+    user();
 
 });
 
 
-function registration() {
+function user() {
     var errormsg = "";
     var username = $("#userName");
     var pw = $("#password");
@@ -105,6 +105,7 @@ function registration() {
             dobok = false;
         } else {
             $("#addon_dob").html(success);
+            dobok =true;
         }
     }
 
@@ -129,5 +130,21 @@ function registration() {
             return false;
         }
     });
+
+    //submit profile
+     $('#profile_edit').submit( function() {
+         $("#validation_failed").hide();
+         errormsg = "";
+         checkEmail();
+         checkDOB();
+
+         if(!emailok || !dobok)  {
+             $("#validation_failed")
+                 .show()
+                 .html('<ul>' + errormsg + '</ul>');
+
+             return false;
+         }
+     });
 
 }

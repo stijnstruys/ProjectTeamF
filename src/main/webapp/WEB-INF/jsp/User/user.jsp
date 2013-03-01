@@ -113,42 +113,7 @@
     </form:form>
 
     <button class="btn" type="button" id="user_importfb">Import data from Facebook</button>
-    <%--
-    <h3><spring:message code="label.Users"/></h3>
 
-    <c:if test="${!empty userList}">
-        <table class="data">
-            <tr>
-                <th><spring:message code="label.name"/></th>
-                <th><spring:message code="label.email"/></th>
-                <th><spring:message code="label.telephone"/></th>
-                <th><spring:message code="label.dateOfBirth"/></th>
-                <th><spring:message code="label.street"/></th>
-                <th><spring:message code="label.city"/></th>
-                <th>&nbsp;</th>
-            </tr>
-            <c:forEach items="${userList}" var="user">
-
-
-                <tr>
-                    <td>${user.firstName}, ${user.lastName} </td>
-                    <td>${user.email}</td>
-                    <td>${user.telephone}</td>
-                    <td>${user.dateOfBirth}</td>
-                    <td>${user.street} ${user.number}</td>
-                    <td>${user.zipcode}, ${user.city}</td>
-                    <td>
-                        <a href="updateUser/${user.userID}.html"><spring:message code="label.updateUser"/></a>
-                    </td>
-                    <td>
-                        <a href="deleteUser/${user.userID}.html"><spring:message code="label.DeleteUser"/></a>
-                    </td>
-
-                </tr>
-
-            </c:forEach>
-        </table>
-    </c:if>   --%>
 </section>  </section>
 <jsp:include page="../General/footer.jsp"/>
 
