@@ -61,17 +61,14 @@
         <form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip" class="form-horizontal">
             <form:hidden id="hiddenTripID" path="tripId"/>
 
-            <legend>General #yoloswag</legend>
-
-                <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
-
-
-                <div class="control-group">
-                    <form:label id="labelTripN" class="control-label"  path="tripName"><spring:message code="label.tripName"/></form:label>
-                    <div class="controls">
-                        <form:input type="text" id="TripN" path="tripName"/>
-                    </div>
+            <legend>General</legend>
+            <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
+            <div class="control-group">
+                <form:label id="labelTripN" class="control-label"  path="tripName"><spring:message code="label.tripName"/></form:label>
+                <div class="controls">
+                    <form:input type="text" id="TripN" path="tripName"/>
                 </div>
+            </div>
             <a href="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html" class="btn btn-success float_right" id="ManageParticipants" ><spring:message code="label.ManageParticipants"/></a>
                 <div class="control-group">
                     <form:label id="labelTripLoc" class="control-label"  path="startLocation"><spring:message code="label.startLocation"/></form:label>
@@ -81,7 +78,7 @@
                 </div>
 
             <a href="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html" class="btn btn-success float_right" id="ManageCategories" class="btn_green_left"><spring:message code="label.ManageCategories"/></a>
-            <c:if test="tripType.tripTypeId == 3">
+            <c:if test="${3 != trip.tripType.tripTypeId}">
                 <div class="control-group">
                     <form:label id="labelTripStartD" class="control-label"  path="startDate"><spring:message code="label.startDate"/></form:label>
                     <div class="controls">
@@ -91,16 +88,18 @@
                 <div class="control-group">
                     <form:label id="labelTripEndD" class="control-label"  path="endDate"><spring:message code="label.endDate"/></form:label>
                     <div class="controls">
-                        <form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="startDate" type="text" value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/>
+                        <form:input id="TripEndD" class="datepicker" readonly="true" style="cursor: text;" path="endDate" type="text" value="${1900 + trip.endDate.year}/${1 + trip.endDate.month}/${trip.endDate.date}"/>
                     </div>
                 </div>
+            </c:if>
+
                 <div class="control-group">
                     <form:label id="labelTripDescr" class="control-label"  path="tripDescription"><spring:message code="label.tripDescription"/></form:label>
                     <div class="controls">
                         <form:input type="text" id="TripDescr" path="tripDescription"/>
                     </div>
                 </div>
-            </c:if>
+
 
             <div class="control-group">
                 <div class="controls">
@@ -164,12 +163,11 @@
 
 
         </form:form>
-
         <button class="btn" id="updateTrip"><spring:message code="label.updateTrip"/></button>
 
 
 <div id="dialog-message" title="<spring:message code="label.NotificationMailTitle"/>">
-    <form>
+
         <fieldset>
             <label><spring:message code="label.NotificationMailQuestion"/></label>
             <label for="dialog-message" id="messageOrg"><spring:message
@@ -245,7 +243,7 @@
                 </table>
 
         </fieldset>
-    </form>
+
 </div>
 </section>
 </section>
