@@ -31,7 +31,6 @@ $(document).ready(function () {
         };
         directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
         //geocoder = new google.maps.Geocoder();
-
         //init map
         var mapOptions = {
             zoom: 8,
@@ -41,9 +40,14 @@ $(document).ready(function () {
         map = new google.maps.Map($('#map_canvas')[0], mapOptions);
         directionsDisplay.setMap(map);
 
+        // single location
+
         //get locations
         $('.addresses').each(function () {
-            locations.push(this.value);
+            var loc = new Object();
+            loc.Adres = this.value;
+            loc.ID = this.id;
+            locations.push(loc);
             //alert( this.value );
         });
 
@@ -86,13 +90,12 @@ $(document).ready(function () {
         //alle punten tussen start en einde
         for (var i = 1; i < (locations.length - 1); i++) {
             waypts.push({
-                location: locations[i]
+                location: locations[i].Adres
             });
         }
-
         var request = {
-            origin: locations[0],
-            destination: locations[locations.length - 1],
+            origin: locations[0].Adres,
+            destination: locations[locations.length - 1].Adres,
             waypoints: waypts,
             travelMode: google.maps.TravelMode[selectedMode]
         };
@@ -107,7 +110,7 @@ $(document).ready(function () {
     //plaats markers zonder route
     function placeMarkers() {
         $.each(locations, function (l, loc) {
-            geocoder.geocode({ 'address': loc}, function (results, status) {
+            geocoder.geocode({ 'address': loc.Adres}, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
                     marker = new google.maps.Marker({

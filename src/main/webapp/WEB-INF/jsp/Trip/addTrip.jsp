@@ -40,7 +40,7 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Trip</h2>
+    <h2><spring:message code="label.addTrip"/></h2>
 
     <form:form method="post" action="add.html" commandName="trip" id="add_trip_form" class="form-horizontal">
 
@@ -75,7 +75,7 @@
             <div class="control-group">
                 <div class="controls">
                     <label class="checkbox">
-                        <form:checkbox path="visible" /> Trip visible in Search
+                        <form:checkbox path="visible" /><spring:message code="label.tripVisible"/>
                     </label>
 
                 </div>
@@ -99,18 +99,18 @@
         </div>
         <div id="add_trip_4" class="add_trip_div">
             <div class="control-group" >
-                <label class="control-label">Herhaling: </label>
+                <label class="control-label"><spring:message code="label.Interval"/></label>
                 <div class="controls">
                     <select name="repetition">
-                        <option value="1d">Dagelijks</option>
-                        <option value="1w">Wekelijks</option>
-                        <option value="2w">Om de twee weken</option>
-                        <option value="4m">Om de vier weken</option>
+                        <option value="1d"><spring:message code="label.Dagelijks"/></option>
+                        <option value="1w"><spring:message code="label.Wekelijks"/>/option>
+                        <option value="2w"><spring:message code="label.OmDe2Weken"/></option>
+                        <option value="4m"><spring:message code="label.OmDe4Weken"/></option>
                     </select>
                 </div>
             </div>
             <div class="control-group" id="cg_repetition">
-                <form:label class="control-label" path="startDate">Tot & met</form:label>
+                <form:label class="control-label" path="startDate"><spring:message code="label.totEnMet"/></form:label>
                 <div class="controls">
                     <input type="text" id="temdate" class="datepicker" readonly="true" style="cursor: text;" name="dateUntill" />
                 </div>
@@ -137,7 +137,7 @@
                 <form:label class="control-label" path="equipment"><spring:message code="label.equipment"/></form:label>
                 <div class="controls">
                     <input type="text" id="equipment-input"/>
-                    <span class="help-inline url"id="add_equipment">Add</span>
+                    <span class="help-inline url"id="add_equipment"><spring:message code="label.Add"/></span>
                 </div>
             </div>
 
@@ -145,7 +145,7 @@
                 <div class="controls">
                     <form:select multiple="multiple" path="equipment" id="trip_equipment">
                     </form:select>
-                    <span class="help-inline url" id="remove_equipment">Remove selected</span>
+                    <span class="help-inline url" id="remove_equipment"><spring:message code="label.removeSelected"/></span>
                 </div>
             </div>
         </div>
@@ -161,10 +161,10 @@
 
         <ul class="pager" id="add_trip_btns">
             <li class="previous">
-                <a href="#" id="add_trip_prev">&larr; Previous</a>
+                <a href="#" id="add_trip_prev">&larr; <spring:message code="label.previous"/></a>
             </li>
             <li class="next">
-                <a href="#" id="add_trip_next">Next &rarr;</a>
+                <a href="#" id="add_trip_next"><spring:message code="label.next"/> &rarr;</a>
             </li>
         </ul>
     </form:form>

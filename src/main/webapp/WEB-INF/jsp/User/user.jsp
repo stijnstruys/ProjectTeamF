@@ -59,7 +59,7 @@
             <div class="controls">
                 <div class="input-append">
                     <input type="text" disabled id="browse_foto_input"/>
-                    <a class="btn" id="browse_foto">Browse</a>
+                    <a class="btn" id="browse_foto"><spring:message code="label.Browse"/></a>
  >            </div>
 
                 <input type="file" name="foto" id="foto" style="display: none" />
@@ -132,7 +132,7 @@
         <div class="control-group">
             <div class="controls">
                 <input type="submit" id="register_submit" class="btn" value="<spring:message code="label.Register"/>"/>
-                <a class="btn" type="button" id="user_importfb">Import data from Facebook</a>
+                <a class="btn" type="button" id="user_importfb"><spring:message code="label.ImportDateFromFacebook"/></a>
             </div>
         </div>
 

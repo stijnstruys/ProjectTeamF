@@ -39,12 +39,9 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.About"/></h2>
-        Als derdejaars studenten op de Karel de Grote hogeschool hebben wij voor het vak Software development de
-        opdracht gekregen om zowel een webclient als een mobileclient op te bouwen. Voor deze opdracht waren er enkele
-        aspecten zeer belangrijk. We moesten test-driven te werk gaan, iets wat voor ons volledig nieuw was. Daarnaast
-        was het ook zeer belangrijk om in teamverband te werken, hierbij en bij het test-driven werken was het ook
-        belangrijk dat we deden aan pair programming.</br></br>Hier vindt u wat meer informatie over ons:
-
+        <spring:message code="label.AboutLine1"/>
+        </br></br>
+        <spring:message code="label.AboutLine2"/>
         <table id="aboutTable">
             <tr>
                 <td class="aboutColumn">
@@ -55,7 +52,7 @@
 
                     <p>20, Herentals</p>
 
-                    <p>Software Management</p>
+                    <p><spring:message code="label.SoftwareManagement"/></p>
                 </td>
                 <td class="aboutColumn">
                     <img src="../img/groupMembers/BartLeemans.jpg" alt="Smiley face"
@@ -65,7 +62,7 @@
 
                     <p>21, Meerle</p>
 
-                    <p>Software Management</p>
+                    <p><spring:message code="label.SoftwareManagement"/></p>
                 </td>
                 <td class="aboutColumn">
                     <img src="../img/groupMembers/JorneRaeymaekers.jpg" alt="Smiley face"
@@ -75,7 +72,7 @@
 
                     <p>20, Ranst</p>
 
-                    <p>Applicatieontwikkeling - Bedrijfsapplicaties</p>
+                    <p><spring:message code="label.ApplicationDevBedrijfsApp"/></p>
                 </td>
             </tr>
             <tr>
@@ -87,7 +84,7 @@
 
                     <p>20, Wechelderzande</p>
 
-                    <p>Applicatieontwikkeling - Bedrijfsapplicaties</p>
+                    <p><spring:message code="label.ApplicationDevBedrijfsApp"/></p>
                 </td>
                 <td>
                     <img src="../img/groupMembers/JeroenVerbunt.jpg" alt="Smiley face"
@@ -97,7 +94,7 @@
 
                     <p>24, Hoogstraten</p>
 
-                    <p>Applicatieontwikkeling - Multimedia</p>
+                    <p><spring:message code="label.ApplicationDevMM"/></p>
                 </td>
                 <td>
                     <img src="../img/groupMembers/profilePic.jpg" alt="Smiley face"
@@ -107,7 +104,7 @@
 
                     <p>20, Merksplas</p>
 
-                    <p>Applicatieontwikkeling - Multimedia</p>
+                    <p><spring:message code="label.ApplicationDevMM"/></p>
                 </td>
             </tr>
         </table>

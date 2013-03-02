@@ -84,7 +84,7 @@ $(document).ready(function () {
                     draggable: true,
                     position: results[0].geometry.location
                 });
-
+                geocodePosition(marker.getPosition());
                 google.maps.event.addListener(marker, 'dragend', function () {
                     geocodePosition(marker.getPosition());
                 });

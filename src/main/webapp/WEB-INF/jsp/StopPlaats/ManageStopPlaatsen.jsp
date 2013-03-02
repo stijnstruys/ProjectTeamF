@@ -32,6 +32,7 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.ManageStoppingPoints"/></h2>
+
         <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
             <input type="submit" value="Back" class="btn">
         </form>
@@ -112,19 +113,21 @@
                         <table class="data">
                             <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
                                 <%
-                                                        count++;
-                                                    %>
+                                    count++;
+                                %>
                                 <table>
                                     <tr>
                                         <td><input type="text" readonly="true" id="adres<%=count%>" class="addresses"
                                                    value="${stopPlaatsen.adres}"/></td>
                                         <td>
-                                            <a id="updateAdres<%=count%>" href="/ProjectTeamF-1.0/StopPlaats/update-${stopPlaatsen.stopPlaatsID}.html">
+                                            <a id="updateAdres<%=count%>"
+                                               href="/ProjectTeamF-1.0/StopPlaats/update-${stopPlaatsen.stopPlaatsID}.html">
                                                 <img src="../img/icons/edit-validated-icon.png" alt="Smiley face"
                                                      class="mapIcons"/></a>
                                         </td>
                                         <td>
-                                            <a id="deleteAdres<%=count%>" href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
+                                            <a id="deleteAdres<%=count%>"
+                                               href="/ProjectTeamF-1.0/StopPlaats/delete/${stopPlaatsen.stopPlaatsID}.html">
                                                 <img src="../img/icons/Actions-edit-delete-icon.png" alt="Smiley face"
                                                      class="mapIcons"/></a>
                                         </td>

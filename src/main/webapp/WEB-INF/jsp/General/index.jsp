@@ -39,14 +39,13 @@ Time: 13:31
     <section class="tripPages">
         <h2><spring:message code="label.Home"/></h2>
         <section class="homeSection">
-            <section class="homeSectionLeft"><section class="homeSectionText"><p></br>Wil je een trip snel en makkelijk organiseren?</br>
-                Of ben je
-                opzoek naar een leuk uitstapje met vrienden?</br></br>
-                Dan ben je hier op de juiste plaats. Hier kan je namelijk zoeken naar allerlei leuke
-                trips, van stadswandelingen, droppings tot vakanties. Makkelijk op te zoeken en met onmiddelijk de
-                juiste informatie beschikbaar. Wij bieden ook de mogelijkheid aan om je eigen trip te organiseren.
-                Met enkele klikken heb je meteen een trip georganiseerd, waarvoor je al je vrienden kan
-                uitnodigen.</p> </section>
+            <section class="homeSectionLeft"><section class="homeSectionText"><p></br>
+                <spring:message code="label.HomeLine1"/>
+                </br>
+                <spring:message code="label.HomeLine2"/>
+                </br></br>
+                <spring:message code="label.HomeLine3"/>
+                </p> </section>
             </section>
             <section class="homeSectionRight">
                 <img src="../img/homepagePictures/citytrip1.jpg" alt="Smiley face"
@@ -60,18 +59,13 @@ Time: 13:31
                 <img src="../img/homepagePictures/citytrip4.jpg" alt="Smiley face"
                      id="homePictures2"/></section>
             <section class="homeSectionRight"><section class="homeSectionText">
-                <p></br>Tijdens  de trip heb je dan de mogelijkheid om met je mobiele telefoon de juiste
-                    route te volgen, en kan je ook communiceren met andere die dezelfde trip afleggen. Ook voorzien wij
-                    leuke interactie, met foto's en quizvragen. </p>
+                <p></br><spring:message code="label.HomeLine4"/> </p>
             </section>
         </section>
 
 
         <section class="homeSection">
-            <p></br>Tenslotte vergemakkelijken wij voor jou die toch steeds vervelende berekening
-                van het uiteindelijke kosten plaatje. Doordat deelnemers hun uitgave doorheen de trip kunnen
-                invoeren kan de organisator op het einde van de trip een overzicht krijgen waardoor dit
-                onmiddellijk geregeld kan worden! </p>
+            <p></br><spring:message code="label.HomeLine5"/> </p>
         </section>
 
         </section>
