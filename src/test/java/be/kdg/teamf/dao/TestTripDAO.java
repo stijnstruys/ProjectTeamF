@@ -124,7 +124,7 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests {
         u2.setUsername("JeroenV");
         User u3 = new User();
         u3.setUsername("JeroenVerb");
-       /* d1.setDeelnameID(1);
+        /*d1.setDeelnameID(1);
         d1.setUser(u1);
         deelnames.add(d1);
         d2.setDeelnameID(2);

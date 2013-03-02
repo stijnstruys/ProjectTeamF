@@ -290,23 +290,6 @@ public class UserController {
         return "true";
 
     }
-    /*
-    @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)
-    @ResponseBody
-    public void mailForm(, @ModelAttribute(value = "tripID") String trip, BindingResult result) {
-        ModelMap mailModel = new ModelMap();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        mailModel.addAttribute("title", "Trip update");
-        mailModel.addAttribute("subtitle1", "Message from organiser");
-        mailModel.addAttribute("message", orgMessage);
-        mailModel.addAttribute("subtitle2", "The following trip changes occured");
-        mailModel.addAttribute("text", formulier);
-        mailModel.addAttribute("date", format.format(new Date()));
-
-        SimpleMailMessage msg = new SimpleMailMessage(message);
-        msg.setTo("kdgteamf@gmail.com");
-        tripService.sendMail(mailModel, msg);
-    }*/
 
     @RequestMapping(value = "TripParticipants/{tripID}/invite", method = RequestMethod.POST)
     public String sendInvite(@PathVariable(value = "tripID") int trip,@RequestParam(value = "email") String email) {
