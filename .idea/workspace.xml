@@ -2,34 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_3_1_2_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/BartLeemans.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/BartLeemans.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/JeroenDierckx.png" afterPath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/JeroenDierckx.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/JeroenVerbunt.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/JeroenVerbunt.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/JorneRaeymaekers.jpg" afterPath="$PROJECT_DIR$/src/main/webapp/img/groupMembers/JorneRaeymaekers.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/img/Thumbs.db" afterPath="$PROJECT_DIR$/src/main/webapp/img/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/StopPlaats/ManageStopPlaatsen.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/StopPlaats/ManageStopPlaatsen.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectTeamF.iml" afterPath="$PROJECT_DIR$/ProjectTeamF.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/about.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/addTrip.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Trip/addTrip.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/adminTrip.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/General/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/mapScripts/mapsManage.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/mapScripts/mapsManage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/mapScripts/mapsUpdate.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/mapScripts/mapsUpdate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/mapScripts/mapsView.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/mapScripts/mapsView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_en.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" afterPath="$PROJECT_DIR$/src/main/resources/messages_nl.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/StopPlaats/updateStopPlaats.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/StopPlaats/updateStopPlaats.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/user.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362226382209" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362235331692" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362125275790" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362135508230" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362232265069" ignored="false" />
@@ -203,7 +181,7 @@
       <file leaf-file-name="messages_fr.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/messages_fr.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="62" selection-start="5574" selection-end="5574" vertical-scroll-proportion="0.22052401">
+            <state line="142" column="45" selection-start="7826" selection-end="7826" vertical-scroll-proportion="0.59170306">
               <folding />
             </state>
           </provider>
@@ -1341,7 +1319,11 @@
       <created>1362160170024</created>
       <updated>1362160170025</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="talen">
+      <created>1362235351498</created>
+      <updated>1362235351498</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1435,7 +1417,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="testen" />
+    <option name="LAST_COMMIT_MESSAGE" value="talen" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1448,7 +1430,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="errors" />
     <MESSAGE value="maven" />
     <MESSAGE value="deelnemers" />
     <MESSAGE value="opmaak viewtrip" />
@@ -1473,6 +1454,7 @@
     <MESSAGE value="dao" />
     <MESSAGE value="test" />
     <MESSAGE value="testen" />
+    <MESSAGE value="talen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1615,7 +1597,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/messages_fr.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="62" selection-start="5574" selection-end="5574" vertical-scroll-proportion="0.22052401">
+        <state line="142" column="45" selection-start="7826" selection-end="7826" vertical-scroll-proportion="0.59170306">
           <folding />
         </state>
       </provider>
