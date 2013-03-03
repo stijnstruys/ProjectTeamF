@@ -34,7 +34,7 @@
                             <c:if test="${empty currentUser}">
                                 <li class="pull-right"><a id="registerLink" href="/ProjectTeamF-1.0/user/user.html"><spring:message code="label.Register"/></a></li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.SignIn"/><b
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="loginLink"><spring:message code="label.SignIn"/><b
                                             class="caret"></b></a>
 
                                     <ul class="dropdown-menu">
@@ -65,12 +65,12 @@
                                             class="caret"></b></a>
 
                                     <ul class="dropdown-menu">
-                                        <li><a href="/ProjectTeamF-1.0/user/profile.html"><spring:message code="label.Profile"/> <i
+                                        <li><a href="/ProjectTeamF-1.0/user/profile.html" id="profileLink"><spring:message code="label.Profile"/> <i
                                                 class="icon-tags pull-right"></i></a></li>
                                         <li><a href="/ProjectTeamF-1.0/user/myTrips.html"><spring:message code="label.MyTrips"/> <i
                                                 class="icon-calendar pull-right"></i></a></li>
                                         <li class="divider"></li>
-                                        <li><a href="/ProjectTeamF-1.0/j_spring_security_logout"><spring:message code="label.LogOut"/> <i
+                                        <li><a href="/ProjectTeamF-1.0/j_spring_security_logout" id="logoutLink" ><spring:message code="label.LogOut"/> <i
                                                 class="icon-off pull-right"></i></a></li>
                                     </ul>
                                 </li>

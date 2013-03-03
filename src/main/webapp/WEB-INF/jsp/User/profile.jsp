@@ -135,7 +135,7 @@
 
             <div class="control-group profile_btns">
                 <div class="controls">
-                    <button type="submit" class="btn btn-primary hidethis profile_btns"><spring:message code="label.UpdateProfile"/></button>
+                    <button type="submit" id="updateButton" class="btn btn-primary hidethis profile_btns"><spring:message code="label.UpdateProfile"/></button>
                     <button type="button" class="btn hidethis profile_btns" id="profile_cancel"><spring:message code="label.Cancel"/></button>
                 </div>
             </div>

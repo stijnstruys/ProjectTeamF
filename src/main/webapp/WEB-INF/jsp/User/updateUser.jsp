@@ -83,7 +83,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="<spring:message code="label.updateUser"/>"/>
+                    <input type="submit" id="updateBtn" value="<spring:message code="label.updateUser"/>"/>
                 </td>
             </tr>
         </table>
