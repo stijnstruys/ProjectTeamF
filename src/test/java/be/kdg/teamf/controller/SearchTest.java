@@ -20,21 +20,38 @@ public class SearchTest {
 
     @Test
     public void searchFromIndex(){
-        driver = new ChromeDriver();
-        
+        driver = MakeChromeDriver();
+        search();
+        driver.close();
     }
     
     @Test
     public void searchFromAbout(){
-        driver = new ChromeDriver();
-        
+        driver = MakeChromeDriver();
+        WebElement about = driver.findElementById("about");
+        about.click();
+        search();
+        driver.close();
+    }
+
+    @Test
+    public void searchFromTrip(){
+        driver = MakeChromeDriver();
+        WebElement trip = driver.findElementById("tripOverzicht");
+        trip.click();
+        search();
+        driver.close();
     }
     
     @Test
     public void searchFromRegister(){
-        driver = new ChromeDriver();
-        
+        driver = MakeChromeDriver();
+        WebElement register = driver.findElementById("registerLink");
+        register.click();
+        search();
+        driver.close();
     }
+
     
     @Test
     public void loggedInSearch(){
