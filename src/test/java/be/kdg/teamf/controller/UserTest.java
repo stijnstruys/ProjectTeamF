@@ -59,6 +59,8 @@ public class UserTest {
     public void logInTest() {
         driver = MakeChromeDriver();
         logIn();
+
+        driver.close();
     }
 
     @Test
@@ -84,7 +86,7 @@ public class UserTest {
         driver.close();
     }
 
-    @Test
+ /*   @Test
     public void updateUserProfileTest() {
         driver = MakeChromeDriver();
         logIn();
@@ -104,7 +106,7 @@ public class UserTest {
         logOut();
 
         driver.close();
-    }
+    }*/
 
     @Test
     public void updateUserPasswordTest(){
