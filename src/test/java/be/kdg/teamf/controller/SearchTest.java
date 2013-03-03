@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  * Time: 15:08
  * To change this template use File | Settings | File Templates.
  */
-public class IndexTest {
+public class SearchTest {
      @Test
     public void test() {
 
