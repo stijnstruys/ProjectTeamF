@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,7 +19,7 @@ public class UserTest {
 
     @Test
     public void register() {
-      /*  ChromeDriver driver = MakeChromeDriver();
+        driver = MakeChromeDriver();
         WebElement registerLink = driver.findElementById("registerLink");
         registerLink.click();
 
@@ -48,28 +49,44 @@ public class UserTest {
         dateOfBirth.click();
         List<WebElement> date = driver.findElementsByTagName("a");
         date.get(12).click();
-        submitButton.click();*/
+        submitButton.click();
 
-        //driver.close();
+        driver.close();
     }
 
 
     @Test
     public void logInTest() {
-        /*driver = MakeChromeDriver();
-        logIn();*/
+        driver = MakeChromeDriver();
+        logIn();
+    }
+
+    @Test
+    public void failedLogInTest() {
+        driver = MakeChromeDriver();
+        headerDropDownClick();
+        WebElement userNameText = driver.findElementByName("j_username");
+        userNameText.sendKeys("testfailed");
+        WebElement passwordText = driver.findElementByName("j_password");
+        passwordText.sendKeys("test");
+        WebElement logInButton = driver.findElementByName("submit");
+        logInButton.click();
+
+        driver.close();
     }
 
     @Test
     public void logInAndOutTest(){
-      /*  driver = MakeChromeDriver();
+     driver = MakeChromeDriver();
         logIn();
-        logOut();*/
+        logOut();
+
+        driver.close();
     }
 
     @Test
     public void updateUserProfileTest() {
-        /*driver = MakeChromeDriver();
+        driver = MakeChromeDriver();
         logIn();
         WebElement profileLink = driver.findElementById("profileLink");
         headerDropDownClick();
@@ -84,7 +101,9 @@ public class UserTest {
         firstName.sendKeys("Stijn");
         lastName.sendKeys("Struys");
         update.click();
-        logOut();*/
+        logOut();
+
+        driver.close();
     }
 
     @Test
@@ -110,6 +129,7 @@ public class UserTest {
 
         logOut();
 
+        driver.close();
 
     }
 
