@@ -66,8 +66,6 @@ public class StopPlaatsController
     @RequestMapping("/StopPlaats/update-{stopPlaatsID}")
     public ModelAndView updateStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID) throws Exception {
 
-       /* User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin); */
 
         StopPlaats s  = stopPlaatsService.findStopPlaats(stopPlaatsID);
         request.setAttribute("stopPlaats",s);
@@ -90,7 +88,6 @@ public class StopPlaatsController
     @RequestMapping(value = "/StopPlaats/release/{stopplaatsId}", method = RequestMethod.GET)
     public String releaseStopPlaats(@ModelAttribute("stopPlaats")
                                    StopPlaats stopPlaats,  BindingResult result, @PathVariable("stopplaatsId") int stopplaatsId) {
-
 
         StopPlaats s = stopPlaatsService.findStopPlaats(stopplaatsId);
         s.setVrijgegeven(true);

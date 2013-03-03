@@ -270,18 +270,9 @@ public class UserController {
 
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
     public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
-        String[] emailAddressess = null;
-        List<String> emails = new ArrayList<String>();
-        emails = tripService.listUserEmailPerTrips(tripID);
-       /* int counter = 0;
-        for (String t  : emails) {
-            emailAddressess[counter] = t;
-            counter++;
-        }*/
-        for(int i=0;i<emails.size();i++){
-            emailAddressess[i] = emails.get(i);
-        }
-        System.out.println("hieremail" + emailAddressess);
+        //String[] emailAddressess new String[];
+        ArrayList<String> emails = new ArrayList(tripService.listUserEmailPerTrips(tripID));
+
         ModelMap mailModel = new ModelMap();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         mailModel.addAttribute("title", "Trip update");
@@ -292,34 +283,13 @@ public class UserController {
         mailModel.addAttribute("date", format.format(new Date()));
         mailModel.addAttribute("viewTheTrip", viewTheTrip);
         SimpleMailMessage msg = new SimpleMailMessage(message);
-        //System.out.println("hieremail: "+emailAddressess);
-       // msg.setCc("kdgteamf@gmail.com");//"kdgteamf@gmail.com");
-       /* for(int j=0;j<emailAddressess.length;j++){
-            msg.set
-        }*/
-        msg.setCc(emailAddressess);
+
+        msg.setCc(emails.toArray(new String[0]));
         tripService.sendMail(mailModel, msg);
 
         return "true";
 
     }
-    /*
-    @RequestMapping(value = "/user/mail.html", method = RequestMethod.POST)
-    @ResponseBody
-    public void mailForm(, @ModelAttribute(value = "tripID") String trip, BindingResult result) {
-        ModelMap mailModel = new ModelMap();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        mailModel.addAttribute("title", "Trip update");
-        mailModel.addAttribute("subtitle1", "Message from organiser");
-        mailModel.addAttribute("message", orgMessage);
-        mailModel.addAttribute("subtitle2", "The following trip changes occured");
-        mailModel.addAttribute("text", formulier);
-        mailModel.addAttribute("date", format.format(new Date()));
-
-        SimpleMailMessage msg = new SimpleMailMessage(message);
-        msg.setTo("kdgteamf@gmail.com");
-        tripService.sendMail(mailModel, msg);
-    }     */
 
     @RequestMapping(value = "TripParticipants/{tripID}/invite", method = RequestMethod.POST)
     public String sendInvite(@PathVariable(value = "tripID") int trip,@RequestParam(value = "email") String email) {

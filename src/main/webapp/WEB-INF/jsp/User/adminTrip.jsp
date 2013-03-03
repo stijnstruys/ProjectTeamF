@@ -61,15 +61,15 @@
         <form:form id="viewTripForm" method="post" action="updateTrip.html" commandName="trip" class="form-horizontal">
             <form:hidden id="hiddenTripID" path="tripId"/>
 
-            <legend>General</legend>
-            <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
+            <legend><spring:message code="label.General"/></legend>
+            <a href="/ProjectTeamF-1.0/StopPlaats/${trip.tripId}.html" class="btn btn-success float_right manageBtn" id="ManageStoppingPoints" ><spring:message code="label.ManageStoppingPoints"/></a>
             <div class="control-group">
                 <form:label id="labelTripN" class="control-label"  path="tripName"><spring:message code="label.tripName"/></form:label>
                 <div class="controls">
                     <form:input type="text" id="TripN" path="tripName"/>
                 </div>
             </div>
-            <a href="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html" class="btn btn-success float_right" id="ManageParticipants" ><spring:message code="label.ManageParticipants"/></a>
+            <a href="/ProjectTeamF-1.0/TripParticipants/${trip.tripId}.html" class="btn btn-success float_right manageBtn" id="ManageParticipants" ><spring:message code="label.ManageParticipants"/></a>
                 <div class="control-group">
                     <form:label id="labelTripLoc" class="control-label"  path="startLocation"><spring:message code="label.startLocation"/></form:label>
                     <div class="controls">
@@ -77,7 +77,7 @@
                     </div>
                 </div>
 
-            <a href="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html" class="btn btn-success float_right" id="ManageCategories" class="btn_green_left"><spring:message code="label.ManageCategories"/></a>
+            <a href="/ProjectTeamF-1.0/TripCategorie/${trip.tripId}.html" class="btn btn-success float_right manageBtn" id="ManageCategories" class="btn_green_left"><spring:message code="label.ManageCategories"/></a>
             <c:if test="${3 != trip.tripType.tripTypeId}">
                 <div class="control-group">
                     <form:label id="labelTripStartD" class="control-label"  path="startDate"><spring:message code="label.startDate"/></form:label>
@@ -134,7 +134,7 @@
                 </div>
             </div>
 
-            <legend>kleurekes</legend>
+            <legend><spring:message code="label.Colors"/></legend>
 
             <div id="picker" style="float: right;"></div>
             <div id="pickerdivs">

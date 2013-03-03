@@ -15,6 +15,7 @@ import org.springframework.ui.ModelMap;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static junit.framework.Assert.*;
 
@@ -83,7 +84,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         mailModel.addAttribute("text", "testtext");
         mailModel.addAttribute("date", format.format(new Date()));
         SimpleMailMessage msg = new SimpleMailMessage(message);
-        msg.setTo("kdgteamf@gmail.com");
+        msg.setCc("kdgteamf@gmail.com");
         try {
             tripService.sendInvite(mailModel, msg);
             tripService.sendMail(mailModel, msg);
@@ -130,7 +131,8 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
         trip.setOrganiser(u1);
-
+        userService.addUser(u1);
+        userService.addUser(u2);
         tripService.addTrip(trip);
         assertTrue("Not owner", tripService.checkOwnership(trip, u1));
         assertFalse("owner", tripService.checkOwnership(trip, u2));
@@ -180,6 +182,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         trip.setTripName("tripJeroen123");
         ArrayList<Trip> trips = new ArrayList<>();
         trips.add(trip);
+        userService.addUser(u);
         tripService.addTrip(trip);
         assertEquals("Not owner", trips, tripService.listUserTrips(u.getUserID()));
     }
@@ -193,6 +196,37 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         tripService.addTrip(trip);
 
         assertEquals("Trip not found", trip, tripService.findTrip(trip.getTripId()));
-
     }
+
+    @Test
+    public void testListPublicTrip() {
+        Trip trip = new Trip();
+        trip.setVisible(true);
+        trip.setTripName("tripJeroen123");
+        ArrayList<Trip> trips = new ArrayList<>();
+        trips.add(trip);
+        tripService.addTrip(trip);
+        assertEquals("public trips", trips, tripService.listPublicTrips());
+    }
+
+    @Test
+    public void testListUserEmailPerTrips() {
+        User u = new User();
+        u.setUserID(1);
+        u.setEmail("kdgteamf@gmail.com");
+        u.setNotificationEmail(true);
+        Trip t = new Trip();
+        t.setTripId(1);
+        Deelname d = new Deelname();
+        d.setTrip(t);
+        d.setUser(u);
+        userService.addUser(u);
+        tripService.addTrip(t);
+        deelnameService.addDeelname(d);
+        List<String> emails = new ArrayList<>();
+        emails.add("kdgteamf@gmail.com");
+        assertEquals("public trips", emails, tripService.listUserEmailPerTrips(t.getTripId()));
+    }
+
+
 }

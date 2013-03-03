@@ -48,13 +48,10 @@ Time: 13:31
                   action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />"
                   method='POST'>
                 <div>
-                    <table>
-                    <tr><td><spring:message code="label.username"/></td> <td><input type='text' name='j_username' class="input"
-                                                                   placeholder="Username"> </td>
-                    </tr>
-                        <tr>   <td> <spring:message code="label.password"/> </td><td><input type='password' name='j_password' class="input"
-                                                                   placeholder="Password"/>  </td>  </tr>
-                    </table>
+                    <input type='text' name='j_username' class="input"
+                                                                   placeholder="<spring:message code="label.username"/>">   </br>
+                    <input type='password' name='j_password' class="input"
+                                                                   placeholder="<spring:message code="label.password"/> "/>
                     <div>
                         <input name="submit" type="submit" value="Log in" class="btn"/>
                         <input name="reset" type="reset" class="btn" value="Reset"/>

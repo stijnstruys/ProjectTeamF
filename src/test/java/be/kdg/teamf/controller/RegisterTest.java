@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Stijn
@@ -12,9 +14,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * To change this template use File | Settings | File Templates.
  */
 public class RegisterTest {
-    @Test
+   /* @Test
     public void register() {
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
         driver.get("http://localhost:8080/ProjectTeamF-1.0/general/index.html");
         WebElement registerLink = driver.findElementById("registerLink");
@@ -44,6 +46,9 @@ public class RegisterTest {
         zipcode.sendKeys("2275");
         city.sendKeys("Wechelderzande");
         dateOfBirth.click();
+        List<WebElement> datePickerDateOfBirth = driver.findElementsByTagName("a");
+        datePickerDateOfBirth.get(25).click();
+        submitButton.click();
 
-    }
+    }             */
 }

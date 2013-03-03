@@ -11,14 +11,15 @@ $(document).ready(function () {
     var locations = new Array();
     var directionsService = new google.maps.DirectionsService();
     var geocoder;
-
-    initialize();
-    if ($("#checkShowRouteSolution").attr('class') == "showRouteTrue") {
-        doCalc();
-    }
-    else {
-        placeMarkers();
-        map.setZoom(12);
+    if ($("#map_canvas2").length > 0) {
+        initialize();
+        if ($("#checkShowRouteSolution").attr('class') == "showRouteTrue") {
+            doCalc();
+        }
+        else {
+            placeMarkers();
+            map.setZoom(12);
+        }
     }
 
     function initialize() {

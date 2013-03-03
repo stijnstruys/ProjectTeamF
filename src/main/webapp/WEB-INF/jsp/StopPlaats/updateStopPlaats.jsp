@@ -113,7 +113,8 @@
                             </tr>
                         </c:forEach>
                     </c:if>
-                    <tr><td><button id="newAntwoord"  class="btn" type="button" onclick="addAntwoord()">New</button></td></tr>
+                    <tr><td><button id="newAntwoord"  class="btn" type="button" onclick="addAntwoord()"><spring:message
+                                                    code="label.New"/></button></td></tr>
                     <tr>
                         <td><form:label class="lbl" path="informatie"><spring:message
                                 code="label.information"/></form:label></td>

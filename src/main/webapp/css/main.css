@@ -403,7 +403,7 @@ a.trip_name:hover {
 }
 
 .profilePictures {
-    width: 65%;
+    width: 60%;
     height: 15em;
     border-radius: 5em;
     margin-bottom: 1em;
@@ -534,4 +534,8 @@ a.trip_name:hover {
 
 #viewTheTripLink {
     color: blue;
+}
+
+.manageBtn {
+    min-width: 12em;
 }

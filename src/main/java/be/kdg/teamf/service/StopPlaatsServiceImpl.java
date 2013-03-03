@@ -50,7 +50,7 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
 
     @Override
     public boolean controleerAntwoord(String antwoord, StopPlaats sp) {
-        return antwoord == sp.getCorrectAntwoord();
+        return antwoord.equals(sp.getCorrectAntwoord());
     }
 
     @Override
