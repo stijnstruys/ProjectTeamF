@@ -22,11 +22,11 @@
 
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li><a href="/ProjectTeamF-1.0/general/index.html"><spring:message code="label.Home"/></a>
+                            <li><a href="/ProjectTeamF-1.0/general/index.html" id="index"><spring:message code="label.Home"/></a>
                             </li>
-                            <li><a href="/ProjectTeamF-1.0/general/about.html"><spring:message code="label.About"/></a>
+                            <li><a href="/ProjectTeamF-1.0/general/about.html" id="about"><spring:message code="label.About"/></a>
                             </li>
-                            <li><a href="/ProjectTeamF-1.0/trip/tripOverzicht.html"><spring:message
+                            <li><a href="/ProjectTeamF-1.0/trip/tripOverzicht.html" id="tripOverzicht"><spring:message
                                     code="label.Trip"/></a></li>
                         </ul>
 

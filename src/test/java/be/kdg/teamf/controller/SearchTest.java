@@ -55,8 +55,11 @@ public class SearchTest {
     
     @Test
     public void loggedInSearch(){
-        driver = new ChromeDriver();
-        
+        driver = MakeChromeDriver();
+        logIn();
+        search();
+        logOut();
+        driver.close();
     }
     
     
@@ -64,6 +67,27 @@ public class SearchTest {
         WebElement searchBar = driver.findElementByName("searchInput");
         searchBar.sendKeys("Trip1");
         searchBar.sendKeys(Keys.ENTER);
+    }
+
+    public void logIn() {
+        headerDropDownClick();
+        WebElement userNameText = driver.findElementByName("j_username");
+        userNameText.sendKeys("test");
+        WebElement passwordText = driver.findElementByName("j_password");
+        passwordText.sendKeys("test");
+        WebElement logInButton = driver.findElementByName("submit");
+        logInButton.click();
+    }
+
+    private void headerDropDownClick() {
+        WebElement dropDown = driver.findElementByClassName("dropdown-toggle");
+        dropDown.click();
+    }
+
+    public void logOut(){
+        headerDropDownClick();
+        WebElement logoutLink = driver.findElementById("logoutLink");
+        logoutLink.click();
     }
 
 
