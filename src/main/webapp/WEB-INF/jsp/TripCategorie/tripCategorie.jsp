@@ -31,24 +31,20 @@
 
 <section id="content">
     <section class="tripPages">
-        <h2><spring:message code="label.addTripCategory"/></h2>
         <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
-        <input type="submit" value="Back" class="btn">
+            <input type="submit" value="Back" class="btn btn-success btn_green_right">
         </form>
-        <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie">
+        <h2><spring:message code="label.addTripCategory"/></h2>
 
-            <table>
-                <tr>
-                    <td><form:label path="tripCategorieName"><spring:message
-                            code="label.tripCategoryName"/></form:label></td>
-                    <td><form:input path="tripCategorieName"/></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" class="btn" value="<spring:message code="label.addTripCategory"/>"/>
-                    </td>
-                </tr>
-            </table>
+        <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie" class="form-horizontal">
+             <div class="control-group">
+                <form:label class="control-label" path="tripCategorieName"><spring:message code="label.tripCategoryName"/></form:label>
+                <div class="controls">
+                    <form:input type="text" path="tripCategorieName"/>
+                    <span class="help-inline url"id="add_tripcat"><spring:message code="label.addTripCategory"/></span>
+                </div>
+            </div>
+
         </form:form>
         <c:if test="${!empty trip.tripCategorieen}">
             <table class="data">
@@ -66,7 +62,7 @@
                                         code="label.updateTripCategory"/></button>
                         </td>
                         <td>
-                            <button class="btn"
+                            <button class="btn btn-inverse"
                                     onClick="location.href='/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html'">
                                 <spring:message
                                         code="label.deleteTripCategory"/></button>
