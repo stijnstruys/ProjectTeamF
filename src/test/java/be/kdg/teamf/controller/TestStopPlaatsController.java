@@ -57,11 +57,23 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
 
         s = stopPlaatsController.addStopPlaats(sp,null, t.getTripId());
 
-        assertEquals("add trip","redirect:/StopPlaats/"+t.getTripId()+".html",s);
+        assertEquals("add stopplaats","redirect:/StopPlaats/"+t.getTripId()+".html",s);
     }
 
     @Test
     public void testDeleteStopPlaats() {
+        Trip t = new Trip();
+        t.setStopPlaatsen(new ArrayList<StopPlaats>());
+        StopPlaats sp = getStopPlaats();
+        tripDAO.addTrip(t);
+        t.getStopPlaatsen().add(sp);
+
+        String s ="";
+
+        s = stopPlaatsController.addStopPlaats(sp,null, t.getTripId());
+        s = stopPlaatsController.deleteUser(sp.getStopPlaatsID());
+
+        assertEquals("delete stopplaats","redirect:/StopPlaats/" + t.getTripId() + ".html",s);
 
     }
 
@@ -87,7 +99,7 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
 
         s = stopPlaatsController.updateStopPlaats(sp,null,t.getTripId());
 
-        assertEquals("update trip","redirect:/StopPlaats/"+t.getTripId()+".html",s);
+        assertEquals("update stopplaats","redirect:/StopPlaats/"+t.getTripId()+".html",s);
     }
 
     @Test
@@ -96,7 +108,7 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
         String s="";
 
         s = stopPlaatsController.releaseStopPlaats(sp, null, 1);
-        assertEquals("release trip","redirect:/user/admincp-91.html",s);
+        assertEquals("release stopplaats","redirect:/user/admincp-91.html",s);
     }
 
     @Test
@@ -107,7 +119,7 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
 
         s = stopPlaatsController.updateTrip(t,null);
 
-        assertEquals("update trip","redirect:/StopPlaats/" + t.getTripId() + ".html",s);
+        assertEquals("update stopplaats","redirect:/StopPlaats/" + t.getTripId() + ".html",s);
     }
 
 
