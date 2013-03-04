@@ -11,8 +11,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -49,6 +48,7 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
     @Test
     public void testAddStopPlaats() {
         Trip t = new Trip();
+        t.setStopPlaatsen(new ArrayList<StopPlaats>());
         StopPlaats sp = getStopPlaats();
         tripDAO.addTrip(t);
         t.getStopPlaatsen().add(sp);
