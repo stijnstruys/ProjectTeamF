@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -48,6 +50,7 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
         String s ="";
         TripCategorie tc = getTripCategorie();
         Trip t = new Trip();
+        t.setTripCategorieen(new ArrayList<TripCategorie>());
         t.setTripName("TestTrip");
         tripDAO.addTrip(t);
 
