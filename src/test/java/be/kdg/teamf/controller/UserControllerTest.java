@@ -1,5 +1,10 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.User;
+import org.junit.Test;
+
+import static junit.framework.Assert.assertEquals;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Stijn
@@ -8,4 +13,14 @@ package be.kdg.teamf.controller;
  * To change this template use File | Settings | File Templates.
  */
 public class UserControllerTest {
+
+
+    @Test
+    public void loginTest() {
+        UserController userController = new UserController();
+        User u = new User();
+        u.setUsername("test");
+        u.setPassword("test");
+        assertEquals("Expected: ","redirect:/general/index.html",userController.logIn(u, null));
+    }
 }
