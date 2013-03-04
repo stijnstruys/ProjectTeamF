@@ -66,7 +66,7 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
         t.setTripCategorieen(new ArrayList<TripCategorie>());
         tripDAO.addTrip(t);
 
-        s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
+        tripCategorieController.addTripCategorie(tc,null,t.getTripId());
         s = tripCategorieController.deleteTripCategorie(tc.getTripCategorieId());
         assertEquals("delete trip","redirect:/TripCategorie/" + tc.getTrip().getTripId() + ".html",s);
     }
