@@ -65,7 +65,6 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
         Trip t = new Trip();
         t.setTripCategorieen(new ArrayList<TripCategorie>());
         tripDAO.addTrip(t);
-        tc.setTrip(t);
 
         s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
         s = tripCategorieController.deleteTripCategorie(tc.getTripCategorieId());
@@ -79,8 +78,7 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
         TripCategorie tc = getTripCategorie();
         Trip t = new Trip();
         t.setTripCategorieen(new ArrayList<TripCategorie>());
-        tripDAO.addTrip(t);
-        tc.setTrip(t);
+        tripDAO.addTrip(t);;
 
         s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
 
