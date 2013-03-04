@@ -20,7 +20,7 @@ public class AboutController {
 
     @RequestMapping(method = RequestMethod.GET)
         public ModelAndView handleRequestInternal(HttpServletRequest request,
-                                                     HttpServletResponse response) throws Exception {
+                                                     HttpServletResponse response){
 
            /* User userlogin  = new User();
             request.setAttribute("loginuser",userlogin); */

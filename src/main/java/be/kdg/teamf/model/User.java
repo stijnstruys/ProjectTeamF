@@ -3,6 +3,8 @@ package be.kdg.teamf.model;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.TypeDef;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 
 import javax.persistence.*;
@@ -92,6 +94,7 @@ public class User implements Serializable {
     public String getUsername() {
         return username;
     }
+
 
     public String getPassword() {
         return password;
