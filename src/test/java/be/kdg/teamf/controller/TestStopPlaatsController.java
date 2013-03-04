@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Collection;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -46,8 +49,10 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
     @Test
     public void testAddStopPlaats() {
         Trip t = new Trip();
-        tripDAO.addTrip(t);
         StopPlaats sp = getStopPlaats();
+        tripDAO.addTrip(t);
+        t.getStopPlaatsen().add(sp);
+
         String s ="";
 
         s = stopPlaatsController.addStopPlaats(sp,null, t.getTripId());
@@ -90,7 +95,7 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
         StopPlaats sp = getStopPlaats();
         String s="";
 
-        s = stopPlaatsController.releaseStopPlaats(sp,null,1);
+        s = stopPlaatsController.releaseStopPlaats(sp, null, 1);
         assertEquals("release trip","redirect:/user/admincp-91.html",s);
     }
 
