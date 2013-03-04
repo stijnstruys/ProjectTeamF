@@ -61,19 +61,29 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     @Test
     public void testDeleteTripCategorie() {
         String s ="";
+        TripCategorie tc = getTripCategorie();
         Trip t = new Trip();
+        t.setTripCategorieen(new ArrayList<TripCategorie>());
         tripDAO.addTrip(t);
 
-        s = tripCategorieController.deleteTripCategorie(4);
-        assertEquals("delete trip","redirect:/TripCategorie/91.html",s);
+        s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
+        s = tripCategorieController.deleteTripCategorie(tc.getTripCategorieId());
+        assertEquals("delete trip","redirect:/TripCategorie/" + tc.getTrip().getTripId() + ".html",s);
     }
 
     @Test
     public void testUpdateTripCategoriePage() {
         ModelAndView mav= null;
+        String s ="";
+        TripCategorie tc = getTripCategorie();
+        Trip t = new Trip();
+        t.setTripCategorieen(new ArrayList<TripCategorie>());
+        tripDAO.addTrip(t);;
+
+        s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
 
         try {
-            mav = tripCategorieController.updateTripCategoriePage(new MockHttpServletRequest(), null, 4);
+            mav = tripCategorieController.updateTripCategoriePage(new MockHttpServletRequest(), null, tc.getTripCategorieId());
         } catch (Exception e) {
             e.printStackTrace();
         }
