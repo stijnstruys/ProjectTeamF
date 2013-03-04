@@ -20,14 +20,14 @@ public class SearchTest {
 
     @Test
     public void searchFromIndex(){
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         search();
         driver.close();
     }
     
     @Test
     public void searchFromAbout(){
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         WebElement about = driver.findElementById("about");
         about.click();
         search();
@@ -36,7 +36,7 @@ public class SearchTest {
 
     @Test
     public void searchFromTrip(){
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         WebElement trip = driver.findElementById("tripOverzicht");
         trip.click();
         search();
@@ -45,7 +45,7 @@ public class SearchTest {
     
     @Test
     public void searchFromRegister(){
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         WebElement register = driver.findElementById("registerLink");
         register.click();
         search();
@@ -55,7 +55,7 @@ public class SearchTest {
     
     @Test
     public void loggedInSearch(){
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         logIn();
         search();
         logOut();
@@ -91,7 +91,7 @@ public class SearchTest {
     }
 
 
-    private ChromeDriver MakeChromeDriver() {
+    private ChromeDriver makeChromeDriver() {
         System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1920,1080));

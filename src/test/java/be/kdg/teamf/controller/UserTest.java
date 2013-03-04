@@ -19,7 +19,7 @@ public class UserTest {
 
     @Test
     public void register() {
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         WebElement registerLink = driver.findElementById("registerLink");
         registerLink.click();
 
@@ -57,7 +57,7 @@ public class UserTest {
 
     @Test
     public void logInTest() {
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         logIn();
 
         driver.close();
@@ -65,7 +65,7 @@ public class UserTest {
 
     @Test
     public void failedLogInTest() {
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         headerDropDownClick();
         WebElement userNameText = driver.findElementByName("j_username");
         userNameText.sendKeys("testfailed");
@@ -79,7 +79,7 @@ public class UserTest {
 
     @Test
     public void logInAndOutTest(){
-     driver = MakeChromeDriver();
+     driver = makeChromeDriver();
         logIn();
         logOut();
 
@@ -88,7 +88,7 @@ public class UserTest {
 
  /*   @Test
     public void updateUserProfileTest() {
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         logIn();
         WebElement profileLink = driver.findElementById("profileLink");
         headerDropDownClick();
@@ -110,7 +110,7 @@ public class UserTest {
 
     @Test
     public void updateUserPasswordTest(){
-        driver = MakeChromeDriver();
+        driver = makeChromeDriver();
         logIn();
         WebElement profileLink = driver.findElementById("profileLink");
         headerDropDownClick();
@@ -157,7 +157,7 @@ public class UserTest {
     }
 
 
-    private ChromeDriver MakeChromeDriver() {
+    private ChromeDriver makeChromeDriver() {
         System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1920,1080));
