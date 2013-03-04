@@ -5,6 +5,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.internal.FindsByName;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -22,19 +23,71 @@ public class TestTrip {
 
     @Test
     public void addTrip() {
-        makeChromeDriver();
+     /*   driver = makeChromeDriver();
         logIn();
-        driver = makeChromeDriver();
         WebElement trip = driver.findElementById("tripOverzicht");
         trip.click();
+        WebElement addtripbtn = driver.findElementById("addtripbtn");
+        addtripbtn.click();
 
+        WebElement add_trip_next = driver.findElementById("add_trip_next");
+        add_trip_next.click();
 
+        WebElement tripname = driver.findElementById("tripname");
+        WebElement tripDescription = driver.findElementById("tripDescription");
 
+        tripname.sendKeys("Test selenium");
+        tripDescription.sendKeys("Dropping door scouts");
+        add_trip_next.click();
 
+        WebElement tripEndD = driver.findElementById("TripEndD");
+        tripEndD.click();
+        List<WebElement> endDate = driver.findElementsByTagName("a");
+        endDate.get(36).click();
+
+        WebElement tripStartD = driver.findElementById("TripStartD");
+        tripStartD.click();
+        List<WebElement> startDate = driver.findElementsByTagName("a");
+        startDate.get(35).click();
+
+        add_trip_next.click();
+
+        WebElement startLocation = driver.findElementById("startLocation");
+        WebElement notification = driver.findElementById("notification");
+
+        startLocation.sendKeys("Wechelderzande");
+        notification.sendKeys("Dropping");
+        add_trip_next.click();
+
+        WebElement equipmentInput = driver.findElementById("equipment-input");
+        Select tripEquipment = new Select (driver.findElementById("trip_equipment"));
+        WebElement addEquipment = driver.findElementById("add_equipment");
+        WebElement removeEquipment = driver.findElementById("remove_equipment");
+
+        equipmentInput.sendKeys("test");
+        addEquipment.click();
+        tripEquipment.selectByIndex(0);
+        removeEquipment.click();
+        equipmentInput.sendKeys("Rugzak");
+        addEquipment.click();
+        add_trip_next.click();
+
+        WebElement tripAdd = driver.findElementById("trip_add");
+        tripAdd.click();
+        driver.close();*/
     }
 
     @Test
     public void updateTrip(){
+       /* driver = makeChromeDriver();
+        logIn();
+        headerDropDownClick();
+        WebElement myTripsLink = driver.findElementById("myTripsLink");
+        myTripsLink.click();
+
+        WebElement tripLink = (WebElement) driver.findElementsByClassName("trip_name");
+        tripLink.click();
+        driver.quit();*/
 
     }
 

@@ -1,5 +1,7 @@
 package be.kdg.teamf.controller;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
@@ -60,6 +62,11 @@ public class SearchTest {
         search();
         logOut();
         driver.close();
+    }
+
+    @After
+    public void quitDriver() {
+        driver.quit();
     }
     
     
