@@ -1,4 +1,4 @@
-package be.kdg.teamf.controller;
+package be.kdg.teamf.Selenium;
 
 import org.junit.Test;
 import org.openqa.selenium.Dimension;
@@ -79,7 +79,7 @@ public class TestTrip {
 
     @Test
     public void updateTrip(){
-       /* driver = makeChromeDriver();
+       /*driver = makeChromeDriver();
         logIn();
         headerDropDownClick();
         WebElement myTripsLink = driver.findElementById("myTripsLink");

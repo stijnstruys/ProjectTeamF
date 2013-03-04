@@ -1,5 +1,6 @@
-package be.kdg.teamf.controller;
+package be.kdg.teamf.Selenium;
 
+import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
@@ -133,6 +134,11 @@ public class UserTest {
 
         driver.close();
 
+    }
+
+    @After
+    public void quitDriver() {
+        driver.quit();
     }
 
     public void logIn() {

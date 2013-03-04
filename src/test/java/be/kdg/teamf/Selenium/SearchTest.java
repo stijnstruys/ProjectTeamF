@@ -1,4 +1,4 @@
-package be.kdg.teamf.controller;
+package be.kdg.teamf.Selenium;
 
 import org.junit.After;
 import org.junit.AfterClass;
