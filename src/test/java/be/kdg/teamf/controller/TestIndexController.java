@@ -30,28 +30,14 @@ public class TestIndexController {
     @Test
     public void testIndex(){
 
-
-        ModelAndView mav= null;
-        try {
-            mav = indexController.indexPage(null,null);
-        } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+        ModelAndView   mav = indexController.indexPage(null,null);
         assertEquals("General/index", mav.getViewName());
-
     }
     @Test
     public void testLoginPage(){
 
-
-        ModelAndView mav= null;
-        try {
-            mav = indexController.loginPage(null,null);
-        } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+        ModelAndView  mav = indexController.loginPage(null,null);
         assertEquals("General/login", mav.getViewName());
-
     }
 }
 

@@ -19,7 +19,7 @@ public class IndexController {
     private TripService tripService;
 
     @RequestMapping(value ="general/index.html", method = RequestMethod.GET)
-    public ModelAndView indexPage(HttpServletRequest request,                                               HttpServletResponse response) throws Exception {
+    public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response)  {
 
         ModelAndView model = new ModelAndView("General/index");
 
@@ -27,7 +27,7 @@ public class IndexController {
         return model;
     }
     @RequestMapping(value ="general/login.html", method = RequestMethod.GET)
-    public ModelAndView loginPage(HttpServletRequest request,                                               HttpServletResponse response) throws Exception {
+    public ModelAndView loginPage(HttpServletRequest request,HttpServletResponse response){
 
         ModelAndView model = new ModelAndView("General/login");
 

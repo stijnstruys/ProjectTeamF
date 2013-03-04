@@ -70,7 +70,7 @@ public class UserController {
         return "user";
     }  */
     @RequestMapping(value = "/user/user.html", method = RequestMethod.GET)
-    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) {
 
         /*User userlogin  = new User();
         request.setAttribute("loginuser",userlogin); */
@@ -143,7 +143,7 @@ public class UserController {
     }
 
     @RequestMapping("/user/update/{userID}")
-    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) throws Exception {
+    public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) {
 
         User u = userService.findUser(userID);
         request.setAttribute("user", u);
@@ -215,7 +215,7 @@ public class UserController {
     }*/
 
     @RequestMapping(value = "/user/profile")
-    public ModelAndView profile(HttpServletRequest request) throws Exception {
+    public ModelAndView profile(HttpServletRequest request){
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User u = userService.findUser(auth.getName());
@@ -235,7 +235,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/myTrips.html", method = RequestMethod.GET)
-    public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) {
 
         Trip t = new Trip();
         request.setAttribute("trip", t);
@@ -246,7 +246,7 @@ public class UserController {
     }
 
     @RequestMapping("/user/admincp-{tripID}")
-    public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+    public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID)  {
         Trip t = tripService.findTrip(tripID);
         ModelAndView model;
         if (tripService.checkOwnership(t, userService.getCurrentUser())) {
@@ -321,7 +321,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/TripParticipants/{tripID}", method = RequestMethod.GET)
-    public ModelAndView tripParticipantsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+    public ModelAndView tripParticipantsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) {
 
         Deelname deelname = new Deelname();
         Trip t = tripService.findTrip(tripID);
@@ -334,7 +334,7 @@ public class UserController {
         return model;
     }
     @RequestMapping(value = "/editUserequipment/{deelnameID}", method = RequestMethod.GET)
-    public ModelAndView editUserequipment(HttpServletRequest request, HttpServletResponse response, @PathVariable("deelnameID") int deelnameID) throws Exception {
+    public ModelAndView editUserequipment(HttpServletRequest request, HttpServletResponse response, @PathVariable("deelnameID") int deelnameID)  {
 
         Deelname deelname = deelnameService.findDeelname(deelnameID);
 

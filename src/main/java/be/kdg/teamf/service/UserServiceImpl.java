@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getCurrentUser(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        UserDetails userDetails = null;
+        UserDetails userDetails;
         if (principal instanceof UserDetails) {
             userDetails = (UserDetails) principal;
             String userName = userDetails.getUsername();

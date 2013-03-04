@@ -25,15 +25,13 @@ public class TestAboutController {
     AboutController aboutController;
 
     @Test
-    public void testIndex(){
+    public void testAbout(){
 
 
         ModelAndView mav= null;
-        try {
+
             mav = aboutController.handleRequestInternal(null,null);
-        } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+
         assertEquals("General/about", mav.getViewName());
 
     }
