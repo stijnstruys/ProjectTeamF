@@ -56,13 +56,13 @@
                     <tr>
                         <td>${tripCategorie.tripCategorieName} </td>
                         <td>
-                            <button class="btn"
+                            <button class="btn btn-small"
                                     onClick="location.href='/ProjectTeamF-1.0/TripCategorie/update-${tripCategorie.tripCategorieId}.html'">
                                 <spring:message
                                         code="label.updateTripCategory"/></button>
                         </td>
                         <td>
-                            <button class="btn btn-inverse"
+                            <button class="btn btn-inverse btn-small"
                                     onClick="location.href='/ProjectTeamF-1.0/TripCategorie/delete/${tripCategorie.tripCategorieId}.html'">
                                 <spring:message
                                         code="label.deleteTripCategory"/></button>
