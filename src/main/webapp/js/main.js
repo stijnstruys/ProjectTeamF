@@ -31,6 +31,15 @@ $(document).ready(function () {
 
     });
 
+    $("#editequipmentbtn").click( function() {
+        $('#trip_equipment').find('option').attr('selected','selected');
+    });
+
+    //add category (trips)
+    $("#add_tripcat").click( function() {
+       $("#tripCategorie").submit();
+    });
+
     //browse foto
     $("#browse_foto").click(function() {
         $("input[id=foto]").click();

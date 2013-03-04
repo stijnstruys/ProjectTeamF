@@ -539,3 +539,8 @@ a.trip_name:hover {
 .manageBtn {
     min-width: 12em;
 }
+
+/*categorieen */
+.cat-span {
+  margin-left: 15px;
+}
