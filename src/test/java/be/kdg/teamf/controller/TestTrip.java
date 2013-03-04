@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * Time: 14:19
  * To change this template use File | Settings | File Templates.
  */
-public class TestTripController {
+public class TestTrip {
     private ChromeDriver driver;
     private WebElement tripName;
     private WebElement tripDescription;
