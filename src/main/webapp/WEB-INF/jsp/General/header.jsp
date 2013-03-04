@@ -67,7 +67,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="/ProjectTeamF-1.0/user/profile.html" id="profileLink"><spring:message code="label.Profile"/> <i
                                                 class="icon-tags pull-right"></i></a></li>
-                                        <li><a href="/ProjectTeamF-1.0/user/myTrips.html"><spring:message code="label.MyTrips"/> <i
+                                        <li><a href="/ProjectTeamF-1.0/user/myTrips.html" id="myTripsLink"><spring:message code="label.MyTrips"/> <i
                                                 class="icon-calendar pull-right"></i></a></li>
                                         <li class="divider"></li>
                                         <li><a href="/ProjectTeamF-1.0/j_spring_security_logout" id="logoutLink" ><spring:message code="label.LogOut"/> <i

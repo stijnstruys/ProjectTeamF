@@ -1,37 +1,79 @@
-package be.kdg.teamf.controller;
+package be.kdg.teamf.Selenium;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Test;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Keys;
+
 
 /**
  * Created with IntelliJ IDEA.
  * User: Stijn
- * Date: 14-2-13
- * Time: 14:19
+ * Date: 13-2-13
+ * Time: 15:08
  * To change this template use File | Settings | File Templates.
  */
-public class TestTrip {    /*
+public class SearchTest {
 
     private ChromeDriver driver;
 
-   /* @Test
-    public void addTrip() {
-        makeChromeDriver();
-        logIn();
-        driver = makeChromeDriver();
-        WebElement trip = driver.findElementById("tripOverzicht");
-        trip.click();
-
-
-        driver.close();
-
-    } */
-      /*
     @Test
-    public void updateTrip(){
-
+    public void searchFromIndex(){
+        driver = makeChromeDriver();
+        search();
+        driver.close();
+    }
+    
+    @Test
+    public void searchFromAbout(){
+        driver = makeChromeDriver();
+        WebElement about = driver.findElementById("about");
+        about.click();
+        search();
+        driver.close();
     }
 
     @Test
-    public void deleteTrip() {
+    public void searchFromTrip(){
+        driver = makeChromeDriver();
+        WebElement trip = driver.findElementById("tripOverzicht");
+        trip.click();
+        search();
+        driver.close();
+    }
+    
+    @Test
+    public void searchFromRegister(){
+        driver = makeChromeDriver();
+        WebElement register = driver.findElementById("registerLink");
+        register.click();
+        search();
+        driver.close();
+    }
 
+    
+    @Test
+    public void loggedInSearch(){
+        driver = makeChromeDriver();
+        logIn();
+        search();
+        logOut();
+        driver.close();
+    }
+
+    @After
+    public void quitDriver() {
+        driver.quit();
+    }
+    
+    
+    public void search() {
+        WebElement searchBar = driver.findElementByName("searchInput");
+        searchBar.sendKeys("Trip1");
+        searchBar.sendKeys(Keys.ENTER);
     }
 
     public void logIn() {
@@ -63,5 +105,5 @@ public class TestTrip {    /*
         driver.get("http://localhost:8080/ProjectTeamF-1.0/general/index.html");
         return driver;
     }
-      */
 }
+
