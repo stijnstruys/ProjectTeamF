@@ -97,7 +97,7 @@
                     <p><spring:message code="label.ApplicationDevMM"/></p>
                 </td>
                 <td>
-                    <img src="../img/groupMembers/profilePic.jpg" alt="Smiley face"
+                    <img src="../img/groupMembers/JeroenVerheyen.jpg" alt="Smiley face"
                          class="profilePictures"/>
 
                     <p>Jeroen Verheyen</p>
