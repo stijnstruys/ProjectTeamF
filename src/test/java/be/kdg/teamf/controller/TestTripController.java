@@ -1,5 +1,6 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.StopPlaats;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.UserService;
@@ -22,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -106,8 +108,11 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         SecurityContextHolder.getContext().setAuthentication(auth);
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
+        Trip t = getTrip();
+        t.setStopPlaatsen(new ArrayList<StopPlaats>());
         try {
-            mav = tripController.viewTripPage(mockHttpServletRequest, null, 91);
+            tripController.addTrip(t,null,"1",mockHttpServletRequest);
+            mav = tripController.viewTripPage(mockHttpServletRequest, null, t.getTripId());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -144,7 +149,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
         try {
-            s = tripController.leaveTrip(mockHttpServletRequest,null,91);
+            s = tripController.leaveTrip(mockHttpServletRequest, null, 91);
         } catch (Exception e) {
             e.printStackTrace();
         }
