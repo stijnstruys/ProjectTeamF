@@ -1,5 +1,7 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.dao.TripDAO;
+import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.TripCategorie;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +26,19 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     @Autowired
     TripCategorieController tripCategorieController;
 
+    @Autowired
+    TripDAO tripDAO;
+
     @Test
     public void testTripCategoriePage() {
         ModelAndView mav= null;
+        Trip t = new Trip();
+        tripDAO.addTrip(t);
 
         try {
-            mav = tripCategorieController.tripCategoriePage(new MockHttpServletRequest(),null,101);
+            mav = tripCategorieController.tripCategoriePage(new MockHttpServletRequest(),null,t.getTripId());
         } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         assertEquals("TripCategorie/tripCategorie", mav.getViewName());
     }
@@ -40,14 +47,20 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     public void testAddTripCategorie() {
         String s ="";
         TripCategorie tc = getTripCategorie();
+        Trip t = new Trip();
+        t.setTripName("TestTrip");
+        tripDAO.addTrip(t);
 
-        s = tripCategorieController.addTripCategorie(tc,null,91);
-        assertEquals("add trip","redirect:/TripCategorie/91.html",s);
+        s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
+        assertEquals("add trip","redirect:/TripCategorie/"+t.getTripId()+".html",s);
     }
 
     @Test
     public void testDeleteTripCategorie() {
         String s ="";
+        Trip t = new Trip();
+        tripDAO.addTrip(t);
+
         s = tripCategorieController.deleteTripCategorie(4);
         assertEquals("delete trip","redirect:/TripCategorie/91.html",s);
     }
@@ -57,7 +70,7 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
         ModelAndView mav= null;
 
         try {
-            mav = tripCategorieController.updateTripCategoriePage(new MockHttpServletRequest(),null,4);
+            mav = tripCategorieController.updateTripCategoriePage(new MockHttpServletRequest(), null, 4);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -67,9 +80,11 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     @Test
     public void testUpdateTripCategorie() {
         String s ="";
+        Trip t = new Trip();
+        tripDAO.addTrip(t);
         TripCategorie tc = getTripCategorie();
-        s = tripCategorieController.updateTripCategorie(tc,null,91);
-        assertEquals("update trip","redirect:/TripCategorie/91.html",s);
+        s = tripCategorieController.updateTripCategorie(tc,null,t.getTripId());
+        assertEquals("update trip categorie","redirect:/TripCategorie/"+t.getTripId()+".html",s);
     }
 
     public TripCategorie getTripCategorie() {
