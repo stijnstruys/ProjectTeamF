@@ -19,11 +19,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestTrip {
 
-    private ChromeDriver driver;
+   /* private ChromeDriver driver;
 
     @Test
     public void addTrip() {
-     /*   driver = makeChromeDriver();
+        driver = makeChromeDriver();
         logIn();
         WebElement trip = driver.findElementById("tripOverzicht");
         trip.click();
@@ -74,12 +74,12 @@ public class TestTrip {
 
         WebElement tripAdd = driver.findElementById("trip_add");
         tripAdd.click();
-        driver.close();*/
+        driver.close();
     }
 
     @Test
     public void updateTrip(){
-       /*driver = makeChromeDriver();
+       driver = makeChromeDriver();
         logIn();
         headerDropDownClick();
         WebElement myTripsLink = driver.findElementById("myTripsLink");
@@ -87,7 +87,7 @@ public class TestTrip {
 
         WebElement tripLink = (WebElement) driver.findElementsByClassName("trip_name");
         tripLink.click();
-        driver.quit();*/
+        driver.quit();
 
     }
 
@@ -124,6 +124,6 @@ public class TestTrip {
         driver.manage().window().setSize(new Dimension(1920,1080));
         driver.get("http://localhost:8080/ProjectTeamF-1.0/general/index.html");
         return driver;
-    }
+    }*/
 
 }

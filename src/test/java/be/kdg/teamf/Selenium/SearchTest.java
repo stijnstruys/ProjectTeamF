@@ -18,7 +18,7 @@ import org.openqa.selenium.Keys;
  */
 public class SearchTest {
 
-    private ChromeDriver driver;
+   /* private ChromeDriver driver;
 
     @Test
     public void searchFromIndex(){
@@ -104,6 +104,6 @@ public class SearchTest {
         driver.manage().window().setSize(new Dimension(1920,1080));
         driver.get("http://localhost:8080/ProjectTeamF-1.0/general/index.html");
         return driver;
-    }
+    }*/
 }
 
