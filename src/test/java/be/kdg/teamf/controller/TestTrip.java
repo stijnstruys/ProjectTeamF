@@ -1,14 +1,5 @@
 package be.kdg.teamf.controller;
 
-import org.junit.Test;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.internal.FindsByName;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 /**
  * Created with IntelliJ IDEA.
  * User: Stijn
@@ -16,11 +7,11 @@ import java.util.concurrent.TimeUnit;
  * Time: 14:19
  * To change this template use File | Settings | File Templates.
  */
-public class TestTrip {
+public class TestTrip {    /*
 
     private ChromeDriver driver;
 
-    @Test
+   /* @Test
     public void addTrip() {
         makeChromeDriver();
         logIn();
@@ -29,10 +20,10 @@ public class TestTrip {
         trip.click();
 
 
+        driver.close();
 
-
-    }
-
+    } */
+      /*
     @Test
     public void updateTrip(){
 
@@ -72,5 +63,5 @@ public class TestTrip {
         driver.get("http://localhost:8080/ProjectTeamF-1.0/general/index.html");
         return driver;
     }
-
+      */
 }

@@ -1,12 +1,5 @@
 package be.kdg.teamf.controller;
 
-import org.junit.Test;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.List;
-
 /**
  * Created with IntelliJ IDEA.
  * User: Stijn
@@ -15,7 +8,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class UserTest {
-    private ChromeDriver driver;
+   /* private ChromeDriver driver;
 
     @Test
     public void register() {
@@ -79,7 +72,7 @@ public class UserTest {
 
     @Test
     public void logInAndOutTest(){
-     driver = makeChromeDriver();
+        driver = makeChromeDriver();
         logIn();
         logOut();
 
@@ -107,7 +100,7 @@ public class UserTest {
 
         driver.close();
     }*/
-
+         /*
     @Test
     public void updateUserPasswordTest(){
         driver = makeChromeDriver();
@@ -163,5 +156,5 @@ public class UserTest {
         driver.manage().window().setSize(new Dimension(1920,1080));
         driver.get("http://localhost:8080/ProjectTeamF-1.0/general/index.html");
         return driver;
-    }
+    } */
 }

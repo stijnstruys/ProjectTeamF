@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,6 +53,9 @@ public class TripDAOImpl implements TripDAO {
     public Trip findTrip(int id) {
         Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripId = :id");
         q.setInteger("id", id);
+        if(q.list().size() == 0){
+            return null;
+        }
         return (Trip) q.list().get(0);
     }
 

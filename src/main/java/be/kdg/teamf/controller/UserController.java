@@ -201,7 +201,7 @@ public class UserController {
         return "redirect:/user/profile.html";
     }
 
-    @RequestMapping(value = "/user/login", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/user/login", method = RequestMethod.GET)
     public String logIn(@ModelAttribute("loginuser") User user, BindingResult result) {
 
         User loginUser = userService.findUser(user.getUsername());
@@ -212,7 +212,7 @@ public class UserController {
             return "redirect:/general/index.html";
         }
 
-    }
+    }*/
 
     @RequestMapping(value = "/user/profile")
     public ModelAndView profile(HttpServletRequest request) throws Exception {
@@ -382,7 +382,7 @@ public class UserController {
     public
     @ResponseBody
     List<User> getUsernames() {
-        List<User> test = new ArrayList<User>(userService.listUsers());
+        List<User> test = new ArrayList<>(userService.listUsers());
 
         return test;
     }

@@ -1,0 +1,40 @@
+package be.kdg.teamf.controller;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.web.servlet.ModelAndView;
+
+import static org.junit.Assert.assertEquals;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: Jorne
+ * Date: 4/03/13
+ * Time: 16:38
+ * To change this template use File | Settings | File Templates.
+ */
+@RunWith(value = SpringJUnit4ClassRunner.class)
+@WebAppConfiguration
+@ContextConfiguration(locations = "classpath:spring-servlet.xml")
+public class TestAboutController {
+    @Autowired
+    AboutController aboutController;
+
+    @Test
+    public void testIndex(){
+
+
+        ModelAndView mav= null;
+        try {
+            mav = aboutController.handleRequestInternal(null,null);
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        assertEquals("General/about", mav.getViewName());
+
+    }
+}
