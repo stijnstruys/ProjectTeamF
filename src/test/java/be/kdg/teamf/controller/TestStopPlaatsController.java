@@ -80,9 +80,18 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
     @Test
     public void testUpdateStopPlaatsPage() {
         ModelAndView mav= null;
+        Trip t = new Trip();
+        t.setStopPlaatsen(new ArrayList<StopPlaats>());
+        StopPlaats sp = getStopPlaats();
+        tripDAO.addTrip(t);
+        t.getStopPlaatsen().add(sp);
+
+        String s ="";
+
+        s = stopPlaatsController.addStopPlaats(sp,null, t.getTripId());
 
         try {
-            mav = stopPlaatsController.updateStopPlaatsPage(new MockHttpServletRequest(), null, 1);
+            mav = stopPlaatsController.updateStopPlaatsPage(new MockHttpServletRequest(), null, sp.getStopPlaatsID());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,11 +113,17 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
 
     @Test
     public void testReleaseStopPlaats() {
+        Trip t = new Trip();
+        t.setStopPlaatsen(new ArrayList<StopPlaats>());
         StopPlaats sp = getStopPlaats();
-        String s="";
+        tripDAO.addTrip(t);
+        t.getStopPlaatsen().add(sp);
 
-        s = stopPlaatsController.releaseStopPlaats(sp, null, 1);
-        assertEquals("release stopplaats","redirect:/user/admincp-91.html",s);
+        String s ="";
+
+        s = stopPlaatsController.addStopPlaats(sp,null, t.getTripId());
+        s = stopPlaatsController.releaseStopPlaats(sp, null, sp.getStopPlaatsID());
+        assertEquals("release stopplaats","redirect:/user/admincp-"+t.getTripId()+".html",s);
     }
 
     @Test
