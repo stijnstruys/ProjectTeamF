@@ -33,7 +33,7 @@
                         <ul class="nav pull-right">
                             <c:if test="${empty currentUser}">
                                 <li class="pull-right"><a id="registerLink" href="/ProjectTeamF-1.0/user/user.html"><spring:message code="label.Register"/></a></li>
-                                <li class="dropdown">
+                                <li class="dropdown" onclick="checkFB()">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="loginLink"><spring:message code="label.SignIn"/><b
                                             class="caret"></b></a>
 

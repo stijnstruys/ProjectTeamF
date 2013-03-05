@@ -24,7 +24,6 @@ $(document).ready(function () {
     });
 
     function login() {
-        logout();
         var fbFirstName;
         var fbLastName;
         var fbId;
@@ -53,3 +52,10 @@ $(document).ready(function () {
 
     }
 })
+
+function checkFB() {
+    FB.logout(function(response) {
+        // user is now logged out
+    });
+
+}
