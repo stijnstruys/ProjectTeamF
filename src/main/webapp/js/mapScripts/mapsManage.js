@@ -15,6 +15,9 @@ $(document).ready(function () {
     initialize();
     //alert(locations.length);
 
+    //zet specifieke locaties
+    setSpecificLocations();
+
     if ($("#showRoute").is(':checked')) {
         doCalc();
     }
@@ -39,8 +42,6 @@ $(document).ready(function () {
         }
         map = new google.maps.Map($('#map_canvas')[0], mapOptions);
         directionsDisplay.setMap(map);
-
-        // single location
 
         //get locations
         $('.addresses').each(function () {
@@ -125,6 +126,14 @@ $(document).ready(function () {
             });
 
 
+        });
+    }
+
+    function setSpecificLocations() {
+        $.each(locations, function (l, loc) {
+            geocoder.geocode({ 'address': loc.Adres}, function (results, status) {
+                $("#"+loc.ID).val(results[0].formatted_address);
+            });
         });
     }
 
