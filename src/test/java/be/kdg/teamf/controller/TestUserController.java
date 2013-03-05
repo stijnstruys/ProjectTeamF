@@ -13,6 +13,8 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
@@ -132,7 +134,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
         assertEquals("correct","redirect:/user/profile.html",s);
         s =  userController.changePw("nieuw","nieuw1","nieuw");
         assertEquals("correct","redirect:/user/changepw.html",s);
-        s =  userController.changePw("azerty","nieuw1","nieuw2");
+        s =  userController.changePw("fout","nieuw1","nieuw1");
         assertEquals("correct","redirect:/user/changepw.html",s);
     }
 
@@ -156,7 +158,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
 
     }
 
-   /* @Test
+    @Test
     public void testTripOverzicht(){
         User u = getUser();
 
@@ -165,7 +167,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
         authenticateUser(u);
         ModelAndView mav  = userController.tripOverzichtPage(new MockHttpServletRequest(),null);
         assertEquals("correct","User/myTrips",mav.getViewName());
-    }*/
+    }
 
     @Test
     public void testMails(){
@@ -191,28 +193,31 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
         assertEquals("correct","User/editEquipment",mav.getViewName());
     }
 
-   /* @Test
-    public void testAdminCP(){
-        User u = getUser();
-        User u2 = new User();
-        userController.addUser(u,mockMultipartFile);
-        userController.addUser(u2,mockMultipartFile);
+     @Test
+     public void testAdminCP(){
+         User u = getUser();
+         User u2 = new User();
+         userController.addUser(u,mockMultipartFile);
+         userController.addUser(u2,mockMultipartFile);
 
-        authenticateUser(u);
+         authenticateUser(u);
 
-        Trip t = new Trip();
-        t.setOrganiser(u2);
-        tripDAO.addTrip(t);
+         Trip t = new Trip();
+         t.setOrganiser(u2);
+         tripDAO.addTrip(t);
 
-        ModelAndView mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
-        assertEquals("correct","User/myTrips",mav.getViewName());
-        t.setOrganiser(u);
-        tripDAO.updateTrip(t);
-        u.getTrips().add(t);
-        userController.updateUserData(u,mockMultipartFile);
-        mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
-        assertEquals("correct","User/adminTrips",mav.getViewName());
-    }*/
+         ModelAndView mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
+         assertEquals("correct","User/myTrips",mav.getViewName());
+         t.setOrganiser(u);
+         tripDAO.updateTrip(t);
+         u.getTrips().add(t);
+         userController.updateUserData(u,mockMultipartFile);
+         mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
+         assertEquals("correct","User/adminTrip",mav.getViewName());
+     }
+
+
+
     public User getUser(){
         User u = new User();
         u.setUsername("unittestuser");
@@ -222,8 +227,14 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     }
 
     public void authenticateUser(User u){
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(u.getUsername(), u.getPassword());
+        ArrayList<GrantedAuthority> g = new ArrayList<>();
+        g.add(new SimpleGrantedAuthority("ROLE_USER"));
+
+
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(u, u.getPassword(),g);
+
         Authentication auth = token;
+
         SecurityContextHolder.getContext().setAuthentication(auth);
     }
 }

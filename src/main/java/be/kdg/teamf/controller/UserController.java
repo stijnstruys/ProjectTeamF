@@ -258,15 +258,7 @@ public class UserController {
         return model;
     }
 
-    @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
-    public String updateTrip(@ModelAttribute("trip")
-                             Trip trip, BindingResult result) {
 
-        trip.setOrganiser(userService.getCurrentUser());
-        tripService.updateTrip(trip);
-        System.out.println("hier lukt het");
-        return "redirect:/user/admincp-"+trip.getTripId()+".html";
-    }
 
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
     public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
@@ -308,17 +300,7 @@ public class UserController {
         tripService.sendInvite(mailModel, msg);
         return "redirect:/TripParticipants/" + trip + ".html";
     }
-    @RequestMapping("user/deleteTrip/{tripId}")
-    public String deleteTrip(@PathVariable("tripId") Integer tripId) {
 
-        Trip t = tripService.findTrip(tripId);
-        if (tripService.checkOwnership(t, userService.getCurrentUser())) {
-            //t.getOrganiser().getTrips().remove(t);
-            //userService.updateUser(t.getOrganiser());
-            tripService.deleteTrip(tripId);
-        }
-        return "redirect:/user/myTrips.html";
-    }
 
     @RequestMapping(value = "/TripParticipants/{tripID}", method = RequestMethod.GET)
     public ModelAndView tripParticipantsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) {

@@ -2,14 +2,14 @@ package be.kdg.teamf.model;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
-import org.hibernate.annotations.TypeDef;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
@@ -22,7 +22,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "T_USER")
-public class User implements Serializable {
+public class User implements Serializable , UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userID;
@@ -95,6 +95,33 @@ public class User implements Serializable {
         return username;
     }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        ArrayList<GrantedAuthority> g =new ArrayList<>();
+        g.add(new SimpleGrantedAuthority("ROLE_USER"));
+        return g;
+    }
 
     public String getPassword() {
         return password;

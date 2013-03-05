@@ -43,7 +43,7 @@ public class TripController {
     private TripCategorieService tripCategorieService;
 
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
-    public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) {
 
         Trip t = new Trip();
         request.setAttribute("trip", t);
@@ -54,7 +54,7 @@ public class TripController {
     }
 
     @RequestMapping(value = "/search/tripSearchResult.html", params = {"searchInput"}, method = RequestMethod.GET)
-    public ModelAndView tripSearchResult(HttpServletRequest request, @RequestParam("searchInput") String searchInput) throws Exception {
+    public ModelAndView tripSearchResult(HttpServletRequest request, @RequestParam("searchInput") String searchInput)  {
 
         Trip t = new Trip();
         request.setAttribute("trip", t);
@@ -65,7 +65,7 @@ public class TripController {
     }
 
     @RequestMapping(value = "/trip/addTrip.html", method = RequestMethod.GET)
-    public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) {
         Trip t = new Trip();
         request.setAttribute("trip", t);
         request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
@@ -79,18 +79,23 @@ public class TripController {
         return model;
     }
     @RequestMapping(value = "trip/add", method = RequestMethod.POST)
-    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, @RequestParam("tripTypeSelect") String triptype, HttpServletRequest request) throws ParseException {
-        int tt = Integer.valueOf(triptype);
-        trip.setTripType( tripTypeService.findTripType( tt ) );
+    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, @RequestParam("tripTypeSelect") int triptype, HttpServletRequest request) {
+
+        trip.setTripType( tripTypeService.findTripType( triptype ) );
         trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
 
 
 
-        if(Integer.valueOf(tt) == 2) {
+        if(trip.getTripType().getTripTypeName().equals("repeating")) {
             String t = request.getParameter("repetition");
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-            Date maxDate = dateFormat.parse( request.getParameter("dateUntill") );
+            Date maxDate = null;
+            try {
+                maxDate = dateFormat.parse( request.getParameter("dateUntil") );
+            } catch (ParseException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
 
             switch (t) {
                 case "1d":
@@ -145,7 +150,7 @@ public class TripController {
     }
 
     @RequestMapping("/trip/{tripID}")
-    public ModelAndView viewTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+    public ModelAndView viewTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID)  {
 
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
@@ -169,7 +174,7 @@ public class TripController {
 
 
     @RequestMapping("/trip/join/{tripID}")
-    public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+    public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID)  {
 
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
@@ -186,7 +191,7 @@ public class TripController {
     }
 
     @RequestMapping("/trip/leave/{tripID}")
-    public String leaveTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
+    public String leaveTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) {
 
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
@@ -195,6 +200,25 @@ public class TripController {
         deelnameService.deleteDeelname(d);
 
         return "redirect:/trip/" + tripID + ".html";
+    }
+    @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
+    public String updateTrip(@ModelAttribute("trip")
+                             Trip trip, BindingResult result) {
+
+        trip.setOrganiser(userService.getCurrentUser());
+        tripService.updateTrip(trip);
+        return "redirect:/user/admincp-"+trip.getTripId()+".html";
+    }
+    @RequestMapping("user/deleteTrip/{tripId}")
+    public String deleteTrip(@PathVariable("tripId") Integer tripId) {
+
+        Trip t = tripService.findTrip(tripId);
+        if (tripService.checkOwnership(t, userService.getCurrentUser())) {
+            //t.getOrganiser().getTrips().remove(t);
+            //userService.updateUser(t.getOrganiser());
+            tripService.deleteTrip(tripId);
+        }
+        return "redirect:/user/myTrips.html";
     }
 
 }
