@@ -53,19 +53,20 @@ $(document).ready(function () {
 
         var input = $("#address");
 
+        //bij klik op knop of enter eerst kijken of plaats bestaat
+        $("#addStopPlaats").bind("keypress", function (e) {
+            if (e.keyCode == 13) {
+                checkExistence();
+                return false;
+            }
+        });
+
+        $("#searchKnop").click(function () {
+            checkExistence();
+        });
+
     }
 
-    //bij klik op knop of enter eerst kijken of plaats bestaat
-    $("#addStopPlaats").bind("keypress", function (e) {
-        if (e.keyCode == 13) {
-            checkExistence();
-            return false;
-        }
-    });
-
-    $("#searchKnop").click(function () {
-        checkExistence();
-    });
 
     function checkExistence() {
         $("#validation_failed2").hide();
