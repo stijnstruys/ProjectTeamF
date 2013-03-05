@@ -79,14 +79,12 @@ public class TripController {
         trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
 
-
-
-        if(trip.getTripType().getTripTypeName().equals("repeating")) {
+        if(triptype == 2) {
             String t = request.getParameter("repetition");
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             Date maxDate = null;
             try {
-                maxDate = dateFormat.parse( request.getParameter("dateUntil") );
+                maxDate = dateFormat.parse( request.getParameter("dateUntill") );
             } catch (ParseException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }

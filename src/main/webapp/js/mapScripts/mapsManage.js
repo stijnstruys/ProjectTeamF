@@ -15,6 +15,9 @@ $(document).ready(function () {
     initialize();
     //alert(locations.length);
 
+    //zet specifieke locaties
+    setSpecificLocations();
+
     if ($("#showRoute").is(':checked')) {
         doCalc();
     }
@@ -40,8 +43,6 @@ $(document).ready(function () {
         map = new google.maps.Map($('#map_canvas')[0], mapOptions);
         directionsDisplay.setMap(map);
 
-        // single location
-
         //get locations
         $('.addresses').each(function () {
             var loc = new Object();
@@ -53,19 +54,20 @@ $(document).ready(function () {
 
         var input = $("#address");
 
+        //bij klik op knop of enter eerst kijken of plaats bestaat
+        $("#addStopPlaats").bind("keypress", function (e) {
+            if (e.keyCode == 13) {
+                checkExistence();
+                return false;
+            }
+        });
+
+        $("#searchKnop").click(function () {
+            checkExistence();
+        });
+
     }
 
-    //bij klik op knop of enter eerst kijken of plaats bestaat
-    $("#addStopPlaats").bind("keypress", function (e) {
-        if (e.keyCode == 13) {
-            checkExistence();
-            return false;
-        }
-    });
-
-    $("#searchKnop").click(function () {
-        checkExistence();
-    });
 
     function checkExistence() {
         $("#validation_failed2").hide();
@@ -124,6 +126,14 @@ $(document).ready(function () {
             });
 
 
+        });
+    }
+
+    function setSpecificLocations() {
+        $.each(locations, function (l, loc) {
+            geocoder.geocode({ 'address': loc.Adres}, function (results, status) {
+                $("#"+loc.ID).val(results[0].formatted_address);
+            });
         });
     }
 
