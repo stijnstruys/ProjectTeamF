@@ -133,8 +133,19 @@ h4 {
     /*border-radius: 5px;*/
     background: #1C263C;
     padding: 25px;
+
+    -webkit-border-bottom-left-radius: 15px;
+    -khtml-border-bottom-left-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    border-radius-bottomleft: 15px;
     border-bottom-left-radius: 15px;
+
+    -webkit-border-bottom-right-radius: 15px;
+    -khtml-border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomright: 15px;
+    border-radius-bottomright: 15px;
     border-bottom-right-radius: 15px;
+
 }
 
 /*notification mail*/
@@ -177,8 +188,11 @@ label {
     color: #B6C0D2;
 
     -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
+    border-radius: 6px;
+
 }
 
 .trip_name {
@@ -229,6 +243,7 @@ a.trip_name:hover {
     width: 500px;
     margin: 0 auto 35px auto;
 }
+
 #add_trip_btns {
     width: 600px;
     margin: 0 auto 0 auto;
@@ -242,6 +257,7 @@ a.trip_name:hover {
     padding: 20px 15px 10px 15px;
     margin-bottom: 25px;
 }
+
 /* profile */
 
 .hidethis {
@@ -346,7 +362,12 @@ a.trip_name:hover {
     background-color: #D4D4D4;
     color: #1C263C;
 
+    -webkit-border-radius: 0.5em;
+    -khtml-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
     border-radius: 0.5em;
+    border-radius: 0.5em;
+
     font-size: 1.5em;
     font-weight: bold;
     padding: 0.4em;
@@ -368,6 +389,11 @@ a.trip_name:hover {
     height: 17em;
     width: 90%;
     margin-left: 10%;
+
+    -webkit-border-radius: 5em;
+    -khtml-border-radius: 5em;
+    -moz-border-radius: 5em;
+    border-radius: 5em;
     border-radius: 5em;
 }
 
@@ -376,6 +402,10 @@ a.trip_name:hover {
     height: 17em;
     width: 90%;
     margin-right: 10%;
+    -webkit-border-radius: 5em;
+    -khtml-border-radius: 5em;
+    -moz-border-radius: 5em;
+    border-radius: 5em;
     border-radius: 5em;
 }
 
@@ -405,7 +435,13 @@ a.trip_name:hover {
 .profilePictures {
     width: 60%;
     height: 15em;
+
+    -webkit-border-radius: 5em;
+    -khtml-border-radius: 5em;
+    -moz-border-radius: 5em;
     border-radius: 5em;
+    border-radius: 5em;
+
     margin-bottom: 1em;
 }
 
@@ -415,12 +451,12 @@ a.trip_name:hover {
 
 /* trip overzicht */
 
-
 #pickerdivs {
     margin-top: 45px;
     margin-bottom: 70px;;
     float: left;
 }
+
 #picker {
     margin-right: 100px;
 }
@@ -462,7 +498,7 @@ a.trip_name:hover {
 #rechts {
     float: left;
     width: 65%;
-   /* background-color: blue; */
+    /* background-color: blue; */
 }
 
 #links2 {
@@ -474,13 +510,12 @@ a.trip_name:hover {
 #rechts2 {
     float: left;
     width: 70%;
-   /* background-color: blue; */
+    /* background-color: blue; */
 }
 
 #onder {
     clear: both;
 }
-
 
 #mapTopTable {
     width: 70%;
@@ -495,7 +530,13 @@ a.trip_name:hover {
     border-style: solid;
     border-color: #D4D4D4;
     border-width: 0.1em;
+
+    -webkit-border-radius: 0.5em;
+    -khtml-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
     border-radius: 0.5em;
+    border-radius: 0.5em;
+
     padding: 0.5em;
 }
 
@@ -504,7 +545,7 @@ a.trip_name:hover {
 }
 
 .mapManageTableRight {
-    width:30%;
+    width: 30%;
 }
 
 .mapIcons {
@@ -527,7 +568,7 @@ a.trip_name:hover {
 }
 
 #viewTheTrip {
-   margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
     margin-top: 0.5em;
     font-size: 0.8em;
 }
@@ -542,5 +583,5 @@ a.trip_name:hover {
 
 /*categorieen */
 .cat-span {
-  margin-left: 15px;
+    margin-left: 15px;
 }
