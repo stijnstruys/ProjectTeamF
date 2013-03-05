@@ -31,7 +31,11 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
         u.setTelephone("00306985587996");
         userService.addUser(u);
 
-        assertEquals("Expected firstname: ", "Bart Leemans", userService.findUser(u.getUserID()).getUsername());
+        assertEquals("Expected username: ", "Bart Leemans", userService.findUser(u.getUserID()).getUsername());
+        assertEquals("Expected firstname: ", "Bart", userService.findUser(u.getUserID()).getFirstName());
+        assertEquals("Expected lastname: ", "Leemans", userService.findUser(u.getUserID()).getLastName());
+        assertEquals("Expected email: ", "bart@hotmail.com", userService.findUser(u.getUserID()).getEmail());
+        assertEquals("Expected telephone: ", "00306985587996", userService.findUser(u.getUserID()).getTelephone());
     }
 
     @Test
