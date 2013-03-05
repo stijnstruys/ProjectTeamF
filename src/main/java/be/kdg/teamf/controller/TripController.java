@@ -39,8 +39,7 @@ public class TripController {
     private UserService userService;
     @Autowired
     private DeelnameService deelnameService;
-    @Autowired
-    private TripCategorieService tripCategorieService;
+
 
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
     public ModelAndView tripOverzichtPage(HttpServletRequest request, HttpServletResponse response) {
@@ -70,11 +69,6 @@ public class TripController {
         request.setAttribute("trip", t);
         request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
 
-       /*Map triptypes = new HashMap();
-        for(TripType tt : tripTypeService.listTripTypes()) {
-            triptypes.put(tt.getTripTypeId(), tt.getTripTypeName());
-        }
-        request.setAttribute("tripTypeList", triptypes);*/
         ModelAndView model = new ModelAndView("Trip/addTrip");
         return model;
     }
@@ -183,7 +177,7 @@ public class TripController {
 
         if (!deelnameService.alreadyExists(d)) {
             t.getDeelnames().add(d);
-            //t.setOrganiser(userService.getCurrentUser());
+
             tripService.updateTrip(t);
         }
 

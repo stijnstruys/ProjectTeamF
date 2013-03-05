@@ -22,12 +22,8 @@ public class AboutController {
         public ModelAndView handleRequestInternal(HttpServletRequest request,
                                                      HttpServletResponse response){
 
-           /* User userlogin  = new User();
-            request.setAttribute("loginuser",userlogin); */
-
             ModelAndView model = new ModelAndView("General/about");
 
             return model;
-
     }
 }

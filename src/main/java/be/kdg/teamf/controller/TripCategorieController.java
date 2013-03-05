@@ -33,10 +33,7 @@ public class TripCategorieController {
     private TripService tripService;
 
     @RequestMapping(value = "/TripCategorie/{tripID}", method = RequestMethod.GET)
-    public ModelAndView tripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) throws Exception {
-
-        /*User userlogin = new User();
-        request.setAttribute("loginuser", userlogin); */
+    public ModelAndView tripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID)  {
 
         TripCategorie s = new TripCategorie();
         Trip t = tripService.findTrip(tripID);
@@ -72,8 +69,7 @@ public class TripCategorieController {
     @RequestMapping("/TripCategorie/update-{tripCategorieId}")
     public ModelAndView updateTripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripCategorieId") int tripCategorieId) throws Exception {
 
-        /*User userlogin = new User();
-        request.setAttribute("loginuser", userlogin); */
+
 
         TripCategorie tc = tripCategorieService.findTripCategorie(tripCategorieId);
         request.setAttribute("tripCategorie", tc);

@@ -52,24 +52,10 @@ public class UserController {
     @Autowired
     private TripService tripService;
 
-
-
-
-    /*@RequestMapping("/")
-    public String listContacts(Map<String, Object> map) {
-
-        map.put("user", new User());
-        map.put("userList", userService.listUsers());
-
-        return "user";
-    }  */
     @RequestMapping(value = "/user/user.html", method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) {
 
-        /*User userlogin  = new User();
-        request.setAttribute("loginuser",userlogin); */
-
-        User u = new User();
+         User u = new User();
         request.setAttribute("user", u);
         request.setAttribute("userList", userService.listUsers());
         ModelAndView model = new ModelAndView("User/user");
@@ -81,7 +67,6 @@ public class UserController {
     public String addUser(@ModelAttribute("user") User user, @RequestParam("foto") MultipartFile file) {
 
         try {
-
             Blob blob = Hibernate.createBlob(file.getInputStream());
             user.setProfielFoto(blob);
         } catch (IOException e) {
@@ -112,7 +97,7 @@ public class UserController {
                 user.setDateOfBirth(df.parse(request.getParameter("birthday")));
                 System.out.println(request.getParameter("birthday"));
             } catch (ParseException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                e.printStackTrace();
             }
             userService.addUser(user);
         } else {
@@ -158,11 +143,9 @@ public class UserController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
 
         user.setPassword(u.getPassword());
-
 
         userService.updateUser(user);
         return "redirect:/user/profile.html";
@@ -191,22 +174,8 @@ public class UserController {
             return "redirect:/user/changepw.html";
         }
 
-
         return "redirect:/user/profile.html";
     }
-
-    /*@RequestMapping(value = "/user/login", method = RequestMethod.GET)
-    public String logIn(@ModelAttribute("loginuser") User user, BindingResult result) {
-
-        User loginUser = userService.findUser(user.getUsername());
-        if (loginUser.getPassword().equals(user.getPassword())) {
-            return "redirect:/general/index.html";
-        } else {
-            //wrong pasword page maken
-            return "redirect:/general/index.html";
-        }
-
-    }*/
 
     @RequestMapping(value = "/user/profile")
     public ModelAndView profile(HttpServletRequest request){
@@ -256,7 +225,6 @@ public class UserController {
 
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
     public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
-        //String[] emailAddressess new String[];
         ArrayList<String> emails = new ArrayList(tripService.listUserEmailPerTrips(tripID));
 
         ModelMap mailModel = new ModelMap();
@@ -277,8 +245,6 @@ public class UserController {
 
     }
 
-
-
     @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
     public @ResponseBody String getUserInJson(@RequestParam("name") String name) {
 
@@ -288,9 +254,8 @@ public class UserController {
         } else {
             return "true";
         }
-
-
     }
+
 
     @RequestMapping(value = "/service/getUsernames", method = RequestMethod.GET)
     public

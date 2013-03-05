@@ -48,7 +48,6 @@ public class StopPlaatsController
     @RequestMapping(value = "/StopPlaats/add/{tripID}", method = RequestMethod.POST)
     public String addStopPlaats(@ModelAttribute("stopplaats") StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {
 
-        //stopPlaatsService.addStopPlaats(stopPlaats);
         Trip t = tripService.findTrip(tripID);
         stopPlaats.setTrip(t);
         t.getStopPlaatsen().add(stopPlaats);
