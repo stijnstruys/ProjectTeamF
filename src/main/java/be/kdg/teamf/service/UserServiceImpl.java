@@ -54,16 +54,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getCurrentUser(){
+    public User getCurrentUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         UserDetails userDetails;
         if (principal instanceof UserDetails) {
             userDetails = (UserDetails) principal;
             String userName = userDetails.getUsername();
             return findUser(userName);
-        }
-        else {
+        } else {
             return null;
         }
+    }
+
+    @Transactional
+    public int login(User userInput) {
+        User u = userDAO.findUser(userInput.getUsername());
+        if (u == null) {
+            return -1;
+        }
+        if (u.getPassword().equals(userInput.getPassword())) {
+            return u.getUserID();
+        }
+        return -1;
     }
 }

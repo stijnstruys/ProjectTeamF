@@ -20,6 +20,7 @@ public interface UserService {
 
     User findUser(int userID);
     User findUser(String userName);
+    int login(User user);
     void updateUser(User user);
 
     User getCurrentUser();

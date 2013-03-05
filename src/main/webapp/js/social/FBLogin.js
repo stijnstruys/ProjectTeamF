@@ -24,6 +24,7 @@ $(document).ready(function () {
     });
 
     function login() {
+        logout();
         var fbFirstName;
         var fbLastName;
         var fbId;
