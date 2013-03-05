@@ -103,7 +103,7 @@
                 <div class="controls">
                     <select name="repetition">
                         <option value="1d"><spring:message code="label.Dagelijks"/></option>
-                        <option value="1w"><spring:message code="label.Wekelijks"/>/option>
+                        <option value="1w"><spring:message code="label.Wekelijks"/></option>
                         <option value="2w"><spring:message code="label.OmDe2Weken"/></option>
                         <option value="4m"><spring:message code="label.OmDe4Weken"/></option>
                     </select>
