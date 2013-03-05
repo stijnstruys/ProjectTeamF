@@ -55,7 +55,7 @@ public class UserController {
     @RequestMapping(value = "/user/user.html", method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) {
 
-         User u = new User();
+        User u = new User();
         request.setAttribute("user", u);
         request.setAttribute("userList", userService.listUsers());
         ModelAndView model = new ModelAndView("User/user");
@@ -105,7 +105,7 @@ public class UserController {
         }
         List<GrantedAuthority> gaList = new ArrayList<GrantedAuthority>();
         gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
-        org.springframework.security.core.userdetails.User usersec = new  org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), true, true, true, true, gaList);
+        org.springframework.security.core.userdetails.User usersec = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), true, true, true, true, gaList);
         Authentication auth = new UsernamePasswordAuthenticationToken(usersec, user.getPassword(), gaList);
         org.springframework.security.core.context.SecurityContext sc = new SecurityContextImpl();
         sc.setAuthentication(auth);
@@ -130,11 +130,12 @@ public class UserController {
         return model;
 
     }
+
     @RequestMapping(value = "/user/update", method = RequestMethod.POST)
     public String updateUserData(@ModelAttribute("user")
                                  User user, @RequestParam("foto") MultipartFile file) {
         User u = userService.findUser(user.getUserID());
-        if (file.getSize() == 0){
+        if (file.getSize() == 0) {
             user.setProfielFoto(u.getProfielFoto());
         } else {
             try {
@@ -178,7 +179,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/profile")
-    public ModelAndView profile(HttpServletRequest request){
+    public ModelAndView profile(HttpServletRequest request) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User u = userService.findUser(auth.getName());
@@ -209,7 +210,7 @@ public class UserController {
     }
 
     @RequestMapping("/user/admincp-{tripID}")
-    public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID)  {
+    public ModelAndView viewAdminTripPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) {
         Trip t = tripService.findTrip(tripID);
         ModelAndView model;
         if (tripService.checkOwnership(t, userService.getCurrentUser())) {
@@ -222,9 +223,10 @@ public class UserController {
     }
 
 
-
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
-    public @ResponseBody String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
+    public
+    @ResponseBody
+    String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
         ArrayList<String> emails = new ArrayList(tripService.listUserEmailPerTrips(tripID));
 
         ModelMap mailModel = new ModelMap();
@@ -246,24 +248,27 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
-    public @ResponseBody String getUserInJson(@RequestParam("name") String name) {
+    public
+    @ResponseBody
+    String getUserInJson(@RequestParam("name") String name) {
 
         User u = userService.findUser(name);
-        if(u == null) {
+        if (u == null) {
             return "false";
         } else {
             return "true";
         }
     }
 
-
-    @RequestMapping(value = "/service/getUsernames", method = RequestMethod.GET)
+    @RequestMapping(value = "/service/login", method = RequestMethod.POST)
     public
     @ResponseBody
-    List<User> getUsernames() {
-        List<User> test = new ArrayList<>(userService.listUsers());
-
-        return test;
+    User serviceLogin(@RequestBody User u) {
+        if (userService.login(u) > -1) {
+            return userService.findUser(u.getUsername());
+        } else {
+            return new User();
+        }
     }
 
     @RequestMapping("/image/{id}")
@@ -272,7 +277,7 @@ public class UserController {
         User u = userService.findUser(id);
         Blob b = u.getProfielFoto();
         try {
-            return  b.getBytes(1, (int) b.length());
+            return b.getBytes(1, (int) b.length());
         } catch (SQLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
