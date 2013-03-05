@@ -76,6 +76,11 @@
                                 <input class="btn btn-success btn_green_right" type="submit"
                                        value="<spring:message code="label.leaveTrip"/>">
                             </form>
+                            <form action="/kost/manageKosts.html">
+                                <input class="btn btn-success btn_green_right" type="submit"
+                                       value="Manage Kosten">
+                            </form>
+
                         </c:if></td>
                 </tr>
                 <tr>

@@ -45,4 +45,9 @@ public class KostServiceImpl implements KostService {
     public List<Kost> kostenPerTripEnUser(Trip t, User u) {
         return kostDAO.kostenPerTripEnUser(t,u);
     }
+
+    @Override
+    public Kost findKost(int kostId) {
+        return kostDAO.findKost(kostId);
+    }
 }

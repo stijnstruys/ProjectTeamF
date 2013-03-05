@@ -56,4 +56,16 @@ public class KostenDAOImpl implements KostDAO {
         q.setInteger("userId", u.getUserID());
         return q.list();
     }
+
+    @Override
+    public Kost findKost(int kostId) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from Kost where kostId = :id  ");
+        q.setInteger("id",kostId);
+        if(q.list().size()>0){
+            return (Kost) q.list().get(0);
+        }
+        else{
+            return null;
+        }
+    }
 }

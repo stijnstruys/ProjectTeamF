@@ -54,7 +54,6 @@ public class TripCategorieController {
         tripCategorie.setTrip(t);
         t.getTripCategorieen().add(tripCategorie);
         tripService.updateTrip(t);
-        tripCategorieService.addTripCategorie(tripCategorie);
         return "redirect:/TripCategorie/" + t.getTripId() + ".html";
     }
 

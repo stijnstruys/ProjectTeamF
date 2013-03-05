@@ -44,4 +44,6 @@ public interface TripService {
     List<Trip> searchTripsCategories(String searchInput);
 
     public List<String> listUserEmailPerTrips(int tripID);
+
+
 }

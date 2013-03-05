@@ -1,16 +1,14 @@
 package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Kost;
+import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.service.KostService;
 import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,30 +34,36 @@ public class KostController {
 
     @RequestMapping(value = "/kost/manageKosts", method = RequestMethod.GET)
     public ModelAndView manageKosts(HttpServletRequest request, HttpServletResponse response) {
-        Kost k = new Kost();
-        request.setAttribute("kost", k);
 
-        ModelAndView model = new ModelAndView("Trip/addTrip");
+        request.setAttribute("Trips", tripService.listUserParticipateTrips(userService.getCurrentUser().getUserID()));
+        ModelAndView model = new ModelAndView("Kost/ManageKosts");
         return model;
     }
 
-    @RequestMapping(value = "/kost/addKost", method = RequestMethod.GET)
-    public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "/kost/addKost/{tripID}", method = RequestMethod.GET)
+    public ModelAndView addKostPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) {
+
+        Trip t =  tripService.findTrip(tripID);
         Kost k = new Kost();
         request.setAttribute("kost", k);
-
-        ModelAndView model = new ModelAndView("Trip/addTrip");
+        request.setAttribute("trip", t);
+        ModelAndView model = new ModelAndView("Kost/AddKost");
         return model;
     }
-    @RequestMapping(value = "kost/add", method = RequestMethod.POST)
-    public String addTrip(@ModelAttribute("trip") Kost kost, @RequestParam("tripId") int tripId, @RequestParam("userId") int userId , BindingResult result, HttpServletRequest request) {
+    @RequestMapping(value = "/kost/add", method = RequestMethod.POST)
+    public String addKost(@ModelAttribute("kost") Kost kost, @RequestParam("tripId") int tripId, @RequestParam("userId") int userId , BindingResult result, HttpServletRequest request) {
 
         kost.setTrip(tripService.findTrip(tripId));
         kost.setUser(userService.findUser(userId));
 
         kostService.addKost(kost);
-        return "";
+        return "manageKosts.html";
     }
+    @RequestMapping(value = "/kost/delete", method = RequestMethod.POST)
+    public String deleteKost(@RequestParam("kostId") int kostId, BindingResult result, HttpServletRequest request) {
 
+        kostService.deleteKost(kostService.findKost(kostId));
+        return "manageKosts.html";
+    }
 
 }
