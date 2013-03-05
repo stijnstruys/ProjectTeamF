@@ -8,8 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="meer test roemel">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/ProjectTeamF_war.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/DeelnameController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Kost.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/KostController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/KostDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/KostService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/KostServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/KostenDAOImpl.java" />
       <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\ant.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\artifacts\ProjectTeamF_war.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\artifacts\ProjectTeamF_war_exploded.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\copyright\profiles_settings.xml" afterPath="" />
@@ -113,11 +120,16 @@
       <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\webContexts.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Trip.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Trip.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
     </list>
     <list id="caa60890-c8f1-456d-a7fa-d42be0cb3f17" name="New changelist" comment="" />
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362476059944" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362476412692" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882804663" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -145,7 +157,7 @@
     <file path="/MailMail.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360772579110" ignored="false" />
     <file path="$USER_HOME$/Desktop/mailen/SpringExample/src/main/java/com/mkyong/common/App.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360782629752" ignored="false" />
     <file path="/StopPlaatsServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360773038585" ignored="false" />
-    <file path="/fragment.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362310484271" ignored="false" />
+    <file path="/fragment.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362477083748" ignored="false" />
     <file path="/testtest.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1360783261711" ignored="false" />
     <file path="/TripCategorieDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642522358" ignored="false" />
     <file path="/TripCategorieDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642735054" ignored="false" />
@@ -154,7 +166,7 @@
     <file path="/TripCategorieController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362428104844" ignored="false" />
     <file path="/TripCategorieService.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642806113" ignored="false" />
     <file path="/TripCategorieServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642837483" ignored="false" />
-    <file path="/hibernate.cfg.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361221801958" ignored="false" />
+    <file path="/hibernate.cfg.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362477835235" ignored="false" />
     <file path="/Deelname.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361535978190" ignored="false" />
     <file path="/DeelnameDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361642469106" ignored="false" />
     <file path="/DeelnameDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361348924227" ignored="false" />
@@ -177,7 +189,7 @@
     <file path="/TestTripCategorieModel.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361219913099" ignored="false" />
     <file path="/TestTripTypeModel.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361220045643" ignored="false" />
     <file path="/TestUserModel.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361221295024" ignored="false" />
-    <file path="/User.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362472188479" ignored="false" />
+    <file path="/User.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362477601275" ignored="false" />
     <file path="/LoginInterceptor.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361272299362" ignored="false" />
     <file path="/UserServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361280160374" ignored="false" />
     <file path="/jdbc.properties" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361285445780" ignored="false" />
@@ -243,6 +255,12 @@
     <file path="/TestAboutController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362411912101" ignored="false" />
     <file path="/UserControllerTest.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362411866123" ignored="false" />
     <file path="/TestStopPlaatsController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362426117984" ignored="false" />
+    <file path="/Kost.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362477956082" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362483820513" ignored="false" />
+    <file path="/KostController.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362480911072" ignored="false" />
+    <file path="/KostDAO.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362478621254" ignored="false" />
+    <file path="/KostenDAOImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362479721597" ignored="false" />
+    <file path="/KostServiceImpl.java" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362478981092" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,20 +276,6 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java" line="106" class="be.kdg.teamf.service.TripServiceImpl" package="be.kdg.teamf.service">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAOImpl.java" line="38" class="be.kdg.teamf.dao.TripCategorieDAOImpl" package="be.kdg.teamf.dao">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -331,19 +335,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TripServiceImpl.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="157" column="55" selection-start="4530" selection-end="4530" vertical-scroll-proportion="0.7838983">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TripController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="0" selection-start="3269" selection-end="3269" vertical-scroll-proportion="0.0">
+            <state line="66" column="0" selection-start="2219" selection-end="2872" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -351,11 +346,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="KostController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/KostController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="51" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KostenDAOImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/KostenDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="44" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Kost.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Kost.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="45" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="0" selection-start="11977" selection-end="11977" vertical-scroll-proportion="0.0">
+            <state line="48" column="59" selection-start="1650" selection-end="1650" vertical-scroll-proportion="-0.2962963">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeelnameController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/DeelnameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="38" selection-start="952" selection-end="952" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -380,22 +419,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/UserControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestAboutController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/AboutController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestIndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserDetailsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestStopPlaatsController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripCategorieController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripCategorieController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestUserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java" />
         <option value="$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripController.java" />
         <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Kost.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Trip.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/KostService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/KostDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/KostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/KostenDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/KostController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/DeelnameController.java" />
       </list>
     </option>
   </component>
@@ -533,7 +572,227 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjectTeamF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -588,7 +847,7 @@
       <recent name="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestTripController">
+  <component name="RunManager" selected="Glassfish Server.Glassfish 3.1.2.2">
     <configuration default="false" name="TestTripController" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1328,7 +1587,15 @@
       <created>1362475825731</created>
       <updated>1362475825731</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="meer test roemel">
+      <created>1362476071345</created>
+      <updated>1362476071345</updated>
+    </task>
+    <task id="LOCAL-00073" summary="meer test roemel">
+      <created>1362476270436</created>
+      <updated>1362476270436</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1353,7 +1620,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599726" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1364,19 +1631,19 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42090786" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3149931" sideWeight="0.5083655" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25997248" sideWeight="0.4980695" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599726" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25997248" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25997248" sideWeight="0.497426" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24066924" sideWeight="0.21870701" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24066924" sideWeight="0.36863825" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17310168" sideWeight="0.68500686" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23230374" sideWeight="0.68500686" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3149931" sideWeight="0.48713" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23230374" sideWeight="0.68500686" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3149931" sideWeight="0.484556" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1471,129 +1738,133 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestStopPlaatsController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/DeelnameServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="37" selection-start="2325" selection-end="2325" vertical-scroll-proportion="0.0">
+        <state line="19" column="0" selection-start="526" selection-end="534" vertical-scroll-proportion="0.41463414">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/TripCategorieDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/DeelnameDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.33240998">
+        <state line="19" column="0" selection-start="521" selection-end="547" vertical-scroll-proportion="0.25570777">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripCategorieController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/KostDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="13" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.1.2.RELEASE/spring-security-core-3.1.2.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetails.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="414" selection-end="414" vertical-scroll-proportion="0.43896714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="54" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="5" selection-start="3149" selection-end="3149" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="0" selection-start="11977" selection-end="11977" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="66" selection-start="8113" selection-end="8113" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#viewProfile#0;class#TestUserController#0" expanded="false" />
-            <element signature="method#testProfile#0;class#TestUserController#0" expanded="false" />
-            <element signature="method#testTripOverzicht#0;class#TestUserController#0" expanded="false" />
-            <element signature="method#testMails#0;class#TestUserController#0" expanded="false" />
-            <element signature="method#testParticipants#0;class#TestUserController#0" expanded="false" />
-            <element signature="method#testUserEquipment#0;class#TestUserController#0" expanded="false" />
-            <element signature="method#testAdminCP#0;class#TestUserController#0" expanded="false" />
-            <element signature="method#getUser#0;class#TestUserController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="3269" selection-end="3269" vertical-scroll-proportion="0.0">
+        <state line="16" column="33" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/KostServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="36" selection-start="5055" selection-end="5055" vertical-scroll-proportion="2.4322033">
+        <state line="26" column="29" selection-start="633" selection-end="633" vertical-scroll-proportion="0.54767185">
           <folding>
-            <element signature="method#getTrip#0;class#TestTripController#0" expanded="false" />
-            <element signature="method#getUser#0;class#TestTripController#0" expanded="false" />
-            <element signature="method#authenticateUser#0;class#TestTripController#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/kdg/teamf/controller/TestTripCategorieController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/KostService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="19" selection-start="2717" selection-end="2717" vertical-scroll-proportion="0.037037037">
+        <state line="16" column="33" selection-start="367" selection-end="367" vertical-scroll-proportion="0.5677966">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/StopPlaatsDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="110" selection-start="1139" selection-end="1272" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/DeelnameDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="55" selection-end="55" vertical-scroll-proportion="0.25211865">
+        <state line="16" column="55" selection-start="314" selection-end="357" vertical-scroll-proportion="0.31567797">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/dao/KostenDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="44" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.0605383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/User/editEquipment.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1362427747567" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1362427747567" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/StopPlaatsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/model/Kost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="33" column="45" selection-start="706" selection-end="706" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/service/TripServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/TripController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="55" selection-start="4530" selection-end="4530" vertical-scroll-proportion="0.7838983">
+        <state line="66" column="0" selection-start="2219" selection-end="2872" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/KostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="51" selection-start="2054" selection-end="2054" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/DeelnameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="38" selection-start="952" selection-end="952" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="59" selection-start="1650" selection-end="1650" vertical-scroll-proportion="-0.2962963">
           <folding />
         </state>
       </provider>

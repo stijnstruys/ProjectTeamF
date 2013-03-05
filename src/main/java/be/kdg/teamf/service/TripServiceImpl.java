@@ -126,8 +126,7 @@ public class TripServiceImpl implements TripService {
                 message.setFrom(msg.getFrom());
                 message.setSubject(msg.getSubject());
 
-                String body = VelocityEngineUtils.mergeTemplateIntoString(
-                        velocityEngine, "/invite.vm", model);
+                String body = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "/invite.vm", model);
                 message.setText(body, true);
 
                 message.addInline("header", new ClassPathResource(
