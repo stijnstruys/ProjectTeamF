@@ -2,7 +2,6 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.dao.DeelnameDAO;
 import be.kdg.teamf.dao.TripDAO;
-import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import org.apache.struts.mock.MockHttpServletResponse;
@@ -137,7 +136,14 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
         s =  userController.changePw("fout","nieuw1","nieuw1");
         assertEquals("correct","redirect:/user/changepw.html",s);
     }
+    @Test
+    public void testMails(){
+        Trip t = new Trip();
+        tripDAO.addTrip(t);
+        String s = userController.mailForm("test","test","test","test",t.getTripId(),"test");
+        assertEquals("correct", "true", s);
 
+    }
     @Test
     public void viewProfile(){
         User u = getUser();
@@ -169,29 +175,9 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
         assertEquals("correct","User/myTrips",mav.getViewName());
     }
 
-    @Test
-    public void testMails(){
-        Trip t = new Trip();
-        tripDAO.addTrip(t);
-        String s = userController.mailForm("test","test","test","test",t.getTripId(),"test");
-        assertEquals("correct", "true", s);
-        s = userController.sendInvite(t.getTripId(),"kdgteamf@gmail.com");
-        assertEquals("correct","redirect:/TripParticipants/" + t.getTripId() + ".html",s);
-    }
-    @Test
-    public void testParticipants(){
-        Trip t = new Trip();
-        tripDAO.addTrip(t);
-        ModelAndView mav =  userController.tripParticipantsPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
-        assertEquals("correct","User/tripParticipants",mav.getViewName());
-    }
-    @Test
-    public void testUserEquipment(){
-        Deelname d = new Deelname();
-        deelnameDAO.addDeelname(d);
-        ModelAndView mav = userController.editUserequipment(new MockHttpServletRequest(),new MockHttpServletResponse(),d.getDeelnameID());
-        assertEquals("correct","User/editEquipment",mav.getViewName());
-    }
+
+
+
 
      @Test
      public void testAdminCP(){
