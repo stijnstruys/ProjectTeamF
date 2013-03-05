@@ -153,4 +153,6 @@ public class TripServiceImpl implements TripService {
         return tripDAO.listUserEmailPerTrips(tripID);
     }
 
+
+
 }

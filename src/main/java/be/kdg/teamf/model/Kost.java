@@ -18,7 +18,7 @@ public class Kost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int kostId;
 
     @Column(name="prijs")
     private double prijs;
@@ -37,12 +37,12 @@ public class Kost {
     public Kost() {
     }
 
-    public int getId() {
-        return id;
+    public int getKostId() {
+        return kostId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setKostId(int id) {
+        this.kostId = id;
     }
 
     public String getBeschrijving() {

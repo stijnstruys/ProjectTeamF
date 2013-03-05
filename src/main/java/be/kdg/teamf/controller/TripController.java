@@ -206,8 +206,6 @@ public class TripController {
 
         Trip t = tripService.findTrip(tripId);
         if (tripService.checkOwnership(t, userService.getCurrentUser())) {
-            //t.getOrganiser().getTrips().remove(t);
-            //userService.updateUser(t.getOrganiser());
             tripService.deleteTrip(tripId);
         }
         return "redirect:/user/myTrips.html";
