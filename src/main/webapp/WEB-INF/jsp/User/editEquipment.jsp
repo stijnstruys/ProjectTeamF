@@ -24,7 +24,7 @@
     <title><spring:message code="label.updateTrip"/></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
+    <link rel="shortcut icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/plugins/farbtastic.css">
