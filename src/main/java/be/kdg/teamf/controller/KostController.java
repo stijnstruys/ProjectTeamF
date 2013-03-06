@@ -73,8 +73,8 @@ public class KostController {
         return "manageKosts.html";
     }
 
-    @RequestMapping(value = "/kost/kostenPerTrip", method = RequestMethod.POST)
-    public ModelAndView kostenPerTrip(@RequestParam("tripId") int tripId, HttpServletRequest request) {
+    @RequestMapping(value = "/kost/kostenPerTrip{tripId}", method = RequestMethod.GET)
+    public ModelAndView kostenPerTrip(@PathVariable("tripId") int tripId, HttpServletRequest request) {
 
         Deelname d = deelnameService.findDeelname(tripService.findTrip(tripId),userService.getCurrentUser());
         request.setAttribute("deelname",d);

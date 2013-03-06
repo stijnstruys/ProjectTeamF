@@ -39,7 +39,7 @@
         <ul class="trip_list">
             <c:forEach items="${deelnames}" var="deelname">
                 <div class="trip_details trip_pagina_<%=pagina%>_content">
-                    <form action="/kost/addKost/${trip.tripId}.html">
+                    <form action="/ProjectTeamF-1.0/kost/kostenPerTrip${deelname.trip.tripId}.html">
                         <input class="btn btn-success btn_green_right" type="submit"
                                value="Add kost">
                     </form>
