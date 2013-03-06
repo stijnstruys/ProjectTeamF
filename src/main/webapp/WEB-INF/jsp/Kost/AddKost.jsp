@@ -30,8 +30,9 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
+    <h2>Add Kost</h2>
     <form:form method="post" class="form-horizontal" action="add.html" commandName="kost" id="kost">
-
+              <input type="hidden" name="tripId" value="${trip.tripId}">
         <div class="control-group">
             <form:label class="control-label"  path="beschrijving">beschrijving</form:label>
             <div class="controls">
@@ -45,7 +46,7 @@
             </div>
         </div>
 
-
+        <input type="submit" value="Add Kost" class="btn">
     </form:form>
 
 </section>
