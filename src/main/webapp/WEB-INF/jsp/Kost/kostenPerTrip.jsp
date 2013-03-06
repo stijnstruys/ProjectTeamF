@@ -33,20 +33,29 @@
     <c:if test="${!empty deelname.kosten}">
 
         <c:set var="totaal" value="0"></c:set>
+        <table>
+            <c:forEach items="${deelname.kosten}" var="kost">
+                <%--<c:if test="${deelnameUser.username == currentUser}">--%>
 
-        <c:forEach items="${deelname.kosten}" var="kost">
-
-            <c:if test="${deelnameUser.username == currentUser}">
+                <tr>
+                    <td>
+                            ${kost.beschrijving}
+                    </td>
+                    <td>
+                            € ${kost.prijs}
+                    </td>
+                </tr>
                 <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
-            </c:if>
-        </c:forEach>
-
+                <%-- </c:if>--%>
+            </c:forEach>
+        </table>
+        <br />
     </c:if>
     <div>
         Totale kost: ${totaal}
     </div>
     <div>
-        <form action="/ProjectTeamF-1.0/kost/addKost/${trip.tripId}.html">
+        <form action="/ProjectTeamF-1.0/kost/addKost${trip.tripId}.html">
 
             <input type="submit" class="btn" value="Add kost">
         </form>
