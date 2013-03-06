@@ -2,6 +2,7 @@ package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 
 import java.util.ArrayList;
 
@@ -25,5 +26,6 @@ public interface DeelnameDAO {
     Deelname findDeelname(int tripId, int userID);
 
     ArrayList<Deelname> findDeelnames(Trip t);
+    ArrayList<Deelname> findDeelnamesByUser(User u);
 
 }

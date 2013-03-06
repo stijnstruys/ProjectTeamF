@@ -35,18 +35,18 @@
 %>
 <section id="content">
 
-    <c:if test="${!empty trips}">
+    <c:if test="${!empty deelnames}">
         <ul class="trip_list">
-            <c:forEach items="${trips}" var="trip">
+            <c:forEach items="${deelnames}" var="deelname">
                 <div class="trip_details trip_pagina_<%=pagina%>_content">
                     <form action="/kost/addKost/${trip.tripId}.html">
                         <input class="btn btn-success btn_green_right" type="submit"
                                value="Add kost">
                     </form>
-                    <div class="trip_name">${trip.tripName}</div>
-                    <div class="trip_description">${trip.tripDescription}</div>
+                    <div class="trip_name">${deelname.trip.tripName}</div>
+                    <div class="trip_description">${deelname.trip.tripDescription}</div>
 
-                    <c:if test="${!empty trip.kosten}">
+                    <%--<c:if test="${!empty trip.de}">
 
                         <c:set var="totaal" value="0"></c:set>
 
@@ -58,7 +58,7 @@
                         </c:forEach>
 
                     </c:if>
-                    <div>Totale kost: ${totaal}
+                    <div>Totale kost: ${totaal}--%>
 
 
                     </div>

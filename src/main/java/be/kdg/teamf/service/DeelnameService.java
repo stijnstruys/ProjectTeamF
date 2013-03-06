@@ -30,4 +30,6 @@ public interface DeelnameService {
 
     ArrayList<Deelname> getDeelnames(Trip t);
 
+    ArrayList<Deelname> getDeelnamesByUser(User u);
+
 }

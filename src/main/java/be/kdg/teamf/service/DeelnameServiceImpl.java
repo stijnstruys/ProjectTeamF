@@ -79,4 +79,9 @@ public class DeelnameServiceImpl implements DeelnameService {
     public ArrayList<Deelname> getDeelnames(Trip t) {
         return deelnameDAO.findDeelnames(t);
     }
+
+    @Override
+    public ArrayList<Deelname> getDeelnamesByUser(User u) {
+        return deelnameDAO.findDeelnamesByUser(u);
+    }
 }

@@ -36,11 +36,11 @@ public class KostController {
     DeelnameService deelnameService;
 
 
-    @RequestMapping(value = "/kost/manageKosts", method = RequestMethod.GET)
+    @RequestMapping(value = "/kost/kostManagment", method = RequestMethod.GET)
     public ModelAndView manageKosts(HttpServletRequest request, HttpServletResponse response) {
 
-        request.setAttribute("Trips", tripService.listUserParticipateTrips(userService.getCurrentUser().getUserID()));
-        ModelAndView model = new ModelAndView("Kost/ManageKosts");
+        request.setAttribute("deelnames", deelnameService.getDeelnamesByUser(userService.getCurrentUser()));
+        ModelAndView model = new ModelAndView("Kost/kostManagment");
         return model;
     }
 
