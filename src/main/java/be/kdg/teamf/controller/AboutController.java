@@ -19,8 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AboutController {
 
     @RequestMapping(method = RequestMethod.GET)
-        public ModelAndView handleRequestInternal(HttpServletRequest request,
-                                                     HttpServletResponse response){
+        public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response){
 
             ModelAndView model = new ModelAndView("General/about");
 
