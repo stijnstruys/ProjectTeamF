@@ -34,7 +34,7 @@
 
 %>
 <section id="content">
-
+    <h2>My Costs</h2>
     <c:if test="${!empty deelnames}">
         <ul class="trip_list">
             <c:forEach items="${deelnames}" var="deelname">
@@ -48,14 +48,14 @@
 
 
 
-                        <c:set var="totaal" value="0"></c:set>
+                    <c:set var="totaal" value="0"></c:set>
 
-                        <c:forEach items="${deelname.kosten}" var="kost">
+                    <c:forEach items="${deelname.kosten}" var="kost">
 
 
-                                <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
+                        <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
 
-                        </c:forEach>
+                    </c:forEach>
 
 
                     <div>Totale kost: ${totaal} €
