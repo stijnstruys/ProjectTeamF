@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Kost per Trip</title>
+    <title><spring:message code="label.costAdminTitle"/></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
@@ -30,7 +30,7 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Kosten voor trip ${trip.tripName}</h2>
+    <h2><spring:message code="label.costTripTitle"/> ${trip.tripName}</h2>
     <c:if test="${!empty deelnames}">
 
         <table>

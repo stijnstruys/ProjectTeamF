@@ -58,7 +58,7 @@
                         </c:forEach>
 
 
-                    <div>Totale kost: ${totaal} €
+                    <div><spring:message code="label.totalCost"/>: ${totaal} €
 
 
                     </div>

@@ -30,13 +30,13 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Kosten voor trip ${trip.tripName}</h2>
+    <h2><spring:message code="label.costTripTitle"/> ${trip.tripName}</h2>
     <c:if test="${!empty deelname.kosten}">
 
         <c:set var="totaal" value="0"></c:set>
         <table>
-            <th>Beschrijving</th>
-            <th>Prijs</th>
+            <th><spring:message code="label.costDescription"/></th>
+            <th><spring:message code="label.costPrice"/></th>
             <c:forEach items="${deelname.kosten}" var="kost">
                 <%--<c:if test="${deelnameUser.username == currentUser}">--%>
 
@@ -55,7 +55,7 @@
         <br />
     </c:if>
     <div>
-        Totale kost: ${totaal}
+        <spring:message code="label.totalCost"/>: ${totaal}
     </div>
     <div>
         <form action="/ProjectTeamF-1.0/kost/addKost${trip.tripId}.html">

@@ -30,17 +30,17 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2>Add Kost</h2>
+    <h2><spring:message code="label.addKost"/></h2>
     <form:form method="post" class="form-horizontal" action="add.html" commandName="kost" id="kost">
               <input type="hidden" name="tripId" value="${trip.tripId}">
         <div class="control-group">
-            <form:label class="control-label"  path="beschrijving">beschrijving</form:label>
+            <form:label class="control-label"  path="beschrijving"><spring:message code="label.costDescription"/></form:label>
             <div class="controls">
                 <form:input type="text" path="beschrijving"/>
             </div>
         </div>
         <div class="control-group">
-            <form:label class="control-label"  path="prijs">prijs</form:label>
+            <form:label class="control-label"  path="prijs"><spring:message code="label.costPrice"/></form:label>
             <div class="controls">
                 <form:input type="text" path="prijs"/>
             </div>
