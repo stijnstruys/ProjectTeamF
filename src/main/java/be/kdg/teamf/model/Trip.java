@@ -95,9 +95,7 @@ public class Trip {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
-    @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
-    private Collection<Kost> kosten;
+
 
     public Trip() {
     }
@@ -263,11 +261,5 @@ public class Trip {
         this.showRoute = showRoute;
     }
 
-    public Collection<Kost> getKosten() {
-        return kosten;
-    }
 
-    public void setKosten(Collection<Kost> kosten) {
-        this.kosten = kosten;
-    }
 }

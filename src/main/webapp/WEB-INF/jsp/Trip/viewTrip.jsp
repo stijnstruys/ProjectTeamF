@@ -76,7 +76,8 @@
                                 <input class="btn btn-success btn_green_right" type="submit"
                                        value="<spring:message code="label.leaveTrip"/>">
                             </form>
-                            <form action="/kost/manageKosts.html">
+                            <form action="/ProjectTeamF-1.0/kost/kostenPerTrip.html" method="post">
+                                <input type="hidden" value="${trip.tripId}" name="tripId" id="tripId">
                                 <input class="btn btn-success btn_green_right" type="submit"
                                        value="Manage Kosten">
                             </form>

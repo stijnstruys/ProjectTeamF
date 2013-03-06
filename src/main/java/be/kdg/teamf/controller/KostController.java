@@ -1,7 +1,9 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Kost;
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.service.DeelnameService;
 import be.kdg.teamf.service.KostService;
 import be.kdg.teamf.service.TripService;
 import be.kdg.teamf.service.UserService;
@@ -30,6 +32,8 @@ public class KostController {
     TripService tripService;
     @Autowired
     UserService userService;
+    @Autowired
+    DeelnameService deelnameService;
 
 
     @RequestMapping(value = "/kost/manageKosts", method = RequestMethod.GET)
@@ -53,8 +57,8 @@ public class KostController {
     @RequestMapping(value = "/kost/add", method = RequestMethod.POST)
     public String addKost(@ModelAttribute("kost") Kost kost, @RequestParam("tripId") int tripId, @RequestParam("userId") int userId , BindingResult result, HttpServletRequest request) {
 
-        kost.setTrip(tripService.findTrip(tripId));
-        kost.setUser(userService.findUser(userId));
+        kost.setDeelname(deelnameService.findDeelname(tripService.findTrip(tripId), userService.getCurrentUser()));
+
 
         kostService.addKost(kost);
         return "manageKosts.html";
@@ -67,11 +71,13 @@ public class KostController {
     }
 
     @RequestMapping(value = "/kost/kostenPerTrip", method = RequestMethod.POST)
-    public String kostenPerTrip(@RequestParam("tripId") int tripId, BindingResult result, HttpServletRequest request) {
-        Trip t = tripService.findTrip(tripId);
-        request.setAttribute("trip",t);
+    public ModelAndView kostenPerTrip(@RequestParam("tripId") int tripId, HttpServletRequest request) {
 
+        Deelname d = deelnameService.findDeelname(tripService.findTrip(tripId),userService.getCurrentUser());
+        request.setAttribute("deelname",d);
+        request.setAttribute("deelnameUser",d.getUser());
+        ModelAndView model = new ModelAndView("Kost/kostenPerTrip");
 
-        return "manageKosts.html";
+        return model;
     }
 }

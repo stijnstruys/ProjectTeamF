@@ -28,11 +28,7 @@ public class Kost {
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private User user;
-
-    @ManyToOne
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Trip trip;
+    private Deelname deelname;
 
     public Kost() {
     }
@@ -61,19 +57,11 @@ public class Kost {
         this.prijs = prijs;
     }
 
-    public User getUser() {
-        return user;
+    public Deelname getDeelname() {
+        return deelname;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Trip getTrip() {
-        return trip;
-    }
-
-    public void setTrip(Trip trip) {
-        this.trip = trip;
+    public void setDeelname(Deelname deelname) {
+        this.deelname = deelname;
     }
 }

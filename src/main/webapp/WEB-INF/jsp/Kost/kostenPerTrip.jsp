@@ -30,17 +30,13 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-
-
-
-
-    <c:if test="${!empty trip.kosten}">
+    <c:if test="${!empty deelname.kosten}">
 
         <c:set var="totaal" value="0"></c:set>
 
-        <c:forEach items="${trip.kosten}" var="kost">
+        <c:forEach items="${deelname.kosten}" var="kost">
 
-            <c:if test="${kost.user.userID == currentUser.userID}">
+            <c:if test="${deelnameUser.username == currentUser}">
                 <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
             </c:if>
         </c:forEach>
@@ -49,9 +45,12 @@
     <div>
         Totale kost: ${totaal}
     </div>
+    <div>
+        <form action="/ProjectTeamF-1.0/kost/addKost/${trip.tripId}.html">
 
-
-
+            <input type="submit" class="btn" value="Add kost">
+        </form>
+    </div>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 

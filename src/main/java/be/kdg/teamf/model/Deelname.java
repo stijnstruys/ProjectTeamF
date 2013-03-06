@@ -3,6 +3,7 @@ package be.kdg.teamf.model;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Collection;
@@ -35,6 +36,10 @@ public class Deelname {
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
     @Column(name="Equipment")
     private Collection<String> equipment;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("deelname"))
+    private Collection<Kost> kosten;
 
     public Deelname() {
     }
@@ -75,4 +80,13 @@ public class Deelname {
     public void setEquipment(Collection<String> userEquipment) {
         this.equipment = userEquipment;
     }
+
+    public Collection<Kost> getKosten() {
+        return kosten;
+    }
+
+    public void setKosten(Collection<Kost> kosten) {
+        this.kosten = kosten;
+    }
+
 }

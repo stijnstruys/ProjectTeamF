@@ -63,10 +63,6 @@ public class User implements Serializable , UserDetails{
     private Collection<Deelname> deelnames;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
-    private Collection<Kost> kosten;
-
-    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("organiser"))
     private Collection<Trip> trips;
 
@@ -257,13 +253,6 @@ public class User implements Serializable , UserDetails{
         this.profielFoto = profielFoto;
     }
 
-    public Collection<Kost> getKosten() {
-        return kosten;
-    }
-
-    public void setKosten(Collection<Kost> kosten) {
-        this.kosten = kosten;
-    }
 
     /*  @Override
     public boolean equals(Object o) {
