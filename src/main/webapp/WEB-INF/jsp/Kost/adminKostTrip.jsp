@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kost per trip</title>
+    <title>Admin Kost per Trip</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
@@ -31,38 +31,33 @@
 
 <section id="content">
     <h2>Kosten voor trip ${trip.tripName}</h2>
-    <c:if test="${!empty deelname.kosten}">
+    <c:if test="${!empty deelnames}">
 
-        <c:set var="totaal" value="0"></c:set>
         <table>
-            <th>Beschrijving</th>
-            <th>Prijs</th>
-            <c:forEach items="${deelname.kosten}" var="kost">
-                <%--<c:if test="${deelnameUser.username == currentUser}">--%>
+            <th>Naam</th>
+            <th>Totale Kost</th>
+            <c:forEach items="${deelnames}" var="deelname">
 
-                <tr>
-                    <td>
-                            ${kost.beschrijving}
-                    </td>
-                    <td>
-                            € ${kost.prijs}
-                    </td>
-                </tr>
-                <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
-                <%-- </c:if>--%>
+                <c:if test="${!empty deelname.kosten }">
+                    <tr>
+                        <td>
+                                ${deelname.user.firstName} ${deelname.user.lastName}
+                        </td>
+                        <c:set var="totaal" value="0"></c:set>
+                        <c:forEach items="${deelname.kosten}" var="kost">
+                            <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
+                        </c:forEach>
+                        <td>
+                                ${totaal}
+
+                        </td>
+                    </tr>
+                </c:if>
             </c:forEach>
         </table>
         <br />
     </c:if>
-    <div>
-        Totale kost: ${totaal}
-    </div>
-    <div>
-        <form action="/ProjectTeamF-1.0/kost/addKost${trip.tripId}.html">
 
-            <input type="submit" class="btn" value="Add kost">
-        </form>
-    </div>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 
