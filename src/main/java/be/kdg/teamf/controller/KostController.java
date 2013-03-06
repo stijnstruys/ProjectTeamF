@@ -78,11 +78,11 @@ public class KostController {
         kostService.addKost(kost);
         return "redirect:/kost/kostenPerTrip" + tripId + ".html";
     }
-    @RequestMapping(value = "/kost/delete", method = RequestMethod.POST)
-    public String deleteKost(@RequestParam("kostId") int kostId, BindingResult result, HttpServletRequest request) {
-
-        kostService.deleteKost(kostService.findKost(kostId));
-        return "manageKosts.html";
+    @RequestMapping(value = "/kost/delete{kostId}", method = RequestMethod.GET)
+    public String deleteKost(@PathVariable("kostId") int kostId, BindingResult result, HttpServletRequest request) {
+        Kost k = kostService.findKost(kostId);
+        kostService.deleteKost(k);
+        return "redirect:/kost/kostenPerTrip" + k.getDeelname().getTrip().getTripId() + ".html";
     }
 
     @RequestMapping(value = "/kost/kostenPerTrip{tripId}", method = RequestMethod.GET)

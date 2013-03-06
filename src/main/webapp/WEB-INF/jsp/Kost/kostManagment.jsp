@@ -46,20 +46,12 @@
                     <div class="trip_name">${deelname.trip.tripName}</div>
                     <div class="trip_description">${deelname.trip.tripDescription}</div>
 
-
-
                     <c:set var="totaal" value="0"></c:set>
-
                     <c:forEach items="${deelname.kosten}" var="kost">
-
-
                         <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
-
                     </c:forEach>
 
-
                     <div>Totale kost: ${totaal} €
-
 
                     </div>
                     <div class="trip_extra">
