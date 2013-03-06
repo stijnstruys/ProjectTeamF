@@ -68,6 +68,11 @@
                     </c:forEach>
                 </select>
             </div>
+            <section id="description">
+                <section id="descriptionType1" class="descriptionTypes"><spring:message code="label.tripTypeDescription1"/></section>
+                <section id="descriptionType2" class="descriptionTypes"><spring:message code="label.tripTypeDescription2"/></section>
+                <section id="descriptionType3" class="descriptionTypes"><spring:message code="label.tripTypeDescription3"/></section>
+            </section>
         </div>
     </div>
     </div>

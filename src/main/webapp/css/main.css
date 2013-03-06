@@ -585,3 +585,14 @@ a.trip_name:hover {
 .cat-span {
     margin-left: 15px;
 }
+
+/*triptype*/
+
+.descriptionTypes {
+   display: none;
+}
+
+#description {
+    text-align: center;
+    margin-top: 2em;
+}
