@@ -581,18 +581,121 @@ a.trip_name:hover {
     min-width: 12em;
 }
 
+.manageBtn2 {
+    min-width: 10em;
+}
+
 /*categorieen */
 .cat-span {
     margin-left: 15px;
 }
 
+.catName {
+    min-width: 10em;
+    text-align: left;
+}
+
 /*triptype*/
 
 .descriptionTypes {
-   display: none;
+    display: none;
 }
 
 #description {
     text-align: center;
     margin-top: 2em;
+}
+
+/* form-horizontal */
+
+.form-horizontal {
+    margin-top: 2em;
+}
+
+/*costs*/
+
+.costs {
+    min-width: 12em;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.costs2 {
+    min-width: 3em;
+    text-align: left;
+}
+
+.total {
+    font-weight: bold;
+    border-top-style: solid;
+    border-top-width: 1.5px;
+}
+
+.total2 {
+    font-size: 1.15em;
+    font-weight: bold;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.costTable {
+    min-width: 70%;
+}
+
+.costTable2 {
+    min-width: 66.5%;
+}
+
+#costsCol1 {
+    width: 15%;
+
+    -webkit-border-top-left-radius: 0.5em;
+    -khtml-border-top-left-radius: 0.5em;
+    -moz-border-top-left-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-bottom-left-radius: 0.5em;
+    -khtml-border-bottom-left-radius: 0.5em;
+    -moz-border-bottom-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+
+#costsCol1kpt {
+    width: 57.5%;
+    -webkit-border-top-left-radius: 0.5em;
+    -khtml-border-top-left-radius: 0.5em;
+    -moz-border-top-left-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-bottom-left-radius: 0.5em;
+    -khtml-border-bottom-left-radius: 0.5em;
+    -moz-border-bottom-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+#costsCol2kpt {
+    width: 17.5%;
+}
+
+
+
+th.costs {
+    color: #9CFF00;
+    background-color: #455268;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+}
+
+th.costs2 {
+    color: #9CFF00;
+    background-color: #455268;
+
+    -webkit-border-bottom-right-radius: 0.5em;
+    -khtml-border-bottom-right-radius: 0.5em;
+    -moz-border-bottom-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    -webkit-border-bottom-right-radius: 0.5em;
+    -khtml-border-top-right-radius: 0.5em;
+    -moz-border-top-right-radius: 0.5em;
+    border-top-right-radius: 0.5em;
 }

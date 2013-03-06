@@ -49,12 +49,12 @@
         <c:if test="${!empty trip.tripCategorieen}">
             <table class="data">
                 <tr>
-                    <th><spring:message code="label.tripCategoryName"/></th>
+                    <th class="catName"><spring:message code="label.tripCategoryName"/></th>
                     <th>&nbsp;</th>
                 </tr>
                 <c:forEach items="${trip.tripCategorieen}" var="tripCategorie">
                     <tr>
-                        <td>${tripCategorie.tripCategorieName} </td>
+                        <td class="catName">${tripCategorie.tripCategorieName} </td>
                         <td>
                             <button class="btn btn-small"
                                     onClick="location.href='/ProjectTeamF-1.0/TripCategorie/update-${tripCategorie.tripCategorieId}.html'">

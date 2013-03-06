@@ -87,7 +87,9 @@
                 <form:input id="TripStartD" class="datepicker" readonly="true" style="cursor: text;" path="startDate" type="text" value="${1900 + trip.startDate.year}/${1 + trip.startDate.month}/${trip.startDate.date}"/>
             </div>
         </div>
-
+        </c:if>
+    <a href="/ProjectTeamF-1.0/kost/adminKostTrip${trip.tripId}.html" class="btn btn-success float_right manageBtn" id="KostOverview" ><spring:message code="label.CostOverview"/></a>
+    <c:if test="${3 != trip.tripType.tripTypeId}">
         <div class="control-group">
             <form:label id="labelTripEndD" class="control-label"  path="endDate"><spring:message code="label.endDate"/></form:label>
             <div class="controls">
@@ -95,7 +97,6 @@
             </div>
         </div>
     </c:if>
-    <a href="/ProjectTeamF-1.0/kost/adminKostTrip${trip.tripId}.html" class="btn btn-success float_right manageBtn" id="ManageStoppingPoints" >Manage Kosten</a>
 
     <div class="control-group">
         <form:label id="labelTripDescr" class="control-label"  path="tripDescription"><spring:message code="label.tripDescription"/></form:label>

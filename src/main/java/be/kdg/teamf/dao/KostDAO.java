@@ -15,6 +15,7 @@ import java.util.List;
  */
 public interface KostDAO {
     public void addKost(Kost kost);
+    public void updateKost(Kost kost);
     public void deleteKost(Kost kost);
     public List<Kost> kostenPerUser(User u);
     public List<Kost> kostenPerTrip(Trip t);

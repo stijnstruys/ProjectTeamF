@@ -27,6 +27,11 @@ public class KostServiceImpl implements KostService {
     }
 
     @Override
+    public void updateKost(Kost kost) {
+        kostDAO.updateKost(kost);
+    }
+
+    @Override
     public void deleteKost(Kost kost) {
         kostDAO.deleteKost(kost);
     }

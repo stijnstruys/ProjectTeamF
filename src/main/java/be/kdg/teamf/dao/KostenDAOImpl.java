@@ -31,6 +31,11 @@ public class KostenDAOImpl implements KostDAO {
     }
 
     @Override
+    public void updateKost(Kost kost) {
+        sessionFactory.getCurrentSession().update(kost);
+    }
+
+    @Override
     public void deleteKost(Kost kost) {
         sessionFactory.getCurrentSession().delete(kost);
     }

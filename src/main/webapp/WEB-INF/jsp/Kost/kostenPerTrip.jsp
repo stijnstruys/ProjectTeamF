@@ -14,12 +14,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kost per trip</title>
+    <title><spring:message code="label.costTripTitle"/> ${trip.tripName}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
+    <link rel="shortcut icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -30,39 +30,69 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
-    <h2><spring:message code="label.costTripTitle"/> ${trip.tripName}</h2>
-    <c:if test="${!empty deelname.kosten}">
+    <section class="tripPages">
+        <h2><spring:message code="label.costTripTitle"/> ${trip.tripName}</h2>
+        <form:form method="post" class="form-horizontal" action="add.html" commandName="kost" id="kost">
+            <input type="hidden" name="tripId" value="${trip.tripId}">
 
-        <c:set var="totaal" value="0"></c:set>
-        <table>
-            <th><spring:message code="label.costDescription"/></th>
-            <th><spring:message code="label.costPrice"/></th>
-            <c:forEach items="${deelname.kosten}" var="kost">
-                <%--<c:if test="${deelnameUser.username == currentUser}">--%>
+            <div class="control-group">
+                <form:label class="control-label" path="beschrijving"><spring:message
+                        code="label.costDescription"/></form:label>
+                <div class="controls">
+                    <form:input type="text" path="beschrijving"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <form:label class="control-label" path="prijs"><spring:message code="label.costPrice"/></form:label>
+                <div class="controls">
+                    <form:input type="text" path="prijs"/>
+                </div>
+            </div>
+            <input type="submit" value="<spring:message code="label.addKost"/>" class="btn controls">
+        </form:form>
+        <c:if test="${!empty deelname.kosten}">
 
+            <c:set var="totaal" value="0"></c:set>
+            <table class="costTable2">
+                <th class="costs" id="costsCol1kpt"><spring:message code="label.costDescription"/></th>
+                <th class="costs2" id="costsCol2kpt"><spring:message code="label.costPrice"/></th>
+                <c:forEach items="${deelname.kosten}" var="kost">
+                    <%--<c:if test="${deelnameUser.username == currentUser}">--%>
+
+                    <tr>
+                        <td class="costs">
+                                ${kost.beschrijving}
+                        </td>
+                        <td class="costs2">
+                            € ${kost.prijs}
+                        </td>
+                        <td>
+                            <button class="btn btn-small"
+                                    onClick="location.href='/ProjectTeamF-1.0/kost/update-${kost.kostId}.html'">
+                                <spring:message
+                                        code="label.update"/></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-inverse btn-small"
+                                    onClick="location.href='/ProjectTeamF-1.0/kost/delete/${kost.kostId}.html'">
+                                <spring:message code="label.Delete"/></button>
+                        </td>
+                    </tr>
+                    <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
+                    <%-- </c:if>--%>
+                </c:forEach>
                 <tr>
-                    <td>
-                            ${kost.beschrijving}
-                    </td>
-                    <td>
-                        € ${kost.prijs}
-                    </td>
+                    <td>&nbsp</td>
                 </tr>
-                <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
-                <%-- </c:if>--%>
-            </c:forEach>
-        </table>
-        <br />
-    </c:if>
-    <div>
-        <spring:message code="label.totalCost"/>: ${totaal}
-    </div>
-    <div>
-        <form action="/ProjectTeamF-1.0/kost/addKost${trip.tripId}.html">
+                <tr>
+                    <td class="total"><spring:message code="label.totalCost"/>:</td>
+                    <td class="total"> € ${totaal}</td>
+                </tr>
+            </table>
+            <br/>
+        </c:if>
 
-            <input type="submit" class="btn" value="Add kost">
-        </form>
-    </div>
+    </section>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 

@@ -67,21 +67,20 @@
                     </td>
                     <td><c:if test="${registered != true}">
                         <form action="join/${trip.tripId}.html">
-                            <input class="btn btn-success btn_green_right" type="submit"
+                            <input class="btn btn-success btn_green_right manageBtn2" type="submit"
                                    value="<spring:message code="label.join"/>">
                         </form>
                     </c:if>
                         <c:if test="${registered == true}">
                             <form action="leave/${trip.tripId}.html">
-                                <input class="btn btn-success btn_green_right" type="submit"
+                                <input class="btn btn-success btn_green_right manageBtn2" type="submit"
                                        value="<spring:message code="label.leaveTrip"/>">
                             </form>
                             <br />
                             <form action="/ProjectTeamF-1.0/kost/kostenPerTrip${trip.tripId}.html">
-                                <input class="btn btn-success btn_green_right" type="submit"
+                                <input class="btn btn-success btn_green_right manageBtn2" type="submit"
                                        value="<spring:message code="label.ManageCosts"/>">
                              </form>
-
                         </c:if></td>
                 </tr>
                 <tr>

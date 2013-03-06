@@ -69,7 +69,7 @@
                                                 class="icon-tags pull-right"></i></a></li>
                                         <li><a href="/ProjectTeamF-1.0/user/myTrips.html" id="myTripsLink"><spring:message code="label.MyTrips"/> <i
                                                 class="icon-calendar pull-right"></i></a></li>
-                                        <li><a href="/ProjectTeamF-1.0/kost/kostManagment.html" id="costLink"><spring:message code="label.MyKost"/> <i
+                                        <li><a href="/ProjectTeamF-1.0/kost/kostManagement.html" id="costLink"><spring:message code="label.MyKost"/> <i
                                                 class="icon-list-alt pull-right"></i></a></li>
                                         <li class="divider"></li>
                                         <li><a href="/ProjectTeamF-1.0/j_spring_security_logout" id="logoutLink" ><spring:message code="label.LogOut"/> <i

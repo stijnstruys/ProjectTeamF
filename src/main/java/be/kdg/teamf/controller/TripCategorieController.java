@@ -68,8 +68,6 @@ public class TripCategorieController {
     @RequestMapping("/TripCategorie/update-{tripCategorieId}")
     public ModelAndView updateTripCategoriePage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripCategorieId") int tripCategorieId) throws Exception {
 
-
-
         TripCategorie tc = tripCategorieService.findTripCategorie(tripCategorieId);
         request.setAttribute("tripCategorie", tc);
         request.setAttribute("tripID", tc.getTrip().getTripId());
