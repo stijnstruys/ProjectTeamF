@@ -64,7 +64,7 @@ public class KostController {
 
 
         kostService.addKost(kost);
-        return "redirect:/trip/" + t.getTripId() + ".html";
+        return "redirect:/kost/kostenPerTrip" + tripId + ".html";
     }
     @RequestMapping(value = "/kost/delete", method = RequestMethod.POST)
     public String deleteKost(@RequestParam("kostId") int kostId, BindingResult result, HttpServletRequest request) {
@@ -78,7 +78,6 @@ public class KostController {
 
         Deelname d = deelnameService.findDeelname(tripService.findTrip(tripId),userService.getCurrentUser());
         request.setAttribute("deelname",d);
-        request.setAttribute("deelnameUser",d.getUser());
         request.setAttribute("trip",d.getTrip());
         ModelAndView model = new ModelAndView("Kost/kostenPerTrip");
 

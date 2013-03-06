@@ -7,6 +7,7 @@
 
     <http auto-config="true">
         <intercept-url pattern="/user/myTrips*.html" access="ROLE_USER" />
+        <intercept-url pattern="/kost/*.html" access="ROLE_USER" />
         <intercept-url pattern="/user/profile*.html" access="ROLE_USER" />
         <intercept-url pattern="/user/admincp-*.html" access="ROLE_USER" />
         <intercept-url pattern="/TripParticipants/*.html" access="ROLE_USER" />
