@@ -45,7 +45,7 @@
                             ${kost.beschrijving}
                     </td>
                     <td>
-                            € ${kost.prijs}
+                        € ${kost.prijs}
                     </td>
                 </tr>
                 <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>

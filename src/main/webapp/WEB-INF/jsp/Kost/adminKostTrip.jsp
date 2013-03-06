@@ -48,8 +48,7 @@
                             <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
                         </c:forEach>
                         <td>
-                                ${totaal}
-
+                               € ${totaal}
                         </td>
                     </tr>
                 </c:if>
