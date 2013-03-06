@@ -79,7 +79,7 @@
                             <br />
                             <form action="/ProjectTeamF-1.0/kost/kostenPerTrip${trip.tripId}.html">
                                 <input class="btn btn-success btn_green_right" type="submit"
-                                       value="Manage Kosten">
+                                       value="<spring:message code="label.ManageCosts"/>">
                              </form>
 
                         </c:if></td>
