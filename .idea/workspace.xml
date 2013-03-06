@@ -8,15 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Kost/kostenPerTrip.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/KostController.java" afterPath="$PROJECT_DIR$/src/main/java/be/kdg/teamf/controller/KostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProjectTeamF.iml" afterPath="$PROJECT_DIR$/ProjectTeamF.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="caa60890-c8f1-456d-a7fa-d42be0cb3f17" name="New changelist" comment="" />
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362557643671" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362558037158" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882804663" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -228,7 +225,7 @@
       <file leaf-file-name="kostenPerTrip.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Kost/kostenPerTrip.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="72" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.15111111">
+            <state line="39" column="67" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.30222222">
               <folding />
             </state>
           </provider>
@@ -1517,7 +1514,11 @@
       <created>1362557666243</created>
       <updated>1362557666243</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="opkuisen">
+      <created>1362558041200</created>
+      <updated>1362558041200</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1775,7 +1776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Kost/kostenPerTrip.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="72" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.15111111">
+        <state line="39" column="67" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.30222222">
           <folding />
         </state>
       </provider>
