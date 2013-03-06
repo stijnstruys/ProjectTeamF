@@ -46,19 +46,19 @@
                     <div class="trip_name">${deelname.trip.tripName}</div>
                     <div class="trip_description">${deelname.trip.tripDescription}</div>
 
-                    <%--<c:if test="${!empty trip.de}">
+
 
                         <c:set var="totaal" value="0"></c:set>
 
-                        <c:forEach items="${trip.kosten}" var="kost">
+                        <c:forEach items="${deelname.kosten}" var="kost">
 
-                            <c:if test="${kost.user.userID == currentUser.userID}">
+
                                 <c:set var="totaal" value="${totaal + kost.prijs}"></c:set>
-                            </c:if>
+
                         </c:forEach>
 
-                    </c:if>
-                    <div>Totale kost: ${totaal}--%>
+
+                    <div>Totale kost: ${totaal} €
 
 
                     </div>
@@ -77,7 +77,7 @@
             </c:forEach>
         </ul>
     </c:if>
-
+    <div class="float_fix"></div>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 
