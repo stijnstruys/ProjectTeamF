@@ -44,6 +44,18 @@ public class KostController {
         return model;
     }
 
+    @RequestMapping(value = "/kost/adminKostTrip{tripId}", method = RequestMethod.GET)
+    public ModelAndView adminKostTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripId") int tripId) {
+
+        Trip t = tripService.findTrip(tripId);
+
+        request.setAttribute("deelnames",deelnameService.getDeelnames(t));
+        request.setAttribute("trip", t);
+
+        ModelAndView model = new ModelAndView("Kost/adminKostTrip");
+        return model;
+    }
+
     @RequestMapping(value = "/kost/addKost{tripID}", method = RequestMethod.GET)
     public ModelAndView addKostPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) {
 
