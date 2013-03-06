@@ -101,8 +101,47 @@ $(document).ready(function () {
             }
         }
     });
+    /* kost validatie */
+    $("#addKost").click(function () {
+        errormsg = "";
+        $("#validation_failed").css("visibility", "hidden");
+        $("#validation_failed")
+            .hide()
+            .html("");
+        if (validateKost()) {
+            $("#kostPrijs").val(Math.round( $("#kostPrijs").val()*100)/100);
+            $("#addKost").submit();
+        }
+        else {
+            $("#validation_failed").css("visibility", "visible");
+            $("#validation_failed")
+                .show()
+                .html("<ul>" + errormsg + "</ul>");
+            return false;
+        }
+    });
 
-    //$("").
+    $("#updateKost").click(function () {
+        errormsg = "";
+               $("#validation_failed").css("visibility", "hidden");
+               $("#validation_failed")
+                   .hide()
+                   .html("");
+               if (validateKost()) {
+                   $("#kostPrijs").val(Math.round( $("#kostPrijs").val()*100)/100);
+                   $("#addKost").submit();
+               }
+               else {
+                   $("#validation_failed").css("visibility", "visible");
+                   $("#validation_failed")
+                       .show()
+                       .html("<ul>" + errormsg + "</ul>");
+                   return false;
+               }
+    });
+
+
+//$("").
 
     $("#TripEndD").datepicker({
         dateFormat: 'yy/mm/dd',
@@ -116,7 +155,7 @@ $(document).ready(function () {
         }
     });
 
-    //notification
+//notification
     $("#dialog-message-languages").dialog({
         autoOpen: false,
         width: 'auto',
@@ -127,7 +166,7 @@ $(document).ready(function () {
         }
     });
 
-    //mail
+//mail
     $("#skip").click(function () {
         $("#viewTripForm").submit();
     });
@@ -153,7 +192,7 @@ $(document).ready(function () {
     });
 
     var test = $("hiddenNameList").val();
-    // alert(test);
+// alert(test);
 });
 
 function addTrip() {
@@ -331,6 +370,23 @@ function addTrip() {
         return true;
     }
 
+}
+
+// kost validatie
+function validateKost() {
+    if ($("#kostBeschrijving").val() == "") {
+        errormsg += "<li>Please enter a description</li>";
+        return false;
+    }
+    else if ($("#kostPrijs").val() == "") {
+        errormsg += "<li>Please enter a price</li>";
+        return false;
+    }
+    else if (isNaN($("#kostPrijs").val())) {
+        errormsg += "<li>Please enter a valid price</li>";
+        return false;
+    }
+    return true;
 }
 
 function trippages() {

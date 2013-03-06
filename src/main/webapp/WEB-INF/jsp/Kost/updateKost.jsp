@@ -31,31 +31,33 @@
 
 <section id="content">
     <section class="tripPages">
-    <h2><spring:message code="label.updateCost"/></h2>
+        <h2><spring:message code="label.updateCost"/></h2>
 
-    <form:form method="post" action="update/${kost.kostId}.html" commandName="kost"
-               id="kost">
-        <table>
-            <tr>
-                <td><form:hidden path="kostId"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="beschrijving"><spring:message
-                        code="label.costDescription"/></form:label></td>
-                <td><form:input path="beschrijving"/></td>
-            </tr>
-            <tr>
-                <td><form:label path="prijs"><spring:message
-                        code="label.costPrice"/></form:label></td>
-                <td><form:input path="prijs"/></td>
-            </tr>
-            <td>
-                <input type="submit" class="btn" value="<spring:message code="label.updateCost"/>"/>
-            </td>
-            </tr>
-        </table>
-    </form:form>
-</section>    </section>
+        <div id="validation_failed"></div>
+        <form:form method="post" action="update/${kost.kostId}.html" commandName="kost"
+                   id="kost" onsubmit="false">
+            <table>
+                <tr>
+                    <td><form:hidden path="kostId"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="beschrijving"><spring:message
+                            code="label.costDescription"/></form:label></td>
+                    <td><form:input id="kostBeschrijving" path="beschrijving"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="prijs"><spring:message
+                            code="label.costPrice"/></form:label></td>
+                    <td><form:input id="kostPrijs" path="prijs"/></td>
+                </tr>
+                <td>
+                    <input type="submit" id="updateKost" class="btn" value="<spring:message code="label.updateCost"/>"/>
+                </td>
+                </tr>
+            </table>
+        </form:form>
+    </section>
+</section>
 <jsp:include page="../General/footer.jsp"/>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -64,6 +66,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/validation.js"></script>
 <script src="../js/social/FBLogin.js"></script>
 
 

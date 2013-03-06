@@ -32,23 +32,26 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.costTripTitle"/> ${trip.tripName}</h2>
-        <form:form method="post" class="form-horizontal" action="add.html" commandName="kost" id="kost">
+
+        <div id="validation_failed"></div>
+        <form:form method="post" class="form-horizontal" action="add.html" commandName="kost" id="kost"
+                   onsubmit="false">
             <input type="hidden" name="tripId" value="${trip.tripId}">
 
             <div class="control-group">
                 <form:label class="control-label" path="beschrijving"><spring:message
                         code="label.costDescription"/></form:label>
                 <div class="controls">
-                    <form:input type="text" path="beschrijving"/>
+                    <form:input type="text" id="kostBeschrijving" path="beschrijving"/>
                 </div>
             </div>
             <div class="control-group">
                 <form:label class="control-label" path="prijs"><spring:message code="label.costPrice"/></form:label>
                 <div class="controls">
-                    <form:input type="text" path="prijs"/>
+                    <form:input type="text" id="kostPrijs" path="prijs"/>
                 </div>
             </div>
-            <input type="submit" value="<spring:message code="label.addKost"/>" class="btn controls">
+            <input type="submit" id="addKost" value="<spring:message code="label.addKost"/>" class="btn controls">
         </form:form>
         <c:if test="${!empty deelname.kosten}">
 
@@ -102,6 +105,7 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/validation.js"></script>
 <script src="../js/social/FBLogin.js"></script>
 
 
