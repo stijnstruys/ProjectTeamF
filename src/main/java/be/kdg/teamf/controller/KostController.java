@@ -66,4 +66,12 @@ public class KostController {
         return "manageKosts.html";
     }
 
+    @RequestMapping(value = "/kost/kostenPerTrip", method = RequestMethod.POST)
+    public String kostenPerTrip(@RequestParam("tripId") int tripId, BindingResult result, HttpServletRequest request) {
+        Trip t = tripService.findTrip(tripId);
+        request.setAttribute("trip",t);
+
+
+        return "manageKosts.html";
+    }
 }
