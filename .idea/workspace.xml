@@ -8,12 +8,116 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="128dad76-2461-41c2-ba59-784eb59ec0f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\ant.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\artifacts\ProjectTeamF_war.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\artifacts\ProjectTeamF_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\copyright\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\inspectionProfiles\Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\inspectionProfiles\profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\JPA_2_0_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__antlr_antlr_2_7_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__cglib_cglib_nodep_2_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__com_google_guava_guava_13_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_beanutils_commons_beanutils_1_7_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_chain_commons_chain_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_codec_commons_codec_1_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_collections_commons_collections_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_dbcp_commons_dbcp_1_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_digester_commons_digester_1_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_fileupload_commons_fileupload_1_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_io_commons_io_1_3_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_lang_commons_lang_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_pool_commons_pool_1_5_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__commons_validator_commons_validator_1_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__javassist_javassist_3_12_1_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__javax_activation_activation_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__javax_mail_mail_1_4_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__javax_servlet_jstl_1_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__javax_servlet_servlet_api_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__javax_transaction_jta_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__jstl_jstl_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__junit_junit_4_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__mysql_mysql_connector_java_5_1_21.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__net_java_dev_jna_jna_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__net_java_dev_jna_platform_3_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_commons_commons_exec_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_geronimo_specs_geronimo_jpa_2_0_spec_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_httpcomponents_httpclient_4_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_httpcomponents_httpcore_4_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_struts_struts_core_1_3_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_struts_struts_taglib_1_3_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_struts_struts_tiles_1_3_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_velocity_velocity_1_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_apache_velocity_velocity_tools_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_aspectj_aspectjrt_1_6_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_cloudfoundry_cloudfoundry_runtime_0_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_codehaus_jackson_jackson_core_asl_1_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_codehaus_jackson_jackson_mapper_asl_1_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_hamcrest_hamcrest_library_1_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_hibernate_hibernate_commons_annotations_3_2_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_hibernate_hibernate_core_3_6_10_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_json_json_20080701.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_api_2_28_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_chrome_driver_2_28_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_remote_driver_2_28_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_seleniumhq_selenium_selenium_support_2_28_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_slf4j_jcl_over_slf4j_1_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_slf4j_slf4j_api_1_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_amqp_spring_amqp_1_1_3_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_data_spring_data_commons_core_1_1_0_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_data_spring_data_jpa_1_0_1_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_security_spring_security_acl_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_security_spring_security_config_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_security_spring_security_core_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_security_spring_security_taglibs_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_security_spring_security_web_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_aop_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_asm_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_beans_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_context_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_context_support_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_core_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_expression_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_jdbc_3_0_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_orm_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_test_3_2_1_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_test_mvc_1_0_0_M1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_tx_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_web_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__org_springframework_spring_webmvc_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__oro_oro_2_0_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__sslext_sslext_1_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\Maven__taglibs_standard_1_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\hibernate_4_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\jsf_2_0_1_FCS.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\jsf_primefaces_3_4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_3_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_batch_2_1_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_data_jpa_1_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_integration_2_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_mvc_3_1_2_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_security_3_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_webflow_2_3_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\libraries\spring_ws_2_0_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\webContexts.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Jorne\Documents\School Jaar 3\Software Development\Project\ProjectTeamF\.idea\workspace.xml" afterPath="" />
     </list>
     <list id="caa60890-c8f1-456d-a7fa-d42be0cb3f17" name="New changelist" comment="" />
     <ignored path="ProjectTeamF.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362557413293" ignored="false" />
+    <file path="/Dummy.txt" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1362557440665" ignored="false" />
     <file path="/header.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361273366802" ignored="false" />
     <file path="/main.js" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361882804663" ignored="false" />
     <file path="/addTrip.jsp" changelist="128dad76-2461-41c2-ba59-784eb59ec0f5" time="1361546334576" ignored="false" />
@@ -325,6 +429,7 @@
     </option>
   </component>
   <component name="MavenProjectNavigator">
+    <option name="showBasicPhasesOnly" value="false" />
     <treeState>
       <PATH>
         <PATH_ELEMENT>
@@ -1564,7 +1669,11 @@
       <created>1362557420894</created>
       <updated>1362557420894</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="opkuisen">
+      <created>1362557443531</created>
+      <updated>1362557443531</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
