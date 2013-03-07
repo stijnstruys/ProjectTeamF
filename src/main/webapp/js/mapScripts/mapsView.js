@@ -69,6 +69,7 @@ $(document).ready(function () {
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
+                var legs = response.routes[0].legs;
             }
         });
 
@@ -124,13 +125,4 @@ $(document).ready(function () {
         });
 
     }
-
-    /* $(".addresses").click( function() {
-     var temp = this.id.split("_");
-     var clickedID = temp[temp.length-1];
-
-     markers[1].click();
-     });*/
-
-
 });
