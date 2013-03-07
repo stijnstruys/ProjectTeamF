@@ -20,7 +20,7 @@ import static org.junit.Assert.assertFalse;
  * To change this template use File | Settings | File Templates.
  */
 @ContextConfiguration("classpath:spring-servlet.xml")
-public class TestStopPlaatsService   extends AbstractTransactionalJUnit4SpringContextTests {
+public class TestStopPlaatsService extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     StopPlaatsService stopPlaatsService;
     @Autowired

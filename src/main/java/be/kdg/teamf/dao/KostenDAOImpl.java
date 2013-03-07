@@ -42,21 +42,21 @@ public class KostenDAOImpl implements KostDAO {
 
     @Override
     public List<Kost> kostenPerUser(User u) {
-        Query q = sessionFactory.getCurrentSession().createQuery("from Kost where user.userID = :id");
+        Query q = sessionFactory.getCurrentSession().createQuery("from Kost where deelname.user = :id");
         q.setInteger("id", u.getUserID());
         return q.list();
     }
 
     @Override
     public List<Kost> kostenPerTrip(Trip t) {
-        Query q = sessionFactory.getCurrentSession().createQuery("from Kost where trip.tripId = :id");
+        Query q = sessionFactory.getCurrentSession().createQuery("from Kost where deelname.trip = :id");
         q.setInteger("id", t.getTripId());
         return q.list();
     }
 
     @Override
     public List<Kost> kostenPerTripEnUser(Trip t, User u) {
-        Query q = sessionFactory.getCurrentSession().createQuery("from Kost where trip.tripId = :tripId and user.userID = :userId");
+        Query q = sessionFactory.getCurrentSession().createQuery("from Kost where deelname.trip = :tripId and deelname.user = :userId");
         q.setInteger("tripId", t.getTripId());
         q.setInteger("userId", u.getUserID());
         return q.list();
