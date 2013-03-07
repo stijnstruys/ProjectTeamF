@@ -39,6 +39,23 @@ body {
     text-decoration: underline;
 }
 
+.fb-twitter {
+    background: #D4D4D4;
+    padding: 7px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    width: 70%;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-radius: 5px;
+}
+
+img
+{
+    max-width: none;
+}
 /* validation */
 #validation_failed {
     visibility: hidden;
@@ -470,6 +487,10 @@ a.trip_name:hover {
     float: right;
 }
 
+.float_left {
+    float: left;
+}
+
 /* maps */
 
 #map_canvas {
@@ -479,8 +500,9 @@ a.trip_name:hover {
 }
 
 #map_canvas2 {
-    width: 550px;
+    width: 450px;
     height: 400px;
+    margin: 0 0 0 auto;
 }
 
 #map_canvas3 {
@@ -507,11 +529,6 @@ a.trip_name:hover {
     /*background-color: green; */
 }
 
-#rechts2 {
-    float: left;
-    width: 70%;
-    /* background-color: blue; */
-}
 
 #onder {
     clear: both;
@@ -583,6 +600,26 @@ a.trip_name:hover {
 
 .manageBtn2 {
     min-width: 10em;
+}
+
+/* view trip */
+.address_info {
+    color: black;
+}
+
+.infowindow {
+    color: black;
+    width: 200px;
+    height: 100px;
+}
+.infowindow_head {
+    font-weight: bold;
+    font-size: 15pt;
+    padding-bottom: 10px;
+}
+
+.infowindow_content {
+
 }
 
 /*categorieen */
