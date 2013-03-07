@@ -142,7 +142,7 @@
                     <% int count3 = 0; %>
                     <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
                         <div class="addresses" id="stopplts_<%=count3++%>"> ${stopPlaatsen.adres} </div>
-                        <div class="address_info" hidden>
+                        <div class="address_info hidden" >
                             <div class="infowindow">
                                 <div class="infowindow_head">${stopPlaatsen.naam}</div>
                                 <div class="infowindow_content">

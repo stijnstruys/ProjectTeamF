@@ -13,6 +13,9 @@ body {
 
 /* general */
 
+.hidden {
+    visibility: hidden;
+}
 .btn_green_right {
     float: right;
     margin-left: 15px;
