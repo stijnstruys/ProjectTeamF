@@ -35,7 +35,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
 
-        saveOtherStuff(dn.getTrip(),dn.getUser());
+        saveOtherStuff(dn.getTrip(), dn.getUser());
         Deelname dn2 = deelnameDAO.findDeelname(dn.getTrip().getTripId(), dn.getUser().getUserID());
         assertEquals("Expected: ", "Stijn", dn2.getUser().getFirstName());
         assertEquals("Expected: ", "Dropping", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
@@ -48,10 +48,10 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-    public void testDeleteDeelname(){
+    public void testDeleteDeelname() {
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
-        saveOtherStuff(dn.getTrip(),dn.getUser());
+        saveOtherStuff(dn.getTrip(), dn.getUser());
         deelnameDAO.deleteDeelname(dn);
     }
 
@@ -60,7 +60,7 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         List<String> equipment = new ArrayList<>();
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
-        saveOtherStuff(dn.getTrip(),dn.getUser());
+        saveOtherStuff(dn.getTrip(), dn.getUser());
         dn.getUser().setFirstName("Jeroen");
         dn.getTrip().setTripName("Reis naar Spanje");
         dn.setEquipment(equipment);
@@ -74,25 +74,27 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
     public void testFindDeelname() {
         Deelname dn = getDeelname();
         deelnameDAO.addDeelname(dn);
-        saveOtherStuff(dn.getTrip(),dn.getUser());
+        saveOtherStuff(dn.getTrip(), dn.getUser());
         assertEquals("Expected: ", "Stijn", deelnameDAO.findDeelname(dn.getDeelnameID()).getUser().getFirstName());
         assertEquals("Expecxted: ", "Dropping", deelnameDAO.findDeelname(dn.getDeelnameID()).getTrip().getTripName());
     }
+
     @Test
     public void listDeelnames() {
         Deelname d1 = getDeelname();
         deelnameDAO.addDeelname(d1);
-        saveOtherStuff(d1.getTrip(),d1.getUser());
+        saveOtherStuff(d1.getTrip(), d1.getUser());
         assertEquals("Niet alle deelnames worden opgehaald", 1, deelnameDAO.findDeelnames(d1.getTrip()).size());
     }
 
     @Test
-    public void geenDeelnames(){
+    public void geenDeelnames() {
         Trip t = new Trip();
         t.setTripId(123456789);
         assertEquals("Niet alle deelnames worden opgehaald", null, deelnameDAO.findDeelname(1));
         assertEquals("Niet alle deelnames worden opgehaald", new ArrayList<>(), deelnameDAO.findDeelnames(t));
     }
+
     private Deelname getDeelname() {
         Deelname dn = new Deelname();
 
@@ -115,8 +117,28 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         dn.setEquipment(new ArrayList<String>());
         return dn;
     }
+
     @Test
-    public void geenDeelname(){
-        assertNull(deelnameDAO.findDeelname(123456789,123456879));
+    public void geenDeelname() {
+        assertNull(deelnameDAO.findDeelname(123456789, 123456879));
+    }
+
+    @Test
+    public void testFindDeelnamesByUser() {
+        Deelname dn = new Deelname();
+        Deelname dn2 = new Deelname();
+        User u = new User();
+        u.setUserID(1);
+        dn.setDeelnameID(1);
+        dn.setUser(u);
+        dn2.setDeelnameID(2);
+        dn.setUser(u);
+        deelnameDAO.addDeelname(dn);
+        deelnameDAO.addDeelname(dn2);
+
+        List<Deelname> deelnames = new ArrayList();
+        deelnames.add(dn);
+        deelnames.add(dn2);
+        assertEquals("Expected: ", deelnames, deelnameDAO.findDeelnamesByUser(u));
     }
 }
