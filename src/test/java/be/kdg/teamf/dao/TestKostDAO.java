@@ -2,6 +2,8 @@ package be.kdg.teamf.dao;
 
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Kost;
+import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -26,6 +28,12 @@ public class TestKostDAO extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     protected DeelnameDAO deelnameDAO;
 
+    @Autowired
+    protected UserDAO userDAO;
+
+    @Autowired
+    protected TripDAO tripDAO;
+
     @Test
     public void testAddKost() {
         Kost k = getKost();
@@ -41,7 +49,7 @@ public class TestKostDAO extends AbstractTransactionalJUnit4SpringContextTests {
         kostDAO.addKost(k);
         kostDAO.deleteKost(k);
 
-        assertTrue("Kost not found", !kostDAO.findKost(k.getKostId()).equals(k));
+        assertEquals("Kost not found", k, kostDAO.findKost(k.getKostId()));
     }
 
     @Test
@@ -53,6 +61,58 @@ public class TestKostDAO extends AbstractTransactionalJUnit4SpringContextTests {
         kostDAO.updateKost(k);
 
         assertEquals("Expected beschrijving: ", "ontbijt", kostDAO.findKost(k.getKostId()).getBeschrijving());
+    }
+
+    @Test
+    public void testkostenPerUser() {
+        Kost k = new Kost();
+        Deelname dn = new Deelname();
+        User u = new User();
+        u.setUserID(1);
+        dn.setDeelnameID(1);
+        dn.setUser(u);
+
+        userDAO.addUser(u);
+        deelnameDAO.addDeelname(dn);
+        kostDAO.addKost(k);
+
+        assertEquals("Expected size: ", 1, kostDAO.kostenPerUser(u).size());
+    }
+
+    @Test
+    public void testkostenPerTrip() {
+        Kost k = new Kost();
+        Deelname dn = new Deelname();
+        Trip t = new Trip();
+        t.setTripId(1);
+        dn.setDeelnameID(1);
+        dn.setTrip(t);
+
+        tripDAO.addTrip(t);
+        deelnameDAO.addDeelname(dn);
+        kostDAO.addKost(k);
+
+        assertEquals("Expected size: ", 1, kostDAO.kostenPerTrip(t).size());
+    }
+
+    @Test
+    public void testkostenPerTripEnUser() {
+        Kost k = new Kost();
+        Deelname dn = new Deelname();
+        Trip t = new Trip();
+        User u = new User();
+        u.setUserID(1);
+        t.setTripId(1);
+        dn.setDeelnameID(1);
+        dn.setTrip(t);
+        dn.setUser(u);
+
+        userDAO.addUser(u);
+        tripDAO.addTrip(t);
+        deelnameDAO.addDeelname(dn);
+        kostDAO.addKost(k);
+
+        assertEquals("Expected size: ", 1, kostDAO.kostenPerTripEnUser(t, u).size());
     }
 
     private Kost getKost() {

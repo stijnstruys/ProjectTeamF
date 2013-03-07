@@ -84,9 +84,11 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         mailModel.addAttribute("text", "testtext");
         mailModel.addAttribute("date", format.format(new Date()));
         SimpleMailMessage msg = new SimpleMailMessage(message);
+        SimpleMailMessage msg2 = new SimpleMailMessage(message);
         msg.setCc("kdgteamf@gmail.com");
+        msg2.setTo("kdgteamf@gmail.com");
         try {
-            tripService.sendInvite(mailModel, msg);
+            tripService.sendInvite(mailModel, msg2);
             tripService.sendMail(mailModel, msg);
         } catch (Exception e) {
             Assert.fail();

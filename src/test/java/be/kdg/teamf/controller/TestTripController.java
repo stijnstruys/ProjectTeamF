@@ -40,90 +40,92 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     @Autowired
     TripTypeDAO tripTypeDAO;
 
-    private final MockMultipartFile mockMultipartFile = new MockMultipartFile("test",new byte[0]);
+    private final MockMultipartFile mockMultipartFile = new MockMultipartFile("test", new byte[0]);
 
     @Test
     public void testTripOverzichtPage() {
-        ModelAndView mav=  tripController.tripOverzichtPage(new MockHttpServletRequest(),null);
+        ModelAndView mav = tripController.tripOverzichtPage(new MockHttpServletRequest(), null);
 
         assertEquals("Trip/tripOverzicht", mav.getViewName());
     }
 
     @Test
     public void tripSearchResult() {
-        ModelAndView mav= tripController.tripSearchResult(new MockHttpServletRequest(),"Test");
+        ModelAndView mav = tripController.tripSearchResult(new MockHttpServletRequest(), "Test");
 
         assertEquals("Trip/tripSearchResult", mav.getViewName());
     }
 
     @Test
     public void testAddTripPage() {
-        ModelAndView mav= tripController.addTripPage(new MockHttpServletRequest(),null);
+        ModelAndView mav = tripController.addTripPage(new MockHttpServletRequest(), null);
 
         assertEquals("Trip/addTrip", mav.getViewName());
     }
 
     @Test
     public void testAddTrip() {
-         TripType tt=  getTripType();
+        TripType tt = getTripType();
+        tt.setTripTypeId(2);
         Trip t = getTrip();
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u, mockMultipartFile);
         authenticateUser(u);
 
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
+        String s = tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
 
-      String  s = tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
-
-        assertEquals("add trip","redirect:/trip/tripOverzicht.html",s);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s);
     }
+
     @Test
     public void testRepeatingTrip() {
-        TripType tt=  new TripType();
+        TripType tt = new TripType();
         tt.setTripTypeName("repeating");
         tripTypeDAO.addTripType(tt);
-        String s="";
+        String s = "";
         Trip t = getTrip();
-        t.setStartDate(new Date(2013,3,1));
+        t.setStartDate(new Date(2013, 3, 1));
         t.setEndDate(new Date(2013, 3, 10));
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u, mockMultipartFile);
         authenticateUser(u);
 
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
-        mockHttpServletRequest.setParameter("dateUntil","2013/05/30");
+        mockHttpServletRequest.setParameter("dateUntil", "2013/05/30");
 
-        mockHttpServletRequest.setParameter("repetition","1d");
-        s = tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
-        assertEquals("add trip","redirect:/trip/tripOverzicht.html",s);
+        mockHttpServletRequest.setParameter("repetition", "1d");
+        s = tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s);
 
-        mockHttpServletRequest.setParameter("repetition","1w");
-        s = tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
-        assertEquals("add trip","redirect:/trip/tripOverzicht.html",s);
+        mockHttpServletRequest.setParameter("repetition", "1w");
+        s = tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s);
 
-        mockHttpServletRequest.setParameter("repetition","2w");
-        s = tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
-        assertEquals("add trip","redirect:/trip/tripOverzicht.html",s);
+        mockHttpServletRequest.setParameter("repetition", "2w");
+        s = tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s);
 
-        mockHttpServletRequest.setParameter("repetition","4m");
-        s = tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
-        assertEquals("add trip","redirect:/trip/tripOverzicht.html",s);
+        mockHttpServletRequest.setParameter("repetition", "4m");
+        s = tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s);
     }
+
     @Test
     public void testViewTripPage() {
-        TripType tt= getTripType();
+        TripType tt = getTripType();
 
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u, mockMultipartFile);
         authenticateUser(u);
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
         Trip t = getTrip();
         t.setStopPlaatsen(new ArrayList<StopPlaats>());
 
-        tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
-        ModelAndView mav=   mav = tripController.viewTripPage(mockHttpServletRequest, null, t.getTripId());
+        tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
+        ModelAndView mav = mav = tripController.viewTripPage(mockHttpServletRequest, null, t.getTripId());
 
         assertEquals("Trip/viewTrip", mav.getViewName());
     }
@@ -133,70 +135,71 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         TripType tt = new TripType();
         tt.setTripTypeName("test");
         tripTypeDAO.addTripType(tt);
-        return  tt;
+        return tt;
     }
 
     @Test
     public void testJoinTrip() {
-        TripType tt=  getTripType();
-        String s ="";
+        TripType tt = getTripType();
+        String s = "";
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u, mockMultipartFile);
         authenticateUser(u);
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
         Trip t = getTrip();
         t.setDeelnames(new ArrayList<Deelname>());
 
-        tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
-        s = tripController.joinTrip(mockHttpServletRequest,null,t.getTripId());
+        tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
+        s = tripController.joinTrip(mockHttpServletRequest, null, t.getTripId());
 
 
-        assertEquals("join trip","redirect:/trip/"+t.getTripId()+".html",s);
+        assertEquals("join trip", "redirect:/trip/" + t.getTripId() + ".html", s);
     }
 
     @Test
     public void testLeaveTrip() {
-        TripType tt=  getTripType();
-        String s ="";
+        TripType tt = getTripType();
+        String s = "";
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u, mockMultipartFile);
         authenticateUser(u);
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
         Trip t = getTrip();
         t.setDeelnames(new ArrayList<Deelname>());
 
-        tripController.addTrip(t,null,tt.getTripTypeId(),mockHttpServletRequest);
+        tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
         tripController.joinTrip(mockHttpServletRequest, null, t.getTripId());
         s = tripController.leaveTrip(mockHttpServletRequest, null, t.getTripId());
 
 
-        assertEquals("join trip","redirect:/trip/"+t.getTripId()+".html",s);
+        assertEquals("join trip", "redirect:/trip/" + t.getTripId() + ".html", s);
     }
 
     @Test
-    public void updateTrip(){
+    public void updateTrip() {
         TripType tt = getTripType();
         User u = getUser();
         authenticateUser(u);
 
         Trip t = getTrip();
-        tripController.addTrip(t,null,tt.getTripTypeId(),new MockHttpServletRequest());
+        tripController.addTrip(t, null, tt.getTripTypeId(), new MockHttpServletRequest());
         t.setTripDescription("blabla");
-        String s = tripController.updateTrip(t,null);
-        assertEquals("correct","redirect:/user/admincp-" + t.getTripId() + ".html",s);
+        String s = tripController.updateTrip(t, null);
+        assertEquals("correct", "redirect:/user/admincp-" + t.getTripId() + ".html", s);
 
     }
+
     @Test
-    public void deleteTrip(){
+    public void deleteTrip() {
         TripType tt = getTripType();
 
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u, mockMultipartFile);
         authenticateUser(u);
         Trip t = getTrip();
         t.setOrganiser(u);
-        tripController.addTrip(t,null,tt.getTripTypeId(),new MockHttpServletRequest());
+        tripController.addTrip(t, null, tt.getTripTypeId(), new MockHttpServletRequest());
 
         tripController.deleteTrip(t.getTripId());
     }
@@ -207,18 +210,19 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         return t;
     }
 
-    public User getUser(){
+    public User getUser() {
         User u = new User();
         u.setUsername("testunit");
         u.setPassword("test");
         return u;
     }
-    public void authenticateUser(User u){
+
+    public void authenticateUser(User u) {
         ArrayList<GrantedAuthority> g = new ArrayList<>();
         g.add(new SimpleGrantedAuthority("ROLE_USER"));
 
 
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(u, u.getPassword(),g);
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(u, u.getPassword(), g);
 
         Authentication auth = token;
 
