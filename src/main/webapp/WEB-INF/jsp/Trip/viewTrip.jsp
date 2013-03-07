@@ -66,6 +66,7 @@
         </c:if>
         <c:if test="${registered == true}">
             <a href="leave/${trip.tripId}.html" class="btn btn-success btn_green_right" ><spring:message code="label.leaveTrip"/></a>
+            <a href="../kost/kostenPerTrip${trip.tripId}.html" class="btn btn-success btn_green_right" ><spring:message code="label.ManageCosts"/></a>
         </c:if>
         <h2>${trip.tripName}</h2>
         ${trip.tripDescription}
