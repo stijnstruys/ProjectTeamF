@@ -58,6 +58,7 @@ $(document).ready(function () {
                 location: locations[i]
             });
         }
+
         var request = {
             origin: locations[0],
             destination: locations[locations.length - 1],
@@ -70,6 +71,8 @@ $(document).ready(function () {
                 directionsDisplay.setDirections(response);
             }
         });
+
+
     }
 
     //plaats markers zonder route
@@ -78,7 +81,6 @@ $(document).ready(function () {
         var infoWindowArray = new Array();
 
         $.each(locations, function (l, loc) {
-
             geocoder.geocode({ 'address': loc}, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     map.setCenter(results[0].geometry.location);
@@ -114,6 +116,13 @@ $(document).ready(function () {
                 }
             }
         });
+
+        $(".addresses").click( function() {
+            var temp = this.id.split("_");
+            var clickedID = temp[temp.length-1];
+            google.maps.event.trigger(markers[temp.length - clickedID], "click");
+        });
+
     }
 
     /* $(".addresses").click( function() {

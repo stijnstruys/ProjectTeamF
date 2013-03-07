@@ -146,8 +146,9 @@
                             <div class="infowindow">
                                 <div class="infowindow_head">${stopPlaatsen.naam}</div>
                                 <div class="infowindow_content">
-                                    <b>Type: </b>${stopPlaats.type} </br>
-                                    <b>Info: </b>${stopPlaats.informatie}
+                                    <b>Type: </b>${stopPlaatsen.type} </br>
+                                    <b>Info: </b>${stopPlaatsen.informatie}</br>
+                                    <b>Address: </b> ${stopPlaatsen.adres}
                                 </div>
                             </div>
                         </div>

@@ -603,14 +603,20 @@ a.trip_name:hover {
 }
 
 /* view trip */
+.addresses {
+    cursor: pointer;
+}
+.addresses:hover {
+    color: yellow;
+}
 .address_info {
     color: black;
 }
 
 .infowindow {
     color: black;
-    width: 200px;
-    height: 100px;
+    width: 225px;
+    height: 125px;
 }
 .infowindow_head {
     font-weight: bold;
