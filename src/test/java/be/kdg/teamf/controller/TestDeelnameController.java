@@ -36,6 +36,7 @@ public class TestDeelnameController extends AbstractTransactionalJUnit4SpringCon
 
     @Autowired
     DeelnameController deelnameController;
+
     @Test
     public void testSendInvite(){
         Trip t = new Trip();
