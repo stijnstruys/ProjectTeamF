@@ -81,7 +81,6 @@ public class TestDeelnameController extends AbstractTransactionalJUnit4SpringCon
         d.setTrip(t);
        deelnameDAO.addDeelname(d);
        String s = deelnameController.updateDeelnemer(d,null);
-
        assertEquals("correct","redirect:/TripParticipants/" + d.getTrip().getTripId() + ".html",s);
     }
 }
