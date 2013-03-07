@@ -138,7 +138,7 @@
 
         <c:if test="${trip.showMap}">
             <c:if test="${!empty trip.stopPlaatsen}">
-                <div class="float_left">
+                <div class="float_left stopplaats_overview">
                     <% int count3 = 0; %>
                     <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
                         <div class="addresses" id="stopplts_<%=count3++%>"> ${stopPlaatsen.adres} </div>

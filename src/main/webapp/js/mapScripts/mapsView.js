@@ -6,7 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 $(document).ready(function () {
-
     var map;
     var markers = new Array();
     var locations = new Array();
@@ -72,8 +71,6 @@ $(document).ready(function () {
                 var legs = response.routes[0].legs;
             }
         });
-
-
     }
 
     //plaats markers zonder route
@@ -119,9 +116,11 @@ $(document).ready(function () {
         });
 
         $(".addresses").click( function() {
+
             var temp = this.id.split("_");
-            var clickedID = temp[temp.length-1];
-            google.maps.event.trigger(markers[temp.length - clickedID], "click");
+            var clickedID = temp[temp.length - 1];
+            var t = temp.length - clickedID + 2;
+            google.maps.event.trigger(markers[t], "click");
         });
 
     }

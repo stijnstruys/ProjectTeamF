@@ -508,6 +508,10 @@ a.trip_name:hover {
     margin: 0 0 0 auto;
 }
 
+.stopplaats_overview {
+    width: 350px;
+}
+
 #map_canvas3 {
     margin-left: 20px;
     width: 510px;
