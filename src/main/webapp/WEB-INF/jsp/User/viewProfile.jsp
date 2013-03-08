@@ -29,6 +29,7 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
+    <section class="tripPages">
     <h2><spring:message code="label.UserProfile"/></h2>
     <h4><spring:message code="label.General"/></h4>
         <div class="row-fluid">
@@ -91,7 +92,7 @@
                 <label class="checkbox profile_lbl" >${user.number} </label>
             </div>
         </div>
-</section>
+</section>     </section>
 
 <jsp:include page="../General/footer.jsp"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

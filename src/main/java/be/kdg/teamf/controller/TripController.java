@@ -228,12 +228,14 @@ public class TripController {
 
         return "redirect:/trip/" + tripID + ".html";
     }
+
     @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
     public String updateTrip(@ModelAttribute("trip") Trip trip, BindingResult result) {
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
         return "redirect:/user/admincp-"+trip.getTripId()+".html";
     }
+
     @RequestMapping("user/deleteTrip/{tripId}")
     public String deleteTrip(@PathVariable("tripId") Integer tripId) {
 

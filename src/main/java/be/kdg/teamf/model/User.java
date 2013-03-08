@@ -67,7 +67,7 @@ public class User implements Serializable , UserDetails{
     private Collection<Trip> trips;
 
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Chat> chats;
 
     public Collection<Chat> getChats() {
