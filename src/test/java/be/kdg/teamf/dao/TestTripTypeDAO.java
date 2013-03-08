@@ -67,7 +67,7 @@ public class TestTripTypeDAO extends AbstractTransactionalJUnit4SpringContextTes
         tripTypeDAO.addTripType(tt1);
         tripTypeDAO.addTripType(tt2);
 
-        assertEquals("Niet alle tripTypes worden opgehaald", 2, tripTypeDAO.listTripTypes().size());
+        assertEquals("Niet alle tripTypes worden opgehaald", 5, tripTypeDAO.listTripTypes().size());
     }
 
     @Test
