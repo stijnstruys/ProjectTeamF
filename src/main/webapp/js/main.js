@@ -574,31 +574,36 @@ function chat() {
     });
 
     $("#gotochat").click( function() {
+        doActualUpdate();
         interval = setInterval( update, 15000 );
         intervalrunning = true;
     });
 
     function update() {
         if($("#chat-li").hasClass("active")) {
-            chaticon.html(loader);
-            var showmsg = "";
-            $.ajax({
-                type: "GET",
-                url: '/ProjectTeamF-1.0/chat/getChat.html',
-                data: ({trip: tripid}),
-                success: function(data) {
-                    $.each(data, function() {
-                        var self = this;
-                        showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
-                    });
-                    $("#chat-area").html(showmsg);
-                    $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
-                    chaticon.html(success);
-                }
-            });
+            doActualUpdate();
         } else {
             intervalrunning = false;
         }
 
+    }
+
+    function doActualUpdate() {
+        chaticon.html(loader);
+        var showmsg = "";
+        $.ajax({
+            type: "GET",
+            url: '/ProjectTeamF-1.0/chat/getChat.html',
+            data: ({trip: tripid}),
+            success: function(data) {
+                $.each(data, function() {
+                    var self = this;
+                    showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
+                });
+                $("#chat-area").html(showmsg);
+                $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
+                chaticon.html(success);
+            }
+        });
     }
 }

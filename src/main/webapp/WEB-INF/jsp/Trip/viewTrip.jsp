@@ -214,7 +214,7 @@
                         <div id="chat-area">
 
                         </div>
-                        <div class="input-append input-prepend">
+                        <div class="input-append input-prepend" id="chat-apprend">
                             <span class="add-on" id="chat-loading"></span>
                             <input class="input-xxlarge" id="shout-msg" type="text" placeholder='<spring:message code="label.shout-saysomething"></spring:message>' >
                             <button class="btn" id="shout" type="button"><spring:message code="label.shout"></spring:message></button>

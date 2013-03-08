@@ -755,7 +755,9 @@ th.costs2 {
     margin: 0 auto 0 auto;
     text-align: center;
 }
-
+#chat-apprend {
+    margin-top: 15px;
+}
 #chat-area {
     overflow : auto;
     width: 580px;
