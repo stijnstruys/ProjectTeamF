@@ -60,7 +60,7 @@
                 <div class="input-append">
                     <input type="text" disabled id="browse_foto_input"/>
                     <a class="btn" id="browse_foto"><spring:message code="label.Browse"/></a>
- >            </div>
+            </div>
 
                 <input type="file" name="foto" id="foto" style="display: none" />
             </div>
