@@ -19,8 +19,6 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <mvc:annotation-driven />
-
     <task:annotation-driven/>
     <context:annotation-config/>
     <context:component-scan base-package="be.kdg.teamf"/>
@@ -99,5 +97,6 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <mvc:annotation-driven />
     <import resource="spring-velocity.xml" />
 </beans>

@@ -74,8 +74,8 @@
         <c:if test="${registered == true}">
         <div class="tabbable">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab1" data-toggle="tab">Overview</a></li>
-                <li><a href="#tab2" data-toggle="tab">Chat</a></li>
+                <li class="active"><a href="#tab1" data-toggle="tab"><spring:message code="label.overview"></spring:message></a></li>
+                <li id="chat-li"><a href="#tab2" id="gotochat" data-toggle="tab"><spring:message code="label.chat"></spring:message></a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
@@ -214,11 +214,11 @@
                         <div id="chat-area">
 
                         </div>
-                        <div class="input-append">
-                            <input class="input-xxlarge" id="shout-msg" type="text" placeholder="Say something">
-                            <button class="btn" id="shout" type="button">Shout!</button>
+                        <div class="input-append input-prepend">
+                            <span class="add-on" id="chat-loading"></span>
+                            <input class="input-xxlarge" id="shout-msg" type="text" placeholder='<spring:message code="label.shout-saysomething"></spring:message>' >
+                            <button class="btn" id="shout" type="button"><spring:message code="label.shout"></spring:message></button>
                         </div>
-                    <button id="test">yoloswag</button>
                     </div>
                     </p>
                 </div>
