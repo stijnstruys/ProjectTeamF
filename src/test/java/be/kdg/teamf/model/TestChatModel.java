@@ -2,6 +2,7 @@ package be.kdg.teamf.model;
 
 import org.junit.Test;
 
+
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -15,16 +16,17 @@ public class TestChatModel {
    @Test
    public void addChat() {
      User u = new User();
-       u.setUserID(1);
+     u.setUserID(1);
 
      Trip t = new Trip();
-       t.setTripId(1);
-      Chat c = new Chat(t,u,"Test");
-       c.setChatID(1);
+     t.setTripId(1);
+     Chat c = new Chat(t,u,"Test");
+     c.setChatID(1);
 
-      assertEquals("Expected chatId",1,c.getChatID());
-      assertEquals("Expected tripId",1,c.getTrip().getTripId());
-      assertEquals("Expected userId",1,c.getUser().getUserID());
+     assertEquals("Expected chatId", 1, c.getChatID());
+     assertEquals("Expected tripId",1,c.getTrip().getTripId());
+     assertEquals("Expected userId",1,c.getUser().getUserID());
+     assertEquals("Expected message","Test",c.getMsg());
    }
 
 }
