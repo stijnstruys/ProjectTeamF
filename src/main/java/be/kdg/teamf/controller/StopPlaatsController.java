@@ -63,7 +63,7 @@ public class StopPlaatsController
 
     }
     @RequestMapping("/StopPlaats/update-{stopPlaatsID}")
-    public ModelAndView updateStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID) throws Exception {
+    public ModelAndView updateStopPlaatsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("stopPlaatsID") int stopPlaatsID)  {
 
 
         StopPlaats s  = stopPlaatsService.findStopPlaats(stopPlaatsID);

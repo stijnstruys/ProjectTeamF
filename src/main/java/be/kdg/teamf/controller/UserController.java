@@ -1,5 +1,6 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.model.AndroidUser;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripService;
@@ -264,16 +265,14 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/service/login", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    User serviceLogin(@RequestBody User u) {
-        System.out.println("hier user: " + u.getUsername() + "pasw: " + u.getPassword());
-        if (userService.login(u) > -1) {
-            return userService.findUser(u.getUsername());
-        } else {
-            return new User();
-        }
+    @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
+    public AndroidUser login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
+
+        AndroidUser u = new AndroidUser();
+        u.setUsername("test");
+
+
+        return u;
     }
 
     @RequestMapping("/image/{id}")
@@ -284,7 +283,7 @@ public class UserController {
         try {
             return b.getBytes(1, (int) b.length());
         } catch (SQLException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         return null;
     }
