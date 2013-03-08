@@ -95,7 +95,17 @@ public class Trip {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
+    private Collection<Chat> chats;
 
+    public Collection<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(Collection<Chat> chats) {
+        this.chats = chats;
+    }
 
     public Trip() {
     }

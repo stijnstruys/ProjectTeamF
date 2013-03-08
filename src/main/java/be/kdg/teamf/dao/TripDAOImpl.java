@@ -73,6 +73,7 @@ public class TripDAOImpl implements TripDAO {
         return q.list();
     }
 
+
     @Override
     public List<String> getTripNames() {
         return sessionFactory.getCurrentSession().createQuery("select tripName from Trip").list();

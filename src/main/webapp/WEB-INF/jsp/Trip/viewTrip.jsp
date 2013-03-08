@@ -58,9 +58,11 @@
             color: ${trip.fontcolorTitle};
             text-align: center;
         }
-
     </style>
+
     <section class="tripPages">
+
+        <input class="hidden" id="getTripId" hidden value="${trip.tripId}"    />
         <c:if test="${registered != true}">
             <a href="join/${trip.tripId}.html" class="btn btn-success btn_green_right" ><spring:message code="label.join"/></a>
         </c:if>
@@ -68,130 +70,166 @@
             <a href="leave/${trip.tripId}.html" class="btn btn-success btn_green_right" ><spring:message code="label.leaveTrip"/></a>
             <a href="../kost/kostenPerTrip${trip.tripId}.html" class="btn btn-success btn_green_right" ><spring:message code="label.ManageCosts"/></a>
         </c:if>
-        <h2>${trip.tripName}</h2>
-        ${trip.tripDescription}
-        </br></br>
 
-        <legend>General</legend>
-        <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.startLocation"/></label></div>
-            <div class="span3">
-                <label class="checkbox profile_lbl" >${user.startLocation} </label>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="span2"><label class="profile_right"><spring:message code="label.organiser"/></label></div>
-            <div class="span3">
-                <label class="checkbox profile_lbl" >${user.organiser.firstName} </label>
-            </div>
-        </div>
+        <c:if test="${registered == true}">
+        <div class="tabbable">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">Overview</a></li>
+                <li><a href="#tab2" data-toggle="tab">Chat</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
 
-        <div class="row-fluid">
-            <div class="span2"><label class="profile_right"><spring:message code="label.startDate"/></label></div>
-            <div class="span3"><label class="checkbox profile_lbl" ><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/></label></div>
-            <div class="span2"><label class="profile_right"><spring:message code="label.endDate"/></label></div>
-            <div class="span3"><label class="checkbox profile_lbl" ><fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></label></div>
-        </div>
-
-        <legend><spring:message code="label.equipment"/></legend>
-        <div class="row-fluid">
-            <div class="span2"><label class="profile_right"><spring:message code="label.equipment"/></label></div>
-
-            <c:if test="${!empty trip.equipment}">
-                <div class="span3">
-                    <label class="checkbox profile_lbl">
-                        <c:forEach items="${trip.equipment}" var="value">
-                            ${value} </br>
-                        </c:forEach>
-                    </label>
-                </div>
-            </c:if>
-        </div>
-
-        <legend><spring:message code="label.StoppingPoints"/></legend>
-        <c:if test="${!trip.showMap}">
-            <c:if test="${!empty trip.stopPlaatsen}">
-                <table class="table">
-                    <thead>
-                    <th>#</th>
-                    <th><spring:message code="label.StoppingPoint"/></th>
-                    <th><spring:message code="label.StoppingPointName"/></th>
-                    <th><spring:message code="label.StoppingPointType"/></th>
-                    <th><spring:message code="label.StoppingPointInfo"/></th>
-                    </thead>
-
-                    <% int count = 1; %>
-                    <tbody>
-                    <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
-                        <tr>
-                            <td><%=count%></td>
-                            <td>${stopPlaats.adres}</td>
-                            <td>${stopPlaats.naam}</td>
-                            <td>${stopPlaats.type}</td>
-                            <td>${stopPlaats.informatie}</td>
-                        </tr>
-                        <% count++; %>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </c:if>
+                    <p>
         </c:if>
+                    <h2>${trip.tripName}</h2>
+                    ${trip.tripDescription}
+                    </br></br>
 
-        <c:if test="${trip.showMap}">
-            <c:if test="${!empty trip.stopPlaatsen}">
-                <div class="float_left stopplaats_overview">
-                    <% int count3 = 0; %>
-                    <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
-                        <div class="addresses" id="stopplts_<%=count3++%>"> ${stopPlaatsen.adres} </div>
-                        <div class="address_info hidden" >
-                            <div class="infowindow">
-                                <div class="infowindow_head">${stopPlaatsen.naam}</div>
-                                <div class="infowindow_content">
-                                    <b>Type: </b>${stopPlaatsen.type} </br>
-                                    <b>Info: </b>${stopPlaatsen.informatie}</br>
-                                    <b>Address: </b> ${stopPlaatsen.adres}
-                                </div>
-                            </div>
+                    <legend>General</legend>
+                    <div class="row-fluid">
+                        <div class="span2" ><label class="profile_right"><spring:message code="label.startLocation"/></label></div>
+                        <div class="span3">
+                            <label class="checkbox profile_lbl" >${user.startLocation} </label>
                         </div>
-                    </c:forEach>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2"><label class="profile_right"><spring:message code="label.organiser"/></label></div>
+                        <div class="span3">
+                            <label class="checkbox profile_lbl" >${user.organiser.firstName} </label>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid">
+                        <div class="span2"><label class="profile_right"><spring:message code="label.startDate"/></label></div>
+                        <div class="span3"><label class="checkbox profile_lbl" ><fmt:formatDate value="${trip.startDate}" pattern="dd/MM/yyyy"/></label></div>
+                        <div class="span2"><label class="profile_right"><spring:message code="label.endDate"/></label></div>
+                        <div class="span3"><label class="checkbox profile_lbl" ><fmt:formatDate value="${trip.endDate}" pattern="dd/MM/yyyy"/></label></div>
+                    </div>
+
+                    <legend><spring:message code="label.equipment"/></legend>
+                    <div class="row-fluid">
+                        <div class="span2"><label class="profile_right"><spring:message code="label.equipment"/></label></div>
+
+                        <c:if test="${!empty trip.equipment}">
+                            <div class="span3">
+                                <label class="checkbox profile_lbl">
+                                    <c:forEach items="${trip.equipment}" var="value">
+                                        ${value} </br>
+                                    </c:forEach>
+                                </label>
+                            </div>
+                        </c:if>
+                    </div>
+
+                    <legend><spring:message code="label.StoppingPoints"/></legend>
+                    <c:if test="${!trip.showMap}">
+                        <c:if test="${!empty trip.stopPlaatsen}">
+                            <table class="table">
+                                <thead>
+                                <th>#</th>
+                                <th><spring:message code="label.StoppingPoint"/></th>
+                                <th><spring:message code="label.StoppingPointName"/></th>
+                                <th><spring:message code="label.StoppingPointType"/></th>
+                                <th><spring:message code="label.StoppingPointInfo"/></th>
+                                </thead>
+
+                                <% int count = 1; %>
+                                <tbody>
+                                <c:forEach items="${trip.stopPlaatsen}" var="stopPlaats">
+                                    <tr>
+                                        <td><%=count%></td>
+                                        <td>${stopPlaats.adres}</td>
+                                        <td>${stopPlaats.naam}</td>
+                                        <td>${stopPlaats.type}</td>
+                                        <td>${stopPlaats.informatie}</td>
+                                    </tr>
+                                    <% count++; %>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </c:if>
+                    </c:if>
+
+                    <c:if test="${trip.showMap}">
+                        <c:if test="${!empty trip.stopPlaatsen}">
+                            <div class="float_left stopplaats_overview">
+                                <% int count3 = 0; %>
+                                <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
+                                    <div class="addresses" id="stopplts_<%=count3++%>"> ${stopPlaatsen.adres} </div>
+                                    <div class="address_info hidden" >
+                                        <div class="infowindow">
+                                            <div class="infowindow_head">${stopPlaatsen.naam}</div>
+                                            <div class="infowindow_content">
+                                                <b>Type: </b>${stopPlaatsen.type} </br>
+                                                <b>Info: </b>${stopPlaatsen.informatie}</br>
+                                                <b>Address: </b> ${stopPlaatsen.adres}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </c:forEach>
+                            </div>
+                        </c:if>
+                        <section id="map_stoppingpoints">
+                            <div id="map_canvas2"></div>
+                        </section>
+                    </c:if>
+
+
+                    <legend><spring:message code="label.Participants"/></legend>
+                    <c:if test="${!empty trip.deelnames}">
+                        <% int count2 = 1; %>
+                        <table class="table">
+                            <thead>
+                            <th>#</th>
+                            <th><spring:message code="label.name"/></th>
+                            <th><spring:message code="label.IndividualEquipment"/></th>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${trip.deelnames}" var="deelname">
+                                <td><%=count2++%></td>
+                                <td><a href="/ProjectTeamF-1.0/user/profile-${deelname.user.userID}.html">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
+                                <td>
+                                    <c:forEach items="${deelname.equipment}" var="equip">
+                                        ${equip} </br>
+                                    </c:forEach></td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </c:if>
+                    <c:if test="${trip.showRoute}">
+                        <label id="checkShowRouteSolution" class="showRouteTrue"></label>
+                    </c:if>
+                    <div class="fb-twitter">
+                        <div class="fb-like" data-href="https://www.facebook.com/pages/Tripplanner-teamf/146815778814080" data-send="true" data-width="450" data-show-faces="true"></div>  </br>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl"><spring:message code="label.Tweet"/></a>
+                    </div>
+         <c:if test="${registered == true}">
+                    </p>
                 </div>
-            </c:if>
-            <section id="map_stoppingpoints">
-                <div id="map_canvas2"></div>
-            </section>
+                <div class="tab-pane" id="tab2">
+                    <p>
+                    <div id="chat">
+                        <div id="chat-area">
+
+                        </div>
+                        <div class="input-append">
+                            <input class="input-xxlarge" id="shout-msg" type="text" placeholder="Say something">
+                            <button class="btn" id="shout" type="button">Shout!</button>
+                        </div>
+                    <button id="test">yoloswag</button>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
         </c:if>
 
 
-        <legend><spring:message code="label.Participants"/></legend>
-        <c:if test="${!empty trip.deelnames}">
-            <% int count2 = 1; %>
-            <table class="table">
-                <thead>
-                <th>#</th>
-                <th><spring:message code="label.name"/></th>
-                <th><spring:message code="label.IndividualEquipment"/></th>
-                </thead>
-                <tbody>
-                <c:forEach items="${trip.deelnames}" var="deelname">
-                    <td><%=count2++%></td>
-                    <td><a href="/ProjectTeamF-1.0/user/profile-${deelname.user.userID}.html">${deelname.user.firstName} ${deelname.user.lastName} </a></td>
-                    <td>
-                        <c:forEach items="${deelname.equipment}" var="equip">
-                            ${equip} </br>
-                        </c:forEach></td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-        </c:if>
-        <c:if test="${trip.showRoute}">
-            <label id="checkShowRouteSolution" class="showRouteTrue"></label>
-        </c:if>
+
     </section>
-    <div class="fb-twitter">
-        <div class="fb-like" data-href="https://www.facebook.com/pages/Tripplanner-teamf/146815778814080" data-send="true" data-width="450" data-show-faces="true"></div>  </br>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl"><spring:message code="label.Tweet"/></a>
-    </div>
+
 
 </section>
 </section>

@@ -22,6 +22,8 @@ $(document).ready(function () {
     //add trip
     addTrip();
 
+    //chat
+    chat();
 
     //add trip select show descreption
     $("#descriptionType1").show();
@@ -540,6 +542,55 @@ function sendMail() {
                 alert('Mail failed. Contact admin!');
             }
         }
+    });
+
+}
+
+function chat() {
+    var tripid = $("#getTripId").val();
+    update();
+
+    // adding a new msg
+    $("#shout").click( function() {
+        var msg = $("#shout-msg");
+
+        if(msg.val().length > 0) {
+            $.ajax({
+                type: "POST",
+                url: '/ProjectTeamF-1.0/chat/add.html',
+                data: ({msg: msg.val() , trip: tripid}),
+                success: function() {
+                    update();
+                    msg.val("");
+                }
+            })
+        }
+    });
+
+    var interval = setInterval( update, 15000 );
+
+    function update() {
+        var showmsg = "";
+        $.ajax({
+            type: "GET",
+            url: '/ProjectTeamF-1.0/chat/getChat.html',
+            data: ({trip: tripid}),
+            success: function(data) {
+                $.each(data, function() {
+                    var self = this;
+                    showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
+                });
+                $("#chat-area").html(showmsg);
+
+
+                $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
+            }
+        })
+    }
+
+    //loading messages from the server
+    $("#test").click( function() {
+          update();
     });
 
 }

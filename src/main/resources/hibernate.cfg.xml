@@ -14,5 +14,6 @@
         <mapping class="be.kdg.teamf.model.Deelname"/>
         <mapping class="be.kdg.teamf.model.TripType"/>
         <mapping class="be.kdg.teamf.model.Kost"/>
+        <mapping class="be.kdg.teamf.model.Chat"/>
     </session-factory>
 </hibernate-configuration>
