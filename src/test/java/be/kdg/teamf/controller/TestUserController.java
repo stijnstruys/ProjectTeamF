@@ -202,6 +202,25 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
          assertEquals("correct","User/adminTrip",mav.getViewName());
      }
 
+    @Test
+    public void testGetUserInJson() {
+       User u = getUser();
+        userController.addUser(u,mockMultipartFile);
+      String s = userController.getUserInJson(u.getUsername());
+
+        assertEquals("Correct","true",s);
+    }
+
+    @Test
+    public void testServiceLogin() {
+        User u = getUser();
+        userController.addUser(u,mockMultipartFile);
+
+        User serviceLoginUser = userController.serviceLogin(u);
+
+        assertEquals("Correct",u.getUsername(),serviceLoginUser.getUsername());
+    }
+
 
 
     public User getUser(){
