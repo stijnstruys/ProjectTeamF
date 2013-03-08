@@ -186,7 +186,7 @@ public class TripController {
     @RequestMapping(value="/chat/getChat", method = RequestMethod.GET)
     public
     @ResponseBody
-    ChatList getUserInJson(@RequestParam("trip") int tripid) {
+    ChatList getChats(@RequestParam("trip") int tripid) {
         ChatList cl = new ChatList();
 
         Trip t = tripService.findTrip(tripid);

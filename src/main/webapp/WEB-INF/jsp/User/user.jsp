@@ -33,7 +33,7 @@
     <h2><spring:message code="label.UserRegistration"/></h2>
     <div id="validation_failed"></div>
     <form:form method="post" class="form-horizontal" action="add.html" commandName="user" id="user" enctype="multipart/form-data">
-        <legend>General</legend>
+        <legend><spring:message code="label.General"/></legend>
         <div class="control-group">
             <form:label id="labelUsername" class="control-label"  path="username"><spring:message code="label.username"/></form:label>
             <div class="controls">
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <legend>Contact</legend>
+        <legend><spring:message code="label.contact"/></legend>
         <div class="control-group">
             <form:label id="labelEmail" class="control-label"  path="email"><spring:message code="label.email"/></form:label>
             <div class="controls">

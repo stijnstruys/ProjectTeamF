@@ -30,69 +30,70 @@
 
     <section id="content">
         <section class="tripPages">
-        <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password">Change password</a>
-        <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" >Modify</a>
+        <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password"><spring:message code="label.ChangePassword"/></a>
+        <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" ><spring:message code="label.modify"/></a>
 
         <h2><spring:message code="label.UserProfile"/></h2>
         <h4><spring:message code="label.General"/></h4>
 
             <div id="validation_failed"></div>
         <form:form id="profile_edit" class="form-horizontal" commandName="user" action="/ProjectTeamF-1.0/user/update.html" method="POST" enctype="multipart/form-data">
-            <div class="row-fluid profile-fields">
-                <div class="span2" ><label class="profile_right"><spring:message code="label.photo"/></label></div>
-                <div class="span3">
-                    <img src="/ProjectTeamF-1.0/image/${user.userID}.html" id="photo" class="profile_lbl"/>
-                    <input type="file" name="foto" id="foto" class="profile_input hidethis">
-                </div>
-            </div>
-            <div class="row-fluid profile-fields">
-                <div class="span2" ><label class="profile_right"><spring:message code="label.username"/></label></div>
-                <div class="span3">
-                    <label class="checkbox" >${user.username} </label>
-                </div>
-            </div>
 
-            <div class="row-fluid profile-fields">
-                <div class="span2" ><label class="profile_right"><spring:message code="label.firstname"/></label></div>
-                <div class="span3">
-                    <label class="checkbox profile_lbl" >${user.firstName} </label>
-                    <form:input type="text" class="profile_input hidethis" path="firstName"/>
+
+            <div id="profile-left">
+                <div class="row-fluid profile-fields">
+                    <div class="span4" ><label class="profile_right"><spring:message code="label.username"/></label></div>
+                    <div class="span6">
+                        <label class="checkbox" >${user.username} </label>
+                    </div>
                 </div>
 
-            </div>
-            <div class="row-fluid profile-fields">
-                <div class="span2"><label class="profile_right"><spring:message code="label.lastname"/></label></div>
-                <div class="span3">
-                    <label class="checkbox profile_lbl" >${user.lastName} </label>
-                    <form:input type="text" class="profile_input hidethis" path="lastName"/>
-                </div>
-            </div>
+                <div class="row-fluid profile-fields">
+                    <div class="span4" ><label class="profile_right"><spring:message code="label.firstname"/></label></div>
+                    <div class="span6">
+                        <label class="checkbox profile_lbl" >${user.firstName} </label>
+                        <form:input type="text" class="profile_input hidethis" path="firstName"/>
+                    </div>
 
-            <div class="row-fluid profile-fields">
-                <div class="span2" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
-                <div class="span3">
-                    <label class="checkbox profile_lbl"><fmt:formatDate value="${user.dateOfBirth}" pattern="dd/MM/yyyy"/></label>
-                    <form:input id="dateOfBirth" class="datepicker profile_input hidethis" readonly="true" style="cursor: text;" path="dateOfBirth" value="${1900 + user.dateOfBirth.year}/${1 + user.dateOfBirth.month}/${user.dateOfBirth.date}"/>
                 </div>
-            </div>
-            <div class="row-fluid profile-fields">
-                <div class="span2"></div>
-                <div class="span3">
-                    <label class="checkbox">
-                        <form:checkbox id="profile_show_pos" path="showPosition" disabled="true" /> <spring:message code="label.ShowPosition"/>
-                    </label>
+                <div class="row-fluid profile-fields">
+                    <div class="span4"><label class="profile_right"><spring:message code="label.lastname"/></label></div>
+                    <div class="span6">
+                        <label class="checkbox profile_lbl" >${user.lastName} </label>
+                        <form:input type="text" class="profile_input hidethis" path="lastName"/>
+                    </div>
                 </div>
-            </div>
-            <div class="row-fluid profile-fields">
-                <div class="span2"></div>
-                <div class="span3">
-                    <label class="checkbox">
-                        <form:checkbox id="profile_show_not" path="notificationEmail" disabled="true" /> <spring:message code="label.ReceiveNotification"/>
-                    </label>
-                </div>
-            </div>
 
-            <h4>Contact</h4>
+                <div class="row-fluid profile-fields">
+                    <div class="span4" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
+                    <div class="span6">
+                        <label class="checkbox profile_lbl"><fmt:formatDate value="${user.dateOfBirth}" pattern="dd/MM/yyyy"/></label>
+                        <form:input id="dateOfBirth" class="datepicker profile_input hidethis" readonly="true" style="cursor: text;" path="dateOfBirth" value="${1900 + user.dateOfBirth.year}/${1 + user.dateOfBirth.month}/${user.dateOfBirth.date}"/>
+                    </div>
+                </div>
+                <div class="row-fluid profile-fields">
+                    <div class="span4"></div>
+                    <div class="span6">
+                        <label class="checkbox">
+                            <form:checkbox id="profile_show_pos" path="showPosition" disabled="true" /> <spring:message code="label.ShowPosition"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="row-fluid profile-fields">
+                    <div class="span4"></div>
+                    <div class="span6">
+                        <label class="checkbox">
+                            <form:checkbox id="profile_show_not" path="notificationEmail" disabled="true" /> <spring:message code="label.ReceiveNotification"/>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="photo-section">
+                <img src="/ProjectTeamF-1.0/image/${user.userID}.html" onError="this.src = '../img/groupMembers/profilePic.jpg'" id="photo" class="profile_lbl"/>
+                <input type="file" name="foto" id="foto" class="profile_input hidethis">
+            </div>
+             <div class="float_fix"></div>
+            <h4><spring:message code="label.contact"/></h4>
             <div class="row-fluid profile-fields">
                 <div class="span2" ><label class="profile_right"><spring:message code="label.email"/></label></div>
                 <div class="span3">
@@ -139,8 +140,10 @@
                     <button type="button" class="btn hidethis profile_btns" id="profile_cancel"><spring:message code="label.Cancel"/></button>
                 </div>
             </div>
+
             <form:input type="text"  class="fieldsnothere" path="userID" />
             <form:input type="text"  class="fieldsnothere" path="username" />
+
         </form:form>
     </section>
     </section>
