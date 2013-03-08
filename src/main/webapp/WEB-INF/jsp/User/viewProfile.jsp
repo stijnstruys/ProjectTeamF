@@ -32,31 +32,41 @@
     <section class="tripPages">
     <h2><spring:message code="label.UserProfile"/></h2>
     <h4><spring:message code="label.General"/></h4>
-        <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.username"/></label></div>
-            <div class="span3">
-                <label class="checkbox" >${user.username} </label>
+        <div id="profile-left">
+            <div class="row-fluid">
+                <div class="span4" ><label class="profile_right"><spring:message code="label.username"/></label></div>
+                <div class="span6">
+                    <label class="checkbox" >${user.username} </label>
+                </div>
+
             </div>
 
-        </div>
+            <div class="row-fluid">
+                <div class="span4" ><label class="profile_right"><spring:message code="label.firstname"/></label></div>
+                <div class="span6">
+                    <label class="checkbox profile_lbl" >${user.firstName} </label>
+                </div>
+            </div>
 
-        <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.firstname"/></label></div>
-            <div class="span3">
-                <label class="checkbox profile_lbl" >${user.firstName} </label>
+            <div class="row-fluid">
+                <div class="span4"><label class="profile_right"><spring:message code="label.lastname"/></label></div>
+                <div class="span6">
+                    <label class="checkbox profile_lbl" >${user.lastName} </label>
+                </div>
             </div>
-            <div class="span2"><label class="profile_right"><spring:message code="label.lastname"/></label></div>
-            <div class="span3">
-                <label class="checkbox profile_lbl" >${user.lastName} </label>
-            </div>
-        </div>
 
-        <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
-            <div class="span3">
-                <label class="checkbox profile_lbl"><fmt:formatDate value="${user.dateOfBirth}" pattern="dd/MM/yyyy"/></label>
+            <div class="row-fluid">
+                <div class="span4" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
+                <div class="span6">
+                    <label class="checkbox profile_lbl"><fmt:formatDate value="${user.dateOfBirth}" pattern="dd/MM/yyyy"/></label>
+                </div>
             </div>
         </div>
+        <div id="photo-section">
+            <img src="/ProjectTeamF-1.0/image/${user.userID}.html" onError="this.src = '../img/groupMembers/profilePic.jpg'" id="photo" class="profile_lbl"/>
+
+        </div>
+        <div class="float_fix"></div>
 
         <h4>Contact</h4>
         <div class="row-fluid">
