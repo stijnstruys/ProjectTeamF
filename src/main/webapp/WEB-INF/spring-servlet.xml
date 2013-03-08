@@ -24,6 +24,11 @@
     <context:component-scan base-package="be.kdg.teamf"/>
     <mvc:interceptors>
         <bean class="be.kdg.teamf.controller.LoginInterceptor" />
+
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"></property>
+        </bean>
+
     </mvc:interceptors>
 
     <bean id="multipartResolver"
@@ -97,6 +102,6 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
     <import resource="spring-velocity.xml" />
 </beans>

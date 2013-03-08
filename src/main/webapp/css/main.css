@@ -296,6 +296,23 @@ a.trip_name:hover {
     margin-bottom: 5px;;
 }
 
+#photo {
+    max-width: 300px;
+    max-height: 200px;
+}
+#photo-section {
+    /*position: inherit;
+    top: 350px;
+    right: 0px;
+    float: right;*/
+    float: left;
+}
+
+#profile-left {
+    float: left;
+    width: 400px;
+}
+
 /* change pw */
 
 #changepw_form {
