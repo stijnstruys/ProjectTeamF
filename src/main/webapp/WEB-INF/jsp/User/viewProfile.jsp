@@ -68,7 +68,7 @@
         </div>
         <div class="float_fix"></div>
 
-        <h4>Contact</h4>
+        <h4><spring:message code="label.contact"/></h4>
         <div class="row-fluid">
             <div class="span2" ><label class="profile_right"><spring:message code="label.email"/></label></div>
             <div class="span3">

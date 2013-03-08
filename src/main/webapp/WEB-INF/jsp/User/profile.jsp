@@ -30,8 +30,8 @@
 
     <section id="content">
         <section class="tripPages">
-        <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password">Change password</a>
-        <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" >Modify</a>
+        <a href="/ProjectTeamF-1.0/user/changepw.html" class="btn btn-success btn_green_right" id="user_change_password"><spring:message code="label.ChangePassword"/></a>
+        <a href="#" class="btn btn-success btn_green_right" id="user_modify_profile" ><spring:message code="label.modify"/></a>
 
         <h2><spring:message code="label.UserProfile"/></h2>
         <h4><spring:message code="label.General"/></h4>
@@ -93,7 +93,7 @@
                 <input type="file" name="foto" id="foto" class="profile_input hidethis">
             </div>
              <div class="float_fix"></div>
-            <h4>Contact</h4>
+            <h4><spring:message code="label.contact"/></h4>
             <div class="row-fluid profile-fields">
                 <div class="span2" ><label class="profile_right"><spring:message code="label.email"/></label></div>
                 <div class="span3">
