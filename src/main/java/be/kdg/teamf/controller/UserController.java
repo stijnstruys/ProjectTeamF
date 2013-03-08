@@ -15,6 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -263,15 +264,11 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/service/login", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    User serviceLogin(@RequestBody User u) {
-        if (userService.login(u) > -1) {
-            return userService.findUser(u.getUsername());
-        } else {
-            return new User();
-        }
+    @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
+    public User login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
+        User u = new User();
+        u.setUsername("test");
+        return u;
     }
 
     @RequestMapping("/image/{id}")
@@ -286,5 +283,6 @@ public class UserController {
         }
         return null;
     }
+
 
 }

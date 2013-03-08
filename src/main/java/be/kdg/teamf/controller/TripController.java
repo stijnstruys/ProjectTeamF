@@ -246,4 +246,21 @@ public class TripController {
         return "redirect:/user/myTrips.html";
     }
 
+    @RequestMapping(value = "/service/getOpenTrips", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Trip getOpenTrips(){
+        List<Trip> trips = new ArrayList<Trip>(tripService.listTrips());
+        List<Trip> openTrips = new ArrayList<Trip>();
+        for(Trip t:trips){
+            if(t.isVisible()){
+                Trip temp = new Trip();
+                temp=t;
+                temp.setOrganiser(userService.findUser(temp.getOrganiser().getUserID()));
+                openTrips.add(temp);
+            }
+        }
+        return openTrips.get(0);
+    }
+
 }
