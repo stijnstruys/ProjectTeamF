@@ -1,5 +1,6 @@
 package be.kdg.teamf.controller;
 
+import be.kdg.teamf.dao.TripCategorieDAO;
 import be.kdg.teamf.dao.TripDAO;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.TripCategorie;
@@ -31,6 +32,9 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     @Autowired
     TripDAO tripDAO;
 
+    @Autowired
+    TripCategorieDAO tripCategorieDAO;
+
     @Test
     public void testTripCategoriePage() {
         ModelAndView mav= null;
@@ -61,14 +65,13 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     @Test
     public void testDeleteTripCategorie() {
         String s ="";
+        TripCategorie tc = getTripCategorie();
         Trip t = new Trip();
-        TripCategorie tc = new TripCategorie();
-        tc.setTripCategorieName("test");
-       // tc.setTrip(t);
-
+        t.setTripCategorieen(new ArrayList<TripCategorie>());
+        t.setTripName("TestTrip");
         tripDAO.addTrip(t);
-
-        tripCategorieController.addTripCategorie(tc,null,t.getTripId());
+        tc.setTrip(t);
+        tripCategorieDAO.addTripCategorie(tc);
         s = tripCategorieController.deleteTripCategorie(tc.getTripCategorieId());
         assertEquals("delete trip","redirect:/TripCategorie/" + tc.getTrip().getTripId() + ".html",s);
     }
@@ -76,13 +79,13 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     @Test
     public void testUpdateTripCategoriePage() {
         ModelAndView mav= null;
-        String s ="";
         TripCategorie tc = getTripCategorie();
         Trip t = new Trip();
         t.setTripCategorieen(new ArrayList<TripCategorie>());
         tripDAO.addTrip(t);;
+        tc.setTrip(t);
 
-        s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
+        tripCategorieDAO.addTripCategorie(tc);
 
         try {
             mav = tripCategorieController.updateTripCategoriePage(new MockHttpServletRequest(), null, tc.getTripCategorieId());
