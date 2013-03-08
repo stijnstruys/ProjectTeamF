@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,8 +38,12 @@ public class TripController {
 
     @Autowired
     private UserService userService;
+
     @Autowired
     private DeelnameService deelnameService;
+
+    @Autowired
+    private ChatService chatService;
 
 
     @RequestMapping(value = "/trip/tripOverzicht.html", method = RequestMethod.GET)
@@ -163,11 +168,41 @@ public class TripController {
         return model;
     }
 
+    /* Chat */
+    /* add chat to db */
+    @RequestMapping(value="/chat/add", method = RequestMethod.POST)
+    public @ResponseBody
+    void addChat(@RequestParam("trip") int trip, @RequestParam("msg") String msg) {
+        chatService.addChat(new Chat(tripService.findTrip(trip), userService.getCurrentUser(), msg));
+        //Trip t = tripService.findTrip(trip);
+        //t.getChats().add(new Chat(tripService.findTrip(trip), userService.getCurrentUser(), msg));
+        //tripService.updateTrip(t);
 
+    }
+
+    /* get chats */
+    static class ChatList extends ArrayList<Chat> {  }
+
+    @RequestMapping(value="/chat/getChat", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    ChatList getUserInJson(@RequestParam("trip") int tripid) {
+        ChatList cl = new ChatList();
+
+        Trip t = tripService.findTrip(tripid);
+        for(Chat c : chatService.getChats(tripid)) {
+            c.setTrip(null);
+            User u = new User();
+            u.setUsername(c.getUser().getUsername());
+            u.setUserID(c.getUser().getUserID());
+            c.setUser(u);
+            cl.add(c);
+        }
+        return cl;
+    }
 
     @RequestMapping("/trip/join/{tripID}")
     public String joinTrip(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID)  {
-
         User u = userService.getCurrentUser();
         Trip t = tripService.findTrip(tripID);
 
@@ -194,9 +229,7 @@ public class TripController {
         return "redirect:/trip/" + tripID + ".html";
     }
     @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
-    public String updateTrip(@ModelAttribute("trip")
-                             Trip trip, BindingResult result) {
-
+    public String updateTrip(@ModelAttribute("trip") Trip trip, BindingResult result) {
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
         return "redirect:/user/admincp-"+trip.getTripId()+".html";

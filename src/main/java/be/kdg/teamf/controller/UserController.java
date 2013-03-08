@@ -53,6 +53,15 @@ public class UserController {
     private TripService tripService;
 
 
+    /* TESTTEST */
+    @RequestMapping(value = "/getmessage", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody String getMessage() {
+        return "yoloswag";
+    }
+
+
+    /* END TEST */
+
 
     @RequestMapping(value = "/user/user.html", method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) {
