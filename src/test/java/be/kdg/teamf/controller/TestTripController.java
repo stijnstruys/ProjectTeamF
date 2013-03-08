@@ -126,10 +126,14 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
         Trip t = getTrip();
-        t.setStopPlaatsen(new ArrayList<StopPlaats>());
+        ArrayList<StopPlaats> spList = new ArrayList<>();
+        StopPlaats sp = new StopPlaats();
+        sp.setInformatie("Test");
+        spList.add(0,sp);
+        t.setStopPlaatsen(spList);
 
         tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
-        ModelAndView mav = mav = tripController.viewTripPage(mockHttpServletRequest, null, t.getTripId());
+        ModelAndView mav = tripController.viewTripPage(mockHttpServletRequest, null, t.getTripId());
 
         assertEquals("Trip/viewTrip", mav.getViewName());
     }
@@ -206,6 +210,29 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         tripController.addTrip(t, null, tt.getTripTypeId(), new MockHttpServletRequest());
 
         tripController.deleteTrip(t.getTripId());
+    }
+
+
+    /*Chat gedeelte*/
+
+    @Test
+    public void testChat() {
+        User u = getUser();
+        userController.addUser(u, mockMultipartFile);
+       Trip t = getTrip();
+        TripType tt = getTripType();
+
+        authenticateUser(u);
+        String s = tripController.addTrip(t, null, tt.getTripTypeId(), new MockHttpServletRequest());
+        String msg = "test";
+        tripController.addChat(t.getTripId(),msg);
+
+        TripController.ChatList cl = new TripController.ChatList();
+
+        cl = tripController.getChats(t.getTripId());
+
+        assertEquals("correct",msg,cl.get(0).getMsg());
+
     }
 
     public Trip getTrip() {
