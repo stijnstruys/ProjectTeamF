@@ -38,11 +38,15 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
     protected UserService userService;
     @Autowired
     protected DeelnameService deelnameService;
+    @Autowired
+    protected TripCategorieService tripCategorieService;
 
     @Test
     public void testSearchTrip() {
 
         Trip trip = new Trip();
+        Date d = new Date("31/12/2020");
+        trip.setEndDate(d);
         trip.setTripName("tripJeroen123");
         tripService.addTrip(trip);
         assertTrue("Trip not found", tripService.searchTrips("Jeroen").contains(trip));
@@ -57,7 +61,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         tripService.addTrip(trip);
         trip.setTripName("trip321");
         tripService.updateTrip(trip);
-        assertTrue("Trip not found", tripService.searchTrips("trip").contains(trip));
+        assertEquals("Trip not found", "trip321", tripService.findTrip(trip.getTripId()).getTripName());
 
     }
 
@@ -97,6 +101,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
 
     @Test
     public void testSearchTripsCategorie() {
+        Date d = new Date("31/12/2020");
         Trip trip = new Trip();
         ArrayList<TripCategorie> tcs = new ArrayList<>();
         TripCategorie tc = new TripCategorie();
@@ -106,7 +111,9 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         tcs.add(tc);
         trip.setTripCategorieen(tcs);
         trip.setTripName("tripJeroen123");
-
+        trip.setVisible(true);
+        trip.setEndDate(d);
+        tripCategorieService.addTripCategorie(tc);
         tripService.addTrip(trip);
         assertTrue("Trip not found", tripService.searchTripsCategories("test").contains(trip));
 
@@ -205,6 +212,8 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         Trip trip = new Trip();
         trip.setVisible(true);
         trip.setTripName("tripJeroen123");
+        Date d = new Date("31/12/2020");
+        trip.setEndDate(d);
         ArrayList<Trip> trips = new ArrayList<>();
         trips.add(trip);
         tripService.addTrip(trip);

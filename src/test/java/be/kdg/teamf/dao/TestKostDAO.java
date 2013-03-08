@@ -49,7 +49,7 @@ public class TestKostDAO extends AbstractTransactionalJUnit4SpringContextTests {
         kostDAO.addKost(k);
         kostDAO.deleteKost(k);
 
-        assertEquals("Kost not found", k, kostDAO.findKost(k.getKostId()));
+        assertEquals("Kost not found", null, kostDAO.findKost(k.getKostId()));
     }
 
     @Test
@@ -71,7 +71,7 @@ public class TestKostDAO extends AbstractTransactionalJUnit4SpringContextTests {
         u.setUserID(1);
         dn.setDeelnameID(1);
         dn.setUser(u);
-
+        k.setDeelname(dn);
         userDAO.addUser(u);
         deelnameDAO.addDeelname(dn);
         kostDAO.addKost(k);
@@ -87,7 +87,7 @@ public class TestKostDAO extends AbstractTransactionalJUnit4SpringContextTests {
         t.setTripId(1);
         dn.setDeelnameID(1);
         dn.setTrip(t);
-
+        k.setDeelname(dn);
         tripDAO.addTrip(t);
         deelnameDAO.addDeelname(dn);
         kostDAO.addKost(k);
@@ -106,7 +106,7 @@ public class TestKostDAO extends AbstractTransactionalJUnit4SpringContextTests {
         dn.setDeelnameID(1);
         dn.setTrip(t);
         dn.setUser(u);
-
+        k.setDeelname(dn);
         userDAO.addUser(u);
         tripDAO.addTrip(t);
         deelnameDAO.addDeelname(dn);

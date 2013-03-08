@@ -26,6 +26,12 @@ import static org.junit.Assert.assertFalse;
 public class TestKostService extends AbstractTransactionalJUnit4SpringContextTests {
     @Autowired
     KostService kostService;
+    @Autowired
+    UserService userService;
+    @Autowired
+    TripService tripService;
+    @Autowired
+    DeelnameService deelnameService;
 
     @Test
     public void addKost() {
@@ -71,7 +77,10 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
         Kost k = new Kost();
         k.setDeelname(dn);
         kosten.add(k);
-
+        userService.addUser(u);
+        tripService.addTrip(t);
+        deelnameService.addDeelname(dn);
+        kostService.addKost(k);
         assertEquals("kosten not 1", kosten.size(), kostService.kostenPerUser(u).size());
     }
 
@@ -87,7 +96,10 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
         Kost k = new Kost();
         k.setDeelname(dn);
         kosten.add(k);
-
+        userService.addUser(u);
+        tripService.addTrip(t);
+        deelnameService.addDeelname(dn);
+        kostService.addKost(k);
         assertEquals("kosten not 1", kosten.size(), kostService.kostenPerTrip(t).size());
     }
 
@@ -103,7 +115,10 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
         Kost k = new Kost();
         k.setDeelname(dn);
         kosten.add(k);
-
+        userService.addUser(u);
+               tripService.addTrip(t);
+               deelnameService.addDeelname(dn);
+               kostService.addKost(k);
         assertEquals("kosten not 1", kosten.size(), kostService.kostenPerTripEnUser(t, u).size());
     }
 

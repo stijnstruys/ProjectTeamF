@@ -264,11 +264,16 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
-    public User login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
-        User u = new User();
-        u.setUsername("test");
-        return u;
+    @RequestMapping(value = "/service/login", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    User serviceLogin(@RequestBody User u) {
+        System.out.println("hier user: " + u.getUsername() + "pasw: " + u.getPassword());
+        if (userService.login(u) > -1) {
+            return userService.findUser(u.getUsername());
+        } else {
+            return new User();
+        }
     }
 
     @RequestMapping("/image/{id}")
@@ -283,6 +288,5 @@ public class UserController {
         }
         return null;
     }
-
 
 }

@@ -61,9 +61,11 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     @Test
     public void testDeleteTripCategorie() {
         String s ="";
-        TripCategorie tc = getTripCategorie();
         Trip t = new Trip();
-        t.setTripCategorieen(new ArrayList<TripCategorie>());
+        TripCategorie tc = new TripCategorie();
+        tc.setTripCategorieName("test");
+       // tc.setTrip(t);
+
         tripDAO.addTrip(t);
 
         tripCategorieController.addTripCategorie(tc,null,t.getTripId());

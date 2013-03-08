@@ -132,7 +132,8 @@ public class TestDeelnameDAO extends AbstractTransactionalJUnit4SpringContextTes
         dn.setDeelnameID(1);
         dn.setUser(u);
         dn2.setDeelnameID(2);
-        dn.setUser(u);
+        dn2.setUser(u);
+        userDAO.addUser(u);
         deelnameDAO.addDeelname(dn);
         deelnameDAO.addDeelname(dn2);
 

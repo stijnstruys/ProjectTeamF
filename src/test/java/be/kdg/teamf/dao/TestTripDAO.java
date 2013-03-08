@@ -91,9 +91,11 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Test
     public void testListPublicTrips() {
+        Date d = new Date("31/12/2020");
         Trip t = new Trip();
         t.setTripId(1);
         t.setVisible(true);
+        t.setEndDate(d);
         tripDAO.addTrip(t);
         assertEquals("Expected size:", 1, tripDAO.listPublicTrips().size());
     }

@@ -28,7 +28,9 @@ public class TestDeelnameModel {
     public void addDeelname() throws Exception {
         Deelname d = new Deelname();
         List<String> equipment = new ArrayList();
-        Collection<Kost> kosten = new ArrayList();
+       // Collection<Kost> kosten = new ArrayList();
+       // Kost k = new Kost();
+        //kosten.add(k);
         User u = new User();
         Trip t = new Trip();
         Deelname d2 = new Deelname(t,u);
@@ -39,7 +41,7 @@ public class TestDeelnameModel {
         d.setTrip(t);
         d.setUser(u);
         d.setEquipment(equipment);
-        d.setKosten(kosten);
+        d.setKosten(null);
 
 //        deelnameDAO.addDeelname(d);
         assertEquals("Expected deelnameID", 1, d.getDeelnameID());
@@ -48,6 +50,6 @@ public class TestDeelnameModel {
         assertEquals("Expected deelnameID", 2, d2.getDeelnameID());
         assertEquals("Expected trip:", t, d2.getTrip());
         assertEquals("Expected user:", u, d2.getUser());
-        assertEquals("Expected kosten:", kosten, d2.getKosten());
+        assertEquals("Expected kosten:", null, d2.getKosten());
     }
 }
