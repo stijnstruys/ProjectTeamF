@@ -1,5 +1,6 @@
 package be.kdg.teamf.service;
 
+import be.kdg.teamf.dao.UserDAO;
 import be.kdg.teamf.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
 
     @Autowired
     protected UserService userService;
+
+
 
     @Test
     public void addUser() {
@@ -89,5 +92,22 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
         userService.updateUser(u);
 
         assertEquals("De user is niet gewijzigd", "updated", userService.findUser("updated").getUsername());
+    }
+
+    @Test
+    public void testLogin() {
+        User u = new User();
+        u.setEmail("bart@hotmail.com");
+        u.setLastName("Leemans");
+        u.setFirstName("Bart");
+        u.setUsername("Bart Leemans");
+        u.setTelephone("00306985587996");
+        u.setPassword("test");
+        userService.addUser(u);
+
+        int i = userService.login(u);
+
+        assertEquals("Correct",u.getUserID(),i);
+
     }
 }

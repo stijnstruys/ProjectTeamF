@@ -17,6 +17,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -65,19 +66,22 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
 
     @Test
     public void testAddTrip() {
-        TripType tt = getTripType();
-        tt.setTripTypeId(2);
+        TripType tt = tripTypeDAO.findTripType(2);
         Trip t = getTrip();
         User u = getUser();
+        t.setStartDate(new java.util.Date(2013/03/15));
+        t.setEndDate(new java.util.Date(2013/03/16));
         userController.addUser(u, mockMultipartFile);
         authenticateUser(u);
 
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
-
+        mockHttpServletRequest.setParameter("dateUntill","2013/09/12");
+        mockHttpServletRequest.setParameter("repetition","4m");
         String s = tripController.addTrip(t, null, tt.getTripTypeId(), mockHttpServletRequest);
 
         assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s);
     }
+
 
     @Test
     public void testRepeatingTrip() {

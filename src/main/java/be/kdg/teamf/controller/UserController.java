@@ -52,6 +52,9 @@ public class UserController {
     @Autowired
     private TripService tripService;
 
+
+
+
     @RequestMapping(value = "/user/user.html", method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) {
 
