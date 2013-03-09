@@ -268,7 +268,12 @@ public class UserController {
     @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
     public AndroidUser login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
 
+        Trip t = new Trip();
+        t.setTripDescription("test");
+        t.setNotification("test");
         AndroidUser u = new AndroidUser();
+        u.setTrips(new ArrayList<Trip>());
+        u.getTrips().add(t);
         u.setUsername("test");
 
 

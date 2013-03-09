@@ -1,5 +1,6 @@
 package be.kdg.teamf.model;
 
+import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -26,6 +27,7 @@ public class AndroidUser{
     private boolean showPosition;
 
     private boolean notificationEmail;
+    private Collection<Trip> trips;
 
 
     public AndroidUser() {
@@ -142,5 +144,13 @@ public class AndroidUser{
 
     public void setNotificationEmail(boolean notificationEmail) {
         this.notificationEmail = notificationEmail;
+    }
+
+    public Collection<Trip> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(Collection<Trip> trips) {
+        this.trips = trips;
     }
 }
