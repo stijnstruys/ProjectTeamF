@@ -1,5 +1,7 @@
 package be.kdg.teamf.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
@@ -23,10 +25,12 @@ public class Deelname {
     @GeneratedValue
     private int deelnameID;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
@@ -37,6 +41,7 @@ public class Deelname {
     @Column(name="Equipment")
     private Collection<String> equipment;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("deelname"))
     private Collection<Kost> kosten;

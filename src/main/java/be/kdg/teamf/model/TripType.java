@@ -1,5 +1,6 @@
 package be.kdg.teamf.model;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -28,6 +29,7 @@ public class TripType {
     @Column(name = "TRIPTYPEDESCRIPTION")
     private String tripTypeDescription;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("tripType"))
     private Collection<Trip> trips;

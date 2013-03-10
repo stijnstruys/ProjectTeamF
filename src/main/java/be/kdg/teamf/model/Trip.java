@@ -1,14 +1,13 @@
 package be.kdg.teamf.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.CascadeType;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 
@@ -22,6 +21,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "T_TRIP")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
+
 public class Trip {
     @Id
     @Column(name = "TripID")
@@ -75,26 +76,32 @@ public class Trip {
     @Column(name = "TRAVELTYPE")
     private String travelType;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User organiser;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private TripType tripType;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<StopPlaats> stopPlaatsen;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<TripCategorie> tripCategorieen;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Chat> chats;

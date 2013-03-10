@@ -1,5 +1,6 @@
 package be.kdg.teamf.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
@@ -43,6 +44,7 @@ public class StopPlaats {
     @Column(name="Antwoorden")
     private Collection<String> antwoorden;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;

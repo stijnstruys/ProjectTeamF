@@ -1,6 +1,7 @@
 package be.kdg.teamf.model;
 
 import be.kdg.teamf.model.component.JsonDateSerializer;
+import org.codehaus.jackson.annotate.JsonBackReference;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -30,10 +31,12 @@ public class Chat {
     @Column(name = "date")
     private Date date;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;

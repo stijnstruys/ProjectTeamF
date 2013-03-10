@@ -1,5 +1,6 @@
 package be.kdg.teamf.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -24,6 +25,7 @@ public class TripCategorie {
     @Column(name="TRIPCATEGORIENAME")
     private String tripCategorieName;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;

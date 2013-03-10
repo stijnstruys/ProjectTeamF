@@ -1,6 +1,5 @@
 package be.kdg.teamf.controller;
 
-import be.kdg.teamf.model.AndroidUser;
 import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.TripService;
@@ -12,7 +11,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -166,8 +164,7 @@ public class UserController {
     @RequestMapping(value = "/user/changepw", method = RequestMethod.POST)
     public String changePw(@RequestParam("currentpw") String currentpw, @RequestParam("newpw") String newpw, @RequestParam("confirmpw") String confirmpw) {
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User u = userService.findUser(auth.getName());
+        User u = userService.getCurrentUser();
 
         if (newpw.equals(confirmpw)) {
             if (u.getPassword().equals(currentpw)) {
@@ -186,8 +183,7 @@ public class UserController {
     @RequestMapping(value = "/user/profile")
     public ModelAndView profile(HttpServletRequest request) {
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User u = userService.findUser(auth.getName());
+        User u = userService.getCurrentUser();
 
         request.setAttribute("user", u);
 
@@ -266,17 +262,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
-    public AndroidUser login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
+    public User login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
 
-        Trip t = new Trip();
-        t.setTripDescription("test");
-        t.setNotification("test");
-        AndroidUser u = new AndroidUser();
-        u.setTrips(new ArrayList<Trip>());
-        u.getTrips().add(t);
+
+
+        User u = new User();
+
         u.setUsername("test");
+       // t.setOrganiser(u);
+     //   Gson gson = new Gson();
 
-
+       // String s = gson.toJson(u);
+       // User bla = gson.fromJson(s,User.class);
         return u;
     }
 

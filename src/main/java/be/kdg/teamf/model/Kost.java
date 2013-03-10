@@ -1,5 +1,6 @@
 package be.kdg.teamf.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -26,6 +27,7 @@ public class Kost {
     @Column(name="beschrijving")
     private String beschrijving;
 
+    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Deelname deelname;

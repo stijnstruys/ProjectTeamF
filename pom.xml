@@ -25,6 +25,14 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test-mvc</artifactId>
@@ -226,6 +234,7 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.7.1</version>
         </dependency>
+
 
 
     </dependencies>

@@ -262,5 +262,9 @@ public class TripController {
         }
         return openTrips.get(0);
     }
-
+    @RequestMapping(value = "/service/tripList", method = RequestMethod.POST, headers = "Accept=application/json")
+    public List<Trip> getTripList(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
+    //public Trip getTripList(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
+        return tripService.listTrips();
+    }
 }

@@ -1,5 +1,8 @@
 package be.kdg.teamf.model;
 
+
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,7 +25,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "T_USER")
-public class User implements Serializable , UserDetails{
+//@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
+public class User implements Serializable, UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userID;
@@ -58,14 +62,17 @@ public class User implements Serializable , UserDetails{
     @Column(name = "profielFoto")
     private Blob profielFoto;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("organiser"))
     private Collection<Trip> trips;
 
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Chat> chats;
@@ -106,27 +113,31 @@ public class User implements Serializable , UserDetails{
         return username;
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return true;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return true;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return true;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
-        return true;
+        return true;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-
+    @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         ArrayList<GrantedAuthority> g =new ArrayList<>();
@@ -263,22 +274,4 @@ public class User implements Serializable , UserDetails{
     public void setProfielFoto(Blob profielFoto) {
         this.profielFoto = profielFoto;
     }
-
-
-    /*  @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (userID != user.userID) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return userID;
-    } */
 }
