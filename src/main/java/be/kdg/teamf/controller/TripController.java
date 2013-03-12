@@ -187,7 +187,7 @@ public class TripController {
     @ResponseBody
     List<Chat> getChats(@RequestParam("trip") int tripid) {
         //ChatList cl = new ChatList();
-          List<Chat> cl = new ArrayList<Chat>();
+        List<Chat> cl = new ArrayList<Chat>();
 
         Trip t = tripService.findTrip(tripid);
 
