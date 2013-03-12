@@ -249,7 +249,7 @@ public class TripController {
     @RequestMapping(value = "/service/getOpenTrips", method = RequestMethod.GET)
     public
     @ResponseBody
-    Trip getOpenTrips(){
+    List<Trip> getOpenTrips(){
         List<Trip> trips = new ArrayList<Trip>(tripService.listTrips());
         List<Trip> openTrips = new ArrayList<Trip>();
         for(Trip t:trips){
@@ -260,11 +260,8 @@ public class TripController {
                 openTrips.add(temp);
             }
         }
-        return openTrips.get(0);
+        return openTrips;
     }
-    @RequestMapping(value = "/service/tripList", method = RequestMethod.POST, headers = "Accept=application/json")
-    public List<Trip> getTripList(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
-    //public Trip getTripList(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
-        return tripService.listTrips();
-    }
+
+
 }
