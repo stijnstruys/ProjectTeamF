@@ -28,32 +28,38 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
     }
 
     @Override
+    @Transactional
     public void updateStopPlaats(StopPlaats stopPlaats) {
         stopPlaatsDAO.updateStopPlaats(stopPlaats);
     }
 
     @Override
+    @Transactional
     public void deleteStopPlaats(StopPlaats stopPlaats) {
         stopPlaatsDAO.deleteStopPlaats(stopPlaats);
     }
 
     @Override
+    @Transactional
     public StopPlaats findStopPlaats(int stopPlaatsID) {
         return stopPlaatsDAO.findStopPlaats(stopPlaatsID);
     }
 
     @Override
+    @Transactional
     public List<StopPlaats> listStopPlaatsen() {
 
      return stopPlaatsDAO.listStopPlaatsen();
     }
 
     @Override
+    @Transactional
     public boolean controleerAntwoord(String antwoord, StopPlaats sp) {
         return antwoord.equals(sp.getCorrectAntwoord());
     }
 
     @Override
+    @Transactional
     public List<StopPlaats> getStopPlaatsenByTripId(int tripId) {
         return stopPlaatsDAO.getStopplaatsenByTrip(tripId);
     }

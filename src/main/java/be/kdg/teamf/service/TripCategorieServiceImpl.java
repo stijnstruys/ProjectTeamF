@@ -39,11 +39,13 @@ public class TripCategorieServiceImpl implements TripCategorieService {
     }
 
     @Override
+    @Transactional
     public List<TripCategorie> getTripCategories(int tripID) {
        return tripCategorieDAO.getTripCategories(tripID);
     }
 
     @Override
+    @Transactional
     public TripCategorie findTripCategorie(int tripCategorieId) {
         return tripCategorieDAO.findTripCategorie(tripCategorieId);
     }

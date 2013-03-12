@@ -86,7 +86,7 @@
                     ${trip.tripDescription}
                     </br></br>
 
-                    <legend>General</legend>
+                    <legend><spring:message code="label.General"/></legend>
                     <div class="row-fluid">
                         <div class="span2" ><label class="profile_right"><spring:message code="label.startLocation"/></label></div>
                         <div class="span3">

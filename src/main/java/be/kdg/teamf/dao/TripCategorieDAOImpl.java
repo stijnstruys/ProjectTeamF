@@ -17,14 +17,12 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Repository
-@Transactional
 public class TripCategorieDAOImpl implements TripCategorieDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public void addTripCategorie(TripCategorie tripCategorie) {
         sessionFactory.getCurrentSession().save(tripCategorie);
     }

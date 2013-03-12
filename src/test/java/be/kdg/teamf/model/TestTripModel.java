@@ -38,6 +38,8 @@ public class TestTripModel {
         List<StopPlaats> stopPlaatsList = new ArrayList();
         List<TripCategorie> tripCategorieList = new ArrayList();
         List<String> equipment = new ArrayList<>();
+        List<Chat> chats = new ArrayList<>();
+        List<BroadcastMessage> broadcastMessages = new ArrayList<>();
         equipment.add("equipment");
         tt.setTripTypeName("publiek");
 
@@ -62,7 +64,8 @@ public class TestTripModel {
         t.setShowMap(true);
         t.setShowRoute(true);
         t.setTravelType("Driving");
-
+        t.setChats(chats);
+        t.setBroadcastMessages(broadcastMessages);
         assertEquals("Expected id: 1", 1, t.getTripId());
         assertEquals("Expected tripname: tripname", "tripname", t.getTripName());
         assertEquals("Enddate", d, t.getEndDate());
@@ -83,6 +86,8 @@ public class TestTripModel {
         assertEquals("Expected show map:", true, t.getShowMap());
         assertEquals("Expected show route:", true, t.getShowRoute());
         assertEquals("Expected travel type:", "Driving", t.getTravelType());
+        assertEquals("Expected chats:", chats, t.getChats());
+        assertEquals("Expected broadcast messages:", broadcastMessages, t.getBroadcastMessages());
     }
 
 

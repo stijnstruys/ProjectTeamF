@@ -74,16 +74,9 @@ public class User implements Serializable, UserDetails {
 
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("user"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Chat> chats;
 
-    public Collection<Chat> getChats() {
-        return chats;
-    }
-
-    public void setChats(Collection<Chat> chats) {
-        this.chats = chats;
-    }
 
     public User() {
 
@@ -273,5 +266,13 @@ public class User implements Serializable, UserDetails {
 
     public void setProfielFoto(Blob profielFoto) {
         this.profielFoto = profielFoto;
+    }
+
+    public Collection<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(Collection<Chat> chats) {
+        this.chats = chats;
     }
 }

@@ -43,6 +43,7 @@ public class TripTypeServiceImpl implements TripTypeService {
     }
 
     @Override
+    @Transactional
     public TripType findTripType(int TripTypeID) {
         return tripTypeDAO.findTripType(TripTypeID);
     }

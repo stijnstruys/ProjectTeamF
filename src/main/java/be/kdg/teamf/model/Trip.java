@@ -55,7 +55,7 @@ public class Trip {
     @Column(name = "Equipment")
     private Collection<String> equipment;
 
-    @Column(name="visible")
+    @Column(name = "visible")
     private boolean visible = true;
 
     @Column(name = "FONTCOLORTITLE")
@@ -106,13 +106,10 @@ public class Trip {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Chat> chats;
 
-    public Collection<Chat> getChats() {
-        return chats;
-    }
-
-    public void setChats(Collection<Chat> chats) {
-        this.chats = chats;
-    }
+    @JsonManagedReference
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
+    private Collection<BroadcastMessage> broadcastMessages;
 
     public Trip() {
     }
@@ -279,4 +276,19 @@ public class Trip {
     }
 
 
+    public Collection<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(Collection<Chat> chats) {
+        this.chats = chats;
+    }
+
+    public Collection<BroadcastMessage> getBroadcastMessages() {
+        return broadcastMessages;
+    }
+
+    public void setBroadcastMessages(Collection<BroadcastMessage> broadcastMessages) {
+        this.broadcastMessages = broadcastMessages;
+    }
 }

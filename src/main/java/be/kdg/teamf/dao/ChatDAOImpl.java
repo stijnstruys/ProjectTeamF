@@ -23,13 +23,11 @@ public class ChatDAOImpl implements ChatDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public void addChat(Chat c) {
         sessionFactory.getCurrentSession().save(c);
     }
 
     @Override
-    @Transactional
     public ArrayList<Chat> getChats(int tripID) {
         Query q = sessionFactory.getCurrentSession().createQuery("from Chat where trip.tripId = :tripID");
         q.setInteger("tripID", tripID);
