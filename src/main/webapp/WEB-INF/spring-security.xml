@@ -17,7 +17,7 @@
         <intercept-url pattern="/trip/join/*.html" access="ROLE_USER" />
         <intercept-url pattern="/trip/addTrip.html" access="ROLE_USER" />
         <form-login login-page="/general/login.html" default-target-url="/general/index.html"
-                    authentication-failure-url="/user/loginfailed.html" />
+                    authentication-failure-url="/general/loginfailed.html" />
         <logout logout-success-url="/" />
     </http>
 
