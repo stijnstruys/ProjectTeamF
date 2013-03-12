@@ -15,14 +15,21 @@ import javax.servlet.http.HttpServletResponse;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-@RequestMapping("general/about.html")
-public class AboutController {
+public class GeneralController {
 
-    @RequestMapping(method = RequestMethod.GET)
-        public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response){
+
+    @RequestMapping(value = "general/about.html", method = RequestMethod.GET)
+    public ModelAndView getAbout(HttpServletRequest request, HttpServletResponse response){
 
             ModelAndView model = new ModelAndView("General/about");
 
             return model;
     }
+
+    @RequestMapping(value = "general/loginfailed.html")
+    public ModelAndView getLoginfailed(){
+        ModelAndView m = new ModelAndView("General/loginFailed");
+        return m;
+    }
+
 }
