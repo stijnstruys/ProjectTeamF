@@ -243,7 +243,7 @@ a.trip_name:hover {
 }
 
 .float_fix {
-    clear: left;
+    clear: both;
 }
 
 .pagination {
@@ -299,6 +299,11 @@ a.trip_name:hover {
 #photo {
     max-width: 300px;
     max-height: 200px;
+    -webkit-border-radius: 1em;
+        -khtml-border-radius: 1em;
+        -moz-border-radius: 1em;
+        border-radius: 1em;
+        border-radius: 1em;
 }
 #photo-section {
     /*position: inherit;
