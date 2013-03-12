@@ -31,12 +31,10 @@ public class Chat {
     @Column(name = "date")
     private Date date;
 
-    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Trip trip;
 
-    @JsonBackReference
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;

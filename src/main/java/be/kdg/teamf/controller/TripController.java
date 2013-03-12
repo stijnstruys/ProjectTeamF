@@ -174,27 +174,34 @@ public class TripController {
     public @ResponseBody
     void addChat(@RequestParam("trip") int trip, @RequestParam("msg") String msg) {
         chatService.addChat(new Chat(tripService.findTrip(trip), userService.getCurrentUser(), msg));
-        //Trip t = tripService.findTrip(trip);
-        //t.getChats().add(new Chat(tripService.findTrip(trip), userService.getCurrentUser(), msg));
-        //tripService.updateTrip(t);
-
     }
 
+    @RequestMapping(value="/android/add", method = RequestMethod.POST, headers = "Accept=application/json")
+    public @ResponseBody
+    void addChatAndroid(@RequestParam("trip") String trip, @RequestParam("msg") String msg, @RequestParam("userid") String userID) {
+         User u = userService.findUser(Integer.valueOf(userID));
+        chatService.addChat( new Chat(tripService.findTrip(Integer.valueOf(trip)), u, msg ));
+    }
+
+
     /* get chats */
-    static class ChatList extends ArrayList<Chat> {  }
+   // static class ChatList extends ArrayList<Chat> {  }
 
     @RequestMapping(value="/chat/getChat", method = RequestMethod.GET)
     public
     @ResponseBody
-    ChatList getChats(@RequestParam("trip") int tripid) {
-        ChatList cl = new ChatList();
+    List<Chat> getChats(@RequestParam("trip") int tripid) {
+        //ChatList cl = new ChatList();
+          List<Chat> cl = new ArrayList<Chat>();
 
         Trip t = tripService.findTrip(tripid);
+
         for(Chat c : chatService.getChats(tripid)) {
             c.setTrip(null);
             User u = new User();
             u.setUsername(c.getUser().getUsername());
             u.setUserID(c.getUser().getUserID());
+
             c.setUser(u);
             cl.add(c);
         }

@@ -116,7 +116,7 @@ $(document).ready(function () {
             .hide()
             .html("");
         if (validateKost()) {
-            $("#kostPrijs").val(Math.round($("#kostPrijs").val() * 100) / 100);
+            $("#kostPrijs").val(Math.round( $("#kostPrijs").val()*100)/100);
             $("#addKost").submit();
         }
         else {
@@ -558,34 +558,34 @@ function chat() {
 
     var chaticon = $("#chat-loading");
     var loader = "<img src='../img/validation/loader.gif' />";
-    var success = "<img src='../img/validation/accepted.png' />";
+    var success ="<img src='../img/validation/accepted.png' />";
     chaticon.html(loader);
 
     // adding a new msg
-    $("#shout").click(function () {
-        var msg = $("#shout-msg");
-        if (msg.val().length > 0) {
-            $.ajax({
-                type: "POST",
-                url: '/ProjectTeamF-1.0/chat/add.html',
-                data: ({msg: msg.val(), trip: tripid}),
-                success: function () {
-                    update();
-                    msg.val("");
-                }
-            })
-        }
+    $("#shout").click( function() {
+           var msg = $("#shout-msg");
+           if(msg.val().length > 0) {
+               $.ajax({
+                   type: "POST",
+                   url: '/ProjectTeamF-1.0/chat/add.html',
+                   data: ({msg: msg.val() , trip: tripid}),
+                   success: function() {
+                       update();
+                       msg.val("");
+                   }
+               })
+           }
 
     });
 
-    $("#gotochat").click(function () {
+    $("#gotochat").click( function() {
         doActualUpdate();
-        interval = setInterval(update, 15000);
+        interval = setInterval( update, 15000 );
         intervalrunning = true;
     });
 
     function update() {
-        if ($("#chat-li").hasClass("active")) {
+        if($("#chat-li").hasClass("active")) {
             doActualUpdate();
         } else {
             intervalrunning = false;
@@ -598,14 +598,16 @@ function chat() {
         var showmsg = "";
         $.ajax({
             type: "GET",
-            url: '/ProjectTeamF-1.0/chat/getChat.html',
+            url: '/ProjectTeamF-1.0/chat/getChat.json',
             data: ({trip: tripid}),
-            success: function (data) {
-                $.each(data, function () {
+            success: function(data) {
+                $.each(data, function() {
                     var self = this;
                     showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
                 });
+
                 $("#chat-area").html(showmsg);
+                $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
                 $("#chat-area").animate({ scrollTop: 10000 }, '1400', "easeOutQuint");
                 chaticon.html(success);
             }
