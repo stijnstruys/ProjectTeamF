@@ -230,11 +230,22 @@
 
         <!-- Jackson JSON Mapper -->
         <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-jaxrs</artifactId>
+                <version>1.6.1</version>
+            </dependency>
+
+                <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.7.1</version>
+            <version>1.9.9</version>
         </dependency>
 
+        <dependency>
+               <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.9</version>
+        </dependency>
 
 
     </dependencies>
