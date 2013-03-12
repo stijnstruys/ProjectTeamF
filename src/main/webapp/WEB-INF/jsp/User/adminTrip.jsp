@@ -105,7 +105,7 @@
         </div>
     <a href="/ProjectTeamF-1.0/kost/adminKostTrip${trip.tripId}.html" class="btn btn-success float_right manageBtn"
        id="KostOverview"><spring:message code="label.CostOverview"/></a>
-    <c:if test="${3 != trip.tripType.tripTypeId}">
+    <c:if test="${trip.tripType != 'Los'}">
         <div class="control-group">
             <form:label id="labelTripStartD" class="control-label" path="startDate"><spring:message
                     code="label.startDate"/></form:label>
@@ -116,7 +116,7 @@
             </div>
         </div>
     </c:if>
-    <c:if test="${3 != trip.tripType.tripTypeId}">
+    <c:if test="${trip.tripType != 'Los'}">
         <div class="control-group">
             <form:label id="labelTripEndD" class="control-label" path="endDate"><spring:message
                     code="label.endDate"/></form:label>

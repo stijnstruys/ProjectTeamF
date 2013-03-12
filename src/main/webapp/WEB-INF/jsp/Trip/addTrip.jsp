@@ -48,30 +48,25 @@
         <div class="control-group">
             <form:label class="control-label" path="tripType"><spring:message code="label.tripType"/></form:label>
             <div class="controls">
-                <%
-                    int count = 0;
-                %>
-                <select name="tripTypeSelect" id="tripTypeSelect">
-
-                    <c:forEach var="item" items="${tripTypeList}">
-                        <%
-                            count++;
-                        %>
-                        <OPTION value="${item.tripTypeId}">
-                            <% if (count == 1) {%>
-                            <spring:message code="label.tripTypeName1"/><% }%>
-                            <% if (count == 2) {%>
-                            <spring:message code="label.tripTypeName2"/><% }%>
-                            <% if (count == 3) {%>
-                            <spring:message code="label.tripTypeName3"/><% }%>
-                        </OPTION>
-                    </c:forEach>
-                </select>
+                <form:select path="tripType" id="tripTypeSelect">
+                    <OPTION value="Tijdsgebonden">
+                        <spring:message code="label.tripTypeName1"/>
+                    </OPTION>
+                    <OPTION value="Herhalend">
+                        <spring:message code="label.tripTypeName2"/>
+                    </OPTION>
+                    <OPTION value="Los">
+                        <spring:message code="label.tripTypeName3"/>
+                    </OPTION>
+                </form:select>
             </div>
             <section id="description">
-                <section id="descriptionType1" class="descriptionTypes"><spring:message code="label.tripTypeDescription1"/></section>
-                <section id="descriptionType2" class="descriptionTypes"><spring:message code="label.tripTypeDescription2"/></section>
-                <section id="descriptionType3" class="descriptionTypes"><spring:message code="label.tripTypeDescription3"/></section>
+                <section id="descriptionType1" class="descriptionTypes"><spring:message
+                        code="label.tripTypeDescription1"/></section>
+                <section id="descriptionType2" class="descriptionTypes"><spring:message
+                        code="label.tripTypeDescription2"/></section>
+                <section id="descriptionType3" class="descriptionTypes"><spring:message
+                        code="label.tripTypeDescription3"/></section>
             </section>
         </div>
     </div>

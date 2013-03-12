@@ -81,10 +81,8 @@ public class Trip {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User organiser;
 
-    @JsonBackReference
-    @ManyToOne
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private TripType tripType;
+    @Column(name = "TRIPTYPE")
+    private String tripType;
 
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
@@ -187,11 +185,11 @@ public class Trip {
         this.tripCategorieen = tripCategorieen;
     }
 
-    public TripType getTripType() {
+    public String getTripType() {
         return tripType;
     }
 
-    public void setTripType(TripType tripType) {
+    public void setTripType(String tripType) {
         this.tripType = tripType;
     }
 

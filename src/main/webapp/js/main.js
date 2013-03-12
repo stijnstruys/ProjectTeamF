@@ -33,17 +33,17 @@ $(document).ready(function () {
     //add trip select show descreption
     $("#descriptionType1").show();
     $("#tripTypeSelect").change(function () {
-        if ($("#tripTypeSelect").val() == 1) {
+        if ($("#tripTypeSelect").val() == "Tijdsgebonden") {
             $("#descriptionType1").show();
             $("#descriptionType2").hide();
             $("#descriptionType3").hide();
         }
-        else if ($("#tripTypeSelect").val() == 2) {
+        else if ($("#tripTypeSelect").val() == "Herhalend") {
             $("#descriptionType1").hide();
             $("#descriptionType2").show();
             $("#descriptionType3").hide();
         }
-        else if ($("#tripTypeSelect").val() == 3) {
+        else if ($("#tripTypeSelect").val() == "Los") {
             $("#descriptionType1").hide();
             $("#descriptionType2").hide();
             $("#descriptionType3").show();
@@ -261,12 +261,12 @@ function addTrip() {
                 current++;
 
                 if (current == 3) {
-                    if (triptype == 3) {
+                    if (triptype == "Los") {
                         current++;
                     }
                 }
                 if (current == 4) {
-                    if (triptype != 2) {
+                    if (triptype != "Herhalend") {
                         current++;
                     }
                 }
@@ -297,12 +297,12 @@ function addTrip() {
             current--;
 
             if (current == 3) {
-                if (triptype == 3) {
+                if (triptype == "Los") {
                     current--;
                 }
             }
             if (current == 4) {
-                if (triptype != 2) {
+                if (triptype != "Herhalend") {
                     current--;
                 }
             }

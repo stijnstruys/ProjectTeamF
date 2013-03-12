@@ -34,9 +34,6 @@ public class TripController {
     private TripService tripService;
 
     @Autowired
-    private TripTypeService tripTypeService;
-
-    @Autowired
     private UserService userService;
 
     @Autowired
@@ -72,19 +69,17 @@ public class TripController {
     public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) {
         Trip t = new Trip();
         request.setAttribute("trip", t);
-        request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
 
         ModelAndView model = new ModelAndView("Trip/addTrip");
         return model;
     }
     @RequestMapping(value = "trip/add", method = RequestMethod.POST)
-    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, @RequestParam("tripTypeSelect") int triptype, HttpServletRequest request) {
+    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, HttpServletRequest request) {
 
-        trip.setTripType( tripTypeService.findTripType( triptype ) );
         trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
 
-        if(triptype == 2) {
+        if(trip.getTripType().equals("Herhalend")) {
             String t = request.getParameter("repetition");
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             Date maxDate = null;

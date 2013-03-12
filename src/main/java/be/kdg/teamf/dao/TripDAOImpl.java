@@ -44,8 +44,9 @@ public class TripDAOImpl implements TripDAO {
     @Override
     public List<Trip> searchTrips(String searchInput) {
         String si = "%" + searchInput + "%";
-        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripName like :si and endDate > current_date");
+        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripName like :si and (endDate > current_date or tripType = :los)");
         q.setString("si", si);
+        q.setString("los", "Los");
         return q.list();
     }
 
@@ -80,7 +81,8 @@ public class TripDAOImpl implements TripDAO {
 
     @Override
     public List<Trip> listPublicTrips() {
-        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where visible = true  and endDate > current_date");
+        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where visible = true  and (endDate > current_date or tripType = :los)");
+        q.setString("los", "Los");
         return q.list();
     }
 
@@ -95,8 +97,9 @@ public class TripDAOImpl implements TripDAO {
     public List<Trip> searchTripsCategories(String searchInput) {
 
         String si = "%" + searchInput + "%";
-        Query q = sessionFactory.getCurrentSession().createQuery("select t from Trip t , TripCategorie tc where tc.tripCategorieName like :si and tc.trip.tripId = t.tripId and t.endDate > current_date");
+        Query q = sessionFactory.getCurrentSession().createQuery("select t from Trip t , TripCategorie tc where tc.tripCategorieName like :si and tc.trip.tripId = t.tripId and (t.endDate > current_date or tripType = :los)");
         q.setString("si", si);
+        q.setString("los", "Los");
         return q.list();
     }
 
