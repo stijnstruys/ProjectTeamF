@@ -32,4 +32,10 @@ public class GeneralController {
         return m;
     }
 
+    @RequestMapping(value = "general/loginAfterRegister.html")
+        public ModelAndView getLoginAfterRegister(){
+            ModelAndView m = new ModelAndView("General/loginAfterRegister");
+            return m;
+        }
+
 }
