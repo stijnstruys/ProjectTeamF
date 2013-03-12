@@ -52,9 +52,37 @@ public class UserController {
     @Autowired
     private TripService tripService;
 
+    /* TEST ANDROID **/
 
+    @RequestMapping(value="/android/test", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String getTest(@RequestParam("trip") int tripid) {
+        return "test";
+    }
 
+    @RequestMapping(value="/android/test", method = RequestMethod.POST)
+    public @ResponseBody
+    String getSwag(@RequestParam("swag") String swag) {
 
+        return "hello " + swag;
+    }
+    @RequestMapping(value="/android/test2", method = RequestMethod.POST)
+    public @ResponseBody
+    User getUser(@RequestParam("uname") String uname,@RequestParam("pw") String pw ) {
+
+        User newuser = userService.findUser(uname);
+        //newuser.setChats(null);
+        //newuser.setDeelnames(null);
+        newuser.setProfielFoto(null);
+        newuser.setTrips(null);
+
+       // newuser.setUsername(uname);
+
+        return newuser;
+    }
+
+    /* end teset */
     @RequestMapping(value = "/user/user.html", method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) {
 
@@ -263,9 +291,6 @@ public class UserController {
 
     @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
     public User login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
-
-
-
         User u = new User();
 
         u.setUsername("test");

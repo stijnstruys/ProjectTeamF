@@ -22,7 +22,7 @@ import static org.junit.Assert.assertEquals;
 @ContextConfiguration(locations = "classpath:spring-servlet.xml")
 public class TestAboutController {
     @Autowired
-    AboutController aboutController;
+    GeneralController generalController;
 
     @Test
     public void testAbout(){
@@ -30,7 +30,7 @@ public class TestAboutController {
 
         ModelAndView mav= null;
 
-            mav = aboutController.handleRequestInternal(null,null);
+            mav = generalController.getAbout(null, null);
 
         assertEquals("General/about", mav.getViewName());
 

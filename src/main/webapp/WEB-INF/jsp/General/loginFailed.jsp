@@ -40,15 +40,56 @@ Time: 13:31
         <h2><spring:message code="label.loginError"/></h2>
 
         <section class="homeSection">
-            <section class="homeSectionLeft"><section class="homeSectionText">
-                <p>
-                    <spring:message code="label.LoginDataIncorrect"/>
+            <section class="homeSectionLeft">
+                <section class="homeSectionText">
+                    <p>
+                        <spring:message code="label.LoginDataIncorrect"/>
+
+                    <form class="form-horizontal" name='f' action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />" method='POST'>
+
+                        <div class="control-group">
+                            <label class="control-label"><spring:message code="label.username"/></label>
+                            <div class="controls">
+                                <input type='text' name='j_username' class="input"
+                                       placeholder="<spring:message code="label.username"/>">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><spring:message code="label.password"/></label>
+                            <div class="controls">
+                                <input type='password' name='j_password' class="input"
+                                       placeholder="<spring:message code="label.password"/> "/>
+                            </div>
+                        </div>
+
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <input name="submit" type="submit" value="Log in" class="btn"/>
+                                <input name="reset" type="reset" class="btn" value="Reset"/>
+
+                                <p class="divider"></p>
+                                <fb:login-button autologoutlink='true' perms='email,user_birthday,status_update,publish_stream'
+                                                 id="fblogin"></fb:login-button>
+                                <p class="divider"></p>
+                                <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message
+                                    code="label.RegisterHere"/></a>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+
+
                 </p>
+                </section>
             </section>
         </section>
     </section>
+    <div class="float_fix"></div>
 </section>
-<jsp:include page="footer.jsp"/>
+    <jsp:include page="footer.jsp"/>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -56,6 +97,7 @@ Time: 13:31
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
-
+<script src="../js/social/FBLogin.js"></script>
+<script src="http://connect.facebook.net/nl_NL/all.js#xfbml=1&appId=534896926530393" type="text/javascript"></script>
 </body>
 </html>

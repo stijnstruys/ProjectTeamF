@@ -243,7 +243,7 @@ a.trip_name:hover {
 }
 
 .float_fix {
-    clear: left;
+    clear: both;
 }
 
 .pagination {
