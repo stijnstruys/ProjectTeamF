@@ -79,7 +79,7 @@ public class TripController {
         trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
 
-        if(trip.getTripType().equals("Herhalend")) {
+        if(trip.getTripType()== "Herhalend") {
             String t = request.getParameter("repetition");
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             Date maxDate = null;

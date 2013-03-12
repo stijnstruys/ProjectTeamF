@@ -123,7 +123,6 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         sp.setInformatie("Test");
         spList.add(0,sp);
         t.setStopPlaatsen(spList);
-
         tripController.addTrip(t, null, mockHttpServletRequest);
         ModelAndView mav = tripController.viewTripPage(mockHttpServletRequest, null, t.getTripId());
 
