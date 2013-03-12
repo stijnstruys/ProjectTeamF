@@ -80,7 +80,6 @@ Time: 13:31
             <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message
                 code="label.RegisterHere"/></a>
             </p>
-
         </section>
     </section>
 </section>
