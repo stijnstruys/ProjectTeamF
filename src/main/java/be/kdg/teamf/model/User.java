@@ -1,8 +1,10 @@
 package be.kdg.teamf.model;
 
 
+import be.kdg.teamf.model.component.JsonDateSerializer;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonManagedReference;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.security.core.GrantedAuthority;
@@ -30,60 +32,57 @@ public class User implements Serializable, UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userID;
-    @Column(name = "username", unique = true)
+    @Column(name = "username", unique = true, length = 255)
     private String username;
-    @Column(name = "password")
+    @Column(name = "password", length = 255)
     private String password;
-    @Column(name = "email")
+    @Column(name = "email", length = 255)
     private String email;
-    @Column(name = "telephone")
+    @Column(name = "telephone", length = 255)
     private String telephone;
-    @Column(name = "firstname")
+    @Column(name = "firstname", length = 255)
     private String firstName;
-    @Column(name = "lastname")
+    @Column(name = "lastname", length = 255)
     private String lastName;
     @Column(name = "dateOfBirth")
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
-    @Column(name = "street")
+    @Column(name = "street", length = 255)
     private String street;
-    @Column(name = "number")
+    @Column(name = "number", length = 255)
     private String number;
-    @Column(name = "zipcode")
+    @Column(name = "zipcode", length = 255)
     private String zipcode;
-    @Column(name = "city")
+    @Column(name = "city", length = 255)
     private String city;
-    @Column(name = "showposition")
+    @Column(name = "showposition", length = 255)
     private boolean showPosition;
     @Column(name = "notificationemail")
     private boolean notificationEmail;
 
     @Lob
+    @JsonIgnore
     @Column(name = "profielFoto")
     private Blob profielFoto;
 
+    @JsonIgnore
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
 
+    @JsonIgnore
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("organiser"))
     private Collection<Trip> trips;
 
+    @JsonIgnore
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("user"))
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Chat> chats;
 
-    public Collection<Chat> getChats() {
-        return chats;
-    }
-
-    public void setChats(Collection<Chat> chats) {
-        this.chats = chats;
-    }
 
     public User() {
 
@@ -165,6 +164,7 @@ public class User implements Serializable, UserDetails {
         return lastName;
     }
 
+    @JsonSerialize(using=JsonDateSerializer.class)
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
@@ -273,5 +273,13 @@ public class User implements Serializable, UserDetails {
 
     public void setProfielFoto(Blob profielFoto) {
         this.profielFoto = profielFoto;
+    }
+
+    public Collection<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(Collection<Chat> chats) {
+        this.chats = chats;
     }
 }

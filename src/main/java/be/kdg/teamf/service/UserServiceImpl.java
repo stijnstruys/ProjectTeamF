@@ -34,26 +34,31 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void deleteUser(User user) {
         userDAO.deleteUser(user);
     }
 
     @Override
+    @Transactional
     public User findUser(int userID) {
         return userDAO.findUser(userID);
     }
 
     @Override
+    @Transactional
     public User findUser(String userName) {
         return userDAO.findUser(userName);
     }
 
     @Override
+    @Transactional
     public void updateUser(User user) {
         userDAO.updateUser(user);
     }
 
     @Override
+    @Transactional
     public User getCurrentUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         UserDetails userDetails;

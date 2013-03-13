@@ -25,20 +25,25 @@ $(document).ready(function () {
     //chat
     chat();
 
+    //broadcast
+    if ($("#broadcastMsgScroll").length > 0) {
+        $("#broadcastMsgScroll").prop({ scrollTop: $("#broadcastMsgScroll").prop("scrollHeight") });
+    }
+
     //add trip select show descreption
     $("#descriptionType1").show();
     $("#tripTypeSelect").change(function () {
-        if ($("#tripTypeSelect").val() == 1) {
+        if ($("#tripTypeSelect").val() == "Tijdsgebonden") {
             $("#descriptionType1").show();
             $("#descriptionType2").hide();
             $("#descriptionType3").hide();
         }
-        else if ($("#tripTypeSelect").val() == 2) {
+        else if ($("#tripTypeSelect").val() == "Herhalend") {
             $("#descriptionType1").hide();
             $("#descriptionType2").show();
             $("#descriptionType3").hide();
         }
-        else if ($("#tripTypeSelect").val() == 3) {
+        else if ($("#tripTypeSelect").val() == "Los") {
             $("#descriptionType1").hide();
             $("#descriptionType2").hide();
             $("#descriptionType3").show();
@@ -125,21 +130,21 @@ $(document).ready(function () {
 
     $("#updateKost").click(function () {
         errormsg = "";
-               $("#validation_failed").css("visibility", "hidden");
-               $("#validation_failed")
-                   .hide()
-                   .html("");
-               if (validateKost()) {
-                   $("#kostPrijs").val(Math.round( $("#kostPrijs").val()*100)/100);
-                   $("#addKost").submit();
-               }
-               else {
-                   $("#validation_failed").css("visibility", "visible");
-                   $("#validation_failed")
-                       .show()
-                       .html("<ul>" + errormsg + "</ul>");
-                   return false;
-               }
+        $("#validation_failed").css("visibility", "hidden");
+        $("#validation_failed")
+            .hide()
+            .html("");
+        if (validateKost()) {
+            $("#kostPrijs").val(Math.round($("#kostPrijs").val() * 100) / 100);
+            $("#addKost").submit();
+        }
+        else {
+            $("#validation_failed").css("visibility", "visible");
+            $("#validation_failed")
+                .show()
+                .html("<ul>" + errormsg + "</ul>");
+            return false;
+        }
     });
 
 
@@ -167,6 +172,8 @@ $(document).ready(function () {
             duration: 1000
         }
     });
+
+    $("#dialog-message-languages").removeClass("hidden");
 
 //mail
     $("#skip").click(function () {
@@ -256,12 +263,12 @@ function addTrip() {
                 current++;
 
                 if (current == 3) {
-                    if (triptype == 3) {
+                    if (triptype == "Los") {
                         current++;
                     }
                 }
                 if (current == 4) {
-                    if (triptype != 2) {
+                    if (triptype != "Herhalend") {
                         current++;
                     }
                 }
@@ -292,12 +299,12 @@ function addTrip() {
             current--;
 
             if (current == 3) {
-                if (triptype == 3) {
+                if (triptype == "Los") {
                     current--;
                 }
             }
             if (current == 4) {
-                if (triptype != 2) {
+                if (triptype != "Herhalend") {
                     current--;
                 }
             }
@@ -578,6 +585,9 @@ function chat() {
         interval = setInterval( update, 15000 );
         intervalrunning = true;
     });
+    $("#chat-apprend").click( function() {
+       doActualUpdate();
+    });
 
     function update() {
         if($("#chat-li").hasClass("active")) {
@@ -587,21 +597,30 @@ function chat() {
         }
 
     }
+    var lastid = 0;
 
     function doActualUpdate() {
         chaticon.html(loader);
         var showmsg = "";
         $.ajax({
             type: "GET",
-            url: '/ProjectTeamF-1.0/chat/getChat.html',
-            data: ({trip: tripid}),
+            url: '/ProjectTeamF-1.0/chat/getChat.json',
+            data: ({trip: tripid, lastId: lastid}),
             success: function(data) {
-                $.each(data, function() {
-                    var self = this;
-                    showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
-                });
-                $("#chat-area").html(showmsg);
-                $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
+                if(data != null)  {
+
+                    $.each(data, function() {
+                         var self = this;
+                        showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
+                        lastid = self.chatID;
+                    });
+
+                    $("#chat-area").append(showmsg);
+                   // $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
+                    if ($("#chat-area").length > 0) {
+                        $("#chat-area").prop({ scrollTop: $("#chat-area").prop("scrollHeight") });
+                    }
+                }
                 chaticon.html(success);
             }
         });

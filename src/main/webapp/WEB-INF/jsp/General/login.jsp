@@ -77,10 +77,7 @@ Time: 13:31
 
                 </div>
             </form>
-            <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message
-                code="label.RegisterHere"/></a>
             </p>
-
         </section>
     </section>
 </section>

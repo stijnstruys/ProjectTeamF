@@ -34,9 +34,6 @@ public class TripController {
     private TripService tripService;
 
     @Autowired
-    private TripTypeService tripTypeService;
-
-    @Autowired
     private UserService userService;
 
     @Autowired
@@ -72,19 +69,17 @@ public class TripController {
     public ModelAndView addTripPage(HttpServletRequest request, HttpServletResponse response) {
         Trip t = new Trip();
         request.setAttribute("trip", t);
-        request.setAttribute("tripTypeList", tripTypeService.listTripTypes());
 
         ModelAndView model = new ModelAndView("Trip/addTrip");
         return model;
     }
     @RequestMapping(value = "trip/add", method = RequestMethod.POST)
-    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, @RequestParam("tripTypeSelect") int triptype, HttpServletRequest request) {
+    public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, HttpServletRequest request) {
 
-        trip.setTripType( tripTypeService.findTripType( triptype ) );
         trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
 
-        if(triptype == 2) {
+        if(trip.getTripType()== "Herhalend") {
             String t = request.getParameter("repetition");
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             Date maxDate = null;
@@ -174,31 +169,42 @@ public class TripController {
     public @ResponseBody
     void addChat(@RequestParam("trip") int trip, @RequestParam("msg") String msg) {
         chatService.addChat(new Chat(tripService.findTrip(trip), userService.getCurrentUser(), msg));
-        //Trip t = tripService.findTrip(trip);
-        //t.getChats().add(new Chat(tripService.findTrip(trip), userService.getCurrentUser(), msg));
-        //tripService.updateTrip(t);
+    }
 
+    @RequestMapping(value="/android/add", method = RequestMethod.POST, headers = "Accept=application/json")
+    public @ResponseBody
+    void addChatAndroid(@RequestParam("trip") String trip, @RequestParam("msg") String msg, @RequestParam("userid") String userID) {
+         User u = userService.findUser(Integer.valueOf(userID));
+        chatService.addChat( new Chat(tripService.findTrip(Integer.valueOf(trip)), u, msg ));
     }
 
     /* get chats */
-    static class ChatList extends ArrayList<Chat> {  }
+   // static class ChatList extends ArrayList<Chat> {  }
 
     @RequestMapping(value="/chat/getChat", method = RequestMethod.GET)
     public
     @ResponseBody
-    ChatList getChats(@RequestParam("trip") int tripid) {
-        ChatList cl = new ChatList();
+    List<Chat> getChats(@RequestParam("trip") int tripid, @RequestParam("lastId") int lastID) {
+        List<Chat> cl = new ArrayList<Chat>();
 
         Trip t = tripService.findTrip(tripid);
-        for(Chat c : chatService.getChats(tripid)) {
-            c.setTrip(null);
-            User u = new User();
-            u.setUsername(c.getUser().getUsername());
-            u.setUserID(c.getUser().getUserID());
-            c.setUser(u);
-            cl.add(c);
+        List<Chat> temp =  chatService.getChats(tripid, lastID) ;
+
+        if(temp == null) {
+            return null;
+        } else {
+            for(Chat c : temp) {
+                c.setTrip(null);
+
+                User u = new User();
+                u.setUsername(c.getUser().getUsername());
+                u.setUserID(c.getUser().getUserID());
+                c.setUser(u);
+
+                cl.add(c);
+            }
+            return cl;
         }
-        return cl;
     }
 
     @RequestMapping("/trip/join/{tripID}")

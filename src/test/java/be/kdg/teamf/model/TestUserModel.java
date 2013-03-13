@@ -7,7 +7,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import java.sql.Blob;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -22,6 +24,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
     public void addUser() {
         User u = new User();
         Date geboorteDatum = new Date();
+        List<Chat> chats = new ArrayList<>();
         u.setUserID(1);
         u.setUsername("username");
         u.setPassword("password");
@@ -39,6 +42,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         u.setNotificationEmail(true);
         Blob test = null;
         u.setProfielFoto(test);
+        u.setChats(chats);
 
         assertEquals("Expected id: 1", 1, u.getUserID());
         assertEquals("Expected username: username", "username", u.getUsername());
@@ -55,6 +59,7 @@ public class TestUserModel extends AbstractTransactionalJUnit4SpringContextTests
         assertEquals("Expected showposition: ", true, u.isShowPosition());
         assertEquals("Expected mail: ", true, u.isNotificationEmail());
         assertEquals("Expected profielfoto: city", test, u.getProfielFoto());
+        assertEquals("Expected chats", chats, u.getChats());
     }
 
 

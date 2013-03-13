@@ -40,11 +40,13 @@ public class DeelnameServiceImpl implements DeelnameService {
     }
 
     @Override
+    @Transactional
     public Deelname findDeelname(int deelnameID) {
         return deelnameDAO.findDeelname(deelnameID);
     }
 
     @Override
+    @Transactional
     public boolean alreadyExists(Deelname dNew) {
 
 
@@ -59,6 +61,7 @@ public class DeelnameServiceImpl implements DeelnameService {
     }
 
     @Override
+    @Transactional
     public boolean userIsRegistered(Trip t, User u) {
 
         if(deelnameDAO.findDeelname(t.getTripId(),u.getUserID()) != null)
@@ -71,16 +74,19 @@ public class DeelnameServiceImpl implements DeelnameService {
     }
 
     @Override
+    @Transactional
     public Deelname findDeelname(Trip t, User u) {
         return deelnameDAO.findDeelname(t.getTripId(),u.getUserID());
     }
 
     @Override
+    @Transactional
     public ArrayList<Deelname> getDeelnames(Trip t) {
         return deelnameDAO.findDeelnames(t);
     }
 
     @Override
+    @Transactional
     public ArrayList<Deelname> getDeelnamesByUser(User u) {
         return deelnameDAO.findDeelnamesByUser(u);
     }

@@ -71,7 +71,7 @@ public class TestTripCategorieDAO extends AbstractTransactionalJUnit4SpringConte
         assertEquals("Excepted : ",t.getTripCategorieen().size(), tripCategorieDAO.getTripCategories(t.getTripId()).size());
     }
 
-    private TripCategorie  getTripCategorie() {
+    private TripCategorie getTripCategorie() {
         TripCategorie tc = new TripCategorie();
         tc.setTripCategorieName("Dropping");
         return tc;

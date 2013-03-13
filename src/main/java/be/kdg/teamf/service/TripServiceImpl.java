@@ -102,12 +102,14 @@ public class TripServiceImpl implements TripService {
     }
 
     @Override
+    @Transactional
     public boolean checkOwnership(Trip t, User u) {
 
         return t.getOrganiser().getUserID() == u.getUserID();
     }
 
     @Override
+    @Transactional
     public List<Trip> listUserParticipateTrips(int UserID) {
         return tripDAO.listUserParticipateTrips(UserID);
     }
@@ -136,6 +138,7 @@ public class TripServiceImpl implements TripService {
     }
 
     @Override
+    @Transactional
     public List<Trip> listPublicTrips() {
         return tripDAO.listPublicTrips();
     }
@@ -149,6 +152,7 @@ public class TripServiceImpl implements TripService {
     }
 
     @Override
+    @Transactional
     public List<String> listUserEmailPerTrips(int tripID) {
         return tripDAO.listUserEmailPerTrips(tripID);
     }

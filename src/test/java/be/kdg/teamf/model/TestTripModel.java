@@ -33,13 +33,13 @@ public class TestTripModel {
         Date d = new Date();
         Trip t = new Trip();
         User u = new User();
-        TripType tt = new TripType();
         List<Deelname> deelnameList = new ArrayList();
         List<StopPlaats> stopPlaatsList = new ArrayList();
         List<TripCategorie> tripCategorieList = new ArrayList();
         List<String> equipment = new ArrayList<>();
+        List<Chat> chats = new ArrayList<>();
+        List<BroadcastMessage> broadcastMessages = new ArrayList<>();
         equipment.add("equipment");
-        tt.setTripTypeName("publiek");
 
         t.setTripName("tripname");
         t.setEndDate(d);
@@ -52,7 +52,7 @@ public class TestTripModel {
         t.setDeelnames(deelnameList);
         t.setFontcolorContent("red");
         t.setFontcolorTitle("green");
-        t.setTripType(tt);
+        t.setTripType("Tijdsgebonden");
         t.setStopPlaatsen(stopPlaatsList);
         t.setTripCategorieen(tripCategorieList);
         t.setNotification("notification");
@@ -62,7 +62,8 @@ public class TestTripModel {
         t.setShowMap(true);
         t.setShowRoute(true);
         t.setTravelType("Driving");
-
+        t.setChats(chats);
+        t.setBroadcastMessages(broadcastMessages);
         assertEquals("Expected id: 1", 1, t.getTripId());
         assertEquals("Expected tripname: tripname", "tripname", t.getTripName());
         assertEquals("Enddate", d, t.getEndDate());
@@ -74,7 +75,7 @@ public class TestTripModel {
         assertEquals("Expected deelnames:", deelnameList, t.getDeelnames());
         assertEquals("Expected fontcolorcontent:", "red", t.getFontcolorContent());
         assertEquals("Expected fontcolortitle:", "green", t.getFontcolorTitle());
-        assertEquals("Expected type:", "publiek", t.getTripType().getTripTypeName());
+        assertEquals("Expected type:", "Tijdsgebonden", t.getTripType());
         assertEquals("Expected stopplaatsen:", stopPlaatsList, t.getStopPlaatsen());
         assertEquals("Expected tripcategorieen:", tripCategorieList, t.getTripCategorieen());
         assertEquals("Expected notification:", "notification", t.getNotification());
@@ -83,6 +84,8 @@ public class TestTripModel {
         assertEquals("Expected show map:", true, t.getShowMap());
         assertEquals("Expected show route:", true, t.getShowRoute());
         assertEquals("Expected travel type:", "Driving", t.getTravelType());
+        assertEquals("Expected chats:", chats, t.getChats());
+        assertEquals("Expected broadcast messages:", broadcastMessages, t.getBroadcastMessages());
     }
 
 

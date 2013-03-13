@@ -12,8 +12,8 @@
         <mapping class="be.kdg.teamf.model.StopPlaats"/>
         <mapping class="be.kdg.teamf.model.TripCategorie"/>
         <mapping class="be.kdg.teamf.model.Deelname"/>
-        <mapping class="be.kdg.teamf.model.TripType"/>
         <mapping class="be.kdg.teamf.model.Kost"/>
         <mapping class="be.kdg.teamf.model.Chat"/>
+        <mapping class="be.kdg.teamf.model.BroadcastMessage"/>
     </session-factory>
 </hibernate-configuration>

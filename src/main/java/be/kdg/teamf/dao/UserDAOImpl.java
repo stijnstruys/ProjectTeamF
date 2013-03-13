@@ -17,7 +17,6 @@ import java.util.List;
  * to change this template use file | settings | file templates.
  */
 @Repository
-@Transactional
 public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;

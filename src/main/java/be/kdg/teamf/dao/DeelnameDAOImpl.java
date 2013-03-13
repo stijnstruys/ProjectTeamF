@@ -19,14 +19,12 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 @Repository
-@Transactional
 public class DeelnameDAOImpl implements DeelnameDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
     public void addDeelname(Deelname deelname) {
         sessionFactory.getCurrentSession().save(deelname);
     }

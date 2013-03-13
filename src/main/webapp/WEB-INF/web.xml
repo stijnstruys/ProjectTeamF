@@ -47,14 +47,15 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-   <!--<error-page>
+
+   <error-page>
         <exception-type>java.lang.Exception</exception-type>
-        <location>/Error.jsp</location>
+        <location>/internal.jsp</location>
     </error-page>
     <error-page>
         <error-code>400</error-code>
-        <location>/Error.jsp</location>
-    </error-page>  -->
+        <location>/internal.jsp</location>
+    </error-page>
     <error-page>
         <error-code>404</error-code>
         <location>/404.jsp</location>

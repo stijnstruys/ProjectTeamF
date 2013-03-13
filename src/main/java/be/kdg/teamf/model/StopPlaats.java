@@ -1,6 +1,7 @@
 package be.kdg.teamf.model;
 
 import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
@@ -23,21 +24,22 @@ public class StopPlaats {
     @Column(name = "StopPlaatsID")
     @GeneratedValue
     private int stopPlaatsID;
-    @Column(name = "Adres")
+    @Column(name = "Adres", length = 255)
     private String adres;
     @Column(name = "Vrijgegeven")
     private boolean vrijgegeven = true;
-    @Column(name = "Informatie")
+    @Column(name = "Informatie", length = 255)
     private String informatie;
-    @Column(name = "Type")
+    @Column(name = "Type", length = 255)
     private String type;
-    @Column(name = "Naam")
+    @Column(name = "Naam", length = 255)
     private String naam;
-    @Column(name = "Vraag")
+    @Column(name = "Vraag", length = 255)
     private String vraag;
-    @Column(name = "CorrectAntwoord")
+    @Column(name = "CorrectAntwoord", length = 255)
     private String correctAntwoord;
 
+    @JsonIgnore
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
