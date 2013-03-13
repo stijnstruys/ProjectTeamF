@@ -773,6 +773,11 @@ th.costs2 {
 }
 
 /* chat */
+
+#chat-apprend {
+    cursor: pointer;
+}
+
 #chat {
     margin: 0 auto 0 auto;
     text-align: center;

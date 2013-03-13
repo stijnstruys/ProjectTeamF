@@ -20,19 +20,25 @@ import static org.junit.Assert.assertEquals;
 @RunWith(value = SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(locations = "classpath:spring-servlet.xml")
-public class TestAboutController {
+public class TestGeneralController {
     @Autowired
     GeneralController generalController;
 
     @Test
     public void testAbout(){
-
-
-        ModelAndView mav= null;
-
-            mav = generalController.getAbout(null, null);
-
+        ModelAndView   mav = generalController.getAbout(null, null);
         assertEquals("General/about", mav.getViewName());
+    }
 
+    @Test
+    public void testGetLoginFailed(){
+        ModelAndView mav = generalController.getLoginfailed();
+        assertEquals("General/loginFailed",mav.getViewName());
+    }
+
+    @Test
+    public void testGetLoginAfterRegister() {
+        ModelAndView mav = generalController.getLoginAfterRegister();
+        assertEquals("General/loginAfterRegister",mav.getViewName());
     }
 }

@@ -11,16 +11,12 @@
         <div class="navbar navbar-inverse">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
+
                     <a class="brand" href="/ProjectTeamF-1.0/general/index.html">Team F</a>
                     <img src="../img/Languages/<spring:message code="label.Language"/>.GIF" alt="Smiley face"
                          id="languageFlag"/>
 
-                    <div class="nav-collapse collapse">
+
                         <ul class="nav">
                             <li><a href="/ProjectTeamF-1.0/general/index.html" id="index"><spring:message code="label.Home"/></a>
                             </li>
@@ -84,13 +80,12 @@
                         </form>
 
 
-                    </div>
-                    <!--/.nav-collapse -->
+
                 </div>
             </div>
         </div>
 
-        <div id="dialog-message-languages" title="<spring:message code="label.ChooseLanguage"/>">
+        <div id="dialog-message-languages" class="hidden" title="<spring:message code="label.ChooseLanguage"/>">
             <form>
                 <fieldset>
                     <table id="languageTable">

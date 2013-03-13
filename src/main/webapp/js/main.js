@@ -173,6 +173,8 @@ $(document).ready(function () {
         }
     });
 
+    $("#dialog-message-languages").removeClass("hidden");
+
 //mail
     $("#skip").click(function () {
         $("#viewTripForm").submit();
@@ -583,6 +585,9 @@ function chat() {
         interval = setInterval( update, 15000 );
         intervalrunning = true;
     });
+    $("#chat-apprend").click( function() {
+       doActualUpdate();
+    });
 
     function update() {
         if($("#chat-li").hasClass("active")) {
@@ -603,13 +608,18 @@ function chat() {
             data: ({trip: tripid, lastId: lastid}),
             success: function(data) {
                 if(data != null)  {
+
                     $.each(data, function() {
-                        var self = this;
+                         var self = this;
                         showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
                         lastid = self.chatID;
                     });
+
                     $("#chat-area").append(showmsg);
-                    $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
+                   // $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
+                    if ($("#chat-area").length > 0) {
+                        $("#chat-area").prop({ scrollTop: $("#chat-area").prop("scrollHeight") });
+                    }
                 }
                 chaticon.html(success);
             }
