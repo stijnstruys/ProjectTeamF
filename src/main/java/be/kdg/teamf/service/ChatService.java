@@ -14,4 +14,5 @@ import java.util.ArrayList;
 public interface ChatService {
     public void addChat(Chat c);
     ArrayList<Chat> getChats(int tripID);
+    ArrayList<Chat> getChats(int tripID, int lastID);
 }

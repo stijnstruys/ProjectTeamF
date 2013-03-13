@@ -28,9 +28,24 @@ public class ChatDAOImpl implements ChatDAO {
     }
 
     @Override
-    public ArrayList<Chat> getChats(int tripID) {
+     public ArrayList<Chat> getChats(int tripID) {
         Query q = sessionFactory.getCurrentSession().createQuery("from Chat where trip.tripId = :tripID");
         q.setInteger("tripID", tripID);
+
+        if(q.list().size() > 0){
+            return (ArrayList<Chat>) q.list();
+        }
+        else{
+            return null;
+        }
+    }
+
+    @Override
+    public ArrayList<Chat> getChats(int tripID, int lastID) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from Chat where trip.tripId = :tripID AND chatID > :lastid");
+        q.setInteger("tripID", tripID);
+        q.setInteger("lastid", lastID);
+
 
         if(q.list().size() > 0){
             return (ArrayList<Chat>) q.list();

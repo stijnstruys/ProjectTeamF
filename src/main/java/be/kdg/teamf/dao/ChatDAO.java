@@ -15,5 +15,5 @@ public interface ChatDAO {
 
     public void addChat(Chat c);
     ArrayList<Chat> getChats(int tripID);
-
+    ArrayList<Chat> getChats(int tripID, int lastid);
 }

@@ -178,29 +178,36 @@ public class TripController {
         chatService.addChat( new Chat(tripService.findTrip(Integer.valueOf(trip)), u, msg ));
     }
 
-
     /* get chats */
    // static class ChatList extends ArrayList<Chat> {  }
 
     @RequestMapping(value="/chat/getChat", method = RequestMethod.GET)
     public
     @ResponseBody
-    List<Chat> getChats(@RequestParam("trip") int tripid) {
+    List<Chat> getChats(@RequestParam("trip") int tripid, @RequestParam("lastId") int lastID) {
         //ChatList cl = new ChatList();
         List<Chat> cl = new ArrayList<Chat>();
 
         Trip t = tripService.findTrip(tripid);
+        List<Chat> temp =  chatService.getChats(tripid, lastID) ;
 
-        for(Chat c : chatService.getChats(tripid)) {
-            c.setTrip(null);
-            User u = new User();
-            u.setUsername(c.getUser().getUsername());
-            u.setUserID(c.getUser().getUserID());
+        if(temp == null) {
+            return null;
+        } else {
+            for(Chat c : temp) {
+                c.setTrip(null);
+                User u = new User();
+                u.setUsername(c.getUser().getUsername());
+                u.setUserID(c.getUser().getUserID());
 
-            c.setUser(u);
-            cl.add(c);
+            /* temp for android*/
+                //  c.setDate(null);
+            /*end temp */
+                c.setUser(u);
+                cl.add(c);
+            }
+            return cl;
         }
-        return cl;
     }
 
     @RequestMapping("/trip/join/{tripID}")

@@ -31,4 +31,10 @@ public class ChatServiceImpl implements ChatService {
     public ArrayList<Chat> getChats(int tripID) {
         return ChatDao.getChats(tripID);
     }
+
+    @Override
+    @Transactional
+    public ArrayList<Chat> getChats(int tripID, int lastID) {
+        return ChatDao.getChats(tripID, lastID);
+    }
 }
