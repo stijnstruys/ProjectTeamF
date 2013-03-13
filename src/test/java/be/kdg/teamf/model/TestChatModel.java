@@ -2,7 +2,6 @@ package be.kdg.teamf.model;
 
 import org.junit.Test;
 
-
 import static junit.framework.Assert.assertEquals;
 
 /**
