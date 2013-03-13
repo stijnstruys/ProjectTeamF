@@ -292,21 +292,7 @@ public class UserController {
         }
     }
 
-   /* @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
-    public User login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
 
-
-
-        User u = new User();
-
-        u.setUsername("test");
-       // t.setOrganiser(u);
-     //   Gson gson = new Gson();
-
-       // String s = gson.toJson(u);
-       // User bla = gson.fromJson(s,User.class);
-        return u;
-    } */
 
     @RequestMapping("/image/{id}")
     @ResponseBody
