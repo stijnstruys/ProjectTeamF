@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -64,7 +65,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     public void testAddTrip() {
         Trip t = getTrip();
         User u = getUser();
-        t.setTripType("Tijdsgebonden");
+        t.setTripType("Herhalend");
         t.setStartDate(new java.util.Date(2013/03/15));
         t.setEndDate(new java.util.Date(2013/03/16));
         userController.addUser(u, mockMultipartFile);
@@ -72,10 +73,20 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
 
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
         mockHttpServletRequest.setParameter("dateUntill","2013/09/12");
-        mockHttpServletRequest.setParameter("repetition","4m");
-        String s = tripController.addTrip(t, null, mockHttpServletRequest);
 
-        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s);
+        mockHttpServletRequest.setParameter("repetition","1d");
+        String s1 = tripController.addTrip(t, null, mockHttpServletRequest);
+        mockHttpServletRequest.setParameter("repetition","1w");
+        String s2 = tripController.addTrip(t, null, mockHttpServletRequest);
+        mockHttpServletRequest.setParameter("repetition","2w");
+        String s3 = tripController.addTrip(t, null, mockHttpServletRequest);
+        mockHttpServletRequest.setParameter("repetition","4m");
+        String s4  = tripController.addTrip(t, null, mockHttpServletRequest);
+
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s1);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s2);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s3);
+        assertEquals("add trip", "redirect:/trip/tripOverzicht.html", s4);
     }
 
 
@@ -196,20 +207,22 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
 
     @Test
     public void testChat() {
+        Trip t = getTrip();
+        t.setDeelnames(new ArrayList<Deelname>());
+        tripController.addTrip(t, null, new MockHttpServletRequest());
+
         User u = getUser();
         userController.addUser(u, mockMultipartFile);
-       Trip t = getTrip();
-
         authenticateUser(u);
-        String s = tripController.addTrip(t, null, new MockHttpServletRequest());
-        String msg = "test";
-        tripController.addChat(t.getTripId(),msg);
 
-       // TripController.ChatList cl = new TripController.ChatList();
+        tripController.addChat(t.getTripId(),"Test chat");
+        tripController.addChatAndroid(String.valueOf(t.getTripId()),"Test chat Android",String.valueOf(u.getUserID()));
 
-       // cl = tripController.getChats(t.getTripId());
 
-       // assertEquals("correct",msg,cl.get(0).getMsg());
+        List<Chat> chat = tripController.getChats(t.getTripId(),0);
+
+        assertEquals("Correct",chat.get(0).getMsg(),"Test chat");
+        assertEquals("Correct",chat.get(1).getMsg(),"Test chat Android");
 
     }
 
