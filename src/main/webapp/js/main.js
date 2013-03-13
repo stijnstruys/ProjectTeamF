@@ -173,6 +173,8 @@ $(document).ready(function () {
         }
     });
 
+    $("#dialog-message-languages").removeClass("hidden");
+
 //mail
     $("#skip").click(function () {
         $("#viewTripForm").submit();
@@ -582,6 +584,9 @@ function chat() {
         doActualUpdate();
         interval = setInterval( update, 15000 );
         intervalrunning = true;
+    });
+    $("#chat-apprend").click( function() {
+       doActualUpdate();
     });
 
     function update() {
