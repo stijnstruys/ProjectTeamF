@@ -14,7 +14,6 @@ import org.springframework.security.core.authority.GrantedAuthorityImpl;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -67,19 +66,23 @@ public class UserController {
 
         return "hello " + swag;
     }
-    @RequestMapping(value="/android/test2", method = RequestMethod.POST)
-    public @ResponseBody
-    User getUser(@RequestParam("uname") String uname,@RequestParam("pw") String pw ) {
+    @RequestMapping(value="/service/login", method = RequestMethod.POST)
+    @ResponseBody
+    public User getUser(@ModelAttribute("user") User user,@RequestParam("username") String uname,@RequestParam("password") String pw ) {
 
         User newuser = userService.findUser(uname);
-        //newuser.setChats(null);
-        //newuser.setDeelnames(null);
-        newuser.setProfielFoto(null);
-        newuser.setTrips(null);
-
-       // newuser.setUsername(uname);
-
-        return newuser;
+        if(newuser.getPassword().equals(pw)){
+            List<GrantedAuthority> gaList = new ArrayList<>();
+            gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
+            org.springframework.security.core.userdetails.User usersec = new org.springframework.security.core.userdetails.User(newuser.getUsername(), newuser.getPassword(), true, true, true, true, gaList);
+            Authentication auth = new UsernamePasswordAuthenticationToken(usersec, newuser.getPassword(), gaList);
+            org.springframework.security.core.context.SecurityContext sc = new SecurityContextImpl();
+            sc.setAuthentication(auth);
+            org.springframework.security.core.context.SecurityContextHolder.setContext(sc);
+            return newuser;
+        }
+        // newuser.setUsername(uname);
+        return null;
     }
 
     /* end teset */
@@ -107,7 +110,7 @@ public class UserController {
         user.setShowPosition(true);
         userService.addUser(user);
 
-        return "redirect:/general/loginAfterRegister.html";
+        return "redirect:/general/index.html";
     }
 
     @RequestMapping(value = "/user/addSocial", method = RequestMethod.POST)
@@ -289,8 +292,11 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
+   /* @RequestMapping(value = "/service/login", method = RequestMethod.POST, headers = "Accept=application/json")
     public User login(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
+
+
+
         User u = new User();
 
         u.setUsername("test");
@@ -300,7 +306,7 @@ public class UserController {
        // String s = gson.toJson(u);
        // User bla = gson.fromJson(s,User.class);
         return u;
-    }
+    } */
 
     @RequestMapping("/image/{id}")
     @ResponseBody

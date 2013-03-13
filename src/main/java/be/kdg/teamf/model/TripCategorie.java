@@ -22,7 +22,7 @@ public class TripCategorie {
     @GeneratedValue
     private int tripCategorieId;
 
-    @Column(name="TRIPCATEGORIENAME")
+    @Column(name="TRIPCATEGORIENAME", length = 255)
     private String tripCategorieName;
 
     @JsonBackReference

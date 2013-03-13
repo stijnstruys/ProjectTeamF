@@ -24,7 +24,7 @@ public class BroadcastMessage {
     @GeneratedValue
     private int broadcastMessageID;
 
-    @Column(name = "msg")
+    @Column(name = "msg", length = 255)
     private String msg;
 
     @Column(name = "date")

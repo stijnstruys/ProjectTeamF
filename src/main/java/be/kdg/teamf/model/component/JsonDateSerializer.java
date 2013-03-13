@@ -1,6 +1,5 @@
 package be.kdg.teamf.model.component;
 
-import org.cloudfoundry.org.codehaus.jackson.map.SerializerProvider;
 import org.codehaus.jackson.JsonGenerator;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.JsonSerializer;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,7 +19,7 @@ import java.util.Date;
  */
 @Component
 public class JsonDateSerializer extends JsonSerializer<Date> {
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMMM yyyy - HH:mm:ss");
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMMM yyyy - HH:mm:ss", Locale.ENGLISH);
 
     @Override
     public void serialize(Date date, JsonGenerator jsonGenerator, org.codehaus.jackson.map.SerializerProvider serializerProvider) throws IOException, JsonProcessingException {

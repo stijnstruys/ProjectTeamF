@@ -24,7 +24,7 @@ public class Kost {
     @Column(name="prijs")
     private double prijs;
 
-    @Column(name="beschrijving")
+    @Column(name="beschrijving", length = 255)
     private String beschrijving;
 
     @JsonBackReference

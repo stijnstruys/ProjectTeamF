@@ -1,6 +1,7 @@
 package be.kdg.teamf.model;
 
 import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.*;
 
@@ -29,13 +30,13 @@ public class Trip {
     @GeneratedValue
     private int tripId;
 
-    @Column(name = "TRIPNAME")
+    @Column(name = "TRIPNAME", length = 255)
     private String tripName;
 
-    @Column(name = "TRIPDESCRIPTION")
+    @Column(name = "TRIPDESCRIPTION", length = 255)
     private String tripDescription;
 
-    @Column(name = "NOTIFICATION")
+    @Column(name = "NOTIFICATION", length = 255)
     private String notification;
 
     @Temporal(TemporalType.DATE)
@@ -46,25 +47,25 @@ public class Trip {
     @Temporal(TemporalType.DATE)
     private Date endDate;
 
-    @Column(name = "STARTLOCATION")
+    @Column(name = "STARTLOCATION", length = 255)
     private String startLocation;
-
+    @JsonIgnore
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
-    @Column(name = "Equipment")
+    @Column(name = "Equipment", length = 255)
     private Collection<String> equipment;
 
     @Column(name = "visible")
     private boolean visible = true;
 
-    @Column(name = "FONTCOLORTITLE")
+    @Column(name = "FONTCOLORTITLE", length = 255)
     private String fontcolorTitle = "#9CFF00";
 
-    @Column(name = "FONTCOLORCONTENT")
+    @Column(name = "FONTCOLORCONTENT", length = 255)
     private String fontcolorContent = "#D4D4D4";
 
-    @Column(name = "BGCOLOR")
+    @Column(name = "BGCOLOR", length = 255)
     private String bgcolor = "#1C263C";
 
     @Column(name = "SHOWMAP")
@@ -73,7 +74,7 @@ public class Trip {
     @Column(name = "SHOWROUTE")
     private boolean showRoute = true;
 
-    @Column(name = "TRAVELTYPE")
+    @Column(name = "TRAVELTYPE", length = 255)
     private String travelType;
 
     @JsonBackReference
@@ -81,9 +82,9 @@ public class Trip {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User organiser;
 
-    @Column(name = "TRIPTYPE")
+    @Column(name = "TRIPTYPE", length = 255)
     private String tripType;
-
+    @JsonIgnore
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
@@ -94,11 +95,13 @@ public class Trip {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<TripCategorie> tripCategorieen;
 
+    @JsonIgnore
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))
     private Collection<Deelname> deelnames;
 
+    @JsonIgnore
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = ("trip"))

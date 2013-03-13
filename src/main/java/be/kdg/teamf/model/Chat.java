@@ -25,7 +25,7 @@ public class Chat {
     @GeneratedValue
     private int chatID;
 
-    @Column(name = "msg")
+    @Column(name = "msg", length = 255)
     private String msg;
 
     @Column(name = "date")
