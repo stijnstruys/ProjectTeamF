@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(value = SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration(locations = "classpath:spring-servlet.xml")
-public class TestAboutController {
+public class TestGeneralController {
     @Autowired
     GeneralController generalController;
 
