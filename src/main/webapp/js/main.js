@@ -577,7 +577,6 @@ function chat() {
                    }
                })
            }
-
     });
 
     $("#gotochat").click( function() {
@@ -587,6 +586,14 @@ function chat() {
     });
     $("#chat-apprend").click( function() {
        doActualUpdate();
+    });
+
+    $("#shout-msg").keypress( function(e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if(code == 13) { //Enter keycode
+            $("#shout").click();
+        }
+
     });
 
     function update() {
