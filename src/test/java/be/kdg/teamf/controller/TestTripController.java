@@ -41,7 +41,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     private final MockMultipartFile mockMultipartFile = new MockMultipartFile("test", new byte[0]);
 
     @Test
-    public void testTripOverzichtPage() {
+    public void testTripOverzichtPage() throws Exception {
         ModelAndView mav = tripController.tripOverzichtPage(new MockHttpServletRequest(), null);
 
         assertEquals("Trip/tripOverzicht", mav.getViewName());
