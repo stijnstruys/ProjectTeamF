@@ -177,7 +177,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     }
 
     @Test
-    public void updateTrip() {
+    public void testUpdateTrip() {
         User u = getUser();
         authenticateUser(u);
 
@@ -190,7 +190,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     }
 
     @Test
-    public void deleteTrip() {
+    public void testDeleteTrip() {
 
         User u = getUser();
         userController.addUser(u, mockMultipartFile);
@@ -200,6 +200,19 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         tripController.addTrip(t, null, new MockHttpServletRequest());
 
         tripController.deleteTrip(t.getTripId());
+    }
+
+    @Test
+    public void testGetOpenTrips(){
+       Trip t = getTrip();
+       User u = getUser();
+       userController.addUser(u, mockMultipartFile);
+        t.setOrganiser(u);
+       tripController.addTrip(t, null, new MockHttpServletRequest());
+
+       List<Trip> openTrips = tripController.getOpenTrips();
+
+        assertEquals("Correct", "Test", openTrips.get(0).getTripName());
     }
 
 
