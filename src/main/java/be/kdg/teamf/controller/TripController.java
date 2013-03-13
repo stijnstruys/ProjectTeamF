@@ -185,7 +185,6 @@ public class TripController {
     public
     @ResponseBody
     List<Chat> getChats(@RequestParam("trip") int tripid, @RequestParam("lastId") int lastID) {
-        //ChatList cl = new ChatList();
         List<Chat> cl = new ArrayList<Chat>();
 
         Trip t = tripService.findTrip(tripid);
@@ -196,14 +195,12 @@ public class TripController {
         } else {
             for(Chat c : temp) {
                 c.setTrip(null);
+
                 User u = new User();
                 u.setUsername(c.getUser().getUsername());
                 u.setUserID(c.getUser().getUserID());
-
-            /* temp for android*/
-                //  c.setDate(null);
-            /*end temp */
                 c.setUser(u);
+
                 cl.add(c);
             }
             return cl;
