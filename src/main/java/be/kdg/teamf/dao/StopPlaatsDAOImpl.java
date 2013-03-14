@@ -47,7 +47,7 @@ public class StopPlaatsDAOImpl implements StopPlaatsDAO {
 
     @Override
     public List<StopPlaats> getStopplaatsenByTrip(int tripID) {
-        Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripId = :id");
+        Query q = sessionFactory.getCurrentSession().createQuery("from StopPlaats where trip = :id");
         q.setInteger("id", tripID);
         return q.list();
     }

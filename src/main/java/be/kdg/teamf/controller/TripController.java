@@ -278,4 +278,5 @@ public class TripController {
     public List<Trip> login(@RequestParam(value = "userid") String userid) {
         return tripService.listUserParticipateTrips(Integer.parseInt(userid));
     }
+
 }
