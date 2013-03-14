@@ -49,7 +49,8 @@ public class Trip {
 
     @Column(name = "STARTLOCATION", length = 255)
     private String startLocation;
-    @JsonIgnore
+
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)

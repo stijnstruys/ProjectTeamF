@@ -275,13 +275,7 @@ public class TripController {
     }
 
     @RequestMapping(value = "/service/getTripsUser", method = RequestMethod.POST,headers = "Accept=application/json")
-
-    public Trip[] login(@ModelAttribute("user") User user,@RequestParam(value = "userid",required = true,defaultValue = "0") String userid, BindingResult result,HttpServletRequest request) {
-
-        List<Trip> trips = new ArrayList<Trip>(tripService.listUserParticipateTrips(Integer.parseInt(userid)));
-        Trip[] tripsArray = new Trip[trips.size()];
-        trips.toArray(tripsArray);
-
-        return tripsArray;
+    public List<Trip> login(@RequestParam(value = "userid") String userid) {
+        return tripService.listUserParticipateTrips(Integer.parseInt(userid));
     }
 }
