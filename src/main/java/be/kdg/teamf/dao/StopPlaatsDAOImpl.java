@@ -56,4 +56,5 @@ public class StopPlaatsDAOImpl implements StopPlaatsDAO {
     public List<StopPlaats> listStopPlaatsen() {
         return sessionFactory.getCurrentSession().createQuery("from StopPlaats ").list();
     }
+
 }

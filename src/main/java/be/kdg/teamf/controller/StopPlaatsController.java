@@ -108,4 +108,5 @@ public class StopPlaatsController
         List<StopPlaats> stops = stopPlaatsService.getStopPlaatsenByTripId(Integer.parseInt(tripid));
         return stops;
     }
+
 }
