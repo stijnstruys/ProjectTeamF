@@ -1,6 +1,5 @@
 package be.kdg.teamf.service;
 
-import be.kdg.teamf.dao.UserDAO;
 import be.kdg.teamf.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +21,9 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
     @Autowired
     protected UserService userService;
 
-
-
     @Test
     public void addUser() {
-        User u = new User();
-        u.setEmail("bart@hotmail.com");
-        u.setLastName("Leemans");
-        u.setFirstName("Bart");
-        u.setUsername("Bart Leemans");
-        u.setTelephone("00306985587996");
-        userService.addUser(u);
+        User u = maakUser();
 
         assertEquals("Expected username: ", "Bart Leemans", userService.findUser(u.getUserID()).getUsername());
         assertEquals("Expected firstname: ", "Bart", userService.findUser(u.getUserID()).getFirstName());
@@ -81,13 +72,7 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
 
     @Test
     public void updateUser() {
-        User u = new User();
-        u.setEmail("bart@hotmail.com");
-        u.setLastName("Leemans");
-        u.setFirstName("Bart");
-        u.setUsername("Bart Leemans");
-        u.setTelephone("00306985587996");
-        userService.addUser(u);
+        User u = maakUser();
         u.setUsername("updated");
         userService.updateUser(u);
 
@@ -96,6 +81,15 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
 
     @Test
     public void testLogin() {
+        User u = maakUser();
+
+        int i = userService.login(u);
+
+        assertEquals("Correct",u.getUserID(),i);
+
+    }
+
+    User maakUser(){
         User u = new User();
         u.setEmail("bart@hotmail.com");
         u.setLastName("Leemans");
@@ -104,10 +98,6 @@ public class TestUserService extends AbstractTransactionalJUnit4SpringContextTes
         u.setTelephone("00306985587996");
         u.setPassword("test");
         userService.addUser(u);
-
-        int i = userService.login(u);
-
-        assertEquals("Correct",u.getUserID(),i);
-
+        return u;
     }
 }

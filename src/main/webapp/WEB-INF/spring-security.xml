@@ -6,6 +6,9 @@
 	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <http auto-config="true">
+
+
+
         <intercept-url pattern="/user/myTrips*.html" access="ROLE_USER" />
         <intercept-url pattern="/kost/*.html" access="ROLE_USER" />
         <intercept-url pattern="/user/profile*.html" access="ROLE_USER" />

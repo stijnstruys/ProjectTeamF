@@ -66,19 +66,16 @@ public class User implements Serializable, UserDetails {
     private Blob profielFoto;
 
     @JsonIgnore
-    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Deelname> deelnames;
 
     @JsonIgnore
-    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("organiser"))
     private Collection<Trip> trips;
 
     @JsonIgnore
-    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = ("user"))
     private Collection<Chat> chats;

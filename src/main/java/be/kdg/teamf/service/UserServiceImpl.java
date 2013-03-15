@@ -23,11 +23,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDAO userDAO;
 
+    @Override
     @Transactional
     public void addUser(User u) {
         userDAO.addUser(u);
     }
 
+    @Override
     @Transactional
     public List<User> listUsers() {
         return userDAO.listUsers();
@@ -71,6 +73,7 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
     @Transactional
     public int login(User userInput) {
         User u = userDAO.findUser(userInput.getUsername());

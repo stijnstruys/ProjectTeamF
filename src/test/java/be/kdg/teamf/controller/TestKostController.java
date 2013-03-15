@@ -2,7 +2,6 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.dao.DeelnameDAO;
 import be.kdg.teamf.dao.TripDAO;
-import be.kdg.teamf.dao.UserDAO;
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Kost;
 import be.kdg.teamf.model.Trip;
@@ -25,7 +24,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -55,17 +53,8 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
 
     @Test
     public void testManageKosts() {
-        User u = getUser();
-        userController.addUser(u,mockMultipartFile);
-        authenticateUser(u);
-
         Trip t = new Trip();
-        tripDAO.addTrip(t);
-
-        Deelname d = new Deelname();
-        d.setUser(u);
-        d.setTrip(t);
-        deelnameDAO.addDeelname(d);
+         maakDeelname(t);
         ModelAndView mav = kostController.manageKosts(new MockHttpServletRequest(),null);
 
         assertEquals("correct","Kost/kostManagement",mav.getViewName());
@@ -74,10 +63,7 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void testAdminKostTrip() {
         Trip t = new Trip();
-        Deelname d = new Deelname();
-        tripDAO.addTrip(t);
-        d.setTrip(t);
-        deelnameDAO.addDeelname(d);
+        maakDeelname(t);
 
         ModelAndView maw = kostController.adminKostTrip(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId()) ;
         assertEquals("correct","Kost/adminKostTrip",maw.getViewName());
@@ -85,15 +71,8 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
 
     @Test
     public void testAddKost() {
-        User u = getUser();
-        userController.addUser(u,mockMultipartFile);
-        authenticateUser(u);
-
         Trip t = new Trip();
-        Deelname d = new Deelname();
-        tripDAO.addTrip(t);
-        d.setTrip(t);
-        deelnameDAO.addDeelname(d);
+        Deelname d = maakDeelname(t);
 
         Kost k = new Kost();
 
@@ -106,14 +85,8 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
     public void testUpdateKost() {
         Kost k = new Kost();
 
-        User u = getUser();
-        userController.addUser(u,mockMultipartFile);
         Trip t = new Trip();
-        Deelname d = new Deelname();
-        tripDAO.addTrip(t);
-        d.setTrip(t);
-        d.setUser(u);
-        deelnameDAO.addDeelname(d);
+        Deelname d = maakDeelname(t);
         k.setDeelname(d);
         kostController.addKost(k,t.getTripId(),new MockHttpServletRequest());
 
@@ -126,14 +99,8 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
     public void testDeleteKost() {
         Kost k = new Kost();
 
-        User u = getUser();
-        userController.addUser(u,mockMultipartFile);
         Trip t = new Trip();
-        Deelname d = new Deelname();
-        tripDAO.addTrip(t);
-        d.setTrip(t);
-        d.setUser(u);
-        deelnameDAO.addDeelname(d);
+        Deelname d = maakDeelname(t);
         k.setDeelname(d);
         kostController.addKost(k,t.getTripId(),new MockHttpServletRequest());
 
@@ -146,14 +113,8 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
     public void testKostenPerTrip() {
         Kost k = new Kost();
 
-        User u = getUser();
-        userController.addUser(u,mockMultipartFile);
         Trip t = new Trip();
-        Deelname d = new Deelname();
-        tripDAO.addTrip(t);
-        d.setTrip(t);
-        d.setUser(u);
-        deelnameDAO.addDeelname(d);
+        Deelname d = maakDeelname(t);
         k.setDeelname(d);
         kostController.addKost(k,t.getTripId(),new MockHttpServletRequest());
 
@@ -166,14 +127,9 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
     public void testUpdateKostPage() throws Exception {
         Kost k = new Kost();
 
-        User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+
         Trip t = new Trip();
-        Deelname d = new Deelname();
-        tripDAO.addTrip(t);
-        d.setTrip(t);
-        d.setUser(u);
-        deelnameDAO.addDeelname(d);
+        Deelname d = maakDeelname(t);
         k.setDeelname(d);
         kostController.addKost(k,t.getTripId(),new MockHttpServletRequest());
 
@@ -199,5 +155,16 @@ public class TestKostController extends AbstractTransactionalJUnit4SpringContext
         Authentication auth = token;
 
         SecurityContextHolder.getContext().setAuthentication(auth);
+    }
+    private Deelname maakDeelname(Trip t){
+        User u = getUser();
+        userController.addUser(u,mockMultipartFile, null);
+        authenticateUser(u);
+        Deelname d = new Deelname();
+        tripDAO.addTrip(t);
+        d.setTrip(t);
+        d.setUser(u);
+        deelnameDAO.addDeelname(d);
+        return d;
     }
 }

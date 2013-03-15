@@ -51,28 +51,21 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
 
     @Test
     public void testAddTripCategorie() {
-        String s ="";
         TripCategorie tc = getTripCategorie();
-        Trip t = new Trip();
-        t.setTripCategorieen(new ArrayList<TripCategorie>());
-        t.setTripName("TestTrip");
-        tripDAO.addTrip(t);
+        Trip t = maakTrip();
 
-        s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
+        String s = tripCategorieController.addTripCategorie(tc,null,t.getTripId());
         assertEquals("add trip","redirect:/TripCategorie/"+t.getTripId()+".html",s);
     }
 
     @Test
     public void testDeleteTripCategorie() {
-        String s ="";
+
         TripCategorie tc = getTripCategorie();
-        Trip t = new Trip();
-        t.setTripCategorieen(new ArrayList<TripCategorie>());
-        t.setTripName("TestTrip");
-        tripDAO.addTrip(t);
+        Trip t = maakTrip();
         tc.setTrip(t);
         tripCategorieDAO.addTripCategorie(tc);
-        s = tripCategorieController.deleteTripCategorie(tc.getTripCategorieId());
+        String s = tripCategorieController.deleteTripCategorie(tc.getTripCategorieId());
         assertEquals("delete trip","redirect:/TripCategorie/" + tc.getTrip().getTripId() + ".html",s);
     }
 
@@ -80,7 +73,7 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
     public void testUpdateTripCategoriePage() {
         ModelAndView mav= null;
         TripCategorie tc = getTripCategorie();
-        Trip t = new Trip();
+        Trip t = maakTrip();
         t.setTripCategorieen(new ArrayList<TripCategorie>());
         tripDAO.addTrip(t);;
         tc.setTrip(t);
@@ -97,11 +90,10 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
 
     @Test
     public void testUpdateTripCategorie() {
-        String s ="";
-        Trip t = new Trip();
-        tripDAO.addTrip(t);
+
+        Trip t = maakTrip();
         TripCategorie tc = getTripCategorie();
-        s = tripCategorieController.updateTripCategorie(tc,null,t.getTripId());
+        String s = tripCategorieController.updateTripCategorie(tc,null,t.getTripId());
         assertEquals("update trip categorie","redirect:/TripCategorie/"+t.getTripId()+".html",s);
     }
 
@@ -110,5 +102,11 @@ public class TestTripCategorieController extends AbstractTransactionalJUnit4Spri
         tc.setTripCategorieName("Test");
         return tc;
     }
-
+    private Trip maakTrip(){
+        Trip t = new Trip();
+        t.setTripCategorieen(new ArrayList<TripCategorie>());
+        t.setTripName("TestTrip");
+        tripDAO.addTrip(t);
+        return  t;
+    }
 }

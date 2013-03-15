@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
 /**
  * Created with IntelliJ IDEA.
@@ -44,7 +43,6 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void updateKost() {
         Kost k = new Kost();
-        k.setKostId(1);
         k.setBeschrijving("lunch");
         k.setPrijs(5.0);
         kostService.addKost(k);
@@ -58,7 +56,6 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void deleteKost() {
         Kost k = new Kost();
-        k.setKostId(1);
         kostService.addKost(k);
         kostService.deleteKost(k);
 
@@ -68,9 +65,7 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testkostenPerUser() {
         User u = new User();
-        u.setUserID(1);
         Trip t = new Trip();
-        t.setTripId(1);
         Deelname dn = new Deelname(t, u);
 
         List<Kost> kosten = new ArrayList();
@@ -87,9 +82,7 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testkostenPerTrip() {
         User u = new User();
-        u.setUserID(1);
         Trip t = new Trip();
-        t.setTripId(1);
         Deelname dn = new Deelname(t, u);
 
         List<Kost> kosten = new ArrayList();
@@ -106,9 +99,7 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testkostenPerTripEnUser() {
         User u = new User();
-        u.setUserID(1);
         Trip t = new Trip();
-        t.setTripId(1);
         Deelname dn = new Deelname(t, u);
 
         List<Kost> kosten = new ArrayList();

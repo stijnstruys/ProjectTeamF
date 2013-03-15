@@ -51,7 +51,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
         User u = getUser();
         String s;
 
-        s = userController.addUser(u,mockMultipartFile);
+        s = userController.addUser(u,mockMultipartFile, null);
         assertEquals("correcte login","redirect:/general/index.html",s);
     }
 
@@ -59,7 +59,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     public void testDeleteUser(){
         User u = getUser();
 
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
         String s =  userController.deleteUser(u.getUserID());
         assertEquals("correct","redirect:/user/user.html",s);
 
@@ -68,7 +68,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void testUpdateUserPage(){
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
         ModelAndView mav = userController.userPage(new MockHttpServletRequest(),null,u.getUserID());
         assertEquals("correct","User/updateUser",mav.getViewName());
     }
@@ -76,9 +76,14 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void testGetImage(){
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        byte[] roemel = new byte[10];
+        for(int i = 0; i<10;i++){
+            roemel[i] = (byte) i;
+        }
+        MockMultipartFile brol = new MockMultipartFile("test",roemel);
+        userController.addUser(u,brol, null);
         byte[] b = userController.getImage(u.getUserID());
-        assertEquals("correct",new byte[0].length,b.length);
+        assertEquals("correct",new byte[10].length,b.length);
     }
 
     @Test
@@ -91,7 +96,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void addSocial(){
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
         MockHttpServletRequest mhsr =  new MockHttpServletRequest();
         mhsr.setParameter("userName","unittestuser");
         String s = userController.addSocialContact(mhsr, new MockHttpSession());
@@ -111,7 +116,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void updateUser(){
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
         u.setUsername("iets anders");
         String s = userController.updateUserData(u,mockMultipartFile);
         assertEquals("correct","redirect:/user/profile.html",s);
@@ -122,7 +127,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void changePw(){
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
 
         authenticateUser(u);
 
@@ -147,7 +152,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void viewProfile(){
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
         ModelAndView mav = userController.viewProfile(new MockHttpServletRequest(),u.getUserID());
         assertEquals("correct","User/viewProfile",mav.getViewName());
 
@@ -156,7 +161,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void testProfile(){
         User u = getUser();
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
 
         authenticateUser(u);
         ModelAndView mav  = userController.profile(new MockHttpServletRequest());
@@ -168,7 +173,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     public void testTripOverzicht(){
         User u = getUser();
 
-        userController.addUser(u,mockMultipartFile);
+        userController.addUser(u,mockMultipartFile, null);
 
         authenticateUser(u);
         ModelAndView mav  = userController.tripOverzichtPage(new MockHttpServletRequest(),null);
@@ -179,34 +184,34 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
 
 
 
-     @Test
-     public void testAdminCP(){
-         User u = getUser();
-         User u2 = new User();
-         userController.addUser(u,mockMultipartFile);
-         userController.addUser(u2,mockMultipartFile);
+    @Test
+    public void testAdminCP(){
+        User u = getUser();
+        User u2 = new User();
+        userController.addUser(u,mockMultipartFile, null);
+        userController.addUser(u2,mockMultipartFile, null);
 
-         authenticateUser(u);
+        authenticateUser(u);
 
-         Trip t = new Trip();
-         t.setOrganiser(u2);
-         tripDAO.addTrip(t);
+        Trip t = new Trip();
+        t.setOrganiser(u2);
+        tripDAO.addTrip(t);
 
-         ModelAndView mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
-         assertEquals("correct","User/myTrips",mav.getViewName());
-         t.setOrganiser(u);
-         tripDAO.updateTrip(t);
-         u.getTrips().add(t);
-         userController.updateUserData(u,mockMultipartFile);
-         mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
-         assertEquals("correct","User/adminTrip",mav.getViewName());
-     }
+        ModelAndView mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
+        assertEquals("correct","User/myTrips",mav.getViewName());
+        t.setOrganiser(u);
+        tripDAO.updateTrip(t);
+        u.getTrips().add(t);
+        userController.updateUserData(u,mockMultipartFile);
+        mav = userController.viewAdminTripPage(new MockHttpServletRequest(),new MockHttpServletResponse(),t.getTripId());
+        assertEquals("correct","User/adminTrip",mav.getViewName());
+    }
 
     @Test
     public void testGetUserInJson() {
-       User u = getUser();
-        userController.addUser(u,mockMultipartFile);
-      String s = userController.getUserInJson(u.getUsername());
+        User u = getUser();
+        userController.addUser(u,mockMultipartFile, null);
+        String s = userController.getUserInJson(u.getUsername());
 
         assertEquals("Correct","true",s);
     }

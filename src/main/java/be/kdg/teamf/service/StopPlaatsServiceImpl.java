@@ -22,6 +22,7 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
     @Autowired
     private StopPlaatsDAO stopPlaatsDAO;
 
+    @Override
     @Transactional
     public void addStopPlaats(StopPlaats stopPlaats) {
         stopPlaatsDAO.addStopPlaats(stopPlaats);

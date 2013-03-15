@@ -5,7 +5,6 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,10 +20,12 @@ public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
 
+    @Override
     public void addUser(User u) {
         sessionFactory.getCurrentSession().save(u);
     }
 
+    @Override
     public List<User> listUsers() {
         return sessionFactory.getCurrentSession().createQuery("from User").list();
 
@@ -32,7 +33,6 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void deleteUser(User user) {
-
         sessionFactory.getCurrentSession().delete(user);
     }
 
@@ -56,9 +56,6 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void updateUser(User user) {
-
         sessionFactory.getCurrentSession().update(user);
-
-
     }
 }
