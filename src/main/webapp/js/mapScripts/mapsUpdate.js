@@ -24,7 +24,6 @@ $(document).ready(function () {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         map = new google.maps.Map($('#map_canvas')[0], mapOptions);
-
     }
 
     $("#mapCheckIcon").click(function () {

@@ -5,6 +5,8 @@
  * Time: 13:42
  * To change this template use File | Settings | File Templates.
  */
+
+//facebook like
 (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;

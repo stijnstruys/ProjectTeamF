@@ -13,7 +13,6 @@ $(document).ready(function () {
 
     var directionsService = new google.maps.DirectionsService();
     initialize();
-    //alert(locations.length);
 
     //zet specifieke locaties
     setSpecificLocations();
@@ -28,12 +27,8 @@ $(document).ready(function () {
 
     function initialize() {
         geocoder = new google.maps.Geocoder();
-        var rendererOptions = {
-            //suppressMarkers : true
-            // draggable: true
-        };
-        directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
-        //geocoder = new google.maps.Geocoder();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+
         //init map
         var mapOptions = {
             zoom: 8,
@@ -49,7 +44,6 @@ $(document).ready(function () {
             loc.Adres = this.value;
             loc.ID = this.id;
             locations.push(loc);
-            //alert( this.value );
         });
 
         var input = $("#address");
@@ -68,7 +62,6 @@ $(document).ready(function () {
 
     }
 
-
     function checkExistence() {
         $("#validation_failed2").hide();
         var geocoder = new google.maps.Geocoder();
@@ -85,7 +78,7 @@ $(document).ready(function () {
         });
     }
 
-    //bereken route
+    //zet markers met route
     function doCalc() {
         var selectedMode = $("#mode").val();
         var waypts = [];
@@ -129,6 +122,7 @@ $(document).ready(function () {
         });
     }
 
+    //exacte locaties plaatsen
     function setSpecificLocations() {
         $.each(locations, function (l, loc) {
             geocoder.geocode({ 'address': loc.Adres}, function (results, status) {

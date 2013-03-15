@@ -3,6 +3,7 @@ $(document).ready(function () {
     var p = $('#picker').css('opacity', 0.25);
     var selected = null;
 
+    //show which color value you're editing
     $('.colorpicker')
         .each(function () {
             f.linkTo(this);
@@ -17,6 +18,7 @@ $(document).ready(function () {
         }
     );
 
+    //changes values in textfields
     $("#color1").change(function() {
         var color = $("#color1").val();
         $("#content").css("background", color);

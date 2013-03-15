@@ -32,6 +32,10 @@
 <section id="content">
     <section class="tripPages">
         <h2><spring:message code="label.costTripTitle"/> ${trip.tripName}</h2>
+
+        <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
+            <input type="submit" value="<spring:message code="label.Back"/>" class="btn btn-success btn_green_right">
+        </form>
         <c:if test="${empty deelnames}">
             <h3><spring:message code="label.NoCosts"/></h3>
         </c:if>

@@ -33,7 +33,7 @@ $(document).ready(function () {
         $("#broadcastMsgScroll").prop({ scrollTop: $("#broadcastMsgScroll").prop("scrollHeight") });
     }
 
-    //add trip select show descreption
+    //add trip select show description
     $("#descriptionType1").show();
     $("#tripTypeSelect").change(function () {
         if ($("#tripTypeSelect").val() == "Tijdsgebonden") {
@@ -81,7 +81,7 @@ $(document).ready(function () {
         $("#browse_foto_input").val(n[n.length - 1])
     });
 
-    //begin gegevens nemen
+    //begin gegevens nemen (mail form - update trip)
     beginTripN = $("#TripN").val();
     beginTripDescr = $("#TripDescr").val();
     beginTripStartD = $("#TripStartD").val();
@@ -110,6 +110,19 @@ $(document).ready(function () {
             }
         }
     });
+
+    $("#TripEndD").datepicker({
+        dateFormat: 'yy/mm/dd',
+        minDate: '0D',
+        changeMonth: true,
+        changeYear: true,
+        onClose: function (selectedDate) {
+            if ($("#TripEndD").val() != "") {
+                $("#TripStartD").datepicker("option", "maxDate", selectedDate);
+            }
+        }
+    });
+
     /* kost validatie */
     $("#addKost").click(function () {
         errormsg = "";
@@ -118,7 +131,7 @@ $(document).ready(function () {
             .hide()
             .html("");
         if (validateKost()) {
-            $("#kostPrijs").val(Math.round( $("#kostPrijs").val()*100)/100);
+            $("#kostPrijs").val(Math.round($("#kostPrijs").val() * 100) / 100);
             $("#addKost").submit();
         }
         else {
@@ -149,35 +162,9 @@ $(document).ready(function () {
         }
     });
 
-
-//$("").
-
-    $("#TripEndD").datepicker({
-        dateFormat: 'yy/mm/dd',
-        minDate: '0D',
-        changeMonth: true,
-        changeYear: true,
-        onClose: function (selectedDate) {
-            if ($("#TripEndD").val() != "") {
-                $("#TripStartD").datepicker("option", "maxDate", selectedDate);
-            }
-        }
-    });
-
-//notification
-    $("#dialog-message-languages").dialog({
-        autoOpen: false,
-        width: 'auto',
-        modal: true,
-        show: {
-            effect: "blind",
-            duration: 1000
-        }
-    });
-
     $("#dialog-message-languages").removeClass("hidden");
 
-//mail
+    //mail send or skip
     $("#skip").click(function () {
         $("#viewTripForm").submit();
     });
@@ -197,13 +184,20 @@ $(document).ready(function () {
     });
 
     /*languages*/
+    $("#dialog-message-languages").dialog({
+        autoOpen: false,
+        width: 'auto',
+        modal: true,
+        show: {
+            effect: "blind",
+            duration: 1000
+        }
+    });
+
     $("#languageFlag").click(function () {
         checkChanges();
         $("#dialog-message-languages").dialog("open");
     });
-
-    var test = $("hiddenNameList").val();
-// alert(test);
 });
 
 function addTrip() {
@@ -436,10 +430,9 @@ function userprofile() {
         $("#profile_show_not").attr('disabled', 'true');
         ;
     });
-
 }
 
-
+//check for changes when update trip mail
 function checkChanges() {
     //eind gegevens nemen
     var eindTripN = $("#TripN").val();
@@ -550,50 +543,51 @@ function chat() {
 
     var chaticon = $("#chat-loading");
     var loader = "<img src='../img/validation/loader.gif' />";
-    var success ="<img src='../img/validation/accepted.png' />";
+    var success = "<img src='../img/validation/accepted.png' />";
     chaticon.html(loader);
 
     // adding a new msg
-    $("#shout").click( function() {
-           var msg = $("#shout-msg");
-           if(msg.val().length > 0) {
-               $.ajax({
-                   type: "POST",
-                   url: '/ProjectTeamF-1.0/chat/add.html',
-                   data: ({msg: msg.val() , trip: tripid}),
-                   success: function() {
-                       update();
-                       msg.val("");
-                   }
-               })
-           }
+    $("#shout").click(function () {
+        var msg = $("#shout-msg");
+        if (msg.val().length > 0) {
+            $.ajax({
+                type: "POST",
+                url: '/ProjectTeamF-1.0/chat/add.html',
+                data: ({msg: msg.val(), trip: tripid}),
+                success: function () {
+                    update();
+                    msg.val("");
+                }
+            })
+        }
     });
 
-    $("#gotochat").click( function() {
+    $("#gotochat").click(function () {
         doActualUpdate();
-        interval = setInterval( update, 15000 );
+        interval = setInterval(update, 15000);
         intervalrunning = true;
     });
-    $("#chat-apprend").click( function() {
-       doActualUpdate();
+    $("#chat-apprend").click(function () {
+        doActualUpdate();
     });
 
-    $("#shout-msg").keypress( function(e) {
+    $("#shout-msg").keypress(function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
-        if(code == 13) { //Enter keycode
+        if (code == 13) { //Enter keycode
             $("#shout").click();
         }
 
     });
 
     function update() {
-        if($("#chat-li").hasClass("active")) {
+        if ($("#chat-li").hasClass("active")) {
             doActualUpdate();
         } else {
             intervalrunning = false;
         }
 
     }
+
     var lastid = 0;
 
     function doActualUpdate() {
@@ -603,17 +597,17 @@ function chat() {
             type: "GET",
             url: '/ProjectTeamF-1.0/chat/getChat.json',
             data: ({trip: tripid, lastId: lastid}),
-            success: function(data) {
-                if(data != null)  {
+            success: function (data) {
+                if (data != null) {
 
-                    $.each(data, function() {
-                         var self = this;
+                    $.each(data, function () {
+                        var self = this;
                         showmsg += ("<div class='messages'><a href='/ProjectTeamF-1.0/user/profile-" + self.user.userID + ".html'>" + self.user.username + "</a>: " + self.msg + "<span class='chat-date'>( " + self.date + " )</span></div>");
                         lastid = self.chatID;
                     });
 
                     $("#chat-area").append(showmsg);
-                   // $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
+                    // $("#chat-area").animate({ scrollTop: 10000 },'1400', "easeOutQuint");
                     if ($("#chat-area").length > 0) {
                         $("#chat-area").prop({ scrollTop: $("#chat-area").prop("scrollHeight") });
                     }

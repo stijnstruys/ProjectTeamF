@@ -22,7 +22,6 @@ $(document).ready(function () {
             placeMarkers();
             map.setZoom(12);
         }
-        // placeMarkers();
     }
 
     function initialize() {
@@ -45,11 +44,12 @@ $(document).ready(function () {
         });
 
         //location info
-        $(".address_info").each( function() {
+        $(".address_info").each(function () {
             locationInfo.push(this.innerHTML);
         });
     }
 
+    //plaats markers met route
     function doCalc() {
         var waypts = [];
         for (var i = 1; i < (locations.length - 1); i++) {
@@ -93,9 +93,9 @@ $(document).ready(function () {
 
                     infoWindowArray.push(infowindow);
 
-                    google.maps.event.addListener(marker, 'click', function() {
+                    google.maps.event.addListener(marker, 'click', function () {
                         resetInfoWindow();
-                        infowindow.open(map,marker);
+                        infowindow.open(map, marker);
                     });
                     markers.push(marker);
 
@@ -106,17 +106,17 @@ $(document).ready(function () {
                 count--;
             });
 
-            function resetInfoWindow(){
-                if(infoWindowArray){
-                    for(i in infoWindowArray){
+            function resetInfoWindow() {
+                if (infoWindowArray) {
+                    for (i in infoWindowArray) {
                         infoWindowArray[i].close();
                     }
                 }
             }
         });
 
-        $(".addresses").click( function() {
-
+        //neem id voor juiste marker trigger
+        $(".addresses").click(function () {
             var temp = this.id.split("_");
             var clickedID = temp[temp.length - 1];
             var t = temp.length - clickedID + 2;

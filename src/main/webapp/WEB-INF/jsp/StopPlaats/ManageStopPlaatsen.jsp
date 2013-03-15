@@ -15,7 +15,7 @@
 <html>
 <head>
     <title><spring:message code="label.StoppingPoint"/></title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
@@ -32,7 +32,7 @@
 <section id="content">
     <section class="tripPages">
         <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
-            <input type="submit" value="Back" class="btn btn-success btn_green_right">
+            <input type="submit" value="<spring:message code="label.Back"/>" class="btn btn-success btn_green_right">
         </form>
         <h2><spring:message code="label.ManageStoppingPoints"/></h2>
 

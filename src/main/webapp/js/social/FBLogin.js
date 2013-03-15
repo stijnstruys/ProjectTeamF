@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+    //import data from facebook
     function postFunction(type, username, typeUsername, firstname, lastname, id,email,birthday){
         $.post(location.protocol + '//' + location.host + '/ProjectTeamF-1.0/user/addSocial.html', {
             type:type,

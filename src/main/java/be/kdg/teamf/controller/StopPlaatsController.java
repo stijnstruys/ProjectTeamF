@@ -74,10 +74,15 @@ public class StopPlaatsController
     @RequestMapping(value = "/StopPlaats/updateStopplaats/{tripID}", method = RequestMethod.POST)
     public String updateStopPlaats(@ModelAttribute("stopPlaats")
                                        StopPlaats stopPlaats, BindingResult result, @PathVariable("tripID") int tripID) {
+       // request.setCharacterEncoding("UTF-8");
 
         Trip t = tripService.findTrip(tripID);
         stopPlaats.setTrip(t);
+       // stopPlaats.setAdres("Vrijheid 125, 2320 Hoogstraten, België");
         stopPlaatsService.updateStopPlaats(stopPlaats);
+        String test = "België";
+        System.out.println("hier stoppl.: " + stopPlaats.getAdres());
+        System.out.println("hier stoppl2.: " + test);
 
         return "redirect:/StopPlaats/" + t.getTripId() + ".html";
 

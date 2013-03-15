@@ -44,7 +44,7 @@ public class StopPlaats {
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
-    @Column(name="Antwoorden")
+    @Column(name = "Antwoorden")
     private Collection<String> antwoorden;
 
     @JsonBackReference
@@ -132,4 +132,5 @@ public class StopPlaats {
     public void setAntwoorden(Collection<String> antwoorden) {
         this.antwoorden = antwoorden;
     }
+
 }

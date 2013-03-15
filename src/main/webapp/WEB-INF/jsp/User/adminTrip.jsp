@@ -144,7 +144,7 @@
         <form:label class="control-label" path="equipment"><spring:message code="label.equipment"/></form:label>
         <div class="controls">
             <input type="text" id="equipment-input"/>
-            <span class="help-inline url" id="add_equipment"><spring:message code="label.tripAdd"/></span>
+            <span class="help-inline url" id="add_equipment"><spring:message code="label.add"/></span>
         </div>
     </div>
     <div class="control-group">
