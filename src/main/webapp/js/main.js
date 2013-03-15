@@ -625,6 +625,9 @@ function chat() {
 }
 
 function stoppingpoint() {
+    /* add extra answers */
+
+    //clear selected (everything is selected on load
     $('#antwoorden').find('option').removeAttr("selected");
 
     $("#add_antw").click(function () {
@@ -641,6 +644,6 @@ function stoppingpoint() {
     });
 
     $("#updateStopplaatsBtn").click(function () {
-     $('#antwoorden').find('option').attr('selected', 'selected');
-     });
+        $('#antwoorden').find('option').attr('selected', 'selected');
+    });
 }
