@@ -74,9 +74,6 @@ public class UserController {
             sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
         }
         if(newuser != null && newuser.getPassword().equals(sb.toString())){
-
-
-
             if(newuser.getPassword().equals(sb.toString())){
                 List<GrantedAuthority> gaList = new ArrayList<>();
                 gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
@@ -202,10 +199,31 @@ public class UserController {
     public String changePw(@RequestParam("currentpw") String currentpw, @RequestParam("newpw") String newpw, @RequestParam("confirmpw") String confirmpw) {
 
         User u = userService.getCurrentUser();
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(currentpw.getBytes());
+        byte byteData[] = md.digest();
 
+        //convert the byte to hex format
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        md.update(newpw.getBytes());
+        byte byteData2[] = md.digest();
+
+        //convert the byte to hex format
+        StringBuffer sb2 = new StringBuffer();
+        for (int i = 0; i < byteData2.length; i++) {
+            sb2.append(Integer.toString((byteData2[i] & 0xff) + 0x100, 16).substring(1));
+        }
         if (newpw.equals(confirmpw)) {
-            if (u.getPassword().equals(currentpw)) {
-                u.setPassword(newpw);
+            if (u.getPassword().equals(sb.toString())) {
+                u.setPassword(sb2.toString());
                 userService.updateUser(u);
             } else {
                 return "redirect:/user/changepw.html";
