@@ -7,14 +7,12 @@ import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -104,4 +102,11 @@ public class StopPlaatsController
 
             return "redirect:/StopPlaats/" + t.getTripId() + ".html";
         }
+
+    @RequestMapping(value = "/service/getStopUser", method = RequestMethod.POST,headers = "Accept=application/json")
+    public List<StopPlaats> login(@RequestParam(value = "tripid") String tripid) {
+        List<StopPlaats> stops = stopPlaatsService.getStopPlaatsenByTripId(Integer.parseInt(tripid));
+        return stops;
+    }
+
 }

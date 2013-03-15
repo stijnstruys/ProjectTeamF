@@ -19,8 +19,6 @@ public interface StopPlaatsDAO {
     public void deleteStopPlaats(StopPlaats stopPlaats);
     StopPlaats findStopPlaats(int stopPlaatsID);
     public List<StopPlaats> getStopplaatsenByTrip(int tripID);
-
-
     List<StopPlaats> listStopPlaatsen();
 
 

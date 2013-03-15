@@ -2,6 +2,7 @@ package be.kdg.teamf.model;
 
 import org.codehaus.jackson.annotate.JsonBackReference;
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
@@ -39,7 +40,7 @@ public class StopPlaats {
     @Column(name = "CorrectAntwoord", length = 255)
     private String correctAntwoord;
 
-    @JsonIgnore
+    @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
     @Cascade(value = org.hibernate.annotations.CascadeType.DELETE)
