@@ -635,7 +635,7 @@ a.trip_name:hover {
     cursor: pointer;
 }
 .addresses:hover {
-    color: yellow;
+   /* color: yellow;*/
 }
 .address_info {
     color: black;
