@@ -606,6 +606,10 @@ a.trip_name:hover {
     min-height: 7.5em;
 }
 
+#stopplaatsen-extra {
+    margin-top: 15px;
+}
+
 /* admin trip */
 
 #adminTripTable {
