@@ -62,13 +62,17 @@
             </table>
         </c:if>
 
-        <form method="post" action="${trip.tripId}/invite.html" class="form-horizontal">
+        <form method="post" action="${trip.tripId}/invite.html" class="form-horizontal" id="form-participants">
             <legend><spring:message code="label.invitenewparticipants"></spring:message></legend>
-            <div class="control-group">
-                <label class="control-label" for="email">E-mail</label>
 
+            <div class="control-group">
+                <label id="labelEmail" class="control-label"><spring:message
+                        code="label.email"/></label>
                 <div class="controls">
-                    <input type="text" id="email" name="email">
+                    <div class="input-append">
+                        <input type="text" id="participants-email" name="email"/>
+                        <span class="add-on" id="addon_email"></span>
+                    </div>
                 </div>
             </div>
 
@@ -78,6 +82,7 @@
                 </div>
             </div>
         </form>
+        <div id="validation_failed"></div>
     </section>
 </section>
 
@@ -88,5 +93,6 @@
 <script src="../js/vendor/bootstrap.min.js"></script>
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/validation.js"></script>
 </body>
 </html>
