@@ -59,22 +59,23 @@ public class UserController {
     public User getUser(@ModelAttribute("user") User user,@RequestParam("username") String uname,@RequestParam("password") String pw ) {
 
         User newuser = userService.findUser(uname);
-        if(newuser != null && newuser.getPassword().equals(pw)){
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(pw.getBytes());
+        byte byteData[] = md.digest();
 
-            MessageDigest md = null;
-            try {
-                md = MessageDigest.getInstance("MD5");
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            }
-            md.update(pw.getBytes());
-            byte byteData[] = md.digest();
+        //convert the byte to hex format
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        if(newuser != null && newuser.getPassword().equals(sb.toString())){
 
-            //convert the byte to hex format
-            StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < byteData.length; i++) {
-                sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-            }
+
 
             if(newuser.getPassword().equals(sb.toString())){
                 List<GrantedAuthority> gaList = new ArrayList<>();
