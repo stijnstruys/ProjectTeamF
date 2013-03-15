@@ -1,12 +1,9 @@
 package be.kdg.teamf.controller;
 
-
-import org.apache.log4j.Logger;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
  * Time: 9:33
  * To change this template use File | Settings | File Templates.
  */
-public class ErrorLogController extends AbstractHandlerExceptionResolver {
-    private static final Logger logger = Logger.getLogger(ErrorLogController.class);
-    @Override
-    protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-        logger.warn("uncaught exception in controllers/handlers", ex);
-        return null;
+@Controller
+public class ErrorLogController  {
+    private static final Logger log = LoggerFactory.getLogger(ErrorLogController.class);
+    @ExceptionHandler(value = Exception.class)
+    public void handleExceptions(Exception e) {
+        log.error(e.getMessage());
     }
 }
