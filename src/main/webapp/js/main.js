@@ -88,7 +88,6 @@ $(document).ready(function () {
 
     //datepicker
     Date.format = 'yy/mm/dd';
-    //$(".datepicker").datepicker();
     $("#dateOfBirth").datepicker({
         dateFormat: 'yy/mm/dd',
         defaultDate: '-21Y',
@@ -205,7 +204,6 @@ $(document).ready(function () {
 });
 
 function addTrip() {
-    /* wizard */
     //Variables
     var current;
     var numberOfSteps = 7;
@@ -409,17 +407,6 @@ function trippages() {
         currentpage = $("." + this.id + "_content");
         currentpage.show();
     });
-
-    /*
-     $("#trips_prev").click( function() {
-
-     });
-
-     $("#trips_next").click( function() {
-
-     });
-
-     */
 }
 
 

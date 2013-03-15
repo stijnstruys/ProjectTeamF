@@ -59,6 +59,7 @@ img
 {
     max-width: none;
 }
+
 /* validation */
 #validation_failed {
     visibility: hidden;
@@ -211,8 +212,6 @@ label {
     -khtml-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    border-radius: 6px;
-
 }
 
 .trip_name {
