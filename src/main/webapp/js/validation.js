@@ -27,7 +27,10 @@ function user() {
     var pw = $("#password");
     var email = $("#email");
     var dob = $("#dateOfBirth");
-    var usernameok, pwok, emailok, dobok = false;
+    var firstname = $("#firstname");
+    var lastname = $("#lastname");
+
+    var usernameok, pwok, emailok, dobok, fnameok, lnameok = false;
 
     //Username
     username.keyup(function () {
@@ -113,6 +116,38 @@ function user() {
         checkDOB();
     });
 
+    //firstname
+    firstname.keyup(function () {
+        checkfname();
+    });
+
+    function checkfname() {
+        if (firstname.val().length < 3) {
+            $("#addon_firstname").html(failed);
+            fnameok = false;
+            errormsg += "<li>Please enter your firstname!</li>";
+        } else {
+            $("#addon_firstname").html(success);
+            fnameok = true;
+        }
+    }
+    //lastname
+    lastname.keyup(function () {
+        checklname();
+    });
+
+    function checklname() {
+
+        if (lastname.val().length < 3) {
+            $("#addon_lastname").html(failed);
+            lnameok = false;
+            errormsg += "<li>Please enter your lastname!</li>";
+        } else {
+            $("#addon_lastname").html(success);
+            lnameok = true;
+        }
+    }
+
     //submit
     $("#user").submit(function () {
         $("#validation_failed").hide();
@@ -121,8 +156,9 @@ function user() {
         checkpw();
         checkEmail();
         checkDOB();
-
-        if (!usernameok || !pwok || !emailok || !dobok) {
+        checkfname();
+        checklname();
+        if (!usernameok || !pwok || !emailok || !dobok  || !fnameok || !lnameok) {
             $("#validation_failed")
                 .show()
                 .html('<ul>' + errormsg + '</ul>');
@@ -137,8 +173,9 @@ function user() {
         errormsg = "";
         checkEmail();
         checkDOB();
-
-        if (!emailok || !dobok) {
+        checkfname();
+        checklname();
+        if (!emailok || !dobok|| !fnameok || !lnameok) {
             $("#validation_failed")
                 .show()
                 .html('<ul>' + errormsg + '</ul>');

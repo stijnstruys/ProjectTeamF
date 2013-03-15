@@ -57,7 +57,7 @@
                     </div>
                     <div class="span6">
                         <label class="checkbox profile_lbl">${user.firstName} </label>
-                        <form:input type="text" class="profile_input hidethis" path="firstName"/>
+                        <form:input type="text" class="profile_input hidethis" path="firstName" id="firstname" />
                     </div>
 
                 </div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="span6">
                         <label class="checkbox profile_lbl">${user.lastName} </label>
-                        <form:input type="text" class="profile_input hidethis" path="lastName"/>
+                        <form:input type="text" class="profile_input hidethis" path="lastName" id="lastname"/>
                     </div>
                 </div>
 

@@ -62,13 +62,21 @@
             <div class="control-group">
                 <form:label class="control-label" path="firstName"><spring:message code="label.firstname"/></form:label>
                 <div class="controls">
-                    <form:input type="text" path="firstName"/>
+                    <div class="input-append">
+                        <form:input type="text" path="firstName" id="firstname"/>
+                        <span class="add-on" id="addon_firstname"></span>
+                    </div>
+
                 </div>
             </div>
             <div class="control-group">
                 <form:label class="control-label" path="lastName"><spring:message code="label.lastname"/></form:label>
                 <div class="controls">
-                    <form:input type="text" path="lastName"/>
+                    <div class="input-append">
+                        <form:input type="text" path="lastName" id="lastname"/>
+                        <span class="add-on" id="addon_lastname"></span>
+                    </div>
+
                 </div>
             </div>
             <div class="control-group">
