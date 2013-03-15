@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -50,6 +49,7 @@ public class BroadcastMessageController {
 
     @RequestMapping(value = "/BroadcastMessage/add/{tripID}", method = RequestMethod.POST)
     public String addBroadcastMessage(@ModelAttribute("broadcastMessage") BroadcastMessage broadcastMessage, BindingResult result, @PathVariable("tripID") int tripID) {
+
 
         Date currentDate = new Date();
 

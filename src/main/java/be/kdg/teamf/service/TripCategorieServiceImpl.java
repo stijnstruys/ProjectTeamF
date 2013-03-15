@@ -22,6 +22,7 @@ public class TripCategorieServiceImpl implements TripCategorieService {
     @Autowired
     private TripCategorieDAO tripCategorieDAO;
 
+    @Override
     @Transactional
     public void addTripCategorie(TripCategorie tripCategorie) {
         tripCategorieDAO.addTripCategorie(tripCategorie);
@@ -33,6 +34,7 @@ public class TripCategorieServiceImpl implements TripCategorieService {
         tripCategorieDAO.updateTripCategorie(tripCategorie);
     }
 
+    @Override
     @Transactional
     public void removeTripCategorie(TripCategorie tripCategorie) {
         tripCategorieDAO.removeTripCategorie(tripCategorie);

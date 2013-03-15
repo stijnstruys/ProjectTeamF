@@ -30,9 +30,8 @@ public class TestTripCategorieService extends AbstractTransactionalJUnit4SpringC
     public void addCategorie(){
 
 
-        TripCategorie tc = new TripCategorie();
-        tc.setTripCategorieName("categorie");
-        tripCategorieService.addTripCategorie(tc);
+        TripCategorie tc = maakTripcategorie();
+
 
         assertEquals("categorie niet gevonden",tc.getTripCategorieName(),tripCategorieService.findTripCategorie(tc.getTripCategorieId()).getTripCategorieName());
     }
@@ -40,9 +39,8 @@ public class TestTripCategorieService extends AbstractTransactionalJUnit4SpringC
     public void updateCategorie(){
 
 
-        TripCategorie tc = new TripCategorie();
-        tc.setTripCategorieName("categorie");
-        tripCategorieService.addTripCategorie(tc);
+        TripCategorie tc = maakTripcategorie();
+
         tc.setTripCategorieName("anders");
         tripCategorieService.updateTripCategorie(tc);
 
@@ -52,10 +50,7 @@ public class TestTripCategorieService extends AbstractTransactionalJUnit4SpringC
     public void deleteCategorie(){
 
 
-        TripCategorie tc = new TripCategorie();
-
-        tc.setTripCategorieName("categorie");
-        tripCategorieService.addTripCategorie(tc);
+        TripCategorie tc = maakTripcategorie();
         tripCategorieService.removeTripCategorie(tc);
 
         assertNull(tripCategorieService.findTripCategorie(tc.getTripCategorieId()));
@@ -74,5 +69,12 @@ public class TestTripCategorieService extends AbstractTransactionalJUnit4SpringC
 
         assertEquals("Excepted : ", t.getTripCategorieen().size(), tripCategorieService.getTripCategories(t.getTripId()).size());
 
+    }
+    private TripCategorie maakTripcategorie(){
+        TripCategorie tc = new TripCategorie();
+
+        tc.setTripCategorieName("categorie");
+        tripCategorieService.addTripCategorie(tc);
+        return tc;
     }
 }

@@ -16,7 +16,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +67,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         t.setTripType("Herhalend");
         t.setStartDate(new java.util.Date(2013/03/15));
         t.setEndDate(new java.util.Date(2013/03/16));
-        userController.addUser(u, mockMultipartFile);
+        userController.addUser(u, mockMultipartFile, null);
         authenticateUser(u);
 
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
@@ -97,7 +96,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         t.setStartDate(new Date(2013, 3, 1));
         t.setEndDate(new Date(2013, 3, 10));
         User u = getUser();
-        userController.addUser(u, mockMultipartFile);
+        userController.addUser(u, mockMultipartFile, null);
         authenticateUser(u);
 
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
@@ -124,7 +123,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     public void testViewTripPage() {
 
         User u = getUser();
-        userController.addUser(u, mockMultipartFile);
+        userController.addUser(u, mockMultipartFile, null);
         authenticateUser(u);
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
@@ -144,7 +143,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     public void testJoinTrip() {
         String s = "";
         User u = getUser();
-        userController.addUser(u, mockMultipartFile);
+        userController.addUser(u, mockMultipartFile, null);
         authenticateUser(u);
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
         Trip t = getTrip();
@@ -161,7 +160,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     public void testLeaveTrip() {
         String s = "";
         User u = getUser();
-        userController.addUser(u, mockMultipartFile);
+        userController.addUser(u, mockMultipartFile, null);
         authenticateUser(u);
         MockHttpServletRequest mockHttpServletRequest = new MockHttpServletRequest();
 
@@ -193,7 +192,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
     public void testDeleteTrip() {
 
         User u = getUser();
-        userController.addUser(u, mockMultipartFile);
+        userController.addUser(u, mockMultipartFile, null);
         authenticateUser(u);
         Trip t = getTrip();
         t.setOrganiser(u);
@@ -204,13 +203,13 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
 
     @Test
     public void testGetOpenTrips(){
-       Trip t = getTrip();
-       User u = getUser();
-       userController.addUser(u, mockMultipartFile);
+        Trip t = getTrip();
+        User u = getUser();
+        userController.addUser(u, mockMultipartFile, null);
         t.setOrganiser(u);
-       tripController.addTrip(t, null, new MockHttpServletRequest());
+        tripController.addTrip(t, null, new MockHttpServletRequest());
 
-       List<Trip> openTrips = tripController.getOpenTrips();
+        List<Trip> openTrips = tripController.getOpenTrips();
 
         assertEquals("Correct", "Test", openTrips.get(0).getTripName());
     }
@@ -225,7 +224,7 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         tripController.addTrip(t, null, new MockHttpServletRequest());
 
         User u = getUser();
-        userController.addUser(u, mockMultipartFile);
+        userController.addUser(u, mockMultipartFile, null);
         authenticateUser(u);
 
         tripController.addChat(t.getTripId(),"Test chat");
@@ -264,5 +263,12 @@ public class TestTripController extends AbstractTransactionalJUnit4SpringContext
         SecurityContextHolder.getContext().setAuthentication(auth);
     }
 
+    private Trip maakTrip(){
+        Trip t = getTrip();
+        User u = getUser();
+        userController.addUser(u, mockMultipartFile, null);
+        t.setOrganiser(u);
+        return t;
 
+    }
 }

@@ -37,42 +37,42 @@ public class TripServiceImpl implements TripService {
 
     @Autowired
     private JavaMailSender mailSender;
-
+    @Override
     @Transactional
     public void addTrip(Trip trip) {
         tripDAO.addTrip(trip);
     }
-
+    @Override
     @Transactional
     public void updateTrip(Trip trip) {
         tripDAO.updateTrip(trip);
     }
-
+    @Override
     @Transactional
     public void deleteTrip(int id) {
         tripDAO.removeTrip(id);
     }
-
+    @Override
     @Transactional
     public List<Trip> listTrips() {
         return tripDAO.listTrips();
     }
-
+    @Override
     @Transactional
     public Trip findTrip(int tripID) {
         return tripDAO.findTrip(tripID);
     }
-
+    @Override
     @Transactional
     public List<Trip> searchTrips(String searchInput) {
         return tripDAO.searchTrips(searchInput);
     }
-
+    @Override
     @Transactional
     public List<String> getTripNames() {
         return tripDAO.getTripNames();
     }
-
+    @Override
     @Transactional
     public List<Trip> listUserTrips(int userID) {
         return tripDAO.listUserTrips(userID);

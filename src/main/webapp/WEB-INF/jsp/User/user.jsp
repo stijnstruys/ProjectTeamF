@@ -136,6 +136,7 @@
             </div>
 
             </br>
+
             <div class="control-group">
                 <div class="controls">
                     <input type="submit" id="register_submit" class="btn"

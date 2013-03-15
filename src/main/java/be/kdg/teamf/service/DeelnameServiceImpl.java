@@ -23,6 +23,7 @@ public class DeelnameServiceImpl implements DeelnameService {
     @Autowired
     private DeelnameDAO deelnameDAO;
 
+    @Override
     @Transactional
     public void addDeelname(Deelname deelname) {
         deelnameDAO.addDeelname(deelname);
@@ -34,6 +35,7 @@ public class DeelnameServiceImpl implements DeelnameService {
         deelnameDAO.updateDeelname(deelname);
     }
 
+    @Override
     @Transactional
     public void deleteDeelname(Deelname deelname) {
         deelnameDAO.deleteDeelname(deelname);

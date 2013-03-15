@@ -5,7 +5,6 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,14 +21,17 @@ public class TripDAOImpl implements TripDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
+    @Override
     public void addTrip(Trip trip) {
         sessionFactory.getCurrentSession().save(trip);
     }
 
+    @Override
     public void updateTrip(Trip trip) {
         sessionFactory.getCurrentSession().update(trip);
     }
 
+    @Override
     public void removeTrip(int id) {
         Trip trip = findTrip(id);
         if (trip != null) {
@@ -37,6 +39,7 @@ public class TripDAOImpl implements TripDAO {
         }
     }
 
+    @Override
     public List<Trip> listTrips() {
         return sessionFactory.getCurrentSession().createQuery("from Trip").list();
     }
@@ -50,6 +53,7 @@ public class TripDAOImpl implements TripDAO {
         return q.list();
     }
 
+    @Override
     public Trip findTrip(int id) {
         Query q = sessionFactory.getCurrentSession().createQuery("from Trip where tripId = :id");
         q.setInteger("id", id);
@@ -102,6 +106,4 @@ public class TripDAOImpl implements TripDAO {
         q.setString("los", "Los");
         return q.list();
     }
-
-
 }

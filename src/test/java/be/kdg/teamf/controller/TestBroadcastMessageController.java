@@ -57,7 +57,7 @@ public class TestBroadcastMessageController extends AbstractTransactionalJUnit4S
         assertEquals("Correct:","redirect:/BroadcastMessage/" + t.getTripId() + ".html",s);
     }
 
-    public Trip getTrip() {
+    private Trip getTrip() {
         Trip t = new Trip();
         t.setTripName("Test");
         t.setBroadcastMessages(new ArrayList<BroadcastMessage>());

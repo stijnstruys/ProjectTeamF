@@ -56,9 +56,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testUpdateTrip() {
 
-        Trip trip = new Trip();
-        trip.setTripName("tripJeroen123");
-        tripService.addTrip(trip);
+        Trip trip = addTrip();
         trip.setTripName("trip321");
         tripService.updateTrip(trip);
         assertEquals("Trip not found", "trip321", tripService.findTrip(trip.getTripId()).getTripName());
@@ -68,9 +66,7 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
     @Test
     public void testDeleteTrip() {
 
-        Trip trip = new Trip();
-        trip.setTripName("tripJeroen123");
-        tripService.addTrip(trip);
+        Trip trip = addTrip();
         tripService.deleteTrip(trip.getTripId());
         assertFalse("Trip not found", tripService.searchTrips("tripJeroen123").contains(trip));
 
@@ -239,5 +235,11 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
         assertEquals("public trips", emails, tripService.listUserEmailPerTrips(t.getTripId()));
     }
 
+    private Trip addTrip(){
+        Trip trip = new Trip();
+        trip.setTripName("tripJeroen123");
+        tripService.addTrip(trip);
+        return trip;
+    }
 
 }

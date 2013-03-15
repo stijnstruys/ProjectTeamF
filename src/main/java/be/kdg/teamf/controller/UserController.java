@@ -53,57 +53,44 @@ public class UserController {
     @Autowired
     private TripService tripService;
 
-    /* TEST ANDROID **/
 
-    @RequestMapping(value="/android/test", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    String getTest(@RequestParam("trip") int tripid) {
-        return "test";
-    }
-
-    @RequestMapping(value="/android/test", method = RequestMethod.POST)
-    public @ResponseBody
-    String getSwag(@RequestParam("swag") String swag) {
-
-        return "hello " + swag;
-    }
     @RequestMapping(value="/service/login", method = RequestMethod.POST)
     @ResponseBody
     public User getUser(@ModelAttribute("user") User user,@RequestParam("username") String uname,@RequestParam("password") String pw ) {
 
         User newuser = userService.findUser(uname);
+        if(newuser != null && newuser.getPassword().equals(pw)){
 
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-        md.update(pw.getBytes());
-        byte byteData[] = md.digest();
+            MessageDigest md = null;
+            try {
+                md = MessageDigest.getInstance("MD5");
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+            md.update(pw.getBytes());
+            byte byteData[] = md.digest();
 
-        //convert the byte to hex format method 1
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < byteData.length; i++) {
-            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-        }
+            //convert the byte to hex format method 1
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < byteData.length; i++) {
+                sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+            }
 
-        if(newuser.getPassword().equals(sb.toString())){
-            List<GrantedAuthority> gaList = new ArrayList<>();
-            gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
-            org.springframework.security.core.userdetails.User usersec = new org.springframework.security.core.userdetails.User(newuser.getUsername(), newuser.getPassword(), true, true, true, true, gaList);
-            Authentication auth = new UsernamePasswordAuthenticationToken(usersec, newuser.getPassword(), gaList);
-            org.springframework.security.core.context.SecurityContext sc = new SecurityContextImpl();
-            sc.setAuthentication(auth);
-            org.springframework.security.core.context.SecurityContextHolder.setContext(sc);
-            return newuser;
+            if(newuser.getPassword().equals(sb.toString())){
+                List<GrantedAuthority> gaList = new ArrayList<>();
+                gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
+                org.springframework.security.core.userdetails.User usersec = new org.springframework.security.core.userdetails.User(newuser.getUsername(), newuser.getPassword(), true, true, true, true, gaList);
+                Authentication auth = new UsernamePasswordAuthenticationToken(usersec, newuser.getPassword(), gaList);
+                org.springframework.security.core.context.SecurityContext sc = new SecurityContextImpl();
+                sc.setAuthentication(auth);
+                org.springframework.security.core.context.SecurityContextHolder.setContext(sc);
+                return newuser;
+            }
         }
-        // newuser.setUsername(uname);
         return null;
     }
 
-    /* end teset */
+
     @RequestMapping(value = "/user/user.html", method = RequestMethod.GET)
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response) {
 
@@ -116,22 +103,19 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User user, @RequestParam("foto") MultipartFile file) {
+    public String addUser(@ModelAttribute("user") User user, @RequestParam("foto") MultipartFile file, HttpServletRequest request) {
 
-        try {
-            Blob blob = Hibernate.createBlob(file.getInputStream());
+        if (file.getSize() != 0) {
+            Blob blob = makePhoto(file);
             user.setProfielFoto(blob);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
         user.setNotificationEmail(true);
         user.setShowPosition(true);
-
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         md.update(user.getPassword().getBytes());
         byte byteData[] = md.digest();
@@ -148,9 +132,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/addSocial", method = RequestMethod.POST)
-    public
     @ResponseBody
-    String addSocialContact(HttpServletRequest request, HttpSession session) {
+    public String addSocialContact(HttpServletRequest request, HttpSession session) {
         User user = new User();
 
         if (userService.findUser(request.getParameter("userName")) == null) {
@@ -206,12 +189,8 @@ public class UserController {
         if (file.getSize() == 0) {
             user.setProfielFoto(u.getProfielFoto());
         } else {
-            try {
-                Blob blob = Hibernate.createBlob(file.getInputStream());
-                user.setProfielFoto(blob);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Blob blob = makePhoto(file);
+            user.setProfielFoto(blob);
         }
 
         user.setPassword(u.getPassword());
@@ -290,9 +269,8 @@ public class UserController {
 
 
     @RequestMapping(value = "/user/mail", method = RequestMethod.GET)
-    public
     @ResponseBody
-    String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
+    public String mailForm(@RequestParam("mesOrg") String mesOrg, @RequestParam("followingChanges") String followingChanges, @RequestParam("formulier") String formulier, @RequestParam("orgMessage") String orgMessage, @RequestParam("tripID") int tripID, @RequestParam("viewTheTrip") String viewTheTrip) {
         ArrayList<String> emails = new ArrayList(tripService.listUserEmailPerTrips(tripID));
 
         ModelMap mailModel = new ModelMap();
@@ -314,9 +292,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/checkusername", method = RequestMethod.GET)
-    public
     @ResponseBody
-    String getUserInJson(@RequestParam("name") String name) {
+    public String getUserInJson(@RequestParam("name") String name) {
 
         User u = userService.findUser(name);
         if (u == null) {
@@ -335,10 +312,22 @@ public class UserController {
         Blob b = u.getProfielFoto();
         try {
             return b.getBytes(1, (int) b.length());
-        } catch (SQLException e) {
+
+        } catch (SQLException | NullPointerException e) {
             e.printStackTrace();
         }
         return null;
     }
 
+
+    private Blob makePhoto(MultipartFile f){
+        Blob blob = null;
+        try {
+            blob = Hibernate.createBlob(f.getInputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return blob;
+    }
 }
