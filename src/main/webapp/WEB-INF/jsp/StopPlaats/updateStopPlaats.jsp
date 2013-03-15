@@ -50,97 +50,64 @@
             <div id="validation_failed2"><spring:message code="label.badMapEntry"/></div>
             <form:form method="post" action="updateStopplaats/${tripID}.html" commandName="stopPlaats"
                        id="updateStopPlaats">
-                <table>
-                    <tr>
-                        <td><form:hidden path="stopPlaatsID"/></td>
-                    </tr>
-                    <tr>
-                        <td><form:label class="lbl" path="adres"><spring:message
-                                code="label.address"/></form:label></td>
-                    </tr>
-                    <tr>
-                        <td><form:input path="adres" id="address"/></td>
-                        <td><img src="../img/icons/Google-Maps-icon.png" alt="Smiley face" class="mapIcons"
-                                 id="mapCheckIcon"/></td>
-                        <td rowspan="8">
-                            <div id="map_canvas"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><form:label class="lbl" path="naam"><spring:message
-                                code="label.StoppingPointName"/></form:label></td>
-                    </tr>
-                    <tr>
-                        <td><form:input path="naam" id="spNaam"/></td>
-                    </tr>
-                    <tr>
-                        <td><form:label class="lbl" path="type"><spring:message
-                                code="label.StoppingPointType"/></form:label></td>
-                    </tr>
-                    <tr>
-                        <td><form:input path="type" id="sptype"/></td>
-                    </tr>
+                <div class="pull-right" id="map_canvas"></div>
+                <form:hidden path="stopPlaatsID"/>
 
-                    <tr>
-                        <td><form:label class="lbl" path="vraag"><spring:message
-                                code="label.Vraag"/></form:label></td>
-                    </tr>
-                    <tr>
-                        <td><form:input path="vraag" id="vraag"/></td>
-                    </tr>
-                    <tr>
-                        <td><form:label class="lbl" path="correctAntwoord"><spring:message
-                                code="label.CorrectAntwoord"/></form:label></td>
-                    </tr>
-                    <tr>
-                        <td><form:input path="correctAntwoord" id="correctAntwoord"/></td>
-                    </tr>
-                    <tr>
-                        <td><form:label class="lbl" path="antwoorden"><spring:message
-                                code="label.Antwoorden"/></form:label></td>
-                    </tr>
-                    <c:if test="${!empty stopPlaats.antwoorden}">
+                <form:label class="lbl" path="adres"><spring:message code="label.address"/></form:label>
+                <form:input path="adres" id="address"/>
+                    <span class="help-inline">
+                        <img src="../img/icons/Google-Maps-icon.png" alt="google maps icon" class="mapIcons"
+                             id="mapCheckIcon"/>
+                    </span>
 
-                        <c:forEach items="${stopPlaats.antwoorden}" var="antwoord">
-                            <%
-                                count++;
-                            %>
-                            <tr id="antwoord<%=count%>">
-                                <td>
-                                    <input type="text" value="${antwoord}" name="antwoorden"/>
-                                    <button class="btn" type="button" onclick="removeAntwoord('antwoord<%=count%>')">X
-                                    </button>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </c:if>
-                    <tr>
-                        <td>
-                            <button id="newAntwoord" class="btn" type="button" onclick="addAntwoord()"><spring:message
-                                    code="label.New"/></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><form:label class="lbl" path="informatie"><spring:message
-                                code="label.information"/></form:label></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><form:textarea id="stopPlaatsInfo" path="informatie"/></td>
-                    </tr>
-                    <tr>
-                        <td><form:label class="lbl" path="vrijgegeven"><spring:message
-                                code="label.Released"/></form:label>
-                            <label class="checkbox">
-                                <form:checkbox path="vrijgegeven" id="spvrijgegeven"/>
-                            </label></td>
-                    </tr>
-                    <td colspan="2">
-                        <input type="button" class="btn" id="updateStopplaatsBtn"
-                               value="<spring:message code="label.UpdateStoppingPoint"/>"/>
-                    </td>
-                    </tr>
-                </table>
+                <form:label class="lbl" path="naam"><spring:message code="label.StoppingPointName"/></form:label>
+                <form:input path="naam" id="spNaam"/>
 
+                <form:label class="lbl" path="type"><spring:message code="label.StoppingPointType"/></form:label>
+                <form:input path="type" id="sptype"/>
+
+                <form:label class="lbl" path="informatie"><spring:message code="label.information"/></form:label>
+                <form:textarea id="stopPlaatsInfo" path="informatie"/>
+
+                <div class="clearfix">
+                    &nbsp;
+                </div>
+
+                <div class="row" id="stopplaatsen-extra">
+                    <div class="span4">
+
+                        <form:label class="lbl" path="vraag"><spring:message code="label.Vraag"/></form:label>
+                        <form:input path="vraag" id="vraag"/>
+
+                        <form:label class="lbl" path="correctAntwoord"><spring:message
+                                code="label.CorrectAntwoord"/></form:label>
+                        <form:input path="correctAntwoord" id="correctAntwoord"/>
+                    </div>
+
+                    <div class="span5">
+                        <form:label class="lbl" path="antwoorden"><spring:message code="label.Antwoorden"/></form:label>
+
+                        <input type="text" id="antw-input"/>
+                        <span class="help-inline url" id="add_antw"><spring:message code="label.Add"/></span>
+
+                        <form:select multiple="multiple" path="antwoorden" id="antwoorden">
+                            <c:forEach items="${stopPlaats.antwoorden}" var="antw">
+                                <form:option value="${antw}"> ${antw}</form:option>
+                            </c:forEach>
+                        </form:select>
+                        <span class="help-inline url" id="remove_antw"><spring:message
+                                code="label.removeSelected"/></span>
+                    </div>
+                </div>
+                <label class="checkbox">
+                    <form:checkbox path="vrijgegeven" id="spvrijgegeven"/> <form:label class="lbl"
+                                                                                       path="vrijgegeven"><spring:message
+                        code="label.Released"/></form:label>
+                </label>
+
+
+                <input type="button" class="btn" id="updateStopplaatsBtn"
+                       value="<spring:message code="label.UpdateStoppingPoint"/>"/>
             </form:form>
         </section>
     </section>

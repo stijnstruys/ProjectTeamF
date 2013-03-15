@@ -25,6 +25,9 @@ $(document).ready(function () {
     //chat
     chat();
 
+    //stopping point
+    stoppingpoint();
+
     //broadcast
     if ($("#broadcastMsgScroll").length > 0) {
         $("#broadcastMsgScroll").prop({ scrollTop: $("#broadcastMsgScroll").prop("scrollHeight") });
@@ -619,4 +622,25 @@ function chat() {
             }
         });
     }
+}
+
+function stoppingpoint() {
+    $('#antwoorden').find('option').removeAttr("selected");
+
+    $("#add_antw").click(function () {
+        var antwToAdd = $("#antw-input").val();
+        if (antwToAdd.length > 0) {
+            var o = new Option(antwToAdd, antwToAdd);
+            $("#antwoorden").append(o);
+            $("#antw-input").val("");
+        }
+    });
+
+    $("#remove_antw").click(function () {
+        $("#antwoorden option:selected").remove();
+    });
+
+    $("#updateStopplaatsBtn").click(function () {
+     $('#antwoorden').find('option').attr('selected', 'selected');
+     });
 }
