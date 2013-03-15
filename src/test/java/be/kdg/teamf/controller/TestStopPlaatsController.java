@@ -71,7 +71,7 @@ public class TestStopPlaatsController extends AbstractTransactionalJUnit4SpringC
         String s ="";
 
         s = stopPlaatsController.addStopPlaats(sp,null, t.getTripId());
-        s = stopPlaatsController.deleteUser(sp.getStopPlaatsID());
+        s = stopPlaatsController.deleteStopplaats(sp.getStopPlaatsID());
 
         assertEquals("delete stopplaats","redirect:/StopPlaats/" + t.getTripId() + ".html",s);
 

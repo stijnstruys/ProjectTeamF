@@ -83,11 +83,7 @@ public class TestTripDAO extends AbstractTransactionalJUnit4SpringContextTests {
         assertEquals("Excpected name: ", "Dropping", findT.getTripName());
     }
 
-    @Test
-    public void getTripNames() {
-        addTrip();
-        assertNotNull("  ", tripDAO.getTripNames());
-    }
+
 
     @Test
     public void testListPublicTrips() {

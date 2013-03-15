@@ -22,10 +22,9 @@ public interface TripDAO {
     public Trip findTrip(int id);
     public List<Trip> listUserTrips(int UserID);
     public List<Trip> listUserParticipateTrips(int UserID);
-    public List<String> getTripNames();
     public List<Trip> listPublicTrips();
     public List<String> listUserEmailPerTrips(int tripID);
 
-    List<Trip> searchTripsCategories(String searchInput);
+    public List<Trip> searchTripsCategories(String searchInput);
 
 }

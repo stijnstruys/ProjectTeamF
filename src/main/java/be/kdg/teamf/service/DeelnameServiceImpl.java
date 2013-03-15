@@ -83,7 +83,7 @@ public class DeelnameServiceImpl implements DeelnameService {
 
     @Override
     @Transactional
-    public ArrayList<Deelname> getDeelnames(Trip t) {
+    public ArrayList<Deelname> getDeelnamesByTrip(Trip t) {
         return deelnameDAO.findDeelnames(t);
     }
 

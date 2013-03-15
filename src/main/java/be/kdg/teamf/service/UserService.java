@@ -16,12 +16,10 @@ public interface UserService {
     public void addUser(User u);
     public List<User> listUsers();
 
-    void deleteUser(User user);
 
-    User findUser(int userID);
-    User findUser(String userName);
-    int login(User user);
-    void updateUser(User user);
+    public User findUser(int userID);
+    public User findUser(String userName);
+    public void updateUser(User user);
 
-    User getCurrentUser();
+    public User getCurrentUser();
 }

@@ -70,7 +70,7 @@ public class UserController {
             md.update(pw.getBytes());
             byte byteData[] = md.digest();
 
-            //convert the byte to hex format method 1
+            //convert the byte to hex format
             StringBuffer sb = new StringBuffer();
             for (int i = 0; i < byteData.length; i++) {
                 sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
@@ -164,14 +164,6 @@ public class UserController {
         return "/general/index.html";
     }
 
-    @RequestMapping("/user/deleteUser/{userID}")
-    public String deleteUser(@PathVariable("userID") int userID) {
-
-        userService.deleteUser(userService.findUser(userID));
-        return "redirect:/user/user.html";
-
-    }
-
     @RequestMapping("/user/update/{userID}")
     public ModelAndView userPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("userID") int userID) {
 
@@ -200,7 +192,7 @@ public class UserController {
     }
 
     @RequestMapping("/user/changepw")
-    public ModelAndView changePw() {
+    public ModelAndView changePwPage() {
         ModelAndView model = new ModelAndView("User/changepw");
         return model;
     }

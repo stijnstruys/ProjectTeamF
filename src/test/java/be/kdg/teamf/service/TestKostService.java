@@ -1,16 +1,10 @@
 package be.kdg.teamf.service;
 
-import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Kost;
-import be.kdg.teamf.model.Trip;
-import be.kdg.teamf.model.User;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -62,56 +56,11 @@ public class TestKostService extends AbstractTransactionalJUnit4SpringContextTes
         assertEquals("kost deleted", null, kostService.findKost(k.getKostId()));
     }
 
-    @Test
-    public void testkostenPerUser() {
-        User u = new User();
-        Trip t = new Trip();
-        Deelname dn = new Deelname(t, u);
 
-        List<Kost> kosten = new ArrayList();
-        Kost k = new Kost();
-        k.setDeelname(dn);
-        kosten.add(k);
-        userService.addUser(u);
-        tripService.addTrip(t);
-        deelnameService.addDeelname(dn);
-        kostService.addKost(k);
-        assertEquals("kosten not 1", kosten.size(), kostService.kostenPerUser(u).size());
-    }
 
-    @Test
-    public void testkostenPerTrip() {
-        User u = new User();
-        Trip t = new Trip();
-        Deelname dn = new Deelname(t, u);
 
-        List<Kost> kosten = new ArrayList();
-        Kost k = new Kost();
-        k.setDeelname(dn);
-        kosten.add(k);
-        userService.addUser(u);
-        tripService.addTrip(t);
-        deelnameService.addDeelname(dn);
-        kostService.addKost(k);
-        assertEquals("kosten not 1", kosten.size(), kostService.kostenPerTrip(t).size());
-    }
 
-    @Test
-    public void testkostenPerTripEnUser() {
-        User u = new User();
-        Trip t = new Trip();
-        Deelname dn = new Deelname(t, u);
 
-        List<Kost> kosten = new ArrayList();
-        Kost k = new Kost();
-        k.setDeelname(dn);
-        kosten.add(k);
-        userService.addUser(u);
-               tripService.addTrip(t);
-               deelnameService.addDeelname(dn);
-               kostService.addKost(k);
-        assertEquals("kosten not 1", kosten.size(), kostService.kostenPerTripEnUser(t, u).size());
-    }
 
     @Test
     public void testFindKost() {

@@ -55,15 +55,6 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
         assertEquals("correcte login","redirect:/general/index.html",s);
     }
 
-    @Test
-    public void testDeleteUser(){
-        User u = getUser();
-
-        userController.addUser(u,mockMultipartFile, null);
-        String s =  userController.deleteUser(u.getUserID());
-        assertEquals("correct","redirect:/user/user.html",s);
-
-    }
 
     @Test
     public void testUpdateUserPage(){
@@ -131,7 +122,7 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
 
         authenticateUser(u);
 
-        ModelAndView mav = userController.changePw();
+        ModelAndView mav = userController.changePwPage();
         assertEquals("correct","User/changepw",mav.getViewName());
 
         String s =  userController.changePw("test","nieuw","nieuw");
@@ -187,7 +178,8 @@ public class TestUserController extends AbstractTransactionalJUnit4SpringContext
     @Test
     public void testAdminCP(){
         User u = getUser();
-        User u2 = new User();
+        User u2 = getUser();
+        u2.setUsername("andereusdernamed");
         userController.addUser(u,mockMultipartFile, null);
         userController.addUser(u2,mockMultipartFile, null);
 

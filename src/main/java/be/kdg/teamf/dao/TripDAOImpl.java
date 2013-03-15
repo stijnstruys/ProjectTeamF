@@ -78,10 +78,7 @@ public class TripDAOImpl implements TripDAO {
     }
 
 
-    @Override
-    public List<String> getTripNames() {
-        return sessionFactory.getCurrentSession().createQuery("select tripName from Trip").list();
-    }
+
 
     @Override
     public List<Trip> listPublicTrips() {

@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import java.util.ArrayList;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static junit.framework.Assert.assertNull;
 
 /**
  * Created with IntelliJ IDEA.
@@ -49,7 +49,7 @@ public class TestStopPlaatsService extends AbstractTransactionalJUnit4SpringCont
         StopPlaats s = new StopPlaats();
         stopPlaatsService.addStopPlaats(s);
         stopPlaatsService.deleteStopPlaats(s);
-        assertFalse("triptype  found", stopPlaatsService.listStopPlaatsen().contains(s));
+        assertNull("triptype  found", stopPlaatsService.findStopPlaats(s.getStopPlaatsID()));
     }
 
     @Test

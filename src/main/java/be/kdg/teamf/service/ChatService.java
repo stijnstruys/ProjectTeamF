@@ -13,6 +13,6 @@ import java.util.ArrayList;
  */
 public interface ChatService {
     public void addChat(Chat c);
-    ArrayList<Chat> getChats(int tripID);
-    ArrayList<Chat> getChats(int tripID, int lastID);
+    public ArrayList<Chat> getChats(int tripID);
+    public ArrayList<Chat> getChats(int tripID, int lastID);
 }

@@ -54,7 +54,7 @@ public class StopPlaatsController
     }
 
     @RequestMapping("/StopPlaats/delete/{stopPlaatsID}")
-    public String deleteUser(@PathVariable("stopPlaatsID") int stopPlaatsID) {
+    public String deleteStopplaats(@PathVariable("stopPlaatsID") int stopPlaatsID) {
         StopPlaats s =  stopPlaatsService.findStopPlaats(stopPlaatsID);
         stopPlaatsService.deleteStopPlaats(s);
         return "redirect:/StopPlaats/" + s.getTrip().getTripId() + ".html";
@@ -104,7 +104,7 @@ public class StopPlaatsController
         }
 
     @RequestMapping(value = "/service/getStopUser", method = RequestMethod.POST,headers = "Accept=application/json")
-    public List<StopPlaats> login(@RequestParam(value = "tripid") String tripid) {
+    public List<StopPlaats> stopPlaatsList(@RequestParam(value = "tripid") String tripid) {
         List<StopPlaats> stops = stopPlaatsService.getStopPlaatsenByTripId(Integer.parseInt(tripid));
         return stops;
     }

@@ -21,5 +21,5 @@ public interface KostDAO {
     public List<Kost> kostenPerTrip(Trip t);
     public List<Kost> kostenPerTripEnUser(Trip t, User u);
 
-    Kost findKost(int kostId);
+    public Kost findKost(int kostId);
 }

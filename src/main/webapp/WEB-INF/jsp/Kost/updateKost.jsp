@@ -34,7 +34,7 @@
         <h2><spring:message code="label.updateCost"/></h2>
 
         <div id="validation_failed"></div>
-        <form:form method="post" action="update/${kost.kostId}.html" commandName="kost"
+        <form:form method="post" action="update.html" commandName="kost"
                    id="kost" onsubmit="false">
             <table>
                 <tr>

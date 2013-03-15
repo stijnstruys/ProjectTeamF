@@ -28,22 +28,22 @@ public interface TripService {
 
     public List<Trip> searchTrips(String searchInput);
 
-    public List<String> getTripNames();
 
     public List<Trip> listUserTrips(int userID);
 
     public void sendMail(final ModelMap model, final SimpleMailMessage msg);
 
-    boolean checkOwnership(Trip t, User u);
+    public boolean checkOwnership(Trip t, User u);
 
     public List<Trip> listUserParticipateTrips(int UserID);
 
-    void sendInvite(ModelMap mailModel, SimpleMailMessage msg);
+    public void sendInvite(ModelMap mailModel, SimpleMailMessage msg);
     public List<Trip> listPublicTrips();
 
-    List<Trip> searchTripsCategories(String searchInput);
+    public List<Trip> searchTripsCategories(String searchInput);
 
     public List<String> listUserEmailPerTrips(int tripID);
+
 
 
 }

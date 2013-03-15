@@ -12,13 +12,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface BroadcastMessageDAO {
+
     public void addBroadcastMessage(BroadcastMessage broadcastMessage);
-
-    public void updateBroadcastMessage(BroadcastMessage broadcastMessage);
-
-    public void removeBroadcastMessage(BroadcastMessage broadcastMessage);
-
-    List<BroadcastMessage> getBroadcastMessages(int tripID);
-
-    BroadcastMessage findBroadcastMessage(int broadcastMessageID);
+    public List<BroadcastMessage> getBroadcastMessages(int tripID);
+    public BroadcastMessage findBroadcastMessage(int broadcastMessageID);
 }

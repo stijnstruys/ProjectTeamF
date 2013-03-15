@@ -10,7 +10,6 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,29 +35,8 @@ public class TestBroadcastMessageService extends AbstractTransactionalJUnit4Spri
         assertEquals("message not found: ", "bericht", broadcastMessageService.findBroadcastMessage(bm.getBroadcastMessageID()).getMsg());
     }
 
-    @Test
-    public void updateBroadcastMessage() {
 
 
-        BroadcastMessage bm = new BroadcastMessage();
-        bm.setMsg("bericht");
-        broadcastMessageService.addBroadcastMessage(bm);
-        bm.setMsg("bericht2");
-        broadcastMessageService.updateBroadcastMessage(bm);
-
-        assertEquals("Broadcast message niet gevonden", "bericht2", broadcastMessageService.findBroadcastMessage(bm.getBroadcastMessageID()).getMsg());
-    }
-
-    @Test
-    public void deleteBroadcastMessage() {
-        BroadcastMessage bm = new BroadcastMessage();
-
-        bm.setMsg("bericht");
-        broadcastMessageService.addBroadcastMessage(bm);
-        broadcastMessageService.removeBroadcastMessage(bm);
-
-        assertNull(broadcastMessageService.findBroadcastMessage(bm.getBroadcastMessageID()));
-    }
 
     @Test
     public void listBroadcastMessage() {

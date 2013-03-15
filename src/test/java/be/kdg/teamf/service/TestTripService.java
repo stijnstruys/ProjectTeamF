@@ -149,10 +149,11 @@ public class TestTripService extends AbstractTransactionalJUnit4SpringContextTes
 
         Trip trip = new Trip();
         trip.setTripName("tripJeroen123");
-        ArrayList<String> tripnames = new ArrayList<>();
-        tripnames.add("tripJeroen123");
+
+        ArrayList<Trip> trips =  new ArrayList<>();
+        trips.add(trip);
         tripService.addTrip(trip);
-        assertEquals("Not owner", tripnames, tripService.getTripNames());
+        assertEquals("Not owner", trips.size(), tripService.listTrips().size());
 
     }
 

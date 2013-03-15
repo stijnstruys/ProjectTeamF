@@ -9,17 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-
 public class IndexController {
-
-
-
-
     @RequestMapping(value ="general/index.html", method = RequestMethod.GET)
     public ModelAndView indexPage(HttpServletRequest request, HttpServletResponse response)  {
 
         ModelAndView model = new ModelAndView("General/index");
-
 
         return model;
     }

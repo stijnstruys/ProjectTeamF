@@ -49,7 +49,7 @@ public class KostController {
 
         Trip t = tripService.findTrip(tripId);
 
-        request.setAttribute("deelnames", deelnameService.getDeelnames(t));
+        request.setAttribute("deelnames", deelnameService.getDeelnamesByTrip(t));
         request.setAttribute("trip", t);
 
         ModelAndView model = new ModelAndView("Kost/adminKostTrip");
@@ -66,7 +66,7 @@ public class KostController {
         return "redirect:/kost/kostenPerTrip" + tripId + ".html";
     }
 
-    @RequestMapping(value = "kost/update/{kostId}", method = RequestMethod.POST)
+    @RequestMapping(value = "kost/update", method = RequestMethod.POST)
     public String updateKost(@ModelAttribute("kost") Kost kost, BindingResult result) {
         Kost k = kostService.findKost(kost.getKostId());
         kost.setDeelname(k.getDeelname());

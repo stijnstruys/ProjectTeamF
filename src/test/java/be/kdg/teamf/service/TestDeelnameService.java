@@ -136,7 +136,7 @@ public class TestDeelnameService extends AbstractTransactionalJUnit4SpringContex
         ArrayList<Deelname> deelnames = new ArrayList();
         deelnames.add(d);
 
-        assertEquals("deelname is null", deelnames.size(),deelnameService.getDeelnames(t).size());
+        assertEquals("deelname is null", deelnames.size(),deelnameService.getDeelnamesByTrip(t).size());
 
     }
 

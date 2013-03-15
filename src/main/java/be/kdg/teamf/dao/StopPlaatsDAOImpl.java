@@ -5,7 +5,6 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -42,7 +41,12 @@ public class StopPlaatsDAOImpl implements StopPlaatsDAO {
     public StopPlaats findStopPlaats(int id) {
         Query q = sessionFactory.getCurrentSession().createQuery("from StopPlaats where stopPlaatsID = :id");
         q.setInteger("id", id);
+        if(q.list().size() != 0){
         return (StopPlaats) q.list().get(0);
+        }
+        else{
+            return null;
+        }
     }
 
     @Override
@@ -52,9 +56,6 @@ public class StopPlaatsDAOImpl implements StopPlaatsDAO {
         return q.list();
     }
 
-    @Override
-    public List<StopPlaats> listStopPlaatsen() {
-        return sessionFactory.getCurrentSession().createQuery("from StopPlaats ").list();
-    }
+
 
 }

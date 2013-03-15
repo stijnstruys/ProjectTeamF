@@ -21,11 +21,11 @@ public interface DeelnameDAO {
 
     public void deleteDeelname(Deelname deelname);
 
-    Deelname findDeelname(int deelnameID);
+    public Deelname findDeelname(int deelnameID);
 
-    Deelname findDeelname(int tripId, int userID);
+    public Deelname findDeelname(int tripId, int userID);
 
-    ArrayList<Deelname> findDeelnames(Trip t);
-    ArrayList<Deelname> findDeelnamesByUser(User u);
+    public ArrayList<Deelname> findDeelnames(Trip t);
+    public ArrayList<Deelname> findDeelnamesByUser(User u);
 
 }

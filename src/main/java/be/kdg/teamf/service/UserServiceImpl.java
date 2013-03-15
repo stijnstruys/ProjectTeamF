@@ -37,12 +37,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void deleteUser(User user) {
-        userDAO.deleteUser(user);
-    }
-
-    @Override
-    @Transactional
     public User findUser(int userID) {
         return userDAO.findUser(userID);
     }
@@ -73,16 +67,5 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Override
-    @Transactional
-    public int login(User userInput) {
-        User u = userDAO.findUser(userInput.getUsername());
-        if (u == null) {
-            return -1;
-        }
-        if (u.getPassword().equals(userInput.getPassword())) {
-            return u.getUserID();
-        }
-        return -1;
-    }
+
 }

@@ -14,6 +14,6 @@ import java.util.ArrayList;
 public interface ChatDAO {
 
     public void addChat(Chat c);
-    ArrayList<Chat> getChats(int tripID);
-    ArrayList<Chat> getChats(int tripID, int lastid);
+    public ArrayList<Chat> getChats(int tripID);
+    public ArrayList<Chat> getChats(int tripID, int lastid);
 }

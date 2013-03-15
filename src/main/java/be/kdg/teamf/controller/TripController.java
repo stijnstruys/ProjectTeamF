@@ -166,8 +166,8 @@ public class TripController {
     /* Chat */
     /* add chat to db */
     @RequestMapping(value="/chat/add", method = RequestMethod.POST)
-    public @ResponseBody
-    void addChat(@RequestParam("trip") int trip, @RequestParam("msg") String msg) {
+     @ResponseBody
+    public void addChat(@RequestParam("trip") int trip, @RequestParam("msg") String msg) {
         chatService.addChat(new Chat(tripService.findTrip(trip), userService.getCurrentUser(), msg));
     }
 
@@ -182,9 +182,8 @@ public class TripController {
    // static class ChatList extends ArrayList<Chat> {  }
 
     @RequestMapping(value="/chat/getChat", method = RequestMethod.GET)
-    public
     @ResponseBody
-    List<Chat> getChats(@RequestParam("trip") int tripid, @RequestParam("lastId") int lastID) {
+    public  List<Chat> getChats(@RequestParam("trip") int tripid, @RequestParam("lastId") int lastID) {
         List<Chat> cl = new ArrayList<Chat>();
 
         Trip t = tripService.findTrip(tripid);
@@ -253,15 +252,14 @@ public class TripController {
     }
 
     @RequestMapping(value = "/service/getOpenTrips", method = RequestMethod.GET)
-    public
     @ResponseBody
-    List<Trip> getOpenTrips(){
+    public List<Trip> getOpenTrips(){
         List<Trip> trips = new ArrayList<Trip>(tripService.listTrips());
         List<Trip> openTrips = new ArrayList<Trip>();
         for(Trip t:trips){
             if(t.isVisible()){
-                Trip temp = new Trip();
-                temp=t;
+
+                Trip temp=t;
                 temp.setOrganiser(userService.findUser(temp.getOrganiser().getUserID()));
                 openTrips.add(temp);
             }
@@ -270,13 +268,12 @@ public class TripController {
     }
     @RequestMapping(value = "/service/tripList", method = RequestMethod.POST, headers = "Accept=application/json")
     public List<Trip> getTripList(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
-    //public Trip getTripList(@ModelAttribute("user") User user, BindingResult result,HttpServletRequest request) {
         return tripService.listTrips();
     }
 
     @RequestMapping(value = "/service/getTripsUser", method = RequestMethod.POST,headers = "Accept=application/json")
-    public List<Trip> login(@RequestParam(value = "userid") String userid) {
-        return tripService.listUserParticipateTrips(Integer.parseInt(userid));
+    public List<Trip> tripListByUser(@RequestParam(value = "userid") int userid) {
+        return tripService.listUserParticipateTrips(userid);
     }
 
 }

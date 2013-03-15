@@ -34,26 +34,9 @@ public class TestBroadcastMessageDAO extends AbstractTransactionalJUnit4SpringCo
         assertEquals("Excepeted msg: ", "bericht", broadcastMessageDAO.findBroadcastMessage(bm.getBroadcastMessageID()).getMsg());
     }
 
-    @Test
-    public void testDeleteBroadcastMessage() {
-        BroadcastMessage bm = getBroadcastMessage();
-        broadcastMessageDAO.addBroadcastMessage(bm);
-        broadcastMessageDAO.removeBroadcastMessage(bm);
 
-        assertEquals("Excepeted msg: ", null, broadcastMessageDAO.findBroadcastMessage(bm.getBroadcastMessageID()));
-    }
 
-    @Test
-    public void testUpdateBroadcastMessage() {
-        BroadcastMessage bm = getBroadcastMessage();
-        broadcastMessageDAO.addBroadcastMessage(bm);
 
-        bm.setMsg("bericht2");
-        broadcastMessageDAO.updateBroadcastMessage(bm);
-
-        assertEquals("Excepeted msg: ", "bericht2", broadcastMessageDAO.findBroadcastMessage(bm.getBroadcastMessageID()).getMsg());
-
-    }
 
     @Test
     public void testFindBroadcastMessage() {

@@ -48,13 +48,6 @@ public class StopPlaatsServiceImpl implements StopPlaatsService {
 
     @Override
     @Transactional
-    public List<StopPlaats> listStopPlaatsen() {
-
-     return stopPlaatsDAO.listStopPlaatsen();
-    }
-
-    @Override
-    @Transactional
     public boolean controleerAntwoord(String antwoord, StopPlaats sp) {
         return antwoord.equals(sp.getCorrectAntwoord());
     }

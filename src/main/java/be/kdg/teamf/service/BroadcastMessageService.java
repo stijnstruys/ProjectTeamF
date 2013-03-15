@@ -13,8 +13,6 @@ import java.util.List;
  */
 public interface BroadcastMessageService {
     public void addBroadcastMessage(BroadcastMessage broadcastMessage);
-        public void updateBroadcastMessage(BroadcastMessage broadcastMessage);
-        public void removeBroadcastMessage(BroadcastMessage broadcastMessage);
-        public List<BroadcastMessage> getBroadcastMessages(int tripID);
-        public BroadcastMessage findBroadcastMessage(int broadcastMessageID);
+    public List<BroadcastMessage> getBroadcastMessages(int tripID);
+    public BroadcastMessage findBroadcastMessage(int broadcastMessageID);
 }

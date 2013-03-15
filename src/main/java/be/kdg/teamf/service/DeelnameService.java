@@ -20,16 +20,16 @@ public interface DeelnameService {
 
     public void deleteDeelname(Deelname deelname);
 
-    Deelname findDeelname(int deelnameID);
+    public  Deelname findDeelname(int deelnameID);
 
     boolean alreadyExists(Deelname d);
 
     boolean userIsRegistered(Trip t, User u);
 
-    Deelname findDeelname(Trip t, User u);
+    public Deelname findDeelname(Trip t, User u);
 
-    ArrayList<Deelname> getDeelnames(Trip t);
+    public ArrayList<Deelname> getDeelnamesByTrip(Trip t);
 
-    ArrayList<Deelname> getDeelnamesByUser(User u);
+    public ArrayList<Deelname> getDeelnamesByUser(User u);
 
 }

@@ -15,6 +15,6 @@ public interface TripCategorieDAO {
     public void addTripCategorie(TripCategorie tripCategorie);
     public void updateTripCategorie(TripCategorie tripCategorie);
     public void removeTripCategorie(TripCategorie tripCategorie);
-    List<TripCategorie> getTripCategories(int tripID);
-    TripCategorie findTripCategorie(int tripCategorieID);
+    public List<TripCategorie> getTripCategories(int tripID);
+    public TripCategorie findTripCategorie(int tripCategorieID);
 }

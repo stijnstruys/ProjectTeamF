@@ -27,17 +27,7 @@ public class BroadcastMessageServiceImpl implements BroadcastMessageService {
         broadcastMessageDAO.addBroadcastMessage(broadcastMessage);
     }
 
-    @Override
-    @Transactional
-    public void updateBroadcastMessage(BroadcastMessage broadcastMessage) {
-        broadcastMessageDAO.updateBroadcastMessage(broadcastMessage);
-    }
 
-    @Override
-    @Transactional
-    public void removeBroadcastMessage(BroadcastMessage broadcastMessage) {
-        broadcastMessageDAO.removeBroadcastMessage(broadcastMessage);
-    }
 
     @Override
     @Transactional

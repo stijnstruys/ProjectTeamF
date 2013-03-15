@@ -36,6 +36,7 @@ public class DeelnameController {
     @Autowired
     private DeelnameService deelnameService;
 
+    //invite mail sturen
     @RequestMapping(value = "TripParticipants/{tripID}/invite", method = RequestMethod.POST)
     public String sendInvite(@PathVariable(value = "tripID") int trip,@RequestParam(value = "email") String email) {
         Trip t = tripService.findTrip(trip);
@@ -54,13 +55,13 @@ public class DeelnameController {
         return "redirect:/TripParticipants/" + trip + ".html";
     }
 
-
+    // deelnamepagina
     @RequestMapping(value = "/TripParticipants/{tripID}", method = RequestMethod.GET)
     public ModelAndView tripParticipantsPage(HttpServletRequest request, HttpServletResponse response, @PathVariable("tripID") int tripID) {
 
         Deelname deelname = new Deelname();
         Trip t = tripService.findTrip(tripID);
-        request.setAttribute("deelnemers", deelnameService.getDeelnames(tripService.findTrip(tripID)));
+        request.setAttribute("deelnemers", deelnameService.getDeelnamesByTrip(tripService.findTrip(tripID)));
         request.setAttribute("deelname", deelname);
 
         request.setAttribute("trip", t);
@@ -68,6 +69,7 @@ public class DeelnameController {
 
         return model;
     }
+    //pagina om equipent aan te passen
     @RequestMapping(value = "/editUserequipment/{deelnameID}", method = RequestMethod.GET)
     public ModelAndView editUserequipment(HttpServletRequest request, HttpServletResponse response, @PathVariable("deelnameID") int deelnameID)  {
 
@@ -79,6 +81,7 @@ public class DeelnameController {
 
         return model;
     }
+    //opslaan en teruggaan naar adminpagina
     @RequestMapping(value = "/TripParticipants/updateTripParticipants/{tripID}", method = RequestMethod.POST)
     public String updateTripParticipants(@ModelAttribute("tripParticipant")
                                          Deelname deelname, BindingResult result, @PathVariable("tripID") int tripID) {
@@ -88,7 +91,7 @@ public class DeelnameController {
         return "redirect:/user/admincp-" + deelname.getTrip().getTripId() + ".html";
 
     }
-
+    //updaten en teruggaan
     @RequestMapping(value = "/TripParticipants/updateDeelname", method = RequestMethod.POST)
     public String updateDeelnemer(@ModelAttribute("tripParticipant")
                                   Deelname deelname, BindingResult result) {

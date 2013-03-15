@@ -27,16 +27,6 @@ public class BroadcastMessageDAOImpl implements BroadcastMessageDAO {
     }
 
     @Override
-    public void updateBroadcastMessage(BroadcastMessage broadcastMessage) {
-        sessionFactory.getCurrentSession().update(broadcastMessage);
-    }
-
-    @Override
-    public void removeBroadcastMessage(BroadcastMessage broadcastMessage) {
-        sessionFactory.getCurrentSession().delete(broadcastMessage);
-    }
-
-    @Override
     public List<BroadcastMessage> getBroadcastMessages(int tripID) {
         Query q = sessionFactory.getCurrentSession().createQuery("from BroadcastMessage where trip = :tripId");
        q.setInteger("tripId", tripID);
