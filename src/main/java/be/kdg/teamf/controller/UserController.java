@@ -22,6 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -71,7 +73,23 @@ public class UserController {
     public User getUser(@ModelAttribute("user") User user,@RequestParam("username") String uname,@RequestParam("password") String pw ) {
 
         User newuser = userService.findUser(uname);
-        if(newuser.getPassword().equals(pw)){
+
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        md.update(pw.getBytes());
+        byte byteData[] = md.digest();
+
+        //convert the byte to hex format method 1
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+
+        if(newuser.getPassword().equals(sb.toString())){
             List<GrantedAuthority> gaList = new ArrayList<>();
             gaList.add(new GrantedAuthorityImpl("ROLE_USER"));
             org.springframework.security.core.userdetails.User usersec = new org.springframework.security.core.userdetails.User(newuser.getUsername(), newuser.getPassword(), true, true, true, true, gaList);
@@ -108,6 +126,22 @@ public class UserController {
         }
         user.setNotificationEmail(true);
         user.setShowPosition(true);
+
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        md.update(user.getPassword().getBytes());
+        byte byteData[] = md.digest();
+
+        //convert the byte to hex format method 1
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < byteData.length; i++) {
+            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+        }
+        user.setPassword(sb.toString());
         userService.addUser(user);
 
         return "redirect:/general/index.html";
