@@ -48,7 +48,7 @@
         <h2><spring:message code="label.TripSearchResult"/></h2>
         <c:if test="${empty tripSearchList}">
             <h4><spring:message code="label.NoTripNamesFound"/> <%= request.getParameter("searchInput")%>
-                        </h4>
+            </h4>
         </c:if>
         <c:if test="${!empty tripSearchList}">
             <h3><spring:message code="label.FoundOnTripName"/> <%= request.getParameter("searchInput")%>
@@ -80,24 +80,24 @@
             </ul>
         </c:if>
         <div class="float_fix"></div>
-                <div class="pagination">
-                    <ul>
-                        <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
-                        <%
-                            for (int i = 0; i <= pagina; i++) {
-                        %>
-                        <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
-                        </a></li>
-                        <%
-                            }
-                        %>
-                        <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
-                    </ul>
-                </div>
+        <div class="pagination">
+            <ul>
+                <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
+                <%
+                    for (int i = 0; i <= pagina; i++) {
+                %>
+                <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                </a></li>
+                <%
+                    }
+                %>
+                <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
+            </ul>
+        </div>
         <c:if test="${empty tripSearchCategories}">
-                    <h4><spring:message code="label.NoTripCategoriesFound"/> <%= request.getParameter("searchInput")%>
-                                </h4>
-                </c:if>
+            <h4><spring:message code="label.NoTripCategoriesFound"/> <%= request.getParameter("searchInput")%>
+            </h4>
+        </c:if>
         <c:if test="${!empty tripSearchCategories}">
             <h3><spring:message code="label.FoundOnTripCategory"/> <%= request.getParameter("searchInput") %>
             </h3>

@@ -96,13 +96,14 @@
     </div>
     <a href="/ProjectTeamF-1.0/BroadcastMessage/${trip.tripId}.html" class="btn btn-success float_right manageBtn"
        id="BroadcastMessages"><spring:message code="label.BroadcastMessages"/></a>
+
     <div class="control-group">
-            <form:label id="labelTripNotificatie" class="control-label" path="notification"><spring:message
-                    code="label.TripNotificatie"/></form:label>
-            <div class="controls">
-                <form:input type="text" id="TripNotificatie" path="notification"/>
-            </div>
+        <form:label id="labelTripNotificatie" class="control-label" path="notification"><spring:message
+                code="label.TripNotificatie"/></form:label>
+        <div class="controls">
+            <form:input type="text" id="TripNotificatie" path="notification"/>
         </div>
+    </div>
     <a href="/ProjectTeamF-1.0/kost/adminKostTrip${trip.tripId}.html" class="btn btn-success float_right manageBtn"
        id="KostOverview"><spring:message code="label.CostOverview"/></a>
     <c:if test="${trip.tripType != 'Los'}">

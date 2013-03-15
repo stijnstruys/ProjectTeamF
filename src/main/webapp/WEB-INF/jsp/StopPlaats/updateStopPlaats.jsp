@@ -29,11 +29,11 @@
         var counter = 1;
         function addAntwoord() {
 
-            $("#newAntwoord").before('<tr><td id=antwoordnew'+counter+' ><input type="text" value="" name="antwoorden"/><button class="btn"  type="button" onclick="removeAntwoord(\'antwoordnew'+counter+'\')">X</button></td></tr>');
+            $("#newAntwoord").before('<tr><td id=antwoordnew' + counter + ' ><input type="text" value="" name="antwoorden"/><button class="btn"  type="button" onclick="removeAntwoord(\'antwoordnew' + counter + '\')">X</button></td></tr>');
             counter++;
         }
         function removeAntwoord(s) {
-            $("#"+s).remove();
+            $("#" + s).remove();
         }
     </script>
 </head>
@@ -107,14 +107,19 @@
                             %>
                             <tr id="antwoord<%=count%>">
                                 <td>
-                                    <input  type="text" value="${antwoord}" name="antwoorden"/>
-                                    <button  class="btn" type="button" onclick="removeAntwoord('antwoord<%=count%>')">X</button>
+                                    <input type="text" value="${antwoord}" name="antwoorden"/>
+                                    <button class="btn" type="button" onclick="removeAntwoord('antwoord<%=count%>')">X
+                                    </button>
                                 </td>
                             </tr>
                         </c:forEach>
                     </c:if>
-                    <tr><td><button id="newAntwoord"  class="btn" type="button" onclick="addAntwoord()"><spring:message
-                                                    code="label.New"/></button></td></tr>
+                    <tr>
+                        <td>
+                            <button id="newAntwoord" class="btn" type="button" onclick="addAntwoord()"><spring:message
+                                    code="label.New"/></button>
+                        </td>
+                    </tr>
                     <tr>
                         <td><form:label class="lbl" path="informatie"><spring:message
                                 code="label.information"/></form:label></td>

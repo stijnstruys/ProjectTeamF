@@ -29,40 +29,44 @@
 
 <section id="content">
     <section class="tripPages">
-    <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
-        <input type="submit" value="Back" class="btn btn-success btn_green_right">
-    </form>
-    <h2><spring:message code="label.ManageParticipants"/></h2>
+        <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
+            <input type="submit" value="Back" class="btn btn-success btn_green_right">
+        </form>
+        <h2><spring:message code="label.ManageParticipants"/></h2>
         </br>
 
-    <c:if test="${!empty deelnemers}">
-        <table class="data table">
-            <tr>
-                <th>#</th>
-                <th><spring:message code="label.name"/></th>
-                <th><spring:message code="label.IndividualEquipment"/></th>
-            </tr>
-           <% int counter = 1;%>
-            <c:forEach items="${trip.deelnames}" var="deelnamevar">
+        <c:if test="${!empty deelnemers}">
+            <table class="data table">
                 <tr>
-                    <td><%=counter++%></td>
-                    <td><a href="../editUserequipment/${deelnamevar.deelnameID}.html">${deelnamevar.user.firstName} ${deelnamevar.user.lastName} </a></td>
-                    <c:if test="${!empty deelnamevar.equipment}">
-                        <td>
-                            <c:forEach items="${deelnamevar.equipment}" var="equipmentPiece">
-                                ${equipmentPiece}</br>
-                            </c:forEach>
-                        </td>
-                    </c:if>
+                    <th>#</th>
+                    <th><spring:message code="label.name"/></th>
+                    <th><spring:message code="label.IndividualEquipment"/></th>
                 </tr>
-            </c:forEach>
-        </table>
-    </c:if>
+                <% int counter = 1;%>
+                <c:forEach items="${trip.deelnames}" var="deelnamevar">
+                    <tr>
+                        <td><%=counter++%>
+                        </td>
+                        <td>
+                            <a href="../editUserequipment/${deelnamevar.deelnameID}.html">${deelnamevar.user.firstName} ${deelnamevar.user.lastName} </a>
+                        </td>
+                        <c:if test="${!empty deelnamevar.equipment}">
+                            <td>
+                                <c:forEach items="${deelnamevar.equipment}" var="equipmentPiece">
+                                    ${equipmentPiece}</br>
+                                </c:forEach>
+                            </td>
+                        </c:if>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
 
         <form method="post" action="${trip.tripId}/invite.html" class="form-horizontal">
-           <legend><spring:message code="label.invitenewparticipants"></spring:message></legend>
+            <legend><spring:message code="label.invitenewparticipants"></spring:message></legend>
             <div class="control-group">
                 <label class="control-label" for="email">E-mail</label>
+
                 <div class="controls">
                     <input type="text" id="email" name="email">
                 </div>
@@ -74,7 +78,8 @@
                 </div>
             </div>
         </form>
-</section>        </section>
+    </section>
+</section>
 
 <jsp:include page="../General/footer.jsp"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

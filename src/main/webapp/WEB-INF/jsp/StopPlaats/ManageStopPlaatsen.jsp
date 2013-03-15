@@ -32,8 +32,8 @@
 <section id="content">
     <section class="tripPages">
         <form action="/ProjectTeamF-1.0/user/admincp-${trip.tripId}.html">
-                <input type="submit" value="Back" class="btn btn-success btn_green_right">
-            </form>
+            <input type="submit" value="Back" class="btn btn-success btn_green_right">
+        </form>
         <h2><spring:message code="label.ManageStoppingPoints"/></h2>
 
         <div id="validation_failed2"><spring:message code="label.badMapEntry"/></div>

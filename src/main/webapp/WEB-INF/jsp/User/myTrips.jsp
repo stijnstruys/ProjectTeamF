@@ -50,9 +50,9 @@
 
         <h3><spring:message code="label.MyOrganisedTrips"/></h3>
         <c:if test="${empty tripList}">
-                    <h4><spring:message code="label.NoOrganisedTripsAvailable"/>
-                    </h4>
-                </c:if>
+            <h4><spring:message code="label.NoOrganisedTripsAvailable"/>
+            </h4>
+        </c:if>
         <c:if test="${!empty tripList}">
             <ul class="trip_list">
                 <c:forEach items="${tripList}" var="trip">
@@ -81,25 +81,25 @@
             </ul>
         </c:if>
         <div class="float_fix"></div>
-                <div class="pagination">
-                    <ul>
-                        <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
-                        <%
-                            for (int i = 0; i <= pagina; i++) {
-                        %>
-                        <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
-                        </a></li>
-                        <%
-                            }
-                        %>
-                        <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
-                    </ul>
-                </div>
+        <div class="pagination">
+            <ul>
+                <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
+                <%
+                    for (int i = 0; i <= pagina; i++) {
+                %>
+                <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                </a></li>
+                <%
+                    }
+                %>
+                <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
+            </ul>
+        </div>
         <h3><spring:message code="label.MyJoinedTrips"/></h3>
         <c:if test="${empty tripListParticipate}">
-                    <h4><spring:message code="label.NoParticipatedTripsAvailable"/>
-                    </h4>
-                </c:if>
+            <h4><spring:message code="label.NoParticipatedTripsAvailable"/>
+            </h4>
+        </c:if>
         <c:if test="${!empty tripListParticipate}">
             <ul class="trip_list">
                 <c:forEach items="${tripListParticipate}" var="trip">
@@ -128,20 +128,20 @@
             </ul>
         </c:if>
         <div class="float_fix"></div>
-                <div class="pagination">
-                    <ul>
-                        <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
-                        <%
-                            for (int i = 0; i <= pagina2; i++) {
-                        %>
-                        <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
-                        </a></li>
-                        <%
-                            }
-                        %>
-                        <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
-                    </ul>
-                </div>
+        <div class="pagination">
+            <ul>
+                <%-- <li id="trips_prev"><a href="#">&larr; Previous</a></li>  --%>
+                <%
+                    for (int i = 0; i <= pagina2; i++) {
+                %>
+                <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                </a></li>
+                <%
+                    }
+                %>
+                <%-- <li id="trips_next"><a href="#" id="trips_next_a">Next &rarr;</a></li>  --%>
+            </ul>
+        </div>
 
         <div class="float_fix"></div>
     </section>

@@ -36,12 +36,14 @@
         </form>
         <h2><spring:message code="label.addTripCategory"/></h2>
 
-        <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie" class="form-horizontal">
-             <div class="control-group">
-                <form:label class="control-label" path="tripCategorieName"><spring:message code="label.tripCategoryName"/></form:label>
+        <form:form method="post" action="add/${trip.tripId}.html" commandName="tripCategorie" id="tripCategorie"
+                   class="form-horizontal">
+            <div class="control-group">
+                <form:label class="control-label" path="tripCategorieName"><spring:message
+                        code="label.tripCategoryName"/></form:label>
                 <div class="controls">
                     <form:input type="text" path="tripCategorieName"/>
-                    <span class="help-inline url"id="add_tripcat"><spring:message code="label.addTripCategory"/></span>
+                    <span class="help-inline url" id="add_tripcat"><spring:message code="label.addTripCategory"/></span>
                 </div>
             </div>
 

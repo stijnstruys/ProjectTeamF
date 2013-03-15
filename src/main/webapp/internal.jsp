@@ -107,10 +107,10 @@
             white-space: nowrap;
             cursor: pointer;
             background-color: #f5f5f5;
-            background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-            background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-            background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-            background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1);
+            background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+            background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+            background-image: -ms-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+            background-image: -o-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -142,7 +142,9 @@
 <body>
 <div class="container">
     <h1>Internal error <span>:(</span></h1>
+
     <p>Sorry, but something went wrong on our end</p>
+
     <p>Please come back at a later time!</p>
 </div>
 </body>

@@ -39,13 +39,14 @@ Time: 13:31
     <section class="tripPages">
         <h2><spring:message code="label.Home"/></h2>
         <section class="homeSection">
-            <section class="homeSectionLeft"><section class="homeSectionText"><p></br>
-                <spring:message code="label.HomeLine1"/>
-                </br>
-                <spring:message code="label.HomeLine2"/>
-                </br></br>
-                <spring:message code="label.HomeLine3"/>
-                </p> </section>
+            <section class="homeSectionLeft">
+                <section class="homeSectionText"><p></br>
+                    <spring:message code="label.HomeLine1"/>
+                    </br>
+                    <spring:message code="label.HomeLine2"/>
+                    </br></br>
+                    <spring:message code="label.HomeLine3"/>
+                </p></section>
             </section>
             <section class="homeSectionRight">
                 <img src="../img/homepagePictures/citytrip1.jpg" alt="Smiley face"
@@ -58,20 +59,21 @@ Time: 13:31
             <section class="homeSectionLeft">
                 <img src="../img/homepagePictures/citytrip4.jpg" alt="Smiley face"
                      id="homePictures2"/></section>
-            <section class="homeSectionRight"><section class="homeSectionText">
-                <p></br><spring:message code="label.HomeLine4"/> </p>
+            <section class="homeSectionRight">
+                <section class="homeSectionText">
+                    <p></br><spring:message code="label.HomeLine4"/></p>
+                </section>
             </section>
-        </section>
 
 
-        <section class="homeSection">
-            <p></br><spring:message code="label.HomeLine5"/> </p>
-        </section>
+            <section class="homeSection">
+                <p></br><spring:message code="label.HomeLine5"/></p>
+            </section>
 
         </section>
     </section>
 </section>
-    <jsp:include page="footer.jsp"/>
+<jsp:include page="footer.jsp"/>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.9.1.min.js"><\/script>')</script>

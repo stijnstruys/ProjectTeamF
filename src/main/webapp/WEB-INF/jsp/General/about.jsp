@@ -45,8 +45,7 @@
         <table id="aboutTable">
             <tr>
                 <td class="aboutColumn">
-                    <img src="../img/groupMembers/JeroenDierckx.png" alt="Smiley face"
-                         class="profilePictures"/>
+                    <img src="../img/groupMembers/JeroenDierckx.png" alt="Smiley face" class="profilePictures"/>
 
                     <p>Jeroen Dierckx</p>
 
@@ -55,8 +54,7 @@
                     <p><spring:message code="label.SoftwareManagement"/></p>
                 </td>
                 <td class="aboutColumn">
-                    <img src="../img/groupMembers/BartLeemans.jpg" alt="Smiley face"
-                         class="profilePictures"/>
+                    <img src="../img/groupMembers/BartLeemans.jpg" alt="Smiley face" class="profilePictures"/>
 
                     <p>Bart Leemans</p>
 
@@ -65,8 +63,7 @@
                     <p><spring:message code="label.SoftwareManagement"/></p>
                 </td>
                 <td class="aboutColumn">
-                    <img src="../img/groupMembers/JorneRaeymaekers.jpg" alt="Smiley face"
-                         class="profilePictures"/>
+                    <img src="../img/groupMembers/JorneRaeymaekers.jpg" alt="Smiley face" class="profilePictures"/>
 
                     <p>Jorne Raeymaekers</p>
 
@@ -77,8 +74,7 @@
             </tr>
             <tr>
                 <td>
-                    <img src="../img/groupMembers/StijnStruys.jpg" alt="Smiley face"
-                         class="profilePictures"/>
+                    <img src="../img/groupMembers/StijnStruys.jpg" alt="Smiley face" class="profilePictures"/>
 
                     <p>Stijn Struys</p>
 

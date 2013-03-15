@@ -6,9 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -30,79 +30,84 @@
 
 <section id="content">
     <section class="tripPages">
-    <h2><spring:message code="label.UserProfile"/></h2>
-    <h4><spring:message code="label.General"/></h4>
+        <h2><spring:message code="label.UserProfile"/></h2>
+        <h4><spring:message code="label.General"/></h4>
+
         <div id="profile-left">
             <div class="row-fluid">
-                <div class="span4" ><label class="profile_right"><spring:message code="label.username"/></label></div>
+                <div class="span4"><label class="profile_right"><spring:message code="label.username"/></label></div>
                 <div class="span6">
-                    <label class="checkbox" >${user.username} </label>
+                    <label class="checkbox">${user.username} </label>
                 </div>
 
             </div>
 
             <div class="row-fluid">
-                <div class="span4" ><label class="profile_right"><spring:message code="label.firstname"/></label></div>
+                <div class="span4"><label class="profile_right"><spring:message code="label.firstname"/></label></div>
                 <div class="span6">
-                    <label class="checkbox profile_lbl" >${user.firstName} </label>
+                    <label class="checkbox profile_lbl">${user.firstName} </label>
                 </div>
             </div>
 
             <div class="row-fluid">
                 <div class="span4"><label class="profile_right"><spring:message code="label.lastname"/></label></div>
                 <div class="span6">
-                    <label class="checkbox profile_lbl" >${user.lastName} </label>
+                    <label class="checkbox profile_lbl">${user.lastName} </label>
                 </div>
             </div>
 
             <div class="row-fluid">
-                <div class="span4" ><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
+                <div class="span4"><label class="profile_right"><spring:message code="label.dateOfBirth"/></label></div>
                 <div class="span6">
-                    <label class="checkbox profile_lbl"><fmt:formatDate value="${user.dateOfBirth}" pattern="dd/MM/yyyy"/></label>
+                    <label class="checkbox profile_lbl"><fmt:formatDate value="${user.dateOfBirth}"
+                                                                        pattern="dd/MM/yyyy"/></label>
                 </div>
             </div>
         </div>
         <div id="photo-section">
-            <img src="/ProjectTeamF-1.0/image/${user.userID}.html" onError="this.src = '../img/groupMembers/profilePic.jpg'" id="photo" class="profile_lbl"/>
+            <img src="/ProjectTeamF-1.0/image/${user.userID}.html"
+                 onError="this.src = '../img/groupMembers/profilePic.jpg'" id="photo" class="profile_lbl"/>
 
         </div>
         <div class="float_fix"></div>
 
         <h4><spring:message code="label.contact"/></h4>
+
         <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.email"/></label></div>
+            <div class="span2"><label class="profile_right"><spring:message code="label.email"/></label></div>
             <div class="span3">
-                <label class="checkbox profile_lbl" >${user.email} </label>
+                <label class="checkbox profile_lbl">${user.email} </label>
             </div>
         </div>
         <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.telephone"/></label></div>
+            <div class="span2"><label class="profile_right"><spring:message code="label.telephone"/></label></div>
             <div class="span3">
-                <label class="checkbox profile_lbl" >${user.telephone} </label>
+                <label class="checkbox profile_lbl">${user.telephone} </label>
             </div>
         </div>
 
         <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.city"/></label></div>
+            <div class="span2"><label class="profile_right"><spring:message code="label.city"/></label></div>
             <div class="span3">
-                <label class="checkbox profile_lbl" >${user.city} </label>
+                <label class="checkbox profile_lbl">${user.city} </label>
             </div>
             <div class="span2"><label class="profile_right"><spring:message code="label.zipcode"/></label></div>
             <div class="span3">
-                <label class="checkbox profile_lbl" >${user.zipcode} </label>
+                <label class="checkbox profile_lbl">${user.zipcode} </label>
             </div>
         </div>
         <div class="row-fluid">
-            <div class="span2" ><label class="profile_right"><spring:message code="label.street"/></label></div>
+            <div class="span2"><label class="profile_right"><spring:message code="label.street"/></label></div>
             <div class="span3">
-                <label class="checkbox profile_lbl" >${user.street} </label>
+                <label class="checkbox profile_lbl">${user.street} </label>
             </div>
             <div class="span2"><label class="profile_right"><spring:message code="label.number"/></label></div>
             <div class="span3">
-                <label class="checkbox profile_lbl" >${user.number} </label>
+                <label class="checkbox profile_lbl">${user.number} </label>
             </div>
         </div>
-</section>     </section>
+    </section>
+</section>
 
 <jsp:include page="../General/footer.jsp"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

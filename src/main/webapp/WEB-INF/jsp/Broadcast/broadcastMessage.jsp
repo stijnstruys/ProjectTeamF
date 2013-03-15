@@ -64,10 +64,12 @@
                    class="form-horizontal2">
             <table class="broadcastMsgTable">
                 <tr>
-                    <td class="msg broadcastMsgCol1"><input type="submit" id="addBroadcastMessage" class="btn"
-                                                            value="<spring:message code="label.sendMessage"/>"/>
+                    <td class="msg broadcastMsgCol1">
+                        <input type="submit" id="addBroadcastMessage" class="btn" value="<spring:message code="label.sendMessage"/>"/>
                     </td>
-                    <td class="msg broadcastMsgCol2"><form:textarea type="text" path="msg" id="broadcastMsg"/></td>
+                    <td class="msg broadcastMsgCol2">
+                        <form:textarea type="text" path="msg" id="broadcastMsg"/>
+                    </td>
                 </tr>
             </table>
         </form:form>

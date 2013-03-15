@@ -44,10 +44,12 @@ Time: 13:31
             <p>
                 <spring:message code="label.YouMustBeLoggedIn"/>
 
-            <form class="form-horizontal" name='f' action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />" method='POST'>
+            <form class="form-horizontal" name='f' action="<c:url value='/ProjectTeamF-1.0/j_spring_security_check' />"
+                  method='POST'>
 
                 <div class="control-group">
                     <label class="control-label"><spring:message code="label.username"/></label>
+
                     <div class="controls">
                         <input type='text' name='j_username' class="input"
                                placeholder="<spring:message code="label.username"/>">
@@ -55,6 +57,7 @@ Time: 13:31
                 </div>
                 <div class="control-group">
                     <label class="control-label"><spring:message code="label.password"/></label>
+
                     <div class="controls">
                         <input type='password' name='j_password' class="input"
                                placeholder="<spring:message code="label.password"/> "/>
@@ -70,9 +73,11 @@ Time: 13:31
                         <p class="divider"></p>
                         <fb:login-button autologoutlink='true' perms='email,user_birthday,status_update,publish_stream'
                                          id="fblogin"></fb:login-button>
+
                         <p class="divider"></p>
-                        <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html"> <spring:message
-                            code="label.RegisterHere"/></a>
+                        <spring:message code="label.NotRegistered"/> <a href="/ProjectTeamF-1.0/user/user.html">
+                        <spring:message
+                                code="label.RegisterHere"/></a>
                     </div>
 
                 </div>

@@ -56,30 +56,32 @@
 
     <h2><spring:message code="label.pers_equipment"/></h2>
     </br>
-    <form:form id="viewTripForm" method="post" action="../TripParticipants/updateDeelname.html" commandName="deelname" class="form-horizontal">
+    <form:form id="viewTripForm" method="post" action="../TripParticipants/updateDeelname.html" commandName="deelname"
+               class="form-horizontal">
 
 
-        <form:hidden path="deelnameID" ></form:hidden>
-            <div class="control-group">
-                <form:label class="control-label" path="equipment"><spring:message code="label.p_equipment"/></form:label>
-                <div class="controls">
-                    <input type="text" id="equipment-input"/>
-                    <span class="help-inline url"id="add_equipment"><spring:message code="label.tripAdd"/></span>
-                </div>
+        <form:hidden path="deelnameID"></form:hidden>
+        <div class="control-group">
+            <form:label class="control-label" path="equipment"><spring:message code="label.p_equipment"/></form:label>
+            <div class="controls">
+                <input type="text" id="equipment-input"/>
+                <span class="help-inline url" id="add_equipment"><spring:message code="label.tripAdd"/></span>
             </div>
-            <div class="control-group">
-                <div class="controls">
-                    <form:select multiple="multiple" path="equipment" id="trip_equipment">
-                        <c:forEach items="${deelname.equipment}" var="equipmentPiece">
-                            <form:option value="${equipmentPiece}"> ${equipmentPiece}</form:option>
-                        </c:forEach>
-                    </form:select>
-                    <span class="help-inline url" id="remove_equipment"><spring:message code="label.removeSelected"/></span>
-                </div>
-            </div>
+        </div>
         <div class="control-group">
             <div class="controls">
-                <input  class="btn" id="editequipmentbtn" type="submit" value="<spring:message code="label.updateParticipant"/>">
+                <form:select multiple="multiple" path="equipment" id="trip_equipment">
+                    <c:forEach items="${deelname.equipment}" var="equipmentPiece">
+                        <form:option value="${equipmentPiece}"> ${equipmentPiece}</form:option>
+                    </c:forEach>
+                </form:select>
+                <span class="help-inline url" id="remove_equipment"><spring:message code="label.removeSelected"/></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input class="btn" id="editequipmentbtn" type="submit"
+                       value="<spring:message code="label.updateParticipant"/>">
             </div>
         </div>
 
