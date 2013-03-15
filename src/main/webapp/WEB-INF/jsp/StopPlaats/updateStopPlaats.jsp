@@ -100,11 +100,9 @@
                     </div>
                 </div>
                 <label class="checkbox">
-                    <form:checkbox path="vrijgegeven" id="spvrijgegeven"/> <form:label class="lbl"
-                                                                                       path="vrijgegeven"><spring:message
+                    <form:checkbox path="vrijgegeven" id="spvrijgegeven"/> <form:label class="lbl" path="vrijgegeven"><spring:message
                         code="label.Released"/></form:label>
                 </label>
-
 
                 <input type="button" class="btn" id="updateStopplaatsBtn"
                        value="<spring:message code="label.UpdateStoppingPoint"/>"/>
