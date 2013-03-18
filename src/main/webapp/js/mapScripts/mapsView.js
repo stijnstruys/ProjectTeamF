@@ -19,10 +19,10 @@ $(document).ready(function () {
     if ($("#map_canvas2").length > 0) {
         initialize();
         if ($("#checkShowRouteSolution").attr('class') == "showRouteTrue") {
-            doCalc();
+           doCalc();
         }
         else {
-            placeMarkers();
+           placeMarkers();
         }
     }
 
@@ -41,11 +41,10 @@ $(document).ready(function () {
         directionsDisplay.setMap(map);
 
         //get locations
-        //get locations
         var count = 0;
         $('.addresses2').each(function () {
             var loc = new Object();
-            loc.Adres = this.value;
+            loc.Adres = $('#stopplts_' + count).text();
             loc.ID = this.id;
             loc.InfoWindow = $('#infowindow' + count).html();
             loc.coorLat = $('#coorLat' + count).text();
@@ -60,15 +59,17 @@ $(document).ready(function () {
         var waypts = [];
         for (var i = 1; i < (locations.length - 1); i++) {
             waypts.push({
-                location: locations[i]
+                location: locations[i].Adres
             });
         }
-
+        //alert(locations[0].Adres);
+        var travelType = $('#traveltype').text();
         var request = {
-            origin: locations[0],
-            destination: locations[locations.length - 1],
+            origin: locations[0].Adres,
+            destination: locations[locations.length - 1].Adres,
             waypoints: waypts,
-            travelMode: google.maps.TravelMode.DRIVING
+            travelMode: google.maps.TravelMode[travelType]
+
         };
 
         directionsService.route(request, function (response, status) {

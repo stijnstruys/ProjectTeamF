@@ -121,28 +121,6 @@ $(document).ready(function () {
             if (counter == locations.length) {
                 zoomMap();
             }
-            /*geocoder.geocode({ 'address': loc.Adres}, function (results, status) {
-             if (status == google.maps.GeocoderStatus.OK) {
-             map.setCenter(results[0].geometry.location);
-             //map.setZoom(10);
-             marker = new google.maps.Marker({
-             map: map,
-             position: results[0].geometry.location
-             });
-             var coordinate = new Object();
-             coordinate.lat = results[0].geometry.location.lat();
-             coordinate.lng = results[0].geometry.location.lng();
-             coordinates.push(coordinate);
-             counter++;
-             if (counter == locations.length) {
-             zoomMap();
-             }
-             }
-             else {
-             //checkExistence2();
-             //alert("Geocode was not successful for the following reason: " + status);
-             }
-             });  */
         });
     }
 

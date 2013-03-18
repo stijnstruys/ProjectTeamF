@@ -168,6 +168,7 @@
 
                 <c:if test="${trip.showMap}">
                     <c:if test="${!empty trip.stopPlaatsen}">
+                        <label id="traveltype" class="travelT">${trip.travelType}</label>
                         <div class="float_left stopplaats_overview">
                             <% int count3 = 0; %>
                             <c:forEach items="${trip.stopPlaatsen}" var="stopPlaatsen">
@@ -176,9 +177,9 @@
                                     <div class="infowindow">
                                         <div class="infowindow_head">${stopPlaatsen.naam}</div>
                                         <div class="infowindow_content">
-                                            <b>Type: </b>${stopPlaatsen.type} </br>
-                                            <b>Info: </b>${stopPlaatsen.informatie}</br>
-                                            <b>Address: </b> ${stopPlaatsen.adres}
+                                            <b><spring:message code="label.StoppingPointType"/>: </b>${stopPlaatsen.type} </br>
+                                            <b><spring:message code="label.StoppingPointInfo"/>: </b>${stopPlaatsen.informatie}</br>
+                                            <b><spring:message code="label.address"/>: </b> ${stopPlaatsen.adres}
                                         </div>
                                     </div>
                                 </div>

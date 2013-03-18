@@ -49,7 +49,10 @@ $(document).ready(function () {
         var addressInput = $("#address").val();
         geocoder.geocode({'address': addressInput}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
+                $("#coorLat").val(results[0].geometry.location.lat());
+                $("#coorLng").val(results[0].geometry.location.lng());
                 $("#updateStopPlaats").submit();
+                //alert('ja');
             }
             else {
                 $("#validation_failed2").show();

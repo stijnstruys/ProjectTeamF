@@ -106,7 +106,7 @@
             <section id="links">
                 <table>
                     <tr id="mapsRow0">
-                        <td><label><spring:message code="label.LocationName"/></label></td>
+                        <td><label><spring:message code="label.Location"/></label></td>
                     </tr>
                     <c:if test="${!empty trip.stopPlaatsen}">
                         <%

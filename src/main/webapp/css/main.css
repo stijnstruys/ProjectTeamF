@@ -617,6 +617,10 @@ a.trip_name:hover {
    display: none;
 }
 
+.travelT {
+    display: none;
+}
+
 /* admin trip */
 
 #adminTripTable {

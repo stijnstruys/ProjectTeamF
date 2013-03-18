@@ -49,7 +49,7 @@
 
             <div id="validation_failed2"><spring:message code="label.badMapEntry"/></div>
             <form:form method="post" action="updateStopplaats/${tripID}.html" commandName="stopPlaats"
-                       id="updateStopPlaats">
+                       id="updateStopPlaats" onsubmit="false">
                 <div class="pull-right" id="map_canvas"></div>
                 <form:hidden path="stopPlaatsID"/>
 
@@ -59,7 +59,8 @@
                         <img src="../img/icons/Google-Maps-icon.png" alt="google maps icon" class="mapIcons"
                              id="mapCheckIcon"/>
                     </span>
-
+                <form:hidden id="coorLat" path="coorLat"/>
+                <form:hidden id="coorLng" path="coorLng"/>
                 <form:label class="lbl" path="naam"><spring:message code="label.StoppingPointName"/></form:label>
                 <form:input path="naam" id="spNaam"/>
 
@@ -100,7 +101,8 @@
                     </div>
                 </div>
                 <label class="checkbox">
-                    <form:checkbox path="vrijgegeven" id="spvrijgegeven"/> <form:label class="lbl" path="vrijgegeven"><spring:message
+                    <form:checkbox path="vrijgegeven" id="spvrijgegeven"/> <form:label class="lbl"
+                                                                                       path="vrijgegeven"><spring:message
                         code="label.Released"/></form:label>
                 </label>
 
