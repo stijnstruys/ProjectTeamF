@@ -126,7 +126,7 @@ public class UserController {
         user.setPassword(sb.toString());
         userService.addUser(user);
 
-        return "redirect:/general/index.html";
+        return "redirect:/general/loginAfterRegister.html";
     }
 
     @RequestMapping(value = "/user/addSocial", method = RequestMethod.POST)

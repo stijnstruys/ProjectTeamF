@@ -10,6 +10,7 @@ $(document).ready(function () {
     var map;
     var locations = new Array();
     var geocoder;
+    var coordinates = new Array();
 
     var directionsService = new google.maps.DirectionsService();
     initialize();
@@ -22,7 +23,6 @@ $(document).ready(function () {
     }
     else {
         placeMarkers();
-        map.setZoom(12);
     }
 
     function initialize() {
@@ -102,6 +102,7 @@ $(document).ready(function () {
         });
     }
 
+    var counter = 0;
     //plaats markers zonder route
     function placeMarkers() {
         $.each(locations, function (l, loc) {
@@ -112,21 +113,45 @@ $(document).ready(function () {
                         map: map,
                         position: results[0].geometry.location
                     });
+                    var coordinate = new Object();
+                    coordinate.lat = results[0].geometry.location.lat();
+                    coordinate.lng = results[0].geometry.location.lng();
+                    coordinates.push(coordinate);
+                    counter++;
+                    if (counter == locations.length) {
+                        zoomMap();
+                    }
+
                 } else {
                     checkExistence2();
                     //alert("Geocode was not successful for the following reason: " + status);
                 }
             });
-
-
         });
+
+    }
+
+    //zoom map to middle of markers
+    function zoomMap() {
+        var middleLat = 0;
+        var middleLong = 0;
+
+        $.each(coordinates, function (c, coor) {
+            middleLat = middleLat + coor.lat;
+            middleLong += coor.lng;
+        });
+        middleLat = middleLat / coordinates.length;
+        middleLong = middleLong / coordinates.length;
+
+        map.setZoom(10);
+        map.setCenter(new google.maps.LatLng(middleLat, middleLong));
     }
 
     //exacte locaties plaatsen
     function setSpecificLocations() {
         $.each(locations, function (l, loc) {
             geocoder.geocode({ 'address': loc.Adres}, function (results, status) {
-                $("#"+loc.ID).val(results[0].formatted_address);
+                $("#" + loc.ID).val(results[0].formatted_address);
             });
         });
     }
