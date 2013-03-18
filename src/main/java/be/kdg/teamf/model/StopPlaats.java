@@ -39,7 +39,10 @@ public class StopPlaats {
     private String vraag;
     @Column(name = "CorrectAntwoord", length = 255)
     private String correctAntwoord;
-
+    @Column(name = "CoorLat")
+    private Double coorLat;
+    @Column(name = "CoorLng")
+    private Double coorLng;
     @JsonManagedReference
     @LazyCollection(LazyCollectionOption.FALSE)
     @ElementCollection
@@ -133,4 +136,19 @@ public class StopPlaats {
         this.antwoorden = antwoorden;
     }
 
+    public Double getCoorLat() {
+        return coorLat;
+    }
+
+    public void setCoorLat(Double coorLat) {
+        this.coorLat = coorLat;
+    }
+
+    public Double getCoorLng() {
+        return coorLng;
+    }
+
+    public void setCoorLng(Double coorLng) {
+        this.coorLng = coorLng;
+    }
 }

@@ -557,7 +557,6 @@ a.trip_name:hover {
     /*background-color: green; */
 }
 
-
 #onder {
     clear: both;
 }
@@ -610,6 +609,14 @@ a.trip_name:hover {
     margin-top: 15px;
 }
 
+.coordinatesLat {
+   display: none;
+}
+
+.coordinatesLng {
+   display: none;
+}
+
 /* admin trip */
 
 #adminTripTable {
@@ -635,11 +642,12 @@ a.trip_name:hover {
 }
 
 /* view trip */
-.addresses {
+.addresses2 {
     cursor: pointer;
 }
-.addresses:hover {
-   /* color: yellow;*/
+.addresses2:hover {
+    color: yellow;
+    font-weight: bold;
 }
 .address_info {
     color: black;

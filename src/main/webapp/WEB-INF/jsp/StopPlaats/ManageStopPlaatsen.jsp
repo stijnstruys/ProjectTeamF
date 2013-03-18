@@ -15,7 +15,7 @@
 <html>
 <head>
     <title><spring:message code="label.StoppingPoint"/></title>
-    <meta charset="utf-8" >
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
@@ -49,6 +49,8 @@
                             </tr>
                             <tr>
                                 <td><form:input id="address" path="adres"/></td>
+                                <td><form:hidden id="coorLat" path="coorLat"/></td>
+                                <td><form:hidden id="coorLng" path="coorLng"/></td>
                             </tr>
                             <tr>
                                 <td colspan="2">
@@ -119,6 +121,8 @@
                                     <tr>
                                         <td><input type="text" readonly="true" id="adres<%=count%>" class="addresses"
                                                    value="${stopPlaatsen.adres}"/></td>
+                                        <td><label id="coorLat<%=count%>" class="coordinatesLat">${stopPlaatsen.coorLat}</label></td>
+                                        <td><label id="coorLng<%=count%>" class="coordinatesLng">${stopPlaatsen.coorLng}</label></td>
                                         <td>
                                             <a id="updateAdres<%=count%>"
                                                href="/ProjectTeamF-1.0/StopPlaats/update-${stopPlaatsen.stopPlaatsID}.html">

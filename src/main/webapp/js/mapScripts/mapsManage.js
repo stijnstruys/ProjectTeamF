@@ -10,7 +10,7 @@ $(document).ready(function () {
     var map;
     var locations = new Array();
     var geocoder;
-    var coordinates = new Array();
+    var counter = 0;
 
     var directionsService = new google.maps.DirectionsService();
     initialize();
@@ -39,11 +39,15 @@ $(document).ready(function () {
         directionsDisplay.setMap(map);
 
         //get locations
+        var count = 1;
         $('.addresses').each(function () {
             var loc = new Object();
             loc.Adres = this.value;
             loc.ID = this.id;
+            loc.coorLat = $('#coorLat' + count).text();
+            loc.coorLng = $('#coorLng' + count).text();
             locations.push(loc);
+            count++;
         });
 
         var input = $("#address");
@@ -68,7 +72,10 @@ $(document).ready(function () {
         var addressInput = $("#address").val();
         geocoder.geocode({'address': addressInput}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
+                //alert('ja');
                 //bestaande plaats
+                $("#coorLat").val(results[0].geometry.location.lat());
+                $("#coorLng").val(results[0].geometry.location.lng());
                 $("#addStopPlaats").submit();
             }
             else {
@@ -102,49 +109,59 @@ $(document).ready(function () {
         });
     }
 
-    var counter = 0;
     //plaats markers zonder route
     function placeMarkers() {
         $.each(locations, function (l, loc) {
-            geocoder.geocode({ 'address': loc.Adres}, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
-                    marker = new google.maps.Marker({
-                        map: map,
-                        position: results[0].geometry.location
-                    });
-                    var coordinate = new Object();
-                    coordinate.lat = results[0].geometry.location.lat();
-                    coordinate.lng = results[0].geometry.location.lng();
-                    coordinates.push(coordinate);
-                    counter++;
-                    if (counter == locations.length) {
-                        zoomMap();
-                    }
-
-                } else {
-                    checkExistence2();
-                    //alert("Geocode was not successful for the following reason: " + status);
-                }
+            //alert(loc.coorLat);
+            marker = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(loc.coorLat, loc.coorLng)
             });
+            counter++;
+            if (counter == locations.length) {
+                zoomMap();
+            }
+            /*geocoder.geocode({ 'address': loc.Adres}, function (results, status) {
+             if (status == google.maps.GeocoderStatus.OK) {
+             map.setCenter(results[0].geometry.location);
+             //map.setZoom(10);
+             marker = new google.maps.Marker({
+             map: map,
+             position: results[0].geometry.location
+             });
+             var coordinate = new Object();
+             coordinate.lat = results[0].geometry.location.lat();
+             coordinate.lng = results[0].geometry.location.lng();
+             coordinates.push(coordinate);
+             counter++;
+             if (counter == locations.length) {
+             zoomMap();
+             }
+             }
+             else {
+             //checkExistence2();
+             //alert("Geocode was not successful for the following reason: " + status);
+             }
+             });  */
         });
-
     }
 
     //zoom map to middle of markers
     function zoomMap() {
-        var middleLat = 0;
-        var middleLong = 0;
-
-        $.each(coordinates, function (c, coor) {
-            middleLat = middleLat + coor.lat;
-            middleLong += coor.lng;
+        //  Make an array of the LatLng's of the markers you want to show
+        var LatLngList = new Array();
+        $.each(locations, function (l, loc) {
+            LatLngList.push(new google.maps.LatLng(loc.coorLat, loc.coorLng));
         });
-        middleLat = middleLat / coordinates.length;
-        middleLong = middleLong / coordinates.length;
-
-        map.setZoom(10);
-        map.setCenter(new google.maps.LatLng(middleLat, middleLong));
+        //  Create a new viewpoint bound
+        var bounds = new google.maps.LatLngBounds();
+        //  Go through each...
+        for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+            //  And increase the bounds to take this point
+            bounds.extend(LatLngList[i]);
+        }
+        //  Fit these bounds to the map
+        map.fitBounds(bounds);
     }
 
     //exacte locaties plaatsen
