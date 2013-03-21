@@ -103,7 +103,7 @@
                     <div class="span2"><label class="profile_right"><spring:message code="label.organiser"/></label>
                     </div>
                     <div class="span3">
-                        <label class="checkbox profile_lbl">${user.organiser.firstName} </label>
+                        <label class="checkbox profile_lbl"><a href="/ProjectTeamF-1.0/user/profile-${trip.organiser.userID}.html">${trip.organiser.username}</a></label>
                     </div>
                 </div>
 
