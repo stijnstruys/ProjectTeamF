@@ -90,6 +90,7 @@ public class DeelnameDAOImpl implements DeelnameDAO {
 
         ArrayList<String> strings = new ArrayList<>();
         for(Deelname d : deelnames){
+            if(d.getUser().isShowPosition())
             strings.add(d.getLat() +";" + d.getLng());
         }
 
