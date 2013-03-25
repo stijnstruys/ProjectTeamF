@@ -92,7 +92,7 @@ public class DeelnameDAOImpl implements DeelnameDAO {
         for(Deelname d : deelnames){
             if(d.getUser().isShowPosition())
                 if(d.getLat()!=0 && d.getLng()!=0){
-                    strings.add(d.getLat() +";" + d.getLng());
+                    strings.add(d.getLat() +";" + d.getLng() + ";" + d.getUser().getUsername());
                 }
 
         }

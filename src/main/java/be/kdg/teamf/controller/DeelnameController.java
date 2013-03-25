@@ -119,7 +119,7 @@ public class DeelnameController {
         deelnameService.updateDeelname(d);
     }
 
-    @RequestMapping(value="/service/getPositions", method = RequestMethod.GET,headers = "Accept=application/json")
+    @RequestMapping(value="/service/getPositions", method = RequestMethod.POST,headers = "Accept=application/json")
     public List<String> getPositions(@RequestParam(value = "userid") int userid,@RequestParam(value = "tripid") int tripid) {
         return deelnameService.getPositions(tripid,userid);
     }
