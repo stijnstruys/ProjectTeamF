@@ -7,9 +7,9 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -79,5 +79,23 @@ public class DeelnameDAOImpl implements DeelnameDAO {
         q.setInteger("userId", u.getUserID());
 
         return (ArrayList<Deelname>) q.list();
+    }
+
+    @Override
+    public ArrayList<String> findPositions(int tripid, int userid) {
+        Query q = sessionFactory.getCurrentSession().createQuery("from Deelname where trip.tripId = :tripId and user.userID != :userId");
+        q.setInteger("tripId",tripid);
+        q.setInteger("userId",userid);
+        ArrayList<Deelname> deelnames = (ArrayList<Deelname>) q.list();
+
+        ArrayList<String> strings = new ArrayList<>();
+        for(Deelname d : deelnames){
+            strings.add(d.getLat() +";" + d.getLng());
+        }
+
+        return strings;
+
+
+
     }
 }

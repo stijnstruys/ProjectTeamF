@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -91,5 +92,10 @@ public class DeelnameServiceImpl implements DeelnameService {
     @Transactional
     public ArrayList<Deelname> getDeelnamesByUser(User u) {
         return deelnameDAO.findDeelnamesByUser(u);
+    }
+
+    @Override
+    public ArrayList<String> getPositions(int tripid, int userid) {
+        return deelnameDAO.findPositions(tripid,userid);
     }
 }

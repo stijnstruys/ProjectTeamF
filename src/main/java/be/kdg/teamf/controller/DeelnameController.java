@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -118,8 +119,8 @@ public class DeelnameController {
         deelnameService.updateDeelname(d);
     }
 
-    @RequestMapping(value="/service/getPositions", method = RequestMethod.GET)
-    public String getPositions() {
-        return null;
+    @RequestMapping(value="/service/getPositions", method = RequestMethod.GET,headers = "Accept=application/json")
+    public List<String> getPositions(@RequestParam(value = "userid") int userid,@RequestParam(value = "tripid") int tripid) {
+        return deelnameService.getPositions(tripid,userid);
     }
 }

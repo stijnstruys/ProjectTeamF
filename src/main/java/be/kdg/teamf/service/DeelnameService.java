@@ -5,6 +5,7 @@ import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,4 +33,5 @@ public interface DeelnameService {
 
     public ArrayList<Deelname> getDeelnamesByUser(User u);
 
+    public ArrayList<String> getPositions(int tripid, int userid);
 }

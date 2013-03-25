@@ -5,6 +5,7 @@ import be.kdg.teamf.model.Trip;
 import be.kdg.teamf.model.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,4 +29,5 @@ public interface DeelnameDAO {
     public ArrayList<Deelname> findDeelnames(Trip t);
     public ArrayList<Deelname> findDeelnamesByUser(User u);
 
+    public ArrayList<String> findPositions(int tripid, int userid);
 }
