@@ -52,7 +52,7 @@
                         code="label.password"/></form:label>
                 <div class="controls">
                     <div class="input-append">
-                        <form:input type="text" id="password" path="password"/>
+                        <form:input type="password" id="password" path="password"/>
                         <span class="add-on" id="addon_password"></span>
                     </div>
                 </div>
