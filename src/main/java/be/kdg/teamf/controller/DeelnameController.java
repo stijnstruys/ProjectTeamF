@@ -2,8 +2,10 @@ package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.Deelname;
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.DeelnameService;
 import be.kdg.teamf.service.TripService;
+import be.kdg.teamf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
@@ -32,6 +34,9 @@ public class DeelnameController {
 
     @Autowired
     private TripService tripService;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private DeelnameService deelnameService;
@@ -101,5 +106,20 @@ public class DeelnameController {
         deelnameService.updateDeelname(d);
         return "redirect:/TripParticipants/" + d.getTrip().getTripId() + ".html";
 
+    }
+
+    @RequestMapping(value="/service/updatePosition", method = RequestMethod.POST,headers = "Accept=application/json")
+    public void updatePosition(@RequestParam(value = "lng")Double lng,@RequestParam(value = "lat") Double lat,@RequestParam(value = "userid") int userid,@RequestParam(value = "tripid") int tripid) {
+        Trip t = tripService.findTrip(tripid);
+        User u = userService.findUser(userid);
+        Deelname d = deelnameService.findDeelname(t,u);
+        d.setLat(lat);
+        d.setLng(lng);
+        deelnameService.updateDeelname(d);
+    }
+
+    @RequestMapping(value="/service/getPositions", method = RequestMethod.GET)
+    public String getPositions() {
+        return null;
     }
 }
