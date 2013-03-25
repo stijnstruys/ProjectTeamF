@@ -94,7 +94,6 @@ public class UserController {
 
         User u = new User();
         request.setAttribute("user", u);
-        request.setAttribute("userList", userService.listUsers());
         ModelAndView model = new ModelAndView("User/user");
 
         return model;
