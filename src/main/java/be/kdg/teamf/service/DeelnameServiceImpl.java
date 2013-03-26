@@ -95,6 +95,7 @@ public class DeelnameServiceImpl implements DeelnameService {
     }
 
     @Override
+    @Transactional
     public ArrayList<String> getPositions(int tripid, int userid) {
         return deelnameDAO.findPositions(tripid,userid);
     }
