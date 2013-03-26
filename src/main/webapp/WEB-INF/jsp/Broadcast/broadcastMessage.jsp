@@ -9,6 +9,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -52,7 +53,7 @@
                     <c:forEach items="${trip.broadcastMessages}" var="broadcastMes">
                         <tr id="broadcastMsgRow"><td></td></tr>
                         <tr id="broadcastMsgRow<%=count%>">
-                            <td class="msg broadcastMsgCol1">${broadcastMes.date} </td>
+                            <td class="msg broadcastMsgCol1"> <fmt:formatDate value="${broadcastMes.date}" pattern="dd/MM/yyyy - hh:mm:ss"/></td>
                             <td class="msg broadcastMsgCol2">${broadcastMes.msg} </td>
                         </tr>
                         <% if(count == 0) {count = 1;} else {count = 0;}%>
