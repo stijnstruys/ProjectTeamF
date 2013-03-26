@@ -1,21 +1,22 @@
 package be.kdg.teamf.controller;
 
 import be.kdg.teamf.model.BroadcastMessage;
+import be.kdg.teamf.model.Chat;
 import be.kdg.teamf.model.Trip;
+import be.kdg.teamf.model.User;
 import be.kdg.teamf.service.BroadcastMessageService;
 import be.kdg.teamf.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -49,8 +50,6 @@ public class BroadcastMessageController {
 
     @RequestMapping(value = "/BroadcastMessage/add/{tripID}", method = RequestMethod.POST)
     public String addBroadcastMessage(@ModelAttribute("broadcastMessage") BroadcastMessage broadcastMessage, BindingResult result, @PathVariable("tripID") int tripID) {
-
-
         Date currentDate = new Date();
 
         Trip t = tripService.findTrip(tripID);
@@ -60,5 +59,16 @@ public class BroadcastMessageController {
         broadcastMessageService.addBroadcastMessage(broadcastMessage);
         tripService.updateTrip(t);
         return "redirect:/BroadcastMessage/" + t.getTripId() + ".html";
+    }
+
+    @RequestMapping(value="/broadcast/getMessages", method = RequestMethod.GET)
+    @ResponseBody
+    public List<BroadcastMessage> getChats(@RequestParam("trip") int tripid) {
+        List<BroadcastMessage> cl = new ArrayList<BroadcastMessage>();
+
+        Trip t = tripService.findTrip(tripid);
+        List<BroadcastMessage> temp =  broadcastMessageService.getBroadcastMessages(tripid);
+        return temp;
+
     }
 }

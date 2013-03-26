@@ -162,7 +162,6 @@ function user() {
             $("#validation_failed")
                 .show()
                 .html('<ul>' + errormsg + '</ul>');
-
             return false;
         }
     });
