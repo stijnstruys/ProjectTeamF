@@ -73,13 +73,12 @@ public class TripController {
         ModelAndView model = new ModelAndView("Trip/addTrip");
         return model;
     }
+
     @RequestMapping(value = "trip/add", method = RequestMethod.POST)
     public String addTrip(@ModelAttribute("trip") Trip trip, BindingResult result, HttpServletRequest request) {
-
         trip.setOrganiser( userService.getCurrentUser() );
         tripService.addTrip(trip);
-
-        if(trip.getTripType()== "Herhalend") {
+        if(trip.getTripType().equals("Herhalend")) {
             String t = request.getParameter("repetition");
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
             Date maxDate = null;
