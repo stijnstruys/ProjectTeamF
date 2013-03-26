@@ -150,7 +150,7 @@
                 <div class="controls">
                     <input type="submit" id="register_submit" class="btn"
                            value="<spring:message code="label.Register"/>"/>
-                    <a class="btn" type="button" id="user_importfb" onclick="importD()"><spring:message
+                    <a class="btn" type="button" id="user_importfb"><spring:message
                             code="label.ImportDateFromFacebook"/></a>
                 </div>
             </div>

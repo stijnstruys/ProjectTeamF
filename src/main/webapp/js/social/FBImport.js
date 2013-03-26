@@ -6,11 +6,11 @@
  * To change this template use File | Settings | File Templates.
  */
 // Additional JS functions here
-/*$(document).ready(function () {
+$(document).ready(function () {
     $("#user_importfb").click(function() {
         importD();
     });
-});*/
+});
 
 function importD() {
     FB.init({
@@ -56,7 +56,7 @@ function userSettings() {
             var email = document.getElementById("email");
             var city = document.getElementById("city");
             var dateOfBirth = document.getElementById("dateOfBirth");
-             alert(""+user.firstName & "+" & user.first_name );
+            // alert(""+user.firstName & "+" & user.first_name );
             if(user.first_name != null) {
                 firstName.value = user.first_name;
             }
