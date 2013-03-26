@@ -6,11 +6,11 @@
  * To change this template use File | Settings | File Templates.
  */
 // Additional JS functions here
-$(document).ready(function () {
+/*$(document).ready(function () {
     $("#user_importfb").click(function() {
-          importD();
+        importD();
     });
-});
+});*/
 
 function importD() {
     FB.init({
@@ -30,7 +30,7 @@ function importD() {
 
         } else {
             // not_logged_in
-            //importData();
+            importData();
         }
     });
 
@@ -50,13 +50,13 @@ function importData() {
 function userSettings() {
     FB.getLoginStatus(function(response) {
         FB.api('/me', function(user) {
-            var firstName = document.getElementById("firstName");
-            var lastName = document.getElementById("lastName");
+            var firstName = document.getElementById("firstname");
+            var lastName = document.getElementById("lastname");
             var userName = document.getElementById("userName");
             var email = document.getElementById("email");
             var city = document.getElementById("city");
             var dateOfBirth = document.getElementById("dateOfBirth");
-
+             alert(""+user.firstName & "+" & user.first_name );
             if(user.first_name != null) {
                 firstName.value = user.first_name;
             }
@@ -75,7 +75,7 @@ function userSettings() {
                 email.value = user.email;
             }
 
-            if(user.birthday !=null){
+          if(user.birthday !=null){
                 dateOfBirth.value= user.birthday;
             }
         });

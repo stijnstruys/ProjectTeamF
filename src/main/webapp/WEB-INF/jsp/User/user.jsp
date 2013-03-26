@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
     <link href="../css/dot-luv/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 </head>
 <body>
@@ -149,7 +150,7 @@
                 <div class="controls">
                     <input type="submit" id="register_submit" class="btn"
                            value="<spring:message code="label.Register"/>"/>
-                    <a class="btn" type="button" id="user_importfb"><spring:message
+                    <a class="btn" type="button" id="user_importfb" onclick="importD()"><spring:message
                             code="label.ImportDateFromFacebook"/></a>
                 </div>
             </div>
