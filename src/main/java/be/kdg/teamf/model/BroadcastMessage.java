@@ -1,6 +1,8 @@
 package be.kdg.teamf.model;
 
+import be.kdg.teamf.model.component.JsonDateSerializer;
 import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -51,6 +53,7 @@ public class BroadcastMessage {
         this.msg = msg;
     }
 
+    @JsonSerialize(using=JsonDateSerializer.class)
     public Date getDate() {
         return date;
     }
