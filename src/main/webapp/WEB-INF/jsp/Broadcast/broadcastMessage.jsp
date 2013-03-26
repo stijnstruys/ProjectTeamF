@@ -53,7 +53,7 @@
                     <c:forEach items="${trip.broadcastMessages}" var="broadcastMes">
                         <tr id="broadcastMsgRow"><td></td></tr>
                         <tr id="broadcastMsgRow<%=count%>">
-                            <td class="msg broadcastMsgCol1"> <fmt:formatDate value="${broadcastMes.date}" pattern="dd/MM/yyyy - hh:mm:ss"/></td>
+                            <td class="msg broadcastMsgCol1"> <fmt:formatDate value="${broadcastMes.date}" pattern="dd/MM/yyyy - HH:mm:ss"/></td>
                             <td class="msg broadcastMsgCol2">${broadcastMes.msg} </td>
                         </tr>
                         <% if(count == 0) {count = 1;} else {count = 0;}%>
