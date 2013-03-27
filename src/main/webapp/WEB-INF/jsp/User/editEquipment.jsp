@@ -43,6 +43,7 @@
     int count = 0;
 %>
 <section id="content">
+    <section class="tripPages">
     <style>
         #content {
             background: ${trip.bgcolor};
@@ -87,7 +88,7 @@
 
     </form:form>
 
-
+    </section>
 </section>
 <jsp:include page="../General/footer.jsp"/>
 
