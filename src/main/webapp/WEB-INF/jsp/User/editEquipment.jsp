@@ -72,6 +72,7 @@
         <div class="control-group">
             <div class="controls">
                 <form:select multiple="multiple" path="equipment" id="trip_equipment">
+
                     <c:forEach items="${deelname.equipment}" var="equipmentPiece">
                         <form:option value="${equipmentPiece}"> ${equipmentPiece}</form:option>
                     </c:forEach>
