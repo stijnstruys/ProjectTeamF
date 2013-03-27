@@ -106,7 +106,7 @@
                         <label class="checkbox profile_lbl"><a href="/ProjectTeamF-1.0/user/profile-${trip.organiser.userID}.html">${trip.organiser.username}</a></label>
                     </div>
                 </div>
-
+                <c:if test="${!(trip.tripType == 'Los')}">
                 <div class="row-fluid">
                     <div class="span2"><label class="profile_right"><spring:message code="label.startDate"/></label>
                     </div>
@@ -119,7 +119,7 @@
                                                                                            pattern="dd/MM/yyyy"/></label>
                     </div>
                 </div>
-
+                </c:if>
                 <legend><spring:message code="label.equipment"/></legend>
                 <div class="row-fluid">
                     <div class="span2"><label class="profile_right"><spring:message code="label.equipment"/></label>

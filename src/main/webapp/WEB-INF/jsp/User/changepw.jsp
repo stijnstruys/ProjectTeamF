@@ -28,9 +28,10 @@
 <jsp:include page="../General/header.jsp"/>
 
 <section id="content">
+    <section class="tripPages">
     <h2><spring:message code="label.ChangePassword"/></h2>  </br>
     <form id="changepw_form" action="/ProjectTeamF-1.0/user/changepw.html" method="POST">
-        <input type="text" id="currentpw" placeholder="<spring:message code="label.CurrentPassword"/>"
+        <input type="password" id="currentpw" placeholder="<spring:message code="label.CurrentPassword"/>"
                name="currentpw"/>  </br>
         <input type="password" id="newpw" placeholder="<spring:message code="label.NewPassword"/>"
                name="newpw"/>   </br>
@@ -39,6 +40,7 @@
         <button type="submit" class="btn" id="changepw"><spring:message code="label.ChangePassword"/></button>
     </form>
 
+        </section>
 </section>
 
 <jsp:include page="../General/footer.jsp"/>

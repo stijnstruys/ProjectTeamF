@@ -108,6 +108,7 @@ public class TripController {
 
     public void addTrips(SimpleDateFormat sdf, Date maxDate, Trip startTrip, int interval) {
         Trip anotherTrip = startTrip;
+        anotherTrip.setEquipment(startTrip.getEquipment());
 
         Calendar cStart = Calendar.getInstance();
         Calendar cEnd = Calendar.getInstance();
@@ -235,6 +236,12 @@ public class TripController {
 
     @RequestMapping(value = "user/updateTrip", method = RequestMethod.POST)
     public String updateTrip(@ModelAttribute("trip") Trip trip, BindingResult result) {
+        Trip t = tripService.findTrip(trip.getTripId());
+
+        trip.setShowMap(t.getShowMap());
+        trip.setTravelType(t.getTravelType());
+        trip.setShowRoute(t.getShowRoute());
+
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
         return "redirect:/user/admincp-"+trip.getTripId()+".html";

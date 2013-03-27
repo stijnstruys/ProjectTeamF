@@ -17,10 +17,14 @@ $(document).ready(function () {
     userprofile();
 
     //trips
-    trippages();
+    trippages(1);
+    trippages(2);
 
     //add trip
     addTrip();
+    $("#trip_add").click(function () {
+            $("#add_trip_form").submit();
+        });
 
     //chat
     chat();
@@ -255,8 +259,8 @@ function addTrip() {
                 }
 
                 $("#add_trip_" + current).hide();
-                current++;
 
+                current++;
                 if (current == 3) {
                     if (triptype == "Los") {
                         current++;
@@ -264,6 +268,12 @@ function addTrip() {
                 }
                 if (current == 4) {
                     if (triptype != "Herhalend") {
+                        current++;
+                    }
+                }
+
+                if (current == 6) {
+                    if (triptype == "Herhalend") {
                         current++;
                     }
                 }
@@ -285,6 +295,7 @@ function addTrip() {
     $("#add_trip_prev").click(function () {
         if (current > 1) {
 
+
             if (nexthidden) {
                 nexthidden = false;
                 $("#add_trip_next").parent().removeClass("disabled");
@@ -293,13 +304,20 @@ function addTrip() {
             $("#add_trip_" + current).hide();
             current--;
 
-            if (current == 3) {
-                if (triptype == "Los") {
+            if (current == 6) {
+                if (triptype == "Herhalend") {
                     current--;
                 }
             }
+
             if (current == 4) {
                 if (triptype != "Herhalend") {
+                    current--;
+                }
+            }
+
+            if(current == 3) {
+                if (triptype == "Los") {
                     current--;
                 }
             }
@@ -393,17 +411,41 @@ function validateKost() {
     return true;
 }
 
-function trippages() {
-    var currentpage = $(".trip_pagina_0_content");
-
-    $(".trip_details").hide();
+function trippages( whichone ) {
+    var currentpage = $(".trip" +  whichone +"_pagina_0_content");
+    var currentpagenr = 0;
+    $("#trip" +  whichone +"_pagina_" + currentpagenr).css("color", "white");
+    $(".trip" +  whichone +"_details").hide();
     currentpage.show();
+    updatePagination();
 
-    $(".trip_pagina").click(function () {
+    $(".trip" +  whichone +"_pagina").click(function () {
         currentpage.hide();
         currentpage = $("." + this.id + "_content");
+        $("#trip" +  whichone +"_pagina_" + currentpagenr).css("color", "");
+        currentpagenr = this.id.split("_")[2];
+        $("#trip" +  whichone +"_pagina_" + currentpagenr).css("color", "white");
         currentpage.show();
+        updatePagination();
     });
+
+    function updatePagination() {
+        $(".trip" +  whichone +"_pagina").hide();
+        var startnr;
+
+        if(currentpagenr < 5) {
+            startnr = 0;
+        } else {
+            startnr = currentpagenr - 5;
+        }
+
+        var eindnr = startnr + 10;
+
+        var i;
+        for( i = startnr; i < eindnr; i++) {
+            $("#trip" +  whichone +"_pagina_" + i).show();
+        }
+    }
 }
 
 

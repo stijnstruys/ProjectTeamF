@@ -103,6 +103,7 @@ public class DeelnameController {
                                   Deelname deelname, BindingResult result) {
 
         Deelname d  = deelnameService.findDeelname(deelname.getDeelnameID());
+        System.out.println("hier staat het: " + deelname.getEquipment());
         d.setEquipment(deelname.getEquipment());
         deelnameService.updateDeelname(d);
         return "redirect:/TripParticipants/" + d.getTrip().getTripId() + ".html";
