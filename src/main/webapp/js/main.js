@@ -259,8 +259,8 @@ function addTrip() {
                 }
 
                 $("#add_trip_" + current).hide();
-                current++;
 
+                current++;
                 if (current == 3) {
                     if (triptype == "Los") {
                         current++;
@@ -295,6 +295,7 @@ function addTrip() {
     $("#add_trip_prev").click(function () {
         if (current > 1) {
 
+
             if (nexthidden) {
                 nexthidden = false;
                 $("#add_trip_next").parent().removeClass("disabled");
@@ -303,18 +304,20 @@ function addTrip() {
             $("#add_trip_" + current).hide();
             current--;
 
-            if (current == 3) {
-                if (triptype == "Los") {
+            if (current == 6) {
+                if (triptype == "Herhalend") {
                     current--;
                 }
             }
+
             if (current == 4) {
                 if (triptype != "Herhalend") {
                     current--;
                 }
             }
-            if (current == 6) {
-                if (triptype == "Herhalend") {
+
+            if(current == 3) {
+                if (triptype == "Los") {
                     current--;
                 }
             }
