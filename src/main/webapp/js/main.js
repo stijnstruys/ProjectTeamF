@@ -272,6 +272,12 @@ function addTrip() {
                     }
                 }
 
+                if (current == 6) {
+                    if (triptype == "Herhalend") {
+                        current++;
+                    }
+                }
+
 
                 $("#add_trip_" + current).show();
                 if (current >= numberOfSteps) {
@@ -304,6 +310,11 @@ function addTrip() {
             }
             if (current == 4) {
                 if (triptype != "Herhalend") {
+                    current--;
+                }
+            }
+            if (current == 6) {
+                if (triptype == "Herhalend") {
                     current--;
                 }
             }
