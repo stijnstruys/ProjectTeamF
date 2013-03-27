@@ -241,6 +241,7 @@ public class TripController {
         trip.setShowMap(t.getShowMap());
         trip.setTravelType(t.getTravelType());
         trip.setShowRoute(t.getShowRoute());
+        trip.setTripType(t.getTripType());
 
         trip.setOrganiser(userService.getCurrentUser());
         tripService.updateTrip(trip);
