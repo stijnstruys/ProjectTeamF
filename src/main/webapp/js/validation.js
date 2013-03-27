@@ -58,7 +58,7 @@ function user() {
         } else {
             $("#addon_username").html(failed);
             usernameok = false;
-            errormsg += "<li>Username needs to be at least 3 characters long!</li>"
+            errormsg += "<li>Username needs to be at least 4 characters long!</li>"
         }
 
     }
