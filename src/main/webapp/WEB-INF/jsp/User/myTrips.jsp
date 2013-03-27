@@ -56,7 +56,7 @@
         <c:if test="${!empty tripList}">
             <ul class="trip_list">
                 <c:forEach items="${tripList}" var="trip">
-                    <div class="trip_details trip_pagina_<%=pagina%>_content">
+                    <div class="trip1_details trip1_pagina_<%=pagina%>_content">
                         <div class="trip_name"><a class="trip_name"
                                                   href="admincp-${trip.tripId}.html">${trip.tripName}</a>
                         </div>
@@ -87,7 +87,7 @@
                 <%
                     for (int i = 0; i <= pagina; i++) {
                 %>
-                <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                <li><a href="#" class="trip1_pagina" id="trip1_pagina_<%=i %>"><%=(i + 1)%>
                 </a></li>
                 <%
                     }
@@ -103,7 +103,7 @@
         <c:if test="${!empty tripListParticipate}">
             <ul class="trip_list">
                 <c:forEach items="${tripListParticipate}" var="trip">
-                    <div class="trip_details trip_pagina_<%=pagina2%>_content">
+                    <div class="trip2_details trip2_pagina_<%=pagina2%>_content">
                         <div class="trip_name"><a class="trip_name"
                                                   href="../trip/${trip.tripId}.html">${trip.tripName}</a>
                         </div>
@@ -134,7 +134,7 @@
                 <%
                     for (int i = 0; i <= pagina2; i++) {
                 %>
-                <li><a href="#" class="trip_pagina" id="trip_pagina_<%=i %>"><%=(i + 1)%>
+                <li><a href="#" class="trip2_pagina" id="trip2_pagina_<%=i %>"><%=(i + 1)%>
                 </a></li>
                 <%
                     }

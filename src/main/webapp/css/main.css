@@ -199,7 +199,7 @@ label {
     list-style: none;
 }
 
-.trip_details {
+.trip1_details, .trip2_details {
     /* height: 100px;  */
     background: #455268;
     margin: 10px 15px 10px 15px;
