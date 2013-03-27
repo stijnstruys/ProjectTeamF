@@ -108,6 +108,7 @@ public class TripController {
 
     public void addTrips(SimpleDateFormat sdf, Date maxDate, Trip startTrip, int interval) {
         Trip anotherTrip = startTrip;
+        anotherTrip.setEquipment(startTrip.getEquipment());
 
         Calendar cStart = Calendar.getInstance();
         Calendar cEnd = Calendar.getInstance();
