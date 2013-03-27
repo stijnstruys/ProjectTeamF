@@ -260,7 +260,7 @@ function addTrip() {
 
                 $("#add_trip_" + current).hide();
 
-                current++
+                current++;
                 if (current == 3) {
                     if (triptype == "Los") {
                         current++;
@@ -304,18 +304,20 @@ function addTrip() {
             $("#add_trip_" + current).hide();
             current--;
 
+            if (current == 6) {
+                if (triptype == "Herhalend") {
+                    current--;
+                }
+            }
+
             if (current == 4) {
                 if (triptype != "Herhalend") {
                     current--;
-
-                    if (triptype == "Los") {
-                        current--;
-                    }
-
                 }
             }
-            if (current == 6) {
-                if (triptype == "Herhalend") {
+
+            if(current == 3) {
+                if (triptype == "Los") {
                     current--;
                 }
             }
