@@ -21,6 +21,9 @@ $(document).ready(function () {
 
     //add trip
     addTrip();
+    $("#trip_add").click(function () {
+            $("#add_trip_form").submit();
+        });
 
     //chat
     chat();

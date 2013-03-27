@@ -42,7 +42,7 @@
 <section id="content">
 <h2><spring:message code="label.addTrip"/></h2>
 
-<form:form method="post" action="add.html" commandName="trip" id="add_trip_form" class="form-horizontal">
+<form:form method="post" action="add.html" commandName="trip" id="add_trip_form" class="form-horizontal" onsubmit="false">
 
     <div id="add_trip_1" class="add_trip_div">
         <div class="control-group">
