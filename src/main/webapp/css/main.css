@@ -234,7 +234,7 @@ a.trip_name:hover {
 }
 
 .trip_datums {
-    float: right;
+  /*  float: right;  ¨*/
 }
 
 .trip_detail_general {
