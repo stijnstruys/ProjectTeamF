@@ -228,7 +228,7 @@
                          data-href="https://www.facebook.com/pages/Tripplanner-teamf/146815778814080"
                          data-send="true" data-width="450" data-show-faces="true"></div>
                     </br>
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="nl"><spring:message
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-lang="en" data-hashtags="TripPlannerTeamF"><spring:message
                             code="label.Tweet"/></a>
                 </div>
                 <c:if test="${registered == true}">
