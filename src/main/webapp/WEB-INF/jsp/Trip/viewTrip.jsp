@@ -96,7 +96,7 @@
                     <div class="span2"><label class="profile_right"><spring:message
                             code="label.startLocation"/></label></div>
                     <div class="span3">
-                        <label class="checkbox profile_lbl">${user.startLocation} </label>
+                        <label class="checkbox profile_lbl">${trip.startLocation} </label>
                     </div>
                 </div>
                 <div class="row-fluid">
