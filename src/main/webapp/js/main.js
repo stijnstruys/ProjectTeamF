@@ -347,6 +347,17 @@ function addTrip() {
         $('#trip_equipment').find('option').attr('selected', 'selected');
     });
 
+    $("#trip_reset").click(function() {
+        $("#add_trip_" + current).hide();
+       current = 1;
+        $("#add_trip_" + current).show();
+         $("#add_trip_prev").parent().addClass("disabled");
+        prevhidden = true;
+
+        $("#add_trip_next").parent().removeClass("disabled");
+        nexthidden = false
+    });
+
     /* validation */
 
     function checkName() {
